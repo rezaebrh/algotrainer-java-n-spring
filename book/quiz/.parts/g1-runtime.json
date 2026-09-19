@@ -1,0 +1,1374 @@
+{
+  "questions": [
+    {
+      "id": "g1-runtime-001",
+      "type": "mcq",
+      "prompt": "کدام ابزارِ JDK فایل App.java را به bytecode تبدیل می‌کند؟",
+      "options": {
+        "A": "java",
+        "B": "javac",
+        "C": "JVM",
+        "D": "jar"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "javac کامپایلر Java است و معمولاً برای App.java فایل App.class می‌سازد.",
+      "concepts": [
+        "environment",
+        "jdk",
+        "compiler"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-002",
+      "type": "mcq",
+      "prompt": "نقش اصلی JVM در اجرای یک کلاس کامپایل‌شده چیست؟",
+      "options": {
+        "A": "ویرایش فایل .java",
+        "B": "اجرای bytecode کلاس‌ها",
+        "C": "نوشتن importها",
+        "D": "تغییر نام package"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "JVM bytecode موجود در class file را بارگذاری و اجرا می‌کند.",
+      "concepts": [
+        "environment",
+        "jvm",
+        "bytecode"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-003",
+      "type": "multi",
+      "prompt": "کدام موارد معمولاً بخشی از JDK هستند؟",
+      "options": {
+        "A": "javac",
+        "B": "فرمان java",
+        "C": "JVM یا محیط اجرای Java",
+        "D": "فقط فایل‌های منبع پروژهٔ شما"
+      },
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "JDK ابزارهای توسعه مانند javac و java را همراه با محیط اجرای Java فراهم می‌کند؛ کد پروژهٔ کاربر جزو JDK نیست.",
+      "concepts": [
+        "environment",
+        "jdk",
+        "jvm"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-004",
+      "type": "tf",
+      "prompt": "bytecode یک فایل اجرایی بومی و مخصوص یک معماری CPU است.",
+      "answers": [
+        "نادرست"
+      ],
+      "explanation": "bytecode برای JVM طراحی شده است، نه برای یک CPU مشخص. JVM مناسب پلتفرم آن را اجرا می‌کند.",
+      "concepts": [
+        "environment",
+        "bytecode",
+        "portability"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-005",
+      "type": "blank",
+      "prompt": "برای کامپایل فایل Hello.java از فرمان ______ استفاده می‌شود.",
+      "answers": [
+        "javac"
+      ],
+      "explanation": "javac نام ابزار کامپایل Java است.",
+      "concepts": [
+        "environment",
+        "compiler"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-006",
+      "type": "mcq",
+      "prompt": "در حالت معمول، اجرای موفق javac Hello.java چه فایلی تولید می‌کند؟",
+      "options": {
+        "A": "Hello.exe",
+        "B": "Hello.class",
+        "C": "Hello.jvm",
+        "D": "Hello.jar"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "کلاس Hello به bytecode در Hello.class کامپایل می‌شود.",
+      "concepts": [
+        "environment",
+        "class-file",
+        "compiler"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-007",
+      "type": "multi",
+      "prompt": "اگر Hello در default package باشد و classpath درست باشد، دربارهٔ java Hello کدام موارد درست‌اند؟",
+      "options": {
+        "A": "نام کلاس Hello به launcher داده می‌شود.",
+        "B": "نوشتن پسوند .class لازم نیست.",
+        "C": "java حتماً پیش از اجرا javac را اجرا می‌کند.",
+        "D": "Hello.java باید به launcher داده شود."
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "فرمان java نام کلاس دودویی را می‌گیرد؛ به شکل معمول خودش مرحلهٔ کامپایل را انجام نمی‌دهد.",
+      "concepts": [
+        "environment",
+        "launcher",
+        "classpath"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-008",
+      "type": "tf",
+      "prompt": "JVM می‌تواند فایل منبع .java دارای خطای کامپایل را مستقیماً به‌عنوان یک class file اجرا کند.",
+      "answers": [
+        "نادرست"
+      ],
+      "explanation": "اجرای معمول JVM بر مبنای class file معتبر است، نه فایل منبع دارای خطا.",
+      "concepts": [
+        "environment",
+        "jvm",
+        "compiler"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-009",
+      "type": "mcq",
+      "prompt": "کدام فرمان اطلاعات نسخهٔ Java runtime نصب‌شده را نمایش می‌دهد؟",
+      "options": {
+        "A": "java --version",
+        "B": "javac App.java",
+        "C": "java App.class",
+        "D": "package --version"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "java --version نسخهٔ launcher و runtime را گزارش می‌کند.",
+      "concepts": [
+        "environment",
+        "java-command"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-010",
+      "type": "blank",
+      "prompt": "مجموعهٔ مسیرهایی که launcher و class loader برای یافتن کلاس‌ها بررسی می‌کنند ______ نام دارد.",
+      "answers": [
+        "classpath"
+      ],
+      "explanation": "classpath می‌تواند شامل پوشه‌ها، JARها و مسیرهای دیگرِ حاوی کلاس باشد.",
+      "concepts": [
+        "environment",
+        "classpath"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-011",
+      "type": "multi",
+      "prompt": "برای اجرای com.school.Start از یک classpath root کدام شرط‌ها لازم‌اند؟",
+      "options": {
+        "A": "فایل در com/school/Start.class زیر آن ریشه باشد.",
+        "B": "نام کلاس به‌شکل com.school.Start داده شود.",
+        "C": "classpath ریشهٔ بالای پوشهٔ com را داشته باشد.",
+        "D": "فرمان حتماً از پوشهٔ com/school اجرا شود."
+      },
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "نام package با ساختار مسیر زیر classpath root هماهنگ است. محل اجرای فرمان فقط در صورتی کافی است که همان ریشه در classpath باشد.",
+      "concepts": [
+        "environment",
+        "classpath",
+        "package"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-012",
+      "type": "mcq",
+      "prompt": "در یک compilation unit معمولی، ترتیب درست بخش‌های اصلی چیست؟",
+      "options": {
+        "A": "class، import، package",
+        "B": "import، package، class",
+        "C": "package، import، class",
+        "D": "class، package، import"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "اگر وجود داشته باشد، package declaration قبل از importها و هر دو قبل از تعریف typeها می‌آیند.",
+      "concepts": [
+        "class-structure",
+        "package",
+        "imports"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-013",
+      "type": "tf",
+      "prompt": "یک فایل منبع Java می‌تواند دو package declaration داشته باشد.",
+      "answers": [
+        "نادرست"
+      ],
+      "explanation": "هر compilation unit حداکثر یک package declaration دارد.",
+      "concepts": [
+        "class-structure",
+        "package"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-014",
+      "type": "mcq",
+      "prompt": "کدام تعریف top-level باید در فایل Ledger.java باشد؟",
+      "options": {
+        "A": "class Ledger {}",
+        "B": "public class Ledger {}",
+        "C": "class Receipt {}",
+        "D": "interface Receipt {}"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "type top-level عمومی باید در فایلی با همان نام و پسوند .java قرار گیرد.",
+      "concepts": [
+        "class-structure",
+        "public-class",
+        "source-file"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-015",
+      "type": "multi",
+      "prompt": "کدام ترکیب در یک فایل منبع از نظر تعداد type عمومی درست است؟",
+      "options": {
+        "A": "public class A {} و public class B {}",
+        "B": "class A {} و class B {}",
+        "C": "public class A {} و class B {} در A.java",
+        "D": "public interface A {} و public record B() {}"
+      },
+      "answers": [
+        "B",
+        "C"
+      ],
+      "explanation": "در هر compilation unit حداکثر یک type top-level عمومی مجاز است؛ typeهای غیرعمومی می‌توانند متعدد باشند.",
+      "concepts": [
+        "class-structure",
+        "top-level-types",
+        "access"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-016",
+      "type": "blank",
+      "prompt": "کلیدواژه‌ای که عضو را متعلق به خودِ کلاس، نه هر شیء، می‌کند ______ است.",
+      "answers": [
+        "static"
+      ],
+      "explanation": "عضو static به کلاس تعلق دارد و استفاده از آن معمولاً به ساختن instance نیاز ندارد.",
+      "concepts": [
+        "class-structure",
+        "static"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-017",
+      "type": "mcq",
+      "prompt": "کدام قطعه کد سازندهٔ درست برای Lamp دارد؟",
+      "options": {
+        "A": "class Lamp { void Lamp() {} }",
+        "B": "class Lamp { Lamp() {} }",
+        "C": "class Lamp { constructor Lamp() {} }",
+        "D": "class Lamp { static Lamp() {} }"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "سازنده نام کلاس را دارد و پیش از نامش هیچ return type، حتی void، نوشته نمی‌شود.",
+      "concepts": [
+        "class-structure",
+        "constructor"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-018",
+      "type": "tf",
+      "prompt": "در class Lamp، عبارت void Lamp() یک سازنده است.",
+      "answers": [
+        "نادرست"
+      ],
+      "explanation": "وجود void این عضو را به methodی با نام Lamp تبدیل می‌کند. سازنده return type ندارد.",
+      "concepts": [
+        "class-structure",
+        "constructor",
+        "methods"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-019",
+      "type": "mcq",
+      "prompt": "اگر کلاسی هیچ سازنده‌ای اعلام نکند، چه رخ می‌دهد؟",
+      "options": {
+        "A": "همیشه خطای کامپایل می‌دهد.",
+        "B": "کامپایلر یک سازندهٔ پیش‌فرض بدون پارامتر فراهم می‌کند.",
+        "C": "همیشه سازنده‌ای با String ایجاد می‌شود.",
+        "D": "کلاس static می‌شود."
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "در نبود هر constructor اعلام‌شده، کامپایلر default constructor بدون پارامتر تولید می‌کند.",
+      "concepts": [
+        "class-structure",
+        "constructor"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-020",
+      "type": "multi",
+      "prompt": "بدنهٔ یک کلاس می‌تواند کدام عضوها را داشته باشد؟",
+      "options": {
+        "A": "field",
+        "B": "method",
+        "C": "constructor",
+        "D": "main اجباری"
+      },
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "کلاس‌ها می‌توانند field، method و constructor داشته باشند؛ main فقط برای راه‌اندازی به‌صورت برنامه لازم می‌شود.",
+      "concepts": [
+        "class-structure",
+        "fields",
+        "methods",
+        "constructor"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-021",
+      "type": "blank",
+      "prompt": "برای ساختن شیئی از کلاس Bike در عبارت ______ Bike() از چه کلیدواژه‌ای استفاده می‌شود؟",
+      "answers": [
+        "new"
+      ],
+      "explanation": "new Bike() یک instance می‌سازد و سازندهٔ Bike را فراخوانی می‌کند.",
+      "concepts": [
+        "class-structure",
+        "objects",
+        "constructor"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-022",
+      "type": "mcq",
+      "prompt": "خروجی کد زیر چیست؟\nclass Counter { static int total = 3; }\nSystem.out.println(Counter.total);",
+      "options": {
+        "A": "0",
+        "B": "3",
+        "C": "خطای کامپایل",
+        "D": "خطای اجرا چون شیء ساخته نشده است"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "field static به کلاس تعلق دارد و از راه Counter.total قابل دسترسی است.",
+      "concepts": [
+        "class-structure",
+        "static",
+        "fields"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-023",
+      "type": "tf",
+      "prompt": "هر شیء از یک کلاس، فضای جداگانه‌ای برای fieldهای غیرstatic آن کلاس دارد.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "fieldهای instance به هر شیء تعلق دارند، در حالی که field static بین instanceها مشترک است.",
+      "concepts": [
+        "class-structure",
+        "fields",
+        "objects"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-024",
+      "type": "mcq",
+      "prompt": "کدام امضا نقطهٔ ورود کلاسیک و معتبر launcher است؟",
+      "options": {
+        "A": "public void main(String[] args)",
+        "B": "public static int main(String[] args)",
+        "C": "public static void main(String[] args)",
+        "D": "public static void main(String args)"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "main کلاسیک باید static، با خروجی void و دارای پارامتر String[] باشد.",
+      "concepts": [
+        "main",
+        "class-structure",
+        "static"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-025",
+      "type": "multi",
+      "prompt": "کدام امضاها برای main کلاسیک از نظر نوع پارامتر پذیرفته می‌شوند؟",
+      "options": {
+        "A": "public static void main(String[] args)",
+        "B": "public static void main(String... args)",
+        "C": "public static void main(String args)",
+        "D": "public static void main(int[] args)"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "String... در declaration همان شکل varargs برای String[] است. یک String تنها یا int[] مناسب نیست.",
+      "concepts": [
+        "main",
+        "arrays",
+        "varargs"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-026",
+      "type": "blank",
+      "prompt": "نوع بازگشت main کلاسیک ______ است.",
+      "answers": [
+        "void"
+      ],
+      "explanation": "launcher برای main کلاسیک متدی با return type برابر void می‌شناسد.",
+      "concepts": [
+        "main",
+        "methods"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-027",
+      "type": "tf",
+      "prompt": "آرایهٔ args در main برای دریافت آرگومان‌های خط فرمان به شکل Stringها است.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "برای مثال در java Welcome Sara، رشتهٔ Sara عضوی از args است.",
+      "concepts": [
+        "main",
+        "command-line-arguments"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-028",
+      "type": "mcq",
+      "prompt": "در اجرای java Welcome A B، args.length در main چه مقداری دارد؟",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "نام کلاس Welcome جزو آرگومان‌های main نیست؛ A و B دو آرگومان هستند.",
+      "concepts": [
+        "main",
+        "command-line-arguments",
+        "arrays"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-029",
+      "type": "mcq",
+      "prompt": "خروجی main زیر با فرمان java Show blue چیست؟\npublic static void main(String[] args) { System.out.println(args[0]); }",
+      "options": {
+        "A": "blue",
+        "B": "Show",
+        "C": "args[0]",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "اولین آرگومان بعد از نام کلاس در args[0] قرار می‌گیرد.",
+      "concepts": [
+        "main",
+        "command-line-arguments"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-030",
+      "type": "multi",
+      "prompt": "دربارهٔ این کلاس کدام موارد درست‌اند؟\nclass Start { static { System.out.print(\"A\"); } public static void main(String[] args) { System.out.print(\"B\"); } }",
+      "options": {
+        "A": "خروجی AB است.",
+        "B": "بلاک static پیش از بدنهٔ main اجرا می‌شود.",
+        "C": "خروجی BA است.",
+        "D": "برای اجرای main باید instance ساخت."
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "کلاس آغازین پیش از فراخوانی main initialize می‌شود؛ static initializer ابتدا اجرا می‌شود.",
+      "concepts": [
+        "main",
+        "class-initialization",
+        "static"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-031",
+      "type": "tf",
+      "prompt": "main کلاسیک برای فراخوانی launcher باید static باشد.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "static بودن اجازه می‌دهد launcher بدون ساختن instance آن را فراخوانی کند.",
+      "concepts": [
+        "main",
+        "static"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-032",
+      "type": "blank",
+      "prompt": "نام قراردادی پارامتر آرایه‌ای main اغلب ______ است، اما این نام اجباری نیست.",
+      "answers": [
+        "args"
+      ],
+      "explanation": "نام پارامتر می‌تواند هر شناسهٔ معتبر باشد؛ نوع String[] مهم است.",
+      "concepts": [
+        "main",
+        "parameters"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-033",
+      "type": "mcq",
+      "prompt": "کدام package declaration درست است؟",
+      "options": {
+        "A": "package com.example.school;",
+        "B": "package com/example/school;",
+        "C": "package \"com.example.school\";",
+        "D": "packages com.example.school;"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "نام package با نقطه بین بخش‌ها و با semicolon در انتها نوشته می‌شود.",
+      "concepts": [
+        "package",
+        "class-structure"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-034",
+      "type": "tf",
+      "prompt": "نام package در کد با نقطه نوشته می‌شود، اما class file آن معمولاً در پوشه‌های متناظر قرار می‌گیرد.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "برای com.example.school معمولاً ساختار com/example/school زیر classpath root دیده می‌شود.",
+      "concepts": [
+        "package",
+        "filesystem",
+        "classpath"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-035",
+      "type": "multi",
+      "prompt": "دربارهٔ package کدام گزاره‌ها درست‌اند؟",
+      "options": {
+        "A": "فضای نام typeها را مشخص می‌کند.",
+        "B": "دو کلاس با نام سادهٔ یکسان می‌توانند در packageهای متفاوت باشند.",
+        "C": "پس از import declaration می‌آید.",
+        "D": "فایل بدون package declaration در default package است."
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "package به سازمان‌دهی نام‌ها کمک می‌کند و اگر وجود داشته باشد، پیش از importها می‌آید.",
+      "concepts": [
+        "package",
+        "imports",
+        "class-structure"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-036",
+      "type": "mcq",
+      "prompt": "برای استفاده از List با نام ساده، کدام import درست است؟",
+      "options": {
+        "A": "import java.util.List;",
+        "B": "package java.util.List;",
+        "C": "include java.util.List;",
+        "D": "import List from java.util;"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "single-type-import نام کامل java.util.List را برای استفاده با نام ساده فراهم می‌کند.",
+      "concepts": [
+        "imports",
+        "standard-library"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-037",
+      "type": "blank",
+      "prompt": "کلیدواژهٔ آغازکنندهٔ import declaration ______ است.",
+      "answers": [
+        "import"
+      ],
+      "explanation": "مثال: import java.time.LocalDate;.",
+      "concepts": [
+        "imports"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-038",
+      "type": "mcq",
+      "prompt": "کدام type بدون نوشتن import در هر compilation unit قابل استفاده است؟",
+      "options": {
+        "A": "java.util.List",
+        "B": "java.io.File",
+        "C": "java.lang.String",
+        "D": "java.time.LocalDate"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "typeهای package java.lang، از جمله String و System، به‌طور ضمنی import می‌شوند.",
+      "concepts": [
+        "imports",
+        "java-lang"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-039",
+      "type": "multi",
+      "prompt": "کدام خط‌ها import معتبر Java هستند؟",
+      "options": {
+        "A": "import java.util.*;",
+        "B": "import static java.lang.Math.PI;",
+        "C": "import java.util.List.*;",
+        "D": "import static java.lang.Math.*;"
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "می‌توان typeهای یک package یا عضوهای static یک type را on-demand import کرد. List یک package نیست.",
+      "concepts": [
+        "imports",
+        "static-import"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-040",
+      "type": "tf",
+      "prompt": "import java.util.* همهٔ packageهای فرزند java.util را نیز وارد می‌کند.",
+      "answers": [
+        "نادرست"
+      ],
+      "explanation": "* فقط typeهای قابل دسترسی در همان package را پوشش می‌دهد؛ packageهای فرزند جدا هستند.",
+      "concepts": [
+        "imports",
+        "package"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-041",
+      "type": "mcq",
+      "prompt": "پس از این دو import، استفادهٔ ساده از Date چه نتیجه‌ای دارد؟\nimport java.util.Date;\nimport java.sql.Date;",
+      "options": {
+        "A": "همیشه java.util.Date انتخاب می‌شود.",
+        "B": "همیشه java.sql.Date انتخاب می‌شود.",
+        "C": "نام Date مبهم و خطای کامپایل است.",
+        "D": "دو type با هم ادغام می‌شوند."
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "دو single-type-import با نام سادهٔ یکسان ابهام ایجاد می‌کنند. می‌توان نام کامل یکی از typeها را نوشت.",
+      "concepts": [
+        "imports",
+        "name-resolution"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-042",
+      "type": "multi",
+      "prompt": "دربارهٔ import کدام موارد درست‌اند؟",
+      "options": {
+        "A": "کد منبع کتابخانه را در فایل فعلی کپی نمی‌کند.",
+        "B": "بر resolution نام‌ها در همان compilation unit اثر می‌گذارد.",
+        "C": "می‌تواند قبل از package declaration بیاید.",
+        "D": "می‌تواند نام سادهٔ یک type را قابل استفاده کند."
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "import سازوکار resolution نام در زمان کامپایل است و پس از package declaration قرار می‌گیرد.",
+      "concepts": [
+        "imports",
+        "class-structure",
+        "name-resolution"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-043",
+      "type": "mcq",
+      "prompt": "کدام گزینه دلیل معتبر برای نوشتن java.util.ArrayList به‌جای ArrayList است؟",
+      "options": {
+        "A": "برای ساختن JVM جدید",
+        "B": "برای رفع ابهام نام یا بدون نیاز به import",
+        "C": "برای تبدیل کلاس به static",
+        "D": "برای وارد کردن همهٔ packageهای فرزند"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "نام کاملاً qualified می‌تواند بدون import استفاده شود و در صورت برخورد نام‌ها ابهام را رفع کند.",
+      "concepts": [
+        "imports",
+        "package",
+        "name-resolution"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-044",
+      "type": "tf",
+      "prompt": "یک import static می‌تواند یک field static عمومی مانند Math.PI را با نام ساده قابل استفاده کند.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "برای نمونه import static java.lang.Math.PI; امکان نوشتن PI را در همان compilation unit می‌دهد.",
+      "concepts": [
+        "imports",
+        "static-import",
+        "static"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-045",
+      "type": "blank",
+      "prompt": "برای import کردن تمام عضوهای static قابل دسترسِ Math، نام type پیش از ستاره ______ است.",
+      "answers": [
+        "java.lang.Math"
+      ],
+      "explanation": "صورت کامل این import چنین است: import static java.lang.Math.*;.",
+      "concepts": [
+        "imports",
+        "static-import"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-046",
+      "type": "mcq",
+      "prompt": "کدام عبارت، فراخوانی درست main با دو آرگومان را نشان می‌دهد؟",
+      "options": {
+        "A": "java App.java red blue",
+        "B": "java App red blue",
+        "C": "javac App red blue",
+        "D": "java App.class red blue"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "برای اجرای class file، فرمان java نام کلاس و سپس آرگومان‌ها را می‌گیرد.",
+      "concepts": [
+        "environment",
+        "main",
+        "command-line-arguments"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-047",
+      "type": "multi",
+      "prompt": "در Java 21 کدام روش‌ها می‌توانند نقطهٔ شروع یک کلاسِ اجراشونده باشند؟",
+      "options": {
+        "A": "public static void main(String[] args)",
+        "B": "public static void main()",
+        "C": "void main() در یک کلاس معمولی",
+        "D": "public static int main()"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "Java 21 از main بدون پارامترِ static void نیز پشتیبانی می‌کند. main کلاسیکِ آرایه‌ای هم معتبر است؛ main غیرstatic و main با int معتبر نیستند.",
+      "concepts": [
+        "main",
+        "java-21"
+      ],
+      "difficulty": 4,
+      "prerequisites": [],
+      "hint": "به شکل‌های main مجاز در Java 21 توجه کنید."
+    },
+    {
+      "id": "g1-runtime-048",
+      "type": "tf",
+      "prompt": "در Java 21، main با امضای public static void main() می‌تواند نقطهٔ شروع معتبر باشد.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "Java 21 شکل بدون پارامترِ static void main را علاوه بر شکل آرایه‌ای می‌پذیرد.",
+      "concepts": [
+        "main",
+        "java-21"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-049",
+      "type": "mcq",
+      "prompt": "در Java 21، کدام گزینه دربارهٔ دسترسی main درست است؟",
+      "options": {
+        "A": "main همیشه باید public باشد.",
+        "B": "main فقط باید protected باشد.",
+        "C": "یک main با دسترسی package-private نیز می‌تواند نقطهٔ شروع باشد.",
+        "D": "main باید private باشد."
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "قواعد جدید launch در Java 21 الزام public بودن main را برداشته‌اند؛ static void main با دسترسی مناسبِ کلاس می‌تواند انتخاب شود.",
+      "concepts": [
+        "main",
+        "java-21",
+        "access"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-050",
+      "type": "tf",
+      "prompt": "در Java 21، main کلاسیک با String[] همچنان معتبر است.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "پشتیبانی از شکل‌های تازه، شکل رایج public static void main(String[] args) را حذف نکرده است.",
+      "concepts": [
+        "main",
+        "java-21"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-051",
+      "type": "mcq",
+      "prompt": "کدام دستور با فرض قرار داشتن App.java در پوشهٔ فعلی، آن را در حالت source-file mode اجرا می‌کند؟",
+      "options": {
+        "A": "java App.java",
+        "B": "javac App",
+        "C": "java App.class",
+        "D": "java --compile App.java"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "فرمان java App.java در source-file mode فایل منبع را برای اجرا کامپایل و اجرا می‌کند. این با اجرای نام کلاس متفاوت است.",
+      "concepts": [
+        "environment",
+        "source-file-mode",
+        "java-21"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-052",
+      "type": "tf",
+      "prompt": "در source-file mode، فرمان java App.java می‌تواند بدون اجرای جداگانهٔ javac، فایل منبع را اجرا کند.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "launcher می‌تواند فایل منبع تعیین‌شده را برای همان اجرا کامپایل و اجرا کند.",
+      "concepts": [
+        "environment",
+        "source-file-mode"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-053",
+      "type": "blank",
+      "prompt": "فایل فشرده‌ای که اغلب class fileها و منابع را برای توزیع گردآوری می‌کند، معمولاً پسوند ______ دارد.",
+      "answers": [
+        ".jar",
+        "jar"
+      ],
+      "explanation": "JAR یک قالب آرشیوی رایج Java برای گردآوری کلاس‌ها و منابع است.",
+      "concepts": [
+        "environment",
+        "jar"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-054",
+      "type": "mcq",
+      "prompt": "کدام گزینه دربارهٔ JRE و JDK دقیق‌تر است؟",
+      "options": {
+        "A": "JRE همیشه شامل javac است.",
+        "B": "JDK برای توسعه، ابزارهایی مانند javac را نیز دارد.",
+        "C": "JDK فقط bytecode است.",
+        "D": "JRE نام یک package است."
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "JDK مجموعهٔ توسعه است و ابزار کامپایل را در بر می‌گیرد؛ javac جزء صرف runtime نیست.",
+      "concepts": [
+        "environment",
+        "jdk",
+        "jre"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-055",
+      "type": "multi",
+      "prompt": "کدام موارد می‌توانند به‌عنوان عنصر classpath به کار روند؟",
+      "options": {
+        "A": "پوشه‌ای که ریشهٔ packageهاست.",
+        "B": "یک فایل JAR",
+        "C": "نام یک method مانند main",
+        "D": "چند مسیر جداشده با جداکنندهٔ path پلتفرم"
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "classpath فهرستی از مکان‌های جست‌وجوی classهاست، از جمله پوشه‌ها و JARها.",
+      "concepts": [
+        "environment",
+        "classpath",
+        "jar"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-056",
+      "type": "mcq",
+      "prompt": "اگر نوع public class زیر com.acme قرار دارد، نام دودویی درست آن چیست؟\npackage com.acme;\npublic class Tool {}",
+      "options": {
+        "A": "Tool.java",
+        "B": "com/acme/Tool",
+        "C": "com.acme.Tool",
+        "D": "com::acme::Tool"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "نام دودویی type با نام package و نقطه‌ها نوشته می‌شود: com.acme.Tool.",
+      "concepts": [
+        "package",
+        "binary-name",
+        "classpath"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-057",
+      "type": "tf",
+      "prompt": "فایلی در default package می‌تواند به‌سادگی با import از کلاسی در یک package نام‌دار استفاده کند.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "کلاس‌های default package می‌توانند typeهای public packageهای نام‌دار را import کنند؛ محدودیت مهم در جهت عکس است.",
+      "concepts": [
+        "package",
+        "imports"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-058",
+      "type": "mcq",
+      "prompt": "کدام گزاره دربارهٔ دسترسی به typeهای default package از یک package نام‌دار درست است؟",
+      "options": {
+        "A": "با import آن type ممکن است.",
+        "B": "با static import ممکن است.",
+        "C": "typeهای default package را نمی‌توان از compilation unit دارای package نام‌دار import کرد.",
+        "D": "فقط با wildcard import ممکن است."
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "Java اجازهٔ import typeهای default package را در compilation unitهای packageدار نمی‌دهد.",
+      "concepts": [
+        "package",
+        "imports",
+        "default-package"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-059",
+      "type": "blank",
+      "prompt": "کلاسی که package declaration ندارد در ______ package قرار دارد.",
+      "answers": [
+        "default"
+      ],
+      "explanation": "این نام رسمیِ package بی‌نامِ فایل‌های بدون package declaration است.",
+      "concepts": [
+        "package",
+        "default-package"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-060",
+      "type": "mcq",
+      "prompt": "کدام خط به سبب جایگاه نادرست package declaration خطای کامپایل دارد؟",
+      "options": {
+        "A": "package p; import java.util.List; class A {}",
+        "B": "import java.util.List; package p; class A {}",
+        "C": "package p; class A {}",
+        "D": "class A {}"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "اگر package declaration وجود داشته باشد، باید پیش از import declarationها قرار گیرد.",
+      "concepts": [
+        "package",
+        "imports",
+        "class-structure"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-061",
+      "type": "multi",
+      "prompt": "کدام modifierها برای یک top-level class (غیر enum/record) می‌توانند به کار روند؟",
+      "options": {
+        "A": "public",
+        "B": "abstract",
+        "C": "final",
+        "D": "private"
+      },
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "یک top-level class نمی‌تواند private باشد؛ private برای عضوهای class مناسب است.",
+      "concepts": [
+        "class-structure",
+        "access",
+        "modifiers"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-062",
+      "type": "tf",
+      "prompt": "یک top-level class می‌تواند private اعلام شود.",
+      "answers": [
+        "نادرست"
+      ],
+      "explanation": "top-level class فقط می‌تواند public یا package-private باشد و modifierهایی مانند abstract یا final نیز داشته باشد؛ private مجاز نیست.",
+      "concepts": [
+        "class-structure",
+        "access"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-063",
+      "type": "mcq",
+      "prompt": "کدام تعریف یک nested static class است؟",
+      "options": {
+        "A": "static class Inner {} درون یک class دیگر",
+        "B": "public static package Inner {}",
+        "C": "class static Inner {}",
+        "D": "static interface خارج از هر class"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "داخل یک class، static class Inner یک nested static class تعریف می‌کند.",
+      "concepts": [
+        "class-structure",
+        "nested-class",
+        "static"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-064",
+      "type": "multi",
+      "prompt": "دربارهٔ memberهای static کدام موارد درست‌اند؟",
+      "options": {
+        "A": "از متد static نمی‌توان this را مستقیماً به کار برد.",
+        "B": "متد static می‌تواند field static همان کلاس را بخواند.",
+        "C": "برای فراخوانی متد static باید حتماً instance ساخت.",
+        "D": "field static میان همهٔ instanceهای کلاس مشترک است."
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "متد static context مربوط به شیء مشخصی ندارد؛ به memberهای static دسترسی دارد و بدون instance فراخوانی‌پذیر است.",
+      "concepts": [
+        "class-structure",
+        "static",
+        "this"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-065",
+      "type": "mcq",
+      "prompt": "کدام عبارت دربارهٔ نام فایل و public type درست است؟",
+      "options": {
+        "A": "فایل Planet.java می‌تواند public class Star داشته باشد.",
+        "B": "فایل Planet.java باید public class Planet داشته باشد اگر type عمومی دارد.",
+        "C": "نام فایل برای public type هیچ اهمیتی ندارد.",
+        "D": "هر فایل باید دقیقاً یک public type داشته باشد."
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "اگر public top-level type در فایل باشد، نام فایل باید با آن یکی باشد. فایل می‌تواند هیچ type عمومی نداشته باشد.",
+      "concepts": [
+        "class-structure",
+        "public-class",
+        "source-file"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-066",
+      "type": "tf",
+      "prompt": "در یک فایل منبع می‌توان صفر type top-level عمومی داشت.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "قانون Java حداکثر یک type عمومی در هر compilation unit است، نه الزام به وجود آن.",
+      "concepts": [
+        "class-structure",
+        "top-level-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-067",
+      "type": "blank",
+      "prompt": "کلیدواژهٔ اعلان یک فضای نام برای typeها در ابتدای فایل ______ است.",
+      "answers": [
+        "package"
+      ],
+      "explanation": "package declaration فضای نام typeهای top-level همان compilation unit را مشخص می‌کند.",
+      "concepts": [
+        "package",
+        "class-structure"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-068",
+      "type": "mcq",
+      "prompt": "کدام import برای استفادهٔ مستقیم از max در Math مناسب است؟",
+      "options": {
+        "A": "import java.lang.Math.max;",
+        "B": "import static java.lang.Math.max;",
+        "C": "import java.lang.max;",
+        "D": "package static java.lang.Math.max;"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "static import عضو static max را با نام ساده در همان compilation unit قابل استفاده می‌کند.",
+      "concepts": [
+        "imports",
+        "static-import",
+        "static"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-069",
+      "type": "multi",
+      "prompt": "برای کد زیر کدام موارد درست‌اند؟\npackage shop;\nimport java.util.List;\npublic class Cart { }",
+      "options": {
+        "A": "Cart نام دودویی shop.Cart دارد.",
+        "B": "فایل منبع باید Cart.java نام داشته باشد.",
+        "C": "List به کمک import با نام ساده قابل استفاده است.",
+        "D": "این فایل نمی‌تواند در ریشهٔ classpath کامپایل شود."
+      },
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "نوع عمومی Cart باید در Cart.java باشد. package نام دودویی را می‌سازد و import نام List را در این فایل قابل استفاده می‌کند؛ محل کامپایل می‌تواند با گزینه‌های خروجی مناسب متفاوت باشد.",
+      "concepts": [
+        "package",
+        "imports",
+        "class-structure",
+        "classpath"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-runtime-070",
+      "type": "tf",
+      "prompt": "import declaration باعث نمی‌شود کلاس importشده در زمان کامپایل یا اجرا حتماً بارگذاری شود.",
+      "answers": [
+        "درست"
+      ],
+      "explanation": "import فقط resolution نام در منبع را ساده می‌کند؛ بارگذاری class به استفاده و فرایند اجرای JVM وابسته است.",
+      "concepts": [
+        "imports",
+        "class-loading",
+        "environment"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    }
+  ]
+}

@@ -1,0 +1,1345 @@
+{
+  "questions": [
+    {
+      "id": "g1-types-001",
+      "type": "mcq",
+      "prompt": "کدام نوع نخستین برای عدد صحیح ۳۲بیتی مناسب است؟",
+      "options": {
+        "A": "int",
+        "B": "Integer",
+        "C": "String",
+        "D": "Object"
+      },
+      "answers": "A",
+      "explanation": "int نوع نخستین ۳۲بیتی است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-002",
+      "type": "mcq",
+      "prompt": "کدام literal یک char است؟",
+      "options": {
+        "A": "'A'",
+        "B": "\"A\"",
+        "C": "A",
+        "D": "'AB'"
+      },
+      "answers": "A",
+      "explanation": "char با یک نویسه در تک‌نقل‌قول نوشته می‌شود.",
+      "concepts": [
+        "primitives",
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-003",
+      "type": "mcq",
+      "prompt": "کدام انتساب معتبر است؟",
+      "options": {
+        "A": "long n = 42;",
+        "B": "int n = 42L;",
+        "C": "float n = 42.0;",
+        "D": "char c = \"Z\";"
+      },
+      "answers": "A",
+      "explanation": "مقدار int می‌تواند به long گسترده شود.",
+      "concepts": [
+        "primitives",
+        "literals",
+        "variables"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-004",
+      "type": "mcq",
+      "prompt": "کدام مقداردهی برای float درست است؟",
+      "options": {
+        "A": "float p = 1.5F;",
+        "B": "float p = 1.5;",
+        "C": "float p = 1.5L;",
+        "D": "float p = \"1.5\";"
+      },
+      "answers": "A",
+      "explanation": "literal اعشاری بدون پسوند double است؛ F آن را float می‌کند.",
+      "concepts": [
+        "primitives",
+        "literals"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-005",
+      "type": "mcq",
+      "prompt": "کدام wrapper متناظر با int است؟",
+      "options": {
+        "A": "Integer",
+        "B": "Int",
+        "C": "Long",
+        "D": "Number"
+      },
+      "answers": "A",
+      "explanation": "Integer کلاس پوششی int است.",
+      "concepts": [
+        "wrappers",
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-006",
+      "type": "mcq",
+      "prompt": "کدام خط یک text block معتبر Java 21 می‌سازد؟",
+      "options": {
+        "A": "String s = \"\"\"\nسلام\n\"\"\";",
+        "B": "String s = '''سلام''' ;",
+        "C": "String s = `سلام`;",
+        "D": "String s = \"\"سلام\"\";"
+      },
+      "answers": "A",
+      "explanation": "text block با سه دونقل‌قول آغاز و پایان می‌یابد.",
+      "concepts": [
+        "text-blocks",
+        "strings",
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-007",
+      "type": "mcq",
+      "prompt": "کدام نام متغیر معتبر است؟",
+      "options": {
+        "A": "totalPrice",
+        "B": "2total",
+        "C": "total-price",
+        "D": "class"
+      },
+      "answers": "A",
+      "explanation": "نام متغیر با رقم شروع نمی‌شود و واژهٔ رزروشده نیست.",
+      "concepts": [
+        "variables"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-008",
+      "type": "mcq",
+      "prompt": "در `var x = 24;` نوع واقعی x چیست؟",
+      "options": {
+        "A": "int",
+        "B": "Integer",
+        "C": "long",
+        "D": "var"
+      },
+      "answers": "A",
+      "explanation": "var از literal صحیح 24 نوع int را استنباط می‌کند.",
+      "concepts": [
+        "var",
+        "primitives",
+        "literals"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-009",
+      "type": "mcq",
+      "prompt": "کدام خط با var نامعتبر است؟",
+      "options": {
+        "A": "var message;",
+        "B": "var message = \"درود\";",
+        "C": "var active = false;",
+        "D": "var price = 12.5;"
+      },
+      "answers": "A",
+      "explanation": "var به مقدار اولیه نیاز دارد.",
+      "concepts": [
+        "var",
+        "variables"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-010",
+      "type": "mcq",
+      "prompt": "کدام یک String literal است؟",
+      "options": {
+        "A": "\"سلام\"",
+        "B": "'س'",
+        "C": "سلام",
+        "D": "true"
+      },
+      "answers": "A",
+      "explanation": "دونقل‌قول literal رشته‌ای می‌سازد.",
+      "concepts": [
+        "strings",
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-011",
+      "type": "mcq",
+      "prompt": "کدام خط رشتهٔ خالی می‌سازد؟",
+      "options": {
+        "A": "String s = \"\";",
+        "B": "String s = '';",
+        "C": "char s = \"\";",
+        "D": "String s = ;"
+      },
+      "answers": "A",
+      "explanation": "دو دونقل‌قول یک String با طول صفر می‌سازند.",
+      "concepts": [
+        "strings",
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-012",
+      "type": "mcq",
+      "prompt": "برای مقایسهٔ محتوای دو String کدام مناسب است؟",
+      "options": {
+        "A": "equals",
+        "B": "== همیشه",
+        "C": "=",
+        "D": "final"
+      },
+      "answers": "A",
+      "explanation": "equals محتوا را مقایسه می‌کند؛ == هویت مرجع را.",
+      "concepts": [
+        "equals-identity",
+        "strings"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-013",
+      "type": "mcq",
+      "prompt": "کدام متغیر می‌تواند null داشته باشد؟",
+      "options": {
+        "A": "Integer n",
+        "B": "int n",
+        "C": "boolean ok",
+        "D": "double rate"
+      },
+      "answers": "A",
+      "explanation": "Integer نوع مرجع است؛ نوع‌های نخستین null نمی‌پذیرند.",
+      "concepts": [
+        "wrappers",
+        "reference-types",
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-014",
+      "type": "mcq",
+      "prompt": "کدام اعلان برای یک نویسه درست است؟",
+      "options": {
+        "A": "char initial = 'م';",
+        "B": "char initial = \"م\";",
+        "C": "String initial = 'م';",
+        "D": "int initial = \"م\";"
+      },
+      "answers": "A",
+      "explanation": "char یک نویسه را در تک‌نقل‌قول نگه می‌دارد.",
+      "concepts": [
+        "primitives",
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-015",
+      "type": "mcq",
+      "prompt": "پس از `String a=\"ماه\"; String b=a;` کدام درست است؟",
+      "options": {
+        "A": "a و b به یک String اشاره می‌کنند",
+        "B": "b حتماً null است",
+        "C": "b یک int است",
+        "D": "کد نامعتبر است"
+      },
+      "answers": "A",
+      "explanation": "انتساب مرجع، همان reference را کپی می‌کند.",
+      "concepts": [
+        "reference-types",
+        "strings",
+        "variables"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-016",
+      "type": "mcq",
+      "prompt": "کدام اعلان غیرقابل انتساب مجدد است؟",
+      "options": {
+        "A": "final String name = \"آوا\";",
+        "B": "fixed String name = \"آوا\";",
+        "C": "const String name = \"آوا\";",
+        "D": "String final name = \"آوا\";"
+      },
+      "answers": "A",
+      "explanation": "final مانع انتساب مجدد متغیر می‌شود.",
+      "concepts": [
+        "final",
+        "strings"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-017",
+      "type": "mcq",
+      "prompt": "نوع پیش‌فرض literal اعشاری `3.14` چیست؟",
+      "options": {
+        "A": "double",
+        "B": "float",
+        "C": "long",
+        "D": "String"
+      },
+      "answers": "A",
+      "explanation": "literal اعشاری بدون پسوند double است.",
+      "concepts": [
+        "primitives",
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-018",
+      "type": "mcq",
+      "prompt": "در `var label = \"جاوا\";` نوع label چیست؟",
+      "options": {
+        "A": "String",
+        "B": "var",
+        "C": "char",
+        "D": "Object"
+      },
+      "answers": "A",
+      "explanation": "literal رشته‌ای نوع String دارد.",
+      "concepts": [
+        "var",
+        "strings",
+        "reference-types"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-019",
+      "type": "mcq",
+      "prompt": "کدام تفاوت int و Integer درست است؟",
+      "options": {
+        "A": "int نخستین و Integer مرجع است",
+        "B": "هر دو نخستین‌اند",
+        "C": "هر دو متن هستند",
+        "D": "Integer null نمی‌پذیرد"
+      },
+      "answers": "A",
+      "explanation": "Integer wrapper و نوع مرجع int است.",
+      "concepts": [
+        "primitives",
+        "wrappers",
+        "reference-types"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-020",
+      "type": "mcq",
+      "prompt": "در دو `new String(\"نو\")`، نتیجهٔ `a.equals(b)` چیست؟",
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "null",
+        "D": "خطای کامپایل"
+      },
+      "answers": "A",
+      "explanation": "equals محتوای مساوی دو String را true می‌داند.",
+      "concepts": [
+        "equals-identity",
+        "strings"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-021",
+      "type": "mcq",
+      "prompt": "در دو `new String(\"نو\")`، نتیجهٔ `a == b` چیست؟",
+      "options": {
+        "A": "false",
+        "B": "true",
+        "C": "\"نو\"",
+        "D": "null"
+      },
+      "answers": "A",
+      "explanation": "دو فراخوانی new دو شیء جدا می‌سازند.",
+      "concepts": [
+        "equals-identity",
+        "reference-types"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-022",
+      "type": "mcq",
+      "prompt": "کدام literal صحیح long است؟",
+      "options": {
+        "A": "900L",
+        "B": "900.0",
+        "C": "\"900\"",
+        "D": "900F"
+      },
+      "answers": "A",
+      "explanation": "پسوند L literal را long می‌کند.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-023",
+      "type": "mcq",
+      "prompt": "کدام نوع برای متن چندنویسه‌ای مناسب است؟",
+      "options": {
+        "A": "String",
+        "B": "char",
+        "C": "boolean",
+        "D": "int"
+      },
+      "answers": "A",
+      "explanation": "String برای متن و char برای یک نویسه است.",
+      "concepts": [
+        "strings",
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-024",
+      "type": "mcq",
+      "prompt": "کدام wrapper متناظر با char است؟",
+      "options": {
+        "A": "Character",
+        "B": "Char",
+        "C": "String",
+        "D": "Integer"
+      },
+      "answers": "A",
+      "explanation": "Character کلاس پوششی char است.",
+      "concepts": [
+        "wrappers",
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-025",
+      "type": "tf",
+      "prompt": "boolean یک نوع نخستین است.",
+      "answers": "true",
+      "explanation": "boolean یکی از نوع‌های نخستین جاوا است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-026",
+      "type": "tf",
+      "prompt": "String یک نوع نخستین است.",
+      "answers": "false",
+      "explanation": "String یک نوع مرجع است.",
+      "concepts": [
+        "strings",
+        "reference-types"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-027",
+      "type": "tf",
+      "prompt": "مقدار یک text block از نوع String است.",
+      "answers": "true",
+      "explanation": "text block شکل چندخطی literal رشته‌ای است.",
+      "concepts": [
+        "text-blocks",
+        "strings"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-028",
+      "type": "tf",
+      "prompt": "یک متغیر محلی باید پیش از خواندن مقداردهی شود.",
+      "answers": "true",
+      "explanation": "متغیر محلی بدون مقدار اولیه قابل خواندن نیست.",
+      "concepts": [
+        "variables"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-029",
+      "type": "tf",
+      "prompt": "`var x = null;` معتبر است.",
+      "answers": "false",
+      "explanation": "null به‌تنهایی نوع لازم برای var را مشخص نمی‌کند.",
+      "concepts": [
+        "var",
+        "reference-types"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-030",
+      "type": "tf",
+      "prompt": "Integer می‌تواند null داشته باشد.",
+      "answers": "true",
+      "explanation": "Integer نوع مرجع است.",
+      "concepts": [
+        "wrappers",
+        "reference-types"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-031",
+      "type": "tf",
+      "prompt": "int می‌تواند null داشته باشد.",
+      "answers": "false",
+      "explanation": "int نخستین است و null نمی‌پذیرد.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-032",
+      "type": "tf",
+      "prompt": "برای String، == محتوای متن را مقایسه می‌کند.",
+      "answers": "false",
+      "explanation": "== برای مرجع‌ها هویت را می‌سنجد.",
+      "concepts": [
+        "equals-identity",
+        "strings"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-033",
+      "type": "tf",
+      "prompt": "`a.equals(b)` محتوای دو String را مقایسه می‌کند.",
+      "answers": "true",
+      "explanation": "equals برای برابری محتوای String است.",
+      "concepts": [
+        "equals-identity",
+        "strings"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-034",
+      "type": "tf",
+      "prompt": "پسوند L یک literal صحیح را long می‌کند.",
+      "answers": "true",
+      "explanation": "مثلاً 9L از نوع long است.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-035",
+      "type": "tf",
+      "prompt": "literal اعشاری `1.0` بدون پسوند float است.",
+      "answers": "false",
+      "explanation": "نوع پیش‌فرض literal اعشاری double است.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-036",
+      "type": "tf",
+      "prompt": "`final int n=3; n=4;` معتبر است.",
+      "answers": "false",
+      "explanation": "final فقط یک انتساب را اجازه می‌دهد.",
+      "concepts": [
+        "final",
+        "variables"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-037",
+      "type": "tf",
+      "prompt": "رشتهٔ خالی یک String معتبر است.",
+      "answers": "true",
+      "explanation": "`\"\"` یک String با طول صفر است.",
+      "concepts": [
+        "strings",
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-038",
+      "type": "tf",
+      "prompt": "char می‌تواند مقدار `'AB'` بگیرد.",
+      "answers": "false",
+      "explanation": "char برای یک نویسه است.",
+      "concepts": [
+        "primitives",
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-039",
+      "type": "tf",
+      "prompt": "var خودش یک نوع دادهٔ مستقل نیست.",
+      "answers": "true",
+      "explanation": "var درخواست استنباط نوع در کامپایل است.",
+      "concepts": [
+        "var"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-040",
+      "type": "tf",
+      "prompt": "یک مرجع String می‌تواند null باشد.",
+      "answers": "true",
+      "explanation": "String نوع مرجع است.",
+      "concepts": [
+        "reference-types",
+        "strings"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-041",
+      "type": "multi",
+      "prompt": "کدام‌ها نوع نخستین‌اند؟",
+      "options": {
+        "A": "double",
+        "B": "boolean",
+        "C": "String",
+        "D": "Long"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "double و boolean نخستین‌اند.",
+      "concepts": [
+        "primitives",
+        "reference-types"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-042",
+      "type": "multi",
+      "prompt": "کدام‌ها wrapper هستند؟",
+      "options": {
+        "A": "Boolean",
+        "B": "Character",
+        "C": "boolean",
+        "D": "char"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "Boolean و Character کلاس پوششی‌اند.",
+      "concepts": [
+        "wrappers",
+        "primitives"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-043",
+      "type": "multi",
+      "prompt": "کدام‌ها می‌توانند null باشند؟",
+      "options": {
+        "A": "String s",
+        "B": "Integer n",
+        "C": "int n",
+        "D": "boolean ok"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "فقط نوع‌های مرجع null می‌پذیرند.",
+      "concepts": [
+        "reference-types",
+        "wrappers",
+        "primitives"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-044",
+      "type": "multi",
+      "prompt": "کدام‌ها مقدار String تولید می‌کنند؟",
+      "options": {
+        "A": "\"روز\"",
+        "B": "یک text block شامل «روز»",
+        "C": "'ر'",
+        "D": "42"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "literal رشته‌ای و text block هر دو String می‌سازند.",
+      "concepts": [
+        "strings",
+        "text-blocks",
+        "literals"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-045",
+      "type": "multi",
+      "prompt": "کدام‌ها نام متغیر معتبرند؟",
+      "options": {
+        "A": "userName",
+        "B": "_count",
+        "C": "9lives",
+        "D": "user-name"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "نام می‌تواند با _ شروع شود، اما با رقم یا خط تیره نه.",
+      "concepts": [
+        "variables"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-046",
+      "type": "multi",
+      "prompt": "کدام‌ها پس از مقداردهی قابل انتساب مجدد نیستند؟",
+      "options": {
+        "A": "final int x = 1",
+        "B": "final String s = \"الف\"",
+        "C": "int x = 1",
+        "D": "var n = 2"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "final انتساب مجدد را منع می‌کند.",
+      "concepts": [
+        "final",
+        "variables"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-047",
+      "type": "multi",
+      "prompt": "کدام‌ها literal صحیح‌اند؟",
+      "options": {
+        "A": "0x10",
+        "B": "0b101",
+        "C": "\"101\"",
+        "D": "true"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "0x و 0b شکل‌های literal صحیح هستند.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-048",
+      "type": "multi",
+      "prompt": "کدام‌ها برای مقایسهٔ محتوای String مناسب‌اند؟",
+      "options": {
+        "A": "a.equals(b)",
+        "B": "\"الف\".equals(b)",
+        "C": "a == b",
+        "D": "a = b"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "equals محتوا را مقایسه می‌کند.",
+      "concepts": [
+        "equals-identity",
+        "strings"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-049",
+      "type": "multi",
+      "prompt": "کدام‌ها اعلان String معتبرند؟",
+      "options": {
+        "A": "String a = \"\";",
+        "B": "String b = null;",
+        "C": "String c = 7;",
+        "D": "String d = 'د';"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "String می‌تواند literal رشته‌ای یا null بگیرد.",
+      "concepts": [
+        "strings",
+        "reference-types"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-050",
+      "type": "multi",
+      "prompt": "کدام‌ها نوع مرجع‌اند؟",
+      "options": {
+        "A": "String",
+        "B": "Integer",
+        "C": "long",
+        "D": "char"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "String و Integer مرجع‌اند.",
+      "concepts": [
+        "reference-types",
+        "wrappers",
+        "primitives"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-051",
+      "type": "multi",
+      "prompt": "کدام‌ها literal با پسوند معتبرند؟",
+      "options": {
+        "A": "12L",
+        "B": "2.5F",
+        "C": "12S",
+        "D": "3.0D"
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "L، F و D پسوندهای معتبرند.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-052",
+      "type": "multi",
+      "prompt": "کدام‌ها با var معتبرند؟",
+      "options": {
+        "A": "var n = 8;",
+        "B": "var s = \"درود\";",
+        "C": "var x = null;",
+        "D": "var;"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "var با مقدار اولیهٔ دارای نوع معتبر است.",
+      "concepts": [
+        "var",
+        "variables"
+      ],
+      "difficulty": "medium",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-053",
+      "type": "blank",
+      "prompt": "نوع نخستین عدد صحیح ۶۴بیتی چیست؟",
+      "answers": [
+        "long"
+      ],
+      "explanation": "long عدد صحیح ۶۴بیتی است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-054",
+      "type": "blank",
+      "prompt": "نوع نخستین اعشاری تک‌دقت چیست؟",
+      "answers": [
+        "float"
+      ],
+      "explanation": "float نوع اعشاری تک‌دقت است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-055",
+      "type": "blank",
+      "prompt": "wrapper متناظر با double چیست؟",
+      "answers": [
+        "Double"
+      ],
+      "explanation": "Double کلاس پوششی double است.",
+      "concepts": [
+        "wrappers"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-056",
+      "type": "blank",
+      "prompt": "wrapper متناظر با long چیست؟",
+      "answers": [
+        "Long"
+      ],
+      "explanation": "Long کلاس پوششی long است.",
+      "concepts": [
+        "wrappers"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-057",
+      "type": "blank",
+      "prompt": "کلیدواژهٔ منع انتساب مجدد چیست؟",
+      "answers": [
+        "final"
+      ],
+      "explanation": "final متغیر را از انتساب مجدد محافظت می‌کند.",
+      "concepts": [
+        "final"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-058",
+      "type": "blank",
+      "prompt": "روش مقایسهٔ محتوای String چیست؟",
+      "answers": [
+        "equals"
+      ],
+      "explanation": "equals محتوای رشته را مقایسه می‌کند.",
+      "concepts": [
+        "equals-identity",
+        "strings"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-059",
+      "type": "blank",
+      "prompt": "عملگر مقایسهٔ هویت دو مرجع چیست؟",
+      "answers": [
+        "=="
+      ],
+      "explanation": "== هویت مرجع‌ها را بررسی می‌کند.",
+      "concepts": [
+        "equals-identity",
+        "reference-types"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-060",
+      "type": "blank",
+      "prompt": "نوع استاندارد متن در جاوا چیست؟",
+      "answers": [
+        "String"
+      ],
+      "explanation": "String نوع مرجع برای متن است.",
+      "concepts": [
+        "strings"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-061",
+      "type": "blank",
+      "prompt": "literal نبودِ مرجع چیست؟",
+      "answers": [
+        "null"
+      ],
+      "explanation": "null یعنی مرجع به شیئی اشاره نمی‌کند.",
+      "concepts": [
+        "reference-types",
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-062",
+      "type": "blank",
+      "prompt": "پسوند متداول literal long چیست؟",
+      "answers": [
+        "L",
+        "l"
+      ],
+      "explanation": "L یک literal صحیح را long می‌کند.",
+      "concepts": [
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-063",
+      "type": "blank",
+      "prompt": "پسوند متداول literal float چیست؟",
+      "answers": [
+        "F",
+        "f"
+      ],
+      "explanation": "F یک literal اعشاری را float می‌کند.",
+      "concepts": [
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-064",
+      "type": "blank",
+      "prompt": "کلیدواژهٔ استنباط نوع متغیر محلی چیست؟",
+      "answers": [
+        "var"
+      ],
+      "explanation": "var نوع را از مقدار اولیه استنباط می‌کند.",
+      "concepts": [
+        "var"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-065",
+      "type": "blank",
+      "prompt": "نوع نخستین درست/نادرست چیست؟",
+      "answers": [
+        "boolean"
+      ],
+      "explanation": "boolean فقط true یا false می‌پذیرد.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-066",
+      "type": "blank",
+      "prompt": "نوع نخستین یک نویسه چیست؟",
+      "answers": [
+        "char"
+      ],
+      "explanation": "char یک نویسه را نگه می‌دارد.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-067",
+      "type": "blank",
+      "prompt": "قابلیت String چندخطی جاوا چه نام دارد؟",
+      "answers": [
+        "text block",
+        "textblock",
+        "text blocks"
+      ],
+      "explanation": "text block برای literal رشته‌ای چندخطی است.",
+      "concepts": [
+        "text-blocks"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-068",
+      "type": "blank",
+      "prompt": "wrapper متناظر با boolean چیست؟",
+      "answers": [
+        "Boolean"
+      ],
+      "explanation": "Boolean کلاس پوششی boolean است.",
+      "concepts": [
+        "wrappers"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-069",
+      "type": "blank",
+      "prompt": "wrapper متناظر با char چیست؟",
+      "answers": [
+        "Character"
+      ],
+      "explanation": "Character کلاس پوششی char است.",
+      "concepts": [
+        "wrappers"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-070",
+      "type": "blank",
+      "prompt": "در `var ready = true;` نوع ready چیست؟",
+      "answers": [
+        "boolean"
+      ],
+      "explanation": "true یک literal boolean است.",
+      "concepts": [
+        "var",
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-071",
+      "type": "blank",
+      "prompt": "در `var count = 9L;` نوع count چیست؟",
+      "answers": [
+        "long"
+      ],
+      "explanation": "پسوند L نوع literal را long می‌کند.",
+      "concepts": [
+        "var",
+        "literals"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-072",
+      "type": "blank",
+      "prompt": "در `var word = \"کتاب\";` نوع word چیست؟",
+      "answers": [
+        "String"
+      ],
+      "explanation": "literal رشته‌ای نوع String می‌دهد.",
+      "concepts": [
+        "var",
+        "strings"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-073",
+      "type": "blank",
+      "prompt": "نوع نخستین عدد صحیح ۱۶بیتی چیست؟",
+      "answers": [
+        "short"
+      ],
+      "explanation": "short عدد صحیح ۱۶بیتی است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-074",
+      "type": "blank",
+      "prompt": "نوع نخستین عدد صحیح ۸بیتی چیست؟",
+      "answers": [
+        "byte"
+      ],
+      "explanation": "byte عدد صحیح ۸بیتی است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-075",
+      "type": "blank",
+      "prompt": "نوع پیش‌فرض literal `2.0` چیست؟",
+      "answers": [
+        "double"
+      ],
+      "explanation": "literal اعشاری بدون پسوند double است.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-076",
+      "type": "blank",
+      "prompt": "literal بولیِ منفی چیست؟",
+      "answers": [
+        "false"
+      ],
+      "explanation": "false یکی از دو literal boolean است.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-077",
+      "type": "blank",
+      "prompt": "متغیر اشاره‌کننده به شیء چه نوعی دارد؟",
+      "answers": [
+        "reference",
+        "مرجع"
+      ],
+      "explanation": "متغیر نوع مرجع یک reference نگه می‌دارد.",
+      "concepts": [
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-078",
+      "type": "blank",
+      "prompt": "در `Integer n = 5;`، Integer چه نوعی است؟",
+      "answers": [
+        "reference",
+        "مرجع"
+      ],
+      "explanation": "Integer یک نوع مرجع است.",
+      "concepts": [
+        "wrappers",
+        "reference-types"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-079",
+      "type": "blank",
+      "prompt": "نام String با طول صفر چیست؟",
+      "answers": [
+        "empty string",
+        "رشته خالی"
+      ],
+      "explanation": "`\"\"` یک رشتهٔ خالی است.",
+      "concepts": [
+        "strings"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    },
+    {
+      "id": "g1-types-080",
+      "type": "blank",
+      "prompt": "واژهٔ انگلیسی هویت شیء چیست؟",
+      "answers": [
+        "identity"
+      ],
+      "explanation": "identity بیان می‌کند دو مرجع همان شیء هستند یا نه.",
+      "concepts": [
+        "equals-identity"
+      ],
+      "difficulty": "easy",
+      "prerequisites": []
+    }
+  ]
+}

@@ -1,0 +1,1551 @@
+{
+  "questions": [
+    {
+      "id": "g2-seed-001",
+      "type": "mcq",
+      "prompt": "خروجی `8 / 2 + 1` برای int چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "تقسیم پیش از جمع انجام می‌شود و نتیجه 5 است.",
+      "concepts": [
+        "operators",
+        "precedence"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "int"
+      ],
+      "options": {
+        "A": "4",
+        "B": "4.5",
+        "C": "5",
+        "D": "9"
+      }
+    },
+    {
+      "id": "g2-seed-002",
+      "type": "blank",
+      "prompt": "برای باقی‌ماندهٔ تقسیم صحیح از عملگر ____ استفاده می‌کنیم.",
+      "answers": [
+        "%"
+      ],
+      "explanation": "عملگر % باقی‌ماندهٔ تقسیم را برمی‌گرداند.",
+      "concepts": [
+        "operators",
+        "modulo"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "int"
+      ]
+    },
+    {
+      "id": "g2-seed-003",
+      "type": "tf",
+      "prompt": "عبارت `5 > 3 && 2 == 2` برابر true است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "هر دو بخش شرط true هستند.",
+      "concepts": [
+        "boolean",
+        "logical-operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "g2-seed-004",
+      "type": "mcq",
+      "prompt": "کدام شرط تشخیص می‌دهد n فرد است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "عدد فرد در تقسیم بر 2 باقی‌ماندهٔ غیرصفر دارد.",
+      "concepts": [
+        "modulo",
+        "conditionals"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`n / 2 == 1`",
+        "B": "`n % 2 != 0`",
+        "C": "`n % 2 == 0`",
+        "D": "`n = 1`"
+      }
+    },
+    {
+      "id": "g2-seed-005",
+      "type": "multi",
+      "prompt": "کدام عملگرها short-circuit دارند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "&& در false بودن سمت چپ و || در true بودن سمت چپ، بخش راست را اجرا نمی‌کنند.",
+      "concepts": [
+        "short-circuit",
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "&&",
+        "B": "&",
+        "C": "||",
+        "D": "|"
+      }
+    },
+    {
+      "id": "g2-seed-006",
+      "type": "mcq",
+      "prompt": "پس از `int x=3; x += 4;` مقدار x چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "x += 4 نتیجهٔ جمع را دوباره در x می‌گذارد.",
+      "concepts": [
+        "assignment-operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "7",
+        "B": "3",
+        "C": "4",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g2-seed-007",
+      "type": "tf",
+      "prompt": "در شرط if می‌توان به جای boolean یک int نوشت.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "Java تبدیل ضمنی عدد به boolean ندارد.",
+      "concepts": [
+        "if",
+        "boolean"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-seed-008",
+      "type": "blank",
+      "prompt": "برای خروج فوری از نزدیک‌ترین حلقه یا switch از ____ استفاده می‌شود.",
+      "answers": [
+        "break"
+      ],
+      "explanation": "break اجرای ساختار کنترلی نزدیک را خاتمه می‌دهد.",
+      "concepts": [
+        "loops",
+        "break"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-seed-009",
+      "type": "mcq",
+      "prompt": "خروجی `for(int i=0;i<3;i++) System.out.print(i);` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "i به ترتیب 0، 1 و 2 است.",
+      "concepts": [
+        "for-loop"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "123",
+        "B": "012",
+        "C": "0123",
+        "D": "0"
+      }
+    },
+    {
+      "id": "g2-seed-010",
+      "type": "multi",
+      "prompt": "کدام گزاره‌ها دربارهٔ switch expression درست‌اند؟",
+      "answers": [
+        "A",
+        "D"
+      ],
+      "explanation": "case با -> fall-through ندارد و switch expression می‌تواند مقدار بدهد.",
+      "concepts": [
+        "switch",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "switch"
+      ],
+      "options": {
+        "A": "`case ... ->` fall-through ندارد",
+        "B": "همیشه default لازم دارد",
+        "C": "هرگز مقدار برنمی‌گرداند",
+        "D": "می‌توان نتیجه را به متغیر داد"
+      }
+    },
+    {
+      "id": "g2-seed-011",
+      "type": "mcq",
+      "prompt": "اگر ready false باشد، در `if (ready) send(); else wait();` چه اجرا می‌شود؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "else فقط وقتی اجرا می‌شود که شرط false باشد.",
+      "concepts": [
+        "if-else"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "send",
+        "B": "هر دو",
+        "C": "خطای کامپایل",
+        "D": "wait"
+      }
+    },
+    {
+      "id": "g2-seed-012",
+      "type": "blank",
+      "prompt": "بخش شرط در `for(init; شرط; update)` باید به ____ ارزیابی شود.",
+      "answers": [
+        "boolean"
+      ],
+      "explanation": "شرط ادامهٔ حلقه باید boolean باشد.",
+      "concepts": [
+        "for-loop",
+        "boolean"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-seed-013",
+      "type": "tf",
+      "prompt": "continue در حلقهٔ for، باقی بدنه را رد می‌کند و سپس update را اجرا می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "کنترل پس از continue به بخش update حلقهٔ for می‌رود.",
+      "concepts": [
+        "continue",
+        "for-loop"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-seed-014",
+      "type": "mcq",
+      "prompt": "کدام حلقه حتماً به پایان می‌رسد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "در گزینهٔ C شمارنده در نهایت شرط را false می‌کند.",
+      "concepts": [
+        "while-loop"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "`int i=0; while(i<5) {}`",
+        "B": "`int i=5; while(i>0) { i++; }`",
+        "C": "`int i=0; while(i<5) { i++; }`",
+        "D": "`while(true) {}`"
+      }
+    },
+    {
+      "id": "g2-seed-015",
+      "type": "multi",
+      "prompt": "کدام سن‌ها شرط `age >= 18 && age <= 65` را پاس می‌کنند؟",
+      "answers": [
+        "B",
+        "C"
+      ],
+      "explanation": "کران‌های شرط شامل هستند.",
+      "concepts": [
+        "ranges",
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "comparison"
+      ],
+      "options": {
+        "A": "17",
+        "B": "18",
+        "C": "65",
+        "D": "66"
+      }
+    },
+    {
+      "id": "g3-seed-001",
+      "type": "mcq",
+      "prompt": "کدام فراخوانی طول String را برمی‌گرداند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "length() متد String است و با پرانتز فراخوانی می‌شود.",
+      "concepts": [
+        "String",
+        "methods"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "objects"
+      ],
+      "options": {
+        "A": "`text.length()`",
+        "B": "`text.length`",
+        "C": "`String.length(text)`",
+        "D": "`text.size()`"
+      }
+    },
+    {
+      "id": "g3-seed-002",
+      "type": "blank",
+      "prompt": "برای مقایسهٔ محتوای دو String از متد ____ استفاده می‌شود.",
+      "answers": [
+        "equals"
+      ],
+      "explanation": "== معمولاً reference را مقایسه می‌کند، نه محتوای متن را.",
+      "concepts": [
+        "String",
+        "equality"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-seed-003",
+      "type": "tf",
+      "prompt": "`\"Java\".toLowerCase()` رشتهٔ اصلی را تغییر می‌دهد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "String immutable است و متد، String تازه برمی‌گرداند.",
+      "concepts": [
+        "immutability",
+        "String"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-seed-004",
+      "type": "mcq",
+      "prompt": "نتیجهٔ `Math.max(-2, 4)` چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "Math.max مقدار بزرگ‌تر را برمی‌گرداند.",
+      "concepts": [
+        "Math",
+        "static-methods"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "-6",
+        "B": "-2",
+        "C": "2",
+        "D": "4"
+      }
+    },
+    {
+      "id": "g3-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها متد معتبر String برای جست‌وجو هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "contains، startsWith و indexOf متدهای String هستند.",
+      "concepts": [
+        "String",
+        "search"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "contains",
+        "B": "startsWith",
+        "C": "find",
+        "D": "indexOf"
+      }
+    },
+    {
+      "id": "g3-seed-006",
+      "type": "mcq",
+      "prompt": "برای متدی با بازگشت void کدام گزاره درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "void یعنی متد مقداری برای استفاده در expression برنمی‌گرداند.",
+      "concepts": [
+        "methods",
+        "return-type"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "همیشه null می‌دهد",
+        "B": "مقداری برنمی‌گرداند",
+        "C": "فقط static است",
+        "D": "پارامتر ندارد"
+      }
+    },
+    {
+      "id": "g3-seed-007",
+      "type": "blank",
+      "prompt": "برای ساخت آرایهٔ پنج‌تایی int می‌نویسیم `new int[____]`.",
+      "answers": [
+        "5"
+      ],
+      "explanation": "اندیس‌های این آرایه از صفر تا چهارند.",
+      "concepts": [
+        "arrays"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-seed-008",
+      "type": "tf",
+      "prompt": "دسترسی به `items[items.length]` معتبر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "آخرین اندیس مجاز length - 1 است.",
+      "concepts": [
+        "arrays",
+        "bounds"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-seed-009",
+      "type": "mcq",
+      "prompt": "خروجی `\"ab\".substring(1)` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "substring از اندیس آغاز شامل تا پایان رشته را می‌دهد.",
+      "concepts": [
+        "String",
+        "substring"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "ab",
+        "B": "a",
+        "C": "b",
+        "D": "خطا"
+      }
+    },
+    {
+      "id": "g3-seed-010",
+      "type": "multi",
+      "prompt": "کدام امضاها overload معتبر برای `sum` هستند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "نوع یا تعداد پارامترها باید متفاوت باشد؛ return type به تنهایی کافی نیست.",
+      "concepts": [
+        "overloading",
+        "methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "`int sum(int a, int b)`",
+        "B": "`long sum(int a, int b)`",
+        "C": "`int sum(double a, double b)`",
+        "D": "`int sum(int x, int y)`"
+      }
+    },
+    {
+      "id": "g3-seed-011",
+      "type": "mcq",
+      "prompt": "`return;` بدون مقدار در کدام متد مجاز است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "return بدون expression فقط در void مجاز است.",
+      "concepts": [
+        "return",
+        "methods"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "return"
+      ],
+      "options": {
+        "A": "void",
+        "B": "int",
+        "C": "String",
+        "D": "boolean"
+      }
+    },
+    {
+      "id": "g3-seed-012",
+      "type": "blank",
+      "prompt": "برای تبدیل `\"42\"` به int از `Integer.____(\"42\")` استفاده می‌کنیم.",
+      "answers": [
+        "parseInt"
+      ],
+      "explanation": "parseInt متد static کلاس Integer است.",
+      "concepts": [
+        "parsing",
+        "Integer"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String",
+        "int"
+      ]
+    },
+    {
+      "id": "g3-seed-013",
+      "type": "tf",
+      "prompt": "پارامترهای متد، متغیرهای محلی همان متد هستند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "scope پارامترها بدنهٔ متد است.",
+      "concepts": [
+        "methods",
+        "scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g3-seed-014",
+      "type": "mcq",
+      "prompt": "`Arrays.sort(values)` چه می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "این overload همان آرایه را مرتب می‌کند و void است.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "آرایهٔ جدید می‌سازد",
+        "B": "همان آرایه را تغییر می‌دهد",
+        "C": "فقط String را مرتب می‌کند",
+        "D": "نزولی مرتب می‌کند"
+      }
+    },
+    {
+      "id": "g3-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها NumberFormatException می‌سازند؟",
+      "answers": [
+        "A",
+        "D"
+      ],
+      "explanation": "متن غیرعددی یا عدد خارج از بازهٔ int نامعتبر است.",
+      "concepts": [
+        "exceptions",
+        "parsing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "`Integer.parseInt(\"x\")`",
+        "B": "`Integer.parseInt(\"12\")`",
+        "C": "`Math.abs(-1)`",
+        "D": "`Integer.parseInt(\"999999999999\")"
+      }
+    },
+    {
+      "id": "g4-seed-001",
+      "type": "mcq",
+      "prompt": "constructor چه زمانی اجرا می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "constructor هنگام ساخت شیء با new اجرا می‌شود.",
+      "concepts": [
+        "constructors",
+        "objects"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "پایان برنامه",
+        "B": "ساخت شیء",
+        "C": "فقط متد static",
+        "D": "پس از GC"
+      }
+    },
+    {
+      "id": "g4-seed-002",
+      "type": "blank",
+      "prompt": "برای ارجاع به field شیء فعلی در constructor از ____ استفاده می‌کنیم.",
+      "answers": [
+        "this"
+      ],
+      "explanation": "this به شیء فعلی اشاره دارد.",
+      "concepts": [
+        "this",
+        "constructors"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ]
+    },
+    {
+      "id": "g4-seed-003",
+      "type": "tf",
+      "prompt": "اگر constructorی تعریف نکنیم، کامپایلر constructor بدون پارامتر می‌سازد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "تا زمانی که constructor دیگری نباشد، constructor پیش‌فرض تولید می‌شود.",
+      "concepts": [
+        "constructors"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "classes"
+      ]
+    },
+    {
+      "id": "g4-seed-004",
+      "type": "mcq",
+      "prompt": "کدام اعلان ارث‌بری درست است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "فرزند با extends یک class پایه را گسترش می‌دهد.",
+      "concepts": [
+        "inheritance"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "`class Dog implements Animal`",
+        "B": "`class Dog inherits Animal`",
+        "C": "`class Dog extends Animal`",
+        "D": "`class Dog : Animal`"
+      }
+    },
+    {
+      "id": "g4-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها کپسوله‌سازی‌اند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "private کردن state و validation در setter دسترسی را کنترل می‌کند.",
+      "concepts": [
+        "encapsulation",
+        "access-modifiers"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "private کردن field",
+        "B": "public کردن همهٔ fieldها",
+        "C": "اعتبارسنجی در setter",
+        "D": "static کردن همهٔ fieldها"
+      }
+    },
+    {
+      "id": "g4-seed-006",
+      "type": "mcq",
+      "prompt": "چرا فرزند `super(name)` را صدا می‌زند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "این کار بخش والد را با constructor آن مقداردهی می‌کند.",
+      "concepts": [
+        "inheritance",
+        "super"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "constructors"
+      ],
+      "options": {
+        "A": "ساخت interface",
+        "B": "مقداردهی والد",
+        "C": "حذف field والد",
+        "D": "override constructor"
+      }
+    },
+    {
+      "id": "g4-seed-007",
+      "type": "blank",
+      "prompt": "متد هم‌امضا در فرزند که رفتار والد را عوض کند، ____ می‌شود.",
+      "answers": [
+        "override"
+      ],
+      "explanation": "override پیاده‌سازی inherited method را جایگزین می‌کند.",
+      "concepts": [
+        "overriding",
+        "polymorphism"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "inheritance"
+      ]
+    },
+    {
+      "id": "g4-seed-008",
+      "type": "tf",
+      "prompt": "یک class می‌تواند با extends از دو class ارث ببرد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "Java برای classها single inheritance دارد.",
+      "concepts": [
+        "inheritance"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "inheritance"
+      ]
+    },
+    {
+      "id": "g4-seed-009",
+      "type": "mcq",
+      "prompt": "در `Animal a = new Cat(); a.sound();` انتخاب پیاده‌سازی به چه بستگی دارد؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "dispatch متد instance بر مبنای نوع واقعی شیء انجام می‌شود.",
+      "concepts": [
+        "polymorphism",
+        "dispatch"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "inheritance"
+      ],
+      "options": {
+        "A": "نام متغیر",
+        "B": "نوع بازگشت",
+        "C": "ترتیب import",
+        "D": "نوع واقعی شیء"
+      }
+    },
+    {
+      "id": "g4-seed-010",
+      "type": "multi",
+      "prompt": "کدام modifierها از public محدودترند؟",
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "private، protected و package-private محدودتر از public هستند.",
+      "concepts": [
+        "access-modifiers"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "private",
+        "B": "protected",
+        "C": "بدون modifier",
+        "D": "public"
+      }
+    },
+    {
+      "id": "g4-seed-011",
+      "type": "mcq",
+      "prompt": "کدام field بین همهٔ نمونه‌ها مشترک است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "static field متعلق به خود class است.",
+      "concepts": [
+        "static",
+        "fields"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "`static int count`",
+        "B": "`final int id`",
+        "C": "`private int age`",
+        "D": "`int score`"
+      }
+    },
+    {
+      "id": "g4-seed-012",
+      "type": "blank",
+      "prompt": "قالب تعریف state و behavior برای objectها، ____ نام دارد.",
+      "answers": [
+        "class"
+      ],
+      "explanation": "class ویژگی‌ها و رفتار objectها را تعریف می‌کند.",
+      "concepts": [
+        "classes",
+        "objects"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g4-seed-013",
+      "type": "tf",
+      "prompt": "final بودن یک reference ثابت می‌کند شیء مورد اشاره immutable است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "final فقط انتساب reference به شیء دیگر را منع می‌کند.",
+      "concepts": [
+        "final",
+        "references"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "references"
+      ]
+    },
+    {
+      "id": "g4-seed-014",
+      "type": "mcq",
+      "prompt": "کاربرد `@Override` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "کامپایلر خطای امضای نامعتبر هنگام override را آشکار می‌کند.",
+      "concepts": [
+        "overriding",
+        "annotations"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "inheritance"
+      ],
+      "options": {
+        "A": "متد را static می‌کند",
+        "B": "overload را ممنوع می‌کند",
+        "C": "override نامعتبر را کشف می‌کند",
+        "D": "والد را abstract می‌کند"
+      }
+    },
+    {
+      "id": "g4-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها برای value object مناسب‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "برابری بر اساس state و state پایدار برای value object مناسب‌اند.",
+      "concepts": [
+        "object-design",
+        "equals"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "equals/hashCode بر اساس state",
+        "B": "field عمومی mutable",
+        "C": "state ترجیحاً immutable",
+        "D": "اعتبارسنجی هنگام ساخت"
+      }
+    },
+    {
+      "id": "g5-seed-001",
+      "type": "mcq",
+      "prompt": "برای اعلام پیاده‌سازی Runnable در class از چه استفاده می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "implements یک interface را به class متصل می‌کند.",
+      "concepts": [
+        "interfaces"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "extends",
+        "B": "implements",
+        "C": "inherits",
+        "D": "permits"
+      }
+    },
+    {
+      "id": "g5-seed-002",
+      "type": "blank",
+      "prompt": "record برای component `name` accessorی به نام ____ می‌سازد.",
+      "answers": [
+        "name()"
+      ],
+      "explanation": "برای `record User(String name)` accessor همان name() است.",
+      "concepts": [
+        "records"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ]
+    },
+    {
+      "id": "g5-seed-003",
+      "type": "tf",
+      "prompt": "componentهای یک record به‌طور پیش‌فرض final هستند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "state سطح‌بالای record پس از ساخت تغییر نمی‌کند.",
+      "concepts": [
+        "records",
+        "immutability"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "records"
+      ]
+    },
+    {
+      "id": "g5-seed-004",
+      "type": "mcq",
+      "prompt": "برای مجموعهٔ ثابت وضعیت‌های سفارش چه typeی مناسب‌تر است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "enum برای ثابت‌های نام‌دار و محدود مناسب است.",
+      "concepts": [
+        "enums"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "array",
+        "B": "exception",
+        "C": "enum",
+        "D": "package"
+      }
+    },
+    {
+      "id": "g5-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها می‌توانند در enum تعریف شوند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "enum می‌تواند field، constructor و method داشته باشد.",
+      "concepts": [
+        "enums"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "enums"
+      ],
+      "options": {
+        "A": "field",
+        "B": "method",
+        "C": "extends از class دلخواه",
+        "D": "constructor"
+      }
+    },
+    {
+      "id": "g5-seed-006",
+      "type": "mcq",
+      "prompt": "کدام تعریف sealed hierarchy درست است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "sealed class subtypeهای مستقیم مجاز را با permits مشخص می‌کند.",
+      "concepts": [
+        "sealed-classes"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "inheritance"
+      ],
+      "options": {
+        "A": "`sealed class Shape permits Circle, Square {}`",
+        "B": "`sealed class Shape extends Circle {}`",
+        "C": "`sealed interface Shape final {}`",
+        "D": "`sealed class Shape implements String {}`"
+      }
+    },
+    {
+      "id": "g5-seed-007",
+      "type": "blank",
+      "prompt": "فرزند مستقیم sealed class باید final، sealed یا ____ باشد.",
+      "answers": [
+        "non-sealed"
+      ],
+      "explanation": "این modifier شاخه را برای ارث‌بری دوباره باز می‌کند.",
+      "concepts": [
+        "sealed-classes"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "sealed-classes"
+      ]
+    },
+    {
+      "id": "g5-seed-008",
+      "type": "tf",
+      "prompt": "interface می‌تواند متد default با بدنه داشته باشد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "default method رفتار پیش‌فرض ارائه می‌دهد.",
+      "concepts": [
+        "interfaces",
+        "default-methods"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "interfaces"
+      ]
+    },
+    {
+      "id": "g5-seed-009",
+      "type": "mcq",
+      "prompt": "اگر دو interface متد default هم‌امضا بدهند، class چه می‌کند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "class باید تعارض را با override صریح حل کند.",
+      "concepts": [
+        "interfaces",
+        "default-methods"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "interfaces"
+      ],
+      "options": {
+        "A": "تصادفی یکی را می‌گیرد",
+        "B": "هر دو را اجرا می‌کند",
+        "C": "import آخر را می‌گیرد",
+        "D": "باید override کند"
+      }
+    },
+    {
+      "id": "g5-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها مزیت record هستند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "record boilerplate را کاهش داده و اعضای value-based تولید می‌کند.",
+      "concepts": [
+        "records"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "records"
+      ],
+      "options": {
+        "A": "کاهش boilerplate",
+        "B": "ارث‌بری از هر class",
+        "C": "equals/hashCode خودکار",
+        "D": "constructor canonical"
+      }
+    },
+    {
+      "id": "g5-seed-011",
+      "type": "mcq",
+      "prompt": "برای گرفتن همهٔ ثابت‌های `Status` از چه استفاده می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "values() آرایهٔ ثابت‌های enum را می‌دهد.",
+      "concepts": [
+        "enums"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "enums"
+      ],
+      "options": {
+        "A": "`Status.all()`",
+        "B": "`Status.values()`",
+        "C": "`Status.items()`",
+        "D": "`new Status()`"
+      }
+    },
+    {
+      "id": "g5-seed-012",
+      "type": "blank",
+      "prompt": "متد abstract عادی در interface به‌طور ضمنی ____ است.",
+      "answers": [
+        "public abstract"
+      ],
+      "explanation": "متدهای قراردادی interface به‌طور ضمنی public abstract هستند.",
+      "concepts": [
+        "interfaces",
+        "abstract"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "interfaces"
+      ]
+    },
+    {
+      "id": "g5-seed-013",
+      "type": "tf",
+      "prompt": "می‌توان با `new` مستقیماً از interface شیء ساخت.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "interface قرارداد است و به پیاده‌سازی نیاز دارد.",
+      "concepts": [
+        "interfaces"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "interfaces"
+      ]
+    },
+    {
+      "id": "g5-seed-014",
+      "type": "mcq",
+      "prompt": "چه چیزی switch را روی sealed hierarchy به exhaustive بودن نزدیک می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "کامپایلر فهرست subtypeهای مجاز را می‌شناسد.",
+      "concepts": [
+        "sealed-classes",
+        "switch"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "sealed-classes",
+        "switch"
+      ],
+      "options": {
+        "A": "reflection",
+        "B": "serialization",
+        "C": "permits list",
+        "D": "GC"
+      }
+    },
+    {
+      "id": "g5-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ interface درست‌اند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "class می‌تواند چند interface را پیاده کند و interface static یا private method دارد.",
+      "concepts": [
+        "interfaces"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "interfaces"
+      ],
+      "options": {
+        "A": "class می‌تواند چند interface پیاده کند",
+        "B": "می‌تواند static method داشته باشد",
+        "C": "instance field mutable دارد",
+        "D": "می‌تواند private helper داشته باشد"
+      }
+    },
+    {
+      "id": "g6-seed-001",
+      "type": "mcq",
+      "prompt": "کدام lambda با `Predicate<String>` سازگار است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "Predicate یک ورودی گرفته و boolean برمی‌گرداند.",
+      "concepts": [
+        "lambdas",
+        "Predicate"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "interfaces"
+      ],
+      "options": {
+        "A": "`s -> System.out.println(s)`",
+        "B": "`s -> s.isBlank()`",
+        "C": "`() -> \"ok\"`",
+        "D": "`(a,b) -> a+b`"
+      }
+    },
+    {
+      "id": "g6-seed-002",
+      "type": "blank",
+      "prompt": "interface تابعی `Function<T,R>` متد اصلی ____ دارد.",
+      "answers": [
+        "apply"
+      ],
+      "explanation": "apply ورودی T را به نتیجهٔ R تبدیل می‌کند.",
+      "concepts": [
+        "functional-interfaces",
+        "Function"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "lambdas"
+      ]
+    },
+    {
+      "id": "g6-seed-003",
+      "type": "tf",
+      "prompt": "متغیر محلی captureشده در lambda باید final یا effectively final باشد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "lambda نمی‌تواند local variable دوباره‌انتساب‌شده را capture کند.",
+      "concepts": [
+        "lambdas",
+        "scope"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "lambdas"
+      ]
+    },
+    {
+      "id": "g6-seed-004",
+      "type": "mcq",
+      "prompt": "برای افزودن به انتهای ArrayList از چه متدی استفاده می‌شود؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "add(element) عنصر را به پایان list اضافه می‌کند.",
+      "concepts": [
+        "collections",
+        "ArrayList"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "collections"
+      ],
+      "options": {
+        "A": "add",
+        "B": "put",
+        "C": "pushFront",
+        "D": "appendAll"
+      }
+    },
+    {
+      "id": "g6-seed-005",
+      "type": "multi",
+      "prompt": "کدام collectionها ترتیب درج را حفظ می‌کنند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "ArrayList و LinkedHashSet ترتیب درج را نگه می‌دارند.",
+      "concepts": [
+        "collections",
+        "ordering"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "collections"
+      ],
+      "options": {
+        "A": "ArrayList",
+        "B": "HashSet",
+        "C": "LinkedHashSet",
+        "D": "HashMap"
+      }
+    },
+    {
+      "id": "g6-seed-006",
+      "type": "mcq",
+      "prompt": "`List<? extends Number>` چه تضمینی می‌دهد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "خواندن مقدار به شکل Number امن است.",
+      "concepts": [
+        "generics",
+        "wildcards"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "generics"
+      ],
+      "options": {
+        "A": "می‌توان Number افزود",
+        "B": "فقط String نگه می‌دارد",
+        "C": "خواندن Number امن است",
+        "D": "هیچ چیز خوانده نمی‌شود"
+      }
+    },
+    {
+      "id": "g6-seed-007",
+      "type": "blank",
+      "prompt": "قاعدهٔ PECS می‌گوید producer extends و consumer ____ است.",
+      "answers": [
+        "super"
+      ],
+      "explanation": "? super T برای نوشتن T مناسب است.",
+      "concepts": [
+        "generics",
+        "PECS"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "generics"
+      ]
+    },
+    {
+      "id": "g6-seed-008",
+      "type": "tf",
+      "prompt": "`List<String>` زیرنوع `List<Object>` است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "genericهای Java invariant هستند.",
+      "concepts": [
+        "generics",
+        "invariance"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "generics"
+      ]
+    },
+    {
+      "id": "g6-seed-009",
+      "type": "mcq",
+      "prompt": "برای خواندن مقدار key از `Map<String,Integer> counts` چه می‌نویسیم؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "get مقدار مرتبط با key را می‌دهد.",
+      "concepts": [
+        "collections",
+        "Map"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Map"
+      ],
+      "options": {
+        "A": "`counts.value(\"a\")`",
+        "B": "`counts.at(\"a\")`",
+        "C": "`counts.find(\"a\")`",
+        "D": "`counts.get(\"a\")"
+      }
+    },
+    {
+      "id": "g6-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها functional interface استانداردند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "Consumer، Supplier و Comparator هر کدام یک SAM دارند.",
+      "concepts": [
+        "functional-interfaces"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "interfaces"
+      ],
+      "options": {
+        "A": "Consumer",
+        "B": "Supplier",
+        "C": "List",
+        "D": "Comparator"
+      }
+    },
+    {
+      "id": "g6-seed-011",
+      "type": "mcq",
+      "prompt": "diamond operator در `new ArrayList<>()` چه می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "type argument را از context استنباط می‌کند.",
+      "concepts": [
+        "generics",
+        "type-inference"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "generics"
+      ],
+      "options": {
+        "A": "immutable list می‌سازد",
+        "B": "type argument را استنباط می‌کند",
+        "C": "مرتب می‌کند",
+        "D": "null را حذف می‌کند"
+      }
+    },
+    {
+      "id": "g6-seed-012",
+      "type": "blank",
+      "prompt": "برای پیمایش هم‌زمان key و value یک Map از ____ استفاده کنید.",
+      "answers": [
+        "entrySet()"
+      ],
+      "explanation": "هر entry یک key و value دارد.",
+      "concepts": [
+        "Map",
+        "iteration"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Map"
+      ]
+    },
+    {
+      "id": "g6-seed-013",
+      "type": "tf",
+      "prompt": "Set معمولاً عنصر تکراری بر اساس equals را نگه نمی‌دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "افزودن مقدار برابر، عضویت Set را تغییر نمی‌دهد.",
+      "concepts": [
+        "Set",
+        "equals"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "collections"
+      ]
+    },
+    {
+      "id": "g6-seed-014",
+      "type": "mcq",
+      "prompt": "کدام collection برای صف FIFO مناسب است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "ArrayDeque انتخاب مناسب برای عملیات Queue است.",
+      "concepts": [
+        "Queue",
+        "collections"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "collections"
+      ],
+      "options": {
+        "A": "HashSet",
+        "B": "TreeMap",
+        "C": "ArrayDeque",
+        "D": "EnumSet"
+      }
+    },
+    {
+      "id": "g6-seed-015",
+      "type": "multi",
+      "prompt": "روی `List<? super Integer>` کدام عملیات امن است؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "می‌توان Integer افزود؛ خواندن فقط به صورت Object امن است.",
+      "concepts": [
+        "generics",
+        "wildcards"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "generics"
+      ],
+      "options": {
+        "A": "`add(3)`",
+        "B": "خواندن مستقیم به Integer",
+        "C": "`add(Integer.valueOf(4))`",
+        "D": "خواندن مستقیم به Number"
+      }
+    }
+  ]
+}

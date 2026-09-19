@@ -1,0 +1,319 @@
+{
+  "title": "درجهٔ 3",
+  "version": 2,
+  "questions": [
+    {
+      "id": "g3-seed-001",
+      "type": "mcq",
+      "prompt": "کدام فراخوانی طول String را برمی‌گرداند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "length() متد String است و با پرانتز فراخوانی می‌شود.",
+      "concepts": [
+        "String",
+        "methods"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "objects"
+      ],
+      "options": {
+        "A": "`text.length()`",
+        "B": "`text.length`",
+        "C": "`String.length(text)`",
+        "D": "`text.size()`"
+      }
+    },
+    {
+      "id": "g3-seed-002",
+      "type": "blank",
+      "prompt": "برای مقایسهٔ محتوای دو String از متد ____ استفاده می‌شود.",
+      "answers": [
+        "equals"
+      ],
+      "explanation": "== معمولاً reference را مقایسه می‌کند، نه محتوای متن را.",
+      "concepts": [
+        "String",
+        "equality"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-seed-003",
+      "type": "tf",
+      "prompt": "`\"Java\".toLowerCase()` رشتهٔ اصلی را تغییر می‌دهد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "String immutable است و متد، String تازه برمی‌گرداند.",
+      "concepts": [
+        "immutability",
+        "String"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-seed-004",
+      "type": "mcq",
+      "prompt": "نتیجهٔ `Math.max(-2, 4)` چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "Math.max مقدار بزرگ‌تر را برمی‌گرداند.",
+      "concepts": [
+        "Math",
+        "static-methods"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "-6",
+        "B": "-2",
+        "C": "2",
+        "D": "4"
+      }
+    },
+    {
+      "id": "g3-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها متد معتبر String برای جست‌وجو هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "contains، startsWith و indexOf متدهای String هستند.",
+      "concepts": [
+        "String",
+        "search"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "contains",
+        "B": "startsWith",
+        "C": "find",
+        "D": "indexOf"
+      }
+    },
+    {
+      "id": "g3-seed-006",
+      "type": "mcq",
+      "prompt": "برای متدی با بازگشت void کدام گزاره درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "void یعنی متد مقداری برای استفاده در expression برنمی‌گرداند.",
+      "concepts": [
+        "methods",
+        "return-type"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "همیشه null می‌دهد",
+        "B": "مقداری برنمی‌گرداند",
+        "C": "فقط static است",
+        "D": "پارامتر ندارد"
+      }
+    },
+    {
+      "id": "g3-seed-007",
+      "type": "blank",
+      "prompt": "برای ساخت آرایهٔ پنج‌تایی int می‌نویسیم `new int[____]`.",
+      "answers": [
+        "5"
+      ],
+      "explanation": "اندیس‌های این آرایه از صفر تا چهارند.",
+      "concepts": [
+        "arrays"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-seed-008",
+      "type": "tf",
+      "prompt": "دسترسی به `items[items.length]` معتبر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "آخرین اندیس مجاز length - 1 است.",
+      "concepts": [
+        "arrays",
+        "bounds"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-seed-009",
+      "type": "mcq",
+      "prompt": "خروجی `\"ab\".substring(1)` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "substring از اندیس آغاز شامل تا پایان رشته را می‌دهد.",
+      "concepts": [
+        "String",
+        "substring"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "ab",
+        "B": "a",
+        "C": "b",
+        "D": "خطا"
+      }
+    },
+    {
+      "id": "g3-seed-010",
+      "type": "multi",
+      "prompt": "کدام امضاها overload معتبر برای `sum` هستند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "نوع یا تعداد پارامترها باید متفاوت باشد؛ return type به تنهایی کافی نیست.",
+      "concepts": [
+        "overloading",
+        "methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "`int sum(int a, int b)`",
+        "B": "`long sum(int a, int b)`",
+        "C": "`int sum(double a, double b)`",
+        "D": "`int sum(int x, int y)`"
+      }
+    },
+    {
+      "id": "g3-seed-011",
+      "type": "mcq",
+      "prompt": "`return;` بدون مقدار در کدام متد مجاز است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "return بدون expression فقط در void مجاز است.",
+      "concepts": [
+        "return",
+        "methods"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "return"
+      ],
+      "options": {
+        "A": "void",
+        "B": "int",
+        "C": "String",
+        "D": "boolean"
+      }
+    },
+    {
+      "id": "g3-seed-012",
+      "type": "blank",
+      "prompt": "برای تبدیل `\"42\"` به int از `Integer.____(\"42\")` استفاده می‌کنیم.",
+      "answers": [
+        "parseInt"
+      ],
+      "explanation": "parseInt متد static کلاس Integer است.",
+      "concepts": [
+        "parsing",
+        "Integer"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String",
+        "int"
+      ]
+    },
+    {
+      "id": "g3-seed-013",
+      "type": "tf",
+      "prompt": "پارامترهای متد، متغیرهای محلی همان متد هستند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "scope پارامترها بدنهٔ متد است.",
+      "concepts": [
+        "methods",
+        "scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g3-seed-014",
+      "type": "mcq",
+      "prompt": "`Arrays.sort(values)` چه می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "این overload همان آرایه را مرتب می‌کند و void است.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "آرایهٔ جدید می‌سازد",
+        "B": "همان آرایه را تغییر می‌دهد",
+        "C": "فقط String را مرتب می‌کند",
+        "D": "نزولی مرتب می‌کند"
+      }
+    },
+    {
+      "id": "g3-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها NumberFormatException می‌سازند؟",
+      "answers": [
+        "A",
+        "D"
+      ],
+      "explanation": "متن غیرعددی یا عدد خارج از بازهٔ int نامعتبر است.",
+      "concepts": [
+        "exceptions",
+        "parsing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "`Integer.parseInt(\"x\")`",
+        "B": "`Integer.parseInt(\"12\")`",
+        "C": "`Math.abs(-1)`",
+        "D": "`Integer.parseInt(\"999999999999\")"
+      }
+    }
+  ]
+}

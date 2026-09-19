@@ -1,0 +1,1901 @@
+{
+  "questions": [
+    {
+      "id": "g7-seed-001",
+      "type": "mcq",
+      "prompt": "کدام Stream operation تا terminal operation اجرا نمی‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "map یک operation میانی و lazy است.",
+      "concepts": [
+        "streams",
+        "laziness"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "streams"
+      ],
+      "options": {
+        "A": "collect",
+        "B": "map",
+        "C": "count",
+        "D": "forEach"
+      }
+    },
+    {
+      "id": "g7-seed-002",
+      "type": "blank",
+      "prompt": "برای جمع‌کردن Stream در List با collector از `____()` استفاده می‌شود.",
+      "answers": [
+        "collect(Collectors.toList)"
+      ],
+      "explanation": "این collector عناصر را در یک List گردآوری می‌کند.",
+      "concepts": [
+        "streams",
+        "collectors"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "streams"
+      ]
+    },
+    {
+      "id": "g7-seed-003",
+      "type": "tf",
+      "prompt": "Stream پس از terminal operation معمولاً قابل استفادهٔ دوباره نیست.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "Stream پس از مصرف بسته‌شده تلقی می‌شود.",
+      "concepts": [
+        "streams"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "streams"
+      ]
+    },
+    {
+      "id": "g7-seed-004",
+      "type": "mcq",
+      "prompt": "برای مقدار پیش‌فرض Optional<String> در نبود مقدار چه می‌نویسیم؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "orElse هنگام empty بودن مقدار جایگزین می‌دهد.",
+      "concepts": [
+        "Optional"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Optional"
+      ],
+      "options": {
+        "A": "`name.get()`",
+        "B": "`name.nullable()`",
+        "C": "`name.orElse(\"guest\")`",
+        "D": "`name.value()`"
+      }
+    },
+    {
+      "id": "g7-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها terminal operation هستند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "count، findFirst و reduce جریان را پایان می‌دهند.",
+      "concepts": [
+        "streams"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "streams"
+      ],
+      "options": {
+        "A": "count",
+        "B": "filter",
+        "C": "findFirst",
+        "D": "reduce"
+      }
+    },
+    {
+      "id": "g7-seed-006",
+      "type": "mcq",
+      "prompt": "ویژگی checked exception چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "باید catch شود یا در throws اعلام شود.",
+      "concepts": [
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "exceptions"
+      ],
+      "options": {
+        "A": "هرگز رخ نمی‌دهد",
+        "B": "کامپایلر رسیدگی را الزام می‌کند",
+        "C": "فقط RuntimeException است",
+        "D": "فقط در test است"
+      }
+    },
+    {
+      "id": "g7-seed-007",
+      "type": "blank",
+      "prompt": "resource در try-with-resources در پایان بلوک به‌طور خودکار ____ می‌شود.",
+      "answers": [
+        "close"
+      ],
+      "explanation": "close حتی در رخ‌دادن exception فراخوانی می‌شود.",
+      "concepts": [
+        "IO",
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "exceptions"
+      ]
+    },
+    {
+      "id": "g7-seed-008",
+      "type": "tf",
+      "prompt": "`Files.readString(path)` ممکن است IOException پرتاب کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "خطای خواندن فایل یک خطای I/O است.",
+      "concepts": [
+        "NIO",
+        "IO",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "exceptions"
+      ]
+    },
+    {
+      "id": "g7-seed-009",
+      "type": "mcq",
+      "prompt": "کدام روش Path قابل‌حمل‌تری می‌سازد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "Path.of اجزا را با separator پلتفرم ترکیب می‌کند.",
+      "concepts": [
+        "NIO",
+        "Path"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "IO"
+      ],
+      "options": {
+        "A": "`Path.of(\"data\", \"users.txt\")`",
+        "B": "`new File(\"data\\users.txt\")`",
+        "C": "`\"data/users.txt\"`",
+        "D": "`Path.text(\"data\")"
+      }
+    },
+    {
+      "id": "g7-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها از resource leak جلوگیری می‌کنند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "try-with-resources یا close مطمئن در finally منبع را آزاد می‌کند.",
+      "concepts": [
+        "resources",
+        "IO"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "IO"
+      ],
+      "options": {
+        "A": "try-with-resources",
+        "B": "اتکا به GC",
+        "C": "close در finally",
+        "D": "null کردن variable"
+      }
+    },
+    {
+      "id": "g7-seed-011",
+      "type": "mcq",
+      "prompt": "در multi-catch، پارامتر exception چه محدودیتی دارد؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "پارامتر multi-catch به‌طور ضمنی final است.",
+      "concepts": [
+        "exceptions",
+        "multi-catch"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "exceptions"
+      ],
+      "options": {
+        "A": "فقط IOException است",
+        "B": "فقط یک type مجاز است",
+        "C": "finally ممنوع است",
+        "D": "قابل reassignment نیست"
+      }
+    },
+    {
+      "id": "g7-seed-012",
+      "type": "blank",
+      "prompt": "در `filter(n -> n ____ 2 == 0)` جای خالی چیست؟",
+      "answers": [
+        "%"
+      ],
+      "explanation": "باقی‌ماندهٔ صفر نشان می‌دهد عدد زوج است.",
+      "concepts": [
+        "streams",
+        "filter"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "streams"
+      ]
+    },
+    {
+      "id": "g7-seed-013",
+      "type": "tf",
+      "prompt": "Optional باید جایگزین همهٔ fieldها و parameterها شود.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "Optional عمدتاً برای return typeهای ممکنِ بدون مقدار مناسب است.",
+      "concepts": [
+        "Optional",
+        "API-design"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Optional"
+      ]
+    },
+    {
+      "id": "g7-seed-014",
+      "type": "mcq",
+      "prompt": "برای حفظ cause هنگام تبدیل IOException چه رویکردی بهتر است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "exception را همراه پیام و cause بپیچید.",
+      "concepts": [
+        "exceptions",
+        "error-handling"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "exceptions"
+      ],
+      "options": {
+        "A": "نادیده‌گرفتن",
+        "B": "فقط چاپ کردن",
+        "C": "`throw new UncheckedIOException(\"خواندن ناموفق\", e)`",
+        "D": "catch کردن Throwable"
+      }
+    },
+    {
+      "id": "g7-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ `Files.lines(path)` درست‌اند؟",
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "Stream خطوط باید بسته شود و پردازش آن lazy است.",
+      "concepts": [
+        "NIO",
+        "streams",
+        "resources"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "streams",
+        "IO"
+      ],
+      "options": {
+        "A": "باید Stream را بست",
+        "B": "try-with-resources مناسب است",
+        "C": "همه خطوط فوری در حافظه‌اند",
+        "D": "IOException ناممکن است"
+      }
+    },
+    {
+      "id": "g8-seed-001",
+      "type": "mcq",
+      "prompt": "نام module descriptor جاوا چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "module-info.java وابستگی و exportها را تعریف می‌کند.",
+      "concepts": [
+        "modules"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "modules"
+      ],
+      "options": {
+        "A": "package-info.java",
+        "B": "module-info.java",
+        "C": "pom.xml",
+        "D": "manifest.java"
+      }
+    },
+    {
+      "id": "g8-seed-002",
+      "type": "blank",
+      "prompt": "برای نمایان‌کردن package ماژول برای دیگران از ____ استفاده می‌شود.",
+      "answers": [
+        "exports"
+      ],
+      "explanation": "exports API عمومی package را آشکار می‌کند.",
+      "concepts": [
+        "modules",
+        "encapsulation"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "modules"
+      ]
+    },
+    {
+      "id": "g8-seed-003",
+      "type": "tf",
+      "prompt": "`requires transitive` وابستگی را به مصرف‌کنندگان ماژول نیز منتقل می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "خوانندهٔ ماژول جاری آن وابستگی را نیز می‌خواند.",
+      "concepts": [
+        "modules",
+        "dependencies"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "modules"
+      ]
+    },
+    {
+      "id": "g8-seed-004",
+      "type": "mcq",
+      "prompt": "برای اجرای task با نتیجه کدام API مناسب است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "submit یک Future برای نتیجهٔ Callable برمی‌گرداند.",
+      "concepts": [
+        "concurrency",
+        "ExecutorService"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "`Thread.stop()`",
+        "B": "`Runnable.run()`",
+        "C": "`ExecutorService.submit()`",
+        "D": "`Object.wait()`"
+      }
+    },
+    {
+      "id": "g8-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ immutable object درست‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "state ثابت و defensive copy اشتراک‌گذاری thread-safe را آسان می‌کنند.",
+      "concepts": [
+        "concurrency",
+        "immutability"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "immutability"
+      ],
+      "options": {
+        "A": "اشتراک‌گذاری آن ساده‌تر است",
+        "B": "setter عمومی لازم دارد",
+        "C": "defensive copy برای input mutable مهم است",
+        "D": "state پس از ساخت عوض نمی‌شود"
+      }
+    },
+    {
+      "id": "g8-seed-006",
+      "type": "mcq",
+      "prompt": "کدام ابزار برای شمارندهٔ مشترک thread-safe مناسب‌تر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "AtomicInteger عملیات اتمی مانند incrementAndGet دارد.",
+      "concepts": [
+        "concurrency",
+        "atomic"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "`int` عادی",
+        "B": "`AtomicInteger`",
+        "C": "`StringBuilder`",
+        "D": "`HashMap`"
+      }
+    },
+    {
+      "id": "g8-seed-007",
+      "type": "blank",
+      "prompt": "برای پایان‌دادن به پذیرش task جدید در ExecutorService از ____ استفاده می‌شود.",
+      "answers": [
+        "shutdown()"
+      ],
+      "explanation": "shutdown task جدید را نمی‌پذیرد و taskهای موجود را برای اتمام می‌گذارد.",
+      "concepts": [
+        "concurrency",
+        "ExecutorService"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "concurrency"
+      ]
+    },
+    {
+      "id": "g8-seed-008",
+      "type": "tf",
+      "prompt": "`volatile` عملیات `count++` را اتمی می‌کند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "++ شامل خواندن، افزایش و نوشتن است و atomic نیست.",
+      "concepts": [
+        "concurrency",
+        "volatile"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "concurrency"
+      ]
+    },
+    {
+      "id": "g8-seed-009",
+      "type": "mcq",
+      "prompt": "در `synchronized(lock) { ... }` چه چیزی mutual exclusion را فراهم می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "monitor شیء lock فقط یک thread را در آن بلوک نگه می‌دارد.",
+      "concepts": [
+        "concurrency",
+        "synchronization"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "monitor شیء lock",
+        "B": "GC",
+        "C": "module path",
+        "D": "JIT"
+      }
+    },
+    {
+      "id": "g8-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها برای جلوگیری از deadlock مفیدند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "ترتیب یکسان lock، timeout و کوچک‌کردن محدودهٔ lock احتمال deadlock را کم می‌کند.",
+      "concepts": [
+        "concurrency",
+        "deadlock"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "ترتیب ثابت برای lockها",
+        "B": "tryLock با timeout",
+        "C": "گرفتن lock بیشتر",
+        "D": "کوتاه نگه داشتن بخش قفل‌شده"
+      }
+    },
+    {
+      "id": "g8-seed-011",
+      "type": "mcq",
+      "prompt": "`opens com.app.model to jackson;` چه کاربردی دارد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "opens اجازهٔ دسترسی reflective برای framework مشخص را می‌دهد.",
+      "concepts": [
+        "modules",
+        "reflection"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "modules"
+      ],
+      "options": {
+        "A": "export API کامپایل",
+        "B": "حذف package",
+        "C": "دسترسی reflection به jackson",
+        "D": "اجرای thread"
+      }
+    },
+    {
+      "id": "g8-seed-012",
+      "type": "blank",
+      "prompt": "interface `Callable<V>` برخلاف Runnable می‌تواند مقدار ____ برگرداند.",
+      "answers": [
+        "V"
+      ],
+      "explanation": "Callable نتیجهٔ typed می‌دهد و می‌تواند exception پرتاب کند.",
+      "concepts": [
+        "concurrency",
+        "Callable"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "concurrency"
+      ]
+    },
+    {
+      "id": "g8-seed-013",
+      "type": "tf",
+      "prompt": "استفاده از parallel stream همیشه برنامه را سریع‌تر می‌کند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "هزینهٔ split، merge و contention ممکن است آن را کندتر کند.",
+      "concepts": [
+        "concurrency",
+        "parallel-streams"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "streams"
+      ]
+    },
+    {
+      "id": "g8-seed-014",
+      "type": "mcq",
+      "prompt": "برای کار CPU-bound با تعداد worker محدود، کدام نقطهٔ شروع مناسب است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "fixed thread pool تعداد هم‌زمانی را محدود و قابل پیش‌بینی می‌کند.",
+      "concepts": [
+        "concurrency",
+        "thread-pool"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "thread نامحدود",
+        "B": "single thread برای همه‌چیز",
+        "C": "sleep در حلقه",
+        "D": "fixed thread pool"
+      }
+    },
+    {
+      "id": "g8-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ JPMS درست‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "requires وابستگی، exports API و opens reflection را کنترل می‌کنند.",
+      "concepts": [
+        "modules",
+        "JPMS"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "modules"
+      ],
+      "options": {
+        "A": "requires وابستگی را اعلام می‌کند",
+        "B": "exports همهٔ packageها را باز می‌کند",
+        "C": "opens برای reflection است",
+        "D": "ماژول encapsulation قوی‌تر می‌دهد"
+      }
+    },
+    {
+      "id": "g9-seed-001",
+      "type": "mcq",
+      "prompt": "DI در Spring چه مسئله‌ای را حل می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "container وابستگی‌ها را می‌سازد و تزریق می‌کند تا coupling مستقیم کم شود.",
+      "concepts": [
+        "Spring",
+        "dependency-injection"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "OOP"
+      ],
+      "options": {
+        "A": "حذف JVM",
+        "B": "مدیریت و تزریق وابستگی",
+        "C": "تبدیل SQL به JSON",
+        "D": "جایگزین HTTP"
+      }
+    },
+    {
+      "id": "g9-seed-002",
+      "type": "blank",
+      "prompt": "annotation رایج برای معرفی service به Spring، ____ است.",
+      "answers": [
+        "@Service"
+      ],
+      "explanation": "@Service یک stereotype برای component scanning است.",
+      "concepts": [
+        "Spring",
+        "beans"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "annotations"
+      ]
+    },
+    {
+      "id": "g9-seed-003",
+      "type": "tf",
+      "prompt": "constructor injection وابستگی اجباری را صریح و test کردن را ساده‌تر می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "وابستگی‌ها در constructor اعلام می‌شوند و mockپذیرند.",
+      "concepts": [
+        "Spring",
+        "dependency-injection"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g9-seed-004",
+      "type": "mcq",
+      "prompt": "Spring چگونه stereotype classها را معمولاً کشف می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "component scanning packageها را جست‌وجو می‌کند.",
+      "concepts": [
+        "Spring",
+        "component-scan"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "GC",
+        "B": "javac",
+        "C": "component scanning",
+        "D": "SQL join"
+      }
+    },
+    {
+      "id": "g9-seed-005",
+      "type": "multi",
+      "prompt": "کدام annotationها stereotype bean هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "@Component، @Service و @Repository برای ثبت component به کار می‌روند.",
+      "concepts": [
+        "Spring",
+        "beans"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "annotations"
+      ],
+      "options": {
+        "A": "@Component",
+        "B": "@Service",
+        "C": "@Override",
+        "D": "@Repository"
+      }
+    },
+    {
+      "id": "g9-seed-006",
+      "type": "mcq",
+      "prompt": "اگر دو bean هم‌نوع برای constructor injection وجود داشته باشد چه می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "بدون qualifier یا primary، Spring نمی‌تواند bean یکتا انتخاب کند.",
+      "concepts": [
+        "Spring",
+        "dependency-injection"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "همیشه اولی انتخاب می‌شود",
+        "B": "ابهام تزریق رخ می‌دهد",
+        "C": "هر دو در یک field می‌روند",
+        "D": "JVM بسته می‌شود"
+      }
+    },
+    {
+      "id": "g9-seed-007",
+      "type": "blank",
+      "prompt": "برای انتخاب bean مشخص میان چند bean هم‌نوع از ____ استفاده می‌شود.",
+      "answers": [
+        "@Qualifier"
+      ],
+      "explanation": "Qualifier bean مطلوب را مشخص می‌کند.",
+      "concepts": [
+        "Spring",
+        "dependency-injection"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g9-seed-008",
+      "type": "tf",
+      "prompt": "Bean پیش‌فرض Spring singleton scope دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "در هر ApplicationContext معمولاً یک نمونه از bean singleton نگه می‌دارد.",
+      "concepts": [
+        "Spring",
+        "bean-scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g9-seed-009",
+      "type": "mcq",
+      "prompt": "کدام annotation متدی را به‌عنوان bean در Java config ثبت می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "@Bean روی method، نتیجهٔ method را bean می‌کند.",
+      "concepts": [
+        "Spring",
+        "Java-config"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "@Bean",
+        "B": "@Value",
+        "C": "@Autowired",
+        "D": "@Transactional"
+      }
+    },
+    {
+      "id": "g9-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها مزیت constructor injection هستند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "dependency اجباری، immutability field و تست آسان‌تر از مزیت‌های آن‌اند.",
+      "concepts": [
+        "Spring",
+        "dependency-injection"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "وابستگی اجباری روشن است",
+        "B": "نیازی به constructor ندارد",
+        "C": "field می‌تواند final باشد",
+        "D": "test با mock ساده‌تر است"
+      }
+    },
+    {
+      "id": "g9-seed-011",
+      "type": "mcq",
+      "prompt": "ApplicationContext چه نقشی دارد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "ApplicationContext container پیشرفتهٔ Spring برای beanها و خدمات مرتبط است.",
+      "concepts": [
+        "Spring",
+        "ApplicationContext"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "فقط HTTP server است",
+        "B": "فقط database است",
+        "C": "container beanها است",
+        "D": "compiler جاوا است"
+      }
+    },
+    {
+      "id": "g9-seed-012",
+      "type": "blank",
+      "prompt": "برای تعیین bean ترجیحی هنگام چند candidate از annotation ____ استفاده می‌شود.",
+      "answers": [
+        "@Primary"
+      ],
+      "explanation": "@Primary candidate پیش‌فرض برای autowiring را تعیین می‌کند.",
+      "concepts": [
+        "Spring",
+        "beans"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g9-seed-013",
+      "type": "tf",
+      "prompt": "@Repository می‌تواند exceptionهای persistence را به exception hierarchy Spring ترجمه کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "این stereotype برای لایهٔ persistence و ترجمهٔ exception شناخته شده است.",
+      "concepts": [
+        "Spring",
+        "repository",
+        "exceptions"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g9-seed-014",
+      "type": "mcq",
+      "prompt": "کدام scope برای ساخت نمونهٔ جدید در هر درخواست bean مناسب است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "prototype scope برای هر درخواست container یک نمونهٔ تازه ایجاد می‌کند.",
+      "concepts": [
+        "Spring",
+        "bean-scope"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "singleton",
+        "B": "session",
+        "C": "application",
+        "D": "prototype"
+      }
+    },
+    {
+      "id": "g9-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها برای جلوگیری از circular dependency طراحی بهتری‌اند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "تفکیک مسئولیت، interface مرزی و بازطراحی flow به جای field injection چرخه را کم می‌کند.",
+      "concepts": [
+        "Spring",
+        "design"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "تفکیک مسئولیت serviceها",
+        "B": "معرفی abstraction در مرز",
+        "C": "افزودن field injection بیشتر",
+        "D": "بازطراحی جریان وابستگی"
+      }
+    },
+    {
+      "id": "g10-seed-001",
+      "type": "mcq",
+      "prompt": "annotation اصلی برای فعال‌کردن auto-configuration در Spring Boot چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "@SpringBootApplication شامل @EnableAutoConfiguration است و پیکربندی خودکار را فعال می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "auto-configuration"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "@ConfigurationProperties",
+        "B": "@RestController",
+        "C": "@SpringBootApplication",
+        "D": "@Bean"
+      }
+    },
+    {
+      "id": "g10-seed-002",
+      "type": "blank",
+      "prompt": "برای تعریف تنظیم `app.title` در کلاس typed configuration معمولاً از ____ استفاده می‌شود.",
+      "answers": [
+        "@ConfigurationProperties"
+      ],
+      "explanation": "این annotation مقدارهای properties با پیشوند مشخص را به object متصل می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "configuration"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g10-seed-003",
+      "type": "tf",
+      "prompt": "starterهای Spring Boot مجموعه‌ای هماهنگ از dependencyهای رایج را فراهم می‌کنند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "Starterها dependency management و dependencyهای پایهٔ یک قابلیت را ساده می‌کنند.",
+      "concepts": [
+        "Spring-Boot",
+        "starters"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Maven"
+      ]
+    },
+    {
+      "id": "g10-seed-004",
+      "type": "mcq",
+      "prompt": "فایل پیش‌فرض تنظیمات Spring Boot کدام است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "application.properties یا application.yml در classpath برای تنظیمات رایج استفاده می‌شود.",
+      "concepts": [
+        "Spring-Boot",
+        "configuration"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "application.properties",
+        "B": "server.java",
+        "C": "spring.xml",
+        "D": "module-info.java"
+      }
+    },
+    {
+      "id": "g10-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها راه معتبر تعریف property در Spring Boot هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "فایل properties، YAML و environment variable از sourceهای رایج property هستند.",
+      "concepts": [
+        "Spring-Boot",
+        "externalized-configuration"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "application.properties",
+        "B": "application.yml",
+        "C": "فقط bytecode",
+        "D": "environment variable"
+      }
+    },
+    {
+      "id": "g10-seed-006",
+      "type": "mcq",
+      "prompt": "برای ساخت endpoint سادهٔ JSON معمولاً از کدام annotation در class استفاده می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "@RestController ترکیب @Controller و @ResponseBody است.",
+      "concepts": [
+        "Spring-Boot",
+        "REST"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-MVC"
+      ],
+      "options": {
+        "A": "@Entity",
+        "B": "@RestController",
+        "C": "@Repository",
+        "D": "@ComponentScan"
+      }
+    },
+    {
+      "id": "g10-seed-007",
+      "type": "blank",
+      "prompt": "برای نگاشت GET روی مسیر `/products` از `@____(\"/products\")` استفاده می‌شود.",
+      "answers": [
+        "GetMapping"
+      ],
+      "explanation": "@GetMapping میان‌بر مشخص برای requestهای HTTP GET است.",
+      "concepts": [
+        "Spring-Boot",
+        "web"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "HTTP"
+      ]
+    },
+    {
+      "id": "g10-seed-008",
+      "type": "tf",
+      "prompt": "profile فعال را می‌توان با property `spring.profiles.active` انتخاب کرد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "این property profileهای فعال را تعیین می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "profiles"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ]
+    },
+    {
+      "id": "g10-seed-009",
+      "type": "mcq",
+      "prompt": "اگر property اجباری با `@Value(\"${api.url}\")` پیدا نشود، معمولاً چه رخ می‌دهد؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "placeholder حل‌نشده می‌تواند باعث شکست startup context شود.",
+      "concepts": [
+        "Spring-Boot",
+        "configuration"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "همیشه رشتهٔ خالی می‌شود",
+        "B": "خودکار URL می‌سازد",
+        "C": "نادیده گرفته می‌شود",
+        "D": "startup ممکن است شکست بخورد"
+      }
+    },
+    {
+      "id": "g10-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها برای profile جداگانه مناسب‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "تنظیم database، logging و integrationهای محیطی معمولاً میان محیط‌ها فرق دارند.",
+      "concepts": [
+        "Spring-Boot",
+        "profiles"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "database URL محیط",
+        "B": "نام class جاوا",
+        "C": "سطح logging",
+        "D": "کلید integration محیطی"
+      }
+    },
+    {
+      "id": "g10-seed-011",
+      "type": "mcq",
+      "prompt": "هدف Spring Boot DevTools در development چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "DevTools قابلیت‌هایی مانند restart توسعه را برای بازخورد سریع‌تر فراهم می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "devtools"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "جایگزینی production JVM",
+        "B": "رمزنگاری database",
+        "C": "بهبود چرخهٔ توسعه",
+        "D": "تولید schema SQL"
+      }
+    },
+    {
+      "id": "g10-seed-012",
+      "type": "blank",
+      "prompt": "برای اجرای برنامه با profile `dev` در command line می‌توان `--spring.profiles.active=____` نوشت.",
+      "answers": [
+        "dev"
+      ],
+      "explanation": "گزینهٔ command line یک property source با اولویت مناسب است.",
+      "concepts": [
+        "Spring-Boot",
+        "profiles"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ]
+    },
+    {
+      "id": "g10-seed-013",
+      "type": "tf",
+      "prompt": "Spring Boot می‌تواند با embedded server برنامهٔ وب را به صورت executable JAR اجرا کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "starter وب معمولاً server embedded دارد و Boot executable archive تولید می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "embedded-server"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ]
+    },
+    {
+      "id": "g10-seed-014",
+      "type": "mcq",
+      "prompt": "برای validation ورودی DTO کدام annotation روی parameter controller رایج است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "@Valid اجرای bean validation را برای object ورودی درخواست می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "validation"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-MVC"
+      ],
+      "options": {
+        "A": "@Valid",
+        "B": "@Primary",
+        "C": "@Lazy",
+        "D": "@Profile"
+      }
+    },
+    {
+      "id": "g10-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها practice مناسب برای configuration production هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "secretها را بیرون از source کنترل کنید، validation داشته باشید و تنظیم محیطی را جدا نگه دارید.",
+      "concepts": [
+        "Spring-Boot",
+        "configuration",
+        "security"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "قرار دادن secret در environment یا secret store",
+        "B": "اعتبارسنجی ConfigurationProperties",
+        "C": "commit کردن password واقعی در Git",
+        "D": "استفاده از profile یا source محیطی"
+      }
+    },
+    {
+      "id": "g11-seed-001",
+      "type": "mcq",
+      "prompt": "در Spring MVC کدام annotation body درخواست JSON را به DTO متصل می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "@RequestBody payload HTTP را با HttpMessageConverter به object تبدیل می‌کند.",
+      "concepts": [
+        "Spring-MVC",
+        "REST"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "@PathVariable",
+        "B": "@RequestBody",
+        "C": "@ModelAttribute",
+        "D": "@ResponseStatus"
+      }
+    },
+    {
+      "id": "g11-seed-002",
+      "type": "blank",
+      "prompt": "برای گرفتن بخش `{id}` از مسیر `/users/{id}` از annotation ____ استفاده می‌شود.",
+      "answers": [
+        "@PathVariable"
+      ],
+      "explanation": "@PathVariable مقدار template در URL را به parameter متد می‌دهد.",
+      "concepts": [
+        "Spring-MVC",
+        "routing"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "HTTP"
+      ]
+    },
+    {
+      "id": "g11-seed-003",
+      "type": "tf",
+      "prompt": "`@ControllerAdvice` برای مدیریت متمرکز exceptionها در controllerها مناسب است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "این annotation اجازه می‌دهد handlerهای مشترک exception بیرون از controllerها تعریف شوند.",
+      "concepts": [
+        "Spring-MVC",
+        "error-handling"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-MVC"
+      ]
+    },
+    {
+      "id": "g11-seed-004",
+      "type": "mcq",
+      "prompt": "در JPA، annotation شناسهٔ primary key entity چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "@Id field یا property شناسهٔ entity را مشخص می‌کند.",
+      "concepts": [
+        "JPA",
+        "entities"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "JPA"
+      ],
+      "options": {
+        "A": "@Column",
+        "B": "@Entity",
+        "C": "@Id",
+        "D": "@Table"
+      }
+    },
+    {
+      "id": "g11-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها حالت lifecycle رایج entity در JPA هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "new/transient، managed و detached حالت‌های مهم lifecycle هستند.",
+      "concepts": [
+        "JPA",
+        "persistence-context"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "JPA"
+      ],
+      "options": {
+        "A": "transient",
+        "B": "managed",
+        "C": "detached",
+        "D": "compiled"
+      }
+    },
+    {
+      "id": "g11-seed-006",
+      "type": "mcq",
+      "prompt": "چه زمانی تغییر field یک entity managed معمولاً در transaction ذخیره می‌شود؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "JPA با dirty checking تغییر entity managed را در flush همگام می‌کند.",
+      "concepts": [
+        "JPA",
+        "transactions"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "JPA"
+      ],
+      "options": {
+        "A": "فقط با `new`",
+        "B": "فقط با `toString()`",
+        "C": "فقط پس از GC",
+        "D": "در flush/commit transaction"
+      }
+    },
+    {
+      "id": "g11-seed-007",
+      "type": "blank",
+      "prompt": "برای مشخص‌کردن متدی که در transaction اجرا شود از annotation ____ استفاده می‌شود.",
+      "answers": [
+        "@Transactional"
+      ],
+      "explanation": "Spring transaction boundary را با این annotation مدیریت می‌کند.",
+      "concepts": [
+        "Spring",
+        "transactions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring",
+        "JPA"
+      ]
+    },
+    {
+      "id": "g11-seed-008",
+      "type": "tf",
+      "prompt": "در Spring Data JPA می‌توان با تعریف interface repository، پیاده‌سازی CRUD را به صورت خودکار دریافت کرد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "Spring Data بر اساس repository interface پیاده‌سازی لازم را تولید می‌کند.",
+      "concepts": [
+        "Spring-Data-JPA",
+        "repositories"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "JPA"
+      ]
+    },
+    {
+      "id": "g11-seed-009",
+      "type": "mcq",
+      "prompt": "کدام annotation مسیر endpoint را فقط برای کاربران دارای نقش ADMIN محدود می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "@PreAuthorize expression امنیتی را پیش از اجرای method بررسی می‌کند.",
+      "concepts": [
+        "Spring-Security",
+        "authorization"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Spring-Security"
+      ],
+      "options": {
+        "A": "`@PreAuthorize(\"hasRole('ADMIN')\")`",
+        "B": "@Entity",
+        "C": "@RequestBody",
+        "D": "@Cacheable"
+      }
+    },
+    {
+      "id": "g11-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها practice مناسب برای password هستند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "password باید hash شود، با PasswordEncoder بررسی شود و هرگز log نشود.",
+      "concepts": [
+        "Spring-Security",
+        "passwords"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Spring-Security"
+      ],
+      "options": {
+        "A": "hash با PasswordEncoder",
+        "B": "ذخیرهٔ plaintext",
+        "C": "بررسی با matches",
+        "D": "عدم ثبت در log"
+      }
+    },
+    {
+      "id": "g11-seed-011",
+      "type": "mcq",
+      "prompt": "برای پاسخ HTTP 201 پس از ساخت resource، کدام status مناسب است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "201 Created برای ایجاد موفق resource جدید به کار می‌رود.",
+      "concepts": [
+        "HTTP",
+        "Spring-MVC"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "HTTP"
+      ],
+      "options": {
+        "A": "200 OK",
+        "B": "201 Created",
+        "C": "204 No Content",
+        "D": "404 Not Found"
+      }
+    },
+    {
+      "id": "g11-seed-012",
+      "type": "blank",
+      "prompt": "برای جلوگیری از N+1 هنگام بارگذاری association، یکی از راه‌ها استفاده از query با ____ است.",
+      "answers": [
+        "fetch join"
+      ],
+      "explanation": "fetch join association را در همان query دریافت می‌کند.",
+      "concepts": [
+        "JPA",
+        "performance"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "JPA"
+      ]
+    },
+    {
+      "id": "g11-seed-013",
+      "type": "tf",
+      "prompt": "قرار دادن entity JPA مستقیماً در API response همیشه بهترین مرز طراحی است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "DTOها از نشت persistence model، lazy-loading ناخواسته و coupling API جلوگیری می‌کنند.",
+      "concepts": [
+        "Spring-MVC",
+        "JPA",
+        "DTO"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Spring-MVC",
+        "JPA"
+      ]
+    },
+    {
+      "id": "g11-seed-014",
+      "type": "mcq",
+      "prompt": "در Spring Security، authentication پاسخ کدام پرسش است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "authentication هویت کاربر را تأیید می‌کند؛ authorization اجازه‌ها را بررسی می‌کند.",
+      "concepts": [
+        "Spring-Security",
+        "authentication"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Security"
+      ],
+      "options": {
+        "A": "کاربر چه کاری مجاز است؟",
+        "B": "داده کجا ذخیره می‌شود؟",
+        "C": "کاربر کیست؟",
+        "D": "request چه formatی دارد؟"
+      }
+    },
+    {
+      "id": "g11-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ REST endpoint طراحی مناسب‌تری دارند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "status مناسب، validation ورودی و DTO مرزی API را قابل فهم‌تر می‌کند.",
+      "concepts": [
+        "Spring-MVC",
+        "REST"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "HTTP"
+      ],
+      "options": {
+        "A": "استفاده از status code مناسب",
+        "B": "validation ورودی",
+        "C": "بازگرداندن stack trace داخلی",
+        "D": "استفاده از DTO در مرز API"
+      }
+    },
+    {
+      "id": "g12-seed-001",
+      "type": "mcq",
+      "prompt": "endpoint سلامت Spring Boot Actuator معمولاً کدام مسیر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "با فعال بودن web exposure، health در `/actuator/health` ارائه می‌شود.",
+      "concepts": [
+        "Actuator",
+        "observability"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "/health",
+        "B": "/actuator/health",
+        "C": "/metrics/health",
+        "D": "/status"
+      }
+    },
+    {
+      "id": "g12-seed-002",
+      "type": "blank",
+      "prompt": "برای افزودن اطلاعات build به Actuator endpoint مربوطه، Spring Boot از فایل ____ استفاده می‌کند.",
+      "answers": [
+        "build-info.properties"
+      ],
+      "explanation": "build-info.properties اطلاعات build را برای endpoint info فراهم می‌کند.",
+      "concepts": [
+        "Actuator",
+        "build-info"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-Boot"
+      ]
+    },
+    {
+      "id": "g12-seed-003",
+      "type": "tf",
+      "prompt": "نباید همهٔ endpointهای Actuator را بدون کنترل دسترسی در اینترنت عمومی expose کرد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "برخی endpointها اطلاعات عملیاتی حساس می‌دهند و باید محدود شوند.",
+      "concepts": [
+        "Actuator",
+        "security"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-Security"
+      ]
+    },
+    {
+      "id": "g12-seed-004",
+      "type": "mcq",
+      "prompt": "کدام health check برای readiness مناسب‌تر است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "readiness نشان می‌دهد instance آمادهٔ دریافت traffic است.",
+      "concepts": [
+        "deployment",
+        "Kubernetes",
+        "Actuator"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Actuator"
+      ],
+      "options": {
+        "A": "اندازهٔ فایل JAR",
+        "B": "نام host",
+        "C": "آمادگی برای پذیرش traffic",
+        "D": "نسخهٔ Java compiler"
+      }
+    },
+    {
+      "id": "g12-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها ابعاد متداول observability هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "metrics، logs و traces سه سیگنال اصلی observability هستند.",
+      "concepts": [
+        "observability"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "deployment"
+      ],
+      "options": {
+        "A": "metrics",
+        "B": "logs",
+        "C": "فقط source code",
+        "D": "traces"
+      }
+    },
+    {
+      "id": "g12-seed-006",
+      "type": "mcq",
+      "prompt": "هدف liveness probe در orchestration چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "liveness بررسی می‌کند process هنوز زنده است و نیاز به restart دارد یا نه.",
+      "concepts": [
+        "deployment",
+        "Kubernetes"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "deployment"
+      ],
+      "options": {
+        "A": "تشخیص نیاز به restart",
+        "B": "انتخاب database schema",
+        "C": "ساخت JAR",
+        "D": "تخصیص role کاربر"
+      }
+    },
+    {
+      "id": "g12-seed-007",
+      "type": "blank",
+      "prompt": "در Dockerfile چندمرحله‌ای، مرحلهٔ نهایی باید تا حد امکان image ____ داشته باشد.",
+      "answers": [
+        "کوچک"
+      ],
+      "explanation": "image کوچک‌تر سطح حمله و زمان انتقال را کاهش می‌دهد.",
+      "concepts": [
+        "deployment",
+        "Docker"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Docker"
+      ]
+    },
+    {
+      "id": "g12-seed-008",
+      "type": "tf",
+      "prompt": "consumer پیام باید برای احتمال delivery تکراری، idempotent طراحی شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "در سامانه‌های at-least-once ممکن است یک پیام دوباره برسد.",
+      "concepts": [
+        "messaging",
+        "idempotency"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "messaging"
+      ]
+    },
+    {
+      "id": "g12-seed-009",
+      "type": "mcq",
+      "prompt": "کدام الگو برای انتشار event پس از commit موفق database مناسب است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "outbox event را همراه transaction ذخیره و سپس به broker منتشر می‌کند.",
+      "concepts": [
+        "messaging",
+        "outbox",
+        "transactions"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "JPA",
+        "messaging"
+      ],
+      "options": {
+        "A": "ارسال قبل از transaction",
+        "B": "retry بی‌نهایت در controller",
+        "C": "ذخیرهٔ event فقط در حافظه",
+        "D": "transactional outbox"
+      }
+    },
+    {
+      "id": "g12-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها practice مناسب برای message consumer هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "retry کنترل‌شده، DLQ و idempotency پایداری پردازش را افزایش می‌دهند.",
+      "concepts": [
+        "messaging",
+        "reliability"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "messaging"
+      ],
+      "options": {
+        "A": "retry با سیاست محدود",
+        "B": "dead-letter queue",
+        "C": "idempotency key",
+        "D": "نادیده‌گرفتن دائم خطا"
+      }
+    },
+    {
+      "id": "g12-seed-011",
+      "type": "mcq",
+      "prompt": "برای سنجش نرخ request و latency endpointها کدام Actuator قابلیت نزدیک‌تر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "Micrometer metrics دادهٔ شمارش و زمان‌بندی را برای backendهای monitoring فراهم می‌کند.",
+      "concepts": [
+        "Actuator",
+        "metrics",
+        "Micrometer"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Actuator"
+      ],
+      "options": {
+        "A": "banner",
+        "B": "metrics با Micrometer",
+        "C": "devtools restart",
+        "D": "component scan"
+      }
+    },
+    {
+      "id": "g12-seed-012",
+      "type": "blank",
+      "prompt": "برای جلوگیری از مصرف بی‌رویهٔ حافظه در queue پیام، باید ____ یا backpressure طراحی شود.",
+      "answers": [
+        "محدودیت ظرفیت"
+      ],
+      "explanation": "capacity limit یا backpressure نرخ تولید را با توان مصرف هماهنگ می‌کند.",
+      "concepts": [
+        "messaging",
+        "backpressure"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "concurrency",
+        "messaging"
+      ]
+    },
+    {
+      "id": "g12-seed-013",
+      "type": "tf",
+      "prompt": "rolling deployment به معنی جایگزینی تدریجی instanceها است، نه قطع هم‌زمان همهٔ آن‌ها.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "جایگزینی مرحله‌ای با health check به کاهش downtime کمک می‌کند.",
+      "concepts": [
+        "deployment",
+        "rolling-update"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "deployment"
+      ]
+    },
+    {
+      "id": "g12-seed-014",
+      "type": "mcq",
+      "prompt": "کدام اطلاعات نباید به‌طور پیش‌فرض در log production ثبت شود؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "secretها و tokenها دادهٔ حساس‌اند و نباید در log قرار گیرند.",
+      "concepts": [
+        "deployment",
+        "logging",
+        "security"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "security"
+      ],
+      "options": {
+        "A": "شناسهٔ correlation",
+        "B": "زمان پاسخ",
+        "C": "password یا access token",
+        "D": "سطح log"
+      }
+    },
+    {
+      "id": "g12-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها برای انتشار امن production مناسب‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "health check، rollout تدریجی و monitor کردن error rate به انتشار امن کمک می‌کند.",
+      "concepts": [
+        "deployment",
+        "release"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "deployment",
+        "observability"
+      ],
+      "options": {
+        "A": "health/readiness check",
+        "B": "نادیده گرفتن dashboardها",
+        "C": "rollout تدریجی",
+        "D": "monitor کردن error rate"
+      }
+    }
+  ]
+}

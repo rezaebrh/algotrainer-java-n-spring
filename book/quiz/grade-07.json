@@ -1,0 +1,318 @@
+{
+  "title": "درجهٔ 7",
+  "version": 2,
+  "questions": [
+    {
+      "id": "g7-seed-001",
+      "type": "mcq",
+      "prompt": "کدام Stream operation تا terminal operation اجرا نمی‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "map یک operation میانی و lazy است.",
+      "concepts": [
+        "streams",
+        "laziness"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "streams"
+      ],
+      "options": {
+        "A": "collect",
+        "B": "map",
+        "C": "count",
+        "D": "forEach"
+      }
+    },
+    {
+      "id": "g7-seed-002",
+      "type": "blank",
+      "prompt": "برای جمع‌کردن Stream در List با collector از `____()` استفاده می‌شود.",
+      "answers": [
+        "collect(Collectors.toList)"
+      ],
+      "explanation": "این collector عناصر را در یک List گردآوری می‌کند.",
+      "concepts": [
+        "streams",
+        "collectors"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "streams"
+      ]
+    },
+    {
+      "id": "g7-seed-003",
+      "type": "tf",
+      "prompt": "Stream پس از terminal operation معمولاً قابل استفادهٔ دوباره نیست.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "Stream پس از مصرف بسته‌شده تلقی می‌شود.",
+      "concepts": [
+        "streams"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "streams"
+      ]
+    },
+    {
+      "id": "g7-seed-004",
+      "type": "mcq",
+      "prompt": "برای مقدار پیش‌فرض Optional<String> در نبود مقدار چه می‌نویسیم؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "orElse هنگام empty بودن مقدار جایگزین می‌دهد.",
+      "concepts": [
+        "Optional"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Optional"
+      ],
+      "options": {
+        "A": "`name.get()`",
+        "B": "`name.nullable()`",
+        "C": "`name.orElse(\"guest\")`",
+        "D": "`name.value()`"
+      }
+    },
+    {
+      "id": "g7-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها terminal operation هستند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "count، findFirst و reduce جریان را پایان می‌دهند.",
+      "concepts": [
+        "streams"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "streams"
+      ],
+      "options": {
+        "A": "count",
+        "B": "filter",
+        "C": "findFirst",
+        "D": "reduce"
+      }
+    },
+    {
+      "id": "g7-seed-006",
+      "type": "mcq",
+      "prompt": "ویژگی checked exception چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "باید catch شود یا در throws اعلام شود.",
+      "concepts": [
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "exceptions"
+      ],
+      "options": {
+        "A": "هرگز رخ نمی‌دهد",
+        "B": "کامپایلر رسیدگی را الزام می‌کند",
+        "C": "فقط RuntimeException است",
+        "D": "فقط در test است"
+      }
+    },
+    {
+      "id": "g7-seed-007",
+      "type": "blank",
+      "prompt": "resource در try-with-resources در پایان بلوک به‌طور خودکار ____ می‌شود.",
+      "answers": [
+        "close"
+      ],
+      "explanation": "close حتی در رخ‌دادن exception فراخوانی می‌شود.",
+      "concepts": [
+        "IO",
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "exceptions"
+      ]
+    },
+    {
+      "id": "g7-seed-008",
+      "type": "tf",
+      "prompt": "`Files.readString(path)` ممکن است IOException پرتاب کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "خطای خواندن فایل یک خطای I/O است.",
+      "concepts": [
+        "NIO",
+        "IO",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "exceptions"
+      ]
+    },
+    {
+      "id": "g7-seed-009",
+      "type": "mcq",
+      "prompt": "کدام روش Path قابل‌حمل‌تری می‌سازد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "Path.of اجزا را با separator پلتفرم ترکیب می‌کند.",
+      "concepts": [
+        "NIO",
+        "Path"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "IO"
+      ],
+      "options": {
+        "A": "`Path.of(\"data\", \"users.txt\")`",
+        "B": "`new File(\"data\\users.txt\")`",
+        "C": "`\"data/users.txt\"`",
+        "D": "`Path.text(\"data\")"
+      }
+    },
+    {
+      "id": "g7-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها از resource leak جلوگیری می‌کنند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "try-with-resources یا close مطمئن در finally منبع را آزاد می‌کند.",
+      "concepts": [
+        "resources",
+        "IO"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "IO"
+      ],
+      "options": {
+        "A": "try-with-resources",
+        "B": "اتکا به GC",
+        "C": "close در finally",
+        "D": "null کردن variable"
+      }
+    },
+    {
+      "id": "g7-seed-011",
+      "type": "mcq",
+      "prompt": "در multi-catch، پارامتر exception چه محدودیتی دارد؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "پارامتر multi-catch به‌طور ضمنی final است.",
+      "concepts": [
+        "exceptions",
+        "multi-catch"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "exceptions"
+      ],
+      "options": {
+        "A": "فقط IOException است",
+        "B": "فقط یک type مجاز است",
+        "C": "finally ممنوع است",
+        "D": "قابل reassignment نیست"
+      }
+    },
+    {
+      "id": "g7-seed-012",
+      "type": "blank",
+      "prompt": "در `filter(n -> n ____ 2 == 0)` جای خالی چیست؟",
+      "answers": [
+        "%"
+      ],
+      "explanation": "باقی‌ماندهٔ صفر نشان می‌دهد عدد زوج است.",
+      "concepts": [
+        "streams",
+        "filter"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "streams"
+      ]
+    },
+    {
+      "id": "g7-seed-013",
+      "type": "tf",
+      "prompt": "Optional باید جایگزین همهٔ fieldها و parameterها شود.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "Optional عمدتاً برای return typeهای ممکنِ بدون مقدار مناسب است.",
+      "concepts": [
+        "Optional",
+        "API-design"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Optional"
+      ]
+    },
+    {
+      "id": "g7-seed-014",
+      "type": "mcq",
+      "prompt": "برای حفظ cause هنگام تبدیل IOException چه رویکردی بهتر است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "exception را همراه پیام و cause بپیچید.",
+      "concepts": [
+        "exceptions",
+        "error-handling"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "exceptions"
+      ],
+      "options": {
+        "A": "نادیده‌گرفتن",
+        "B": "فقط چاپ کردن",
+        "C": "`throw new UncheckedIOException(\"خواندن ناموفق\", e)`",
+        "D": "catch کردن Throwable"
+      }
+    },
+    {
+      "id": "g7-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ `Files.lines(path)` درست‌اند؟",
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "Stream خطوط باید بسته شود و پردازش آن lazy است.",
+      "concepts": [
+        "NIO",
+        "streams",
+        "resources"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "streams",
+        "IO"
+      ],
+      "options": {
+        "A": "باید Stream را بست",
+        "B": "try-with-resources مناسب است",
+        "C": "همه خطوط فوری در حافظه‌اند",
+        "D": "IOException ناممکن است"
+      }
+    }
+  ]
+}

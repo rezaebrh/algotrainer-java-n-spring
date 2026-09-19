@@ -1,0 +1,1269 @@
+{
+  "questions": [
+    {
+      "id": "g1-lifetime-001",
+      "type": "mcq",
+      "prompt": "دامنهٔ متغیر محلی `int count` که در بدنهٔ متد اعلان شده است کجاست؟",
+      "options": {
+        "A": "از محل اعلان تا پایان block متد",
+        "B": "در همهٔ کلاس‌های پروژه",
+        "C": "تا پایان JVM",
+        "D": "فقط در سازنده"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "نام متغیر محلی از محل اعلان تا پایان block دربرگیرنده قابل استفاده است.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-002",
+      "type": "tf",
+      "prompt": "متغیری که درون یک block با آکولاد اعلان شده، پس از پایان آن block نیز قابل استفاده است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "پایان block، دامنهٔ نام local variable را پایان می‌دهد.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-003",
+      "type": "mcq",
+      "prompt": "کدام خط خطای کامپایل دارد؟\nif (true) { int score = 8; }\nSystem.out.println(score);",
+      "options": {
+        "A": "خط اعلان score",
+        "B": "خط println",
+        "C": "هر دو خط",
+        "D": "هیچ‌کدام"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "score فقط در block مربوط به if در دامنه است و در println شناخته نمی‌شود.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-004",
+      "type": "blank",
+      "prompt": "بررسی کامپایلر برای اطمینان از مقداردهی متغیر محلی پیش از خواندن آن، ______ نام دارد.",
+      "answers": [
+        "definite assignment",
+        "definite-assignment"
+      ],
+      "explanation": "تحلیل definite assignment از خواندن local variable مقداردهی‌نشده جلوگیری می‌کند.",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-005",
+      "type": "mcq",
+      "prompt": "نتیجهٔ کامپایل این کد چیست؟\nint age;\nSystem.out.println(age);",
+      "options": {
+        "A": "0 چاپ می‌شود",
+        "B": "null چاپ می‌شود",
+        "C": "خطای کامپایل",
+        "D": "خطای اجرا"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "متغیرهای محلی مقدار پیش‌فرض قابل‌خواندن ندارند و age پیش از استفاده مقدار نگرفته است.",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-006",
+      "type": "multi",
+      "prompt": "کدام گزاره‌ها دربارهٔ متغیر محلی درست‌اند؟",
+      "options": {
+        "A": "پیش از خواندن باید به‌طور قطعی مقداردهی شود.",
+        "B": "دامنه‌اش به block اعلان وابسته است.",
+        "C": "همیشه مقدار پیش‌فرض صفر دارد.",
+        "D": "پارامتر متد در بدنهٔ همان متد یک نام محلی است."
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "متغیر محلی باید پیش از خواندن مقدار قطعی داشته باشد؛ دامنه‌اش blockی است و پارامتر نیز نام محلی متد است.",
+      "concepts": [
+        "scope",
+        "variables",
+        "pass-by-value"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-007",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\nint n = 1;\n{ int n2 = n + 2; System.out.print(n2); }",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "n در block داخلی در دامنه است؛ بنابراین n2 برابر 3 می‌شود.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-008",
+      "type": "mcq",
+      "prompt": "کدام قطعه از i بیرون از دامنه‌اش استفاده می‌کند؟",
+      "options": {
+        "A": "for (int i=0; i<2; i++) System.out.println(i);",
+        "B": "for (int i=0; i<2; i++) {} System.out.println(i);",
+        "C": "int i=0; if (i==0) System.out.println(i);",
+        "D": "{ int i=0; System.out.println(i); }"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "i در header حلقهٔ for و بدنهٔ آن در دامنه است، نه پس از پایان حلقه.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-009",
+      "type": "tf",
+      "prompt": "پارامتر متد از نظر دامنه، یک متغیر محلی در بدنهٔ همان متد است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "پارامتر هنگام فراخوانی متد مقدار می‌گیرد و فقط در بدنهٔ متد با نام خود قابل استفاده است.",
+      "concepts": [
+        "scope",
+        "variables",
+        "pass-by-value"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-010",
+      "type": "mcq",
+      "prompt": "نتیجهٔ این کد چیست؟\nboolean ok = false;\nint x;\nif (ok) x = 1;\nSystem.out.println(x);",
+      "options": {
+        "A": "0 چاپ می‌شود",
+        "B": "1 چاپ می‌شود",
+        "C": "خطای کامپایل",
+        "D": "خطای NullPointerException"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "ممکن است شرط false باشد؛ پس x در همهٔ مسیرها پیش از println مقدار قطعی ندارد.",
+      "concepts": [
+        "variables",
+        "scope"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-011",
+      "type": "blank",
+      "prompt": "کلیدواژه‌ای که انتساب دوباره به یک variable را ممنوع می‌کند ______ است.",
+      "answers": [
+        "final"
+      ],
+      "explanation": "final مانع انتساب دوباره به خود variable می‌شود.",
+      "concepts": [
+        "final",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-012",
+      "type": "mcq",
+      "prompt": "نتیجهٔ کد زیر چیست؟\nfinal int limit = 10;\nlimit = 11;",
+      "options": {
+        "A": "11 ذخیره می‌شود",
+        "B": "خطای کامپایل",
+        "C": "خطای اجرا",
+        "D": "limit برابر null می‌شود"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "پس از انتساب نخست به variable نهایی، انتساب دوم مجاز نیست.",
+      "concepts": [
+        "final",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-013",
+      "type": "tf",
+      "prompt": "final بودن یک reference تضمین می‌کند شیء اشاره‌شده تغییرناپذیر باشد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "final فقط مانع اتصال دوبارهٔ variable به شیء دیگر است؛ شیء mutable همچنان می‌تواند تغییر کند.",
+      "concepts": [
+        "final",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-014",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\nfinal StringBuilder b = new StringBuilder(\"A\");\nb.append(\"B\");\nSystem.out.println(b);",
+      "options": {
+        "A": "A",
+        "B": "AB",
+        "C": "خطای کامپایل",
+        "D": "null"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "reference b تغییر نکرده است؛ append وضعیت همان StringBuilder را به AB تغییر می‌دهد.",
+      "concepts": [
+        "final",
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-015",
+      "type": "mcq",
+      "prompt": "برای `final StringBuilder b = new StringBuilder();` کدام خط خطای کامپایل دارد؟",
+      "options": {
+        "A": "b.append(\"x\");",
+        "B": "System.out.println(b.length());",
+        "C": "b = new StringBuilder(\"x\");",
+        "D": "b.toString();"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "ساخت reference تازه و انتساب آن به b ممنوع است؛ فراخوانی متدهای شیء فعلی مجاز است.",
+      "concepts": [
+        "final",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-016",
+      "type": "multi",
+      "prompt": "دربارهٔ final reference کدام موارد درست‌اند؟",
+      "options": {
+        "A": "پس از مقداردهی، variable به شیء دیگری وصل نمی‌شود.",
+        "B": "متدهای شیء mutable ممکن است وضعیت آن را تغییر دهند.",
+        "C": "خود شیء در حافظه immutable می‌شود.",
+        "D": "می‌توان از reference برای خواندن عضوهای شیء استفاده کرد."
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "final ویژگی variable است، نه تضمین immutable بودن شیء.",
+      "concepts": [
+        "final",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-017",
+      "type": "tf",
+      "prompt": "یک local variable final می‌تواند در خطی پس از اعلان، دقیقاً یک‌بار مقداردهی شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "local final لازم نیست در declaration مقدار بگیرد، ولی پیش از استفاده باید یک انتساب قطعی داشته باشد.",
+      "concepts": [
+        "final",
+        "variables",
+        "scope"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-018",
+      "type": "mcq",
+      "prompt": "کدام کد کامپایل می‌شود؟",
+      "options": {
+        "A": "final int x; System.out.println(x);",
+        "B": "final int x; x = 7; System.out.println(x);",
+        "C": "final int x = 7; x = 8;",
+        "D": "final int x; if (false) x = 7; System.out.println(x);"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "در B، x پیش از خوانده‌شدن یک‌بار مقدار می‌گیرد؛ دیگر گزینه‌ها خواندن بدون انتساب قطعی یا انتساب دوباره دارند.",
+      "concepts": [
+        "final",
+        "variables",
+        "scope"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-019",
+      "type": "blank",
+      "prompt": "نوع‌هایی مانند `int[]` و `StringBuilder` که variable آن‌ها به شیء اشاره می‌کند، ______ type هستند.",
+      "answers": [
+        "reference",
+        "reference type",
+        "reference-type"
+      ],
+      "explanation": "variable یک reference type مقدار reference به شیء نگه می‌دارد.",
+      "concepts": [
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-020",
+      "type": "mcq",
+      "prompt": "پس از اجرای `int[] a = {1}; int[] b = a;` رابطهٔ a و b چیست؟",
+      "options": {
+        "A": "دو آرایهٔ مستقل‌اند",
+        "B": "هر دو به همان آرایه اشاره دارند",
+        "C": "b یک int است",
+        "D": "کد کامپایل نمی‌شود"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "انتساب reference شیء را کپی نمی‌کند؛ مقدار reference در b کپی می‌شود.",
+      "concepts": [
+        "reference-types",
+        "pass-by-value",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-021",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\nint[] a = {1};\nint[] b = a;\nb[0] = 9;\nSystem.out.println(a[0]);",
+      "options": {
+        "A": "1",
+        "B": "9",
+        "C": "0",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "a و b به یک آرایه اشاره دارند؛ تغییر از راه b در همان شیء دیده می‌شود.",
+      "concepts": [
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-022",
+      "type": "tf",
+      "prompt": "Java آرگومان‌های reference type را با pass-by-reference به متد می‌فرستد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "Java همیشه pass-by-value است؛ برای reference type، مقدار کپی‌شده خود reference است.",
+      "concepts": [
+        "pass-by-value",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-023",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\nstatic void rename(StringBuilder x) { x = new StringBuilder(\"new\"); }\nStringBuilder name = new StringBuilder(\"old\");\nrename(name);\nSystem.out.println(name);",
+      "options": {
+        "A": "new",
+        "B": "old",
+        "C": "oldnew",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "x یک کپی از reference name است؛ انتساب x فقط variable محلی را تغییر می‌دهد.",
+      "concepts": [
+        "pass-by-value",
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-024",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\nstatic void add(StringBuilder x) { x.append(\"!\"); }\nStringBuilder name = new StringBuilder(\"go\");\nadd(name);\nSystem.out.println(name);",
+      "options": {
+        "A": "go",
+        "B": "!",
+        "C": "go!",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "کپی reference در x به همان StringBuilder اشاره دارد؛ append همان شیء را تغییر می‌دهد.",
+      "concepts": [
+        "pass-by-value",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-025",
+      "type": "multi",
+      "prompt": "برای `setNull(box)` در `static void setNull(Object p) { p = null; }` کدام موارد درست‌اند؟",
+      "options": {
+        "A": "p کپی مقدار reference box را می‌گیرد.",
+        "B": "p = null باعث null شدن box می‌شود.",
+        "C": "پس از بازگشت متد، box بدون تغییر می‌ماند.",
+        "D": "این نمونه‌ای از pass-by-value است."
+      },
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "p variable مستقلی است که مقدار reference را دریافت کرده است؛ null کردن آن box را تغییر نمی‌دهد.",
+      "concepts": [
+        "pass-by-value",
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-026",
+      "type": "blank",
+      "prompt": "در Java، انتقال آرگومان‌ها به متدها همیشه pass-by-______ است.",
+      "answers": [
+        "value"
+      ],
+      "explanation": "حتی برای reference type نیز مقدار reference کپی می‌شود.",
+      "concepts": [
+        "pass-by-value"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-027",
+      "type": "mcq",
+      "prompt": "برای واجد شرایط شدن یک شیء برای GC، کدام وضعیت لازم است؟",
+      "options": {
+        "A": "شیء final باشد",
+        "B": "از هیچ مسیر strong زنده reachable نباشد",
+        "C": "System.gc() فراخوانی شده باشد",
+        "D": "در main ساخته شده باشد"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "شیئی که از rootهای زنده با referenceهای قوی قابل دسترس نباشد، می‌تواند واجد GC باشد.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-028",
+      "type": "tf",
+      "prompt": "فراخوانی System.gc() تضمین می‌کند garbage collection بلافاصله اجرا شود.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "System.gc() فقط درخواست به JVM است و زمان اجرای GC را تضمین نمی‌کند.",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-029",
+      "type": "mcq",
+      "prompt": "بعد از این کد کدام عبارت درست است؟\nObject a = new Object();\nObject b = a;\na = null;",
+      "options": {
+        "A": "شیء قطعاً جمع‌آوری شده است",
+        "B": "شیء واجد GC است",
+        "C": "شیء هنوز از راه b reachable است",
+        "D": "b خودکار null می‌شود"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "null شدن a فقط یک reference را حذف می‌کند؛ b هنوز به همان شیء اشاره دارد.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-030",
+      "type": "mcq",
+      "prompt": "بعد از `int[] data = {4, 5}; data = null;` و بدون reference دیگر، آرایه چه وضعی دارد؟",
+      "options": {
+        "A": "واجد شرایط GC می‌شود",
+        "B": "تا پایان JVM باقی می‌ماند",
+        "C": "به int تبدیل می‌شود",
+        "D": "خطای کامپایل رخ می‌دهد"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "در نبود reference زندهٔ دیگر، آرایه strongly reachable نیست و واجد GC می‌شود، نه لزوماً فوراً جمع‌آوری.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-031",
+      "type": "multi",
+      "prompt": "کدام موارد دربارهٔ garbage collection درست‌اند؟",
+      "options": {
+        "A": "GC حافظهٔ شیءهای غیرقابل‌دسترسی را مدیریت می‌کند.",
+        "B": "واجد شرایط بودن، زمان جمع‌آوری را تضمین نمی‌کند.",
+        "C": "GC جایگزین close برای فایل است.",
+        "D": "یک reference زنده می‌تواند مانع جمع‌آوری شود."
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "GC حافظهٔ شیءهای غیرقابل‌دسترسی را مدیریت می‌کند، ولی close منابع بیرونی را جایگزین نمی‌کند.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types",
+        "try-with-resources"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-032",
+      "type": "tf",
+      "prompt": "نباید برای بستن قطعی فایل یا socket به زمان اجرای garbage collector تکیه کرد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "GC زمان‌بندی قطعی ندارد؛ منابع بیرونی باید با close، ترجیحاً try-with-resources، آزاد شوند.",
+      "concepts": [
+        "garbage-collection",
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-033",
+      "type": "mcq",
+      "prompt": "پایان دامنهٔ یک local reference چه چیزی را تضمین می‌کند؟",
+      "options": {
+        "A": "شیء فوراً نابود می‌شود",
+        "B": "نام variable دیگر قابل استفاده نیست",
+        "C": "همهٔ referenceهای دیگر null می‌شوند",
+        "D": "GC فوراً اجرا می‌شود"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "پایان scope فقط استفاده از نام را ممنوع می‌کند؛ reachable بودن واقعی شیء به referenceهای دیگر بستگی دارد.",
+      "concepts": [
+        "scope",
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-034",
+      "type": "blank",
+      "prompt": "شیئی که از هیچ مسیر reference قوی زنده قابل دسترسی نیست، برای ______ واجد شرایط است.",
+      "answers": [
+        "garbage collection",
+        "garbage-collection",
+        "gc"
+      ],
+      "explanation": "نبود strong reachability شیء را eligible for garbage collection می‌کند.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-035",
+      "type": "mcq",
+      "prompt": "کار اصلی try-with-resources چیست؟",
+      "options": {
+        "A": "تبدیل exceptionها به null",
+        "B": "فراخوانی خودکار close برای resourceها",
+        "C": "اجرای اجباری GC",
+        "D": "final کردن همهٔ variableها"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "try-with-resources هنگام خروج از statement، resourceهای واجد شرایط را می‌بندد.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-036",
+      "type": "mcq",
+      "prompt": "نوع resource در try-with-resources باید کدام قرارداد را پیاده‌سازی کند؟",
+      "options": {
+        "A": "Serializable",
+        "B": "Runnable",
+        "C": "AutoCloseable",
+        "D": "Comparable"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "resource باید AutoCloseable باشد تا close آن در خروج از try فراخوانی شود.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-037",
+      "type": "tf",
+      "prompt": "try-with-resources فقط وقتی close را فراخوانی می‌کند که بدنهٔ try بدون exception تمام شود.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "منابع هنگام خروج از try-with-resources بسته می‌شوند، حتی اگر بدنه exception پرتاب کند.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-038",
+      "type": "mcq",
+      "prompt": "در `try (var r = new R()) { work(); }`، در حالت عادی close چه زمانی فراخوانی می‌شود؟",
+      "options": {
+        "A": "پیش از بدنهٔ try",
+        "B": "پس از پایان بدنه و پیش از ادامهٔ برنامه",
+        "C": "فقط بعد از GC",
+        "D": "هرگز"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "پس از پایان بدنه و پیش از ادامهٔ برنامه، سازوکار try-with-resources r.close() را فراخوانی می‌کند.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-039",
+      "type": "multi",
+      "prompt": "کدام شکل‌ها برای try-with-resources معتبرند؟",
+      "options": {
+        "A": "try (var r = new R()) {} اگر R AutoCloseable باشد",
+        "B": "try (existing) {} اگر existing effectively final و AutoCloseable باشد",
+        "C": "try (int n = 1) {}",
+        "D": "try (var o = new Object()) {}"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "resource باید AutoCloseable باشد و variable موجود باید final یا effectively final باشد.",
+      "concepts": [
+        "try-with-resources",
+        "final",
+        "variables"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-040",
+      "type": "mcq",
+      "prompt": "در `try (A a = ...; B b = ...) {}` ترتیب بسته‌شدن resourceها چیست؟",
+      "options": {
+        "A": "ابتدا a سپس b",
+        "B": "ابتدا b سپس a",
+        "C": "نامشخص",
+        "D": "هیچ‌کدام بسته نمی‌شوند"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "resourceها به ترتیب معکوس اعلان بسته می‌شوند.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-041",
+      "type": "tf",
+      "prompt": "در try-with-resources با چند resource، resource آخرِ اعلان‌شده نخست بسته می‌شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "ترتیب بستن معکوس ترتیب ساخت و اعلان resourceها است.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-042",
+      "type": "mcq",
+      "prompt": "اگر بدنهٔ try exception E1 و close resource exception E2 پرتاب کند، exception اصلی چیست؟",
+      "options": {
+        "A": "E2",
+        "B": "E1",
+        "C": "هر دو حذف می‌شوند",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "exception بدنه primary است و E2 به‌صورت suppressed به E1 افزوده می‌شود.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-043",
+      "type": "blank",
+      "prompt": "exceptionی که هنگام close رخ می‌دهد و به exception اصلی افزوده می‌شود، ______ exception نام دارد.",
+      "answers": [
+        "suppressed",
+        "suppressed exception"
+      ],
+      "explanation": "try-with-resources exceptionهای close را در صورت وجود exception اصلی suppressed نگه می‌دارد.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-044",
+      "type": "mcq",
+      "prompt": "برای دیدن exceptionهای suppressed روی `Throwable t` از کدام متد استفاده می‌شود؟",
+      "options": {
+        "A": "t.getSuppressed()",
+        "B": "t.close()",
+        "C": "t.collect()",
+        "D": "t.getCauseOnly()"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "getSuppressed() آرایه‌ای از exceptionهای suppressed متصل به Throwable را برمی‌گرداند.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-045",
+      "type": "multi",
+      "prompt": "اگر بدنهٔ try عادی تمام شود اما closeهای b و سپس a exception پرتاب کنند، کدام موارد درست‌اند؟",
+      "options": {
+        "A": "exception مربوط به close b اصلی است.",
+        "B": "exception مربوط به close a suppressed است.",
+        "C": "هیچ exceptionی بیرون نمی‌رود.",
+        "D": "b پیش از a بسته می‌شود."
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "اولین exception close، یعنی exception مربوط به b، primary است و exception a suppressed می‌شود.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 5,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-046",
+      "type": "tf",
+      "prompt": "اگر ساخت resource دوم در try-with-resources شکست بخورد، resourceهای پیش‌تر ساخته‌شده بسته می‌شوند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "resourceهای موفق پیشین هنگام شکست initialization بعدی به ترتیب معکوس بسته می‌شوند.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 5,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-047",
+      "type": "mcq",
+      "prompt": "در کد `final StringBuilder a = new StringBuilder(\"x\"); StringBuilder b = a; b.append(\"y\");`، a چه چیزی را نشان می‌دهد؟",
+      "options": {
+        "A": "فقط x",
+        "B": "خطای کامپایل در append",
+        "C": "StringBuilder با متن xy",
+        "D": "null"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "final بودن a مانع تغییر شیء از راه reference دیگر نیست؛ a همان StringBuilder با متن xy را نشان می‌دهد.",
+      "concepts": [
+        "final",
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 3,
+      "prerequisites": [],
+      "hint": "به تفاوت تغییر reference و تغییر شیء دقت کنید."
+    },
+    {
+      "id": "g1-lifetime-048",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\nStringBuilder a = new StringBuilder(\"x\");\nStringBuilder b = a;\nb = new StringBuilder(\"y\");\nSystem.out.println(a);",
+      "options": {
+        "A": "x",
+        "B": "y",
+        "C": "xy",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "انتساب جدید به b فقط b را به شیء تازه وصل می‌کند؛ a همچنان شیء نخست با x را دارد.",
+      "concepts": [
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-049",
+      "type": "tf",
+      "prompt": "کپی کردن یک reference به این معناست که یک شیء تازه در heap ساخته شده است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "در انتساب reference، مقدار reference کپی می‌شود؛ ساخت شیء تازه نیازمند عملی مانند new است.",
+      "concepts": [
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-050",
+      "type": "multi",
+      "prompt": "دربارهٔ `final int[] numbers = {1, 2};` کدام موارد درست‌اند؟",
+      "options": {
+        "A": "numbers = new int[]{3}; خطای کامپایل است.",
+        "B": "numbers[0] = 9; مجاز است.",
+        "C": "آرایه immutable است.",
+        "D": "خواندن numbers[1] مجاز است."
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "reference numbers قابل انتساب دوباره نیست، اما عناصر آرایه mutable هستند و می‌توان از آن خواند.",
+      "concepts": [
+        "final",
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-051",
+      "type": "mcq",
+      "prompt": "کدام کد دربارهٔ final local variable کامپایل می‌شود؟",
+      "options": {
+        "A": "final int x; if (flag) x=1; else x=2; System.out.println(x);",
+        "B": "final int x; if (flag) x=1; if (flag) x=2;",
+        "C": "final int x=1; x++;",
+        "D": "final int x; while (false) x=1; System.out.println(x);"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "در A، کامپایلر تشخیص می‌دهد هر شاخه دقیقاً یک انتساب انجام می‌دهد؛ پس x پس از if مقدار قطعی دارد.",
+      "concepts": [
+        "final",
+        "variables",
+        "scope"
+      ],
+      "difficulty": 5,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-052",
+      "type": "tf",
+      "prompt": "در Java 21، استفاده از var برای resource در try-with-resources در صورت استنتاج نوع AutoCloseable مجاز است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "var می‌تواند نوع static resource را استنتاج کند؛ نوع استنتاج‌شده باید AutoCloseable باشد.",
+      "concepts": [
+        "try-with-resources",
+        "variables"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-053",
+      "type": "mcq",
+      "prompt": "کدام عبارت دربارهٔ `try (BufferedReader r = ...)` درست است؟",
+      "options": {
+        "A": "r فقط با System.gc() بسته می‌شود.",
+        "B": "r باید final صریح باشد.",
+        "C": "r در خروج از try بسته می‌شود.",
+        "D": "r نمی‌تواند exception تولید کند."
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "BufferedReader AutoCloseable است و try-with-resources در خروج از block close را فراخوانی می‌کند.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-054",
+      "type": "blank",
+      "prompt": "رابطی که متد `close()` را برای استفاده در try-with-resources فراهم می‌کند ______ است.",
+      "answers": [
+        "AutoCloseable"
+      ],
+      "explanation": "try-with-resources بر پایهٔ قرارداد AutoCloseable عمل می‌کند.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-055",
+      "type": "mcq",
+      "prompt": "اگر `close()` تنها resource یک try-with-resources exception پرتاب کند و بدنه exception نداشته باشد، چه رخ می‌دهد؟",
+      "options": {
+        "A": "exception close اصلی پرتاب می‌شود",
+        "B": "exception نادیده گرفته می‌شود",
+        "C": "GC آن را حذف می‌کند",
+        "D": "خطای کامپایل رخ می‌دهد"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "در نبود exception بدنه، exception close به‌عنوان exception اصلی از try خارج می‌شود.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-056",
+      "type": "tf",
+      "prompt": "می‌توان یک variable موجودِ AutoCloseable را در try-with-resources آورد، اگر آن variable effectively final باشد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "Java اجازه می‌دهد resource موجودِ final یا effectively final در header try-with-resources استفاده شود.",
+      "concepts": [
+        "try-with-resources",
+        "final",
+        "variables"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-057",
+      "type": "mcq",
+      "prompt": "چرا کد زیر برای resource موجود نامعتبر است؟\nR r = new R();\nr = new R();\ntry (r) {}",
+      "options": {
+        "A": "R نمی‌تواند AutoCloseable باشد",
+        "B": "r effectively final نیست",
+        "C": "try باید catch داشته باشد",
+        "D": "var اجباری است"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "r پس از initialization دوباره انتساب گرفته و effectively final نیست؛ پس در header resource پذیرفته نمی‌شود.",
+      "concepts": [
+        "try-with-resources",
+        "final",
+        "variables"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-058",
+      "type": "multi",
+      "prompt": "کدام رویدادها باعث خروج از بدنهٔ try-with-resources و تلاش برای close resourceها می‌شوند؟",
+      "options": {
+        "A": "رسیدن به پایان block try",
+        "B": "اجرای return از بدنهٔ try",
+        "C": "پرتاب exception از بدنهٔ try",
+        "D": "فقط فراخوانی System.gc()"
+      },
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "close در خروج عادی، return و پرتاب exception انجام می‌شود.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 3,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-059",
+      "type": "mcq",
+      "prompt": "خروجی کد زیر چیست؟\nstatic int f() { try (R r = new R()) { return 4; } }\n// R.close() فقط چاپ C می‌کند\nSystem.out.print(f());",
+      "options": {
+        "A": "4C",
+        "B": "C4",
+        "C": "فقط 4",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "پیش از کامل‌شدن return، resource بسته می‌شود؛ بنابراین C پیش از 4 چاپ می‌شود.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-060",
+      "type": "tf",
+      "prompt": "یک شیء حتی اگر هنوز نام local variable آن در scope باشد، ممکن است در برخی پیاده‌سازی‌ها پیش از پایان scope برای GC غیرقابل‌دسترسی شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "scope زبانی و liveness/reachability اجرایی یکسان نیستند؛ به زمان دقیق GC نباید تکیه کرد.",
+      "concepts": [
+        "scope",
+        "garbage-collection",
+        "variables"
+      ],
+      "difficulty": 5,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-061",
+      "type": "mcq",
+      "prompt": "کدام عمل به‌تنهایی تضمین نمی‌کند یک شیء فوراً از حافظه آزاد شود؟",
+      "options": {
+        "A": "بستن resource با close",
+        "B": "خروج از try-with-resources برای resource",
+        "C": "پایان یک expression ساده",
+        "D": "قرار دادن تنها reference در null"
+      },
+      "answers": [
+        "D"
+      ],
+      "explanation": "null کردن reference ممکن است reachability را حذف کند، اما GC و زمان آزادسازی فوری تضمین نمی‌شوند.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-062",
+      "type": "multi",
+      "prompt": "برای شیء `Node n = new Node();` کدام تغییرها ممکن است به واجد GC شدن شیء کمک کنند، مشروط به نبود reference زندهٔ دیگر؟",
+      "options": {
+        "A": "n = null;",
+        "B": "خروج متدی که n local آن بود",
+        "C": "بازنویسی n با reference به شیء دیگر، اگر مجاز باشد",
+        "D": "اعلان n با final بدون تغییر دیگر"
+      },
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "حذف یا خروج از تمام referenceهای زنده می‌تواند reachability را از بین ببرد؛ final بودن reference چنین کاری نمی‌کند.",
+      "concepts": [
+        "garbage-collection",
+        "scope",
+        "reference-types",
+        "final"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-063",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\nstatic void change(int n) { n = 9; }\nint value = 3;\nchange(value);\nSystem.out.println(value);",
+      "options": {
+        "A": "3",
+        "B": "9",
+        "C": "0",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "برای primitive نیز مقدار کپی می‌شود؛ تغییر پارامتر n، variable فراخواننده را تغییر نمی‌دهد.",
+      "concepts": [
+        "pass-by-value",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-064",
+      "type": "tf",
+      "prompt": "در pass-by-value، متد می‌تواند از راه کپی reference، وضعیت شیء مشترک را تغییر دهد اما نمی‌تواند variable reference فراخواننده را دوباره متصل کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "کپی reference می‌تواند همان شیء را ببیند و mutate کند؛ انتساب به پارامتر فقط copy محلی را عوض می‌کند.",
+      "concepts": [
+        "pass-by-value",
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 4,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifetime-065",
+      "type": "mcq",
+      "prompt": "کدام جمع‌بندی دقیق است؟",
+      "options": {
+        "A": "final یک شیء را خودکار می‌بندد.",
+        "B": "GC زمان close فایل را تضمین می‌کند.",
+        "C": "Java برای referenceها pass-by-reference است.",
+        "D": "try-with-resources close را از GC مستقل و در خروج از try انجام می‌دهد."
+      },
+      "answers": [
+        "D"
+      ],
+      "explanation": "final انتساب دوباره را محدود می‌کند، GC به reachability مربوط است، و try-with-resources برای بستن قطعی resourceهای AutoCloseable است.",
+      "concepts": [
+        "final",
+        "garbage-collection",
+        "try-with-resources",
+        "pass-by-value",
+        "reference-types",
+        "scope",
+        "variables"
+      ],
+      "difficulty": 5,
+      "prerequisites": []
+    }
+  ]
+}

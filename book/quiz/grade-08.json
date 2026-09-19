@@ -1,0 +1,320 @@
+{
+  "title": "درجهٔ 8",
+  "version": 2,
+  "questions": [
+    {
+      "id": "g8-seed-001",
+      "type": "mcq",
+      "prompt": "نام module descriptor جاوا چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "module-info.java وابستگی و exportها را تعریف می‌کند.",
+      "concepts": [
+        "modules"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "modules"
+      ],
+      "options": {
+        "A": "package-info.java",
+        "B": "module-info.java",
+        "C": "pom.xml",
+        "D": "manifest.java"
+      }
+    },
+    {
+      "id": "g8-seed-002",
+      "type": "blank",
+      "prompt": "برای نمایان‌کردن package ماژول برای دیگران از ____ استفاده می‌شود.",
+      "answers": [
+        "exports"
+      ],
+      "explanation": "exports API عمومی package را آشکار می‌کند.",
+      "concepts": [
+        "modules",
+        "encapsulation"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "modules"
+      ]
+    },
+    {
+      "id": "g8-seed-003",
+      "type": "tf",
+      "prompt": "`requires transitive` وابستگی را به مصرف‌کنندگان ماژول نیز منتقل می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "خوانندهٔ ماژول جاری آن وابستگی را نیز می‌خواند.",
+      "concepts": [
+        "modules",
+        "dependencies"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "modules"
+      ]
+    },
+    {
+      "id": "g8-seed-004",
+      "type": "mcq",
+      "prompt": "برای اجرای task با نتیجه کدام API مناسب است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "submit یک Future برای نتیجهٔ Callable برمی‌گرداند.",
+      "concepts": [
+        "concurrency",
+        "ExecutorService"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "`Thread.stop()`",
+        "B": "`Runnable.run()`",
+        "C": "`ExecutorService.submit()`",
+        "D": "`Object.wait()`"
+      }
+    },
+    {
+      "id": "g8-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ immutable object درست‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "state ثابت و defensive copy اشتراک‌گذاری thread-safe را آسان می‌کنند.",
+      "concepts": [
+        "concurrency",
+        "immutability"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "immutability"
+      ],
+      "options": {
+        "A": "اشتراک‌گذاری آن ساده‌تر است",
+        "B": "setter عمومی لازم دارد",
+        "C": "defensive copy برای input mutable مهم است",
+        "D": "state پس از ساخت عوض نمی‌شود"
+      }
+    },
+    {
+      "id": "g8-seed-006",
+      "type": "mcq",
+      "prompt": "کدام ابزار برای شمارندهٔ مشترک thread-safe مناسب‌تر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "AtomicInteger عملیات اتمی مانند incrementAndGet دارد.",
+      "concepts": [
+        "concurrency",
+        "atomic"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "`int` عادی",
+        "B": "`AtomicInteger`",
+        "C": "`StringBuilder`",
+        "D": "`HashMap`"
+      }
+    },
+    {
+      "id": "g8-seed-007",
+      "type": "blank",
+      "prompt": "برای پایان‌دادن به پذیرش task جدید در ExecutorService از ____ استفاده می‌شود.",
+      "answers": [
+        "shutdown()"
+      ],
+      "explanation": "shutdown task جدید را نمی‌پذیرد و taskهای موجود را برای اتمام می‌گذارد.",
+      "concepts": [
+        "concurrency",
+        "ExecutorService"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "concurrency"
+      ]
+    },
+    {
+      "id": "g8-seed-008",
+      "type": "tf",
+      "prompt": "`volatile` عملیات `count++` را اتمی می‌کند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "++ شامل خواندن، افزایش و نوشتن است و atomic نیست.",
+      "concepts": [
+        "concurrency",
+        "volatile"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "concurrency"
+      ]
+    },
+    {
+      "id": "g8-seed-009",
+      "type": "mcq",
+      "prompt": "در `synchronized(lock) { ... }` چه چیزی mutual exclusion را فراهم می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "monitor شیء lock فقط یک thread را در آن بلوک نگه می‌دارد.",
+      "concepts": [
+        "concurrency",
+        "synchronization"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "monitor شیء lock",
+        "B": "GC",
+        "C": "module path",
+        "D": "JIT"
+      }
+    },
+    {
+      "id": "g8-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها برای جلوگیری از deadlock مفیدند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "ترتیب یکسان lock، timeout و کوچک‌کردن محدودهٔ lock احتمال deadlock را کم می‌کند.",
+      "concepts": [
+        "concurrency",
+        "deadlock"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "ترتیب ثابت برای lockها",
+        "B": "tryLock با timeout",
+        "C": "گرفتن lock بیشتر",
+        "D": "کوتاه نگه داشتن بخش قفل‌شده"
+      }
+    },
+    {
+      "id": "g8-seed-011",
+      "type": "mcq",
+      "prompt": "`opens com.app.model to jackson;` چه کاربردی دارد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "opens اجازهٔ دسترسی reflective برای framework مشخص را می‌دهد.",
+      "concepts": [
+        "modules",
+        "reflection"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "modules"
+      ],
+      "options": {
+        "A": "export API کامپایل",
+        "B": "حذف package",
+        "C": "دسترسی reflection به jackson",
+        "D": "اجرای thread"
+      }
+    },
+    {
+      "id": "g8-seed-012",
+      "type": "blank",
+      "prompt": "interface `Callable<V>` برخلاف Runnable می‌تواند مقدار ____ برگرداند.",
+      "answers": [
+        "V"
+      ],
+      "explanation": "Callable نتیجهٔ typed می‌دهد و می‌تواند exception پرتاب کند.",
+      "concepts": [
+        "concurrency",
+        "Callable"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "concurrency"
+      ]
+    },
+    {
+      "id": "g8-seed-013",
+      "type": "tf",
+      "prompt": "استفاده از parallel stream همیشه برنامه را سریع‌تر می‌کند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "هزینهٔ split، merge و contention ممکن است آن را کندتر کند.",
+      "concepts": [
+        "concurrency",
+        "parallel-streams"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "streams"
+      ]
+    },
+    {
+      "id": "g8-seed-014",
+      "type": "mcq",
+      "prompt": "برای کار CPU-bound با تعداد worker محدود، کدام نقطهٔ شروع مناسب است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "fixed thread pool تعداد هم‌زمانی را محدود و قابل پیش‌بینی می‌کند.",
+      "concepts": [
+        "concurrency",
+        "thread-pool"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "thread نامحدود",
+        "B": "single thread برای همه‌چیز",
+        "C": "sleep در حلقه",
+        "D": "fixed thread pool"
+      }
+    },
+    {
+      "id": "g8-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ JPMS درست‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "requires وابستگی، exports API و opens reflection را کنترل می‌کنند.",
+      "concepts": [
+        "modules",
+        "JPMS"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "modules"
+      ],
+      "options": {
+        "A": "requires وابستگی را اعلام می‌کند",
+        "B": "exports همهٔ packageها را باز می‌کند",
+        "C": "opens برای reflection است",
+        "D": "ماژول encapsulation قوی‌تر می‌دهد"
+      }
+    }
+  ]
+}

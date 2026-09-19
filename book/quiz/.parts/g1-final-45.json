@@ -1,0 +1,1193 @@
+{
+  "questions": [
+    {
+      "id": "g1-final-001",
+      "type": "mcq",
+      "prompt": "اگر یک فایل Java دستور package داشته باشد، این دستور کجا قرار می‌گیرد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "package باید پیش از importها و تعریف نوع‌ها باشد؛ کامنت‌ها می‌توانند پیش از آن بیایند.",
+      "concepts": [
+        "package",
+        "source-file"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "نخستین دستور غیرکامنت فایل"
+        },
+        {
+          "id": "B",
+          "text": "پس از همه importها"
+        },
+        {
+          "id": "C",
+          "text": "داخل کلاس"
+        },
+        {
+          "id": "D",
+          "text": "پس از main"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-002",
+      "type": "mcq",
+      "prompt": "کدام امضا نقطه ورود متداول یک برنامه Java است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "نقطه ورود کلاسیک Java یک متد public، static و void با پارامتر String[] است.",
+      "concepts": [
+        "main",
+        "method-signature"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "public void main(String[] args)"
+        },
+        {
+          "id": "B",
+          "text": "public static int main(String[] args)"
+        },
+        {
+          "id": "C",
+          "text": "public static void main(String[] args)"
+        },
+        {
+          "id": "D",
+          "text": "static String main()"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-003",
+      "type": "multi",
+      "prompt": "کدام گزاره‌ها درباره import درست‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "import پس از package می‌آید، فقط نام نوع‌ها را در همان فایل کوتاه می‌کند و java.lang ضمنی است؛ wildcard زیرپکیج‌ها را وارد نمی‌کند.",
+      "concepts": [
+        "import",
+        "packages"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "package"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "پس از package و پیش از کلاس می‌آید."
+        },
+        {
+          "id": "B",
+          "text": "java.util.* زیرپکیج‌ها را هم وارد می‌کند."
+        },
+        {
+          "id": "C",
+          "text": "فقط بر حل نام در همان فایل اثر دارد."
+        },
+        {
+          "id": "D",
+          "text": "String معمولاً import صریح نمی‌خواهد."
+        }
+      ]
+    },
+    {
+      "id": "g1-final-004",
+      "type": "tf",
+      "prompt": "import java.util.* باعث می‌شود نوع‌های java.util.concurrent نیز بدون import قابل استفاده باشند.",
+      "answers": false,
+      "explanation": "import ستاره فقط اعضای مستقیم همان پکیج را پوشش می‌دهد، نه زیرپکیج‌ها.",
+      "concepts": [
+        "import",
+        "packages"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "import"
+      ]
+    },
+    {
+      "id": "g1-final-005",
+      "type": "blank",
+      "prompt": "در امضای main، کدام کلیدواژه نشان می‌دهد متد بدون ساختن شیء قابل فراخوانی است؟",
+      "answers": "static",
+      "explanation": "متد static به کلاس تعلق دارد، نه به یک نمونه.",
+      "concepts": [
+        "static",
+        "main"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g1-final-006",
+      "type": "mcq",
+      "prompt": "اگر کلاسی هیچ سازنده صریحی نداشته باشد، کامپایلر چه می‌سازد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "کامپایلر یک سازنده بدون پارامتر با سطح دسترسی همان کلاس تولید می‌کند.",
+      "concepts": [
+        "constructors",
+        "default-constructor"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "سازنده public با پارامتر دلخواه"
+        },
+        {
+          "id": "B",
+          "text": "سازنده بدون پارامتر با دسترسی همان کلاس"
+        },
+        {
+          "id": "C",
+          "text": "هیچ سازنده‌ای"
+        },
+        {
+          "id": "D",
+          "text": "فقط سازنده private"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-007",
+      "type": "tf",
+      "prompt": "با نوشتن حتی یک سازنده صریح، سازنده پیش‌فرضِ خودکار دیگر تولید نمی‌شود.",
+      "answers": true,
+      "explanation": "تولید خودکار سازنده پیش‌فرض فقط وقتی رخ می‌دهد که هیچ سازنده‌ای اعلام نشده باشد.",
+      "concepts": [
+        "constructors",
+        "default-constructor"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "constructors"
+      ]
+    },
+    {
+      "id": "g1-final-008",
+      "type": "multi",
+      "prompt": "کدام ویژگی‌های سازنده Java درست‌اند؟",
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "نام سازنده نام کلاس است، نوع بازگشتی ندارد و می‌تواند overload شود؛ فراخوانی ساخت با new است.",
+      "concepts": [
+        "constructors",
+        "overloading"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "classes",
+        "methods"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "نامش با نام کلاس برابر است."
+        },
+        {
+          "id": "B",
+          "text": "حتی void هم به‌عنوان نوع بازگشتی نمی‌نویسد."
+        },
+        {
+          "id": "C",
+          "text": "می‌تواند فهرست پارامتر متفاوت داشته باشد."
+        },
+        {
+          "id": "D",
+          "text": "مانند متد عادی با obj.Constructor() فراخوانی می‌شود."
+        }
+      ]
+    },
+    {
+      "id": "g1-final-009",
+      "type": "blank",
+      "prompt": "عبارت ساخت نمونه از Book را کامل کنید: ______ Book()",
+      "answers": "new",
+      "explanation": "عملگر new نمونه را ایجاد و سازنده را اجرا می‌کند.",
+      "concepts": [
+        "new",
+        "objects"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ]
+    },
+    {
+      "id": "g1-final-010",
+      "type": "mcq",
+      "prompt": "در ساخت new Child()، بلوک نمونه Child نسبت به بدنه سازنده Child چه زمانی اجرا می‌شود؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "پس از اتمام ساخت بخش والد، مقداردهی فیلدها و بلوک‌های نمونه Child پیش از بدنه سازنده آن اجرا می‌شوند.",
+      "concepts": [
+        "instance-initializer",
+        "constructors"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "constructors",
+        "inheritance"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "پیش از بدنه سازنده Child"
+        },
+        {
+          "id": "B",
+          "text": "پس از بدنه سازنده Child"
+        },
+        {
+          "id": "C",
+          "text": "فقط یک‌بار برای کلاس"
+        },
+        {
+          "id": "D",
+          "text": "هرگز اجرا نمی‌شود"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-011",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟ class D { static int n=2; static { n+=3; } public static void main(String[] a){System.out.print(n);} }",
+      "answers": [
+        "C"
+      ],
+      "explanation": "فیلد و بلوک static به ترتیب متن هنگام مقداردهی اولیه کلاس اجرا می‌شوند؛ n برابر 5 می‌شود.",
+      "concepts": [
+        "static-initializer",
+        "class-initialization"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "static"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "خطای کامپایل"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-012",
+      "type": "tf",
+      "prompt": "یک بلوک static برای هر شیء تازه از کلاس دوباره اجرا می‌شود.",
+      "answers": false,
+      "explanation": "بلوک static به مقداردهی اولیه کلاس تعلق دارد و نه به هر نمونه.",
+      "concepts": [
+        "static-initializer",
+        "objects"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "static"
+      ]
+    },
+    {
+      "id": "g1-final-013",
+      "type": "multi",
+      "prompt": "کدام رخدادها می‌توانند مقداردهی اولیه یک کلاس را فعال کنند؟",
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "ساخت نمونه، فراخوانی متد static و خواندن فیلد static غیرثابت از موارد استفاده فعال کلاس‌اند.",
+      "concepts": [
+        "class-initialization",
+        "static"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "static",
+        "classes"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "new از کلاس"
+        },
+        {
+          "id": "B",
+          "text": "فراخوانی متد static"
+        },
+        {
+          "id": "C",
+          "text": "خواندن فیلد static غیرثابت"
+        },
+        {
+          "id": "D",
+          "text": "نوشتن نام کلاس در کامنت"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-014",
+      "type": "blank",
+      "prompt": "نام بلوک static { ... } که هنگام مقداردهی اولیه کلاس اجرا می‌شود چیست؟",
+      "answers": "بلوک مقداردهی اولیه static",
+      "explanation": "این بلوک برای راه‌اندازی اعضای static به‌کار می‌رود.",
+      "concepts": [
+        "static-initializer"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "static"
+      ]
+    },
+    {
+      "id": "g1-final-015",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟ class A { int x=1; {x+=2;} A(){x*=3;} public static void main(String[] a){System.out.print(new A().x);} }",
+      "answers": [
+        "D"
+      ],
+      "explanation": "ابتدا 1، سپس 3 و در سازنده 9 می‌شود.",
+      "concepts": [
+        "instance-fields",
+        "instance-initializer",
+        "constructors"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "fields",
+        "constructors"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-016",
+      "type": "tf",
+      "prompt": "فیلدهای نمونه و بلوک‌های مقداردهی اولیه نمونه برای هر new اجرا می‌شوند.",
+      "answers": true,
+      "explanation": "این عناصر به هر شیء تعلق دارند و برای هر ساخت شیء اجرا می‌شوند.",
+      "concepts": [
+        "instance-fields",
+        "instance-initializer"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "objects"
+      ]
+    },
+    {
+      "id": "g1-final-017",
+      "type": "multi",
+      "prompt": "کدام گزاره درباره ترتیب عناصر static درست است؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "فیلدها و بلوک‌های static به ترتیب ظاهرشدن اجرا می‌شوند؛ ارجاع مستقیم رو به جلو ممکن است illegal forward reference باشد.",
+      "concepts": [
+        "static-initializer",
+        "initialization-order"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "static"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "ترتیب متن مهم است."
+        },
+        {
+          "id": "B",
+          "text": "ارجاع مستقیم به فیلد بعدی ممکن است illegal forward reference باشد."
+        },
+        {
+          "id": "C",
+          "text": "همه فیلدها همیشه پیش از همه بلوک‌ها اجرا می‌شوند."
+        },
+        {
+          "id": "D",
+          "text": "بلوک static می‌تواند فیلد قبلی را تغییر دهد."
+        }
+      ]
+    },
+    {
+      "id": "g1-final-018",
+      "type": "mcq",
+      "prompt": "مقدار چاپ‌شده چیست؟ class S { int count; public static void main(String[] a){System.out.print(new S().count);} }",
+      "answers": [
+        "B"
+      ],
+      "explanation": "فیلد int مقدار پیش‌فرض صفر دارد.",
+      "concepts": [
+        "fields",
+        "default-values"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "primitive-types"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "null"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "نامعین"
+        },
+        {
+          "id": "D",
+          "text": "خطای کامپایل"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-019",
+      "type": "tf",
+      "prompt": "متغیر محلی int بدون مقداردهی، مانند فیلد int خودکار صفر می‌گیرد.",
+      "answers": false,
+      "explanation": "متغیر محلی باید پیش از خواندن، قطعاً مقداردهی شده باشد.",
+      "concepts": [
+        "local-variables",
+        "definite-assignment"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-final-020",
+      "type": "blank",
+      "prompt": "برای اشاره صریح به فیلدی که با پارامتر هم‌نام پنهان شده، از چه کلیدواژه‌ای استفاده می‌شود؟",
+      "answers": "this",
+      "explanation": "مثلاً this.name فیلد نمونه را مشخص می‌کند.",
+      "concepts": [
+        "this",
+        "shadowing"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "fields",
+        "methods"
+      ]
+    },
+    {
+      "id": "g1-final-021",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟ class B { int size=4; void show(int size){System.out.print(size);} public static void main(String[] a){new B().show(9);} }",
+      "answers": [
+        "B"
+      ],
+      "explanation": "پارامتر هم‌نام در محدوده متد فیلد را پنهان می‌کند.",
+      "concepts": [
+        "scope",
+        "shadowing"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "fields",
+        "methods"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "49"
+        },
+        {
+          "id": "D",
+          "text": "خطای کامپایل"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-022",
+      "type": "multi",
+      "prompt": "کدام عبارت‌ها درباره محدوده متغیر درست‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "پارامتر در بدنه متد و فیلد در متدهای نمونه قابل دسترسی است؛ متغیر بلوکی بیرون بلوک در دسترس نیست.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "control-flow"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "پارامتر در بدنه همان متد قابل استفاده است."
+        },
+        {
+          "id": "B",
+          "text": "متغیر داخل if همیشه پس از if در دسترس است."
+        },
+        {
+          "id": "C",
+          "text": "فیلد نمونه در متد نمونه قابل خواندن است."
+        },
+        {
+          "id": "D",
+          "text": "متغیر اعلان‌شده در for بیرون حلقه در محدوده نیست."
+        }
+      ]
+    },
+    {
+      "id": "g1-final-023",
+      "type": "tf",
+      "prompt": "فیلد boolean بدون مقداردهی صریح، false می‌گیرد.",
+      "answers": true,
+      "explanation": "مقدار پیش‌فرض boolean برای فیلد false است.",
+      "concepts": [
+        "boolean",
+        "default-values"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "fields"
+      ]
+    },
+    {
+      "id": "g1-final-024",
+      "type": "blank",
+      "prompt": "مقدار پیش‌فرض یک فیلد مرجع مانند String title چیست؟",
+      "answers": "null",
+      "explanation": "فیلدهای مرجع مقداردهی‌نشده null می‌گیرند.",
+      "concepts": [
+        "null",
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "fields"
+      ]
+    },
+    {
+      "id": "g1-final-025",
+      "type": "mcq",
+      "prompt": "نتیجه a == b چیست؟ String a=\"java\"; String b=\"ja\"+\"va\";",
+      "answers": [
+        "A"
+      ],
+      "explanation": "ترکیب literalها constant expression است و همان literal pool شده را نتیجه می‌دهد.",
+      "concepts": [
+        "String",
+        "string-pool",
+        "reference-equality"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "strings"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "true"
+        },
+        {
+          "id": "B",
+          "text": "false"
+        },
+        {
+          "id": "C",
+          "text": "null"
+        },
+        {
+          "id": "D",
+          "text": "خطای کامپایل"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-026",
+      "type": "mcq",
+      "prompt": "برای مقایسه محتوای دو String کدام درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "equals در String محتوا را مقایسه می‌کند؛ == هویت مرجع را می‌سنجد.",
+      "concepts": [
+        "String",
+        "equals"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "strings"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "s1 == s2"
+        },
+        {
+          "id": "B",
+          "text": "s1.equals(s2)"
+        },
+        {
+          "id": "C",
+          "text": "s1 = s2"
+        },
+        {
+          "id": "D",
+          "text": "String.compare(s1,s2)"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-027",
+      "type": "multi",
+      "prompt": "کدام موارد درباره String درست‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "String تغییرناپذیر است، literalها در pool هستند و intern می‌تواند مرجع canonical pool را بازگرداند.",
+      "concepts": [
+        "String",
+        "string-pool",
+        "immutability"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "strings",
+        "objects"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "String تغییرناپذیر است."
+        },
+        {
+          "id": "B",
+          "text": "new String(\"hi\") همیشه همان مرجع literal را می‌دهد."
+        },
+        {
+          "id": "C",
+          "text": "literalهای String pool می‌شوند."
+        },
+        {
+          "id": "D",
+          "text": "intern() می‌تواند مرجع canonical را برگرداند."
+        }
+      ]
+    },
+    {
+      "id": "g1-final-028",
+      "type": "tf",
+      "prompt": "s = s + \"!\" محتوای شیء String قبلی را تغییر می‌دهد.",
+      "answers": false,
+      "explanation": "String تغییرناپذیر است؛ عبارت رشته تازه‌ای می‌سازد و مرجع متغیر را عوض می‌کند.",
+      "concepts": [
+        "String",
+        "immutability"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g1-final-029",
+      "type": "blank",
+      "prompt": "عملگر مقایسه هویت دو مرجع شیء چیست؟",
+      "answers": "==",
+      "explanation": "عملگر == برای مرجع‌ها یکی‌بودن شیء مقصد را می‌سنجد.",
+      "concepts": [
+        "reference-equality",
+        "operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "objects"
+      ]
+    },
+    {
+      "id": "g1-final-030",
+      "type": "mcq",
+      "prompt": "کدام شکل آغاز درست یک text block است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "text block با سه گیومه دوتایی آغاز می‌شود و پس از delimiter آغازین خط جدید دارد.",
+      "concepts": [
+        "text-blocks",
+        "String",
+        "Java-21"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "strings"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "String s = \"\"\"Hello\"\"\";"
+        },
+        {
+          "id": "B",
+          "text": "String s = ''' Hello ''';"
+        },
+        {
+          "id": "C",
+          "text": "String s = \"\"\"\nHello\n\"\"\";"
+        },
+        {
+          "id": "D",
+          "text": "String s = `Hello`;"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-031",
+      "type": "tf",
+      "prompt": "Text block در Java مقدار از نوع String تولید می‌کند.",
+      "answers": true,
+      "explanation": "text block فقط شیوه نوشتن یک literal چندخطی String است.",
+      "concepts": [
+        "text-blocks",
+        "String"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g1-final-032",
+      "type": "mcq",
+      "prompt": "در text block، کدام escape برای حذف خط‌پایان فیزیکی و ادامه متن روی همان خط استفاده می‌شود؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "backslash در انتهای خط، خط‌پایان incident را حذف می‌کند.",
+      "concepts": [
+        "text-blocks",
+        "escape-sequences"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "strings"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "\\n"
+        },
+        {
+          "id": "B",
+          "text": "\\t"
+        },
+        {
+          "id": "C",
+          "text": "\\s"
+        },
+        {
+          "id": "D",
+          "text": "\\"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-033",
+      "type": "blank",
+      "prompt": "برای حفظ یک فضای انتهایی در text block می‌توان از escape ______ استفاده کرد.",
+      "answers": "\\s",
+      "explanation": "escape \\s یک فاصله را نگه می‌دارد و سپس پردازش فضای انتهایی حذفش نمی‌کند.",
+      "concepts": [
+        "text-blocks",
+        "escape-sequences"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g1-final-034",
+      "type": "multi",
+      "prompt": "کدام نوع‌ها از try-with-resources پشتیبانی می‌کنند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "منبع باید AutoCloseable یا زیرنوع آن باشد؛ Scanner و BufferedReader چنین هستند.",
+      "concepts": [
+        "try-with-resources",
+        "AutoCloseable"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "exceptions",
+        "resources"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Scanner"
+        },
+        {
+          "id": "B",
+          "text": "String"
+        },
+        {
+          "id": "C",
+          "text": "BufferedReader"
+        },
+        {
+          "id": "D",
+          "text": "int"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-035",
+      "type": "tf",
+      "prompt": "وقتی اجرای try-with-resources تمام شود، close() منبع اعلام‌شده حتی اگر بدنه try استثنا بدهد، فراخوانی می‌شود.",
+      "answers": true,
+      "explanation": "منابع به‌صورت خودکار و در خروج معکوس بسته می‌شوند؛ استثنای close ممکن است suppressed شود.",
+      "concepts": [
+        "try-with-resources",
+        "resources"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "exceptions"
+      ]
+    },
+    {
+      "id": "g1-final-036",
+      "type": "mcq",
+      "prompt": "چرا فراخوانی System.gc() راه مطمئنی برای آزادکردن فوری حافظه نیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "این فراخوانی فقط درخواست یا hint است و JVM زمان اجرا یا حتی اجرای GC را تضمین نمی‌کند.",
+      "concepts": [
+        "garbage-collection",
+        "JVM"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "memory-basics"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "GC را فوراً و حتماً اجرا می‌کند."
+        },
+        {
+          "id": "B",
+          "text": "JVM اجرای آن را تضمین نمی‌کند."
+        },
+        {
+          "id": "C",
+          "text": "همه فایل‌های باز را می‌بندد."
+        },
+        {
+          "id": "D",
+          "text": "اشیای reachable را پاک می‌کند."
+        }
+      ]
+    },
+    {
+      "id": "g1-final-037",
+      "type": "tf",
+      "prompt": "رسیدن یک شیء به حالت غیرقابل‌دسترسی تضمین می‌کند که فوراً جمع‌آوری شود.",
+      "answers": false,
+      "explanation": "GC زمان دقیق جمع‌آوری unreachable object را تضمین نمی‌کند.",
+      "concepts": [
+        "garbage-collection",
+        "reachability"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "objects"
+      ]
+    },
+    {
+      "id": "g1-final-038",
+      "type": "multi",
+      "prompt": "کدام کارها جایگزین درست اتکا به GC برای مدیریت resource خارجی‌اند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "فایل، socket و resourceهای خارجی باید deterministically بسته شوند؛ GC زمان close را تضمین نمی‌کند.",
+      "concepts": [
+        "resources",
+        "try-with-resources",
+        "garbage-collection"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "exceptions"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "استفاده از try-with-resources"
+        },
+        {
+          "id": "B",
+          "text": "فراخوانی close در finally در کد قدیمی"
+        },
+        {
+          "id": "C",
+          "text": "فقط System.gc()"
+        },
+        {
+          "id": "D",
+          "text": "بستن صریح resource وقتی مالک آن هستید."
+        }
+      ]
+    },
+    {
+      "id": "g1-final-039",
+      "type": "mcq",
+      "prompt": "در try-with-resources، اگر دو منبع به‌ترتیب a و b باز شوند، ترتیب تلاش برای بستن چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "منابع به ترتیب معکوس اعلان بسته می‌شوند تا الگوی stack-like برای وابستگی منابع حفظ شود.",
+      "concepts": [
+        "try-with-resources",
+        "resources"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "exceptions"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "a سپس b"
+        },
+        {
+          "id": "B",
+          "text": "به‌صورت تصادفی"
+        },
+        {
+          "id": "C",
+          "text": "b سپس a"
+        },
+        {
+          "id": "D",
+          "text": "هیچ‌کدام خودکار بسته نمی‌شود"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-040",
+      "type": "blank",
+      "prompt": "رابط پایه‌ای که یک منبع برای استفاده در try-with-resources باید پیاده‌سازی کند چیست؟",
+      "answers": "AutoCloseable",
+      "explanation": "AutoCloseable متد close() را تعریف می‌کند.",
+      "concepts": [
+        "AutoCloseable",
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "interfaces"
+      ]
+    },
+    {
+      "id": "g1-final-041",
+      "type": "tf",
+      "prompt": "بستن Scanner ساخته‌شده روی System.in، ورودی استاندارد زیرین را نیز می‌بندد.",
+      "answers": true,
+      "explanation": "Scanner هنگام close، منبع Readable/Closeable زیرین را نیز می‌بندد؛ بنابراین برای System.in باید با احتیاط استفاده شود.",
+      "concepts": [
+        "Scanner",
+        "resources",
+        "System.in"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "try-with-resources"
+      ]
+    },
+    {
+      "id": "g1-final-042",
+      "type": "mcq",
+      "prompt": "کدام اعلان متغیر محلی در Java 21 بدون مقداردهی و سپس خواندن، خطای کامپایل دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "متغیر محلی برخلاف فیلد مقدار پیش‌فرض ندارد؛ String s پیش از خواندن باید مقدار بگیرد.",
+      "concepts": [
+        "local-variables",
+        "definite-assignment"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "String s; System.out.print(s);"
+        },
+        {
+          "id": "B",
+          "text": "String s=null; System.out.print(s);"
+        },
+        {
+          "id": "C",
+          "text": "int x=0; System.out.print(x);"
+        },
+        {
+          "id": "D",
+          "text": "boolean b=false; System.out.print(b);"
+        }
+      ]
+    },
+    {
+      "id": "g1-final-043",
+      "type": "multi",
+      "prompt": "کدام موارد درباره فیلدها و متغیرهای محلی درست‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "فیلدها مقدار پیش‌فرض دارند، localها باید definite assignment شوند، و فیلد static میان همه نمونه‌ها مشترک است.",
+      "concepts": [
+        "fields",
+        "local-variables",
+        "static"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "فیلدهای نمونه مقدار پیش‌فرض دارند."
+        },
+        {
+          "id": "B",
+          "text": "متغیر محلی همیشه مقدار پیش‌فرض دارد."
+        },
+        {
+          "id": "C",
+          "text": "متغیر محلی پیش از خواندن باید مقداردهی قطعی شود."
+        },
+        {
+          "id": "D",
+          "text": "فیلد static متعلق به کلاس و مشترک میان نمونه‌هاست."
+        }
+      ]
+    },
+    {
+      "id": "g1-final-044",
+      "type": "tf",
+      "prompt": "نام یک متغیر محلی می‌تواند در همان محدوده با نام پارامتر همان متد یکسان اعلان شود.",
+      "answers": false,
+      "explanation": "پارامتر و بدنه مستقیم متد در محدوده‌های هم‌پوشان‌اند؛ اعلان محلی هم‌نام خطای کامپایل است.",
+      "concepts": [
+        "scope",
+        "parameters",
+        "local-variables"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g1-final-045",
+      "type": "blank",
+      "prompt": "برای اجرای کلاسِ public در پکیج com.example با main، نام دودویی کامل کلاس چیست؟",
+      "answers": "com.example.ClassName",
+      "explanation": "در دستور java از نام کامل پکیج به‌همراه نام کلاس استفاده می‌شود؛ ClassName باید با نام واقعی کلاس جایگزین شود.",
+      "concepts": [
+        "package",
+        "main",
+        "fully-qualified-name"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "package",
+        "main"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "title": "درجهٔ 4",
+  "version": 2,
+  "questions": [
+    {
+      "id": "g4-seed-001",
+      "type": "mcq",
+      "prompt": "constructor چه زمانی اجرا می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "constructor هنگام ساخت شیء با new اجرا می‌شود.",
+      "concepts": [
+        "constructors",
+        "objects"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "پایان برنامه",
+        "B": "ساخت شیء",
+        "C": "فقط متد static",
+        "D": "پس از GC"
+      }
+    },
+    {
+      "id": "g4-seed-002",
+      "type": "blank",
+      "prompt": "برای ارجاع به field شیء فعلی در constructor از ____ استفاده می‌کنیم.",
+      "answers": [
+        "this"
+      ],
+      "explanation": "this به شیء فعلی اشاره دارد.",
+      "concepts": [
+        "this",
+        "constructors"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ]
+    },
+    {
+      "id": "g4-seed-003",
+      "type": "tf",
+      "prompt": "اگر constructorی تعریف نکنیم، کامپایلر constructor بدون پارامتر می‌سازد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "تا زمانی که constructor دیگری نباشد، constructor پیش‌فرض تولید می‌شود.",
+      "concepts": [
+        "constructors"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "classes"
+      ]
+    },
+    {
+      "id": "g4-seed-004",
+      "type": "mcq",
+      "prompt": "کدام اعلان ارث‌بری درست است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "فرزند با extends یک class پایه را گسترش می‌دهد.",
+      "concepts": [
+        "inheritance"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "`class Dog implements Animal`",
+        "B": "`class Dog inherits Animal`",
+        "C": "`class Dog extends Animal`",
+        "D": "`class Dog : Animal`"
+      }
+    },
+    {
+      "id": "g4-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها کپسوله‌سازی‌اند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "private کردن state و validation در setter دسترسی را کنترل می‌کند.",
+      "concepts": [
+        "encapsulation",
+        "access-modifiers"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "private کردن field",
+        "B": "public کردن همهٔ fieldها",
+        "C": "اعتبارسنجی در setter",
+        "D": "static کردن همهٔ fieldها"
+      }
+    },
+    {
+      "id": "g4-seed-006",
+      "type": "mcq",
+      "prompt": "چرا فرزند `super(name)` را صدا می‌زند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "این کار بخش والد را با constructor آن مقداردهی می‌کند.",
+      "concepts": [
+        "inheritance",
+        "super"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "constructors"
+      ],
+      "options": {
+        "A": "ساخت interface",
+        "B": "مقداردهی والد",
+        "C": "حذف field والد",
+        "D": "override constructor"
+      }
+    },
+    {
+      "id": "g4-seed-007",
+      "type": "blank",
+      "prompt": "متد هم‌امضا در فرزند که رفتار والد را عوض کند، ____ می‌شود.",
+      "answers": [
+        "override"
+      ],
+      "explanation": "override پیاده‌سازی inherited method را جایگزین می‌کند.",
+      "concepts": [
+        "overriding",
+        "polymorphism"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "inheritance"
+      ]
+    },
+    {
+      "id": "g4-seed-008",
+      "type": "tf",
+      "prompt": "یک class می‌تواند با extends از دو class ارث ببرد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "Java برای classها single inheritance دارد.",
+      "concepts": [
+        "inheritance"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "inheritance"
+      ]
+    },
+    {
+      "id": "g4-seed-009",
+      "type": "mcq",
+      "prompt": "در `Animal a = new Cat(); a.sound();` انتخاب پیاده‌سازی به چه بستگی دارد؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "dispatch متد instance بر مبنای نوع واقعی شیء انجام می‌شود.",
+      "concepts": [
+        "polymorphism",
+        "dispatch"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "inheritance"
+      ],
+      "options": {
+        "A": "نام متغیر",
+        "B": "نوع بازگشت",
+        "C": "ترتیب import",
+        "D": "نوع واقعی شیء"
+      }
+    },
+    {
+      "id": "g4-seed-010",
+      "type": "multi",
+      "prompt": "کدام modifierها از public محدودترند؟",
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "private، protected و package-private محدودتر از public هستند.",
+      "concepts": [
+        "access-modifiers"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "private",
+        "B": "protected",
+        "C": "بدون modifier",
+        "D": "public"
+      }
+    },
+    {
+      "id": "g4-seed-011",
+      "type": "mcq",
+      "prompt": "کدام field بین همهٔ نمونه‌ها مشترک است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "static field متعلق به خود class است.",
+      "concepts": [
+        "static",
+        "fields"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "`static int count`",
+        "B": "`final int id`",
+        "C": "`private int age`",
+        "D": "`int score`"
+      }
+    },
+    {
+      "id": "g4-seed-012",
+      "type": "blank",
+      "prompt": "قالب تعریف state و behavior برای objectها، ____ نام دارد.",
+      "answers": [
+        "class"
+      ],
+      "explanation": "class ویژگی‌ها و رفتار objectها را تعریف می‌کند.",
+      "concepts": [
+        "classes",
+        "objects"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g4-seed-013",
+      "type": "tf",
+      "prompt": "final بودن یک reference ثابت می‌کند شیء مورد اشاره immutable است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "final فقط انتساب reference به شیء دیگر را منع می‌کند.",
+      "concepts": [
+        "final",
+        "references"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "references"
+      ]
+    },
+    {
+      "id": "g4-seed-014",
+      "type": "mcq",
+      "prompt": "کاربرد `@Override` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "کامپایلر خطای امضای نامعتبر هنگام override را آشکار می‌کند.",
+      "concepts": [
+        "overriding",
+        "annotations"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "inheritance"
+      ],
+      "options": {
+        "A": "متد را static می‌کند",
+        "B": "overload را ممنوع می‌کند",
+        "C": "override نامعتبر را کشف می‌کند",
+        "D": "والد را abstract می‌کند"
+      }
+    },
+    {
+      "id": "g4-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها برای value object مناسب‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "برابری بر اساس state و state پایدار برای value object مناسب‌اند.",
+      "concepts": [
+        "object-design",
+        "equals"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "classes"
+      ],
+      "options": {
+        "A": "equals/hashCode بر اساس state",
+        "B": "field عمومی mutable",
+        "C": "state ترجیحاً immutable",
+        "D": "اعتبارسنجی هنگام ساخت"
+      }
+    }
+  ]
+}

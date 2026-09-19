@@ -1,0 +1,318 @@
+{
+  "title": "درجهٔ 6",
+  "version": 2,
+  "questions": [
+    {
+      "id": "g6-seed-001",
+      "type": "mcq",
+      "prompt": "کدام lambda با `Predicate<String>` سازگار است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "Predicate یک ورودی گرفته و boolean برمی‌گرداند.",
+      "concepts": [
+        "lambdas",
+        "Predicate"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "interfaces"
+      ],
+      "options": {
+        "A": "`s -> System.out.println(s)`",
+        "B": "`s -> s.isBlank()`",
+        "C": "`() -> \"ok\"`",
+        "D": "`(a,b) -> a+b`"
+      }
+    },
+    {
+      "id": "g6-seed-002",
+      "type": "blank",
+      "prompt": "interface تابعی `Function<T,R>` متد اصلی ____ دارد.",
+      "answers": [
+        "apply"
+      ],
+      "explanation": "apply ورودی T را به نتیجهٔ R تبدیل می‌کند.",
+      "concepts": [
+        "functional-interfaces",
+        "Function"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "lambdas"
+      ]
+    },
+    {
+      "id": "g6-seed-003",
+      "type": "tf",
+      "prompt": "متغیر محلی captureشده در lambda باید final یا effectively final باشد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "lambda نمی‌تواند local variable دوباره‌انتساب‌شده را capture کند.",
+      "concepts": [
+        "lambdas",
+        "scope"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "lambdas"
+      ]
+    },
+    {
+      "id": "g6-seed-004",
+      "type": "mcq",
+      "prompt": "برای افزودن به انتهای ArrayList از چه متدی استفاده می‌شود؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "add(element) عنصر را به پایان list اضافه می‌کند.",
+      "concepts": [
+        "collections",
+        "ArrayList"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "collections"
+      ],
+      "options": {
+        "A": "add",
+        "B": "put",
+        "C": "pushFront",
+        "D": "appendAll"
+      }
+    },
+    {
+      "id": "g6-seed-005",
+      "type": "multi",
+      "prompt": "کدام collectionها ترتیب درج را حفظ می‌کنند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "ArrayList و LinkedHashSet ترتیب درج را نگه می‌دارند.",
+      "concepts": [
+        "collections",
+        "ordering"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "collections"
+      ],
+      "options": {
+        "A": "ArrayList",
+        "B": "HashSet",
+        "C": "LinkedHashSet",
+        "D": "HashMap"
+      }
+    },
+    {
+      "id": "g6-seed-006",
+      "type": "mcq",
+      "prompt": "`List<? extends Number>` چه تضمینی می‌دهد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "خواندن مقدار به شکل Number امن است.",
+      "concepts": [
+        "generics",
+        "wildcards"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "generics"
+      ],
+      "options": {
+        "A": "می‌توان Number افزود",
+        "B": "فقط String نگه می‌دارد",
+        "C": "خواندن Number امن است",
+        "D": "هیچ چیز خوانده نمی‌شود"
+      }
+    },
+    {
+      "id": "g6-seed-007",
+      "type": "blank",
+      "prompt": "قاعدهٔ PECS می‌گوید producer extends و consumer ____ است.",
+      "answers": [
+        "super"
+      ],
+      "explanation": "? super T برای نوشتن T مناسب است.",
+      "concepts": [
+        "generics",
+        "PECS"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "generics"
+      ]
+    },
+    {
+      "id": "g6-seed-008",
+      "type": "tf",
+      "prompt": "`List<String>` زیرنوع `List<Object>` است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "genericهای Java invariant هستند.",
+      "concepts": [
+        "generics",
+        "invariance"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "generics"
+      ]
+    },
+    {
+      "id": "g6-seed-009",
+      "type": "mcq",
+      "prompt": "برای خواندن مقدار key از `Map<String,Integer> counts` چه می‌نویسیم؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "get مقدار مرتبط با key را می‌دهد.",
+      "concepts": [
+        "collections",
+        "Map"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Map"
+      ],
+      "options": {
+        "A": "`counts.value(\"a\")`",
+        "B": "`counts.at(\"a\")`",
+        "C": "`counts.find(\"a\")`",
+        "D": "`counts.get(\"a\")"
+      }
+    },
+    {
+      "id": "g6-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها functional interface استانداردند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "Consumer، Supplier و Comparator هر کدام یک SAM دارند.",
+      "concepts": [
+        "functional-interfaces"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "interfaces"
+      ],
+      "options": {
+        "A": "Consumer",
+        "B": "Supplier",
+        "C": "List",
+        "D": "Comparator"
+      }
+    },
+    {
+      "id": "g6-seed-011",
+      "type": "mcq",
+      "prompt": "diamond operator در `new ArrayList<>()` چه می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "type argument را از context استنباط می‌کند.",
+      "concepts": [
+        "generics",
+        "type-inference"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "generics"
+      ],
+      "options": {
+        "A": "immutable list می‌سازد",
+        "B": "type argument را استنباط می‌کند",
+        "C": "مرتب می‌کند",
+        "D": "null را حذف می‌کند"
+      }
+    },
+    {
+      "id": "g6-seed-012",
+      "type": "blank",
+      "prompt": "برای پیمایش هم‌زمان key و value یک Map از ____ استفاده کنید.",
+      "answers": [
+        "entrySet()"
+      ],
+      "explanation": "هر entry یک key و value دارد.",
+      "concepts": [
+        "Map",
+        "iteration"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Map"
+      ]
+    },
+    {
+      "id": "g6-seed-013",
+      "type": "tf",
+      "prompt": "Set معمولاً عنصر تکراری بر اساس equals را نگه نمی‌دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "افزودن مقدار برابر، عضویت Set را تغییر نمی‌دهد.",
+      "concepts": [
+        "Set",
+        "equals"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "collections"
+      ]
+    },
+    {
+      "id": "g6-seed-014",
+      "type": "mcq",
+      "prompt": "کدام collection برای صف FIFO مناسب است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "ArrayDeque انتخاب مناسب برای عملیات Queue است.",
+      "concepts": [
+        "Queue",
+        "collections"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "collections"
+      ],
+      "options": {
+        "A": "HashSet",
+        "B": "TreeMap",
+        "C": "ArrayDeque",
+        "D": "EnumSet"
+      }
+    },
+    {
+      "id": "g6-seed-015",
+      "type": "multi",
+      "prompt": "روی `List<? super Integer>` کدام عملیات امن است؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "می‌توان Integer افزود؛ خواندن فقط به صورت Object امن است.",
+      "concepts": [
+        "generics",
+        "wildcards"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "generics"
+      ],
+      "options": {
+        "A": "`add(3)`",
+        "B": "خواندن مستقیم به Integer",
+        "C": "`add(Integer.valueOf(4))`",
+        "D": "خواندن مستقیم به Number"
+      }
+    }
+  ]
+}

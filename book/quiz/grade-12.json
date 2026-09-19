@@ -1,0 +1,327 @@
+{
+  "title": "درجهٔ 12",
+  "version": 2,
+  "questions": [
+    {
+      "id": "g12-seed-001",
+      "type": "mcq",
+      "prompt": "endpoint سلامت Spring Boot Actuator معمولاً کدام مسیر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "با فعال بودن web exposure، health در `/actuator/health` ارائه می‌شود.",
+      "concepts": [
+        "Actuator",
+        "observability"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "/health",
+        "B": "/actuator/health",
+        "C": "/metrics/health",
+        "D": "/status"
+      }
+    },
+    {
+      "id": "g12-seed-002",
+      "type": "blank",
+      "prompt": "برای افزودن اطلاعات build به Actuator endpoint مربوطه، Spring Boot از فایل ____ استفاده می‌کند.",
+      "answers": [
+        "build-info.properties"
+      ],
+      "explanation": "build-info.properties اطلاعات build را برای endpoint info فراهم می‌کند.",
+      "concepts": [
+        "Actuator",
+        "build-info"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-Boot"
+      ]
+    },
+    {
+      "id": "g12-seed-003",
+      "type": "tf",
+      "prompt": "نباید همهٔ endpointهای Actuator را بدون کنترل دسترسی در اینترنت عمومی expose کرد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "برخی endpointها اطلاعات عملیاتی حساس می‌دهند و باید محدود شوند.",
+      "concepts": [
+        "Actuator",
+        "security"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-Security"
+      ]
+    },
+    {
+      "id": "g12-seed-004",
+      "type": "mcq",
+      "prompt": "کدام health check برای readiness مناسب‌تر است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "readiness نشان می‌دهد instance آمادهٔ دریافت traffic است.",
+      "concepts": [
+        "deployment",
+        "Kubernetes",
+        "Actuator"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Actuator"
+      ],
+      "options": {
+        "A": "اندازهٔ فایل JAR",
+        "B": "نام host",
+        "C": "آمادگی برای پذیرش traffic",
+        "D": "نسخهٔ Java compiler"
+      }
+    },
+    {
+      "id": "g12-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها ابعاد متداول observability هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "metrics، logs و traces سه سیگنال اصلی observability هستند.",
+      "concepts": [
+        "observability"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "deployment"
+      ],
+      "options": {
+        "A": "metrics",
+        "B": "logs",
+        "C": "فقط source code",
+        "D": "traces"
+      }
+    },
+    {
+      "id": "g12-seed-006",
+      "type": "mcq",
+      "prompt": "هدف liveness probe در orchestration چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "liveness بررسی می‌کند process هنوز زنده است و نیاز به restart دارد یا نه.",
+      "concepts": [
+        "deployment",
+        "Kubernetes"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "deployment"
+      ],
+      "options": {
+        "A": "تشخیص نیاز به restart",
+        "B": "انتخاب database schema",
+        "C": "ساخت JAR",
+        "D": "تخصیص role کاربر"
+      }
+    },
+    {
+      "id": "g12-seed-007",
+      "type": "blank",
+      "prompt": "در Dockerfile چندمرحله‌ای، مرحلهٔ نهایی باید تا حد امکان image ____ داشته باشد.",
+      "answers": [
+        "کوچک"
+      ],
+      "explanation": "image کوچک‌تر سطح حمله و زمان انتقال را کاهش می‌دهد.",
+      "concepts": [
+        "deployment",
+        "Docker"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Docker"
+      ]
+    },
+    {
+      "id": "g12-seed-008",
+      "type": "tf",
+      "prompt": "consumer پیام باید برای احتمال delivery تکراری، idempotent طراحی شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "در سامانه‌های at-least-once ممکن است یک پیام دوباره برسد.",
+      "concepts": [
+        "messaging",
+        "idempotency"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "messaging"
+      ]
+    },
+    {
+      "id": "g12-seed-009",
+      "type": "mcq",
+      "prompt": "کدام الگو برای انتشار event پس از commit موفق database مناسب است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "outbox event را همراه transaction ذخیره و سپس به broker منتشر می‌کند.",
+      "concepts": [
+        "messaging",
+        "outbox",
+        "transactions"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "JPA",
+        "messaging"
+      ],
+      "options": {
+        "A": "ارسال قبل از transaction",
+        "B": "retry بی‌نهایت در controller",
+        "C": "ذخیرهٔ event فقط در حافظه",
+        "D": "transactional outbox"
+      }
+    },
+    {
+      "id": "g12-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها practice مناسب برای message consumer هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "retry کنترل‌شده، DLQ و idempotency پایداری پردازش را افزایش می‌دهند.",
+      "concepts": [
+        "messaging",
+        "reliability"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "messaging"
+      ],
+      "options": {
+        "A": "retry با سیاست محدود",
+        "B": "dead-letter queue",
+        "C": "idempotency key",
+        "D": "نادیده‌گرفتن دائم خطا"
+      }
+    },
+    {
+      "id": "g12-seed-011",
+      "type": "mcq",
+      "prompt": "برای سنجش نرخ request و latency endpointها کدام Actuator قابلیت نزدیک‌تر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "Micrometer metrics دادهٔ شمارش و زمان‌بندی را برای backendهای monitoring فراهم می‌کند.",
+      "concepts": [
+        "Actuator",
+        "metrics",
+        "Micrometer"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Actuator"
+      ],
+      "options": {
+        "A": "banner",
+        "B": "metrics با Micrometer",
+        "C": "devtools restart",
+        "D": "component scan"
+      }
+    },
+    {
+      "id": "g12-seed-012",
+      "type": "blank",
+      "prompt": "برای جلوگیری از مصرف بی‌رویهٔ حافظه در queue پیام، باید ____ یا backpressure طراحی شود.",
+      "answers": [
+        "محدودیت ظرفیت"
+      ],
+      "explanation": "capacity limit یا backpressure نرخ تولید را با توان مصرف هماهنگ می‌کند.",
+      "concepts": [
+        "messaging",
+        "backpressure"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "concurrency",
+        "messaging"
+      ]
+    },
+    {
+      "id": "g12-seed-013",
+      "type": "tf",
+      "prompt": "rolling deployment به معنی جایگزینی تدریجی instanceها است، نه قطع هم‌زمان همهٔ آن‌ها.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "جایگزینی مرحله‌ای با health check به کاهش downtime کمک می‌کند.",
+      "concepts": [
+        "deployment",
+        "rolling-update"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "deployment"
+      ]
+    },
+    {
+      "id": "g12-seed-014",
+      "type": "mcq",
+      "prompt": "کدام اطلاعات نباید به‌طور پیش‌فرض در log production ثبت شود؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "secretها و tokenها دادهٔ حساس‌اند و نباید در log قرار گیرند.",
+      "concepts": [
+        "deployment",
+        "logging",
+        "security"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "security"
+      ],
+      "options": {
+        "A": "شناسهٔ correlation",
+        "B": "زمان پاسخ",
+        "C": "password یا access token",
+        "D": "سطح log"
+      }
+    },
+    {
+      "id": "g12-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها برای انتشار امن production مناسب‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "health check، rollout تدریجی و monitor کردن error rate به انتشار امن کمک می‌کند.",
+      "concepts": [
+        "deployment",
+        "release"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "deployment",
+        "observability"
+      ],
+      "options": {
+        "A": "health/readiness check",
+        "B": "نادیده گرفتن dashboardها",
+        "C": "rollout تدریجی",
+        "D": "monitor کردن error rate"
+      }
+    }
+  ]
+}

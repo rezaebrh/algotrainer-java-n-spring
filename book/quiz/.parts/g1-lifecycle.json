@@ -1,0 +1,1698 @@
+{
+  "questions": [
+    {
+      "id": "g1-lifecycle-001",
+      "type": "mcq",
+      "prompt": "کدام متغیر فقط از محل اعلان تا پایان همان بلوک `{}` قابل استفاده است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "متغیر محلی در محدودهٔ بلوکی که در آن اعلان شده قابل دسترسی است.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "متغیر محلی",
+        "B": "نام کلاس",
+        "C": "نام بسته",
+        "D": "کلیدواژهٔ class"
+      }
+    },
+    {
+      "id": "g1-lifecycle-002",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`int x = 3; { int y = 4; System.out.print(x + y); }`",
+      "answers": [
+        "B"
+      ],
+      "explanation": "هر دو متغیر در خط چاپ در دسترس‌اند و حاصل ۷ است.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "3",
+        "B": "7",
+        "C": "4",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g1-lifecycle-003",
+      "type": "tf",
+      "prompt": "در کد `if (true) { int n = 1; }` می‌توان بعد از آکولاد بسته از `n` استفاده کرد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "n با پایان بلوک if از محدوده خارج می‌شود.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "hint": "به بلوکی که n در آن اعلان شده دقت کنید."
+    },
+    {
+      "id": "g1-lifecycle-004",
+      "type": "mcq",
+      "prompt": "کدام خط خطای کامپایل دارد؟\n`{ int score = 10; }\nSystem.out.println(score);`",
+      "answers": [
+        "B"
+      ],
+      "explanation": "score فقط در بلوک نخست وجود دارد.",
+      "concepts": [
+        "scope"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "خط اعلان score",
+        "B": "خط println",
+        "C": "هیچ‌کدام",
+        "D": "هر دو خط"
+      }
+    },
+    {
+      "id": "g1-lifecycle-005",
+      "type": "blank",
+      "prompt": "ناحیه‌ای از برنامه که یک نام در آن قابل استفاده است، ______ نام دارد.",
+      "answers": [
+        "scope"
+      ],
+      "explanation": "نام این مفهوم در جاوا scope است.",
+      "concepts": [
+        "scope"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-006",
+      "type": "mcq",
+      "prompt": "دربارهٔ متغیر محلی `total` که در یک متد اعلان شده کدام درست است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "این متغیر پس از اعلان، در همان متد و بلوک‌های داخلی آن در دسترس است.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "از هر کلاس قابل استفاده است",
+        "B": "پیش از اعلان قابل استفاده است",
+        "C": "پس از اعلان در همان متد قابل استفاده است",
+        "D": "همیشه تا پایان برنامه می‌ماند"
+      }
+    },
+    {
+      "id": "g1-lifecycle-007",
+      "type": "mcq",
+      "prompt": "کدام قطعه‌کد معتبر است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "inner در بلوک داخلی است و outer از بلوک بیرونی دیده می‌شود.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "`int outer=1; { int inner=2; System.out.print(outer+inner); }`",
+        "B": "`{ int inner=2; } System.out.print(inner);`",
+        "C": "`System.out.print(n); int n=2;`",
+        "D": "`{ int a=1; } { System.out.print(a); }`"
+      }
+    },
+    {
+      "id": "g1-lifecycle-008",
+      "type": "tf",
+      "prompt": "متغیر اعلان‌شده در بلوک بیرونی، اگر نامی آن را پنهان نکرده باشد، در بلوک داخلی قابل استفاده است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "بلوک داخلی به نام‌های در دسترس بلوک بیرونی دسترسی دارد.",
+      "concepts": [
+        "scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-009",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`int level = 1; { int next = level + 1; System.out.print(next); }`",
+      "answers": [
+        "A"
+      ],
+      "explanation": "level در بلوک داخلی در دسترس است، پس next برابر ۲ است.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "2",
+        "B": "1",
+        "C": "0",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g1-lifecycle-010",
+      "type": "mcq",
+      "prompt": "چرا این کد کامپایل نمی‌شود؟\n`{ int age = 7; } { int next = age + 1; }`",
+      "answers": [
+        "D"
+      ],
+      "explanation": "age در بلوک اول ساخته شده و در بلوک دوم در محدوده نیست.",
+      "concepts": [
+        "scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "age باید final باشد",
+        "B": "next نباید int باشد",
+        "C": "دو بلوک نباید پشت‌سرهم باشند",
+        "D": "age خارج از محدودهٔ بلوک دوم است"
+      }
+    },
+    {
+      "id": "g1-lifecycle-011",
+      "type": "blank",
+      "prompt": "در `int a = 1; { int b = 2; }` نام متغیری که بعد از بلوک داخلی هنوز در دسترس است را بنویسید.",
+      "answers": [
+        "a"
+      ],
+      "explanation": "a در بلوک بیرونی اعلان شده است.",
+      "concepts": [
+        "scope"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-012",
+      "type": "mcq",
+      "prompt": "در `void greet(String name) { System.out.print(name); }`، `name` کجا در دسترس است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "پارامتر متد در بدنهٔ همان متد در محدوده است.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "فقط پیش از امضای متد",
+        "B": "در بدنهٔ همان متد",
+        "C": "در همهٔ متدهای کلاس",
+        "D": "فقط بیرون کلاس"
+      }
+    },
+    {
+      "id": "g1-lifecycle-013",
+      "type": "tf",
+      "prompt": "یک متغیر محلی پیش از خط اعلان خودش در همان بلوک قابل استفاده نیست.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "کامپایلر نام متغیر را از محل اعلان به بعد می‌شناسد.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-014",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`int p = 5; { p = 8; } System.out.print(p);`",
+      "answers": [
+        "C"
+      ],
+      "explanation": "بلوک داخلی همان p بیرونی را تغییر می‌دهد.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "5",
+        "B": "0",
+        "C": "8",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g1-lifecycle-015",
+      "type": "mcq",
+      "prompt": "برای کوتاه نگه‌داشتن محدودهٔ یک متغیر موقت چه کار کنیم؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "اعلان در کوچک‌ترین بلوک لازم، محدوده را روشن و کوتاه می‌کند.",
+      "concepts": [
+        "scope",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "آن را در کوچک‌ترین بلوک لازم اعلان کنیم",
+        "B": "آن را بیرون همهٔ کلاس‌ها اعلان کنیم",
+        "C": "همیشه آن را final کنیم",
+        "D": "نام آن را حذف کنیم"
+      }
+    },
+    {
+      "id": "g1-lifecycle-016",
+      "type": "mcq",
+      "prompt": "پس از این کد کدام نام در دسترس است؟\n`int first=1; { int second=2; { int third=3; } }`",
+      "answers": [
+        "A"
+      ],
+      "explanation": "فقط first در بلوک بیرونی اعلان شده است.",
+      "concepts": [
+        "scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "first",
+        "B": "second",
+        "C": "third",
+        "D": "هر سه نام"
+      }
+    },
+    {
+      "id": "g1-lifecycle-017",
+      "type": "tf",
+      "prompt": "پایان scope یک متغیر محلی یعنی GC باید فوراً حافظهٔ آن را جمع کند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "پایان محدوده دسترسی را محدود می‌کند، اما زمان GC تضمین‌شده نیست.",
+      "concepts": [
+        "scope",
+        "garbage-collection"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "scope",
+        "garbage-collection"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-018",
+      "type": "mcq",
+      "prompt": "کدام تغییر مشکل این کد را حل می‌کند؟\n`{ int temp=9; } System.out.print(temp);`",
+      "answers": [
+        "C"
+      ],
+      "explanation": "با اعلان temp پیش از بلوک داخلی، خط چاپ در محدودهٔ آن قرار می‌گیرد.",
+      "concepts": [
+        "scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "تبدیل temp به String",
+        "B": "افزودن final",
+        "C": "اعلان temp پیش از بلوک داخلی",
+        "D": "تغییر نام println"
+      }
+    },
+    {
+      "id": "g1-lifecycle-019",
+      "type": "mcq",
+      "prompt": "GC در جاوا معمولاً چه کاری انجام می‌دهد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "GC می‌تواند حافظهٔ اشیایی را که دیگر قابل دسترسی نیستند بازیابی کند.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "حافظهٔ اشیای غیرقابل‌دسترسی را بازیابی می‌کند",
+        "B": "همهٔ متغیرها را صفر می‌کند",
+        "C": "همهٔ فایل‌ها را می‌بندد",
+        "D": "کد را کامپایل می‌کند"
+      }
+    },
+    {
+      "id": "g1-lifecycle-020",
+      "type": "tf",
+      "prompt": "فراخوانی `System.gc()` تضمین می‌کند که GC همان لحظه اجرا شود.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "این فراخوانی فقط یک درخواست است و زمان اجرا را تضمین نمی‌کند.",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-021",
+      "type": "mcq",
+      "prompt": "پس از `Book b = new Book(); b = null;`، اگر مرجع دیگری نباشد، شیء چه وضعی دارد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "شیء ممکن است واجد شرایط GC شود، ولی زمان جمع‌آوری آن مشخص نیست.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "حتماً فوراً حذف می‌شود",
+        "B": "خود شیء null می‌شود",
+        "C": "ممکن است واجد شرایط GC شود",
+        "D": "به int تبدیل می‌شود"
+      }
+    },
+    {
+      "id": "g1-lifecycle-022",
+      "type": "blank",
+      "prompt": "سازوکار خودکار بازیابی حافظهٔ اشیای غیرقابل‌دسترسی را با حروف کوچک بنویسید.",
+      "answers": [
+        "gc"
+      ],
+      "explanation": "نام رایج این سازوکار GC است.",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-023",
+      "type": "mcq",
+      "prompt": "در این کد آیا شیء `String` واجد شرایط GC است؟\n`String a = new String(\"x\"); String b = a; a = null;`",
+      "answers": [
+        "D"
+      ],
+      "explanation": "خیر؛ b هنوز به همان شیء اشاره می‌کند.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "بله، چون a null است",
+        "B": "بله، چون String است",
+        "C": "بله، فقط پس از System.gc()",
+        "D": "خیر، چون b هنوز مرجع دارد"
+      }
+    },
+    {
+      "id": "g1-lifecycle-024",
+      "type": "tf",
+      "prompt": "اگر یک مرجع null باشد، خودِ null شیئی است که GC باید آن را جمع کند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "null نبودِ ارجاع به شیء را نشان می‌دهد، نه یک شیء معمولی.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "reference-types"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-025",
+      "type": "mcq",
+      "prompt": "کدام عبارت دربارهٔ GC درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "زمان دقیق اجرای GC توسط برنامه‌نویس تضمین نمی‌شود.",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "options": {
+        "A": "زمان آن را دقیق تعیین می‌کنیم",
+        "B": "زمان دقیق آن تضمین نشده است",
+        "C": "فقط برای int اجرا می‌شود",
+        "D": "فایل‌ها را به‌جای برنامه می‌بندد"
+      }
+    },
+    {
+      "id": "g1-lifecycle-026",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`Object item = new Object(); item = null; System.out.print(item);`",
+      "answers": [
+        "A"
+      ],
+      "explanation": "پس از انتساب null، مقدار مرجع item چاپ می‌شود؛ این زمان GC را نشان نمی‌دهد.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "null",
+        "B": "Object",
+        "C": "خطای کامپایل",
+        "D": "آدرس حافظه"
+      }
+    },
+    {
+      "id": "g1-lifecycle-027",
+      "type": "mcq",
+      "prompt": "برای آزادسازی قطعی یک منبع خارجی مانند فایل، چه چیزی بهتر از تکیه بر GC است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "try-with-resources منبع را در پایان بلوک می‌بندد.",
+      "concepts": [
+        "garbage-collection",
+        "try-with-resources"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "try-with-resources"
+      ],
+      "options": {
+        "A": "بزرگ‌کردن scope",
+        "B": "فقط System.gc()",
+        "C": "try-with-resources",
+        "D": "final کردن منبع"
+      }
+    },
+    {
+      "id": "g1-lifecycle-028",
+      "type": "tf",
+      "prompt": "وقتی شیئی دیگر قابل دسترسی نیست، ممکن است GC آن را در زمانی بعدتر جمع کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "واجد شرایط بودن با اجرای فوری GC یکی نیست.",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "reference-types"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-029",
+      "type": "mcq",
+      "prompt": "در کد `Object x=new Object(); Object y=x; x=null; y=null;` چرا شیء می‌تواند واجد شرایط GC شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "پس از null شدن هر دو مرجع، راهی برای رسیدن به شیء باقی نمی‌ماند.",
+      "concepts": [
+        "garbage-collection",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "چون Object final است",
+        "B": "چون هیچ مرجعی به آن اشاره نمی‌کند",
+        "C": "چون null شیء را کپی می‌کند",
+        "D": "چون GC همان خط اجرا می‌شود"
+      }
+    },
+    {
+      "id": "g1-lifecycle-030",
+      "type": "mcq",
+      "prompt": "کدام نتیجه از `Object o=new Object(); o=null;` نادرست است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "نمی‌توان گفت شیء حتماً همان لحظه حذف شده است.",
+      "concepts": [
+        "garbage-collection"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "o اکنون null است",
+        "B": "شیء شاید دیگر قابل دسترسی نباشد",
+        "C": "شیء شاید واجد شرایط GC شود",
+        "D": "شیء حتماً همان لحظه حذف شده است"
+      }
+    },
+    {
+      "id": "g1-lifecycle-031",
+      "type": "mcq",
+      "prompt": "هدف اصلی try-with-resources چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "منبع قابل‌بستن پس از پایان بلوک try خودکار بسته می‌شود.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "final کردن همهٔ متغیرها",
+        "B": "بستن خودکار منابع",
+        "C": "اجرای قطعی GC",
+        "D": "بزرگ‌کردن scope"
+      }
+    },
+    {
+      "id": "g1-lifecycle-032",
+      "type": "tf",
+      "prompt": "منبعی که در پرانتز try-with-resources ساخته می‌شود، پس از پایان try بسته می‌شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "جاوا در پایان بلوک close را خودکار فراخوانی می‌کند.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-033",
+      "type": "mcq",
+      "prompt": "کدام شکل try-with-resources است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "اعلان منبع در پرانتز بعد از try شکل استاندارد آن است.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "`try (Reader r = open()) { use(r); }`",
+        "B": "`try { Reader r = open(); }`",
+        "C": "`final try Reader r = open();`",
+        "D": "`gc (Reader r = open()) { }`"
+      }
+    },
+    {
+      "id": "g1-lifecycle-034",
+      "type": "mcq",
+      "prompt": "در `try (DemoResource r = new DemoResource()) { System.out.print(\"کار\"); }`، close چه زمانی فراخوانی می‌شود؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "پس از پایان اجرای بدنهٔ try، منبع بسته می‌شود.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "options": {
+        "A": "پیش از ساخت r",
+        "B": "فقط با System.gc()",
+        "C": "پس از پایان try",
+        "D": "هرگز"
+      }
+    },
+    {
+      "id": "g1-lifecycle-035",
+      "type": "blank",
+      "prompt": "منبعی که try-with-resources خودکار می‌بندد باید قرارداد ______ را پشتیبانی کند.",
+      "answers": [
+        "autocloseable"
+      ],
+      "explanation": "این قرارداد AutoCloseable نام دارد.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 2,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-036",
+      "type": "tf",
+      "prompt": "try-with-resources برای بستن منبع خارجی، از منتظرماندن برای GC قابل‌اعتمادتر است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "بستن منبع در پایان try انجام می‌شود و به زمان GC وابسته نیست.",
+      "concepts": [
+        "try-with-resources",
+        "garbage-collection"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "garbage-collection"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-037",
+      "type": "mcq",
+      "prompt": "در این کد `r` کجا قابل استفاده است؟\n`try (Reader r = open()) { use(r); }`",
+      "answers": [
+        "B"
+      ],
+      "explanation": "r در بدنهٔ try در محدوده است و پس از try در دسترس نیست.",
+      "concepts": [
+        "try-with-resources",
+        "scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "scope"
+      ],
+      "options": {
+        "A": "در همهٔ متدهای کلاس",
+        "B": "در بدنهٔ try",
+        "C": "فقط پیش از try",
+        "D": "بعد از try"
+      }
+    },
+    {
+      "id": "g1-lifecycle-038",
+      "type": "mcq",
+      "prompt": "اگر `first` و سپس `second` در try-with-resources اعلان شوند، ترتیب بستن چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "منابع به ترتیب معکوس اعلان بسته می‌شوند.",
+      "concepts": [
+        "try-with-resources"
+      ],
+      "difficulty": 3,
+      "prerequisites": [],
+      "options": {
+        "A": "اول first سپس second",
+        "B": "هم‌زمان",
+        "C": "هیچ‌کدام",
+        "D": "اول second سپس first"
+      }
+    },
+    {
+      "id": "g1-lifecycle-039",
+      "type": "mcq",
+      "prompt": "کدام برداشت نادرست است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "try-with-resources اجرای فوری GC را تضمین نمی‌کند.",
+      "concepts": [
+        "try-with-resources",
+        "garbage-collection"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "garbage-collection"
+      ],
+      "options": {
+        "A": "اجرای فوری GC را تضمین می‌کند",
+        "B": "می‌تواند منبع را ببندد",
+        "C": "منبع باید قابل‌بستن باشد",
+        "D": "بعد از try منبع بسته می‌شود"
+      }
+    },
+    {
+      "id": "g1-lifecycle-040",
+      "type": "mcq",
+      "prompt": "چرا بهتر است منبع فقط در کوتاه‌ترین بلوک لازم وجود داشته باشد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "این کار زمان استفاده و مسئولیت بستن منبع را روشن می‌کند.",
+      "concepts": [
+        "try-with-resources",
+        "scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "scope"
+      ],
+      "options": {
+        "A": "تا GC سریع‌تر شود",
+        "B": "تا نام منبع همه‌جا دیده شود",
+        "C": "تا زمان استفاده روشن باشد",
+        "D": "تا منبع int شود"
+      }
+    },
+    {
+      "id": "g1-lifecycle-041",
+      "type": "mcq",
+      "prompt": "پس از `final int days = 7;` کدام کار مجاز نیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "متغیر final فقط یک‌بار مقداردهی می‌شود.",
+      "concepts": [
+        "final",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "خواندن days",
+        "B": "`days = 8;`",
+        "C": "چاپ days",
+        "D": "استفاده در عبارت"
+      }
+    },
+    {
+      "id": "g1-lifecycle-042",
+      "type": "tf",
+      "prompt": "یک متغیر محلی final باید فقط یک‌بار مقداردهی شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "بعد از مقداردهی نمی‌توان مقدار متغیر final را عوض کرد.",
+      "concepts": [
+        "final",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-043",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`final String title = \"جاوا\"; System.out.print(title);`",
+      "answers": [
+        "A"
+      ],
+      "explanation": "final مانع خواندن متغیر نیست.",
+      "concepts": [
+        "final",
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "جاوا",
+        "B": "final",
+        "C": "null",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g1-lifecycle-044",
+      "type": "blank",
+      "prompt": "کلیدواژهٔ اعلام متغیری که دوباره انتساب نمی‌گیرد را با حروف کوچک بنویسید.",
+      "answers": [
+        "final"
+      ],
+      "explanation": "کلیدواژهٔ جاوا final است.",
+      "concepts": [
+        "final"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-045",
+      "type": "mcq",
+      "prompt": "در `final int count; count = 2;` کدام درست است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "اولین مقداردهی به final مجاز است؛ مقداردهی دوم مجاز نیست.",
+      "concepts": [
+        "final",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "count هرگز مقدار نمی‌گیرد",
+        "B": "count باید String باشد",
+        "C": "بعداً فقط یک‌بار مقدار می‌گیرد",
+        "D": "بارها تغییر می‌کند"
+      }
+    },
+    {
+      "id": "g1-lifecycle-046",
+      "type": "mcq",
+      "prompt": "پس از `final StringBuilder text = new StringBuilder(\"الف\");` کدام درست است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "final بودن مرجع، انتساب آن به شیء دیگر را منع می‌کند؛ لزوماً حالت شیء را ثابت نمی‌کند.",
+      "concepts": [
+        "final",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "شیء حتماً تغییرناپذیر است",
+        "B": "text خودکار null می‌شود",
+        "C": "GC آن را جمع نمی‌کند",
+        "D": "text به شیء دیگری انتساب نمی‌گیرد"
+      }
+    },
+    {
+      "id": "g1-lifecycle-047",
+      "type": "tf",
+      "prompt": "final بودن یک مرجع یعنی خود شیء اشاره‌شده هم final است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "final روی متغیر مرجع اعمال می‌شود، نه لزوماً روی حالت شیء.",
+      "concepts": [
+        "final",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "reference-types"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-048",
+      "type": "mcq",
+      "prompt": "کدام سازنده یک field نهایی را برای هر شیء دقیقاً یک‌بار مقداردهی می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "در A، field نهایی در بدنهٔ سازنده پیش از پایان ساخت شیء یک‌بار مقدار می‌گیرد. B مسیر بدون مقداردهی دارد، C انتساب دوم دارد و D به field نهایی مقدار نمی‌دهد.",
+      "concepts": [
+        "final",
+        "constructors",
+        "initialization-order"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "`class Box { final int size; Box(int n) { size = n; } }`",
+        "B": "`class Box { final int size; Box(boolean ok) { if (ok) size = 1; } }`",
+        "C": "`class Box { final int size = 1; Box() { size = 2; } }`",
+        "D": "`class Box { final int size; Box() { } }`"
+      }
+    },
+    {
+      "id": "g1-lifecycle-049",
+      "type": "mcq",
+      "prompt": "چرا final برای مقداری که نباید تغییر کند مفید است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "کامپایلر انتساب دوباره را رد می‌کند و قصد کد روشن‌تر می‌شود.",
+      "concepts": [
+        "final"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "GC را متوقف می‌کند",
+        "B": "انتساب دوباره را ممنوع می‌کند",
+        "C": "scope را نامحدود می‌کند",
+        "D": "همهٔ منابع را می‌بندد"
+      }
+    },
+    {
+      "id": "g1-lifecycle-050",
+      "type": "tf",
+      "prompt": "این کد معتبر است: `final int x=1; System.out.print(x+1);`",
+      "answers": [
+        "true"
+      ],
+      "explanation": "استفاده از مقدار final مجاز است؛ فقط انتساب دوباره ممنوع است.",
+      "concepts": [
+        "final",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-051",
+      "type": "mcq",
+      "prompt": "کدام خط علت خطا است؟\n`final String code=\"A\";\ncode=\"B\";`",
+      "answers": [
+        "B"
+      ],
+      "explanation": "خط دوم به متغیر final دوباره مقدار می‌دهد.",
+      "concepts": [
+        "final"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "خط اول",
+        "B": "خط دوم",
+        "C": "هر دو",
+        "D": "هیچ‌کدام"
+      }
+    },
+    {
+      "id": "g1-lifecycle-052",
+      "type": "mcq",
+      "prompt": "پارامترهای متد در جاوا چگونه ارسال می‌شوند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "جاوا همیشه pass-by-value است؛ مقدار متغیر فراخواننده کپی می‌شود.",
+      "concepts": [
+        "pass-by-value"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "با کپی‌شدن مقدار",
+        "B": "با اشتراک خود متغیر",
+        "C": "فقط با GC",
+        "D": "با تبدیل به final"
+      }
+    },
+    {
+      "id": "g1-lifecycle-053",
+      "type": "tf",
+      "prompt": "جاوا برای متغیرهای primitive از pass-by-value استفاده می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "مقدار primitive به پارامتر متد کپی می‌شود.",
+      "concepts": [
+        "pass-by-value",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-054",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`static void change(int n){n=9;} int x=3; change(x); System.out.print(x);`",
+      "answers": [
+        "B"
+      ],
+      "explanation": "n کپی مقدار ۳ است و تغییر آن x را تغییر نمی‌دهد.",
+      "concepts": [
+        "pass-by-value",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "9",
+        "B": "3",
+        "C": "0",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g1-lifecycle-055",
+      "type": "blank",
+      "prompt": "در جاوا، پارامتر متد با ______ by value ارسال می‌شود.",
+      "answers": [
+        "pass"
+      ],
+      "explanation": "اصطلاح کامل pass by value است.",
+      "concepts": [
+        "pass-by-value"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-056",
+      "type": "mcq",
+      "prompt": "وقتی یک مرجع به متد داده می‌شود، چه چیزی کپی می‌شود؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "مقدار مرجع کپی می‌شود؛ خود متغیر فراخواننده منتقل نمی‌شود.",
+      "concepts": [
+        "pass-by-value",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "خود شیء همیشه کپی می‌شود",
+        "B": "متغیر فراخواننده منتقل می‌شود",
+        "C": "مقدار مرجع کپی می‌شود",
+        "D": "GC شیء را کپی می‌کند"
+      }
+    },
+    {
+      "id": "g1-lifecycle-057",
+      "type": "tf",
+      "prompt": "اگر پارامتر مرجع درون متد به شیء جدیدی انتساب داده شود، مرجع فراخواننده هم خودکار تغییر می‌کند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "فقط کپی مرجع در پارامتر تغییر می‌کند.",
+      "concepts": [
+        "pass-by-value",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "reference-types"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-058",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`static void reset(String s){s=\"جدید\";} String text=\"قدیمی\"; reset(text); System.out.print(text);`",
+      "answers": [
+        "A"
+      ],
+      "explanation": "s کپی مرجع text است؛ انتساب s، text را عوض نمی‌کند.",
+      "concepts": [
+        "pass-by-value",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "قدیمی",
+        "B": "جدید",
+        "C": "null",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g1-lifecycle-059",
+      "type": "mcq",
+      "prompt": "کدام جمله سوءبرداشت «جاوا pass-by-reference است» را اصلاح می‌کند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "برای اشیا نیز مقدار مرجع کپی می‌شود.",
+      "concepts": [
+        "pass-by-value",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "اشیا مرجع ندارند",
+        "B": "متدها پارامتر ندارند",
+        "C": "primitiveها شیء هستند",
+        "D": "جاوا کپی مقدار مرجع را ارسال می‌کند"
+      }
+    },
+    {
+      "id": "g1-lifecycle-060",
+      "type": "mcq",
+      "prompt": "پس از `rename(box)` در کد زیر چه چیزی درست است؟\n`static void rename(Box b){b=new Box();} Box box=new Box();`",
+      "answers": [
+        "B"
+      ],
+      "explanation": "انتساب b فقط پارامتر محلی را به شیء جدید وصل می‌کند.",
+      "concepts": [
+        "pass-by-value",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "box حتماً null است",
+        "B": "box مرجع قبلی خود را دارد",
+        "C": "box به شیء جدید b اشاره می‌کند",
+        "D": "هر دو فوراً GC می‌شوند"
+      }
+    },
+    {
+      "id": "g1-lifecycle-061",
+      "type": "tf",
+      "prompt": "تغییر مقدار پارامتر int در متد، مقدار int فراخواننده را تغییر نمی‌دهد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "پارامتر int نسخه‌ای از مقدار فراخواننده است.",
+      "concepts": [
+        "pass-by-value",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-062",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`static void addOne(int v){v=v+1;} int score=10; addOne(score); System.out.print(score);`",
+      "answers": [
+        "C"
+      ],
+      "explanation": "افزایش v روی کپی محلی انجام می‌شود.",
+      "concepts": [
+        "pass-by-value",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "11",
+        "B": "1",
+        "C": "10",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g1-lifecycle-063",
+      "type": "mcq",
+      "prompt": "برای دریافت مقدار تغییرکردهٔ یک primitive از متد، کدام الگو درست‌تر است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "متد مقدار جدید را برمی‌گرداند و فراخواننده آن را انتساب می‌دهد.",
+      "concepts": [
+        "pass-by-value",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "بازگرداندن مقدار و انتساب آن",
+        "B": "final کردن پارامتر",
+        "C": "صدا زدن System.gc()",
+        "D": "اعلان پارامتر بیرون scope"
+      }
+    },
+    {
+      "id": "g1-lifecycle-064",
+      "type": "blank",
+      "prompt": "در `void set(int value)` نام پارامتر را با حروف کوچک بنویسید.",
+      "answers": [
+        "value"
+      ],
+      "explanation": "value نام پارامتر محلی متد است.",
+      "concepts": [
+        "pass-by-value",
+        "scope"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-065",
+      "type": "mcq",
+      "prompt": "کدام اعلان متغیر درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "عدد صحیح ۱۲ را می‌توان در int ذخیره کرد.",
+      "concepts": [
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "`int name=\"رضا\";`",
+        "B": "`int age=12;`",
+        "C": "`String ready=true;`",
+        "D": "`boolean count=3;`"
+      }
+    },
+    {
+      "id": "g1-lifecycle-066",
+      "type": "tf",
+      "prompt": "یک متغیر primitive مانند int، مقدار خود را مستقیماً نگه می‌دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "int یک نوع primitive است و مقدار عددی را نگه می‌دارد.",
+      "concepts": [
+        "variables",
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-067",
+      "type": "mcq",
+      "prompt": "کدام مقدار برای `boolean open` مناسب است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "boolean فقط true یا false نگه می‌دارد.",
+      "concepts": [
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "`\"true\"`",
+        "B": "`1`",
+        "C": "`null`",
+        "D": "`true`"
+      }
+    },
+    {
+      "id": "g1-lifecycle-068",
+      "type": "blank",
+      "prompt": "نوع primitive مناسب برای عدد صحیح 21 را با حروف کوچک بنویسید.",
+      "answers": [
+        "int"
+      ],
+      "explanation": "int برای عددهای صحیح معمولی استفاده می‌شود.",
+      "concepts": [
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-069",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`int apples=2; apples=apples+3; System.out.print(apples);`",
+      "answers": [
+        "C"
+      ],
+      "explanation": "مقدار جدید apples برابر ۵ است.",
+      "concepts": [
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "23"
+      }
+    },
+    {
+      "id": "g1-lifecycle-070",
+      "type": "mcq",
+      "prompt": "کدام نام متغیر با قواعد پایهٔ جاوا نامعتبر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "نام متغیر نمی‌تواند با رقم شروع شود.",
+      "concepts": [
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "options": {
+        "A": "`studentName`",
+        "B": "`2students`",
+        "C": "`student2`",
+        "D": "`_student`"
+      }
+    },
+    {
+      "id": "g1-lifecycle-071",
+      "type": "tf",
+      "prompt": "در `int number = 4;`، number نام متغیر و 4 مقدار آغازین آن است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "اعلان شامل نوع، نام و در اینجا مقداردهی آغازین است.",
+      "concepts": [
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-072",
+      "type": "mcq",
+      "prompt": "کدام عبارت مقدار متغیر `price` را تغییر می‌دهد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "عملگر = مقدار سمت راست را به متغیر سمت چپ انتساب می‌دهد.",
+      "concepts": [
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "`price = 20;`",
+        "B": "`int = price;`",
+        "C": "`price int 20;`",
+        "D": "`price == 20;`"
+      }
+    },
+    {
+      "id": "g1-lifecycle-073",
+      "type": "mcq",
+      "prompt": "در `String city = \"شیراز\";`، `city` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "city یک متغیر مرجع از نوع String است.",
+      "concepts": [
+        "variables",
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "یک مقدار boolean",
+        "B": "یک متغیر از نوع String",
+        "C": "یک کلیدواژه",
+        "D": "یک نام کلاس اجباری"
+      }
+    },
+    {
+      "id": "g1-lifecycle-074",
+      "type": "mcq",
+      "prompt": "متغیر از نوع `String` معمولاً چه چیزی نگه می‌دارد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "متغیر reference-type یک مرجع به شیء String نگه می‌دارد.",
+      "concepts": [
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "همیشه یک عدد",
+        "B": "مرجع به یک شیء String",
+        "C": "فقط true یا false",
+        "D": "کلیدواژهٔ final"
+      }
+    },
+    {
+      "id": "g1-lifecycle-075",
+      "type": "tf",
+      "prompt": "`String` در جاوا یک reference type است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "String یک نوع شیء و در نتیجه reference type است.",
+      "concepts": [
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-076",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`String a=\"سلام\"; String b=a; System.out.print(b);`",
+      "answers": [
+        "A"
+      ],
+      "explanation": "b همان مقدار مرجع a را می‌گیرد و به همان String اشاره می‌کند.",
+      "concepts": [
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "سلام",
+        "B": "null",
+        "C": "a",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g1-lifecycle-077",
+      "type": "blank",
+      "prompt": "مقداری که نشان می‌دهد یک متغیر مرجع فعلاً به شیئی اشاره نمی‌کند را با حروف کوچک بنویسید.",
+      "answers": [
+        "null"
+      ],
+      "explanation": "null یعنی مرجع به شیئی وصل نیست.",
+      "concepts": [
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-078",
+      "type": "mcq",
+      "prompt": "در `String name = null;` کدام درست است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "name یک متغیر مرجع است و فعلاً به هیچ شیء String اشاره نمی‌کند.",
+      "concepts": [
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "options": {
+        "A": "name یک int است",
+        "B": "یک String خالی ساخته شده است",
+        "C": "name فعلاً به شیئی اشاره نمی‌کند",
+        "D": "GC حتماً اجرا شده است"
+      }
+    },
+    {
+      "id": "g1-lifecycle-079",
+      "type": "tf",
+      "prompt": "انتساب `b = a` برای دو متغیر reference-type، الزاماً یک کپی مستقل از شیء می‌سازد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "معمولاً مقدار مرجع کپی می‌شود، نه خود شیء.",
+      "concepts": [
+        "reference-types",
+        "pass-by-value"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "reference-types"
+      ]
+    },
+    {
+      "id": "g1-lifecycle-080",
+      "type": "mcq",
+      "prompt": "در این کد، بعد از `a = null` چه چیزی درست است؟\n`String a=new String(\"x\"); String b=a; a=null;`",
+      "answers": [
+        "D"
+      ],
+      "explanation": "b هنوز به شیء String اشاره می‌کند.",
+      "concepts": [
+        "reference-types",
+        "garbage-collection"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "reference-types"
+      ],
+      "options": {
+        "A": "b هم null می‌شود",
+        "B": "شیء حتماً حذف می‌شود",
+        "C": "a به شیء جدید اشاره می‌کند",
+        "D": "b هنوز به همان شیء اشاره می‌کند"
+      }
+    },
+    {
+      "id": "g1-lifecycle-081",
+      "type": "mcq",
+      "prompt": "کدام تفاوت int و String درست است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "int primitive است؛ String reference type است.",
+      "concepts": [
+        "reference-types",
+        "variables"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "int primitive و String reference type است",
+        "B": "هر دو فقط boolean هستند",
+        "C": "String primitive و int شیء است",
+        "D": "هیچ‌کدام متغیر نمی‌شوند"
+      }
+    },
+    {
+      "id": "g1-lifecycle-082",
+      "type": "mcq",
+      "prompt": "خروجی چیست؟\n`String word = \"کتاب\"; word = null; System.out.print(word);`",
+      "answers": [
+        "B"
+      ],
+      "explanation": "پس از انتساب null، چاپ word مقدار null را نمایش می‌دهد.",
+      "concepts": [
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "کتاب",
+        "B": "null",
+        "C": "String",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g1-lifecycle-083",
+      "type": "tf",
+      "prompt": "یک متغیر reference-type می‌تواند مقدار null داشته باشد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "null مقدار معتبری برای یک متغیر مرجع است.",
+      "concepts": [
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-lifecycle-084",
+      "type": "mcq",
+      "prompt": "کدام مقدار را می‌توان به متغیری از نوع `String` نسبت داد، بی‌آنکه تبدیل نوع لازم باشد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "`String` یک reference type است و `null` مقدار مجاز آن است. `0`، `false` و یک literal کاراکتر، String نیستند.",
+      "concepts": [
+        "reference-types",
+        "null"
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "options": {
+        "A": "`0`",
+        "B": "`false`",
+        "C": "`null`",
+        "D": "`'x'`"
+      }
+    },
+    {
+      "id": "g1-lifecycle-085",
+      "type": "mcq",
+      "prompt": "چرا `final String label = \"A\";` با `final int count = 1;` از نظر final مشابه‌اند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "در هر دو، خود متغیر پس از مقداردهی دوباره انتساب نمی‌گیرد.",
+      "concepts": [
+        "reference-types",
+        "final"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "final",
+        "reference-types"
+      ],
+      "options": {
+        "A": "هر دو primitive هستند",
+        "B": "هر دو متغیر دوباره انتساب نمی‌گیرند",
+        "C": "هر دو به null تبدیل می‌شوند",
+        "D": "هر دو GC را اجرا می‌کنند"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1188 @@
+{
+  "questions": [
+    {
+      "id": "g1-primitives-001",
+      "type": "mcq",
+      "prompt": "کدام نوع ابتدایی یک عدد صحیح ۳۲ بیتی علامت‌دار است؟",
+      "options": {
+        "A": "byte",
+        "B": "short",
+        "C": "int",
+        "D": "long"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "int دقیقاً ۳۲ بیت علامت‌دار دارد.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-primitives-002",
+      "type": "mcq",
+      "prompt": "بازهٔ دقیق byte کدام است؟",
+      "options": {
+        "A": "۰ تا ۲۵۵",
+        "B": "−۱۲۸ تا ۱۲۷",
+        "C": "−۲۵۶ تا ۲۵۵",
+        "D": "−۳۲٬۷۶۸ تا ۳۲٬۷۶۷"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "byte هشت‌بیتی و علامت‌دار است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "primitives"
+      ]
+    },
+    {
+      "id": "g1-primitives-003",
+      "type": "blank",
+      "prompt": "کمینهٔ دقیق short را بنویسید.",
+      "answers": [
+        "-32768",
+        "−32768"
+      ],
+      "explanation": "short شانزده‌بیتی علامت‌دار است و کمینهٔ آن −۳۲۷۶۸ است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "primitives"
+      ]
+    },
+    {
+      "id": "g1-primitives-004",
+      "type": "mcq",
+      "prompt": "بیشینهٔ دقیق int کدام است؟",
+      "options": {
+        "A": "۲٬۱۴۷٬۴۸۳٬۶۴۷",
+        "B": "۲٬۱۴۷٬۴۸۳٬۶۴۸",
+        "C": "۴٬۲۹۴٬۹۶۷٬۲۹۵",
+        "D": "۹٬۲۲۳٬۳۷۲٬۰۳۶٬۸۵۴٬۷۷۵٬۸۰۷"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "بیشینهٔ int برابر 2^31−1 است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "primitives"
+      ]
+    },
+    {
+      "id": "g1-primitives-005",
+      "type": "blank",
+      "prompt": "کمینهٔ دقیق long را بنویسید.",
+      "answers": [
+        "-9223372036854775808",
+        "−9223372036854775808"
+      ],
+      "explanation": "کمینهٔ long برابر −2^63 است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "primitives"
+      ]
+    },
+    {
+      "id": "g1-primitives-006",
+      "type": "mcq",
+      "prompt": "بازهٔ char در جاوا کدام است؟",
+      "options": {
+        "A": "−۳۲۷۶۸ تا ۳۲۷۶۷",
+        "B": "۰ تا ۲۵۵",
+        "C": "۰ تا ۶۵۵۳۵",
+        "D": "−۱۲۸ تا ۱۲۷"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "char یک واحد کد UTF-16 بدون علامت است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "primitives"
+      ]
+    },
+    {
+      "id": "g1-primitives-007",
+      "type": "tf",
+      "prompt": "نوع long در جاوا همیشه دقیقاً ۶۴ بیت دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "اندازهٔ long در مشخصات زبان جاوا ۶۴ بیت است.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "primitives"
+      ]
+    },
+    {
+      "id": "g1-primitives-008",
+      "type": "tf",
+      "prompt": "boolean فقط دو مقدار true و false دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "boolean نوعی منطقی است و بازهٔ عددی ندارد.",
+      "concepts": [
+        "primitives"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-primitives-009",
+      "type": "mcq",
+      "prompt": "کدام مقداردهی بدون cast کامپایل می‌شود؟",
+      "options": {
+        "A": "byte b = 128;",
+        "B": "short s = 32768;",
+        "C": "long n = 2147483648;",
+        "D": "long n = 2147483648L;"
+      },
+      "answers": [
+        "D"
+      ],
+      "explanation": "مقدار خارج از بازهٔ int باید با پسوند L به‌صورت long literal نوشته شود.",
+      "concepts": [
+        "primitives",
+        "literals"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "literals"
+      ]
+    },
+    {
+      "id": "g1-primitives-010",
+      "type": "mcq",
+      "prompt": "نوع پیش‌فرض literal صحیح `42` چیست؟",
+      "options": {
+        "A": "byte",
+        "B": "short",
+        "C": "int",
+        "D": "long"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "literal صحیح بدون پسوند، در صورت قرارگرفتن در بازه، int است.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-primitives-011",
+      "type": "multi",
+      "prompt": "کدام literalها از نوع long هستند؟",
+      "options": {
+        "A": "99L",
+        "B": "99l",
+        "C": "99D",
+        "D": "99"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "پسوند L یا l literal صحیح را long می‌کند؛ L خواناتر است.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "literals"
+      ]
+    },
+    {
+      "id": "g1-primitives-012",
+      "type": "mcq",
+      "prompt": "برای مقداردهی `float rate` با مقدار اعشاری ۳٫۱۴، کدام عبارت درست است؟",
+      "options": {
+        "A": "`float rate = 3.14;`",
+        "B": "`float rate = 3.14f;`",
+        "C": "`float rate = 3.14L;`",
+        "D": "`float rate = \"3.14\";`"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "literal اعشاری بدون suffix از نوع double است؛ suffix `f` یا `F` literal را float می‌کند.",
+      "concepts": [
+        "literals",
+        "primitives",
+        "numeric-conversion"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-primitives-013",
+      "type": "mcq",
+      "prompt": "برای ساخت literal از نوع float کدام درست است؟",
+      "options": {
+        "A": "float f = 1.5;",
+        "B": "float f = 1.5F;",
+        "C": "float f = 1.5D;",
+        "D": "float f = 1.5L;"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "پسوند F مقدار را float می‌کند.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "literals"
+      ]
+    },
+    {
+      "id": "g1-primitives-014",
+      "type": "multi",
+      "prompt": "کدام literalهای دودویی معتبر و برابر ده هستند؟",
+      "options": {
+        "A": "0b1010",
+        "B": "0B1010",
+        "C": "1010b",
+        "D": "0b102"
+      },
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "literal دودویی با 0b یا 0B شروع می‌شود و فقط رقم‌های ۰ و ۱ دارد.",
+      "concepts": [
+        "literals"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "literals"
+      ]
+    },
+    {
+      "id": "g1-primitives-015",
+      "type": "mcq",
+      "prompt": "نقش زیرخط در `1_000_000` چیست؟",
+      "options": {
+        "A": "عدد را String می‌کند",
+        "B": "برای خوانایی است و در مقدار اثری ندارد",
+        "C": "عدد را long می‌کند",
+        "D": "نمایندهٔ صفر است"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "زیرخط فقط خوانایی literal عددی را بهتر می‌کند.",
+      "concepts": [
+        "literals"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-primitives-016",
+      "type": "tf",
+      "prompt": "عبارت `boolean ok = 1;` معتبر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "boolean تبدیل ضمنی از عدد ندارد و فقط true یا false می‌گیرد.",
+      "concepts": [
+        "primitives",
+        "literals"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-primitives-017",
+      "type": "mcq",
+      "prompt": "کدام تعریف char معتبر است؟",
+      "options": {
+        "A": "char c = \"A\";",
+        "B": "char c = 'A';",
+        "C": "char c = 'AB';",
+        "D": "char c = null;"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "char یک واحد کد UTF-16 را با تک‌نقل‌قول نگه می‌دارد.",
+      "concepts": [
+        "primitives",
+        "literals"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-primitives-018",
+      "type": "blank",
+      "prompt": "مقدار کاراکتری U+0041 را بنویسید.",
+      "answers": [
+        "A"
+      ],
+      "explanation": "U+0041 حرف بزرگ لاتین A است.",
+      "concepts": [
+        "literals",
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "literals"
+      ]
+    },
+    {
+      "id": "g1-primitives-019",
+      "type": "tf",
+      "prompt": "هر char دقیقاً یک نویسهٔ قابل‌مشاهده برای کاربر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "char یک واحد کد UTF-16 است و برخی نویسه‌ها به دو char نیاز دارند.",
+      "concepts": [
+        "primitives",
+        "strings"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "primitives"
+      ]
+    },
+    {
+      "id": "g1-primitives-020",
+      "type": "mcq",
+      "prompt": "دربارهٔ `char c = 65535;` کدام درست است؟",
+      "options": {
+        "A": "کامپایل نمی‌شود",
+        "B": "کامپایل می‌شود",
+        "C": "فقط با L کامپایل می‌شود",
+        "D": "c برابر null است"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "ثابت int که در بازهٔ char باشد، بدون cast قابل تخصیص است.",
+      "concepts": [
+        "primitives",
+        "literals"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "primitives"
+      ]
+    },
+    {
+      "id": "g1-primitives-021",
+      "type": "mcq",
+      "prompt": "برای مقایسهٔ محتوای String با «سلام» کدام درست است؟",
+      "options": {
+        "A": "s == \"سلام\"",
+        "B": "s.equals(\"سلام\")",
+        "C": "s = \"سلام\"",
+        "D": "s.compareTo(null)"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "equals محتوای String را می‌سنجد و == هویت ارجاع را.",
+      "concepts": [
+        "strings",
+        "equals-identity",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g1-primitives-022",
+      "type": "tf",
+      "prompt": "دو String می‌توانند با equals برابر و با == نابرابر باشند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "دو شیء جدا می‌توانند محتوای برابر ولی ارجاع متفاوت داشته باشند.",
+      "concepts": [
+        "strings",
+        "equals-identity",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g1-primitives-023",
+      "type": "mcq",
+      "prompt": "خروجی `new String(\"x\") == new String(\"x\")` چیست؟",
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "x",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "دو فراخوانی new دو شیء متمایز می‌سازند.",
+      "concepts": [
+        "strings",
+        "equals-identity",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "equals-identity"
+      ]
+    },
+    {
+      "id": "g1-primitives-024",
+      "type": "mcq",
+      "prompt": "کدام مورد یک reference type است؟",
+      "options": {
+        "A": "double",
+        "B": "boolean",
+        "C": "String",
+        "D": "char"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "String یک کلاس و در نتیجه نوع ارجاعی است.",
+      "concepts": [
+        "reference-types",
+        "strings",
+        "primitives"
+      ],
+      "difficulty": 1,
+      "prerequisites": []
+    },
+    {
+      "id": "g1-primitives-025",
+      "type": "mcq",
+      "prompt": "کدام یک text block معتبر است؟",
+      "options": {
+        "A": "String s = \"\"\"\nالف\n\"\"\";",
+        "B": "String s = '''الف''';",
+        "C": "String s = \"\"الف\"\";",
+        "D": "char s = \"\"\"\nالف\n\"\"\";"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "text block با سه دوتا نقل‌قول نوشته و به String ارزیابی می‌شود.",
+      "concepts": [
+        "text-blocks",
+        "strings",
+        "literals"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g1-primitives-026",
+      "type": "tf",
+      "prompt": "text block یک نوع ابتدایی مستقل است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "text block فقط شکل نوشتن یک String literal است.",
+      "concepts": [
+        "text-blocks",
+        "strings",
+        "literals"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g1-primitives-027",
+      "type": "mcq",
+      "prompt": "در text block، تورفتگی مشترکِ اتفاقی چه می‌شود؟",
+      "options": {
+        "A": "همیشه حفظ می‌شود",
+        "B": "به tab تبدیل می‌شود",
+        "C": "حذف می‌شود",
+        "D": "خطای کامپایل می‌دهد"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "تورفتگی مشترکِ اتفاقی از مقدار text block حذف می‌شود.",
+      "concepts": [
+        "text-blocks",
+        "strings"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "text-blocks"
+      ]
+    },
+    {
+      "id": "g1-primitives-028",
+      "type": "mcq",
+      "prompt": "wrapper متناظر با int کدام است؟",
+      "options": {
+        "A": "Int",
+        "B": "Integer",
+        "C": "Long",
+        "D": "Number"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "کلاس wrapper مربوط به int، Integer است.",
+      "concepts": [
+        "wrappers",
+        "primitives",
+        "reference-types"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "primitives"
+      ]
+    },
+    {
+      "id": "g1-primitives-029",
+      "type": "multi",
+      "prompt": "کدام جفت primitive و wrapper درست است؟",
+      "options": {
+        "A": "boolean و Boolean",
+        "B": "char و Character",
+        "C": "double و Double",
+        "D": "int و Int"
+      },
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "Boolean، Character و Double درست‌اند؛ کلاسی به نام Int وجود ندارد.",
+      "concepts": [
+        "wrappers",
+        "primitives",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "wrappers"
+      ]
+    },
+    {
+      "id": "g1-primitives-030",
+      "type": "mcq",
+      "prompt": "در `Integer boxed = 7;` چه رخ می‌دهد؟",
+      "options": {
+        "A": "خطای کامپایل",
+        "B": "boxing خودکار",
+        "C": "unboxing خودکار",
+        "D": "تبدیل String"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "مقدار int به‌طور خودکار boxing می‌شود.",
+      "concepts": [
+        "wrappers",
+        "primitives",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "wrappers"
+      ]
+    },
+    {
+      "id": "g1-primitives-031",
+      "type": "mcq",
+      "prompt": "در `int n = Integer.valueOf(7);` چه رخ می‌دهد؟",
+      "options": {
+        "A": "boxing",
+        "B": "unboxing",
+        "C": "widening به long",
+        "D": "تبدیل String"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "Integer برای انتساب به int به‌طور خودکار unbox می‌شود.",
+      "concepts": [
+        "wrappers",
+        "primitives",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "wrappers"
+      ]
+    },
+    {
+      "id": "g1-primitives-032",
+      "type": "mcq",
+      "prompt": "نتیجهٔ `Integer n = null; int x = n;` چیست؟",
+      "options": {
+        "A": "x برابر ۰ می‌شود",
+        "B": "خطای کامپایل",
+        "C": "NullPointerException هنگام اجرا",
+        "D": "x برابر null می‌شود"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "unboxing مقدار null باعث NullPointerException می‌شود.",
+      "concepts": [
+        "wrappers",
+        "primitives",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "wrappers"
+      ],
+      "hint": "به تفاوت null و مقدار primitive توجه کنید."
+    },
+    {
+      "id": "g1-primitives-033",
+      "type": "tf",
+      "prompt": "Integer می‌تواند null باشد ولی int نمی‌تواند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "Integer نوع ارجاعی است؛ int یک primitive است.",
+      "concepts": [
+        "wrappers",
+        "reference-types",
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "wrappers"
+      ]
+    },
+    {
+      "id": "g1-primitives-034",
+      "type": "mcq",
+      "prompt": "چرا `Integer a=1000,b=1000; a==b` قابل اتکا نیست؟",
+      "options": {
+        "A": "== همیشه مقدار را می‌سنجد",
+        "B": "ممکن است دو شیء جدا باشند",
+        "C": "Integer قابل مقایسه نیست",
+        "D": "۱۰۰۰ صحیح نیست"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "== روی referenceها هویت را می‌سنجد، نه مقدار را.",
+      "concepts": [
+        "wrappers",
+        "equals-identity",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "wrappers",
+        "equals-identity"
+      ]
+    },
+    {
+      "id": "g1-primitives-035",
+      "type": "tf",
+      "prompt": "true شدن `Integer.valueOf(100) == Integer.valueOf(100)` مجوز استفادهٔ عمومی از == برای Integer است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "کش رایج Integer برای −۱۲۸ تا ۱۲۷ جایگزین equals نیست.",
+      "concepts": [
+        "wrappers",
+        "equals-identity",
+        "reference-types"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "wrappers",
+        "equals-identity"
+      ]
+    },
+    {
+      "id": "g1-primitives-036",
+      "type": "mcq",
+      "prompt": "کدام مقایسهٔ مقدار دو Integer در حضور null ایمن است؟",
+      "options": {
+        "A": "a == b",
+        "B": "a.equals(b)",
+        "C": "java.util.Objects.equals(a, b)",
+        "D": "a.intValue() == b.intValue()"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "Objects.equals هم null را مدیریت می‌کند و هم مقدار را می‌سنجد.",
+      "concepts": [
+        "wrappers",
+        "equals-identity",
+        "reference-types"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "wrappers",
+        "equals-identity"
+      ]
+    },
+    {
+      "id": "g1-primitives-037",
+      "type": "mcq",
+      "prompt": "کدام اعلان var در یک متد معتبر است؟",
+      "options": {
+        "A": "var n;",
+        "B": "var n = 10;",
+        "C": "var = 10;",
+        "D": "var n = null;"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "var به initializer نیاز دارد تا نوع استنباط شود.",
+      "concepts": [
+        "var",
+        "variables",
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-primitives-038",
+      "type": "tf",
+      "prompt": "می‌توان از var برای field نمونه استفاده کرد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "var فقط برای local variable دارای initializer است.",
+      "concepts": [
+        "var",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "var"
+      ]
+    },
+    {
+      "id": "g1-primitives-039",
+      "type": "mcq",
+      "prompt": "نوع `var name = \"بهار\";` چیست؟",
+      "options": {
+        "A": "char",
+        "B": "String",
+        "C": "Object",
+        "D": "var"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "کامپایلر نوع String را از initializer استنباط می‌کند.",
+      "concepts": [
+        "var",
+        "variables",
+        "strings"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "var"
+      ]
+    },
+    {
+      "id": "g1-primitives-040",
+      "type": "mcq",
+      "prompt": "چرا `var item = null;` نامعتبر است؟",
+      "options": {
+        "A": "null فقط برای int است",
+        "B": "نوعی برای استنباط ندارد",
+        "C": "var فقط برای String است",
+        "D": "null باید تک‌نقل‌قول داشته باشد"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "null به تنهایی اطلاعات نوعی برای استنباط ندارد.",
+      "concepts": [
+        "var",
+        "variables",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "var"
+      ]
+    },
+    {
+      "id": "g1-primitives-041",
+      "type": "tf",
+      "prompt": "پس از `var count = 1;`، count می‌تواند یک String بگیرد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "نوع count در زمان کامپایل int استنباط می‌شود؛ var پویا نیست.",
+      "concepts": [
+        "var",
+        "variables",
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "var"
+      ]
+    },
+    {
+      "id": "g1-primitives-042",
+      "type": "mcq",
+      "prompt": "کدام متغیر قبل از خوانده‌شدن باید مقداردهی قطعی شود؟",
+      "options": {
+        "A": "local int بدون initializer",
+        "B": "field int نمونه",
+        "C": "field boolean ایستا",
+        "D": "String literal"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "متغیر محلی مقدار پیش‌فرض ندارد؛ field مقدار پیش‌فرض دارد.",
+      "concepts": [
+        "variables",
+        "primitives"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-primitives-043",
+      "type": "mcq",
+      "prompt": "وضعیت `int n; System.out.println(n);` در متد چیست؟",
+      "options": {
+        "A": "۰ چاپ می‌شود",
+        "B": "null چاپ می‌شود",
+        "C": "خطای کامپایل",
+        "D": "NullPointerException"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "local variable پیش از خواندن باید مقداردهی شود.",
+      "concepts": [
+        "variables",
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-primitives-044",
+      "type": "multi",
+      "prompt": "کدام مقدار پیش‌فرض field درست است؟",
+      "options": {
+        "A": "int → 0",
+        "B": "boolean → false",
+        "C": "String → null",
+        "D": "char → '0'"
+      },
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "fieldهای int، boolean و String به‌ترتیب ۰، false و null می‌گیرند؛ char برابر واحد کد صفر است، نه «0».",
+      "concepts": [
+        "variables",
+        "primitives",
+        "reference-types",
+        "strings"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-primitives-045",
+      "type": "tf",
+      "prompt": "field از نوع char بدون initializer مقدار واحد کد صفر می‌گیرد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "مقدار پیش‌فرض char، واحد کد صفر است، نه کاراکتر «0».",
+      "concepts": [
+        "variables",
+        "primitives",
+        "literals"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-primitives-046",
+      "type": "mcq",
+      "prompt": "وضعیت `boolean ready; if (ready) {}` در متد چیست؟",
+      "options": {
+        "A": "کامپایل و false",
+        "B": "خطای کامپایل",
+        "C": "NullPointerException",
+        "D": "کامپایل و true"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "ready یک local است و باید پیش از استفاده مقداردهی قطعی شود.",
+      "concepts": [
+        "variables",
+        "primitives"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-primitives-047",
+      "type": "mcq",
+      "prompt": "کدام اعلان final معتبر است؟",
+      "options": {
+        "A": "final int n; System.out.println(n);",
+        "B": "final int n = 3;",
+        "C": "final = 3;",
+        "D": "int final = 3;"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "متغیر final باید در نخستین انتساب مقدار بگیرد.",
+      "concepts": [
+        "final",
+        "variables",
+        "primitives"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g1-primitives-048",
+      "type": "tf",
+      "prompt": "پس از `final int n = 3;`، انتساب دوباره به n مجاز نیست.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "final متغیر را پس از نخستین انتساب غیرقابل‌انتساب مجدد می‌کند.",
+      "concepts": [
+        "final",
+        "variables",
+        "primitives"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "final"
+      ]
+    },
+    {
+      "id": "g1-primitives-049",
+      "type": "mcq",
+      "prompt": "در `final StringBuilder b = new StringBuilder(\"الف\"); b.append(\"ب\");` کدام درست است؟",
+      "options": {
+        "A": "خطای کامپایل، چون شیء immutable است",
+        "B": "کامپایل می‌شود و شیء تغییر می‌کند",
+        "C": "b خودکار null می‌شود",
+        "D": "append فقط برای String است"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "final بودن reference مانع تغییر شیء mutable نمی‌شود؛ فقط جایگزینی reference را منع می‌کند.",
+      "concepts": [
+        "final",
+        "reference-types",
+        "strings"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "final",
+        "reference-types"
+      ]
+    },
+    {
+      "id": "g1-primitives-050",
+      "type": "tf",
+      "prompt": "`final String s = \"الف\"; s = \"ب\";` مجاز است چون String تغییرناپذیر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "تغییرناپذیری String ربطی به انتساب مجدد reference final ندارد.",
+      "concepts": [
+        "final",
+        "strings",
+        "reference-types"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "final",
+        "strings"
+      ]
+    },
+    {
+      "id": "g1-primitives-051",
+      "type": "mcq",
+      "prompt": "دربارهٔ `final Integer n = null;` کدام درست است؟",
+      "options": {
+        "A": "نامعتبر است چون final null نمی‌پذیرد",
+        "B": "معتبر است اما n بعداً قابل تغییر نیست",
+        "C": "n خودکار صفر می‌شود",
+        "D": "n یک int است"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "final reference می‌تواند نخستین‌بار null بگیرد، اما بعداً نمی‌توان آن را تغییر داد.",
+      "concepts": [
+        "final",
+        "wrappers",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "final",
+        "wrappers"
+      ]
+    },
+    {
+      "id": "g1-primitives-052",
+      "type": "mcq",
+      "prompt": "نوع `var x = 10L;` چیست؟",
+      "options": {
+        "A": "byte",
+        "B": "int",
+        "C": "double",
+        "D": "long"
+      },
+      "answers": [
+        "D"
+      ],
+      "explanation": "پسوند L باعث استنباط long می‌شود.",
+      "concepts": [
+        "var",
+        "literals",
+        "primitives",
+        "variables"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "var",
+        "literals"
+      ]
+    },
+    {
+      "id": "g1-primitives-053",
+      "type": "tf",
+      "prompt": "یک String literal ممکن است intern شود، اما نباید مقایسهٔ محتوایی را بر == بنا کرد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "interning یک جزئیات هویتی است؛ equals روش درست مقایسهٔ محتوای String است.",
+      "concepts": [
+        "strings",
+        "equals-identity",
+        "reference-types"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "equals-identity"
+      ]
+    },
+    {
+      "id": "g1-primitives-054",
+      "type": "mcq",
+      "prompt": "کدام مقدار char از بازهٔ مجاز خارج است؟",
+      "options": {
+        "A": "65535",
+        "B": "65536",
+        "C": "0",
+        "D": "65"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "char حداکثر ۶۵۵۳۵ را نگه می‌دارد.",
+      "concepts": [
+        "primitives",
+        "literals"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "primitives"
+      ]
+    },
+    {
+      "id": "g1-primitives-055",
+      "type": "mcq",
+      "prompt": "کدام عبارت دربارهٔ reference final درست است؟",
+      "options": {
+        "A": "شیء را تغییرناپذیر می‌کند",
+        "B": "reference را غیرقابل‌جایگزینی می‌کند",
+        "C": "همیشه primitive است",
+        "D": "نمی‌تواند null باشد"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "final روی خود متغیر اثر دارد، نه لزوماً روی حالت شیء ارجاع‌شده.",
+      "concepts": [
+        "final",
+        "reference-types"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "final"
+      ]
+    }
+  ]
+}

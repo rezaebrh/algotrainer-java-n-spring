@@ -1,0 +1,314 @@
+{
+  "title": "درجهٔ 2",
+  "version": 2,
+  "questions": [
+    {
+      "id": "g2-seed-001",
+      "type": "mcq",
+      "prompt": "خروجی `8 / 2 + 1` برای int چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "تقسیم پیش از جمع انجام می‌شود و نتیجه 5 است.",
+      "concepts": [
+        "operators",
+        "precedence"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "int"
+      ],
+      "options": {
+        "A": "4",
+        "B": "4.5",
+        "C": "5",
+        "D": "9"
+      }
+    },
+    {
+      "id": "g2-seed-002",
+      "type": "blank",
+      "prompt": "برای باقی‌ماندهٔ تقسیم صحیح از عملگر ____ استفاده می‌کنیم.",
+      "answers": [
+        "%"
+      ],
+      "explanation": "عملگر % باقی‌ماندهٔ تقسیم را برمی‌گرداند.",
+      "concepts": [
+        "operators",
+        "modulo"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "int"
+      ]
+    },
+    {
+      "id": "g2-seed-003",
+      "type": "tf",
+      "prompt": "عبارت `5 > 3 && 2 == 2` برابر true است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "هر دو بخش شرط true هستند.",
+      "concepts": [
+        "boolean",
+        "logical-operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "g2-seed-004",
+      "type": "mcq",
+      "prompt": "کدام شرط تشخیص می‌دهد n فرد است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "عدد فرد در تقسیم بر 2 باقی‌ماندهٔ غیرصفر دارد.",
+      "concepts": [
+        "modulo",
+        "conditionals"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`n / 2 == 1`",
+        "B": "`n % 2 != 0`",
+        "C": "`n % 2 == 0`",
+        "D": "`n = 1`"
+      }
+    },
+    {
+      "id": "g2-seed-005",
+      "type": "multi",
+      "prompt": "کدام عملگرها short-circuit دارند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "&& در false بودن سمت چپ و || در true بودن سمت چپ، بخش راست را اجرا نمی‌کنند.",
+      "concepts": [
+        "short-circuit",
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "&&",
+        "B": "&",
+        "C": "||",
+        "D": "|"
+      }
+    },
+    {
+      "id": "g2-seed-006",
+      "type": "mcq",
+      "prompt": "پس از `int x=3; x += 4;` مقدار x چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "x += 4 نتیجهٔ جمع را دوباره در x می‌گذارد.",
+      "concepts": [
+        "assignment-operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "7",
+        "B": "3",
+        "C": "4",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g2-seed-007",
+      "type": "tf",
+      "prompt": "در شرط if می‌توان به جای boolean یک int نوشت.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "Java تبدیل ضمنی عدد به boolean ندارد.",
+      "concepts": [
+        "if",
+        "boolean"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-seed-008",
+      "type": "blank",
+      "prompt": "برای خروج فوری از نزدیک‌ترین حلقه یا switch از ____ استفاده می‌شود.",
+      "answers": [
+        "break"
+      ],
+      "explanation": "break اجرای ساختار کنترلی نزدیک را خاتمه می‌دهد.",
+      "concepts": [
+        "loops",
+        "break"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-seed-009",
+      "type": "mcq",
+      "prompt": "خروجی `for(int i=0;i<3;i++) System.out.print(i);` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "i به ترتیب 0، 1 و 2 است.",
+      "concepts": [
+        "for-loop"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "123",
+        "B": "012",
+        "C": "0123",
+        "D": "0"
+      }
+    },
+    {
+      "id": "g2-seed-010",
+      "type": "multi",
+      "prompt": "کدام گزاره‌ها دربارهٔ switch expression درست‌اند؟",
+      "answers": [
+        "A",
+        "D"
+      ],
+      "explanation": "case با -> fall-through ندارد و switch expression می‌تواند مقدار بدهد.",
+      "concepts": [
+        "switch",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "switch"
+      ],
+      "options": {
+        "A": "`case ... ->` fall-through ندارد",
+        "B": "همیشه default لازم دارد",
+        "C": "هرگز مقدار برنمی‌گرداند",
+        "D": "می‌توان نتیجه را به متغیر داد"
+      }
+    },
+    {
+      "id": "g2-seed-011",
+      "type": "mcq",
+      "prompt": "اگر ready false باشد، در `if (ready) send(); else wait();` چه اجرا می‌شود؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "else فقط وقتی اجرا می‌شود که شرط false باشد.",
+      "concepts": [
+        "if-else"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "send",
+        "B": "هر دو",
+        "C": "خطای کامپایل",
+        "D": "wait"
+      }
+    },
+    {
+      "id": "g2-seed-012",
+      "type": "blank",
+      "prompt": "بخش شرط در `for(init; شرط; update)` باید به ____ ارزیابی شود.",
+      "answers": [
+        "boolean"
+      ],
+      "explanation": "شرط ادامهٔ حلقه باید boolean باشد.",
+      "concepts": [
+        "for-loop",
+        "boolean"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-seed-013",
+      "type": "tf",
+      "prompt": "continue در حلقهٔ for، باقی بدنه را رد می‌کند و سپس update را اجرا می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "کنترل پس از continue به بخش update حلقهٔ for می‌رود.",
+      "concepts": [
+        "continue",
+        "for-loop"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-seed-014",
+      "type": "mcq",
+      "prompt": "کدام حلقه حتماً به پایان می‌رسد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "در گزینهٔ C شمارنده در نهایت شرط را false می‌کند.",
+      "concepts": [
+        "while-loop"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "`int i=0; while(i<5) {}`",
+        "B": "`int i=5; while(i>0) { i++; }`",
+        "C": "`int i=0; while(i<5) { i++; }`",
+        "D": "`while(true) {}`"
+      }
+    },
+    {
+      "id": "g2-seed-015",
+      "type": "multi",
+      "prompt": "کدام سن‌ها شرط `age >= 18 && age <= 65` را پاس می‌کنند؟",
+      "answers": [
+        "B",
+        "C"
+      ],
+      "explanation": "کران‌های شرط شامل هستند.",
+      "concepts": [
+        "ranges",
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "comparison"
+      ],
+      "options": {
+        "A": "17",
+        "B": "18",
+        "C": "65",
+        "D": "66"
+      }
+    }
+  ]
+}

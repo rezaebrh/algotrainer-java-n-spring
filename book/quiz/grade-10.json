@@ -1,0 +1,322 @@
+{
+  "title": "درجهٔ 10",
+  "version": 2,
+  "questions": [
+    {
+      "id": "g10-seed-001",
+      "type": "mcq",
+      "prompt": "annotation اصلی برای فعال‌کردن auto-configuration در Spring Boot چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "@SpringBootApplication شامل @EnableAutoConfiguration است و پیکربندی خودکار را فعال می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "auto-configuration"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "@ConfigurationProperties",
+        "B": "@RestController",
+        "C": "@SpringBootApplication",
+        "D": "@Bean"
+      }
+    },
+    {
+      "id": "g10-seed-002",
+      "type": "blank",
+      "prompt": "برای تعریف تنظیم `app.title` در کلاس typed configuration معمولاً از ____ استفاده می‌شود.",
+      "answers": [
+        "@ConfigurationProperties"
+      ],
+      "explanation": "این annotation مقدارهای properties با پیشوند مشخص را به object متصل می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "configuration"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g10-seed-003",
+      "type": "tf",
+      "prompt": "starterهای Spring Boot مجموعه‌ای هماهنگ از dependencyهای رایج را فراهم می‌کنند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "Starterها dependency management و dependencyهای پایهٔ یک قابلیت را ساده می‌کنند.",
+      "concepts": [
+        "Spring-Boot",
+        "starters"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Maven"
+      ]
+    },
+    {
+      "id": "g10-seed-004",
+      "type": "mcq",
+      "prompt": "فایل پیش‌فرض تنظیمات Spring Boot کدام است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "application.properties یا application.yml در classpath برای تنظیمات رایج استفاده می‌شود.",
+      "concepts": [
+        "Spring-Boot",
+        "configuration"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "application.properties",
+        "B": "server.java",
+        "C": "spring.xml",
+        "D": "module-info.java"
+      }
+    },
+    {
+      "id": "g10-seed-005",
+      "type": "multi",
+      "prompt": "کدام‌ها راه معتبر تعریف property در Spring Boot هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "فایل properties، YAML و environment variable از sourceهای رایج property هستند.",
+      "concepts": [
+        "Spring-Boot",
+        "externalized-configuration"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "application.properties",
+        "B": "application.yml",
+        "C": "فقط bytecode",
+        "D": "environment variable"
+      }
+    },
+    {
+      "id": "g10-seed-006",
+      "type": "mcq",
+      "prompt": "برای ساخت endpoint سادهٔ JSON معمولاً از کدام annotation در class استفاده می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "@RestController ترکیب @Controller و @ResponseBody است.",
+      "concepts": [
+        "Spring-Boot",
+        "REST"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-MVC"
+      ],
+      "options": {
+        "A": "@Entity",
+        "B": "@RestController",
+        "C": "@Repository",
+        "D": "@ComponentScan"
+      }
+    },
+    {
+      "id": "g10-seed-007",
+      "type": "blank",
+      "prompt": "برای نگاشت GET روی مسیر `/products` از `@____(\"/products\")` استفاده می‌شود.",
+      "answers": [
+        "GetMapping"
+      ],
+      "explanation": "@GetMapping میان‌بر مشخص برای requestهای HTTP GET است.",
+      "concepts": [
+        "Spring-Boot",
+        "web"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "HTTP"
+      ]
+    },
+    {
+      "id": "g10-seed-008",
+      "type": "tf",
+      "prompt": "profile فعال را می‌توان با property `spring.profiles.active` انتخاب کرد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "این property profileهای فعال را تعیین می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "profiles"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ]
+    },
+    {
+      "id": "g10-seed-009",
+      "type": "mcq",
+      "prompt": "اگر property اجباری با `@Value(\"${api.url}\")` پیدا نشود، معمولاً چه رخ می‌دهد؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "placeholder حل‌نشده می‌تواند باعث شکست startup context شود.",
+      "concepts": [
+        "Spring-Boot",
+        "configuration"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "همیشه رشتهٔ خالی می‌شود",
+        "B": "خودکار URL می‌سازد",
+        "C": "نادیده گرفته می‌شود",
+        "D": "startup ممکن است شکست بخورد"
+      }
+    },
+    {
+      "id": "g10-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها برای profile جداگانه مناسب‌اند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "تنظیم database، logging و integrationهای محیطی معمولاً میان محیط‌ها فرق دارند.",
+      "concepts": [
+        "Spring-Boot",
+        "profiles"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "database URL محیط",
+        "B": "نام class جاوا",
+        "C": "سطح logging",
+        "D": "کلید integration محیطی"
+      }
+    },
+    {
+      "id": "g10-seed-011",
+      "type": "mcq",
+      "prompt": "هدف Spring Boot DevTools در development چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "DevTools قابلیت‌هایی مانند restart توسعه را برای بازخورد سریع‌تر فراهم می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "devtools"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "جایگزینی production JVM",
+        "B": "رمزنگاری database",
+        "C": "بهبود چرخهٔ توسعه",
+        "D": "تولید schema SQL"
+      }
+    },
+    {
+      "id": "g10-seed-012",
+      "type": "blank",
+      "prompt": "برای اجرای برنامه با profile `dev` در command line می‌توان `--spring.profiles.active=____` نوشت.",
+      "answers": [
+        "dev"
+      ],
+      "explanation": "گزینهٔ command line یک property source با اولویت مناسب است.",
+      "concepts": [
+        "Spring-Boot",
+        "profiles"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ]
+    },
+    {
+      "id": "g10-seed-013",
+      "type": "tf",
+      "prompt": "Spring Boot می‌تواند با embedded server برنامهٔ وب را به صورت executable JAR اجرا کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "starter وب معمولاً server embedded دارد و Boot executable archive تولید می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "embedded-server"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring-Boot"
+      ]
+    },
+    {
+      "id": "g10-seed-014",
+      "type": "mcq",
+      "prompt": "برای validation ورودی DTO کدام annotation روی parameter controller رایج است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "@Valid اجرای bean validation را برای object ورودی درخواست می‌کند.",
+      "concepts": [
+        "Spring-Boot",
+        "validation"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring-MVC"
+      ],
+      "options": {
+        "A": "@Valid",
+        "B": "@Primary",
+        "C": "@Lazy",
+        "D": "@Profile"
+      }
+    },
+    {
+      "id": "g10-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها practice مناسب برای configuration production هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "secretها را بیرون از source کنترل کنید، validation داشته باشید و تنظیم محیطی را جدا نگه دارید.",
+      "concepts": [
+        "Spring-Boot",
+        "configuration",
+        "security"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Spring-Boot"
+      ],
+      "options": {
+        "A": "قرار دادن secret در environment یا secret store",
+        "B": "اعتبارسنجی ConfigurationProperties",
+        "C": "commit کردن password واقعی در Git",
+        "D": "استفاده از profile یا source محیطی"
+      }
+    }
+  ]
+}

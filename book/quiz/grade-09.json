@@ -1,0 +1,322 @@
+{
+  "title": "درجهٔ 9",
+  "version": 2,
+  "questions": [
+    {
+      "id": "g9-seed-001",
+      "type": "mcq",
+      "prompt": "DI در Spring چه مسئله‌ای را حل می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "container وابستگی‌ها را می‌سازد و تزریق می‌کند تا coupling مستقیم کم شود.",
+      "concepts": [
+        "Spring",
+        "dependency-injection"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "OOP"
+      ],
+      "options": {
+        "A": "حذف JVM",
+        "B": "مدیریت و تزریق وابستگی",
+        "C": "تبدیل SQL به JSON",
+        "D": "جایگزین HTTP"
+      }
+    },
+    {
+      "id": "g9-seed-002",
+      "type": "blank",
+      "prompt": "annotation رایج برای معرفی service به Spring، ____ است.",
+      "answers": [
+        "@Service"
+      ],
+      "explanation": "@Service یک stereotype برای component scanning است.",
+      "concepts": [
+        "Spring",
+        "beans"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "annotations"
+      ]
+    },
+    {
+      "id": "g9-seed-003",
+      "type": "tf",
+      "prompt": "constructor injection وابستگی اجباری را صریح و test کردن را ساده‌تر می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "وابستگی‌ها در constructor اعلام می‌شوند و mockپذیرند.",
+      "concepts": [
+        "Spring",
+        "dependency-injection"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g9-seed-004",
+      "type": "mcq",
+      "prompt": "Spring چگونه stereotype classها را معمولاً کشف می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "component scanning packageها را جست‌وجو می‌کند.",
+      "concepts": [
+        "Spring",
+        "component-scan"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "GC",
+        "B": "javac",
+        "C": "component scanning",
+        "D": "SQL join"
+      }
+    },
+    {
+      "id": "g9-seed-005",
+      "type": "multi",
+      "prompt": "کدام annotationها stereotype bean هستند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "@Component، @Service و @Repository برای ثبت component به کار می‌روند.",
+      "concepts": [
+        "Spring",
+        "beans"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "annotations"
+      ],
+      "options": {
+        "A": "@Component",
+        "B": "@Service",
+        "C": "@Override",
+        "D": "@Repository"
+      }
+    },
+    {
+      "id": "g9-seed-006",
+      "type": "mcq",
+      "prompt": "اگر دو bean هم‌نوع برای constructor injection وجود داشته باشد چه می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "بدون qualifier یا primary، Spring نمی‌تواند bean یکتا انتخاب کند.",
+      "concepts": [
+        "Spring",
+        "dependency-injection"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "همیشه اولی انتخاب می‌شود",
+        "B": "ابهام تزریق رخ می‌دهد",
+        "C": "هر دو در یک field می‌روند",
+        "D": "JVM بسته می‌شود"
+      }
+    },
+    {
+      "id": "g9-seed-007",
+      "type": "blank",
+      "prompt": "برای انتخاب bean مشخص میان چند bean هم‌نوع از ____ استفاده می‌شود.",
+      "answers": [
+        "@Qualifier"
+      ],
+      "explanation": "Qualifier bean مطلوب را مشخص می‌کند.",
+      "concepts": [
+        "Spring",
+        "dependency-injection"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g9-seed-008",
+      "type": "tf",
+      "prompt": "Bean پیش‌فرض Spring singleton scope دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "در هر ApplicationContext معمولاً یک نمونه از bean singleton نگه می‌دارد.",
+      "concepts": [
+        "Spring",
+        "bean-scope"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g9-seed-009",
+      "type": "mcq",
+      "prompt": "کدام annotation متدی را به‌عنوان bean در Java config ثبت می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "@Bean روی method، نتیجهٔ method را bean می‌کند.",
+      "concepts": [
+        "Spring",
+        "Java-config"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "@Bean",
+        "B": "@Value",
+        "C": "@Autowired",
+        "D": "@Transactional"
+      }
+    },
+    {
+      "id": "g9-seed-010",
+      "type": "multi",
+      "prompt": "کدام‌ها مزیت constructor injection هستند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "dependency اجباری، immutability field و تست آسان‌تر از مزیت‌های آن‌اند.",
+      "concepts": [
+        "Spring",
+        "dependency-injection"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "وابستگی اجباری روشن است",
+        "B": "نیازی به constructor ندارد",
+        "C": "field می‌تواند final باشد",
+        "D": "test با mock ساده‌تر است"
+      }
+    },
+    {
+      "id": "g9-seed-011",
+      "type": "mcq",
+      "prompt": "ApplicationContext چه نقشی دارد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "ApplicationContext container پیشرفتهٔ Spring برای beanها و خدمات مرتبط است.",
+      "concepts": [
+        "Spring",
+        "ApplicationContext"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "فقط HTTP server است",
+        "B": "فقط database است",
+        "C": "container beanها است",
+        "D": "compiler جاوا است"
+      }
+    },
+    {
+      "id": "g9-seed-012",
+      "type": "blank",
+      "prompt": "برای تعیین bean ترجیحی هنگام چند candidate از annotation ____ استفاده می‌شود.",
+      "answers": [
+        "@Primary"
+      ],
+      "explanation": "@Primary candidate پیش‌فرض برای autowiring را تعیین می‌کند.",
+      "concepts": [
+        "Spring",
+        "beans"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g9-seed-013",
+      "type": "tf",
+      "prompt": "@Repository می‌تواند exceptionهای persistence را به exception hierarchy Spring ترجمه کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "این stereotype برای لایهٔ persistence و ترجمهٔ exception شناخته شده است.",
+      "concepts": [
+        "Spring",
+        "repository",
+        "exceptions"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Spring"
+      ]
+    },
+    {
+      "id": "g9-seed-014",
+      "type": "mcq",
+      "prompt": "کدام scope برای ساخت نمونهٔ جدید در هر درخواست bean مناسب است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "prototype scope برای هر درخواست container یک نمونهٔ تازه ایجاد می‌کند.",
+      "concepts": [
+        "Spring",
+        "bean-scope"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "singleton",
+        "B": "session",
+        "C": "application",
+        "D": "prototype"
+      }
+    },
+    {
+      "id": "g9-seed-015",
+      "type": "multi",
+      "prompt": "کدام‌ها برای جلوگیری از circular dependency طراحی بهتری‌اند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "تفکیک مسئولیت، interface مرزی و بازطراحی flow به جای field injection چرخه را کم می‌کند.",
+      "concepts": [
+        "Spring",
+        "design"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Spring"
+      ],
+      "options": {
+        "A": "تفکیک مسئولیت serviceها",
+        "B": "معرفی abstraction در مرز",
+        "C": "افزودن field injection بیشتر",
+        "D": "بازطراحی جریان وابستگی"
+      }
+    }
+  ]
+}
