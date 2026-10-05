@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import random
 import re
 import shutil
 import sys
@@ -18,6 +19,13 @@ from rtl import align_rtl
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_BOOK_DIR = ROOT / "book"
+
+# Terminal-vs-log behaviour, flipped on in main(). The interactive path is the
+# default product and must stay byte-for-byte unchanged when a TTY is attached.
+NON_INTERACTIVE = False
+RENDER_WIDTH = 100
+# A log has no height, so non-interactive page size is a fixed constant.
+NON_TTY_ROWS = 40
 
 
 def default_state_path() -> Path:
@@ -112,11 +120,12 @@ def paginate(lines: list[str], terminal_rows: int) -> list[list[str]]:
 
 
 def clear_screen() -> None:
+    if NON_INTERACTIVE:
+        return
     print("\033[2J\033[H", end="")
 
 
-def show_page(chapter: Path, pages: list[list[str]], page: int) -> None:
-    columns = min(shutil.get_terminal_size((80, 24)).columns, 100)
+def show_page(chapter: Path, pages: list[list[str]], page: int, columns: int) -> None:
     clear_screen()
     print(f"{chapter_title(chapter)} | صفحه {page + 1} از {len(pages)}")
     print("─" * columns)
@@ -125,7 +134,8 @@ def show_page(chapter: Path, pages: list[list[str]], page: int) -> None:
     ) % 2 == 1
     print("\n".join(align_rtl(pages[page], columns, starts_in_code_fence)))
     print("─" * columns)
-    print("Enter/n: بعد | p: قبل | g N: صفحه | c: فصل‌ها | s: وضعیت | q: خروج")
+    if not NON_INTERACTIVE:
+        print("Enter/n: بعد | p: قبل | g N: صفحه | c: فصل‌ها | s: وضعیت | q: خروج")
 
 
 def show_chapters(chapters: list[Path], state: dict[str, Any]) -> None:
@@ -163,14 +173,41 @@ def show_status(chapters: list[Path], state: dict[str, Any]) -> None:
             print(f"  {concept:26} {bar} {score:.0%} ({hit}/{seen})")
 
 
-def read_chapter(chapter: Path, chapters: list[Path], state: dict[str, Any], state_file: Path) -> None:
+def parse_pages(spec: str | None, total: int) -> list[int]:
+    """Turn a `--pages` spec ("3", "2-5", unset) into 0-based page indices."""
+    if spec is None or not spec.strip() or spec.strip().casefold() == "all":
+        return list(range(total))
+    match = re.fullmatch(r"\s*(\d+)\s*(?:-\s*(\d+)\s*)?", spec)
+    if not match:
+        raise ValueError(f"Invalid --pages value: {spec}")
+    first = int(match.group(1))
+    last = int(match.group(2) or first)
+    if first < 1 or last < first:
+        raise ValueError(f"Invalid --pages range: {spec}")
+    return [number - 1 for number in range(first, min(last, total) + 1)]
+
+
+def render_chapter(chapter: Path, width: int, pages_spec: str | None) -> None:
+    """Print a chapter's pages to a log without prompting or saving progress."""
+    lines = wrap_markdown(chapter.read_text(encoding="utf-8"), width - 2)
+    pages = paginate(lines, NON_TTY_ROWS)
+    for page in parse_pages(pages_spec, len(pages)):
+        show_page(chapter, pages, page, width)
+
+
+def read_chapter(chapter: Path, chapters: list[Path], state: dict[str, Any], state_file: Path,
+                 pages_spec: str | None = None) -> None:
+    if NON_INTERACTIVE:
+        render_chapter(chapter, RENDER_WIDTH, pages_spec)
+        return
     size = shutil.get_terminal_size((80, 24))
+    columns = min(size.columns, 100)
     lines = wrap_markdown(chapter.read_text(encoding="utf-8"), size.columns - 2)
     pages = paginate(lines, size.lines)
     saved = state["chapters"].get(chapter.name, {})
     page = min(max(0, int(saved.get("page", 0))), len(pages) - 1)
     while True:
-        show_page(chapter, pages, page)
+        show_page(chapter, pages, page, columns)
         command = input("> ").strip(); lowered = command.casefold()
         if lowered in {"q", "quit", "خروج"}: break
         if lowered in {"", "n", "next", "بعد"}: page = min(page + 1, len(pages) - 1)
@@ -220,41 +257,93 @@ def load_questions(quiz_directory: Path, quiz_name: str | None = None) -> list[d
     return questions
 
 
-def response_for(question: dict[str, Any], width: int) -> str | set[str]:
+def print_options(question: dict[str, Any], width: int) -> None:
+    if question["type"] not in {"mcq", "multi"}:
+        return
+    for key, text in question["options"].items():
+        print(format_rtl_block(f"  {key}. {text}", width))
+
+
+def parse_answer(question: dict[str, Any], raw: str) -> str | set[str]:
+    """Normalize a raw answer line into the shape `is_correct` expects."""
+    kind = question["type"]
+    if kind == "multi":
+        return {part for part in raw.upper().replace(" ", "").split(",") if part}
+    if kind == "mcq":
+        return raw.strip().upper()
+    if kind == "tf":
+        return raw.strip().casefold()
+    return raw.strip()
+
+
+def response_for(question: dict[str, Any], width: int, source: str | None = None) -> str | set[str]:
+    print_options(question, width)
+    if source is not None:
+        # A supplied answer bypasses the retry loops: an invalid one is graded
+        # wrong instead of prompting again, which would exhaust the source.
+        return parse_answer(question, source)
     kind = question["type"]
     if kind in {"mcq", "multi"}:
-        for key, text in question["options"].items():
-            print(format_rtl_block(f"  {key}. {text}", width))
         valid = {key.upper() for key in question["options"]}
         if kind == "mcq":
             while True:
-                response = input(format_rtl_block("پاسخ: ", width)).strip().upper()
+                response = parse_answer(question, input(format_rtl_block("پاسخ: ", width)))
                 if response in valid:
                     return response
                 print(format_rtl_block("یکی از گزینه‌های نمایش‌داده‌شده را وارد کنید.", width))
         while True:
-            raw = input(format_rtl_block("پاسخ‌ها (مثلاً A,C): ", width)).upper().replace(" ", "")
-            response = {part for part in raw.split(",") if part}
+            response = parse_answer(question, input(format_rtl_block("پاسخ‌ها (مثلاً A,C): ", width)))
             if response and response <= valid:
                 return response
             print(format_rtl_block("برای چندانتخابی، حروف گزینه‌ها را با ویرگول جدا کنید.", width))
     if kind == "tf":
         while True:
-            raw = input(format_rtl_block("پاسخ (true/false یا درست/نادرست): ", width)).strip().casefold()
-            if raw in {"true", "false", "درست", "نادرست"}:
-                return raw
+            response = parse_answer(question, input(format_rtl_block("پاسخ (true/false یا درست/نادرست): ", width)))
+            if response in {"true", "false", "درست", "نادرست"}:
+                return response
             print(format_rtl_block("true یا false وارد کنید.", width))
     return input(format_rtl_block("پاسخ کوتاه: ", width)).strip()
 
 
-def ask(questions: list[dict[str, Any]], state: dict[str, Any], state_file: Path, width: int | None = None) -> None:
+def load_answers(inline: str | None, path: Path | None) -> list[str] | None:
+    """Parse supplied answers; `--answers-file` (one per line) wins over `--answers`."""
+    if path is not None:
+        text = sys.stdin.read() if str(path) == "-" else path.read_text(encoding="utf-8")
+        return [line.strip() for line in text.splitlines() if line.strip()]
+    if inline is None:
+        return None
+    # Semicolons separate questions, so a comma can stay inside a multi answer.
+    return [part.strip() for part in inline.split(";")]
+
+
+def show_questions(questions: list[dict[str, Any]], width: int) -> None:
+    """Print the selected questions without grading — the `--show` preview."""
+    for position, question in enumerate(questions, start=1):
+        print(format_rtl_block(f"پرسش {position}/{len(questions)} | {question['id']} | سطح {question.get('difficulty', 1)} | {question['type']}", width))
+        print(format_rtl_block(question["prompt"], width))
+        if question.get("hint"):
+            print(format_rtl_block(f"راهنما: {question['hint']}", width))
+        print_options(question, width)
+
+
+def ask(questions: list[dict[str, Any]], state: dict[str, Any], state_file: Path,
+        width: int | None = None, answers: list[str] | None = None) -> None:
     columns = width if width is not None else terminal_columns()
+    source = iter(answers) if answers is not None else None
     for position, question in enumerate(questions, start=1):
         print(format_rtl_block(f"پرسش {position}/{len(questions)} | {question['id']} | سطح {question.get('difficulty', 1)} | {question['type']}", columns))
         print(format_rtl_block(question["prompt"], columns))
         if question.get("hint"):
             print(format_rtl_block(f"راهنما: {question['hint']}", columns))
-        response = response_for(question, columns)
+        if source is None:
+            response = response_for(question, columns)
+        else:
+            try:
+                supplied = next(source)
+            except StopIteration:
+                print(format_rtl_block("پاسخ‌های ورودی تمام شد؛ جلسه در همین‌جا پایان یافت.", columns))
+                break
+            response = response_for(question, columns, supplied)
         correct = is_correct(question, response)
         answer_text = ", ".join(question["answers"])
         verdict = "✓ درست است." if correct else f"✗ نادرست است؛ پاسخ درست: {answer_text}."
@@ -264,26 +353,51 @@ def ask(questions: list[dict[str, Any]], state: dict[str, Any], state_file: Path
         save_state(state_file, state)
 
 
+def add_answer_options(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--answers", help="پاسخ‌های ازپیش‌داده‌شده؛ میان پرسش‌ها با «;» جدا می‌شوند")
+    parser.add_argument("--answers-file", type=Path, help="پروندهٔ پاسخ‌ها، هر خط یک پاسخ؛ - یعنی stdin")
+    parser.add_argument("--seed", type=int, help="seed برای انتخاب تکرارپذیر پرسش‌ها")
+    parser.add_argument("--show", action="store_true", help="فقط نمایش پرسش‌های انتخابی، بدون نمره‌دهی")
+
+
 def main() -> int:
+    global NON_INTERACTIVE, RENDER_WIDTH
     parser = argparse.ArgumentParser(description="خوانندهٔ محلی و تطبیقی کتاب Java/Spring")
     parser.add_argument("--book-dir", type=Path, default=DEFAULT_BOOK_DIR)
     parser.add_argument("--state", type=Path, default=default_state_path())
+    parser.add_argument("--no-tty", action="store_true", help="حالت غیرتعاملی برای اجرا در CI و لاگ")
+    parser.add_argument("--width", type=int, help="عرض رندر در حالت غیرتعاملی")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("list", help="فهرست فصل‌ها")
-    reading = commands.add_parser("read", help="خواندن تعاملی یک فصل"); reading.add_argument("chapter", nargs="?")
+    reading = commands.add_parser("read", help="خواندن تعاملی یک فصل")
+    reading.add_argument("chapter", nargs="?")
+    reading.add_argument("--pages", help="در حالت غیرتعاملی: یک صفحه یا بازه، مانند ۳ یا ۲-۵")
     commands.add_parser("status", help="نمایش پیشرفت و mastery")
     quiz = commands.add_parser("quiz", help="جلسهٔ تطبیقی از یک بانک پرسش")
     quiz.add_argument("name", help="نام JSON بدون پسوند، مانند grade-01"); quiz.add_argument("--count", type=int, default=10)
+    add_answer_options(quiz)
     review = commands.add_parser("review", help="مرور تطبیقیِ خطاها و مفاهیم ضعیف")
     review.add_argument("--count", type=int, default=10)
+    add_answer_options(review)
     args = parser.parse_args(); state = load_state(args.state); chapters = find_chapters(args.book_dir)
-    columns = terminal_columns()
+    NON_INTERACTIVE = args.no_tty or not sys.stdin.isatty()
+    RENDER_WIDTH = args.width or (100 if NON_INTERACTIVE else terminal_columns())
+    columns = RENDER_WIDTH
+    if getattr(args, "seed", None) is not None: random.seed(args.seed)
     try:
         if args.command == "list": show_chapters(chapters, state)
-        elif args.command == "read": read_chapter(choose_chapter(chapters, args.chapter), chapters, state, args.state)
+        elif args.command == "read": read_chapter(choose_chapter(chapters, args.chapter), chapters, state, args.state, args.pages)
         elif args.command == "status": show_status(chapters, state)
-        elif args.command == "quiz": ask(select_questions(load_questions(args.book_dir / "quiz", args.name), state, args.count), state, args.state, columns)
-        elif args.command == "review": ask(select_questions(load_questions(args.book_dir / "quiz"), state, args.count, review_only=True), state, args.state, columns)
+        elif args.command == "quiz":
+            questions = select_questions(load_questions(args.book_dir / "quiz", args.name), state, args.count)
+            if args.show: show_questions(questions, columns)
+            else: ask(questions, state, args.state, columns, load_answers(args.answers, args.answers_file))
+        elif args.command == "review":
+            questions = select_questions(load_questions(args.book_dir / "quiz"), state, args.count, review_only=True)
+            if args.show: show_questions(questions, columns)
+            else: ask(questions, state, args.state, columns, load_answers(args.answers, args.answers_file))
+    except EOFError:
+        print("Error: no interactive input available; use --no-tty for non-interactive runs.", file=sys.stderr); return 2
     except (FileNotFoundError, ValueError, json.JSONDecodeError, KeyError) as error:
         print(f"Error: {error}", file=sys.stderr); return 2
     return 0
