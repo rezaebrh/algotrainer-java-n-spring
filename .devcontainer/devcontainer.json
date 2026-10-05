@@ -1,0 +1,19 @@
+{
+  "name": "Java/Spring Farsi Book",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21",
+      "installMaven": false,
+      "installGradle": false
+    }
+  },
+  "postCreateCommand": "python3 --version && java -version && python3 reader.py list",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}

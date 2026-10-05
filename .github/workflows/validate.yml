@@ -1,0 +1,61 @@
+name: Validate book and quizzes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python-checks:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate quiz banks
+        run: python3 tools/validate_quiz.py
+
+      - name: Verify RTL rendering
+        run: python3 tools/verify_quiz_rtl.py
+
+  java-examples:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Verify marked Java examples
+        # Only chapters that actually carry `verify:` markers, so a chapter
+        # without any examples is skipped instead of failing the run.
+        run: |
+          set -euo pipefail
+          chapters=$(grep -l 'verify:' book/*.md 2>/dev/null \
+            | sed -E 's|^book/0*([0-9]+)-.*|\1|' || true)
+          if [ -z "$chapters" ]; then
+            echo "No chapters with verification markers."
+            exit 0
+          fi
+          for chapter in $chapters; do
+            echo "::group::verify_examples --chapter $chapter"
+            python3 tools/verify_examples.py --chapter "$chapter"
+            echo "::endgroup::"
+          done

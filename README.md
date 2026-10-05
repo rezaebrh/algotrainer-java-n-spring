@@ -62,6 +62,36 @@ python3 /home/snapp/Downloads/java-spring-farsi-book/reader.py \
   --state /tmp/java-book-progress.json read 1
 ```
 
+## اجرا بدون clone
+
+دو راه برای استفاده از خواننده بدون clone کردن مخزن هست.
+
+**۱) Codespaces — ترمینال واقعی در مرورگر.** در صفحهٔ مخزن `Code` → `Codespaces` → `Create codespace on main` را بزنید. یک ترمینال واقعی باز می‌شود و همهٔ فرمان‌ها، از جمله حالت تعاملی `read` و `quiz`، بدون تنظیم اضافه کار می‌کنند:
+
+```bash
+python3 reader.py read 1
+python3 reader.py quiz grade-01 --count 5
+```
+
+پیکربندی آن در `.devcontainer/devcontainer.json` است و Python و Java 21 را آماده می‌کند.
+
+**۲) GitHub Actions — بدون ترمینال.** در زبانهٔ `Actions` گردش‌کار «Run the reader CLI» را باز کنید، `Run workflow` را بزنید و فرمان، فصل، صفحه‌ها، بانک پرسش، تعداد و پاسخ‌ها را از فرم انتخاب کنید. خروجی در لاگ اجرا نمایش داده می‌شود و به clone نیازی نیست.
+
+Actions ترمینال تعاملی ندارد، پس `read` و `quiz` در آن‌جا فقط غیرتعاملی اجرا می‌شوند. برای دیدن پرسش‌ها پیش از پاسخ‌دادن، فیلد `answers` را خالی بگذارید تا حالت `--show` اجرا شود؛ سپس همان پرسش‌ها را با `seed` یکسان و `answers` پرشده دوباره اجرا کنید تا نمره‌دهی شود. `seed` انتخاب پرسش‌ها را تکرارپذیر می‌کند، به شرطی که وضعیت مطالعه یکی باشد.
+
+### گزینه‌های غیرتعاملی
+
+```bash
+python3 reader.py --no-tty list
+python3 reader.py --no-tty read 1 --pages 2-5          # یک صفحه یا بازه؛ پیش‌فرض: همهٔ صفحه‌ها
+python3 reader.py --no-tty read 1 --pages all
+python3 reader.py --no-tty quiz grade-01 --count 3 --seed 7 --show
+python3 reader.py --no-tty quiz grade-01 --count 3 --seed 7 --answers "A;B,C;true"
+printf 'A\nB,C\n' | python3 reader.py --no-tty quiz grade-01 --count 2 --answers-file -
+```
+
+در `--answers` پاسخ‌ها با «;» از هم جدا می‌شوند تا ویرگول داخل پاسخ چندانتخابی باقی بماند؛ `--answers-file` هر خط را یک پاسخ می‌گیرد و `-` یعنی stdin. `--no-tty` وقتی stdin یک TTY نباشد خودبه‌خود فعال می‌شود و `--width N` عرض رندر را تعیین می‌کند. در این حالت خواندن فصل، پیشرفت را ذخیره نمی‌کند.
+
 ## خواننده و مرور تطبیقی
 
 - صفحه‌بندی Markdown بر اساس اندازهٔ فعلی ترمینال، حرکت صفحه و ادامه از آخرین محل

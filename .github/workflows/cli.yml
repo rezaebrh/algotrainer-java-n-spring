@@ -1,0 +1,103 @@
+name: Run the reader CLI
+
+# Actions has no terminal, so this reaches only the non-interactive paths.
+# For the fully interactive reader and quiz, open the repo in Codespaces.
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: Which reader command to run
+        type: choice
+        default: list
+        options:
+          - list
+          - status
+          - read
+          - quiz
+          - review
+      chapter:
+        description: Chapter for `read` (number, or part of the file name)
+        type: string
+        default: "1"
+      pages:
+        description: Pages for `read`, for example 2-5 or all
+        type: string
+        default: "1-3"
+      quiz:
+        description: Quiz bank for `quiz` (file name without .json)
+        type: string
+        default: grade-01
+      count:
+        description: How many questions for `quiz` / `review`
+        type: string
+        default: "5"
+      answers:
+        description: Answers separated by ';' between questions. Empty = preview with --show
+        type: string
+        default: ""
+      seed:
+        description: Seed for reproducible question selection (use the same value for --show and --answers)
+        type: string
+        default: ""
+      width:
+        description: Render width
+        type: string
+        default: "100"
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONIOENCODING: utf-8
+      COMMAND: ${{ inputs.command }}
+      CHAPTER: ${{ inputs.chapter }}
+      PAGES: ${{ inputs.pages }}
+      QUIZ: ${{ inputs.quiz }}
+      COUNT: ${{ inputs.count }}
+      ANSWERS: ${{ inputs.answers }}
+      SEED: ${{ inputs.seed }}
+      WIDTH: ${{ inputs.width }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run reader
+        # Every input arrives through env: and is quoted — never spliced into
+        # the script body — so no input can turn into shell syntax.
+        run: |
+          set -euo pipefail
+
+          seeded=()
+          if [ -n "$SEED" ]; then seeded=(--seed "$SEED"); fi
+
+          run_reader() { python3 reader.py --no-tty --width "$WIDTH" "$@"; }
+
+          case "$COMMAND" in
+            list|status)
+              run_reader "$COMMAND"
+              ;;
+            read)
+              run_reader read "$CHAPTER" --pages "$PAGES"
+              ;;
+            quiz|review)
+              target=()
+              if [ "$COMMAND" = "quiz" ]; then target=("$QUIZ"); fi
+              if [ -n "$ANSWERS" ]; then
+                run_reader "$COMMAND" "${target[@]}" --count "$COUNT" "${seeded[@]}" --answers "$ANSWERS"
+              else
+                echo "No answers supplied: previewing the selected questions."
+                echo "Re-run with 'seed' and 'answers' filled in to grade the same questions."
+                run_reader "$COMMAND" "${target[@]}" --count "$COUNT" "${seeded[@]}" --show
+              fi
+              ;;
+            *)
+              echo "Unknown command: $COMMAND" >&2
+              exit 2
+              ;;
+          esac
