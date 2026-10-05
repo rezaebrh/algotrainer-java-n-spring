@@ -1,0 +1,449 @@
+{
+  "questions": [
+    {
+      "id": "g2-operators-001",
+      "type": "mcq",
+      "prompt": "نوع expression `byte a=2, b=3; a+b` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "پیش از جمع، هر دو byte به int promotion می‌یابند.",
+      "concepts": [
+        "operators",
+        "numeric-promotion"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "int"
+      ],
+      "options": {
+        "A": "byte",
+        "B": "short",
+        "C": "int",
+        "D": "long"
+      }
+    },
+    {
+      "id": "g2-operators-002",
+      "type": "tf",
+      "prompt": "`var total = (byte) 2 + (byte) 3;` متغیر total را byte می‌سازد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "var نوع expression را می‌گیرد و promotion جمع را تغییر نمی‌دهد.",
+      "concepts": [
+        "numeric-promotion"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-operators-003",
+      "type": "mcq",
+      "prompt": "کدام مقداردهی widening و بدون cast است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "int به long widening است و cast نمی‌خواهد.",
+      "concepts": [
+        "casting"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`byte b = 130;`",
+        "B": "`long n = 42;`",
+        "C": "`byte b = 1 + 200;`",
+        "D": "`int n = 2.5;"
+      }
+    },
+    {
+      "id": "g2-operators-004",
+      "type": "mcq",
+      "prompt": "مقدار `(int) -3.8` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "بخش اعشاری در تبدیل به int به سوی صفر حذف می‌شود.",
+      "concepts": [
+        "casting"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "-3",
+        "B": "-4",
+        "C": "3",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g2-operators-005",
+      "type": "mcq",
+      "prompt": "پس از `byte b=127; b += 1;` مقدار b چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "compound assignment narrowing ضمنی دارد و byte wrap می‌شود.",
+      "concepts": [
+        "assignment-operators",
+        "numeric-promotion"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "128",
+        "B": "127",
+        "C": "خطای کامپایل",
+        "D": "-128"
+      }
+    },
+    {
+      "id": "g2-operators-006",
+      "type": "mcq",
+      "prompt": "کدام بازنویسی از نظر type به `b += 1` نزدیک‌تر است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "جمع int می‌سازد و cast صریح برای assignment byte لازم است.",
+      "concepts": [
+        "assignment-operators",
+        "casting"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`b = b + 1;`",
+        "B": "`b = 1;`",
+        "C": "`b = (byte) (b + 1);`",
+        "D": "`b = (int) (b + 1);"
+      }
+    },
+    {
+      "id": "g2-operators-007",
+      "type": "blank",
+      "prompt": "نتیجهٔ تقسیم صحیح `17 / 5` چیست؟",
+      "answers": [
+        "3"
+      ],
+      "explanation": "هر دو operand integral هستند، پس quotient به سوی صفر truncate می‌شود.",
+      "concepts": [
+        "operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "int"
+      ]
+    },
+    {
+      "id": "g2-operators-008",
+      "type": "mcq",
+      "prompt": "خروجی `-17 / 5` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "تقسیم integral Java به سوی صفر truncate می‌شود.",
+      "concepts": [
+        "operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "-4",
+        "B": "-3",
+        "C": "3",
+        "D": "-2"
+      }
+    },
+    {
+      "id": "g2-operators-009",
+      "type": "mcq",
+      "prompt": "خروجی `-17 % 5` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "remainder علامت dividend یعنی operand چپ را می‌گیرد.",
+      "concepts": [
+        "modulo"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "-2",
+        "B": "2",
+        "C": "-3",
+        "D": "3"
+      }
+    },
+    {
+      "id": "g2-operators-010",
+      "type": "mcq",
+      "prompt": "برای index چرخه‌ای منفی کدام API مناسب‌تر است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "Math.floorMod برای divisor مثبت remainder غیرمنفی فراهم می‌کند.",
+      "concepts": [
+        "modulo"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "modulo"
+      ],
+      "options": {
+        "A": "`index / size`",
+        "B": "`Math.abs(index % size)`",
+        "C": "`index % size`",
+        "D": "`Math.floorMod(index, size)`"
+      }
+    },
+    {
+      "id": "g2-operators-011",
+      "type": "tf",
+      "prompt": "signed overflow در int Java رفتار تعریف‌شدهٔ wraparound دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "int و long Java با arithmetic دو مکمل wrap می‌شوند.",
+      "concepts": [
+        "operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "int"
+      ]
+    },
+    {
+      "id": "g2-operators-012",
+      "type": "mcq",
+      "prompt": "برای تشخیص overflow در جمع int کدام انتخاب مناسب است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "Math.addExact به‌جای wrap بی‌صدا exception می‌دهد.",
+      "concepts": [
+        "operators"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`a + b == 0`",
+        "B": "`Math.addExact(a, b)`",
+        "C": "`(byte) (a + b)`",
+        "D": "`a % b`"
+      }
+    },
+    {
+      "id": "g2-operators-013",
+      "type": "mcq",
+      "prompt": "مقدار `0b1100 & 0b1010` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "AND فقط bitهای 1 مشترک را نگه می‌دارد: 1000.",
+      "concepts": [
+        "bitwise"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "8",
+        "B": "6",
+        "C": "14",
+        "D": "12"
+      }
+    },
+    {
+      "id": "g2-operators-014",
+      "type": "mcq",
+      "prompt": "مقدار `0b1100 | 0b1010` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "OR هر bitی را که در یکی از operandها 1 است نگه می‌دارد: 1110.",
+      "concepts": [
+        "bitwise"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "8",
+        "B": "6",
+        "C": "14",
+        "D": "12"
+      }
+    },
+    {
+      "id": "g2-operators-015",
+      "type": "mcq",
+      "prompt": "مقدار `0b1100 ^ 0b1010` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "XOR bitهای متفاوت را 1 می‌کند: 0110.",
+      "concepts": [
+        "bitwise"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "8",
+        "B": "6",
+        "C": "14",
+        "D": "12"
+      }
+    },
+    {
+      "id": "g2-operators-016",
+      "type": "blank",
+      "prompt": "عملگر complement بیتی Java چیست؟",
+      "answers": [
+        "~"
+      ],
+      "explanation": "~ تمام bitهای operand integral را معکوس می‌کند.",
+      "concepts": [
+        "bitwise"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-operators-017",
+      "type": "mcq",
+      "prompt": "برای `int n=-8` کدام shift از چپ صفر وارد می‌کند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": ">>> logical right shift است.",
+      "concepts": [
+        "shifts"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "bitwise"
+      ],
+      "options": {
+        "A": "`n << 1`",
+        "B": "`n >> 1`",
+        "C": "`n ^ 1`",
+        "D": "`n >>> 1`"
+      }
+    },
+    {
+      "id": "g2-operators-018",
+      "type": "mcq",
+      "prompt": "خروجی `1 << 33` برای int چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "برای int، count با 31 mask می‌شود؛ 33 به 1 کاهش می‌یابد.",
+      "concepts": [
+        "shifts"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "bitwise"
+      ],
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "0",
+        "D": "8589934592"
+      }
+    },
+    {
+      "id": "g2-operators-019",
+      "type": "tf",
+      "prompt": "`1L << 64` در Java برابر 1 است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "برای long، فقط شش bit پایین count مؤثرند؛ 64 به صفر تبدیل می‌شود.",
+      "concepts": [
+        "shifts"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "bitwise"
+      ]
+    },
+    {
+      "id": "g2-operators-020",
+      "type": "mcq",
+      "prompt": "کدام operator precedence بالاتری از `+` دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "ضرب، تقسیم و remainder قبل از جمع ارزیابی می‌شوند.",
+      "concepts": [
+        "precedence"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`*`",
+        "B": "`==`",
+        "C": "`&&`",
+        "D": "`?:`"
+      }
+    },
+    {
+      "id": "g2-operators-021",
+      "type": "blank",
+      "prompt": "در `int x=4;` value expression `x++` چیست؟",
+      "answers": [
+        "4"
+      ],
+      "explanation": "postfix مقدار قدیمی را می‌دهد و سپس x را افزایش می‌دهد.",
+      "concepts": [
+        "operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-operators-022",
+      "type": "tf",
+      "prompt": "`x += y` در صورت method call در سمت چپ، آن سمت را فقط یک بار ارزیابی می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "compound assignment receiver را یک بار evaluate می‌کند.",
+      "concepts": [
+        "assignment-operators"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "operators"
+      ]
+    }
+  ]
+}

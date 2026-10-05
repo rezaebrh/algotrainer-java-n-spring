@@ -444,7 +444,7 @@ fieldهای instance و static، و elementهای array، مقدار پیش‌ف
 
 | محل declaration | مقدار پیش‌فرض |
 |---|---|
-| instance field | `0`، `0.0`، `false`، ` ` یا `null` |
+| instance field | `0`، `0.0`، `false`، `\0` یا `null` |
 | static field | همان مقدارهای پیش‌فرض |
 | array element | همان مقدارهای پیش‌فرض |
 | local variable | هیچ؛ باید پیش از خواندن assign شود |

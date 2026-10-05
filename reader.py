@@ -189,6 +189,28 @@ def read_chapter(chapter: Path, chapters: list[Path], state: dict[str, Any], sta
     save_state(state_file, state)
 
 
+def terminal_columns(cap: int = 100, fallback: int = 80) -> int:
+    """Best-effort terminal width; never returns zero or an absurdly small value."""
+    try:
+        columns = shutil.get_terminal_size((fallback, 24)).columns
+    except (OSError, ValueError):
+        return fallback
+    if columns < 20:
+        return fallback
+    return min(columns, cap)
+
+
+def format_rtl_block(text: str, width: int) -> str:
+    """Apply align_rtl to a possibly multi-line string for terminal output.
+
+    Reuses the same bidi treatment the `read` path uses: right-align Persian
+    prose and protect embedded English/code/number runs with Unicode isolates.
+    Honors JAVABOOK_BIDI=off via rtl.visual_order internally.
+    """
+    lines = text.splitlines() or [""]
+    return "\n".join(align_rtl(lines, width, starts_in_code_fence=False))
+
+
 def load_questions(quiz_directory: Path, quiz_name: str | None = None) -> list[dict[str, Any]]:
     paths = [quiz_directory / f"{quiz_name}.json"] if quiz_name else sorted(quiz_directory.glob("grade-*.json"))
     questions: list[dict[str, Any]] = []
@@ -198,40 +220,46 @@ def load_questions(quiz_directory: Path, quiz_name: str | None = None) -> list[d
     return questions
 
 
-def response_for(question: dict[str, Any]) -> str | set[str]:
+def response_for(question: dict[str, Any], width: int) -> str | set[str]:
     kind = question["type"]
     if kind in {"mcq", "multi"}:
-        for key, text in question["options"].items(): print(f"  {key}. {text}")
+        for key, text in question["options"].items():
+            print(format_rtl_block(f"  {key}. {text}", width))
         valid = {key.upper() for key in question["options"]}
         if kind == "mcq":
             while True:
-                response = input("پاسخ: ").strip().upper()
-                if response in valid: return response
-                print("یکی از گزینه‌های نمایش‌داده‌شده را وارد کنید.")
+                response = input(format_rtl_block("پاسخ: ", width)).strip().upper()
+                if response in valid:
+                    return response
+                print(format_rtl_block("یکی از گزینه‌های نمایش‌داده‌شده را وارد کنید.", width))
         while True:
-            raw = input("پاسخ‌ها (مثلاً A,C): ").upper().replace(" ", "")
+            raw = input(format_rtl_block("پاسخ‌ها (مثلاً A,C): ", width)).upper().replace(" ", "")
             response = {part for part in raw.split(",") if part}
-            if response and response <= valid: return response
-            print("برای چندانتخابی، حروف گزینه‌ها را با ویرگول جدا کنید.")
+            if response and response <= valid:
+                return response
+            print(format_rtl_block("برای چندانتخابی، حروف گزینه‌ها را با ویرگول جدا کنید.", width))
     if kind == "tf":
         while True:
-            raw = input("پاسخ (true/false یا درست/نادرست): ").strip().casefold()
-            if raw in {"true", "false", "درست", "نادرست"}: return raw
-            print("true یا false وارد کنید.")
-    return input("پاسخ کوتاه: ").strip()
+            raw = input(format_rtl_block("پاسخ (true/false یا درست/نادرست): ", width)).strip().casefold()
+            if raw in {"true", "false", "درست", "نادرست"}:
+                return raw
+            print(format_rtl_block("true یا false وارد کنید.", width))
+    return input(format_rtl_block("پاسخ کوتاه: ", width)).strip()
 
 
-def ask(questions: list[dict[str, Any]], state: dict[str, Any], state_file: Path) -> None:
+def ask(questions: list[dict[str, Any]], state: dict[str, Any], state_file: Path, width: int | None = None) -> None:
+    columns = width if width is not None else terminal_columns()
     for position, question in enumerate(questions, start=1):
-        print(f"\nپرسش {position}/{len(questions)} | {question['id']} | سطح {question.get('difficulty', 1)} | {question['type']}")
-        print(question["prompt"])
+        print(format_rtl_block(f"پرسش {position}/{len(questions)} | {question['id']} | سطح {question.get('difficulty', 1)} | {question['type']}", columns))
+        print(format_rtl_block(question["prompt"], columns))
         if question.get("hint"):
-            print(f"راهنما: {question['hint']}")
-        response = response_for(question)
+            print(format_rtl_block(f"راهنما: {question['hint']}", columns))
+        response = response_for(question, columns)
         correct = is_correct(question, response)
         answer_text = ", ".join(question["answers"])
-        print("✓ درست است." if correct else f"✗ نادرست است؛ پاسخ درست: {answer_text}.")
-        print(question["explanation"])
+        verdict = "✓ درست است." if correct else f"✗ نادرست است؛ پاسخ درست: {answer_text}."
+        print(format_rtl_block(verdict, columns))
+        print(format_rtl_block(question["explanation"], columns))
         record_answer(question, correct, state)
         save_state(state_file, state)
 
@@ -249,12 +277,13 @@ def main() -> int:
     review = commands.add_parser("review", help="مرور تطبیقیِ خطاها و مفاهیم ضعیف")
     review.add_argument("--count", type=int, default=10)
     args = parser.parse_args(); state = load_state(args.state); chapters = find_chapters(args.book_dir)
+    columns = terminal_columns()
     try:
         if args.command == "list": show_chapters(chapters, state)
         elif args.command == "read": read_chapter(choose_chapter(chapters, args.chapter), chapters, state, args.state)
         elif args.command == "status": show_status(chapters, state)
-        elif args.command == "quiz": ask(select_questions(load_questions(args.book_dir / "quiz", args.name), state, args.count), state, args.state)
-        elif args.command == "review": ask(select_questions(load_questions(args.book_dir / "quiz"), state, args.count, review_only=True), state, args.state)
+        elif args.command == "quiz": ask(select_questions(load_questions(args.book_dir / "quiz", args.name), state, args.count), state, args.state, columns)
+        elif args.command == "review": ask(select_questions(load_questions(args.book_dir / "quiz"), state, args.count, review_only=True), state, args.state, columns)
     except (FileNotFoundError, ValueError, json.JSONDecodeError, KeyError) as error:
         print(f"Error: {error}", file=sys.stderr); return 2
     return 0

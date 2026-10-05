@@ -1,7 +1,4023 @@
 {
-  "title": "درجهٔ 2",
+  "title": "درجهٔ ۲ — عملگرها و جریان کنترل",
   "version": 2,
   "questions": [
+    {
+      "id": "g2-comparison-001",
+      "type": "mcq",
+      "prompt": "نوع نتیجهٔ `score >= 60` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "relational operatorها boolean تولید می‌کنند.",
+      "concepts": [
+        "boolean"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "int",
+        "B": "String",
+        "C": "boolean",
+        "D": "char"
+      }
+    },
+    {
+      "id": "g2-comparison-002",
+      "type": "tf",
+      "prompt": "expression `18 < age < 65` برای int age در Java معتبر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "مقایسهٔ اول boolean می‌سازد و boolean با 65 مقایسهٔ numeric نمی‌شود.",
+      "concepts": [
+        "ranges",
+        "boolean"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "g2-comparison-003",
+      "type": "mcq",
+      "prompt": "کدام شرط ageهای 18 تا 65 را شامل می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "دو comparison با && نوشته می‌شوند و هر دو boundary شامل‌اند.",
+      "concepts": [
+        "ranges",
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "comparison"
+      ],
+      "options": {
+        "A": "`18 < age < 65`",
+        "B": "`age >= 18 && age <= 65`",
+        "C": "`age >= 18 || age <= 65`",
+        "D": "`age == 18 && 65`"
+      }
+    },
+    {
+      "id": "g2-comparison-004",
+      "type": "blank",
+      "prompt": "برای تشخیص NaN در double از `Double.____(value)` استفاده می‌شود.",
+      "answers": [
+        "isNaN"
+      ],
+      "explanation": "NaN با == حتی با خودش برابر نیست.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "g2-comparison-005",
+      "type": "tf",
+      "prompt": "`Double.NaN == Double.NaN` true است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "NaN طبق قواعد IEEE 754 با خودش هم برابر نیست.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "g2-comparison-006",
+      "type": "mcq",
+      "prompt": "خروجی `(0.1 + 0.2) == 0.3` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "نمایش binary floating-point جمع را دقیقاً 0.3 نمی‌سازد.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "double"
+      ],
+      "options": {
+        "A": "false",
+        "B": "true",
+        "C": "خطای کامپایل",
+        "D": "Infinity"
+      }
+    },
+    {
+      "id": "g2-comparison-007",
+      "type": "mcq",
+      "prompt": "برای comparison تقریبی double چه چیزی باید از domain تعیین شود؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "tolerance به مقیاس و معنای اندازه‌گیری وابسته است.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "double"
+      ],
+      "options": {
+        "A": "نام متغیر",
+        "B": "نسخهٔ JDK",
+        "C": "تعداد decimal چاپ‌شده",
+        "D": "epsilon یا tolerance"
+      }
+    },
+    {
+      "id": "g2-comparison-008",
+      "type": "multi",
+      "prompt": "کدام expressionها boolean تولید می‌کنند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "comparison و logical operation boolean می‌دهند؛ جمع int می‌دهد.",
+      "concepts": [
+        "boolean",
+        "comparison"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`x != y`",
+        "B": "`x + y`",
+        "C": "`x <= y`",
+        "D": "`ready && valid`"
+      }
+    },
+    {
+      "id": "g2-comparison-009",
+      "type": "mcq",
+      "prompt": "اگر `int a=2; long b=2L;` باشد، `a == b` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "numeric promotion valueهای برابر را مقایسه می‌کند.",
+      "concepts": [
+        "comparison",
+        "numeric-promotion"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "خطای کامپایل",
+        "B": "true",
+        "C": "false",
+        "D": "مقایسهٔ identity"
+      }
+    },
+    {
+      "id": "g2-comparison-010",
+      "type": "tf",
+      "prompt": "`==` برای primitive int identity object را می‌سنجد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "primitive object identity ندارد و == value را مقایسه می‌کند.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "int"
+      ]
+    },
+    {
+      "id": "g2-comparison-011",
+      "type": "mcq",
+      "prompt": "در `if (count)` که count یک int است چه رخ می‌دهد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "Java int را به boolean تبدیل ضمنی نمی‌کند.",
+      "concepts": [
+        "boolean",
+        "if"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "صفر false و غیرصفر true است",
+        "B": "همیشه true است",
+        "C": "خطای کامپایل",
+        "D": "همیشه false است"
+      }
+    },
+    {
+      "id": "g2-comparison-012",
+      "type": "blank",
+      "prompt": "عملگر «نابرابر» Java چیست؟",
+      "answers": [
+        "!="
+      ],
+      "explanation": "!= نتیجهٔ boolean می‌دهد.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-comparison-013",
+      "type": "mcq",
+      "prompt": "کدام شرط index معتبر array را می‌سنجد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "index باید از صفر شامل تا length غیرشامل باشد.",
+      "concepts": [
+        "ranges"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "comparison"
+      ],
+      "options": {
+        "A": "`index >= 0 && index < length`",
+        "B": "`index > 0 && index <= length`",
+        "C": "`index >= 0 || index < length`",
+        "D": "`0 <= index <= length`"
+      }
+    },
+    {
+      "id": "g2-comparison-014",
+      "type": "tf",
+      "prompt": "`5 == 5L` false است، چون typeها متفاوت‌اند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "promotion numeric valueهای مساوی را می‌سنجد.",
+      "concepts": [
+        "comparison",
+        "numeric-promotion"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-comparison-015",
+      "type": "mcq",
+      "prompt": "برای predicate کدام نام خواناتر است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "نام مثبت domain-oriented، negationهای دوگانه را کم می‌کند.",
+      "concepts": [
+        "boolean"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`notNotReady`",
+        "B": "`numberFlag`",
+        "C": "`value1`",
+        "D": "`isReady`"
+      }
+    },
+    {
+      "id": "g2-comparison-016",
+      "type": "multi",
+      "prompt": "کدام boundaryها شرط `score >= 60 && score < 90` را پاس می‌کنند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "60 شامل و 90 خارج است.",
+      "concepts": [
+        "ranges"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "comparison"
+      ],
+      "options": {
+        "A": "60",
+        "B": "59",
+        "C": "89",
+        "D": "90"
+      }
+    },
+    {
+      "id": "g2-comparison-017",
+      "type": "mcq",
+      "prompt": "برای equality محتوای String کدام method مناسب است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "== identity reference را می‌سنجد؛ equals متن را می‌سنجد.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "references"
+      ],
+      "options": {
+        "A": "`==`",
+        "B": "`equals`",
+        "C": "`<`",
+        "D": "`compare`"
+      }
+    },
+    {
+      "id": "g2-comparison-018",
+      "type": "tf",
+      "prompt": "`-0.0 == 0.0` در comparison primitive double true است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "operator == این دو value را برابر می‌بیند.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "double"
+      ]
+    },
+    {
+      "id": "g2-comparison-019",
+      "type": "mcq",
+      "prompt": "کدام input شرط `x > 0 && x < 10` را false می‌کند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "10 کران strict بالاست و شامل نمی‌شود.",
+      "concepts": [
+        "ranges"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "comparison"
+      ],
+      "options": {
+        "A": "1",
+        "B": "5",
+        "C": "9",
+        "D": "10"
+      }
+    },
+    {
+      "id": "g2-comparison-020",
+      "type": "blank",
+      "prompt": "روی referenceها، `==` به‌طور پیش‌فرض ______ را می‌سنجد.",
+      "answers": [
+        "identity",
+        "هویت"
+      ],
+      "explanation": "دو reference باید به همان object اشاره کنند.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "references"
+      ]
+    },
+    {
+      "id": "g2-conditionals-001",
+      "type": "mcq",
+      "prompt": "در زنجیرهٔ if/else-if کدام branch اجرا می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "نخستین condition که true شود انتخاب می‌شود.",
+      "concepts": [
+        "if",
+        "if-else"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "همهٔ conditionهای true",
+        "B": "نخستین condition true",
+        "C": "آخرین condition true",
+        "D": "همیشه else"
+      }
+    },
+    {
+      "id": "g2-conditionals-002",
+      "type": "tf",
+      "prompt": "در `if (score >= 60) ... else if (score >= 90) ...` branch دوم برای score 90 قابل رسیدن است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "score 90 نخستین condition را true می‌کند.",
+      "concepts": [
+        "if-else",
+        "ranges"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-conditionals-003",
+      "type": "mcq",
+      "prompt": "برای classification grade کدام ترتیب درست‌تر است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "کران خاص‌تر و بالاتر باید پیش از کران عام‌تر سنجیده شود.",
+      "concepts": [
+        "if-else",
+        "ranges"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "`>=60` سپس `>=90`",
+        "B": "`>=0` سپس `>=60`",
+        "C": "`>=70` سپس `>=80`",
+        "D": "`>=90` سپس `>=60`"
+      }
+    },
+    {
+      "id": "g2-conditionals-004",
+      "type": "blank",
+      "prompt": "در switch expression keyword بازگرداندن value از block arm چیست؟",
+      "answers": [
+        "yield"
+      ],
+      "explanation": "yield value switch expression را فراهم می‌کند.",
+      "concepts": [
+        "switch-expression",
+        "yield"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-conditionals-005",
+      "type": "tf",
+      "prompt": "arrow case در switch Java به case بعدی fall-through می‌کند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "arrow case پس از arm خود به arm دیگر نمی‌ریزد.",
+      "concepts": [
+        "switch",
+        "switch-expression"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-conditionals-006",
+      "type": "mcq",
+      "prompt": "کدام selector برای switch معمولی Java نامعتبر است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "long selector معتبر نیست؛ char، String و enum معتبرند.",
+      "concepts": [
+        "switch"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "switch"
+      ],
+      "options": {
+        "A": "char",
+        "B": "String",
+        "C": "long",
+        "D": "enum"
+      }
+    },
+    {
+      "id": "g2-conditionals-007",
+      "type": "mcq",
+      "prompt": "در switch expression enum که همه constantها را پوشش می‌دهد، default چه وضعی دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "پوشش همه constantها expression را exhaustive می‌کند.",
+      "concepts": [
+        "switch-expression",
+        "exhaustiveness"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "switch"
+      ],
+      "options": {
+        "A": "الزامی نیست",
+        "B": "همیشه الزامی است",
+        "C": "باید نخست باشد",
+        "D": "برای enum ممنوع است"
+      }
+    },
+    {
+      "id": "g2-conditionals-008",
+      "type": "multi",
+      "prompt": "کدام ویژگی‌ها مربوط به switch expression هستند؟",
+      "answers": [
+        "B",
+        "C"
+      ],
+      "explanation": "switch expression value دارد و باید exhaustive باشد.",
+      "concepts": [
+        "switch-expression",
+        "exhaustiveness"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "switch"
+      ],
+      "options": {
+        "A": "همیشه fall-through دارد",
+        "B": "می‌تواند به متغیر assign شود",
+        "C": "باید همه مسیرها را پوشش دهد",
+        "D": "هرگز yield ندارد"
+      }
+    },
+    {
+      "id": "g2-conditionals-009",
+      "type": "mcq",
+      "prompt": "کدام فرم چند label با یک نتیجه در arrow switch درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "labelها با comma پیش از `->` گروه می‌شوند.",
+      "concepts": [
+        "switch-expression"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "switch"
+      ],
+      "options": {
+        "A": "`case A; B -> 1`",
+        "B": "`case A, B -> 1`",
+        "C": "`case A && B -> 1`",
+        "D": "`case A | B -> 1`"
+      }
+    },
+    {
+      "id": "g2-conditionals-010",
+      "type": "tf",
+      "prompt": "در colon switch، حذف break می‌تواند اجرای case بعدی را آغاز کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "fall-through خاصیت colon form است.",
+      "concepts": [
+        "switch",
+        "control-flow"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-conditionals-011",
+      "type": "mcq",
+      "prompt": "برای نگاشت role گسسته به permission value چه ساختاری خواناتر است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "switch expression برای نگاشت selector گسسته به value مناسب است.",
+      "concepts": [
+        "switch-expression"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "حلقه بی‌نهایت",
+        "B": "چند assignment نامرتبط",
+        "C": "switch expression",
+        "D": "labeled continue"
+      }
+    },
+    {
+      "id": "g2-conditionals-012",
+      "type": "blank",
+      "prompt": "branch پایانی اختیاری در if chain با keyword ____ آغاز می‌شود.",
+      "answers": [
+        "else"
+      ],
+      "explanation": "else وقتی شرط‌های پیشین false باشند اجرا می‌شود.",
+      "concepts": [
+        "if-else"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-conditionals-013",
+      "type": "mcq",
+      "prompt": "بازنویسی ساده‌تر `boolean ok = age >= 18 ? true : false;` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "خود predicate از نوع boolean است.",
+      "concepts": [
+        "ternary",
+        "conditionals"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "ternary"
+      ],
+      "options": {
+        "A": "`boolean ok = age >= 18;`",
+        "B": "`boolean ok = age;`",
+        "C": "`boolean ok = !age;`",
+        "D": "`boolean ok = 18;`"
+      }
+    },
+    {
+      "id": "g2-conditionals-014",
+      "type": "tf",
+      "prompt": "`yield` همان `return` است و از enclosing method خارج می‌شود.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "yield فقط value switch expression را فراهم می‌کند.",
+      "concepts": [
+        "yield",
+        "switch-expression"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-conditionals-015",
+      "type": "mcq",
+      "prompt": "کدام arm switch expression بدون value عادی معتبر است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "throw مسیر عادی بدون value ندارد.",
+      "concepts": [
+        "switch-expression",
+        "exhaustiveness"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "switch"
+      ],
+      "options": {
+        "A": "`case A -> { log(); }`",
+        "B": "`case B -> {}`",
+        "C": "`case C -> break;`",
+        "D": "`case D -> throw new IllegalArgumentException();`"
+      }
+    },
+    {
+      "id": "g2-conditionals-016",
+      "type": "multi",
+      "prompt": "کدام selectorها برای switch Java مناسب‌اند؟",
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "char، String و enum مناسب‌اند؛ boolean نیست.",
+      "concepts": [
+        "switch"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "switch"
+      ],
+      "options": {
+        "A": "`char`",
+        "B": "`String`",
+        "C": "`boolean`",
+        "D": "enum"
+      }
+    },
+    {
+      "id": "g2-conditionals-017",
+      "type": "mcq",
+      "prompt": "برای جلوگیری از dangling else چه conventionی مناسب است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "braces ارتباط branchها را برای انسان آشکار می‌کند.",
+      "concepts": [
+        "if-else"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "if"
+      ],
+      "options": {
+        "A": "حذف indentation",
+        "B": "نوشتن braces برای هر branch",
+        "C": "استفاده از goto",
+        "D": "جایگزینی همه ifها با switch"
+      }
+    },
+    {
+      "id": "g2-conditionals-018",
+      "type": "tf",
+      "prompt": "switch برای range پیوسته 0 تا 100 معمولاً مناسب‌تر از if/else-if است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "switch برای valueهای گسسته مناسب است؛ rangeها if/else-if می‌خواهند.",
+      "concepts": [
+        "switch",
+        "if-else"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-conditionals-019",
+      "type": "mcq",
+      "prompt": "در colon switch کدام instruction از switch خارج می‌شود؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "break نزدیک‌ترین switch یا loop را خاتمه می‌دهد.",
+      "concepts": [
+        "switch",
+        "break"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "control-flow"
+      ],
+      "options": {
+        "A": "`yield`",
+        "B": "`continue`",
+        "C": "`break`",
+        "D": "`case`"
+      }
+    },
+    {
+      "id": "g2-conditionals-020",
+      "type": "blank",
+      "prompt": "property لازم switch expression که همه حالت‌ها را پوشش می‌دهد ______ نام دارد.",
+      "answers": [
+        "exhaustiveness",
+        "exhaustive"
+      ],
+      "explanation": "هر مسیر باید value یا exception بدهد.",
+      "concepts": [
+        "exhaustiveness",
+        "switch-expression"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-conditionals-021",
+      "type": "mcq",
+      "prompt": "برای String direction، کدام arrow case چند label درست است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "caseهای گسسته با comma group می‌شوند.",
+      "concepts": [
+        "switch-expression"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "switch"
+      ],
+      "options": {
+        "A": "`case \"E\" || \"W\" -> 1`",
+        "B": "`case \"E\"; \"W\" -> 1`",
+        "C": "`case \"E\" && \"W\" -> 1`",
+        "D": "`case \"E\", \"W\" -> 1`"
+      }
+    },
+    {
+      "id": "g2-conditionals-022",
+      "type": "tf",
+      "prompt": "افزودن enum constant می‌تواند switch expression exhaustive قدیمی را مجبور به تغییر کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "پوشش exhaustive بخشی از compile-time checking است.",
+      "concepts": [
+        "exhaustiveness",
+        "switch-expression"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-deepening-001",
+      "type": "mcq",
+      "prompt": "کدام گزینه دربارهٔ `byte b = 100; b += 200;` درست است؟",
+      "options": {
+        "A": "کامپایل نمی‌شود چون int به byte نمی‌تواند implicit narrow شود",
+        "B": "کامپایل می‌شود و b برابر 44 می‌شود",
+        "C": "کامپایل می‌شود و b برابر -56 می‌شود",
+        "D": "کامپایل می‌شود و b همان 100 می‌ماند"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "compound assignment narrowing ضمنی دارد. 100+200 = 300 که low-byte آن 0x2C = 44 است ولی امضای byte می‌شود -56.",
+      "concepts": [
+        "compound-assignment",
+        "casting",
+        "overflow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "byte",
+        "narrowing"
+      ]
+    },
+    {
+      "id": "g2-deepening-002",
+      "type": "tf",
+      "prompt": "`short s = 30000; s *= 2;` کامپایل می‌شود و مقدار s برابر -25536 می‌شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "compound assignment narrowing ضمنی دارد. 30000 در short جا می‌گیرد اما دو برابر آن (60000) نمی‌گنجد، پس wrap می‌شود.",
+      "concepts": [
+        "compound-assignment",
+        "overflow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "short"
+      ]
+    },
+    {
+      "id": "g2-deepening-003",
+      "type": "mcq",
+      "prompt": "`byte b = 50; b = b + 50;` چه رفتاری دارد؟",
+      "options": {
+        "A": "کامپایل می‌شود و b برابر 100 می‌شود",
+        "B": "کامپایل می‌شود و b wrap می‌شود",
+        "C": "کامپایل نمی‌شود چون b+50 نوع int دارد",
+        "D": "کامپایل می‌شود ولی مقدار 100 در b ذخیره می‌شود"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "b+50 نوع int دارد و assignment ساده به byte نمی‌تواند implicit narrow کند. compound assignment b += 50 اما کامپایل و wrap می‌شود.",
+      "concepts": [
+        "compound-assignment",
+        "casting"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "byte",
+        "numeric-promotion"
+      ]
+    },
+    {
+      "id": "g2-deepening-004",
+      "type": "multi",
+      "prompt": "کدام‌یک از این assignmentها بدون cast اضافی کامپایل می‌شوند؟",
+      "options": {
+        "A": "`byte b = 10; b = (byte) (b + 5);`",
+        "B": "`byte b = 10; b += 5;`",
+        "C": "`byte b = 10; b = b + 5;`",
+        "D": "`byte b = 10; b++;`"
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "b++، b += 5، و explicit cast همه کامپایل می‌شوند. فقط b = b + 5 بدون cast نمی‌تواند int را به byte narrow کند.",
+      "concepts": [
+        "compound-assignment",
+        "casting"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "byte"
+      ]
+    },
+    {
+      "id": "g2-deepening-005",
+      "type": "blank",
+      "prompt": "expression `var x = (byte) 5 + 5;` نوع ____ دارد و مقدار آن ____ است.",
+      "answers": [
+        "int",
+        "10"
+      ],
+      "explanation": "cast فقط به operand اول اعمال می‌شود؛ حاصل جمع دوباره به int promotion می‌یابد.",
+      "concepts": [
+        "casting",
+        "numeric-promotion",
+        "var"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "byte",
+        "var"
+      ]
+    },
+    {
+      "id": "g2-deepening-006",
+      "type": "mcq",
+      "prompt": "مقدار `1 << 33` روی `int` چیست؟",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "4294967296"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "shift count روی int فقط پنج bit پایین دیده می‌شود، پس 33 ≡ 1 (mod 32). حاصل برابر 1<<1 = 2.",
+      "concepts": [
+        "shifts",
+        "bitwise"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "int"
+      ]
+    },
+    {
+      "id": "g2-deepening-007",
+      "type": "mcq",
+      "prompt": "مقدار `1L << 65` روی `long` چیست؟",
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "4294967296",
+        "D": "9223372036854775808"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "shift count روی long فقط شش bit پایین دیده می‌شود. 65 ≡ 1 (mod 64)، حاصل برابر 2.",
+      "concepts": [
+        "shifts",
+        "bitwise"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "long"
+      ]
+    },
+    {
+      "id": "g2-deepening-008",
+      "type": "mcq",
+      "prompt": "مقدار `-8 >>> 29` روی `int` چیست؟",
+      "options": {
+        "A": "-4",
+        "B": "7",
+        "C": "2147483644",
+        "D": "-1"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "-8 = 0xFFFFFFF8 (32-bit). >>> 29 سه bit بالا را نگه می‌دارد که 0b111 = 7 می‌شود.",
+      "concepts": [
+        "shifts",
+        "bitwise"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "int"
+      ]
+    },
+    {
+      "id": "g2-deepening-009",
+      "type": "tf",
+      "prompt": "`>>>` روی int منفی، نتیجهٔ منفی تولید نمی‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": ">>> همیشه zero-fill می‌کند، پس نتیجه برای operand منفی نیز بزرگ‌تر مساوی صفر است.",
+      "concepts": [
+        "shifts",
+        "bitwise"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "shifts"
+      ]
+    },
+    {
+      "id": "g2-deepening-010",
+      "type": "mcq",
+      "prompt": "چرا shift count در `int x = 1 << n;` فقط پنج bit پایین دیده می‌شود؟",
+      "options": {
+        "A": "برای جلوگیری از نتیجهٔ بزرگ‌تر از int",
+        "B": "چون JLS صراحتاً mask 0x1F را اعمال می‌کند",
+        "C": "چون JVM internal instruction محدودیت دارد",
+        "D": "چون long تنها یک operand است"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "JLS §15.19 تعیین می‌کند که shift count operand با mask 0x1F (برای int) و 0x3F (برای long) AND می‌شود.",
+      "concepts": [
+        "shifts",
+        "bitwise"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "shifts"
+      ]
+    },
+    {
+      "id": "g2-deepening-011",
+      "type": "blank",
+      "prompt": "مقدار `-2 >>> 30` روی `int` برابر ____ است (به‌صورت decimal).",
+      "answers": [
+        "3"
+      ],
+      "explanation": "-2 = 0xFFFFFFFE. >>> 30 دو bit بالا باقی می‌ماند که 0b11 = 3 است.",
+      "concepts": [
+        "shifts",
+        "bitwise"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "shifts"
+      ]
+    },
+    {
+      "id": "g2-deepening-012",
+      "type": "mcq",
+      "prompt": "پس از اجرای `int x = 5; x = x++;` مقدار x چیست؟",
+      "options": {
+        "A": "5",
+        "B": "6",
+        "C": "4",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "x++ مقدار قدیم 5 را می‌دهد و سپس x یک واحد زیاد می‌شود ولی assignment بعدی همان 5 را دوباره می‌نویسد.",
+      "concepts": [
+        "assignment-operators",
+        "postfix-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "postfix-operators"
+      ]
+    },
+    {
+      "id": "g2-deepening-013",
+      "type": "mcq",
+      "prompt": "خروجی `int a=3, b=5; System.out.println(a++ + ++b);` چیست؟",
+      "options": {
+        "A": "8",
+        "B": "9",
+        "C": "3 + 6 = خطای منطقی",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "a++ مقدار 3 می‌دهد. ++b ابتدا b را به 6 می‌رساند و 6 می‌دهد. جمع برابر 9.",
+      "concepts": [
+        "postfix-operators",
+        "prefix-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "postfix-operators"
+      ]
+    },
+    {
+      "id": "g2-deepening-014",
+      "type": "multi",
+      "prompt": "کدام‌یک side effect روی x دارند (x را در طول evaluation عوض می‌کنند)؟",
+      "options": {
+        "A": "`int y = x;`",
+        "B": "`int y = x++;`",
+        "C": "`int y = ++x;`",
+        "D": "`int y = x + 0;`"
+      },
+      "answers": [
+        "B",
+        "C"
+      ],
+      "explanation": "x++ و ++x هر دو x را در طول evaluation عوض می‌کنند. انتساب ساده فقط y را عوض می‌کند.",
+      "concepts": [
+        "assignment-operators",
+        "postfix-operators",
+        "prefix-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "postfix-operators"
+      ]
+    },
+    {
+      "id": "g2-deepening-015",
+      "type": "mcq",
+      "prompt": "خروجی `int x=10; System.out.println(x++ + x++);` چیست؟",
+      "options": {
+        "A": "20",
+        "B": "21",
+        "C": "22",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "x++ اول مقدار 10 می‌دهد و سپس x می‌شود 11. x++ دوم مقدار 11 می‌دهد و سپس x می‌شود 12. جمع برابر 21.",
+      "concepts": [
+        "postfix-operators"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "postfix-operators"
+      ]
+    },
+    {
+      "id": "g2-deepening-016",
+      "type": "mcq",
+      "prompt": "خروجی `System.out.println(2 + 3 * 4);` چیست؟",
+      "options": {
+        "A": "20",
+        "B": "14",
+        "C": "24",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "* precedence بالاتر از + دارد، پس 2 + (3*4) = 2 + 12 = 14.",
+      "concepts": [
+        "precedence",
+        "operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "precedence"
+      ]
+    },
+    {
+      "id": "g2-deepening-017",
+      "type": "mcq",
+      "prompt": "خروجی `System.out.println(true ? 1 : 2.0);` چیست؟",
+      "options": {
+        "A": "1",
+        "B": "2.0",
+        "C": "1.0",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "ternary نوع common انتخاب می‌کند. int و double common type شان double است، پس 1 به 1.0 promotion می‌یابد.",
+      "concepts": [
+        "ternary",
+        "numeric-promotion"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "ternary"
+      ]
+    },
+    {
+      "id": "g2-deepening-018",
+      "type": "mcq",
+      "prompt": "خروجی `System.out.println(1 + 2 + \"3\");` چیست؟",
+      "options": {
+        "A": "6",
+        "B": "33",
+        "C": "خطای کامپایل",
+        "D": "123"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "+ چپ به راست است: (1+2) = 3 (int)، سپس 3 + \"3\" = \"33\" (String).",
+      "concepts": [
+        "precedence",
+        "string-concatenation"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-deepening-019",
+      "type": "mcq",
+      "prompt": "خروجی `System.out.println(\"1\" + 2 * 3);` چیست؟",
+      "options": {
+        "A": "123",
+        "B": "16",
+        "C": "7",
+        "D": "خطای کامپایل"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "\"1\" + (2*3) = \"1\" + 6 = \"16\". ضرب precedence بالاتر دارد.",
+      "concepts": [
+        "precedence",
+        "string-concatenation"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "precedence"
+      ]
+    },
+    {
+      "id": "g2-deepening-020",
+      "type": "multi",
+      "prompt": "کدام expressionها cast صریح دارند که نوع واقعی را نگه می‌دارد نه promotion نمی‌یابد؟",
+      "options": {
+        "A": "`(byte)(a + b)` وقتی a و b هر دو byte هستند",
+        "B": "`(int)(x / 2.0)` وقتی x یک double است",
+        "C": "`(char)('A' + 1)`",
+        "D": "`(byte)100`"
+      },
+      "answers": [
+        "A",
+        "D"
+      ],
+      "explanation": "cast در A و D reinterpret یا truncation است نه صرف promotion. در B و C نوع common متفاوت است.",
+      "concepts": [
+        "casting",
+        "precedence"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "casting"
+      ]
+    },
+    {
+      "id": "g2-deepening-021",
+      "type": "mcq",
+      "prompt": "مقدار `7 % -2` در Java چیست؟",
+      "options": {
+        "A": "1",
+        "B": "-1",
+        "C": "2",
+        "D": "-2"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "علامت remainder از dividend است. 7/-2 = -3 (truncate)، پس remainder = 7 - (-3)*(-2) = 1.",
+      "concepts": [
+        "modulo"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "modulo"
+      ]
+    },
+    {
+      "id": "g2-deepening-022",
+      "type": "mcq",
+      "prompt": "مقدار `Math.floorMod(7, -2)` چیست؟",
+      "options": {
+        "A": "1",
+        "B": "-1",
+        "C": "2",
+        "D": "-2"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "floorMod علامت divisor را دارد. 7 = -4 * (-2) + (-1)، پس floorMod = -1.",
+      "concepts": [
+        "modulo",
+        "floor-mod"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Math"
+      ]
+    },
+    {
+      "id": "g2-deepening-023",
+      "type": "mcq",
+      "prompt": "برای index حلقوی negative-safe در بازهٔ [0, n)، کدام صحیح است؟",
+      "options": {
+        "A": "`int idx = ((pos % n) + n) % n;`",
+        "B": "`int idx = pos % n;`",
+        "C": "`int idx = Math.floorMod(pos, n);`",
+        "D": "هر دو A و C"
+      },
+      "answers": [
+        "D"
+      ],
+      "explanation": "هر دو expression مقدار 0..n-1 می‌دهند. A با دو مرحله modulo، C مستقیم با floorMod. B برای pos منفی مقدار منفی می‌دهد.",
+      "concepts": [
+        "modulo",
+        "floor-mod"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Math"
+      ]
+    },
+    {
+      "id": "g2-deepening-024",
+      "type": "mcq",
+      "prompt": "خروجی `System.out.println(-7 % 3);` چیست؟",
+      "options": {
+        "A": "-1",
+        "B": "1",
+        "C": "-2",
+        "D": "2"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "-7/3 = -2 (truncate)، پس remainder = -7 - (-2)*3 = -1. علامت از dividend.",
+      "concepts": [
+        "modulo"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "modulo"
+      ]
+    },
+    {
+      "id": "g2-deepening-025",
+      "type": "mcq",
+      "prompt": "کدام loop حتی وقتی شرط اولیه false باشد، body را حداقل یک‌بار اجرا می‌کند؟",
+      "options": {
+        "A": "while",
+        "B": "for",
+        "C": "do-while",
+        "D": "هیچ‌کدام"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "do-while شرط را پس از body می‌سنجد؛ پس body حداقل یک‌بار اجرا می‌شود.",
+      "concepts": [
+        "do-while",
+        "loops"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-deepening-026",
+      "type": "tf",
+      "prompt": "`while (false) { System.out.println(\"x\"); }` هیچ خروجی تولید نمی‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "while شرط را پیش از body می‌سنجد؛ چون false است، body اصلاً اجرا نمی‌شود.",
+      "concepts": [
+        "while-loop",
+        "loops"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "while-loop"
+      ]
+    },
+    {
+      "id": "g2-deepening-027",
+      "type": "mcq",
+      "prompt": "برای event loop که در یک نقطه باید متوقف شود، کدام loop شکل طبیعی‌تر است؟",
+      "options": {
+        "A": "for (int i=0; i<n; i++)",
+        "B": "for (;;)",
+        "C": "while (true)",
+        "D": "هر دو B و C"
+      },
+      "answers": [
+        "D"
+      ],
+      "explanation": "for(;;) و while(true) هر دو infinite هستند و فقط با break یا return یا throw متوقف می‌شوند.",
+      "concepts": [
+        "loops",
+        "for-loop",
+        "while-loop"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-deepening-028",
+      "type": "mcq",
+      "prompt": "invariant مناسب برای `for (int i=0; i<10; i++) sum += i;` کدام است؟",
+      "options": {
+        "A": "i در شروع هر iteration تعداد iterationهای سپری‌شده است",
+        "B": "i در پایان هر iteration sum برابر i*(i+1)/2 منهای i است",
+        "C": "i همواره زوج است",
+        "D": "sum همواره صفر است"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "پس از update، i تعداد iterationهای سپری‌شده و sum مجموع 0..i-1 است. invariant ساده: i در شروع iteration فعلی برابر شماره iteration.",
+      "concepts": [
+        "for-loop",
+        "invariance",
+        "loops"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "for-loop"
+      ]
+    },
+    {
+      "id": "g2-deepening-029",
+      "type": "mcq",
+      "prompt": "خروجی `int[] a = {1,2,3}; for (int x : a) x = 0; System.out.println(a[1]);` چیست؟",
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "خطای کامپایل",
+        "D": "خطای runtime"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "x یک کپی per-iteration است؛ تغییر x آرایه را عوض نمی‌کند. a[1] = 2 باقی می‌ماند.",
+      "concepts": [
+        "enhanced-for",
+        "arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g2-deepening-030",
+      "type": "mcq",
+      "prompt": "برای حذف المان از ArrayList در حین پیمایش، کدام روش کامپایل و در runtime هم ایمن است؟",
+      "options": {
+        "A": "`for (String s : list) if (s.isEmpty()) list.remove(s);`",
+        "B": "`list.removeIf(s -> s.isEmpty());`",
+        "C": "`for (Iterator<String> it=list.iterator(); it.hasNext();){String s=it.next(); if(s.isEmpty()) it.remove();}`",
+        "D": "هر دو B و C"
+      },
+      "answers": [
+        "D"
+      ],
+      "explanation": "A ConcurrentModificationException در runtime می‌دهد. removeIf (Java 8 به بعد) و iterator.remove() هر دو امن هستند.",
+      "concepts": [
+        "enhanced-for",
+        "iterators",
+        "collections"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "enhanced-for"
+      ]
+    },
+    {
+      "id": "g2-deepening-031",
+      "type": "tf",
+      "prompt": "enhanced-for روی آرایهٔ primitive، المان‌ها را به‌صورت copy by value می‌دهد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "enhanced-for برای primitive آرایه یک کپی primitive per-iteration می‌گیرد؛ برای reference آرایه یک کپی reference می‌گیرد.",
+      "concepts": [
+        "enhanced-for",
+        "arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "enhanced-for"
+      ]
+    },
+    {
+      "id": "g2-deepening-032",
+      "type": "multi",
+      "prompt": "کدام‌یک را نمی‌توان با enhanced-for بیان کرد؟",
+      "options": {
+        "A": "پیمایش ساده بدون index",
+        "B": "حذف المان حین پیمایش",
+        "C": "دسترسی به index iteration",
+        "D": "محاسبهٔ مجموع"
+      },
+      "answers": [
+        "B",
+        "C"
+      ],
+      "explanation": "enhanced-for شمارنده و حذف ساختاری ندارد. برای B از iterator یا removeIf استفاده کنید، برای C از index-based for.",
+      "concepts": [
+        "enhanced-for"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "enhanced-for"
+      ]
+    },
+    {
+      "id": "g2-deepening-033",
+      "type": "mcq",
+      "prompt": "چرا enhanced-for روی Iterable کار می‌کند ولی روی Iterator نه؟",
+      "options": {
+        "A": "زبان فقط Iterable را می‌شناسد",
+        "B": "Iterator یک‌بار مصرف است",
+        "C": "چون هر Iterable خود iterator می‌سازد، enhanced-for به iteration تازه نیاز دارد",
+        "D": "خطای کامپایل فقط برای Iterator"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "هر iteration در enhanced-for از iterator نو استفاده می‌کند. Iterator موجود فقط یک‌بار کامل می‌شود.",
+      "concepts": [
+        "enhanced-for",
+        "iterators"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "iterators"
+      ]
+    },
+    {
+      "id": "g2-deepening-034",
+      "type": "mcq",
+      "prompt": "`int r = switch (n) { case 1 -> 10; case 2 -> 20; };` چه رفتاری دارد؟",
+      "options": {
+        "A": "کامپایل: r نهایی نیست",
+        "B": "خطای کامپایل چون exhaustive نیست",
+        "C": "کامپایل: r همواره 0 است",
+        "D": "کامپایل: فقط برای n=1 و n=2 کار می‌کند"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "switch expression با int selector و بدون default و بدون coverage همهٔ int، exhaustive نیست و خطای کامپایل می‌دهد.",
+      "concepts": [
+        "switch-expression",
+        "exhaustiveness"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-deepening-035",
+      "type": "mcq",
+      "prompt": "enum Week {MON,TUE,WED}; برای switch expression روی این enum بدون default، کدام درست است؟",
+      "options": {
+        "A": "default لازم است",
+        "B": "exhaustive بدون default، کامپایل می‌شود",
+        "C": "yield لازم است",
+        "D": "خطای runtime برای مقدار ناشناخته"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "switch expression روی enum کامل، بدون default کامپایل می‌شود چون همهٔ constants پوشش داده شده‌اند.",
+      "concepts": [
+        "switch-expression",
+        "exhaustiveness",
+        "enums"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "enums"
+      ]
+    },
+    {
+      "id": "g2-deepening-036",
+      "type": "multi",
+      "prompt": "کدام در switch expression معتبر است؟",
+      "options": {
+        "A": "`case 1, 2 -> 10;`",
+        "B": "`case 1 -> { int y = 5; yield y * 2; }`",
+        "C": "`case 1 -> return 10;`",
+        "D": "`case 1 -> 10; default -> 0;`"
+      },
+      "answers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "A comma labels مجاز، B yield در block arm مجاز، D ترکیب arrow arm با default مجاز. C return از method است نه از arm؛ arm باید yield یا expression کوتاه باشد.",
+      "concepts": [
+        "switch-expression",
+        "yield"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-deepening-037",
+      "type": "mcq",
+      "prompt": "`yield` در switch expression چه می‌کند؟",
+      "options": {
+        "A": "از method برمی‌گردد",
+        "B": "مقدار arm را به switch expression می‌دهد",
+        "C": "break را جایگزین می‌کند",
+        "D": "exception پرتاب می‌کند"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "yield مقدار expression را به switch expression می‌دهد. از method برنمی‌گردد.",
+      "concepts": [
+        "yield",
+        "switch-expression"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-deepening-038",
+      "type": "mcq",
+      "prompt": "switch expression روی String بدون default برای همهٔ Stringهای ممکن چه می‌شود؟",
+      "options": {
+        "A": "همیشه exhaustive است",
+        "B": "هرگز exhaustive نیست",
+        "C": "ممکن است کامپایل شود اگر همهٔ String literal ممکن فهرست شده باشند ولی در عمل معمولاً exhaustive نیست",
+        "D": "همیشه خطای runtime می‌دهد"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "کامپایلر فقط literalهای فهرست‌شده را می‌شناسد. اگر همهٔ valueهای ممکن در زمان compile فهرست شده باشند، exhaustive است؛ در عمل برای String معمولاً نیست.",
+      "concepts": [
+        "switch-expression",
+        "exhaustiveness",
+        "strings"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-deepening-039",
+      "type": "mcq",
+      "prompt": "`outer: for (int i=0; i<3; i++) inner: for (int j=0; j<3; j++) { continue outer; }` چند بار `inner` اجرا می‌شود؟",
+      "options": {
+        "A": "9",
+        "B": "3",
+        "C": "1",
+        "D": "0"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "continue outer در هر iteration داخلی، iteration بیرونی بعدی را شروع می‌کند. inner loop فقط یک‌بار قبل از continue اجرا می‌شود، برای 3 تکرار بیرونی.",
+      "concepts": [
+        "labels",
+        "continue",
+        "for-loop"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "labels"
+      ]
+    },
+    {
+      "id": "g2-deepening-040",
+      "type": "mcq",
+      "prompt": "`break label;` چه چیزی را تمام می‌کند؟",
+      "options": {
+        "A": "فقط loop داخلی",
+        "B": "همهٔ loopها",
+        "C": "statement labelدار مشخص",
+        "D": "کل method"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "break label فقط statement labelدار مشخص را تمام می‌کند، نه همهٔ loopها.",
+      "concepts": [
+        "labels",
+        "break"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "labels"
+      ]
+    },
+    {
+      "id": "g2-deepening-041",
+      "type": "mcq",
+      "prompt": "continue label در صورتی مجاز است که target چه باشد؟",
+      "options": {
+        "A": "هر statement",
+        "B": "یک loop نام‌گذاری‌شده",
+        "C": "یک block",
+        "D": "یک method"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "continue label فقط loop نام‌گذاری‌شده را می‌پذیرد؛ به block یا statement دیگر نمی‌تواند بپرد.",
+      "concepts": [
+        "labels",
+        "continue"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "labels"
+      ]
+    },
+    {
+      "id": "g2-deepening-042",
+      "type": "multi",
+      "prompt": "کدام‌یک در target continue label مجاز است؟",
+      "options": {
+        "A": "`outer: for (...)`",
+        "B": "`outer: while (...)`",
+        "C": "`outer: do { } while (...);`",
+        "D": "`outer: { ... }`"
+      },
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "continue فقط به loop می‌پرد. for، while، do-while همه loop هستند. block ساده loop نیست.",
+      "concepts": [
+        "labels",
+        "continue",
+        "loops"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "labels"
+      ]
+    },
+    {
+      "id": "g2-deepening-043",
+      "type": "mcq",
+      "prompt": "اگر متد `log(String s, boolean v)` فقط در صورت true شدن v چاپ کند، در `false && log(\"L\", true)` آیا log اجرا می‌شود؟",
+      "options": {
+        "A": "بله چون هر دو operand باید evaluate شوند",
+        "B": "خیر، short-circuit",
+        "C": "بستگی به compiler optimization دارد",
+        "D": "فقط در debug build"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "&& short-circuit است: اگر چپ false باشد، راست اصلاً evaluate نمی‌شود.",
+      "concepts": [
+        "short-circuit",
+        "logical-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "logical-operators"
+      ]
+    },
+    {
+      "id": "g2-deepening-044",
+      "type": "mcq",
+      "prompt": "`true || sideEffect()` آیا sideEffect اجرا می‌شود؟",
+      "options": {
+        "A": "بله",
+        "B": "خیر، short-circuit",
+        "C": "بستگی به شرایط",
+        "D": "همیشه در debug"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "|| short-circuit است: چپ true باشد، راست اجرا نمی‌شود.",
+      "concepts": [
+        "short-circuit",
+        "logical-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "logical-operators"
+      ]
+    },
+    {
+      "id": "g2-deepening-045",
+      "type": "mcq",
+      "prompt": "تفاوت `&` و `&&` روی boolean چیست؟",
+      "options": {
+        "A": "هیچ",
+        "B": "& eager، && short-circuit",
+        "C": "& فقط برای bitwise",
+        "D": "&& فقط برای guard"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "روی boolean، & همیشه هر دو operand را evaluate می‌کند (eager)؛ && فقط در صورت نیاز.",
+      "concepts": [
+        "short-circuit",
+        "logical-operators",
+        "bitwise"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "logical-operators"
+      ]
+    },
+    {
+      "id": "g2-deepening-046",
+      "type": "multi",
+      "prompt": "کدام ترکیب short-circuit و side effect درست است؟",
+      "options": {
+        "A": "`x != null && x.foo() > 0` – اگر x null باشد x.foo() اجرا نمی‌شود",
+        "B": "`false & sideEffect()` – sideEffect اجرا نمی‌شود",
+        "C": "`null == x || x.bar() < 5` – اگر x null باشد x.bar() اجرا می‌شود",
+        "D": "`isValid() && expensiveCheck()` – expensiveCheck فقط در صورت true شدن isValid اجرا می‌شود"
+      },
+      "answers": [
+        "A",
+        "D"
+      ],
+      "explanation": "A و D نمونهٔ کلاسیک guard با short-circuit هستند. B & است نه && پس eager است. C ترتیب اشتباه: null==x || x.bar() اگر null باشد short-circuit می‌شود و x.bar() اجرا نمی‌شود.",
+      "concepts": [
+        "short-circuit",
+        "logical-operators",
+        "null-safety"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "logical-operators"
+      ]
+    },
+    {
+      "id": "g2-deepening-047",
+      "type": "mcq",
+      "prompt": "چرا `0.1 + 0.2 == 0.3` در Java برابر false است؟",
+      "options": {
+        "A": "خطای rounding",
+        "B": "0.1 و 0.2 در binary دقیق نیستند",
+        "C": "JVM optimization",
+        "D": "اشکال در JDK"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "0.1 و 0.2 در binary floating-point دقیقاً قابل نمایش نیستند. حاصل جمع برابر 0.30000000000000004 می‌شود نه 0.3.",
+      "concepts": [
+        "float-equality",
+        "tolerance",
+        "floating-point"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "floating-point"
+      ]
+    },
+    {
+      "id": "g2-deepening-048",
+      "type": "mcq",
+      "prompt": "برای مقایسهٔ دو double با tolerance، کدام idiom رایج است؟",
+      "options": {
+        "A": "`a == b`",
+        "B": "`Math.abs(a - b) < 1e-9`",
+        "C": "`a.equals(b)`",
+        "D": "`(int)a == (int)b`"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "مقایسهٔ absolute با tolerance کوچک متداول‌ترین idiom است. == شکننده است، equals روی double کار نمی‌کند، cast ممکن است منجر به wrap یا overflow شود.",
+      "concepts": [
+        "float-equality",
+        "tolerance",
+        "Math"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Math"
+      ]
+    },
+    {
+      "id": "g2-deepening-049",
+      "type": "mcq",
+      "prompt": "`Double.compare(0.0, -0.0)` چه برمی‌گرداند؟",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "-1",
+        "D": "خطا"
+      },
+      "answers": [
+        "C"
+      ],
+      "explanation": "Double.compare +0.0 و -0.0 را متمایز می‌کند و -1 برمی‌گرداند چون -0.0 کمتر از +0.0 در نظر گرفته می‌شود.",
+      "concepts": [
+        "float-equality",
+        "Double",
+        "floating-point"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Double"
+      ]
+    },
+    {
+      "id": "g2-deepening-050",
+      "type": "mcq",
+      "prompt": "چرا `Double.NaN == Double.NaN` برابر false است؟",
+      "options": {
+        "A": "NaN عدد نیست",
+        "B": "IEEE 754 تعریف می‌کند که هیچ NaN با NaN دیگر مساوی نیست",
+        "C": "JVM optimization",
+        "D": "اشکال در JDK"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "IEEE 754 تعریف می‌کند که هر NaN با هر مقدار دیگر نامساوی است، حتی با خودش. برای بررسی NaN از Double.isNaN استفاده کنید.",
+      "concepts": [
+        "float-equality",
+        "NaN",
+        "floating-point"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "NaN"
+      ]
+    },
+    {
+      "id": "g2-deepening-051",
+      "type": "mcq",
+      "prompt": "`Integer a = 100; Integer b = 100; System.out.println(a == b);` چه چاپ می‌کند؟",
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "خطای کامپایل",
+        "D": "وابسته به JVM"
+      },
+      "answers": [
+        "A"
+      ],
+      "explanation": "Integer values in range -128..127 از cache مشترک استفاده می‌کنند، پس a و b به یک شیء اشاره می‌کنند و == برابر true می‌شود. این یک implementation detail است نه language guarantee.",
+      "concepts": [
+        "equals-identity",
+        "Integer",
+        "reference-equality"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer",
+        "autoboxing"
+      ]
+    },
+    {
+      "id": "g2-deepening-052",
+      "type": "mcq",
+      "prompt": "`Integer a = 200; Integer b = 200; System.out.println(a == b);` چه چاپ می‌کند؟",
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "خطای کامپایل",
+        "D": "وابسته به flag"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "200 خارج از cache پیش‌فرض (-128..127) است، پس autoboxing دو شیء متمایز می‌سازد و == false می‌شود.",
+      "concepts": [
+        "equals-identity",
+        "Integer",
+        "reference-equality"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ]
+    },
+    {
+      "id": "g2-deepening-053",
+      "type": "mcq",
+      "prompt": "برای مقایسهٔ مقدار دو Integer کدام idiom درست است؟",
+      "options": {
+        "A": "`a == b`",
+        "B": "`a.equals(b)`",
+        "C": "`Integer.compare(a, b) == 0`",
+        "D": "هر دو B و C"
+      },
+      "answers": [
+        "D"
+      ],
+      "explanation": "equals مقدار را مقایسه می‌کند. Integer.compare هم null-safe است و هم بدون autobox overhead.",
+      "concepts": [
+        "equals-identity",
+        "Integer",
+        "equals"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "equals"
+      ]
+    },
+    {
+      "id": "g2-deepening-054",
+      "type": "tf",
+      "prompt": "`new Integer(5) == new Integer(5)` همیشه false است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "new Integer همیشه شیء نو می‌سازد، پس == روی identity false می‌شود. (از Java 9 به بعد new Integer deprecated است.)",
+      "concepts": [
+        "equals-identity",
+        "Integer",
+        "reference-equality"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ]
+    },
+    {
+      "id": "g2-deepening-055",
+      "type": "mcq",
+      "prompt": "`int x; if (Math.random() > 0.5) x = 1; System.out.println(x);` چه رفتاری دارد؟",
+      "options": {
+        "A": "کامپایل و چاپ",
+        "B": "خطای کامپایل: x ممکن است مقداردهی نشده باشد",
+        "C": "خطای runtime",
+        "D": "همیشه 0 چاپ می‌کند"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "x در یک شاخه شرط مقداردهی می‌شود ولی در شاخه دیگر نه. definite assignment proof کامپایلر شکست می‌خورد.",
+      "concepts": [
+        "definite-assignment",
+        "local-variables"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "definite-assignment"
+      ]
+    },
+    {
+      "id": "g2-deepening-056",
+      "type": "mcq",
+      "prompt": "`final int x; if (cond) x = 1; else x = 2;` چه رفتاری دارد؟",
+      "options": {
+        "A": "خطای کامپایل",
+        "B": "کامپایل می‌شود",
+        "C": "خطای runtime",
+        "D": "وابسته به cond"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "شرط در هر دو شاخه x را مقداردهی می‌کند، پس definite assignment برقرار است. final نیاز به assign exactly once در همه مسیرها دارد.",
+      "concepts": [
+        "definite-assignment",
+        "final",
+        "local-variables"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "definite-assignment"
+      ]
+    },
+    {
+      "id": "g2-deepening-057",
+      "type": "mcq",
+      "prompt": "کدام قطعه در مورد `int x;` در scope ولی بدون مقدار اولیه، کامپایل می‌شود؟",
+      "options": {
+        "A": "`if (true) x = 1; System.out.println(x);`",
+        "B": "`x = 0; if (cond) x = 1; System.out.println(x);`",
+        "C": "`if (cond) x = 1; if (cond2) x = 2; System.out.println(x);`",
+        "D": "هیچ‌کدام"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "B پیش از read مقداردهی صریح دارد. A در یک شرط ثابت است ولی definite assignment بر اساس مسیر value درست می‌سنجد، نه شرط؛ در شاخهٔ دیگر x مقدار ندارد. C در دو شاخهٔ مستقل، هیچ تضمینی برای مقداردهی قبل از read نیست.",
+      "concepts": [
+        "definite-assignment",
+        "local-variables"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "definite-assignment"
+      ]
+    },
+    {
+      "id": "g2-deepening-058",
+      "type": "multi",
+      "prompt": "کدام‌یک در مورد definite assignment local درست است؟",
+      "options": {
+        "A": "local باید در همه مسیرهای اجرا قبل از read مقدار داشته باشد",
+        "B": "compiler شرط‌های runtime را برای definite assignment تحلیل می‌کند",
+        "C": "`final` local باید دقیقاً یک‌بار assign شود",
+        "D": "default field برای local اعمال می‌شود"
+      },
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "A اصل definite assignment است. C نیاز final local به assign exactly once. B اشتباه: compiler فقط مسیرهای statically visible را تحلیل می‌کند. D غلط: local default ندارد.",
+      "concepts": [
+        "definite-assignment",
+        "final",
+        "local-variables"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "definite-assignment"
+      ]
+    },
+    {
+      "id": "g2-deepening-059",
+      "type": "mcq",
+      "prompt": "`int x; try { x = 1; } finally { x = 2; } System.out.println(x);` چه می‌شود؟",
+      "options": {
+        "A": "خطای کامپایل",
+        "B": "کامپایل می‌شود و 2 چاپ می‌کند",
+        "C": "کامپایل می‌شود ولی 1 چاپ می‌کند",
+        "D": "خطای runtime"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "هم try و هم finally مقداردهی می‌کنند؛ finally حتی در صورت موفقیت try اجرا می‌شود. definite assignment برقرار است و x = 2 چاپ می‌شود.",
+      "concepts": [
+        "definite-assignment",
+        "try-finally"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "definite-assignment",
+        "exceptions"
+      ]
+    },
+    {
+      "id": "g2-deepening-060",
+      "type": "mcq",
+      "prompt": "`int x; if (cond) x = 1; else if (cond2) x = 2; else x = 3; System.out.println(x);` چه رفتاری دارد؟",
+      "options": {
+        "A": "خطای کامپایل",
+        "B": "کامپایل می‌شود",
+        "C": "خطای runtime",
+        "D": "وابسته به cond و cond2"
+      },
+      "answers": [
+        "B"
+      ],
+      "explanation": "else نهایی تضمین می‌کند x در هر مسیر مقداردهی می‌شود. definite assignment برقرار است.",
+      "concepts": [
+        "definite-assignment",
+        "if-else"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "definite-assignment"
+      ]
+    },
+    {
+      "id": "g2-labels-001",
+      "type": "mcq",
+      "prompt": "`break outer;` چه چیزی را تمام می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "break labelدار statementی را که label outer دارد تمام می‌کند.",
+      "concepts": [
+        "labels",
+        "break"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "control-flow"
+      ],
+      "options": {
+        "A": "فقط نزدیک‌ترین if",
+        "B": "همیشه دو loop",
+        "C": "statementی که outer نامیده شده",
+        "D": "کل JVM"
+      }
+    },
+    {
+      "id": "g2-labels-002",
+      "type": "mcq",
+      "prompt": "target `continue outer;` باید چه باشد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "continue labelدار فقط یک loop labelدار را می‌پذیرد.",
+      "concepts": [
+        "labels",
+        "continue"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "هر block",
+        "B": "یک loop",
+        "C": "یک switch expression",
+        "D": "یک method"
+      }
+    },
+    {
+      "id": "g2-labels-003",
+      "type": "tf",
+      "prompt": "یک label در Java باید بلافاصله یک statement را سر کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "syntax label برابر `name: statement` است.",
+      "concepts": [
+        "labels"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "control-flow"
+      ]
+    },
+    {
+      "id": "g2-labels-004",
+      "type": "blank",
+      "prompt": "برای خروج از loop تو در تو به نام `search` از `break ____;` استفاده می‌کنیم.",
+      "answers": [
+        "search"
+      ],
+      "explanation": "label مقصد break را تعیین می‌کند.",
+      "concepts": [
+        "labels",
+        "break"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-labels-005",
+      "type": "mcq",
+      "prompt": "کدام code یک label معتبر دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "label باید پیش از statement بیاید.",
+      "concepts": [
+        "labels"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "control-flow"
+      ],
+      "options": {
+        "A": "`outer: for (;;) break outer;`",
+        "B": "`for outer: (;;) {}`",
+        "C": "`label outer;`",
+        "D": "`break: outer;`"
+      }
+    },
+    {
+      "id": "g2-labels-006",
+      "type": "tf",
+      "prompt": "labeled break معادل goto عمومی برای پریدن به هر خطی است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "break فقط statement labelدار را تمام می‌کند.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "control-flow"
+      ]
+    },
+    {
+      "id": "g2-labels-007",
+      "type": "mcq",
+      "prompt": "پس از `for (int i=0; i<1; i++) {}`، i چه وضعی دارد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "i خارج از statement for در scope نیست.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "همیشه 1 است و قابل دسترسی",
+        "B": "خارج از scope است",
+        "C": "null است",
+        "D": "static است"
+      }
+    },
+    {
+      "id": "g2-labels-008",
+      "type": "mcq",
+      "prompt": "کدام تغییر scope i را بعد از loop نگه می‌دارد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "declaration پیش از while آن را در block بیرونی نگه می‌دارد.",
+      "concepts": [
+        "labels",
+        "while-loop"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "`for (int i=0; ...)`",
+        "B": "`for (var i=0; ...)`",
+        "C": "`int i=0; while(i<3) i++;`",
+        "D": "enhanced-for با int i"
+      }
+    },
+    {
+      "id": "g2-labels-009",
+      "type": "tf",
+      "prompt": "local variable بدون assignment مانند field به‌طور خودکار صفر می‌گیرد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "local باید قبل از read definitely assigned باشد.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g2-labels-010",
+      "type": "mcq",
+      "prompt": "کدام branch برای خواندن local پس از if امن است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "هر مسیر عادی که به read می‌رسد باید assignment داشته باشد.",
+      "concepts": [
+        "labels",
+        "if-else"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "`if (ok) value=1; print(value);`",
+        "B": "`if (ok) value=1; else {} print(value);`",
+        "C": "`if (ok) return; print(value);` بدون assignment",
+        "D": "`if (ok) value=1; else value=2; print(value);`"
+      }
+    },
+    {
+      "id": "g2-labels-011",
+      "type": "blank",
+      "prompt": "تحلیل compiler برای اطمینان از assignment local پیش از read، ______ نام دارد.",
+      "answers": [
+        "definite assignment",
+        "مقداردهی قطعی"
+      ],
+      "explanation": "compiler مسیرهای عادی control flow را بررسی می‌کند.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-labels-012",
+      "type": "mcq",
+      "prompt": "کدام جمله دربارهٔ redeclaration در یک block درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "local هم‌نام در scope هم‌پوشان دوباره declare نمی‌شود.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "همیشه مجاز است",
+        "B": "در scope هم‌پوشان خطای کامپایل است",
+        "C": "فقط برای int مجاز است",
+        "D": "نام را خودکار تغییر می‌دهد"
+      }
+    },
+    {
+      "id": "g2-labels-013",
+      "type": "tf",
+      "prompt": "یک block مستقل می‌تواند scope کوتاه‌تری برای local بسازد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "braceها block و scope جدید می‌سازند.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "variables"
+      ]
+    },
+    {
+      "id": "g2-labels-014",
+      "type": "mcq",
+      "prompt": "در nested loop، `continue outer;` از کدام iteration آغاز می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "به update یا condition loop outer می‌رود، نه فقط loop داخلی.",
+      "concepts": [
+        "labels",
+        "continue"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "iteration بعدی outer",
+        "B": "statement بعد از همه loopها",
+        "C": "iteration بعدی inner",
+        "D": "ابتدای method"
+      }
+    },
+    {
+      "id": "g2-labels-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ label درست‌اند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "label می‌تواند for را نام‌گذاری کند و continue labelدار مقصد loop می‌خواهد.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "label می‌تواند for را نام‌گذاری کند.",
+        "B": "label هر خط source را هدف می‌گیرد.",
+        "C": "continue labelدار مقصد loop می‌خواهد.",
+        "D": "break labelدار فقط نزدیک‌ترین loop را می‌شکند."
+      }
+    },
+    {
+      "id": "g2-labels-016",
+      "type": "mcq",
+      "prompt": "چرا labelها باید کم‌استفاده باشند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "هر label مسیر کنترل را دوربردتر می‌کند؛ break یا return ساده اغلب روشن‌ترند.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "control-flow"
+      ],
+      "options": {
+        "A": "Java آن‌ها را حذف کرده است",
+        "B": "فقط برای syntax رنگی‌اند",
+        "C": "همیشه کند هستند",
+        "D": "مسیر کنترل دوربرد را سخت‌تر می‌خوانند"
+      }
+    },
+    {
+      "id": "g2-labels-017",
+      "type": "tf",
+      "prompt": "اگر یک branch فقط throw کند، برای definite assignment مسیر عادی بدون assignment به حساب نمی‌آید.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "throw مسیر عادی به read بعدی ندارد.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-labels-018",
+      "type": "mcq",
+      "prompt": "کدام pair نام‌گذاری برای label خواناتر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "نام هدف business مانند search یا rows نیت خروج را نشان می‌دهد.",
+      "concepts": [
+        "labels"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "control-flow"
+      ],
+      "options": {
+        "A": "`x:` و `y:`",
+        "B": "`search:` و `rows:`",
+        "C": "`a1:` و `a2:`",
+        "D": "`label1:` و `label2:`"
+      }
+    },
+    {
+      "id": "g2-labels-019",
+      "type": "blank",
+      "prompt": "برای عبور از iteration فعلی loop بیرونی به نام rows می‌نویسیم `continue ____;`.",
+      "answers": [
+        "rows"
+      ],
+      "explanation": "نام label باید با label loop بیرونی برابر باشد.",
+      "concepts": [
+        "labels",
+        "continue"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-labels-020",
+      "type": "mcq",
+      "prompt": "کدام مثال redeclaration نامعتبر است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "دو local با یک نام در scope هم‌پوشان مجاز نیستند.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "variables"
+      ],
+      "options": {
+        "A": "`int x=1; int x=2;` در یک block",
+        "B": "`{ int x=1; } { int x=2; }`",
+        "C": "`for (int i=0; i<1; i++) {} int i=2;`",
+        "D": "دو method با local x جدا"
+      }
+    },
+    {
+      "id": "g2-labels-021",
+      "type": "tf",
+      "prompt": "break بدون label در switch معمولاً switch نزدیک را خاتمه می‌دهد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "break بدون label نزدیک‌ترین switch یا loop را ترک می‌کند.",
+      "concepts": [
+        "break",
+        "switch"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "switch"
+      ]
+    },
+    {
+      "id": "g2-labels-022",
+      "type": "mcq",
+      "prompt": "کدام statement در مورد scope while درست است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "variableی که پیش از while declare شود، بعد از loop در block بیرونی قابل مشاهده است.",
+      "concepts": [
+        "labels",
+        "while-loop"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "condition while variable تازه می‌سازد",
+        "B": "هر variable while بعد از loop ناپدید می‌شود",
+        "C": "variable بیرونی بعد از while در scope می‌ماند",
+        "D": "while initializer ویژه مانند for دارد"
+      }
+    },
+    {
+      "id": "g2-labels-023",
+      "type": "mcq",
+      "prompt": "برای جلوگیری از خطای definite assignment چه راهی درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "assignment معتبر در همه مسیرهای عادی یا عدم رسیدن آن مسیرها لازم است.",
+      "concepts": [
+        "labels",
+        "control-flow"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "تکیه بر default value local",
+        "B": "assignment در همه branchهای عادی",
+        "C": "تبدیل local به var",
+        "D": "افزودن label"
+      }
+    },
+    {
+      "id": "g2-labels-024",
+      "type": "tf",
+      "prompt": "`break search;` تنها وقتی معتبر است که label search در enclosing statementها وجود داشته باشد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "compiler باید مقصد label را در context enclosing پیدا کند.",
+      "concepts": [
+        "labels",
+        "break"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "control-flow"
+      ]
+    },
+    {
+      "id": "g2-logic-001",
+      "type": "mcq",
+      "prompt": "اگر left در `left && right` false باشد، right چه وضعی دارد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "&& در false بودن left short-circuit می‌کند.",
+      "concepts": [
+        "short-circuit",
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "همیشه اجرا می‌شود",
+        "B": "اجرا نمی‌شود",
+        "C": "دو بار اجرا می‌شود",
+        "D": "به int تبدیل می‌شود"
+      }
+    },
+    {
+      "id": "g2-logic-002",
+      "type": "mcq",
+      "prompt": "اگر left در `left || right` true باشد، right چه وضعی دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "|| در true بودن left short-circuit می‌کند.",
+      "concepts": [
+        "short-circuit",
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "اجرا نمی‌شود",
+        "B": "همیشه اجرا می‌شود",
+        "C": "exception می‌دهد",
+        "D": "false می‌شود"
+      }
+    },
+    {
+      "id": "g2-logic-003",
+      "type": "tf",
+      "prompt": "`false & method()` می‌تواند method را اجرا کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "& روی boolean eager است و هر دو operand را evaluate می‌کند.",
+      "concepts": [
+        "bitwise",
+        "logical-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "boolean"
+      ]
+    },
+    {
+      "id": "g2-logic-004",
+      "type": "multi",
+      "prompt": "کدام operatorها روی boolean short-circuit دارند؟",
+      "answers": [
+        "B",
+        "D"
+      ],
+      "explanation": "&& و || operand راست را در حالت‌های لازم رد می‌کنند.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`&`",
+        "B": "`&&`",
+        "C": "`|`",
+        "D": "`||`"
+      }
+    },
+    {
+      "id": "g2-logic-005",
+      "type": "blank",
+      "prompt": "عملگر logical NOT Java چیست؟",
+      "answers": [
+        "!"
+      ],
+      "explanation": "! یک boolean را negate می‌کند.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "boolean"
+      ]
+    },
+    {
+      "id": "g2-logic-006",
+      "type": "mcq",
+      "prompt": "کدام guard از `name.length()` وقتی name null است جلوگیری می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "ابتدا null بودن بررسی و سپس با && short-circuit می‌شود.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`name == null || name.length() > 3`",
+        "B": "`name.length() > 3 && name != null`",
+        "C": "`name != null && name.length() > 3`",
+        "D": "`name & name.length() > 3`"
+      }
+    },
+    {
+      "id": "g2-logic-007",
+      "type": "tf",
+      "prompt": "در ternary فقط branch انتخاب‌شده evaluate می‌شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "condition تعیین می‌کند کدام expression لازم است.",
+      "concepts": [
+        "ternary",
+        "short-circuit"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-logic-008",
+      "type": "mcq",
+      "prompt": "خروجی `true ? 1 : 1 / 0` چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "branch false evaluate نمی‌شود، پس exception ندارد.",
+      "concepts": [
+        "ternary"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "ArithmeticException",
+        "B": "خطای کامپایل",
+        "C": "Infinity",
+        "D": "1"
+      }
+    },
+    {
+      "id": "g2-logic-009",
+      "type": "mcq",
+      "prompt": "برای `boolean open=false;` خروجی `!open` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "negation false را true می‌کند.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "0",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g2-logic-010",
+      "type": "multi",
+      "prompt": "کدام‌ها کاربرد مناسب short-circuit هستند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "null guard و fallback کاربردهای طبیعی && و || هستند.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "بررسی null پیش از فراخوانی method",
+        "B": "وادارکردن دو predicate اثرجانبی‌دار به اجرا",
+        "C": "fallback هنگامی که مقدار اول معتبر است",
+        "D": "جایگزینی mask بیتی permission"
+      }
+    },
+    {
+      "id": "g2-logic-011",
+      "type": "tf",
+      "prompt": "`a | b` وقتی a و b boolean هستند نامعتبر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "| روی boolean قانونی، اما eager است.",
+      "concepts": [
+        "logical-operators",
+        "bitwise"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ]
+    },
+    {
+      "id": "g2-logic-012",
+      "type": "mcq",
+      "prompt": "در `checkA() && checkB()` اگر checkA false باشد، نتیجه چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "نتیجه false است و checkB اجرا نمی‌شود.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "null",
+        "D": "نامعلوم"
+      }
+    },
+    {
+      "id": "g2-logic-013",
+      "type": "blank",
+      "prompt": "عملگر انتخاب value از دو expression با شرط چیست؟",
+      "answers": [
+        "?:",
+        "ternary"
+      ],
+      "explanation": "عملگر conditional همان ternary است.",
+      "concepts": [
+        "ternary"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-logic-014",
+      "type": "mcq",
+      "prompt": "کدام شرط side effect پنهان کمتری دارد؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "predicate خالص خواندن و test را قابل اعتمادتر می‌کند.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`if (send() && save())`",
+        "B": "`if (i++ < limit && log())`",
+        "C": "`if (read() | write())`",
+        "D": "`if (isValid(request))`"
+      }
+    },
+    {
+      "id": "g2-logic-015",
+      "type": "tf",
+      "prompt": "هر دو branch ternary باید به common type سازگار برسند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "compiler type expression conditional را تعیین می‌کند.",
+      "concepts": [
+        "ternary"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-logic-016",
+      "type": "mcq",
+      "prompt": "کدام expression وقتی enabled false است start() را اجرا نمی‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "&& در false بودن چپ operand راست را evaluate نمی‌کند.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`enabled & start()`",
+        "B": "`enabled && start()`",
+        "C": "`enabled | start()`",
+        "D": "`!enabled && start()`"
+      }
+    },
+    {
+      "id": "g2-logic-017",
+      "type": "multi",
+      "prompt": "کدام گزاره‌ها دربارهٔ `&` و `|` روی boolean درست‌اند؟",
+      "answers": [
+        "A",
+        "D"
+      ],
+      "explanation": "هر دو قانونی و eager هستند و boolean می‌دهند.",
+      "concepts": [
+        "bitwise",
+        "logical-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "هر دو operand را evaluate می‌کنند.",
+        "B": "هرگز روی boolean مجاز نیستند.",
+        "C": "همیشه short-circuit هستند.",
+        "D": "نتیجهٔ آن‌ها boolean است."
+      }
+    },
+    {
+      "id": "g2-logic-018",
+      "type": "mcq",
+      "prompt": "برای `hasToken && !expired` کدام حالت true است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "token باید موجود و expired باید false باشد.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "false, false",
+        "B": "true, true",
+        "C": "true, false",
+        "D": "false, true"
+      }
+    },
+    {
+      "id": "g2-logic-019",
+      "type": "tf",
+      "prompt": "`!` precedence بالاتری از `&&` دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "negation پیش از conjunction ارزیابی می‌شود.",
+      "concepts": [
+        "precedence",
+        "logical-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-logic-020",
+      "type": "mcq",
+      "prompt": "برای branchهای چندstatementی چه چیزی از ternary خواناتر است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "if/else با block نیت و side effectها را آشکار می‌کند.",
+      "concepts": [
+        "ternary",
+        "if-else"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "`if/else` با braces",
+        "B": "ternary تو در تو",
+        "C": "استفاده از `&`",
+        "D": "حذف condition"
+      }
+    },
+    {
+      "id": "g2-logic-021",
+      "type": "blank",
+      "prompt": "در `ready || fallback()`، fallback فقط وقتی اجرا می‌شود که ready ______ باشد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "|| وقتی چپ true باشد نتیجه را می‌داند.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ]
+    },
+    {
+      "id": "g2-logic-022",
+      "type": "mcq",
+      "prompt": "اگر هر دو validation باید اجرا شوند تا همه errorها جمع شوند، کدام operator ممکن است مناسب باشد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "وقتی هر دو operand boolean هستند، & eager است.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`&&`",
+        "B": "`||`",
+        "C": "`&`",
+        "D": "`!`"
+      }
+    },
+    {
+      "id": "g2-loops-001",
+      "type": "mcq",
+      "prompt": "در `for(init; condition; update)`، پس از body عادی چه بخش اجرا می‌شود؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "مسیر for برابر body، سپس update و سپس condition است.",
+      "concepts": [
+        "for-loop"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "init",
+        "B": "else",
+        "C": "update",
+        "D": "default"
+      }
+    },
+    {
+      "id": "g2-loops-002",
+      "type": "mcq",
+      "prompt": "continue در for چه کاری می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "باقی body را رد می‌کند، سپس update و condition اجرا می‌شوند.",
+      "concepts": [
+        "continue",
+        "for-loop"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "کل method را تمام می‌کند",
+        "B": "به update و سپس condition می‌رود",
+        "C": "init را دوباره اجرا می‌کند",
+        "D": "همیشه loop بیرونی را می‌شکند"
+      }
+    },
+    {
+      "id": "g2-loops-003",
+      "type": "tf",
+      "prompt": "`for (;;)` در Java یک infinite loop قانونی است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "هر سه بخش for اختیاری‌اند؛ شرط حذف‌شده true فرض می‌شود.",
+      "concepts": [
+        "for-loop",
+        "control-flow"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-loops-004",
+      "type": "mcq",
+      "prompt": "کدام loop body را دست‌کم یک بار اجرا می‌کند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "do-while condition را بعد از body می‌سنجد.",
+      "concepts": [
+        "do-while"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "while",
+        "B": "for با condition false",
+        "C": "enhanced-for روی array خالی",
+        "D": "do-while"
+      }
+    },
+    {
+      "id": "g2-loops-005",
+      "type": "tf",
+      "prompt": "while با condition اولیهٔ false می‌تواند صفر بار اجرا شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "while پیش از body condition را evaluate می‌کند.",
+      "concepts": [
+        "while-loop"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-loops-006",
+      "type": "mcq",
+      "prompt": "یک for با `i=0; i<3; i++` کدام indexها را می‌بیند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "i به ترتیب 0، 1 و 2 است.",
+      "concepts": [
+        "for-loop"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "1، 2 و 3",
+        "B": "0، 1 و 2",
+        "C": "0 تا 3 شامل",
+        "D": "فقط 0"
+      }
+    },
+    {
+      "id": "g2-loops-007",
+      "type": "mcq",
+      "prompt": "در enhanced-for روی `int[]`، متغیر element چه چیزی است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "برای primitive، متغیر loop یک copy value است.",
+      "concepts": [
+        "enhanced-for"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "copy مقدار primitive",
+        "B": "alias index",
+        "C": "reference به خود array",
+        "D": "field static"
+      }
+    },
+    {
+      "id": "g2-loops-008",
+      "type": "tf",
+      "prompt": "افزایش متغیر enhanced-for روی int[]، element متناظر array را تغییر می‌دهد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "reassign کردن copy primitive array را تغییر نمی‌دهد.",
+      "concepts": [
+        "enhanced-for"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-loops-009",
+      "type": "mcq",
+      "prompt": "اگر index لازم دارید، کدام form طبیعی‌تر است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "for با index برای position مناسب است.",
+      "concepts": [
+        "for-loop",
+        "enhanced-for"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "do-while بدون variable",
+        "B": "switch expression",
+        "C": "for با شمارنده",
+        "D": "labeled break"
+      }
+    },
+    {
+      "id": "g2-loops-010",
+      "type": "blank",
+      "prompt": "keyword ردکردن باقی body iteration فعلی چیست؟",
+      "answers": [
+        "continue"
+      ],
+      "explanation": "continue کنترل را به iteration بعدی ساختار loop می‌برد.",
+      "concepts": [
+        "continue"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-loops-011",
+      "type": "mcq",
+      "prompt": "کدام while حتماً terminate می‌شود؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "i افزایش می‌یابد و در نهایت condition false می‌شود.",
+      "concepts": [
+        "while-loop"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "`int i=0; while(i<5) {}`",
+        "B": "`int i=5; while(i>0) { i++; }`",
+        "C": "`int i=0; while(i<5) { i++; }`",
+        "D": "`while(true) {}`"
+      }
+    },
+    {
+      "id": "g2-loops-012",
+      "type": "mcq",
+      "prompt": "پس از `int i=0; do { i++; } while(i<1);` مقدار i چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "body یک بار اجرا می‌شود و سپس condition false است.",
+      "concepts": [
+        "do-while"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "1",
+        "B": "0",
+        "C": "2",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g2-loops-013",
+      "type": "tf",
+      "prompt": "declaration در initializer یک for بعد از پایان همان for در scope باقی می‌ماند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "scope variable initializer for در پایان statement for تمام می‌شود.",
+      "concepts": [
+        "for-loop",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-loops-014",
+      "type": "mcq",
+      "prompt": "کدام loop برای خواندن input تا command خروج مناسب‌تر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "while با شرط توقف صریح مناسب است.",
+      "concepts": [
+        "while-loop"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "switch بدون loop",
+        "B": "while با شرط توقف",
+        "C": "enhanced-for روی array ثابت",
+        "D": "ternary"
+      }
+    },
+    {
+      "id": "g2-loops-015",
+      "type": "multi",
+      "prompt": "کدام‌ها exit path طبیعی برای `for(;;)` هستند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "break، return و throw می‌توانند loop بی‌شرط را ترک کنند.",
+      "concepts": [
+        "for-loop",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "`break`",
+        "B": "initializer",
+        "C": "`return`",
+        "D": "`throw`"
+      }
+    },
+    {
+      "id": "g2-loops-016",
+      "type": "mcq",
+      "prompt": "در enhanced-for روی array خالی، body چند بار اجرا می‌شود؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "بدون element هیچ iterationی ساخته نمی‌شود.",
+      "concepts": [
+        "enhanced-for"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "تا break"
+      }
+    },
+    {
+      "id": "g2-loops-017",
+      "type": "tf",
+      "prompt": "continue در while پیش از ارزیابی دوبارهٔ condition، body باقی‌مانده را رد می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "در while، continue کنترل را به condition می‌رساند.",
+      "concepts": [
+        "continue",
+        "while-loop"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-loops-018",
+      "type": "mcq",
+      "prompt": "کدام statement برای termination loop بهتر است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "پیشرفت و condition پایان باید برای خواننده قابل مشاهده باشند.",
+      "concepts": [
+        "loops",
+        "control-flow"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "تغییر پنهان condition در method تصادفی",
+        "B": "حذف هر نوع exit path",
+        "C": "شرطی که هیچ variable آن را تغییر نمی‌دهد",
+        "D": "invariant و پیشرفت صریح در body"
+      }
+    },
+    {
+      "id": "g2-loops-019",
+      "type": "blank",
+      "prompt": "حلقه‌ای که condition خود را پس از body بررسی می‌کند ______ نام دارد.",
+      "answers": [
+        "do-while",
+        "do while"
+      ],
+      "explanation": "do-while تنها loop پایه است که body آن حداقل یک بار اجرا می‌شود.",
+      "concepts": [
+        "do-while"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g2-loops-020",
+      "type": "mcq",
+      "prompt": "برای جمع‌کردن همه valueهای array بدون نیاز به index کدام form خواناتر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "enhanced-for intent پیمایش همه elementها را مستقیم بیان می‌کند.",
+      "concepts": [
+        "enhanced-for"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ],
+      "options": {
+        "A": "switch expression",
+        "B": "enhanced-for",
+        "C": "labeled break",
+        "D": "do-while با condition false"
+      }
+    },
+    {
+      "id": "g2-operators-001",
+      "type": "mcq",
+      "prompt": "نوع expression `byte a=2, b=3; a+b` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "پیش از جمع، هر دو byte به int promotion می‌یابند.",
+      "concepts": [
+        "operators",
+        "numeric-promotion"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "int"
+      ],
+      "options": {
+        "A": "byte",
+        "B": "short",
+        "C": "int",
+        "D": "long"
+      }
+    },
+    {
+      "id": "g2-operators-002",
+      "type": "tf",
+      "prompt": "`var total = (byte) 2 + (byte) 3;` متغیر total را byte می‌سازد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "var نوع expression را می‌گیرد و promotion جمع را تغییر نمی‌دهد.",
+      "concepts": [
+        "numeric-promotion"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-operators-003",
+      "type": "mcq",
+      "prompt": "کدام مقداردهی widening و بدون cast است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "int به long widening است و cast نمی‌خواهد.",
+      "concepts": [
+        "casting"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`byte b = 130;`",
+        "B": "`long n = 42;`",
+        "C": "`byte b = 1 + 200;`",
+        "D": "`int n = 2.5;"
+      }
+    },
+    {
+      "id": "g2-operators-004",
+      "type": "mcq",
+      "prompt": "مقدار `(int) -3.8` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "بخش اعشاری در تبدیل به int به سوی صفر حذف می‌شود.",
+      "concepts": [
+        "casting"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "-3",
+        "B": "-4",
+        "C": "3",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g2-operators-005",
+      "type": "mcq",
+      "prompt": "پس از `byte b=127; b += 1;` مقدار b چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "compound assignment narrowing ضمنی دارد و byte wrap می‌شود.",
+      "concepts": [
+        "assignment-operators",
+        "numeric-promotion"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "128",
+        "B": "127",
+        "C": "خطای کامپایل",
+        "D": "-128"
+      }
+    },
+    {
+      "id": "g2-operators-006",
+      "type": "mcq",
+      "prompt": "کدام بازنویسی از نظر type به `b += 1` نزدیک‌تر است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "جمع int می‌سازد و cast صریح برای assignment byte لازم است.",
+      "concepts": [
+        "assignment-operators",
+        "casting"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`b = b + 1;`",
+        "B": "`b = 1;`",
+        "C": "`b = (byte) (b + 1);`",
+        "D": "`b = (int) (b + 1);"
+      }
+    },
+    {
+      "id": "g2-operators-007",
+      "type": "blank",
+      "prompt": "نتیجهٔ تقسیم صحیح `17 / 5` چیست؟",
+      "answers": [
+        "3"
+      ],
+      "explanation": "هر دو operand integral هستند، پس quotient به سوی صفر truncate می‌شود.",
+      "concepts": [
+        "operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "int"
+      ]
+    },
+    {
+      "id": "g2-operators-008",
+      "type": "mcq",
+      "prompt": "خروجی `-17 / 5` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "تقسیم integral Java به سوی صفر truncate می‌شود.",
+      "concepts": [
+        "operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "-4",
+        "B": "-3",
+        "C": "3",
+        "D": "-2"
+      }
+    },
+    {
+      "id": "g2-operators-009",
+      "type": "mcq",
+      "prompt": "خروجی `-17 % 5` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "remainder علامت dividend یعنی operand چپ را می‌گیرد.",
+      "concepts": [
+        "modulo"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "-2",
+        "B": "2",
+        "C": "-3",
+        "D": "3"
+      }
+    },
+    {
+      "id": "g2-operators-010",
+      "type": "mcq",
+      "prompt": "برای index چرخه‌ای منفی کدام API مناسب‌تر است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "Math.floorMod برای divisor مثبت remainder غیرمنفی فراهم می‌کند.",
+      "concepts": [
+        "modulo"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "modulo"
+      ],
+      "options": {
+        "A": "`index / size`",
+        "B": "`Math.abs(index % size)`",
+        "C": "`index % size`",
+        "D": "`Math.floorMod(index, size)`"
+      }
+    },
+    {
+      "id": "g2-operators-011",
+      "type": "tf",
+      "prompt": "signed overflow در int Java رفتار تعریف‌شدهٔ wraparound دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "int و long Java با arithmetic دو مکمل wrap می‌شوند.",
+      "concepts": [
+        "operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "int"
+      ]
+    },
+    {
+      "id": "g2-operators-012",
+      "type": "mcq",
+      "prompt": "برای تشخیص overflow در جمع int کدام انتخاب مناسب است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "Math.addExact به‌جای wrap بی‌صدا exception می‌دهد.",
+      "concepts": [
+        "operators"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`a + b == 0`",
+        "B": "`Math.addExact(a, b)`",
+        "C": "`(byte) (a + b)`",
+        "D": "`a % b`"
+      }
+    },
+    {
+      "id": "g2-operators-013",
+      "type": "mcq",
+      "prompt": "مقدار `0b1100 & 0b1010` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "AND فقط bitهای 1 مشترک را نگه می‌دارد: 1000.",
+      "concepts": [
+        "bitwise"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "8",
+        "B": "6",
+        "C": "14",
+        "D": "12"
+      }
+    },
+    {
+      "id": "g2-operators-014",
+      "type": "mcq",
+      "prompt": "مقدار `0b1100 | 0b1010` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "OR هر bitی را که در یکی از operandها 1 است نگه می‌دارد: 1110.",
+      "concepts": [
+        "bitwise"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "8",
+        "B": "6",
+        "C": "14",
+        "D": "12"
+      }
+    },
+    {
+      "id": "g2-operators-015",
+      "type": "mcq",
+      "prompt": "مقدار `0b1100 ^ 0b1010` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "XOR bitهای متفاوت را 1 می‌کند: 0110.",
+      "concepts": [
+        "bitwise"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "8",
+        "B": "6",
+        "C": "14",
+        "D": "12"
+      }
+    },
+    {
+      "id": "g2-operators-016",
+      "type": "blank",
+      "prompt": "عملگر complement بیتی Java چیست؟",
+      "answers": [
+        "~"
+      ],
+      "explanation": "~ تمام bitهای operand integral را معکوس می‌کند.",
+      "concepts": [
+        "bitwise"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-operators-017",
+      "type": "mcq",
+      "prompt": "برای `int n=-8` کدام shift از چپ صفر وارد می‌کند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": ">>> logical right shift است.",
+      "concepts": [
+        "shifts"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "bitwise"
+      ],
+      "options": {
+        "A": "`n << 1`",
+        "B": "`n >> 1`",
+        "C": "`n ^ 1`",
+        "D": "`n >>> 1`"
+      }
+    },
+    {
+      "id": "g2-operators-018",
+      "type": "mcq",
+      "prompt": "خروجی `1 << 33` برای int چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "برای int، count با 31 mask می‌شود؛ 33 به 1 کاهش می‌یابد.",
+      "concepts": [
+        "shifts"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "bitwise"
+      ],
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "0",
+        "D": "8589934592"
+      }
+    },
+    {
+      "id": "g2-operators-019",
+      "type": "tf",
+      "prompt": "`1L << 64` در Java برابر 1 است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "برای long، فقط شش bit پایین count مؤثرند؛ 64 به صفر تبدیل می‌شود.",
+      "concepts": [
+        "shifts"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "bitwise"
+      ]
+    },
+    {
+      "id": "g2-operators-020",
+      "type": "mcq",
+      "prompt": "کدام operator precedence بالاتری از `+` دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "ضرب، تقسیم و remainder قبل از جمع ارزیابی می‌شوند.",
+      "concepts": [
+        "precedence"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`*`",
+        "B": "`==`",
+        "C": "`&&`",
+        "D": "`?:`"
+      }
+    },
+    {
+      "id": "g2-operators-021",
+      "type": "blank",
+      "prompt": "در `int x=4;` value expression `x++` چیست؟",
+      "answers": [
+        "4"
+      ],
+      "explanation": "postfix مقدار قدیمی را می‌دهد و سپس x را افزایش می‌دهد.",
+      "concepts": [
+        "operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-operators-022",
+      "type": "tf",
+      "prompt": "`x += y` در صورت method call در سمت چپ، آن سمت را فقط یک بار ارزیابی می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "compound assignment receiver را یک بار evaluate می‌کند.",
+      "concepts": [
+        "assignment-operators"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "operators"
+      ]
+    },
     {
       "id": "g2-seed-001",
       "type": "mcq",

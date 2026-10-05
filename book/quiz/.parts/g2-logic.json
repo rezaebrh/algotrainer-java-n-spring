@@ -1,0 +1,452 @@
+{
+  "questions": [
+    {
+      "id": "g2-logic-001",
+      "type": "mcq",
+      "prompt": "اگر left در `left && right` false باشد، right چه وضعی دارد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "&& در false بودن left short-circuit می‌کند.",
+      "concepts": [
+        "short-circuit",
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "همیشه اجرا می‌شود",
+        "B": "اجرا نمی‌شود",
+        "C": "دو بار اجرا می‌شود",
+        "D": "به int تبدیل می‌شود"
+      }
+    },
+    {
+      "id": "g2-logic-002",
+      "type": "mcq",
+      "prompt": "اگر left در `left || right` true باشد، right چه وضعی دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "|| در true بودن left short-circuit می‌کند.",
+      "concepts": [
+        "short-circuit",
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "اجرا نمی‌شود",
+        "B": "همیشه اجرا می‌شود",
+        "C": "exception می‌دهد",
+        "D": "false می‌شود"
+      }
+    },
+    {
+      "id": "g2-logic-003",
+      "type": "tf",
+      "prompt": "`false & method()` می‌تواند method را اجرا کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "& روی boolean eager است و هر دو operand را evaluate می‌کند.",
+      "concepts": [
+        "bitwise",
+        "logical-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "boolean"
+      ]
+    },
+    {
+      "id": "g2-logic-004",
+      "type": "multi",
+      "prompt": "کدام operatorها روی boolean short-circuit دارند؟",
+      "answers": [
+        "B",
+        "D"
+      ],
+      "explanation": "&& و || operand راست را در حالت‌های لازم رد می‌کنند.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`&`",
+        "B": "`&&`",
+        "C": "`|`",
+        "D": "`||`"
+      }
+    },
+    {
+      "id": "g2-logic-005",
+      "type": "blank",
+      "prompt": "عملگر logical NOT Java چیست؟",
+      "answers": [
+        "!"
+      ],
+      "explanation": "! یک boolean را negate می‌کند.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "boolean"
+      ]
+    },
+    {
+      "id": "g2-logic-006",
+      "type": "mcq",
+      "prompt": "کدام guard از `name.length()` وقتی name null است جلوگیری می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "ابتدا null بودن بررسی و سپس با && short-circuit می‌شود.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`name == null || name.length() > 3`",
+        "B": "`name.length() > 3 && name != null`",
+        "C": "`name != null && name.length() > 3`",
+        "D": "`name & name.length() > 3`"
+      }
+    },
+    {
+      "id": "g2-logic-007",
+      "type": "tf",
+      "prompt": "در ternary فقط branch انتخاب‌شده evaluate می‌شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "condition تعیین می‌کند کدام expression لازم است.",
+      "concepts": [
+        "ternary",
+        "short-circuit"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-logic-008",
+      "type": "mcq",
+      "prompt": "خروجی `true ? 1 : 1 / 0` چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "branch false evaluate نمی‌شود، پس exception ندارد.",
+      "concepts": [
+        "ternary"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "ArithmeticException",
+        "B": "خطای کامپایل",
+        "C": "Infinity",
+        "D": "1"
+      }
+    },
+    {
+      "id": "g2-logic-009",
+      "type": "mcq",
+      "prompt": "برای `boolean open=false;` خروجی `!open` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "negation false را true می‌کند.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "0",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g2-logic-010",
+      "type": "multi",
+      "prompt": "کدام‌ها کاربرد مناسب short-circuit هستند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "null guard و fallback کاربردهای طبیعی && و || هستند.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "بررسی null پیش از فراخوانی method",
+        "B": "وادارکردن دو predicate اثرجانبی‌دار به اجرا",
+        "C": "fallback هنگامی که مقدار اول معتبر است",
+        "D": "جایگزینی mask بیتی permission"
+      }
+    },
+    {
+      "id": "g2-logic-011",
+      "type": "tf",
+      "prompt": "`a | b` وقتی a و b boolean هستند نامعتبر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "| روی boolean قانونی، اما eager است.",
+      "concepts": [
+        "logical-operators",
+        "bitwise"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ]
+    },
+    {
+      "id": "g2-logic-012",
+      "type": "mcq",
+      "prompt": "در `checkA() && checkB()` اگر checkA false باشد، نتیجه چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "نتیجه false است و checkB اجرا نمی‌شود.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "null",
+        "D": "نامعلوم"
+      }
+    },
+    {
+      "id": "g2-logic-013",
+      "type": "blank",
+      "prompt": "عملگر انتخاب value از دو expression با شرط چیست؟",
+      "answers": [
+        "?:",
+        "ternary"
+      ],
+      "explanation": "عملگر conditional همان ternary است.",
+      "concepts": [
+        "ternary"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-logic-014",
+      "type": "mcq",
+      "prompt": "کدام شرط side effect پنهان کمتری دارد؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "predicate خالص خواندن و test را قابل اعتمادتر می‌کند.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`if (send() && save())`",
+        "B": "`if (i++ < limit && log())`",
+        "C": "`if (read() | write())`",
+        "D": "`if (isValid(request))`"
+      }
+    },
+    {
+      "id": "g2-logic-015",
+      "type": "tf",
+      "prompt": "هر دو branch ternary باید به common type سازگار برسند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "compiler type expression conditional را تعیین می‌کند.",
+      "concepts": [
+        "ternary"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "conditionals"
+      ]
+    },
+    {
+      "id": "g2-logic-016",
+      "type": "mcq",
+      "prompt": "کدام expression وقتی enabled false است start() را اجرا نمی‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "&& در false بودن چپ operand راست را evaluate نمی‌کند.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`enabled & start()`",
+        "B": "`enabled && start()`",
+        "C": "`enabled | start()`",
+        "D": "`!enabled && start()`"
+      }
+    },
+    {
+      "id": "g2-logic-017",
+      "type": "multi",
+      "prompt": "کدام گزاره‌ها دربارهٔ `&` و `|` روی boolean درست‌اند؟",
+      "answers": [
+        "A",
+        "D"
+      ],
+      "explanation": "هر دو قانونی و eager هستند و boolean می‌دهند.",
+      "concepts": [
+        "bitwise",
+        "logical-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "هر دو operand را evaluate می‌کنند.",
+        "B": "هرگز روی boolean مجاز نیستند.",
+        "C": "همیشه short-circuit هستند.",
+        "D": "نتیجهٔ آن‌ها boolean است."
+      }
+    },
+    {
+      "id": "g2-logic-018",
+      "type": "mcq",
+      "prompt": "برای `hasToken && !expired` کدام حالت true است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "token باید موجود و expired باید false باشد.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "false, false",
+        "B": "true, true",
+        "C": "true, false",
+        "D": "false, true"
+      }
+    },
+    {
+      "id": "g2-logic-019",
+      "type": "tf",
+      "prompt": "`!` precedence بالاتری از `&&` دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "negation پیش از conjunction ارزیابی می‌شود.",
+      "concepts": [
+        "precedence",
+        "logical-operators"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-logic-020",
+      "type": "mcq",
+      "prompt": "برای branchهای چندstatementی چه چیزی از ternary خواناتر است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "if/else با block نیت و side effectها را آشکار می‌کند.",
+      "concepts": [
+        "ternary",
+        "if-else"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "conditionals"
+      ],
+      "options": {
+        "A": "`if/else` با braces",
+        "B": "ternary تو در تو",
+        "C": "استفاده از `&`",
+        "D": "حذف condition"
+      }
+    },
+    {
+      "id": "g2-logic-021",
+      "type": "blank",
+      "prompt": "در `ready || fallback()`، fallback فقط وقتی اجرا می‌شود که ready ______ باشد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "|| وقتی چپ true باشد نتیجه را می‌داند.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ]
+    },
+    {
+      "id": "g2-logic-022",
+      "type": "mcq",
+      "prompt": "اگر هر دو validation باید اجرا شوند تا همه errorها جمع شوند، کدام operator ممکن است مناسب باشد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "وقتی هر دو operand boolean هستند، & eager است.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`&&`",
+        "B": "`||`",
+        "C": "`&`",
+        "D": "`!`"
+      }
+    }
+  ]
+}

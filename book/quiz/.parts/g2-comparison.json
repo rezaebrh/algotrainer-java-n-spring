@@ -1,0 +1,406 @@
+{
+  "questions": [
+    {
+      "id": "g2-comparison-001",
+      "type": "mcq",
+      "prompt": "نوع نتیجهٔ `score >= 60` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "relational operatorها boolean تولید می‌کنند.",
+      "concepts": [
+        "boolean"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "int",
+        "B": "String",
+        "C": "boolean",
+        "D": "char"
+      }
+    },
+    {
+      "id": "g2-comparison-002",
+      "type": "tf",
+      "prompt": "expression `18 < age < 65` برای int age در Java معتبر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "مقایسهٔ اول boolean می‌سازد و boolean با 65 مقایسهٔ numeric نمی‌شود.",
+      "concepts": [
+        "ranges",
+        "boolean"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "g2-comparison-003",
+      "type": "mcq",
+      "prompt": "کدام شرط ageهای 18 تا 65 را شامل می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "دو comparison با && نوشته می‌شوند و هر دو boundary شامل‌اند.",
+      "concepts": [
+        "ranges",
+        "logical-operators"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "comparison"
+      ],
+      "options": {
+        "A": "`18 < age < 65`",
+        "B": "`age >= 18 && age <= 65`",
+        "C": "`age >= 18 || age <= 65`",
+        "D": "`age == 18 && 65`"
+      }
+    },
+    {
+      "id": "g2-comparison-004",
+      "type": "blank",
+      "prompt": "برای تشخیص NaN در double از `Double.____(value)` استفاده می‌شود.",
+      "answers": [
+        "isNaN"
+      ],
+      "explanation": "NaN با == حتی با خودش برابر نیست.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "g2-comparison-005",
+      "type": "tf",
+      "prompt": "`Double.NaN == Double.NaN` true است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "NaN طبق قواعد IEEE 754 با خودش هم برابر نیست.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "g2-comparison-006",
+      "type": "mcq",
+      "prompt": "خروجی `(0.1 + 0.2) == 0.3` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "نمایش binary floating-point جمع را دقیقاً 0.3 نمی‌سازد.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "double"
+      ],
+      "options": {
+        "A": "false",
+        "B": "true",
+        "C": "خطای کامپایل",
+        "D": "Infinity"
+      }
+    },
+    {
+      "id": "g2-comparison-007",
+      "type": "mcq",
+      "prompt": "برای comparison تقریبی double چه چیزی باید از domain تعیین شود؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "tolerance به مقیاس و معنای اندازه‌گیری وابسته است.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "double"
+      ],
+      "options": {
+        "A": "نام متغیر",
+        "B": "نسخهٔ JDK",
+        "C": "تعداد decimal چاپ‌شده",
+        "D": "epsilon یا tolerance"
+      }
+    },
+    {
+      "id": "g2-comparison-008",
+      "type": "multi",
+      "prompt": "کدام expressionها boolean تولید می‌کنند؟",
+      "answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "comparison و logical operation boolean می‌دهند؛ جمع int می‌دهد.",
+      "concepts": [
+        "boolean",
+        "comparison"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "`x != y`",
+        "B": "`x + y`",
+        "C": "`x <= y`",
+        "D": "`ready && valid`"
+      }
+    },
+    {
+      "id": "g2-comparison-009",
+      "type": "mcq",
+      "prompt": "اگر `int a=2; long b=2L;` باشد، `a == b` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "numeric promotion valueهای برابر را مقایسه می‌کند.",
+      "concepts": [
+        "comparison",
+        "numeric-promotion"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ],
+      "options": {
+        "A": "خطای کامپایل",
+        "B": "true",
+        "C": "false",
+        "D": "مقایسهٔ identity"
+      }
+    },
+    {
+      "id": "g2-comparison-010",
+      "type": "tf",
+      "prompt": "`==` برای primitive int identity object را می‌سنجد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "primitive object identity ندارد و == value را مقایسه می‌کند.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "int"
+      ]
+    },
+    {
+      "id": "g2-comparison-011",
+      "type": "mcq",
+      "prompt": "در `if (count)` که count یک int است چه رخ می‌دهد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "Java int را به boolean تبدیل ضمنی نمی‌کند.",
+      "concepts": [
+        "boolean",
+        "if"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "صفر false و غیرصفر true است",
+        "B": "همیشه true است",
+        "C": "خطای کامپایل",
+        "D": "همیشه false است"
+      }
+    },
+    {
+      "id": "g2-comparison-012",
+      "type": "blank",
+      "prompt": "عملگر «نابرابر» Java چیست؟",
+      "answers": [
+        "!="
+      ],
+      "explanation": "!= نتیجهٔ boolean می‌دهد.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-comparison-013",
+      "type": "mcq",
+      "prompt": "کدام شرط index معتبر array را می‌سنجد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "index باید از صفر شامل تا length غیرشامل باشد.",
+      "concepts": [
+        "ranges"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "comparison"
+      ],
+      "options": {
+        "A": "`index >= 0 && index < length`",
+        "B": "`index > 0 && index <= length`",
+        "C": "`index >= 0 || index < length`",
+        "D": "`0 <= index <= length`"
+      }
+    },
+    {
+      "id": "g2-comparison-014",
+      "type": "tf",
+      "prompt": "`5 == 5L` false است، چون typeها متفاوت‌اند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "promotion numeric valueهای مساوی را می‌سنجد.",
+      "concepts": [
+        "comparison",
+        "numeric-promotion"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "operators"
+      ]
+    },
+    {
+      "id": "g2-comparison-015",
+      "type": "mcq",
+      "prompt": "برای predicate کدام نام خواناتر است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "نام مثبت domain-oriented، negationهای دوگانه را کم می‌کند.",
+      "concepts": [
+        "boolean"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "boolean"
+      ],
+      "options": {
+        "A": "`notNotReady`",
+        "B": "`numberFlag`",
+        "C": "`value1`",
+        "D": "`isReady`"
+      }
+    },
+    {
+      "id": "g2-comparison-016",
+      "type": "multi",
+      "prompt": "کدام boundaryها شرط `score >= 60 && score < 90` را پاس می‌کنند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "60 شامل و 90 خارج است.",
+      "concepts": [
+        "ranges"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "comparison"
+      ],
+      "options": {
+        "A": "60",
+        "B": "59",
+        "C": "89",
+        "D": "90"
+      }
+    },
+    {
+      "id": "g2-comparison-017",
+      "type": "mcq",
+      "prompt": "برای equality محتوای String کدام method مناسب است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "== identity reference را می‌سنجد؛ equals متن را می‌سنجد.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "references"
+      ],
+      "options": {
+        "A": "`==`",
+        "B": "`equals`",
+        "C": "`<`",
+        "D": "`compare`"
+      }
+    },
+    {
+      "id": "g2-comparison-018",
+      "type": "tf",
+      "prompt": "`-0.0 == 0.0` در comparison primitive double true است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "operator == این دو value را برابر می‌بیند.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "double"
+      ]
+    },
+    {
+      "id": "g2-comparison-019",
+      "type": "mcq",
+      "prompt": "کدام input شرط `x > 0 && x < 10` را false می‌کند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "10 کران strict بالاست و شامل نمی‌شود.",
+      "concepts": [
+        "ranges"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "comparison"
+      ],
+      "options": {
+        "A": "1",
+        "B": "5",
+        "C": "9",
+        "D": "10"
+      }
+    },
+    {
+      "id": "g2-comparison-020",
+      "type": "blank",
+      "prompt": "روی referenceها، `==` به‌طور پیش‌فرض ______ را می‌سنجد.",
+      "answers": [
+        "identity",
+        "هویت"
+      ],
+      "explanation": "دو reference باید به همان object اشاره کنند.",
+      "concepts": [
+        "comparison"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "references"
+      ]
+    }
+  ]
+}
