@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کتاب همراه Java و Spring</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.js"></script>
+<script src="vendor/marked.umd.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>کتاب همراه Java و Spring</h1>
+  <nav>
+    <button type="button" id="btn-reading" aria-pressed="true">فصل‌ها</button>
+    <button type="button" id="btn-quiz" aria-pressed="false">آزمون</button>
+  </nav>
+</header>
+
+<main>
+  <aside id="toc">
+    <h2>فهرست فصل‌ها</h2>
+    <ul id="toc-list"></ul>
+    <p id="status" role="status"></p>
+  </aside>
+
+  <div>
+    <section id="reading" class="panel">
+      <div id="content">
+        <p class="muted">فصل‌ها بارگذاری می‌شوند…</p>
+      </div>
+    </section>
+
+    <section id="quiz" class="panel">
+      <div class="toolbar">
+        <button class="btn" type="button" id="btn-review">مرور خطاها</button>
+        <button class="btn" type="button" id="btn-export">خروجی پیشرفت</button>
+        <button class="btn" type="button" id="btn-import">ورود پیشرفت</button>
+        <input type="file" id="import-file" accept="application/json,.json" hidden>
+      </div>
+      <div id="quiz-body"></div>
+      <hr>
+      <h2 style="font-size:0.95rem;margin:1rem 0 0.5rem">پیشرفت</h2>
+      <div id="progress"></div>
+    </section>
+  </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

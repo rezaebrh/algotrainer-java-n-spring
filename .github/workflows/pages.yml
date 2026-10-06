@@ -1,0 +1,52 @@
+name: Deploy the web reader to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Assemble the site
+        # The app finds its assets by probing, so the published layout has to
+        # mirror the repo: web/* at the site root, with book/ and quiz_engine.py
+        # beside them. That keeps one set of relative paths working both here
+        # and when the same files are served locally from the repo root.
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp -r web/. _site/
+          cp -r book _site/book
+          cp quiz_engine.py _site/quiz_engine.py
+          rm -rf _site/__pycache__ _site/vendor/__pycache__
+          echo "--- assembled site ---"
+          find _site -maxdepth 2 -not -path '*/book/quiz/*' | sort
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
