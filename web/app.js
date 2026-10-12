@@ -41,6 +41,68 @@ function setStatus(text) {
   $('#status').textContent = text || '';
 }
 
+/* ---------- Pyodide load progress UI ----------
+   Shown only while getBridge() is doing first-time setup. Pyodide calls the
+   callback with {stage, loaded, total} where total is 0 for indeterminate
+   stages like package imports. After loadPyodide resolves we still have
+   stages for the Python-source fetch and the import, so we drive the bar
+   manually for those. */
+
+const PROGRESS_STAGE_LABELS = {
+  'loading Pyodide': 'در حال دانلود Pyodide…',
+  'loading Pyodide (indexURL)': 'در حال دانلود Pyodide…',
+  'importing pyodide.asm.js': 'در حال بارگذاری Pyodide…',
+  'loading pyodide.asm.js': 'در حال بارگذاری Pyodide…',
+  'loading pyodide.asm.wasm': 'در حال بارگذاری Pyodide…',
+  'loading python_stdlib.zip': 'در حال بارگذاری کتابخانهٔ استاندارد Python…',
+  'importing pyodide_py': 'در حال آماده‌سازی محیط Python…',
+  'initializing': 'در حال آماده‌سازی محیط Python…',
+  'loading packages': 'در حال بارگذاری بسته‌ها…',
+  'done': 'آماده.',
+};
+
+function showProgress() {
+  const host = $('#pyodide-progress');
+  if (host) host.hidden = false;
+}
+
+function hideProgress() {
+  const host = $('#pyodide-progress');
+  if (host) host.hidden = true;
+}
+
+function setProgress(stageKey, loaded, total) {
+  const stageEl = $('#pyodide-stage');
+  const bar = $('#pyodide-bar');
+  const counter = $('#pyodide-counter');
+  if (stageEl) stageEl.textContent = PROGRESS_STAGE_LABELS[stageKey] || stageKey;
+  if (bar) {
+    if (total > 0) {
+      const pct = Math.min(100, Math.round((loaded / total) * 100));
+      bar.value = pct;
+      bar.removeAttribute('indeterminate');
+    } else {
+      bar.removeAttribute('value');
+      bar.setAttribute('indeterminate', '');
+    }
+  }
+  if (counter) {
+    if (total > 0) {
+      const pctText = bar && bar.value != null ? `${bar.value}٪` : '';
+      counter.textContent = `${formatMb(loaded)} / ${formatMb(total)}${pctText ? '  (' + pctText + ')' : ''}`;
+    } else if (loaded > 0) {
+      counter.textContent = `${formatMb(loaded)}  (نامشخص)`;
+    } else {
+      counter.textContent = '';
+    }
+  }
+}
+
+function formatMb(bytes) {
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} کیلوبایت`;
+  return `${(bytes / 1024 / 1024).toFixed(1)} مگابایت`;
+}
+
 /* ---------- asset base ----------
    Served locally from the repo root the page is at /web/, so assets are one
    level up. Deployed to Pages the site root holds them directly. Probing keeps
@@ -98,20 +160,39 @@ let pyBridge = null;
 async function getBridge() {
   if (pyBridge) return pyBridge;
   setStatus('بارگذاری Pyodide… بار اول چند مگابایت دانلود می‌شود.');
-  const pyodide = await loadPyodide({ indexURL: PYODIDE_URL });
+  showProgress();
+  setProgress('loading Pyodide', 0, 0);
+
+  const pyodide = await loadPyodide({
+    indexURL: PYODIDE_URL,
+    setDownloadProgressCallback: (msg) => {
+      const stage = msg && msg.stage ? msg.stage : '';
+      const loaded = msg && Number.isFinite(msg.loaded) ? msg.loaded : 0;
+      const total = msg && Number.isFinite(msg.total) ? msg.total : 0;
+      setProgress(stage, loaded, total);
+    },
+  });
+
   const base = await resolveBase();
+  setProgress('در حال بارگذاری منابع Python…', 0, 0);
 
   const bridgePath = (await headOk(base + 'quiz_bridge.py'))
     ? base + 'quiz_bridge.py'
     : base + 'web/quiz_bridge.py';
 
-  for (const [name, url] of [
+  const pySources = [
     ['quiz_engine.py', base + 'quiz_engine.py'],
     ['quiz_bridge.py', bridgePath],
-  ]) {
-    pyodide.FS.writeFile('/home/pyodide/' + name, await (await fetch(url)).text());
+  ];
+  let fetched = 0;
+  for (const [name, url] of pySources) {
+    const text = await (await fetch(url)).text();
+    pyodide.FS.writeFile('/home/pyodide/' + name, text);
+    fetched += text.length;
+    setProgress('در حال بارگذاری منابع Python…', fetched, 0);
   }
 
+  setProgress('در حال راه‌اندازی پل…', 0, 0);
   pyodide.runPython('import quiz_bridge');
   pyBridge = {
     select: pyodide.runPython('quiz_bridge.select'),
@@ -119,6 +200,7 @@ async function getBridge() {
     summary: pyodide.runPython('quiz_bridge.summary'),
   };
   setStatus('');
+  hideProgress();
   return pyBridge;
 }
 

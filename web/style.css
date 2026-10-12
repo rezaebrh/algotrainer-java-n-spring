@@ -222,3 +222,33 @@ input[type="text"] {
 .muted { color: var(--muted); font-size: 0.9rem; }
 
 .bar { display: inline-block; direction: ltr; color: var(--accent); letter-spacing: -1px; }
+
+/* ---- Pyodide load progress (shown only during first-time quiz load) ---- */
+
+#pyodide-progress {
+  margin-top: 0.8rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+#pyodide-progress[hidden] { display: none; }
+
+#pyodide-progress p { margin: 0 0 0.4rem; }
+#pyodide-progress p:last-child { margin-bottom: 0; }
+
+#pyodide-stage { font-weight: 600; color: var(--ink); }
+#pyodide-counter { font-size: 0.8rem; direction: ltr; text-align: left; }
+
+#pyodide-bar {
+  display: block;
+  width: 100%;
+  height: 0.6rem;
+  direction: ltr;       /* bar fills left-to-right regardless of doc dir */
+  unicode-bidi: isolate;
+}
+
+#pyodide-bar::-webkit-progress-bar { background: var(--code-bg); border-radius: 999px; }
+#pyodide-bar::-webkit-progress-value { background: var(--accent); border-radius: 999px; transition: width 120ms ease-out; }
+#pyodide-bar::-moz-progress-bar { background: var(--accent); border-radius: 999px; }
