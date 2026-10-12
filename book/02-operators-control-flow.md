@@ -28,13 +28,17 @@
 
 ## 1. numeric promotion
 
-پیش از arithmetic دودویی، Java operandهای `byte`، `short` و `char` را دست‌کم به `int` promotion می‌دهد. این قاعده به مقدار فعلی variable نگاه نمی‌کند؛ به type آن نگاه می‌کند.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+Java پیش از هر عملگر دودویی حسابی (`+`، `-`، `*`، `/`، `%`، رابطه‌ای روی عدد، و حتی برخی موارد مثل مقایسهٔ ترکیبی) قاعده‌ای به نام **binary numeric promotion** را اجرا می‌کند: اگر هر کدام از operandها از نوع `double` باشد، همه به `double` تبدیل می‌شوند؛ وگرنه اگر `float` باشد، به `float`؛ وگرنه اگر `long` باشد، به `long`؛ وگرنه هر دو به `int` ارتقا می‌یابند. این قاعده به مقدار فعلی variable نگاه نمی‌کند؛ به **type اعلام‌شده** نگاه می‌کند. در نتیجه `byte a = 40; byte b = 2;` و `a + b` حتی وقتی هر دو در دامنهٔ `byte` جا می‌گیرند، یک `int` می‌سازد. unary `+`، `-` و `~` نیز همین قاعده را دارند: `~b` روی `byte` یک `int` می‌دهد.
 
-- `byte + byte` یک `int` می‌دهد.
-- وجود `long` نتیجه را دست‌کم `long` می‌کند.
-- وجود `float` یا `double` نتیجه را به آن نوع می‌برد.
-- unary `+`، `-` و `~` نیز نوع‌های کوچک را به int می‌برند.
+این رفتار دلیل تاریخی دارد: در JVM عملگرهای حسابی integral، نوع `int` و `long` را می‌شناسند و نوع کوچک‌تر ندارند؛ promotion در سطح زبان انجام می‌شود تا bytecode ساده بماند. نتیجهٔ عملی این است که اگر نتیجه را به variable کوچک‌تر انتساب می‌دهید، cast لازم دارید:
+
+```java
+byte a = 40, b = 2;
+byte sum = (byte) (a + b);   // a + b یک int است؛ cast صریح لازم است
+int natural = a + b;          // بدون cast، در int جا می‌گیرد
+```
+
+اگر مقدار در دامنه نباشد، cast همان `int` بیت‌به‌بیت را low-byte می‌کند و signed-interpret می‌خواند — همان low-bit-preserving narrowing که در §۲ می‌بینید. promotion با **conversion** متفاوت است: conversion در assignment رخ می‌دهد، promotion در expression؛ هر دو از یک جدول widening پیروی می‌کنند اما promotion هرگز نمی‌تواند lossy باشد (پس cast نمی‌خواهد).
 
 ```text
 byte ─┐
@@ -45,6 +49,8 @@ long  ────────────────────────�
 float ───────────────────────────────> float
 double ──────────────────────────────> double
 ```
+
+> **تلهٔ C++:** در C++ نوع‌های کوچک‌تر در expression integer promotion می‌شوند (مشابه) اما قاعده‌های `int`/`unsigned int` روی پلتفرم‌های مختلف فرق دارد و `unsigned` می‌تواند promotion را عوض کند. در Java، `byte`/`short` هرگز `unsigned` نیستند و promotion همیشه به `int` امضا‌دار است.
 
 ## 2. widening، narrowing و cast
 
@@ -63,41 +69,87 @@ Widening معمولاً implicit است؛ narrowing می‌تواند range، bi
 | `double → int` | بله | fraction به سوی صفر حذف می‌شود |
 | `char → int` | خیر | code unit عددی می‌شود |
 
+widening همیشه value-preserving است: هر `int` در `long` با همان علامت و magnitude جا می‌گیرد، هر `char` در `int` به شکل کد واحدش خوانده می‌شود، و هر `float` کوچک‌تر از حدود `double` دقیقاً قابل نمایش است. در نتیجه کامپایلر اجازه می‌دهد widening را بدون cast بنویسید. اما narrowing ارزش را محدود می‌کند و کامپایلر نمی‌تواند تشخیص بدهد آیا در دامنهٔ مقصد هست یا نه؛ بنابراین cast صریح لازم است و **validation را به شما واگذار می‌کند.** اگر عدد در دامنه نباشد، دو حالت رخ می‌دهد:
+
+- **integral narrowing** فقط low-bitها را نگه می‌دارد و آن‌ها را با signed interpretation می‌خواند. `int x = 300; byte b = (byte) x;` می‌شود `44` (نه `-56` — محاسبه را باید با bit pattern انجام دهید نه با `300 mod 256`).
+- **floating-to-integral** ابتدا fraction را به سمت صفر حذف می‌کند (`(int) -3.7` می‌شود `-3`، نه `-4`)، سپس اگر نتیجه در دامنهٔ نوع integral نباشد، مقدار `min` یا `max` آن نوع برگردانده می‌شود (`Integer.MAX_VALUE` یا `Integer.MIN_VALUE`).
+
+`char` یک **UTF-16 code unit بدون علامت** است — وقتی به `int` widen می‌شود مقداری بین `0` و `65535` می‌دهد. این رفتار با `byte` فرق دارد: `byte` امضا‌دار است و `-1` در `int` همان `-1` می‌شود، نه `255`. در نتیجه مقایسهٔ `char` با عدد (`'A' == 65`) در Java درست کار می‌کند ولی ترکیب `byte` با عدد منفی نیازمند دقت است.
+
+```java
+int big = 0x10FFFF;          // بزرگ‌تر از کد واحد UTF-16
+char low = (char) big;        // فقط 16 bit پایین؛ 0xFFFF
+int reconstructed = low;      // 65535، نه 0x10FFFF
+```
+
+> **تلهٔ C++:** در C++ narrowing implicit در initializer braced-list مجاز نیست (`int x{3.7};` خطا می‌دهد) اما در `=` و expression مجاز است و truncation رخ می‌دهد. در Java، narrowing بدون cast **همیشه** خطای کامپایل است. این تفاوت ظاهری، در code واقعی تفاوت رفتاری بزرگی ایجاد می‌کند: Java شما را مجبور می‌کند قبل از lossy conversion صریح فکر کنید.
+
 ## 3. arithmetic، division و modulo
 
-برای integralها، `/` تقسیم صحیح با truncation به سوی صفر است. برای داشتن fraction باید پیش از operation یک operand floating-point باشد.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+برای integralها، `/` تقسیم صحیح با **truncation به سوی صفر** است. اگر هر دو operand integral باشند (پس از numeric promotion)، نتیجه integral می‌ماند حتی اگر مقدار صفر اعشاری طبیعی باشد. `7 / 2` می‌شود `3`، `7 / -2` می‌شود `-3` (نه `-4`)، `-7 / 2` می‌شود `-3`. برای داشتن fraction باید **پیش از operation** یک operand floating-point باشد: `7 / 2.0` می‌شود `3.5`، `7.0 / 2` می‌شود `3.5`، `7.0 / 2.0` می‌شود `3.5`. اگر بعد از محاسبه cast کنید (`(double) (7 / 2)`) دیر شده — integer division قبلاً انجام شده و فقط یک `3.0` به دست می‌آورید.
 
-- `7 / 2` برابر 3 است.
-- `7 / 2.0` برابر 3.5 است.
-- علامت `%` از dividend، یعنی سمت چپ، می‌آید.
-- overflow int و long در Java wrap دو مکمل دارد.
+علامت `%` (remainder) **از dividend** می‌آید، نه divisor. `7 % 2` می‌شود `1`، `7 % -2` می‌شود `1` (نه `-1`)، `-7 % 2` می‌شود `-1`. این با تسهیم ریاضی فرق دارد: `Math.floorMod(7, -2)` می‌شود `-1` (هم‌علامت divisor) و `Math.floorMod(-7, 2)` می‌شود `1`. برای **index حلقوی** که می‌خواهید `[0, n)` بماند، `Math.floorMod` نتیجهٔ صحیح‌تری می‌دهد:
+
+```java
+int[] ring = new int[10];
+for (int step = -3; step <= 3; step++) {
+    int idx = Math.floorMod(step, ring.length);   // همیشه 0..9
+    ring[idx]++;
+}
+// ring[0] = 1 (step=-10, 0), ring[1] = 1, ..., ring[7] = 1
+// ring[8] = 0, ring[9] = 0
+```
+
+overflow integral در Java **wrap دو مکمل تعریف‌شده** دارد — یعنی `Integer.MAX_VALUE + 1` قطعاً `Integer.MIN_VALUE` می‌شود، نه exception و نه undefined behavior. این تعریف‌شدگی ابزار خوبی برای hash و cryptography نیست (برای آن‌ها `Math.addExact` و `Math.multiplyExact` وجود دارد که در overflow پرتاب می‌کنند) ولی برای شمارنده‌های wrap-around راحت است.
+
+```java
+int x = Integer.MAX_VALUE;
+int y = x + 1;              // -2147483648
+long z = 1L << 63;          // Long.MIN_VALUE
+int safe = Math.addExact(1, 1);  // 2
+int bad  = Math.addExact(Integer.MAX_VALUE, 1);  // ArithmeticException
+```
+
+> **تلهٔ C++:** در C++ signed overflow **رفتار تعریف‌نشده** است؛ کامپایلر آزاد است هر کاری بکند، از جمله حذف کامل `if (x + 1 > x)`. در Java، wrap قطعی و قابل آزمایش است. اگر کد Java را به C++ ترجمه می‌کنید، هر جا به wrap تکیه کرده‌اید، در C++ باید `-fwrapv` یا نوع unsigned اضافه کنید.
 
 ## 4. bitwise و shift
 
-`&`، `|`، `^` و `~` روی bitهای integral کار می‌کنند. برای flagها literal باینری یا hexadecimal معمولاً خواناتر از decimal است.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+`&`، `|`، `^` و `~` روی bitهای integral کار می‌کنند. برای flagها literal باینری (`0b0010_0100`) یا hexadecimal (`0x24`) معمولاً خواناتر از decimal است و underscore بین رقم‌ها برای جداسازی مجاز است. سه عملگر shift رفتار متفاوتی دارند: `<<` (left shift) و `>>` (arithmetic/sign-extending right shift) و `>>>` (logical/zero-fill right shift). تفاوت `>>` و `>>>` فقط زمانی دیده می‌شود که عدد **منفی** باشد — برای مثبت یکسان‌اند.
 
-- `<<` bitها را به چپ می‌برد.
-- `>>` bit علامت را از چپ تکرار می‌کند.
-- `>>>` از چپ صفر وارد می‌کند.
-- در int فقط پنج bit پایین shift count مؤثر است.
+**نکتهٔ بسیار مهم:** shift count در `int` فقط **5 bit پایین** مؤثر است؛ یعنی اگر بنویسید `1 << 33` روی `int`، مقدار `33` به `33 & 31 = 1` تبدیل می‌شود و نتیجه `2` می‌شود، نه خطا و نه `0`. روی `long` فقط 6 bit پایین مؤثر است (mod 64). این رفتار قطعی است ولی اکثر برنامه‌نویس‌ها انتظارش را ندارند:
+
+```java
+int a = 1 << 33;       // 2  (33 mod 32 = 1)
+int b = 1 << 32;       // 1  (32 mod 32 = 0)
+int c = 1 << 64;       // 1  (64 mod 32 = 0)
+long d = 1L << 33;     // 8589934592  (33 mod 64 = 33)
+int e = -1 >>> 29;     // 7  (همهٔ 32 بیت می‌چرخند، سمت چپ صفر می‌آید)
+```
+
+`>>>` ابزار اصلی کار با bit pattern مستقل از علامت است — مثلاً برای ساختن unsigned-view از `int`، استخراج 16 بیت بالا، یا مقایسه بدون توجه به sign bit.
 
 | موضوع | Java | C++ رایج |
 |---|---|---|
 | shift راست zero-fill | `>>>` | `>>` روی unsigned type |
 | integer unsigned عمومی | primitive جدا ندارد | `unsigned int` و هم‌خانواده‌ها |
 | signed overflow | wrap تعریف‌شده | رفتار تعریف‌نشده |
+| shift count mod | `% (bits)` بی‌صدا | رفتار تعریف‌نشده در C++14- |
+
+> **تلهٔ C++:** در C++ اگر shift count منفی یا بزرگ‌تر از width نوع باشد، **رفتار تعریف‌نشده** است. در Java، count همیشه به `count & (width-1)` نرمال می‌شود. اگر از C++ کدی منتقل می‌کنید که به `count` بزرگ متکی است، در Java نتیجهٔ متفاوت می‌گیرید — و این تفاوت در runtime کشف می‌شود نه در compile.
 
 ## 5. comparison و logical
 
-عملگرهای relational یک boolean تولید می‌کنند. Java numeric truthiness ندارد: شرط `if`، `while` و for باید دقیقاً boolean باشد.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+عملگرهای relational (`==`، `!=`، `<`، `<=`، `>`، `>=`، `instanceof`) یک `boolean` تولید می‌کنند. Java **numeric truthiness ندارد**: شرط `if`، `while` و سه‌تاییِ for باید دقیقاً `boolean` باشد. `if (count)` کامپایل نمی‌شود؛ باید `if (count != 0)` یا predicate domain بنویسید. این یک تصمیم طراحی است که از یک دستهٔ کامل bug جلوگیری می‌کند (مثلاً `if (pointer)` در C که گاهی null و گاهی non-null است).
 
-- `==` روی primitive value را مقایسه می‌کند.
-- `==` روی reference identity را مقایسه می‌کند.
-- `&&` و `||` short-circuit هستند.
-- `&` و `|` روی boolean قانونی اما eager هستند.
+`==` روی primitive **value** را مقایسه می‌کند، روی reference **identity** را. این برای boxed typeها (`Integer`، `Long`) یک تلهٔ معروف است: `Integer a = 100; Integer b = 100; a == b` می‌شود `true` (cache داخلی برای `-128..127`)، اما `Integer c = 200; Integer d = 200; c == d` می‌شود `false` (اشیاء متفاوت). همیشه برای boxed typeها از `.equals()` استفاده کنید. `NaN` هم استثنا است: هیچ مقداری (حتی خودش) با `==` برابر `NaN` نیست؛ `NaN == NaN` می‌شود `false`. برای تست `NaN` باید `Float.isNaN(x)` یا `Double.isNaN(x)` بنویسید.
+
+`&&` و `||` **short-circuit** هستند: اگر نتیجه از operand چپ معلوم باشد، operand راست اصلاً evaluate نمی‌شود. این رفتار دو فایده دارد: (1) عملکرد، (2) ایمنی — مثلاً `if (obj != null && obj.isReady())` بدون null-check جداگانه. `&` و `|` روی boolean **قانونی** هستند ولی **eager**: همیشه operand راست را evaluate می‌کنند. در expression سادهٔ boolean معمولاً اشتباه‌اند (احتمالاً منظورتان short-circuit بود) ولی در bitmask روی flagها کاربرد دارند.
+
+```java
+boolean a = expensiveCheck();   // پرهزینه
+boolean b = a && cheapCheck();  // اگر a=false، cheapCheck اجرا نمی‌شود
+boolean c = a & cheapCheck();   // هر دو همیشه اجرا می‌شوند
+```
 
 | expression | ارزیابی راست؟ | کاربرد پیش‌فرض |
 |---|---:|---|
@@ -106,91 +158,301 @@ Widening معمولاً implicit است؛ narrowing می‌تواند range، bi
 | `a & b` | بله | bitwise/eager آگاهانه |
 | `a | b` | بله | bitwise/eager آگاهانه |
 
+> **تلهٔ C++:** در C++ `&&` و `||` نیز short-circuit هستند ولی `&` و `|` روی integral **bitwise** هستند و overload به boolean ندارند مگر explicit. در Java، overload روی boolean استاندارد است و اغلب منبع bug می‌شود: کدی که `&` می‌نویسد در حالی که منظورش `&&` بوده، در test کوچک درست کار می‌کند و در production با side-effect کشف می‌شود.
+
 ## 6. assignment، precedence و ternary
 
-Precedence syntax را تعیین می‌کند، نه intention را. هر جا خواننده ممکن است ترتیب را اشتباه بگیرد، parentheses یا statementهای کوچک‌تر راه‌حل‌اند.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+Precedence syntax را تعیین می‌کند، نه intention را. هر جا خواننده ممکن است ترتیب را اشتباه بگیرد، parentheses یا statementهای کوچک‌تر راه‌حل‌اند. جدول precedence استاندارد (از بالا به پایین، چپ‌به‌راست associative مگر خلافش گفته شود):
 
-- `x++` مقدار قدیم و سپس افزایش می‌دهد.
-- `++x` ابتدا افزایش و سپس مقدار جدید تولید می‌کند.
-- compound assignment LHS را فقط یک بار evaluate می‌کند.
-- ternary فقط branch انتخاب‌شده را evaluate می‌کند.
+```text
+1.  postfix         x++  x--  method()  arr[i]  obj.field
+2.  unary           ++x  --x  +x  -x  ~x  !x  (type)x
+3.  multiplicative  *   /   %
+4.  additive        +   -
+5.  shift           <<  >>  >>>
+6.  relational      <  <=  >  >=  instanceof
+7.  equality        ==  !=
+8.  bitwise AND     &
+9.  bitwise XOR     ^
+10. bitwise OR      |
+11. logical AND     &&
+12. logical OR      ||
+13. ternary         ? :
+14. assignment      =  +=  -=  *=  /=  %=  &=  ^=  |=  <<=  >>=  >>>=
+```
+
+`x++` (postfix) **مقدار قدیم** را برمی‌گرداند و سپس افزایش می‌دهد؛ `++x` (prefix) ابتدا افزایش می‌دهد و سپس مقدار جدید را برمی‌گرداند. در expression سادهٔ standalone (`x++;`) تفاوتی ندارند. در ترکیب (`arr[index++] = 0`) تفاوت دیده می‌شود. تلهٔ معروف: `int x = 5; x = x++;` مقدار `5` را به `x` انتساب می‌دهد (postfix مقدار قدیم 5 را برمی‌گرداند، سپس `x` به 6 افزایش می‌یابد، اما assignment با 5 آن را بازنویسی می‌کند). نتیجه `x == 5`.
+
+**compound assignment** یک ویژگی ظریف دارد: `x += y` معادل `x = (T)(x + y)` است که در آن `T` نوع `x` است. این یعنی compound assignment **implicit narrowing** انجام می‌دهد، حتی اگر نتیجهٔ `x + y` در دامنه نباشد:
+
+```java
+byte b = 100;
+b += 200;        // کامپایل می‌شود! b = (byte)(100 + 200) = (byte)300 = 44
+// b = b + 200;  // خطای کامپایل: نمی‌توان int را به byte انتساب داد
+```
+
+این رفتار گاهی مفید است (می‌خواهید wrap-around شود)، گاهی خطرناک (انتظار دارید overflow تشخیص داده شود). در codeی که عددی دقیق می‌خواهید، به جای `+=` از `x = (T) (x + y)` cast صریح استفاده کنید تا intent روشن باشد.
+
+ternary فقط branch انتخاب‌شده را evaluate می‌کند. نوع expression در صورت نیاز **numeric promotion** می‌شود تا common type پیدا شود:
+
+```java
+int a = 1;
+double b = 2.0;
+double c = true ? a : b;     // 1.0 — a به double promotion می‌یابد
+int    d = true ? 1 : 2.0;   // خطای کامپایل: common type double است
+Object e = flag ? "yes" : 42;  // String و Integer، common type Serializable (?)
+```
+
+> **تلهٔ C++:** در C++ ternary می‌تواند lvalue باشد و در سمت چپ assignment بنشیند (`(cond ? a : b) = 5;` معتبر است). در Java ternary **همیشه rvalue** است — نمی‌توان به آن assign کرد. این محدودیت جلوی یک دسته bug را می‌گیرد.
 
 ## 7. if و if/else
 
-`if` یک statement یا block را در صورت true بودن condition انتخاب می‌کند. در زنجیره if/else-if نخستین condition true برنده است.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+`if` یک statement یا block را در صورت true بودن condition انتخاب می‌کند. در زنجیرهٔ `if`/`else if`/`else`، نخستین condition true برنده است و بقیه ارزیابی نمی‌شوند (short-circuit منطقی، نه ارزیابی واقعی predicate). این ترتیب اهمیت دارد: **range تخصصی‌تر را پیش از range عمومی‌تر بنویسید.** compiler هیچ تحلیلی روی overlap منطقی rangeها انجام نمی‌دهد — اگر بنویسید `if (x > 0)` و سپس `if (x > 100)` به ترتیب اشتباه، هر دو می‌توانند اجرا شوند (اگرچه در عمل else-if جلوی آن را می‌گیرد). boundaryها (کوچک‌تر، کوچک‌تر-مساوی) را **همیشه** صریح تست کنید.
 
-- brace را حتی برای یک statement نگه دارید.
-- range تخصصی‌تر را پیش از range عمومی‌تر بنویسید.
-- compiler overlap منطقی rangeها را لزوماً تشخیص نمی‌دهد.
-- boundaryها را جداگانه بررسی کنید.
+```java
+if (score >= 90) grade = 'A';
+else if (score >= 80) grade = 'B';   // اگر 95 باشد، اینجا نمی‌رسد
+else if (score >= 70) grade = 'C';
+else if (score >= 60) grade = 'D';
+else grade = 'F';
+```
+
+**همیشه brace بنویسید** حتی برای یک statement. اگر `if (cond) doSomething();` بنویسید و بعد یک debug `System.out.println` اضافه کنید بدون brace، فقط debug شرطی می‌شود نه `doSomething` — یک bug کلاسیک. IDEها هشدار می‌دهند ولی قانون ساده این است: brace همیشه.
+
+```java
+if (ready) send();           // خطرناک اگر statement دوم اضافه شود
+if (ready) {
+    send();
+}
+```
+
+**empty statement** (`;`) یک statement تهی است و می‌تواند به‌طور ناخواسته بنشیند:
+
+```java
+if (ready);     // empty statement شرطی — بلاک بعدی بدون شرط اجرا می‌شود
+    send();     // ⚠ این همیشه اجرا می‌شود
+```
+
+از الگوی **guard clause** (return زودهنگام) برای کاهش nesting استفاده کنید. اگر شرط نامعتبر است، در اولین خط برگردید:
+
+```java
+// ✗ deep nesting
+String describe(Account a) {
+    if (a != null) {
+        if (a.isActive()) {
+            if (a.hasBalance()) {
+                return a.type() + ": " + a.balance();
+            }
+        }
+    }
+    return "inactive";
+}
+
+// ✓ guards
+String describe(Account a) {
+    if (a == null) return "inactive";
+    if (!a.isActive()) return "inactive";
+    if (!a.hasBalance()) return "inactive";
+    return a.type() + ": " + a.balance();
+}
+```
+
+> **تلهٔ C++:** در C++ if می‌تواند initializer داشته باشد (C++17): `if (auto it = m.find(k); it != m.end())`. در Java 21 این syntax موجود نیست ولی pattern matching for-switch (preview) در آینده نزدیک می‌آید. فعلاً برای محدود کردن scope یک متغیر، یک block صریح بنویسید.
 
 ## 8. switch statement
 
-switch برای انتخاب valueهای گسسته است، نه rangeهای باز. colon form fall-through دارد مگر break، return، throw یا پایان statement کنترل را قطع کند.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+switch برای انتخاب valueهای گسسته است، نه rangeهای باز. **colon form** (`case x:`) **fall-through** دارد مگر اینکه `break`، `return`، `throw` یا پایان statement list کنترل را قطع کند. این رفتار legacy از C++ است و منبع اصلی bug است — اگر `break` را فراموش کنید، execution به case بعدی می‌ریزد. **arrow form** (`case x ->`) این مشکل را ندارد: فقط همان case اجرا می‌شود. پیش‌فرض، همیشه arrow form را انتخاب کنید مگر واقعاً به fall-through نیاز داشته باشید.
 
-- case label باید constant مناسب و یکتا باشد.
-- چند case می‌توانند body مشترک داشته باشند.
-- default مسیر valueهای پوشش‌نداده است.
-- selectorهای مفید شامل char، String و enum هستند.
+case label باید **compile-time constant** و **یکتا** باشد (duplication خطای کامپایل است). selector type می‌تواند `byte`/`short`/`char`/`int` (و boxed)، `String`، enum، یا در نسخه‌های جدیدتر pattern-matching types باشد. `long`، `float`، `double` و `boolean` مجاز نیستند.
+
+```java
+String day = "MON";
+int working = switch (day) {                 // arrow form
+    case "MON", "TUE", "WED", "THU", "FRI" -> 1;
+    case "SAT", "SUN" -> 0;
+};
+```
+
+fall-through **عمدی** می‌تواند مفید باشد وقتی چند case می‌خواهند **بدنهٔ مشترک** داشته باشند. در این صورت معمولاً کامنت می‌گذارند تا intent روشن باشد:
+
+```java
+switch (month) {
+    case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+        days = 31;                          // shared body برای همهٔ این case
+        break;
+    case 4: case 6: case 9: case 11:
+        days = 30;
+        break;
+    case 2:
+        days = leapYear ? 29 : 28;
+        break;
+}
+```
+
+`default` مسیر valueهای پوشش‌نداده را می‌گیرد. اگر نباشد، هیچ اتفاقی نمی‌افتد وقتی هیچ case مطابق نیست — execution بعد از switch ادامه می‌یابد. این رفتار در `switch` statement قانونی است ولی در `switch` expression خطای کامپایل است (exhaustiveness).
 
 | شکل | fall-through | value تولید می‌کند |
 |---|---:|---:|
-| `case x:` statement | ممکن است | خیر |
+| `case x:` statement | ممکن است (با break قطع می‌شود) | خیر |
 | `case x ->` statement | خیر | خیر |
 | switch expression | خیر | بله |
 
+> **تلهٔ C++:** در C++ switch `case` label باید integral constant باشد و `enum class` مجاز نیست مگر با unscoped enum. در Java، `String` و `enum` مستقیماً پشتیبانی می‌شوند — این تفاوت ساختاری، switch را در Java برای command-pattern و dispatch بسیار مفیدتر می‌کند.
 ## 9. switch expression و yield
 
-switch expression value تولید می‌کند و arrow form fall-through ندارد. هر مسیر باید value یا exception بدهد.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+switch expression value تولید می‌کند و arrow form fall-through ندارد. هر مسیر باید value بدهد یا exception پرتاب کند — اگر مسیری value ندهد، **خطای کامپایل** است (exhaustiveness). این یعنی compiler تعداد case labelها و نوع result را بررسی می‌کند و شما را مجبور می‌کند همهٔ stateها را پوشش دهید.
 
-- block arm با `yield` value می‌دهد.
-- yield از method return نمی‌کند.
-- enum کامل می‌تواند بدون default exhaustive باشد.
-- برای String و int default معمولاً لازم است.
+دو شکل arm وجود دارد. **arrow arm** (`case x -> value;`) مستقیماً value می‌دهد و expression است. **block arm** (`case x -> { ...; yield v; }`) یک block دارد که با `yield v;` value را برمی‌گرداند. `yield` فقط در switch expression مجاز است؛ در method، `return` نقش آن را دارد. `yield` نه `break` است نه `return` — بلکه value را به context بیرونی switch برمی‌گرداند بدون اینکه از method خارج شود.
 
+```java
+int days = switch (month) {
+    case 1, 3, 5, 7, 8, 10, 12 -> 31;
+    case 4, 6, 9, 11          -> 30;
+    case 2 -> {
+        int d = leapYear ? 29 : 28;
+        yield d;                              // value از block arm بیرون می‌رود
+    }
+};
+```
+
+**Exhaustiveness** برای enum کامل: اگر همهٔ constantهای enum را case کنید، `default` لازم نیست؛ اگر یکی را از قلم بیندازید، خطای کامپایل می‌گیرید. این برخلاف `if`/`else` است که هیچ compiler-check ندارد. برای `String` و `int` معمولاً `default` لازم است چون مقدار ممکن است هر چیزی باشد.
+
+| selector type | exhaustiveness |
+|---|---|
+| enum کامل | اگر همه constantها case شوند، default لازم نیست |
+| sealed type | اگر همه subtypeها case شوند، default لازم نیست |
+| String / int | معمولاً default لازم است |
+| sealed + record (preview) | exhaustive با pattern matching |
+
+> **تلهٔ C++:** در C++17 `if`/`switch` می‌تواند initializer داشته باشد ولی expression-form وجود ندارد. `switch` در C++ همیشه statement است. expression-form یک قابلیت مخصوص Java 14+ است که نوشتن dispatch تمیز را ممکن می‌کند — مثلاً `String label = switch (state) { ... };` به جای intermediate variable.
 ## 10. for و enhanced-for
 
-for initializer، condition و update را کنار هم قرار می‌دهد. enhanced-for برای پیمایش ساده collection یا array مناسب است.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+for سه قسمت دارد: **initializer** (یک‌بار اجرا می‌شود)، **condition** (پیش از هر iteration چک می‌شود)، **update** (پس از هر iteration اجرا می‌شود). initializer و update می‌توانند خالی باشند (`for (;;)`)، و condition اگر خالی باشد true در نظر گرفته می‌شود (loop بی‌نهایت). initializer می‌تواند چند متغیر با هم تعریف کند (`for (int i=0, j=n; i<j; i++, j--)`) ولی فقط **یک نوع** می‌تواند اعلام شود (همه `int` یا همه `var`).
 
-- continue در for ابتدا update و سپس condition را می‌بیند.
-- `for (;;)` بی‌شرط است و exit path لازم دارد.
-- loop variable enhanced-for copy value/reference است.
-- برای index یا حذف ساختاری شکل دیگری از loop لازم می‌شود.
+```java
+for (int i = 0; i < 10; i++) { /* ... */ }   // ساده
+for (int i = 0, j = 9; i < j; i++, j--) { } // دو متغیر هم‌نوع
+for (;;) { /* break لازم دارد */ }            // بی‌نهایت
+```
 
+`continue` در for ابتدا **update** و سپس **condition** را می‌بیند. این ترتیب مهم است: اگر condition در update بعدی false شود، loop تمام می‌شود؛ اگر update side-effect منفی داشته باشد (مثل `i--`)، iteration بعدی ممکن است infinite شود.
+
+**enhanced-for** (for-each) برای پیمایش collection و array بدون نیاز به index است. متغیر loop **کپی** element فعلی است — تغییر آن، element اصلی را عوض نمی‌کند:
+
+```java
+int[] a = {1, 2, 3};
+for (int x : a) x = 0;
+System.out.println(a[1]);   // 2 — تغییر x آرایه را عوض نکرد
+
+List<String> names = new ArrayList<>(List.of("ali", "reza"));
+for (String s : names) s = s.toUpperCase();   // فقط کپی محلی
+// names هنوز ["ali", "reza"] است
+```
+
+اگر element‌ها reference به object mutable باشند (مثل `List<StringBuilder>`)، تغییر **از طریق متد** object قابل مشاهده است، ولی reassign کردن متغیر loop نه:
+
+```java
+List<StringBuilder> list = new ArrayList<>();
+list.add(new StringBuilder("a"));
+list.add(new StringBuilder("b"));
+for (StringBuilder sb : list) sb.append("!");   // object مشترک تغییر می‌کند
+// list اکنون [a!, b!] دارد — append روی خود object بود
+```
+
+برای **حذف در حین پیمایش**، enhanced-for کار نمی‌کند — `ConcurrentModificationException` می‌دهد. سه گزینهٔ استاندارد:
+
+```java
+// 1. Iterator با remove() explicit
+for (Iterator<String> it = list.iterator(); it.hasNext(); ) {
+    if (it.next().isEmpty()) it.remove();
+}
+
+// 2. removeIf (default در Collection از Java 8)
+list.removeIf(s -> s.isEmpty());
+
+// 3. for-each روی کپی
+for (String s : new ArrayList<>(list)) {
+    if (s.isEmpty()) list.remove(s);
+}
+```
+
+> **تلهٔ C++:** در C++11 range-based for با `auto&&` می‌تواند mutate کند (`for (auto& x : v) x = 0;`)، ولی `auto` (by value) کپی می‌دهد. در Java همیشه کپی است — `for (int x : a)` هیچ راهی برای mutate خانهٔ array از طریق `x` نیست. این محدودیت intentional است: enhanced-for **read-mostly** است.
 ## 11. while، do-while و loop بی‌نهایت
 
-while condition را پیش از body می‌سنجد؛ do-while پس از body می‌سنجد. هر loop باید invariant و پیشرفت قابل بیان داشته باشد.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+`while` condition را **پیش از** body می‌سنجد — اگر false باشد، body اصلاً اجرا نمی‌شود. `do-while` condition را **پس از** body می‌سنجد — body حداقل یک بار اجرا می‌شود حتی اگر condition false باشد. `for (;;)` و `while (true)` هر دو loop بی‌نهایت‌اند و نیاز به `break`، `return` یا exception دارند.
 
-- while می‌تواند صفر بار اجرا شود.
-- do-while body را دست‌کم یک بار اجرا می‌کند.
-- event loop مشروع است اما ownership توقف می‌خواهد.
-- mutation شرط پایان را پنهان نکنید.
+```java
+int n = 0;
+while (n < 3) System.out.println(n++);   // 0, 1, 2
+// do-while حداقل یک بار
+do { System.out.println("once"); } while (false);   // چاپ: once
+// infinite
+for (;;) { if (done) break; }
+```
 
+**do-while** زمانی مفید است که body باید حداقل یک بار اجرا شود (مثل menu prompt، retry loop با حداقل یک تلاش، یا validation که ابتدا می‌پرسد و بعد تکرار می‌کند). `while` برای حالت zero-or-more مناسب‌تر است (مثل polling تا زمانی که resource آماده شود).
+
+**invariant** گزاره‌ای است که در ابتدای هر iteration برقرار است. اگر بتوانید invariant را بنویسید، loop را می‌فهمید. **پیشرفت** شرطی است که تضمین می‌کند loop به سمت termination می‌رود (counter کم/زیاد می‌شود، pointer جلو می‌رود). اگر invariant و progress واضح نیست، loop باگ دارد.
+
+```java
+// ✗ پیشرفت مبهم
+int x = 1;
+while (x != 50) { x = x + ((x % 2 == 0) ? 1 : 2); }
+// این چه می‌کند؟ چه وقت تمام می‌شود؟
+
+// ✓ پیشرفت روشن
+for (int x = 0; x < 50; x++) { /* یک iteration، یک افزایش */ }
+```
+
+**event loop** (مثل server) loop بی‌نهایت مشروع است، ولی ownership توقف روشن می‌خواهد: signal handler، shutdown hook، یا condition بیرونی. mutation شرط پایان را پنهان نکنید — اگر `done = true` در عمق چند method رخ می‌دهد، trace کردن سخت می‌شود.
+
+> **تلهٔ C++:** در C++ `for` initializer می‌تواند declaration قدیمی (`for (int i = 0; ...)`) باشد ولی متغیر بعد از loop در scope نیست. در Java initializer متغیر را در scope block بیرونی for تعریف می‌کند (`for (int i = 0; ...; )` در Java 21، پس از پایان for، `i` در scope نیست). رفتار مشابه است.
 ## 12. labels، scope و definite assignment
 
-Label نام statement است، نه goto عمومی. Scope از declaration آغاز می‌شود و با block تمام می‌شود. definite assignment proof کامپایلر برای read امن local است.
-برای خواندن code، ابتدا type و valueها را جدا کنید؛ سپس مسیر control را روی کاغذ trace کنید. Output تنها تأیید است، نه جایگزین reasoning.
+**label** نام statement است، نه goto عمومی. `break label;` فقط statement labelدار را تمام می‌کند؛ `continue label;` فقط loop labelدار را به iteration بعدی می‌برد. label باید دقیقاً قبل از statement هدف بیاید و بدون `:` نوشته می‌شود (برخلاف C++ که `label:` دارد):
 
-- break label statement نام‌دار را تمام می‌کند.
-- continue label فقط loop نام‌دار را می‌پذیرد.
-- initializer for بعد از loop در scope نیست.
-- local باید در همه مسیرها پیش از read مقدار گرفته باشد.
+```java
+outer: for (int i = 0; i < 3; i++) {
+    inner: for (int j = 0; j < 3; j++) {
+        if (j == 1) continue outer;       // ادامه iteration بعدی outer
+        if (i == 1 && j == 1) break outer; // خروج از outer تماماً
+    }
+}
+```
+
+label نمی‌تواند به هر statement اشاره کند (مثل `if`) و نمی‌تواند به method دیگری بپرد. labelها برای **خروج زودهنگام از nested loop** مفیداند، ولی در بیشتر موارد extraction به method یا استفاده از flag واضح‌تر است.
+
+**scope** قابلیت دیدن identifier را تعیین می‌کند. block scope در `{}` ایجاد می‌شود: متغیر اعلام‌شده در block فقط تا انتهای block قابل دسترسی است. initializer for متغیر را در scope خود for می‌سازد — پس از `for (int i = 0; ...; )`، `i` در scope بیرونی **نیست** (این تفاوت با C++ post-2017 است که initializer for متغیر را در scope block for می‌گذارد، نه بیرونی):
 
 ```text
 {
   for (int index = 0; index < 3; index++) {
-      int inside = index;
+      int inside = index;          // inside فقط در این block
   }
   // index و inside اینجا در scope نیستند
 }
 ```
 
+**definite assignment (DA)** قانونی است که compiler بررسی می‌کند تا مطمئن شود local variable پیش از read مقدار گرفته است. اگر در شاخه‌ای از control مقداردهی نشده باشد، خطای کامپایل است:
+
+```java
+int x;
+if (cond) x = 1;
+System.out.println(x);    // خطای کامپایل: x ممکن است مقداردهی نشده باشد
+
+int y;
+if (cond) y = 1; else y = 2;
+System.out.println(y);    // OK — هر دو شاخه مقداردهی شده
+
+int z;
+if (cond) z = 1;
+else return;
+System.out.println(z);    // OK — اگر به اینجا رسیدیم، z مقدار دارد
+```
+
+قوانین DA در JLS §16 تعریف شده‌اند. اگر `final` باشد، علاوه بر DA باید **exactly-once** باشد (یا در همهٔ شاخه‌های if/else، یا در یک حلقه که invariant دارد).
+
+> **تلهٔ C++:** در C++ DA وجود ندارد — local primitive بدون initializer مقدار indeterminate دارد و read آن رفتار تعریف‌نشده است. در Java، primitive local بدون initializer **خطای کامپایل** می‌دهد. این یک ایمنی بنیادی است: نمی‌توانید متغیر uninitialized را تصادفاً بخوانید. تنها استثنا: field‌های object قبل از سازنده مقدار پیش‌فرض (۰، false، null) دارند (که خودش منبع bug متفاوتی است).
 ## مثال‌های اجرایی و تحلیل
 
 ### مثال 1 — run id=promotion-sum
@@ -659,15 +921,25 @@ class ShiftMask { public static void main(String[] args) { System.out.println(1<
 
 ## مقایسه‌های لازم با C++
 
-### truthiness
+این بخش تفاوت‌های ظریف Java و C++ را در topic‌های درس جمع می‌کند تا هنگام port کردن mindset، دام‌ها قابل پیش‌بینی باشند. الگوی یکنواخت: یک جمله تله، یک نمونهٔ کوتاه در هر زبان، و یادآوری نتیجهٔ عملی.
 
-> **تلهٔ C++:** در C++، `if (count)` تبدیل عدد به bool دارد؛ در Java باید `count != 0` یا predicate domain را بنویسید.
+### ۱. truthiness
 
-### overflow
+> **تلهٔ C++:** در C++، `if (count)` تبدیل عدد به bool دارد؛ در Java باید `count != 0` یا predicate domain بنویسید.
+
+```cpp
+// C++: implicit numeric-to-bool
+if (count) { /* ... */ }     // 0 → false، غیرصفر → true
+```
+
+```java
+// Java: explicit boolean
+if (count != 0) { /* ... */ }   // یا if (count > 0) اگر منظورتان این است
+```
+
+### ۲. overflow
 
 > **تلهٔ C++:** در C++ signed overflow رفتار تعریف‌نشده است؛ Java int/long wrap دو مکمل تعریف‌شده دارد. تعریف‌شده بودن مجوز استفاده برای پول نیست.
-
-### مقایسهٔ رفتار overflow در دو زبان
 
 ```java
 // Java: wrap دو مکمل تعریف‌شده
@@ -684,18 +956,164 @@ int y = x + 1;            // ممکن است -2147483648 باشد، یا هر چ
 
 Java در سطح language مشخص کرده که wrap می‌کند؛ C++ این کار را نکرده است و کامپایلر آزاد است هر رفتاری (از جمله حذف کامل عملیات) انتخاب کند. تعریف‌شده بودن، مجوز استفاده برای پول و capacity نیست.
 
-### remainder
+### ۳. remainder
 
 > **تلهٔ C++:** در Java remainder با truncation toward zero تعریف شده و علامت dividend را دارد. C++98/03 برای حالت منفی history implementation-defined دارد؛ C++ مدرن با Java همسو است.
 
-### unsigned shift
+```java
+// Java
+int r = -7 % 2;     // -1
+int f = Math.floorMod(-7, 2);  // 1 (هم‌علامت divisor)
+```
+
+### ۴. unsigned shift
 
 > **تلهٔ C++:** Java primitive unsigned عمومی مانند C++ ندارد؛ `>>>` ابزار zero-fill right shift است.
 
-### switch
+```cpp
+// C++: `>>` روی unsigned zero-fill است
+uint32_t x = 0x80000000;
+uint32_t y = x >> 1;     // 0x40000000
+```
 
-> **تلهٔ C++:** C++ switch fall-through سنتی دارد؛ arrow switch Java راهی ساختاری برای حذف آن است.
+```java
+// Java: `>>>` برای zero-fill روی هر int
+int x = 0x80000000;       // -2147483648
+int y = x >>> 1;          // 1073741824 (positive)
+int z = x >> 1;           // -1073743648 (sign-extend)
+```
 
+### ۵. switch و expression
+
+> **تلهٔ C++:** C++ switch همیشه statement است و fall-through سنتی دارد؛ arrow switch Java راهی ساختاری برای حذف آن است.
+
+```cpp
+// C++17
+int v = (cond ? a : b);   // ternary expression، value دارد
+// switch در C++ نمی‌تواند expression باشد
+```
+
+```java
+// Java 14+
+int v = switch (x) {                // switch expression
+    case 1 -> 10;
+    case 2 -> 20;
+    default -> 0;
+};
+```
+
+### ۶. short-circuit در مقابل bitwise
+
+> **تلهٔ C++:** در C++ `&&` و `||` short-circuit هستند ولی overload به شکل operator""  برای نوع‌های user-defined مجاز است. در Java، short-circuit فقط روی boolean primitive است.
+
+```cpp
+// C++: می‌توان یک operator&& overload کرد
+struct S { bool operator&&(S) const; };
+S a, b; if (a && b) { /* overload صدا زده می‌شود */ }
+```
+
+```java
+// Java: && فقط روی boolean primitive
+if (a && b) { /* همیشه short-circuit روی primitive */ }
+```
+
+### ۷. if-initializer (C++17)
+
+> **تلهٔ C++:** در C++17 `if` می‌تواند initializer داشته باشد؛ Java این syntax را ندارد.
+
+```cpp
+if (auto it = m.find(k); it != m.end()) { /* use it */ }
+```
+
+```java
+// Java: باید initializer قبل از if بنویسید
+var it = m.find(k);
+if (it != null) { /* use it */ }
+```
+
+### ۸. compound assignment narrowing
+
+> **تلهٔ C++:** در C++ `b += 200;` با `b + 200` در سطح type رفتار یکسان دارد (هر دو نیاز به cast دارند). در Java، compound assignment implicit narrowing دارد و کامپایل می‌شود.
+
+```java
+byte b = 100;
+b += 200;          // کامپایل می‌شود: b = (byte)(100+200) = 44
+// b = b + 200;    // خطای کامپایل: int → byte narrowing implicit نیست
+```
+
+```cpp
+// C++: هر دو نیاز به cast دارند
+uint8_t b = 100;
+b = b + 200;       // ⚠ int promotion قبل از جمع؛ cast لازم است
+b = (uint8_t)(b + 200);
+```
+
+### ۹. for-scope
+
+> **تلهٔ C++:** در C++ قبل از C++98 initializer for متغیر را در scope block for می‌گذاشت (و در C++98+ در scope خود for). در Java initializer for متغیر را در scope for قرار می‌دهد و پس از loop دیده نمی‌شود.
+
+```cpp
+// C++: متغیر i بعد از for در scope نیست (از C++98)
+for (int i = 0; i < 3; i++) { /* i در اینجا */ }
+// i اینجا در scope نیست
+```
+
+```java
+// Java: همان رفتار — i بعد از for دیده نمی‌شود
+for (int i = 0; i < 3; i++) { /* i در اینجا */ }
+// i اینجا در scope نیست
+```
+
+### ۱۰. label بدون `:` و goto
+
+> **تلهٔ C++:** در C++ label با `:` تمام می‌شود (`label:`) و `goto` می‌تواند به آن بپرد. در Java labelها فقط برای `break`/`continue` به کار می‌روند و `goto` وجود ندارد.
+
+```cpp
+// C++: goto آزاد است
+goto end;
+end: /* ... */
+```
+
+```java
+// Java: label فقط برای break/continue
+outer: for (...) { break outer; }
+```
+
+### ۱۱. ternary به عنوان lvalue
+
+> **تلهٔ C++:** در C++ ternary می‌تواند lvalue باشد و در سمت چپ assignment بنشیند. در Java ternary همیشه rvalue است.
+
+```cpp
+// C++
+(cond ? a : b) = 5;     // legal — یکی از a/b مقداردهی می‌شود
+```
+
+```java
+// Java: خطای کامپایل — ternary rvalue است
+// (cond ? a : b) = 5;   // ✗
+```
+
+### ۱۲. labeled continue
+
+> **تلهٔ C++:** در C++ `continue` نمی‌تواند label بپذیرد (فقط break). در Java، `continue label` به loop labelدار می‌پرد.
+
+```cpp
+// C++: continue فقط loop جاری را ادامه می‌دهد
+for (...) {
+    for (...) {
+        continue;    // فقط loop داخلی
+    }
+}
+```
+
+```java
+// Java: continue label به outer می‌رود
+outer: for (...) {
+    for (...) {
+        continue outer;    // iteration بعدی outer
+    }
+}
+```
 ## واژه‌نامه
 
 - **binary numeric promotion:** promotion operandهای عددی برای operation دودویی.
@@ -741,6 +1159,29 @@ Java در سطح language مشخص کرده که wrap می‌کند؛ C++ این
 **برداشت نادرست:** «`==` روی Integer همیشه مقدار را مقایسه می‌کند.» خیر؛ `==` روی reference type هویت را مقایسه می‌کند، نه مقدار. عددهای کوچک به‌صورت cached shared هستند و این رفتار را به تصادف شبیه می‌کنند.
 **اصلاح:** برای مقایسهٔ مقدار boxed، از `equals()` استفاده کنید: `a.equals(b)` یا `Integer.compare(a,b) == 0`.
 
+**برداشت نادرست:** «`Integer a = 100; Integer b = 100; a == b` همیشه true است.» خیر؛ برای `Integer` (و بقیهٔ wrapperها)، مقادیر در بازهٔ `128-` تا `127` cache می‌شوند ولی خارج از آن شیء جدید ساخته می‌شود. این یک implementation detail است، نه language guarantee.
+**اصلاح:** برای مقایسهٔ مقدار boxed، از `equals()` استفاده کنید یا auto-unbox را با `int` ساده انجام دهید.
+
+**برداشت نادرست:** «`a == b` روی reference همیشه content را مقایسه می‌کند اگر `equals` override شده باشد.» خیر؛ `==` هیچ‌گاه متد صدا نمی‌زند. فقط `==` هویت (آدرس object) را مقایسه می‌کند. `equals` متد است و ممکن است content را مقایسه کند ولی ربطی به `==` ندارد.
+**اصلاح:** برای مقایسهٔ محتوایی، `equals` (یا `Objects.equals` که null-safe است). برای مقایسهٔ هویتی، `==`.
+
+**برداشت نادرست:** «`Math.floorMod(a, b)` همان `a % b` است.» خیر؛ برای علامت‌های مختلف نتیجه فرق می‌کند. `7 % -2 = 1` ولی `Math.floorMod(7, -2) = -1`. `Math.floorMod` هم‌علامت divisor است.
+**اصلاح:** برای cyclic index که می‌خواهید در `[0, n)` بمانید، `Math.floorMod(i, n)` بنویسید.
+
+**برداشت نادرست:** «`do-while` ممکن است صفر بار اجرا شود اگر شرط false باشد.» خیر؛ body دست‌کم یک بار اجرا می‌شود و condition پس از آن سنجیده می‌شود. برای zero-or-more execution باید `while` باشد.
+**اصلاح:** از `while (cond) { ... }` برای zero-or-more، از `do { ... } while (cond);` برای at-least-once.
+
+**برداشت نادرست:** «`NaN == NaN` برابر true است.» خیر؛ هیچ مقداری (حتی خود `NaN`) با `==` برابر `NaN` نیست. این از IEEE 754 آمده و رفتار تعریف‌شده است.
+**اصلاح:** از `Float.isNaN(x)` یا `Double.isNaN(x)` استفاده کنید.
+
+**برداشت نادرست:** «اگر `x` در همهٔ شاخه‌های `if-else` مقداردهی شود، قطعاً قبل از read مقدار دارد.» تقریباً درست، ولی اگر در یک شاخه `return`/`throw`/`break`/`continue` باشد، compiler شاخه‌های پس از آن را در نظر نمی‌گیرد. شرط definite assignment روی مسیرهای واقعی اجرا حساب می‌شود.
+**اصلاح:** اگر شک دارید، مقدار default در ابتدا بدهید (`int x = 0;`) یا invariant را در کامنت روشن کنید.
+
+**برداشت نادرست:** «در switch expression، `default` اختیاری است.» بستگی دارد: برای enum کامل و sealed type اگر همهٔ constantها/subtypeها case شده باشند، `default` اختیاری است. برای `int`/`String` تقریباً همیشه لازم است چون مقدار ممکن است هر چیزی باشد.
+**اصلاح:** هر وقت exhaustiveness تضمین نمی‌شود، `default -> ...` بنویسید تا compiler راضی شود.
+
+**برداشت نادرست:** «`continue` در for ابتدا condition را چک می‌کند و سپس update می‌کند.» خیر؛ `continue` در for ابتدا **update** و سپس **condition** را اجرا می‌کند. اگر update side-effect منفی داشته باشد، iteration بعدی ممکن است infinite شود یا skip شود.
+**اصلاح:** invariant و progress را قبل از نوشتن `continue` روشن کنید. اگر update پیچیده است، `while` با explicit update بنویسید تا ترتیب روشن باشد.
 ## کارت‌های مرور تحلیلی
 
 ### کارت 1 — نوع literal و promotion
