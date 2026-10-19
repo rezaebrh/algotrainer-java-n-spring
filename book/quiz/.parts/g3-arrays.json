@@ -1,0 +1,626 @@
+{
+  "questions": [
+    {
+      "id": "g3-arrays-001",
+      "type": "mcq",
+      "prompt": "کدام شکل اعلام آرایهٔ int در Java ترجیح داده می‌شود؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "شکل `int[] a` استاندارد مدرن است و نوع آرایه به‌وضوح به متغیر چسبیده است؛ شکل `int a[]` صرفاً برای سازگاری با کدهای قدیمی C باقی مانده است.",
+      "concepts": [
+        "arrays",
+        "declaration"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`int[] a;`",
+        "B": "`int a[];`",
+        "C": "`int[ a ];`",
+        "D": "`array int a;`"
+      }
+    },
+    {
+      "id": "g3-arrays-002",
+      "type": "tf",
+      "prompt": "شکل `int a[]` در Java همان نوع آرایه را می‌سازد و تنها سبک نوشتار متفاوتی دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "هر دو شکل اعلام، متغیر a را از نوع `int[]` می‌سازند و از نظر نوع‌شناسی هیچ تفاوتی ندارند.",
+      "concepts": [
+        "arrays",
+        "declaration"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-arrays-003",
+      "type": "mcq",
+      "prompt": "پس از `int[] a = new int[5];` مقدار اولیهٔ `a[2]` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "آرایهٔ اولیهٔ int با صفر پر می‌شود؛ این مقدار پیش‌فرض برای همهٔ نوع‌های ابتدایی عددی در آرایه یکسان است.",
+      "concepts": [
+        "arrays",
+        "default-values"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "arrays",
+        "int"
+      ],
+      "options": {
+        "A": "خطای کامپایل",
+        "B": "0",
+        "C": "5",
+        "D": "null"
+      }
+    },
+    {
+      "id": "g3-arrays-004",
+      "type": "mcq",
+      "prompt": "پس از `String[] s = new String[3];` مقدار اولیهٔ `s[0]` چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "آرایهٔ نوع مرجع با null مقداردهی اولیه می‌شود تا نشان دهد هنوز شیئی به آن اندیس اشاره نمی‌کند.",
+      "concepts": [
+        "arrays",
+        "default-values",
+        "null"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays",
+        "String"
+      ],
+      "options": {
+        "A": "\"\"",
+        "B": "0",
+        "C": "undefined",
+        "D": "null"
+      }
+    },
+    {
+      "id": "g3-arrays-005",
+      "type": "mcq",
+      "prompt": "کدام قطعه، آرایه‌ای initializer‌دار می‌سازد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "Initializer literal با `{}` در همان اعلام، آرایه را با مقادیر داده‌شده پر می‌کند؛ new int[3] آرایهٔ خالی می‌سازد.",
+      "concepts": [
+        "arrays",
+        "initializer"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`int[] a = new int[3];`",
+        "B": "`int[] a = new int[]{ 0, 0, 0 };`",
+        "C": "`int[] a = { 1, 2, 3 };`",
+        "D": "`int a = { 1, 2, 3 };`"
+      }
+    },
+    {
+      "id": "g3-arrays-006",
+      "type": "tf",
+      "prompt": "Initializer کوتاه `{1, 2, 3}` فقط در همان خط اعلام متغیر مجاز است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "شکل کوتاه initializer تنها در اعلام متغیر مجاز است؛ برای تخصیص بعدی باید از `new int[]{...}` استفاده کرد.",
+      "concepts": [
+        "arrays",
+        "initializer"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-arrays-007",
+      "type": "mcq",
+      "prompt": "تفاوت `new int[]{1, 2, 3}` با `{1, 2, 3}` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "شکل `new int[]{...}` آرایهٔ بی‌نام می‌سازد و در هر جایی، از جمله آرگومان متد یا تخصیص بعدی، قابل استفاده است.",
+      "concepts": [
+        "arrays",
+        "anonymous-array"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`new int[]{...}` آرایهٔ بی‌نام می‌سازد و در فراخوانی متد هم مجاز است",
+        "B": "`{...}` آرایه‌ای با نوع متفاوت می‌سازد",
+        "C": "`new int[]{...}` فقط در حلقه مجاز است",
+        "D": "`{...}` نوع long می‌سازد"
+      }
+    },
+    {
+      "id": "g3-arrays-008",
+      "type": "mcq",
+      "prompt": "کدام دربارهٔ فیلد `length` آرایه درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "`length` فیلد final عمومی آرایه است و بدون پرانتز خوانده می‌شود؛ این با `String.length()` و `List.size()` متفاوت است.",
+      "concepts": [
+        "arrays",
+        "length"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`arr.length()` متد است",
+        "B": "`arr.length` فیلد است و بدون پرانتز به‌کار می‌رود",
+        "C": "`arr.length` متد instance است",
+        "D": "`arr.length` فقط در حلقه قابل دسترسی است"
+      }
+    },
+    {
+      "id": "g3-arrays-009",
+      "type": "mcq",
+      "prompt": "کدام دربارهٔ `arr.length`، `s.length()` و `list.size()` درست است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "آرایه فیلد دارد، String متد length() دارد و List متد size() دارد؛ این سه شکل یک کار را با سه دستور متفاوت انجام می‌دهند.",
+      "concepts": [
+        "arrays",
+        "String",
+        "List"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays",
+        "String"
+      ],
+      "options": {
+        "A": "هر سه فیلد هستند",
+        "B": "هر سه متد هستند",
+        "C": "فقط String فیلد دارد",
+        "D": "آرایه فیلد، String متد، List متد"
+      }
+    },
+    {
+      "id": "g3-arrays-010",
+      "type": "mcq",
+      "prompt": "کدام دسترسی به اندیس، `ArrayIndexOutOfBoundsException` می‌دهد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "اندیس منفی مجاز نیست و حتی قبل از مقایسه با length، استثنا پرتاب می‌شود.",
+      "concepts": [
+        "arrays",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`int[] a = new int[3]; a[-1];`",
+        "B": "`int[] a = new int[3]; a[0];`",
+        "C": "`int[] a = new int[3]; a[2];`",
+        "D": "`int[] a = new int[3]; a[0] = 1;`"
+      }
+    },
+    {
+      "id": "g3-arrays-011",
+      "type": "tf",
+      "prompt": "`arr[arr.length]` در زمان اجرا استثنا پرتاب می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "اندیس‌های مجاز 0 تا length-1 هستند و length خودش خارج از بازه است؛ خطای off-by-one رایج دانستن length به‌جای length-1 است.",
+      "concepts": [
+        "arrays",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-arrays-012",
+      "type": "mcq",
+      "prompt": "در حلقهٔ `for (int i = 0; i <= a.length; i++)` خطای رایج چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "شرط `<=` به جای `<` یک اندیس بیش از حد می‌دهد و در تکرار آخر `a[a.length]` خطای out of bounds می‌دهد.",
+      "concepts": [
+        "arrays",
+        "loops"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops",
+        "arrays"
+      ],
+      "options": {
+        "A": "حلقه بی‌نهایت می‌شود",
+        "B": "off-by-one و استثنا در تکرار آخر",
+        "C": "حلقه زودتر از زمان لازم پایان می‌یابد",
+        "D": "هیچ خطایی رخ نمی‌دهد"
+      }
+    },
+    {
+      "id": "g3-arrays-013",
+      "type": "mcq",
+      "prompt": "کدام قطعه `NullPointerException` می‌دهد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "دسترسی به اندیس روی مرجع null، بدون بررسی null بودن، NPE می‌دهد.",
+      "concepts": [
+        "arrays",
+        "null",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays",
+        "null"
+      ],
+      "options": {
+        "A": "`int[] a = new int[3]; a[0];`",
+        "B": "`int[] a = null; int n = a == null ? 0 : a.length;`",
+        "C": "`int[] a = null; int n = a.length;`",
+        "D": "`int[] a = {}; a.length;`"
+      }
+    },
+    {
+      "id": "g3-arrays-014",
+      "type": "tf",
+      "prompt": "دسترسی به اندیس آرایهٔ null در Java کامپایل می‌شود ولی در اجرا NPE می‌دهد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "کامپایلر نوع ایستا را بررسی می‌کند و null یک مقدار معتبر برای مرجع است؛ تشخیص null بودن در زمان اجرا رخ می‌دهد.",
+      "concepts": [
+        "arrays",
+        "null",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "null"
+      ]
+    },
+    {
+      "id": "g3-arrays-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ حلقهٔ enhanced-for روی آرایه درست‌اند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "متغیر حلقه فقط خواندنیِ مقدار است و برای تغییر خانه‌ها باید از حلقه با اندیس استفاده کرد؛ اندیس در enhanced-for در دسترس نیست.",
+      "concepts": [
+        "arrays",
+        "enhanced-for"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops",
+        "arrays"
+      ],
+      "options": {
+        "A": "نمی‌توان با آن مقدار خانه‌ای از آرایهٔ ابتدایی را عوض کرد",
+        "B": "می‌توان خانه‌های آرایه را با آن mutate کرد",
+        "C": "اندیس در enhanced-for در دسترس نیست",
+        "D": "اندیس در enhanced-for با i در دسترس است"
+      }
+    },
+    {
+      "id": "g3-arrays-016",
+      "type": "blank",
+      "prompt": "حلقهٔ پیمایش آرایه بدون اندیس در Java، ____-for نامیده می‌شود.",
+      "answers": [
+        "enhanced",
+        "for-each"
+      ],
+      "explanation": "نام رسمی Java، enhanced-for است ولی در میان برنامه‌نویسان به for-each هم شناخته می‌شود.",
+      "concepts": [
+        "loops",
+        "enhanced-for"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g3-arrays-017",
+      "type": "mcq",
+      "prompt": "در `for (int x : arr) { x = 0; }` آرایهٔ arr چه تغییری می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "x کپی مقدار هر خانه است و تخصیص به x فقط متغیر محلی را عوض می‌کند؛ برای صفر کردن خانه‌ها باید از حلقه با اندیس استفاده کرد.",
+      "concepts": [
+        "arrays",
+        "enhanced-for"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops",
+        "arrays"
+      ],
+      "options": {
+        "A": "هیچ، چون x فقط کپی مقدار است",
+        "B": "همهٔ خانه‌ها صفر می‌شوند",
+        "C": "فقط خانهٔ اول صفر می‌شود",
+        "D": "خطای کامپایل می‌دهد"
+      }
+    },
+    {
+      "id": "g3-arrays-018",
+      "type": "mcq",
+      "prompt": "آرایهٔ دو‌بعدی `int[][] m = new int[3][4];` در حافظه چگونه است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "آرایهٔ دو‌بعدی در Java آرایه‌ای از آرایه‌هاست؛ m سه مرجع به سه آرایهٔ چهارتایی نگه می‌دارد و امکان jagged بودن وجود دارد.",
+      "concepts": [
+        "arrays",
+        "2d-arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "یک بلوی پیوسته ۱۲ خانه‌ای است",
+        "B": "ماتریس مربعی است",
+        "C": "آرایه‌ای از آرایه‌هاست و می‌تواند jagged باشد",
+        "D": "همیشه دو ردیف دارد"
+      }
+    },
+    {
+      "id": "g3-arrays-019",
+      "type": "tf",
+      "prompt": "در Java می‌توان ردیف‌های آرایهٔ دو‌بعدی با طول‌های متفاوت ساخت.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "چون هر ردیف آرایه‌ای مستقل است، می‌توان برای هر ردیف طول متفاوتی ساخت؛ به این ساختار jagged array می‌گویند.",
+      "concepts": [
+        "arrays",
+        "jagged-arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-arrays-020",
+      "type": "mcq",
+      "prompt": "`Arrays.sort(int[] a)` برای آرایهٔ int از چه الگوریتمی استفاده می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "آرایهٔ ابتدایی با Dual-Pivot Quicksort مرتب می‌شود که در JDK 7 به بعد سریع‌تر از الگوریتم‌های تک‌محوری است.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "Merge Sort",
+        "B": "Dual-Pivot Quicksort",
+        "C": "Bubble Sort",
+        "D": "Linear Search"
+      }
+    },
+    {
+      "id": "g3-arrays-021",
+      "type": "mcq",
+      "prompt": "خروجی `Arrays.toString(new int[]{1, 2, 3})` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "toString آرایه‌های ابتدایی نمایش براکتی با مقادیر comma-separated می‌سازد؛ برای چاپ مفید ولی برای nested ناکافی است.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`[1, 2, 3]`",
+        "B": "`{1, 2, 3}`",
+        "C": "`(1, 2, 3)`",
+        "D": "`1 2 3`"
+      }
+    },
+    {
+      "id": "g3-arrays-022",
+      "type": "mcq",
+      "prompt": "برای چاپ آرایهٔ دو‌بعدی `int[][] m` به شکل ماتریسی، کدام مناسب است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "deepToString در آرایه‌های تو در تو بازگشتی عمل می‌کند و عناصر سطوح داخلی را هم به شکل مناسب چاپ می‌کند.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`Arrays.toString(m)`",
+        "B": "`m.toString()`",
+        "C": "`Arrays.deepToString(m)`",
+        "D": "`Arrays.hashCode(m)`"
+      }
+    },
+    {
+      "id": "g3-arrays-023",
+      "type": "mcq",
+      "prompt": "تفاوت `==` با `Arrays.equals(a, b)` برای آرایه چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "`==` هویت مرجع را مقایسه می‌کند و برای دو آرایهٔ محتوا یکسان پاسخ false می‌دهد؛ `Arrays.equals` محتوای متناظر را مقایسه می‌کند.",
+      "concepts": [
+        "arrays",
+        "equality"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`==` محتوا را مقایسه می‌کند و Arrays.equals هویت",
+        "B": "`==` هویت مرجع را مقایسه می‌کند و Arrays.equals محتوا را",
+        "C": "`==` و Arrays.equals همواره نتیجهٔ یکسان می‌دهند",
+        "D": "`Arrays.equals` فقط برای آرایهٔ int است"
+      }
+    },
+    {
+      "id": "g3-arrays-024",
+      "type": "mcq",
+      "prompt": "نتیجهٔ `Arrays.copyOf(arr, 3)` وقتی arr پنج‌عضوی است چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "copyOf با length کمتر، آرایه را truncate می‌کند و آرایهٔ تازه‌ای با سه عنصر اول برمی‌گرداند.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "آرایهٔ سه‌عضوی با سه عنصر اول",
+        "B": "آرایهٔ پنج‌عضوی بدون تغییر",
+        "C": "آرایهٔ خالی",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g3-arrays-025",
+      "type": "mcq",
+      "prompt": "`Arrays.copyOfRange(arr, 1, 4)` کدام بازه را کپی می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "copyOfRange شروع را شامل و پایان را مستثنی می‌کند، درست مانند substring؛ پس اندیس‌های 1، 2 و 3 کپی می‌شوند.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "اندیس 1 تا 4 شامل هر دو",
+        "B": "فقط اندیس 1",
+        "C": "اندیس‌های 1، 2 و 3",
+        "D": "همهٔ آرایه"
+      }
+    },
+    {
+      "id": "g3-arrays-026",
+      "type": "mcq",
+      "prompt": "خروجی `Arrays.fill(a, 7)` وقتی a آرایه‌ای پنج‌عضوی int است چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "fill همهٔ خانه‌های آرایه را با مقدار داده‌شده بازنویسی می‌کند؛ این عمل inplace است و آرایهٔ تازه نمی‌سازد.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "آرایهٔ تازه‌ای پر از 7 برمی‌گرداند",
+        "B": "همهٔ خانه‌های a به 7 تغییر می‌کنند",
+        "C": "فقط اولین خانه 7 می‌شود",
+        "D": "خطای زمان اجرا"
+      }
+    },
+    {
+      "id": "g3-arrays-027",
+      "type": "mcq",
+      "prompt": "`Arrays.setAll(a, i -> i * i)` چه می‌کند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "setAll برای هر اندیس i مقدار را از IntFunction می‌گیرد و در خانه می‌نویسد؛ اینجا مربع اندیس در هر خانه قرار می‌گیرد.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "arrays",
+        "lambda"
+      ],
+      "options": {
+        "A": "همهٔ خانه‌ها را 0 می‌کند",
+        "B": "آرایه را با اعداد زوج پر می‌کند",
+        "C": "اندیس‌ها را در آرایه جست‌وجو می‌کند",
+        "D": "خانهٔ i را i*i می‌کند"
+      }
+    },
+    {
+      "id": "g3-arrays-028",
+      "type": "mcq",
+      "prompt": "کدام دربارهٔ `Arrays.parallelSort` درست است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "parallelSort در JDK 8 به بعد با Fork/Join چند هسته‌ای مرتب می‌کند و برای آرایه‌های بزرگ سریع‌تر است؛ برای آرایهٔ کوچک، سربار thread بالاست و sort معمولی بهتر است.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "مرتب‌سازی موازی برای آرایه‌های بزرگ فراهم می‌کند",
+        "B": "همیشه سریع‌تر از sort معمولی است",
+        "C": "فقط برای آرایهٔ String است",
+        "D": "آرایه را به ArrayList تبدیل می‌کند"
+      }
+    }
+  ]
+}

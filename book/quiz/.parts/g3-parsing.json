@@ -1,0 +1,415 @@
+{
+  "questions": [
+    {
+      "id": "g3-parsing-001",
+      "type": "mcq",
+      "prompt": "خروجی `Integer.parseInt(\"  42 \")` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "parseInt فاصله‌های خالی ابتدا و انتهای رشته را نادیده می‌گیرد و مقدار 42 به‌صورت int برمی‌گرداند.",
+      "concepts": [
+        "Integer",
+        "parseInt",
+        "whitespace"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "NumberFormatException پرتاب می‌کند",
+        "B": "42 به‌صورت int",
+        "C": "\"  42 \" به‌صورت String",
+        "D": "0 به‌صورت int"
+      }
+    },
+    {
+      "id": "g3-parsing-002",
+      "type": "mcq",
+      "prompt": "کدام فراخوانی در زمان اجرا NumberFormatException پرتاب می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "وجود نقطهٔ اعشار در رشته باعث می‌شود parseInt قادر به تفسیر نباشد و NFE پرتاب شود؛ برای اعداد اعشاری باید از Double.parseDouble استفاده کرد.",
+      "concepts": [
+        "NumberFormatException",
+        "Integer",
+        "parseInt"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "`Integer.parseInt(\"42\")`",
+        "B": "`Integer.parseInt(\"  42 \")`",
+        "C": "`Integer.parseInt(\"3.14\")`",
+        "D": "`Integer.parseInt(\"+42\")`"
+      }
+    },
+    {
+      "id": "g3-parsing-003",
+      "type": "tf",
+      "prompt": "`Integer.parseInt(\"+42\")` بدون خطا عدد 42 برمی‌گرداند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "parseInt علامت مثبت پیشوندی را مجاز می‌داند و مقدار 42 تولید می‌کند؛ اما علامت منفی فقط به‌صورت `-` در ابتدا پذیرفته می‌شود.",
+      "concepts": [
+        "Integer",
+        "parseInt",
+        "sign"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Integer"
+      ]
+    },
+    {
+      "id": "g3-parsing-004",
+      "type": "mcq",
+      "prompt": "خروجی `Integer.valueOf(\"127\") == Integer.valueOf(\"127\")` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "هر دو مقدار در بازهٔ کش Integer (-128 تا 127) قرار می‌گیرند و همان نمونهٔ کش‌شده برگشت داده می‌شود؛ بنابراین == برابر true می‌شود.",
+      "concepts": [
+        "Integer",
+        "valueOf",
+        "autoboxing-cache"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "false",
+        "B": "true",
+        "C": "NumberFormatException",
+        "D": "وابسته به نسخهٔ JDK"
+      }
+    },
+    {
+      "id": "g3-parsing-005",
+      "type": "mcq",
+      "prompt": "چرا مقایسهٔ `==` روی دو شیٔ Integer بیرون از بازهٔ -128 تا 127 خطرناک است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "مقادیر بیرون از کش، هر بار با new ساخته می‌شوند و == هویت شی را می‌سنجد نه مقدار را؛ برای مقایسهٔ محتوایی باید equals به‌کار رود.",
+      "concepts": [
+        "Integer",
+        "valueOf",
+        "autoboxing-cache"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "کامپایلر اجازه نمی‌دهد",
+        "B": "مقدار همیشه برابر است پس == همیشه true است",
+        "C": "Integer immutable نیست",
+        "D": "ممکن است دو شیٔ متفاوت با مقدار یکسان ساخته شوند و == آن‌ها را متمایز بگیرد"
+      }
+    },
+    {
+      "id": "g3-parsing-006",
+      "type": "mcq",
+      "prompt": "خروجی `Integer.parseInt(null)` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "پیش از هر پردازشی، فراخوانی متد روی null باعث NullPointerException می‌شود و parseInt فرصت پرتاب NFE را پیدا نمی‌کند.",
+      "concepts": [
+        "Integer",
+        "parseInt",
+        "NullPointerException"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "NullPointerException پرتاب می‌کند",
+        "B": "NumberFormatException پرتاب می‌کند",
+        "C": "0 برمی‌گرداند",
+        "D": "کامپایل نمی‌شود"
+      }
+    },
+    {
+      "id": "g3-parsing-007",
+      "type": "mcq",
+      "prompt": "کدام گزینه رشتهٔ `\"0x1F\"` را به مقدار 31 تبدیل می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "parseLong پیشوند `0x` را به‌عنوان قالب هگز نمی‌شناسد؛ باید پیشوند را حذف و مبنای 16 را به‌عنوان آرگومان دوم صریحاً اعلام کرد.",
+      "concepts": [
+        "Long",
+        "parseLong",
+        "radix"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Long"
+      ],
+      "options": {
+        "A": "`Long.parseLong(\"0x1F\")`",
+        "B": "`Long.parseLong(\"1F\", 16)`",
+        "C": "`Long.parseLong(\"0x1F\", 16)`",
+        "D": "`Long.valueOf(\"0x1F\").longValue()`"
+      }
+    },
+    {
+      "id": "g3-parsing-008",
+      "type": "mcq",
+      "prompt": "مقدار `Integer.parseUnsignedInt(\"-1\")` چه رفتاری دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "parseUnsignedInt تنها مقادیر مثبت و بدون علامت را می‌پذیرد؛ ورودی منفی در بازهٔ unsigned جای نمی‌گیرد و NFE پرتاب می‌شود.",
+      "concepts": [
+        "Integer",
+        "parseUnsignedInt",
+        "NumberFormatException"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "NumberFormatException پرتاب می‌کند",
+        "B": "1- برمی‌گرداند",
+        "C": "4294967295 برمی‌گرداند",
+        "D": "Integer.MAX_VALUE برمی‌گرداند"
+      }
+    },
+    {
+      "id": "g3-parsing-009",
+      "type": "tf",
+      "prompt": "`Boolean.parseBoolean(\"TRUE\")` مقدار true برمی‌گرداند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "parseBoolean تنها رشتهٔ \"true\" را (به‌صورت case-insensitive) به‌عنوان true می‌شناسد و برای هر مقدار دیگری false برمی‌گرداند، بدون پرتاب استثنا.",
+      "concepts": [
+        "Boolean",
+        "parseBoolean"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Boolean"
+      ]
+    },
+    {
+      "id": "g3-parsing-010",
+      "type": "mcq",
+      "prompt": "خروجی `Boolean.parseBoolean(\"yes\")` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "parseBoolean فقط رشتهٔ \"true\" (با هر ترکیب بزرگی/کوچکی حروف) را به true تبدیل می‌کند؛ هر مقدار دیگر، حتی \"yes\"، false می‌شود و هیچ استثنایی پرتاب نمی‌گردد.",
+      "concepts": [
+        "Boolean",
+        "parseBoolean"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Boolean"
+      ],
+      "options": {
+        "A": "true",
+        "B": "NumberFormatException پرتاب می‌کند",
+        "C": "false",
+        "D": "IllegalArgumentException پرتاب می‌کند"
+      }
+    },
+    {
+      "id": "g3-parsing-011",
+      "type": "mcq",
+      "prompt": "خروجی `Double.parseDouble(\"NaN\")` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "متد parseDouble مقادیر ویژهٔ \"NaN\"، \"Infinity\" و \"-Infinity\" را بدون خطا می‌پذیرد و معادل double آن‌ها را برمی‌گرداند.",
+      "concepts": [
+        "Double",
+        "parseDouble",
+        "NaN"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Double"
+      ],
+      "options": {
+        "A": "0.0",
+        "B": "Double.NaN",
+        "C": "NumberFormatException پرتاب می‌کند",
+        "D": "1.0"
+      }
+    },
+    {
+      "id": "g3-parsing-012",
+      "type": "mcq",
+      "prompt": "کدام فراخوانی باعث NumberFormatException می‌شود؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "parseDouble برای رشتهٔ خالی نمی‌تواند عددی بسازد و NFE پرتاب می‌کند؛ مقادیر \"3.14\"، \"NaN\" و \"Infinity\" همگی معتبرند.",
+      "concepts": [
+        "Double",
+        "parseDouble",
+        "NumberFormatException"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Double"
+      ],
+      "options": {
+        "A": "`Double.parseDouble(\"3.14\")`",
+        "B": "`Double.parseDouble(\"NaN\")`",
+        "C": "`Double.parseDouble(\"Infinity\")`",
+        "D": "`Double.parseDouble(\"\")`"
+      }
+    },
+    {
+      "id": "g3-parsing-013",
+      "type": "mcq",
+      "prompt": "خروجی `Integer.toString(255, 16)` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "toString با مبنای 16 عدد 255 را در قالب هگزادسیمال به‌صورت \"ff\" چاپ می‌کند؛ این روش ساده‌ترین راه تولید نمایش هگز است.",
+      "concepts": [
+        "Integer",
+        "toString",
+        "radix"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "\"ff\"",
+        "B": "\"255\"",
+        "C": "\"0xff\"",
+        "D": "\"FF\""
+      }
+    },
+    {
+      "id": "g3-parsing-014",
+      "type": "mcq",
+      "prompt": "مقدار `Integer.sum(2_000_000_000, 2_000_000_000)` چه رفتاری دارد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "sum تنها جمع سادهٔ int را انجام می‌دهد و در سرریز، wrap-around می‌کند؛ برخلاف addExact هیچ استثنایی پرتاب نمی‌شود و نتیجه منفی می‌گردد.",
+      "concepts": [
+        "Integer",
+        "sum",
+        "overflow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "ArithmeticException پرتاب می‌کند",
+        "B": "4000000000 برمی‌گرداند",
+        "C": "به‌صورت wrap-around مقدار منفی برمی‌گرداند",
+        "D": "long برمی‌گرداند"
+      }
+    },
+    {
+      "id": "g3-parsing-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ `Integer.parseInt` درست‌اند؟",
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "parseInt مقدار int primitive برمی‌گرداند (نه Integer) و فاصله‌های ابتدا و انتهای رشته را نادیده می‌گیرد؛ اما در سرریز، wrap نمی‌کند بلکه NFE پرتاب می‌کند.",
+      "concepts": [
+        "Integer",
+        "parseInt"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "نوع بازگشتی int primitive است",
+        "B": "فاصله‌های خالی ابتدا و انتهای رشته نادیده گرفته می‌شوند",
+        "C": "در سرریز، wrap-around می‌کند",
+        "D": "نوع بازگشتی Integer است"
+      }
+    },
+    {
+      "id": "g3-parsing-016",
+      "type": "blank",
+      "prompt": "متد `Byte.parseByte(\"127\")` عدد صحیح ____ بازمی‌گرداند.",
+      "answers": [
+        "127"
+      ],
+      "explanation": "Byte.parseByte همان قالب parseInt را روی بازهٔ -128 تا 127 اعمال می‌کند و در صورت خروج از بازه NFE پرتاب می‌شود.",
+      "concepts": [
+        "Byte",
+        "parseByte"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Byte"
+      ]
+    },
+    {
+      "id": "g3-parsing-017",
+      "type": "mcq",
+      "prompt": "خروجی `Short.parseShort(\"40000\")` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "بازهٔ Short تنها تا 32767 می‌رسد و مقدار 40000 خارج از آن است؛ در نتیجه parseShort با NumberFormatException متوقف می‌شود.",
+      "concepts": [
+        "Short",
+        "parseShort",
+        "NumberFormatException"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Short"
+      ],
+      "options": {
+        "A": "40000 به‌صورت short",
+        "B": "NumberFormatException پرتاب می‌کند",
+        "C": "کامپایل نمی‌شود",
+        "D": "مقدار wrap-around می‌شود"
+      }
+    },
+    {
+      "id": "g3-parsing-018",
+      "type": "mcq",
+      "prompt": "برای تبدیل رشتهٔ `\"2.5e3\"` به عدد اعشاری کدام فراخوانی مناسب است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "parseFloat همانند parseDouble از نماد علمی پشتیبانی می‌کند و مقدار 2500.0 برمی‌گرداند؛ parseInt در این مورد NFE پرتاب می‌کند.",
+      "concepts": [
+        "Float",
+        "parseFloat",
+        "scientific-notation"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Float"
+      ],
+      "options": {
+        "A": "`Float.parseFloat(\"2.5e3\")`",
+        "B": "`Integer.parseInt(\"2.5e3\")`",
+        "C": "`Long.parseLong(\"2.5e3\")`",
+        "D": "`Boolean.parseBoolean(\"2.5e3\")`"
+      }
+    }
+  ]
+}

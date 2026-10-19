@@ -1,0 +1,474 @@
+{
+  "questions": [
+    {
+      "id": "g3-overloading-001",
+      "type": "mcq",
+      "prompt": "چه چیزی دو متد هم‌نام را قطعاً به overload تبدیل می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "signature = نام + تعداد/نوع پارامترها. return type، نام پارامتر، access modifier و throws به‌تنهایی overload نمی‌سازند.",
+      "concepts": [
+        "overloading",
+        "signature"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "signature متفاوت",
+        "B": "return type متفاوت",
+        "C": "access modifier متفاوت",
+        "D": "نام پارامتر متفاوت"
+      }
+    },
+    {
+      "id": "g3-overloading-002",
+      "type": "tf",
+      "prompt": "اگر فقط return type دو متد هم‌نام متفاوت باشد، overload معتبر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "signature فقط نام و پارامترها را در نظر می‌گیرد؛ return type بخشی از signature نیست و کامپایلر duplicate declaration می‌دهد.",
+      "concepts": [
+        "overloading",
+        "signature",
+        "return-type"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g3-overloading-003",
+      "type": "mcq",
+      "prompt": "تغییر تنهای نام پارامتر، دو متد هم‌نام را overload می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "نام پارامتر بخشی از signature نیست و فقط برای خوانایی بدنه به‌کار می‌رود؛ signature یکسان یعنی duplicate declaration.",
+      "concepts": [
+        "overloading",
+        "signature",
+        "parameters"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "بله، overload معتبر است",
+        "B": "خیر، signature یکسان است",
+        "C": "فقط اگر تعداد پارامترها هم متفاوت باشد",
+        "D": "فقط اگر return type هم فرق کند"
+      }
+    },
+    {
+      "id": "g3-overloading-004",
+      "type": "mcq",
+      "prompt": "اگر فقط access modifier دو متد هم‌نام متفاوت باشد، چه رخ می‌دهد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "access modifier بخشی از signature نیست؛ تفاوت فقط در سطح دسترسی، duplicate declaration و خطای کامپایل می‌دهد.",
+      "concepts": [
+        "overloading",
+        "signature",
+        "access-modifiers"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "خطای کامپایل، overload معتبر نیست",
+        "B": "overload معتبر و بدون ابهام",
+        "C": "overload مجاز فقط در زمان اجرا",
+        "D": "تنها زمانی مجاز است که هر دو public باشند"
+      }
+    },
+    {
+      "id": "g3-overloading-005",
+      "type": "mcq",
+      "prompt": "با `f(int x)` و `f(Integer x)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "exact match به widening primitive و autoboxing مقدم است؛ f(int) برنده می‌شود و f(Integer) شانسی ندارد.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "autoboxing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading",
+        "Integer"
+      ],
+      "options": {
+        "A": "f(int x)",
+        "B": "f(Integer x)",
+        "C": "خطای ابهام",
+        "D": "انتخاب در زمان اجرا"
+      }
+    },
+    {
+      "id": "g3-overloading-006",
+      "type": "mcq",
+      "prompt": "با `f(long x)` و `f(Integer x)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "widening primitive (int به long) بر autoboxing (int به Integer) اولویت دارد؛ بنابراین f(long) برنده می‌شود.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "widening",
+        "autoboxing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading",
+        "long"
+      ],
+      "options": {
+        "A": "f(long x)",
+        "B": "f(Integer x)",
+        "C": "خطای ابهام",
+        "D": "اولویت با f(Integer) است"
+      }
+    },
+    {
+      "id": "g3-overloading-007",
+      "type": "mcq",
+      "prompt": "با `f(int x)` و `f(int... xs)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "exact match بر varargs مقدم است؛ f(int) برنده می‌شود و varargs فقط وقتی به‌کار می‌افتد که exact match موجود نباشد.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "varargs"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading",
+        "varargs"
+      ],
+      "options": {
+        "A": "f(int x)",
+        "B": "f(int... xs)",
+        "C": "خطای ابهام",
+        "D": "انتخاب تصادفی"
+      }
+    },
+    {
+      "id": "g3-overloading-008",
+      "type": "multi",
+      "prompt": "به ترتیب، اولویت phaseهای overload resolution کدام‌اند؟",
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "ترتیب phaseها: exact match > widening primitive > widening reference > autoboxing > varargs.",
+      "concepts": [
+        "overloading",
+        "overload-resolution"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "overloading"
+      ],
+      "options": {
+        "A": "exact match",
+        "B": "widening primitive",
+        "C": "autoboxing",
+        "D": "ترتیب ثابتی ندارد"
+      }
+    },
+    {
+      "id": "g3-overloading-009",
+      "type": "mcq",
+      "prompt": "با overloadهای `f(String s)` و `f(Integer n)`، فراخوانی `f(null)` چه می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "null به هر دو نوع مرجع سازگار است ولی هیچ‌کدام دقیق نیست؛ کامپایلر نمی‌تواند یکی را انتخاب کند و خطای ابهام می‌دهد.",
+      "concepts": [
+        "overloading",
+        "ambiguity",
+        "null"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading"
+      ],
+      "options": {
+        "A": "f(String s) فراخوانی می‌شود",
+        "B": "خطای ابهام کامپایل",
+        "C": "f(Integer n) فراخوانی می‌شود",
+        "D": "NullPointerException در زمان اجرا"
+      }
+    },
+    {
+      "id": "g3-overloading-010",
+      "type": "mcq",
+      "prompt": "با `f(Object o)` و `f(String s)`، فراخوانی `f(null)` کدام را انتخاب می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "هر دو سازگارند ولی String از Object خاص‌تر است؛ قانون most-specific f(String) را انتخاب می‌کند.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "null"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "overloading",
+        "inheritance"
+      ],
+      "options": {
+        "A": "f(Object o)",
+        "B": "f(String s)",
+        "C": "خطای ابهام",
+        "D": "ابتدا f(Object) و در fallback f(String)"
+      }
+    },
+    {
+      "id": "g3-overloading-011",
+      "type": "tf",
+      "prompt": "می‌توان در یک کلاس هم‌زمان `f(int... xs)` و `f(int[] xs)` تعریف کرد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "varargs در signature به آرایهٔ همان نوع erase می‌شود؛ تعریف هم‌زمان duplicate declaration است و کامپایل نمی‌شود.",
+      "concepts": [
+        "overloading",
+        "varargs",
+        "arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "varargs",
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-overloading-012",
+      "type": "mcq",
+      "prompt": "با `f(long x)` و `f(int... xs)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "widening primitive (int به long) بر varargs مقدم است؛ بنابراین f(long) برنده می‌شود و varargs تنها در نبود candidate دیگر به‌کار می‌رود.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "varargs",
+        "widening"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "overloading",
+        "varargs",
+        "long"
+      ],
+      "options": {
+        "A": "f(long x)",
+        "B": "f(int... xs)",
+        "C": "خطای ابهام",
+        "D": "ابتدا f(int...) سپس f(long)"
+      }
+    },
+    {
+      "id": "g3-overloading-013",
+      "type": "mcq",
+      "prompt": "اگر `f(int)` و `f(int...)` هر دو موجود باشند، فراخوانی `f(5, 6)` چه می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "f(5,6) با overload عادی سازگار نیست ولی با varargs هست؛ بنابراین f(int...) انتخاب می‌شود.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "varargs"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading",
+        "varargs"
+      ],
+      "options": {
+        "A": "خطای ابهام",
+        "B": "f(int...) فراخوانی می‌شود",
+        "C": "f(int) فراخوانی می‌شود",
+        "D": "خطای کامپایل، چون overload ابهام دارد"
+      }
+    },
+    {
+      "id": "g3-overloading-014",
+      "type": "mcq",
+      "prompt": "Overload resolution در چه زمانی از فراخوانی رخ می‌دهد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "overload resolution بر اساس نوع ایستای reference در زمان کامپایل انجام می‌شود؛ نوع واقعی شیء تنها در overriding دخیل است.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "compile-time"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "overloading"
+      ],
+      "options": {
+        "A": "زمان کامپایل بر اساس نوع ایستا",
+        "B": "زمان اجرا بر اساس نوع واقعی شیء",
+        "C": "زمان لینک پویا",
+        "D": "زمان بارگذاری کلاس"
+      }
+    },
+    {
+      "id": "g3-overloading-015",
+      "type": "tf",
+      "prompt": "overload resolution بر اساس نوع واقعی شیء در زمان اجرا تعیین می‌شود.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "overload selection در زمان کامپایل و بر اساس نوع ایستای reference است؛ رفتار زمان اجرا مربوط به overriding است.",
+      "concepts": [
+        "overloading",
+        "compile-time",
+        "overriding"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "overloading"
+      ]
+    },
+    {
+      "id": "g3-overloading-016",
+      "type": "mcq",
+      "prompt": "چرا `f(List<String> a)` و `f(List<Integer> b)` در Java به‌عنوان overload شناخته نمی‌شوند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "generics به erasure روی List خام می‌رسند؛ دو متد، signature یکسان روی List پیدا می‌کنند و duplicate declaration می‌شوند.",
+      "concepts": [
+        "overloading",
+        "generics",
+        "type-erasure"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "generics",
+        "collections"
+      ],
+      "options": {
+        "A": "چون نام کلاس یکی است",
+        "B": "چون type erasure هر دو را به List می‌رساند",
+        "C": "چون List نهایی است",
+        "D": "چون نمی‌توان generic overload کرد"
+      }
+    },
+    {
+      "id": "g3-overloading-017",
+      "type": "mcq",
+      "prompt": "برای literal `3.14f`، بین `f(float x)` و `f(double x)` کدام overload انتخاب می‌شود؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "3.14f دقیقاً float است و exact match بر widening primitive مقدم است؛ بنابراین f(float) برنده می‌شود.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "floating-point"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading",
+        "float"
+      ],
+      "options": {
+        "A": "f(float x)",
+        "B": "f(double x)",
+        "C": "خطای ابهام",
+        "D": "انتخاب در زمان اجرا"
+      }
+    },
+    {
+      "id": "g3-overloading-018",
+      "type": "mcq",
+      "prompt": "this(...) در سازنده چه نقشی در overload سازنده‌ها دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "this(...) فراخوانی سازندهٔ هم‌کلاس با signature سازگار است و بدون ساختن نمونهٔ جدید، زنجیرهٔ overload سازنده‌ها را شکل می‌دهد.",
+      "concepts": [
+        "overloading",
+        "constructors",
+        "this"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "constructors",
+        "overloading"
+      ],
+      "options": {
+        "A": "زنجیر کردن سازندهٔ هم‌کلاس با signature سازگار",
+        "B": "ساخت نمونهٔ جدید از کلاس دیگر",
+        "C": "جایگزینی برای return در سازنده",
+        "D": "تعریف overload جدید"
+      }
+    },
+    {
+      "id": "g3-overloading-019",
+      "type": "mcq",
+      "prompt": "this(...) در بدنهٔ سازنده باید در کدام جایگاه باشد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "this(...) باید نخستین statement سازنده باشد؛ در غیر این صورت کامپایلر خطا می‌دهد تا نمونه پیش از مقداردهی اولیه قابل استفاده نباشد.",
+      "concepts": [
+        "overloading",
+        "constructors",
+        "this"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "constructors"
+      ],
+      "options": {
+        "A": "نخستین statement سازنده",
+        "B": "می‌تواند در هر جای بدنه باشد",
+        "C": "پس از همهٔ فیلدها مقداردهی‌شده",
+        "D": "تنها در سازندهٔ پیش‌فرض"
+      }
+    },
+    {
+      "id": "g3-overloading-020",
+      "type": "blank",
+      "prompt": "برای زنجیر کردن overload سازنده‌ها در همان کلاس، در سازنده از `____(آرگومان‌ها)` استفاده می‌شود.",
+      "answers": [
+        "this",
+        "this("
+      ],
+      "explanation": "this(...) فراخوانی سازندهٔ هم‌کلاس است و overload سازنده‌ها را در یک زنجیرهٔ مقداردهی اولیه به هم وصل می‌کند.",
+      "concepts": [
+        "overloading",
+        "constructors",
+        "this"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "constructors"
+      ]
+    }
+  ]
+}

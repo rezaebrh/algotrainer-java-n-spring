@@ -1,0 +1,399 @@
+{
+  "questions": [
+    {
+      "id": "g3-math-001",
+      "type": "mcq",
+      "prompt": "خروجی `Math.max(-2, -7)` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "max بین دو مقدار، بزرگ‌تر را برمی‌گرداند و در مقایسهٔ اعداد منفی، -2 بزرگ‌تر از -7 است.",
+      "concepts": [
+        "Math",
+        "static-methods"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "-2",
+        "B": "-7",
+        "C": "0",
+        "D": "-9"
+      }
+    },
+    {
+      "id": "g3-math-002",
+      "type": "mcq",
+      "prompt": "خروجی `Math.abs(-3)` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "abs مقدار قدر مطلق را برمی‌گرداند؛ برای int آرگومان، خروجی int است و برای double، خروجی double است.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "-3",
+        "B": "3",
+        "C": "0",
+        "D": "خطا"
+      }
+    },
+    {
+      "id": "g3-math-003",
+      "type": "mcq",
+      "prompt": "`Math.round(3.6)` چه برمی‌گرداند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "round برای آرگومان double، مقدار long برمی‌گرداند و در اینجا 4 به‌صورت long برگشت داده می‌شود.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "3 به‌صورت int",
+        "B": "3.6 به‌صورت double",
+        "C": "4 به‌صورت long",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g3-math-004",
+      "type": "mcq",
+      "prompt": "خروجی `Math.floor(2.3)` چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "floor بزرگ‌ترین عدد صحیح کوچک‌تر یا مساوی را برمی‌گرداند و نوع بازگشتی همواره double است، حتی اگر آرگومان int باشد.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "2 به‌صورت int",
+        "B": "3 به‌صورت int",
+        "C": "2 به‌صورت float",
+        "D": "2.0 به‌صورت double"
+      }
+    },
+    {
+      "id": "g3-math-005",
+      "type": "mcq",
+      "prompt": "خروجی `Math.ceil(2.1)` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "ceil کوچک‌ترین عدد صحیح بزرگ‌تر یا مساوی را برمی‌گرداند و نوع بازگشتی آن نیز همواره double است.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "3.0 به‌صورت double",
+        "B": "2.0 به‌صورت double",
+        "C": "3 به‌صورت int",
+        "D": "2 به‌صورت int"
+      }
+    },
+    {
+      "id": "g3-math-006",
+      "type": "mcq",
+      "prompt": "خروجی `Math.pow(2, 10)` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "pow آرگومان دوم را به توان اول می‌رساند و نوع بازگشتی double است؛ برای توان‌های بزرگ، اعداد اعشاری بازمی‌گردد نه long.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "10 به‌صورت int",
+        "B": "1024.0 به‌صورت double",
+        "C": "512 به‌صورت int",
+        "D": "خطا"
+      }
+    },
+    {
+      "id": "g3-math-007",
+      "type": "mcq",
+      "prompt": "خروجی `Math.sqrt(81)` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "sqrt ریشهٔ دوم مثبت را برمی‌گرداند و نوع بازگشتی آن double است؛ برای نتیجهٔ صحیح بهتر است ریشهٔ مربع کامل را به int تبدیل کرد.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "9 به‌صورت int",
+        "B": "8 به‌صورت int",
+        "C": "9.0 به‌صورت double",
+        "D": "81.0 به‌صورت double"
+      }
+    },
+    {
+      "id": "g3-math-008",
+      "type": "tf",
+      "prompt": "`Math.cbrt(27)` برابر 3.0 است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "cbrt ریشهٔ سوم حقیقی را برمی‌گرداند و برای ورودی منفی هم قابل استفاده است؛ خروجی همواره double است.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ]
+    },
+    {
+      "id": "g3-math-009",
+      "type": "mcq",
+      "prompt": "خروجی `Math.signum(-5.0)` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "signum برای عدد منفی 1.0-، برای صفر 0.0 و برای مثبت 1.0 برمی‌گرداند؛ نوع بازگشتی همواره double است.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "1.0",
+        "B": "-1.0",
+        "C": "0.0",
+        "D": "-5.0"
+      }
+    },
+    {
+      "id": "g3-math-010",
+      "type": "mcq",
+      "prompt": "مقدار `Math.PI` تقریباً برابر است با:",
+      "answers": [
+        "A"
+      ],
+      "explanation": "Math.PI ثابت double برابر 3.14159... است که نسبت محیط به قطر دایره را نشان می‌دهد.",
+      "concepts": [
+        "Math",
+        "constants"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "3.14159...",
+        "B": "2.71828...",
+        "C": "1.41421...",
+        "D": "1.61803..."
+      }
+    },
+    {
+      "id": "g3-math-011",
+      "type": "mcq",
+      "prompt": "مقدار `Math.E` تقریباً برابر است با:",
+      "answers": [
+        "D"
+      ],
+      "explanation": "Math.E عدد اویلر است و پایهٔ لگاریتم طبیعی و تابع نمایی به‌کار می‌رود.",
+      "concepts": [
+        "Math",
+        "constants"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "3.14159...",
+        "B": "1.41421...",
+        "C": "1.61803...",
+        "D": "2.71828..."
+      }
+    },
+    {
+      "id": "g3-math-012",
+      "type": "tf",
+      "prompt": "`Math.random()` می‌تواند دقیقاً 1.0 برگرداند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "Math.random بازهٔ `[0.0, 1.0)` تولید می‌کند و عدد 1.0 در آن بازه نیست؛ تنها 0.0 ممکن است تولید شود.",
+      "concepts": [
+        "Math",
+        "random"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ]
+    },
+    {
+      "id": "g3-math-013",
+      "type": "mcq",
+      "prompt": "برای تولید int تصادفی در بازهٔ `[0, n)` بهترین انتخاب چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "ThreadLocalRandom.current().nextInt(n) برای برنامه‌های چندنخی سبک‌تر از Math.random است و آمادهٔ بازهٔ `[0, n)` برمی‌گرداند.",
+      "concepts": [
+        "Math",
+        "random",
+        "concurrency"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "`ThreadLocalRandom.current().nextInt(n)`",
+        "B": "`Math.random() * n`",
+        "C": "`new Random().nextInt() % n`",
+        "D": "`Math.round(Math.random() * n)`"
+      }
+    },
+    {
+      "id": "g3-math-014",
+      "type": "mcq",
+      "prompt": "`Math.addExact(Integer.MAX_VALUE, 1)` چه می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "addExact در سرریز، ArithmeticException پرتاب می‌کند تا از wrap-around ناخواسته جلوگیری شود؛ این رفتار امن‌تر از `+` معمولی است.",
+      "concepts": [
+        "Math",
+        "overflow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "مقدار منفی برمی‌گرداند",
+        "B": "Integer.MIN_VALUE برمی‌گرداند",
+        "C": "ArithmeticException پرتاب می‌کند",
+        "D": "0 برمی‌گرداند"
+      }
+    },
+    {
+      "id": "g3-math-015",
+      "type": "mcq",
+      "prompt": "برای تقسیم صحیح منفی‌آگاه در Java کدام مناسب‌تر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "floorDiv و floorMod تقسیم و باقیمانده را به‌گونه‌ای تعریف می‌کنند که همواره `a == (a / b) * b + (a % b)` برقرار باشد، حتی برای ورودی منفی.",
+      "concepts": [
+        "Math",
+        "integer-division"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "int"
+      ],
+      "options": {
+        "A": "`/` و `%`",
+        "B": "`Math.floorDiv` و `Math.floorMod`",
+        "C": "`Math.div` و `Math.mod`",
+        "D": "`Math.negate`"
+      }
+    },
+    {
+      "id": "g3-math-016",
+      "type": "mcq",
+      "prompt": "کدام دربارهٔ `Math.sin` درست است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "sin آرگومان را بر حسب رادیان می‌گیرد نه درجه؛ برای تبدیل درجه به رادیان باید در `Math.PI / 180` ضرب کرد.",
+      "concepts": [
+        "Math",
+        "trigonometry"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "sin آرگومان را بر حسب درجه می‌گیرد",
+        "B": "sin فقط برای اعداد صحیح تعریف شده است",
+        "C": "sin نوع بازگشتی int دارد",
+        "D": "sin آرگومان را بر حسب رادیان می‌گیرد و double برمی‌گرداند"
+      }
+    },
+    {
+      "id": "g3-math-017",
+      "type": "mcq",
+      "prompt": "`Math.atan2(y, x)` چه برمی‌گرداند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "atan2 زاویهٔ بردار (x, y) را نسبت به محور x مثبت بر حسب رادیان در بازهٔ `(-π, π]` برمی‌گرداند و برای تقسیم‌بندی چهارربع صفحه مناسب است.",
+      "concepts": [
+        "Math",
+        "trigonometry"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "زاویهٔ بردار (x, y) نسبت به محور x مثبت، بر حسب رادیان",
+        "B": "طول بردار (x, y)",
+        "C": "حاصل‌ضرب داخلی دو بردار",
+        "D": "توان دوم x به‌علاوهٔ y"
+      }
+    },
+    {
+      "id": "g3-math-018",
+      "type": "mcq",
+      "prompt": "چرا `Math.hypot(x, y)` بهتر از `Math.sqrt(x*x + y*y)` است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "hypot برای جلوگیری از سرریز و underflow در محاسبهٔ مجانبی پیاده‌سازی شده است و در ورودی‌های بسیار بزرگ یا بسیار کوچک نتیجهٔ دقیق‌تری می‌دهد.",
+      "concepts": [
+        "Math",
+        "numerical-stability"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "سریع‌تر است چون بدون ضرب است",
+        "B": "نوع int برمی‌گرداند",
+        "C": "در برابر سرریز و underflow میانی مقاوم‌تر است",
+        "D": "تنها برای x و y مثبت کار می‌کند"
+      }
+    }
+  ]
+}

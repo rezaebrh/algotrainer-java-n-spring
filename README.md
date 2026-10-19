@@ -154,4 +154,4 @@ python3 reader.py read 1
 | ۱۱ | backend: MVC/REST، data، transaction و security |
 | ۱۲ | production: Actuator، observability، deployment و integration |
 
-فصل منتشرشدهٔ فعلی درجهٔ ۱، محیط اجرا، source structure، `main`، package/import، object/reference، primitive/wrapper، `String`، variable/scope، constructor/initialization، pass-by-value، GC و try-with-resources را پوشش می‌دهد. بانک‌های درجه‌های ۲ تا ۱۲ پرسش‌های seed برای مسیر بعدی دارند.
+فصل‌های منتشرشدهٔ فعلی درجه‌های ۱، ۲ و ۳ هستند؛ درجهٔ ۱ محیط اجرا، source structure، `main`، package/import، object/reference، primitive/wrapper، `String`، variable/scope، constructor/initialization، pass-by-value، GC و try-with-resources را پوشش می‌دهد. بانک‌های درجه‌های ۴ تا ۱۲ پرسش‌های seed برای مسیر بعدی دارند.

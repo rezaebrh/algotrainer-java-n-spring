@@ -1,0 +1,673 @@
+{
+  "questions": [
+    {
+      "id": "g3-string-api-001",
+      "type": "mcq",
+      "prompt": "نوع بازگشتی متد `length()` در کلاس String چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "`length()` متد نمونهٔ String است و یک int برمی‌گرداند.",
+      "concepts": [
+        "String",
+        "length"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "int",
+        "B": "long",
+        "C": "String",
+        "D": "char"
+      }
+    },
+    {
+      "id": "g3-string-api-002",
+      "type": "mcq",
+      "prompt": "تفاوت اصلی بین `arr.length` و `s.length()` در چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "`arr.length` فیلد آرایه است و بدون پرانتز نوشته می‌شود؛ `s.length()` متد نمونهٔ String است و با پرانتز فراخوانی می‌شود.",
+      "concepts": [
+        "String",
+        "arrays",
+        "length"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays",
+        "String"
+      ],
+      "options": {
+        "A": "هیچ تفاوتی ندارند",
+        "B": "اولی فیلد آرایه و دومی متد String است",
+        "C": "اولی متد String و دومی فیلد آرایه است",
+        "D": "هر دو متد static هستند"
+      }
+    },
+    {
+      "id": "g3-string-api-003",
+      "type": "tf",
+      "prompt": "`\"\".length()` مقدار 0 برمی‌گرداند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "رشتهٔ خالی هیچ کاراکتری ندارد و طول آن صفر است.",
+      "concepts": [
+        "String",
+        "length"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-004",
+      "type": "mcq",
+      "prompt": "نوع بازگشتی `s.charAt(i)` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "charAt کاراکتر موجود در اندیس i را به‌صورت primitive char برمی‌گرداند.",
+      "concepts": [
+        "String",
+        "charAt"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "char",
+        "String"
+      ],
+      "options": {
+        "A": "int",
+        "B": "String",
+        "C": "char",
+        "D": "void"
+      }
+    },
+    {
+      "id": "g3-string-api-005",
+      "type": "mcq",
+      "prompt": "اگر `s = \"abc\"` باشد، خروجی `s.charAt(0)` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "اندیس 0 اولین کاراکتر یعنی 'a' است.",
+      "concepts": [
+        "String",
+        "charAt"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "'a'",
+        "B": "'b'",
+        "C": "'c'",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g3-string-api-006",
+      "type": "tf",
+      "prompt": "`\"abc\".charAt(3)` در زمان اجرا StringIndexOutOfBoundsException پرتاب می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "اندیس‌های مجاز 0 تا length-1 هستند. اندیس 3 برای رشتهٔ سه‌کاراکتری خارج از بازه است.",
+      "concepts": [
+        "String",
+        "charAt",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-007",
+      "type": "mcq",
+      "prompt": "در فراخوانی `s.substring(begin, end)` کران end چگونه عمل می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "begin شامل و end غیرشامل است؛ زیررشته شامل کاراکترهای begin تا end-1 می‌شود.",
+      "concepts": [
+        "String",
+        "substring"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "end شامل است",
+        "B": "end غیرشامل است",
+        "C": "begin غیرشامل و end شامل است",
+        "D": "هر دو غیرشامل هستند"
+      }
+    },
+    {
+      "id": "g3-string-api-008",
+      "type": "mcq",
+      "prompt": "اگر `s = \"hello\"` باشد، خروجی `s.substring(1, 4)` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "begin=1 شامل، end=4 غیرشامل. کاراکترهای 1، 2 و 3 یعنی 'e'، 'l'، 'l' انتخاب می‌شوند.",
+      "concepts": [
+        "String",
+        "substring"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "\"hell\"",
+        "B": "\"ell\"",
+        "C": "\"ello\"",
+        "D": "خطای runtime"
+      }
+    },
+    {
+      "id": "g3-string-api-009",
+      "type": "tf",
+      "prompt": "`\"hello\".substring(5, 5)` یک رشتهٔ خالی برمی‌گرداند و خطا نمی‌دهد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "زمانی که begin == end زیررشته تهی است؛ این حالت مجاز است و خطایی پرتاب نمی‌شود.",
+      "concepts": [
+        "String",
+        "substring"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-010",
+      "type": "mcq",
+      "prompt": "اگر زیررشته پیدا نشود، `indexOf` چه برمی‌گرداند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "قرارداد indexOf بازگشت -1 در صورت نیافتن است؛ هیچ exception پرتاب نمی‌شود.",
+      "concepts": [
+        "String",
+        "indexOf"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "0",
+        "B": "null",
+        "C": "-1",
+        "D": "exception پرتاب می‌کند"
+      }
+    },
+    {
+      "id": "g3-string-api-011",
+      "type": "mcq",
+      "prompt": "اگر `s = \"Java\"` باشد، خروجی `s.indexOf('a')` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "اولین occurrence کاراکتر 'a' در اندیس 1 قرار دارد (J=0، a=1، v=2، a=3).",
+      "concepts": [
+        "String",
+        "indexOf"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "3",
+        "D": "-1"
+      }
+    },
+    {
+      "id": "g3-string-api-012",
+      "type": "mcq",
+      "prompt": "اگر `s = \"ababab\"` باشد، خروجی `s.indexOf(\"a\", 3)` چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "جست‌وجو از اندیس 3 شروع می‌شود. اندیس 4 اولین 'a' بعد از نقطهٔ شروع است.",
+      "concepts": [
+        "String",
+        "indexOf",
+        "fromIndex"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      }
+    },
+    {
+      "id": "g3-string-api-013",
+      "type": "tf",
+      "prompt": "`\"Java\".indexOf(\"JAVA\")` به دلیل حساسیت به بزرگی و کوچکی حروف مقدار -1 برمی‌گرداند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "indexOf مقایسهٔ case-sensitive انجام می‌دهد و 'JAVA' با حروف بزرگ در 'Java' یافت نمی‌شود.",
+      "concepts": [
+        "String",
+        "indexOf"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-014",
+      "type": "multi",
+      "prompt": "کدام فراخوانی‌های `indexOf` مقدار -1 برمی‌گردانند؟",
+      "answers": [
+        "A",
+        "D"
+      ],
+      "explanation": "\"abc\".indexOf(\"z\") چون 'z' نیست -1 می‌دهد؛ \"abc\".indexOf('Z') به دلیل حساسیت به case -1 می‌دهد. \"abc\".indexOf(\"\") در اندیس 0 پیدا می‌شود و indexOf(\"b\") اندیس 1 برمی‌گرداند.",
+      "concepts": [
+        "String",
+        "indexOf"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "`\"abc\".indexOf(\"z\")`",
+        "B": "`\"abc\".indexOf(\"\")`",
+        "C": "`\"abc\".indexOf(\"b\")`",
+        "D": "`\"abc\".indexOf('Z')`"
+      }
+    },
+    {
+      "id": "g3-string-api-015",
+      "type": "mcq",
+      "prompt": "تفاوت اصلی بین `indexOf` و `lastIndexOf` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "indexOf اولین occurrence از ابتدا و lastIndexOf آخرین occurrence از انتها را می‌یابد. اگر بیش از یک occurrence وجود داشته باشد، نتایج متفاوت‌اند.",
+      "concepts": [
+        "String",
+        "indexOf",
+        "lastIndexOf"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "indexOf از ابتدا و lastIndexOf از انتها جست‌وجو می‌کند",
+        "B": "indexOf حساس به case و lastIndexOf غیرحساس است",
+        "C": "indexOf برای char و lastIndexOf برای String است",
+        "D": "هیچ تفاوتی ندارند"
+      }
+    },
+    {
+      "id": "g3-string-api-016",
+      "type": "blank",
+      "prompt": "متد `lastIndexOf` جست‌وجو را از ____ رشته آغاز می‌کند.",
+      "answers": [
+        "انتها",
+        "end",
+        "انتهای"
+      ],
+      "explanation": "lastIndexOf از انتهای رشته به سمت ابتدا حرکت می‌کند و آخرین occurrence را برمی‌گرداند.",
+      "concepts": [
+        "String",
+        "lastIndexOf"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-017",
+      "type": "mcq",
+      "prompt": "رابطهٔ `s.contains(t)` با `s.indexOf(t) >= 0` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "contains تقریباً معادل indexOf(t) >= 0 است اما خواناتر است. contains آرگومان را به‌عنوان literal در نظر می‌گیرد نه regex.",
+      "concepts": [
+        "String",
+        "contains",
+        "indexOf"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "contains سریع‌تر است اما نتیجهٔ متفاوت می‌دهد",
+        "B": "contains معادل indexOf(t) >= 0 با خوانایی بهتر است",
+        "C": "contains regex می‌پذیرد ولی indexOf نه",
+        "D": "contains برای char و indexOf برای String است"
+      }
+    },
+    {
+      "id": "g3-string-api-018",
+      "type": "tf",
+      "prompt": "`\"abc\".contains(\"A\")` برابر true است چون contains به بزرگی و کوچکی حروف حساس نیست.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "contains دقیقاً مانند indexOf حساس به case است و آرگومان را به‌صورت literal مقایسه می‌کند.",
+      "concepts": [
+        "String",
+        "contains"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-019",
+      "type": "mcq",
+      "prompt": "خروجی `\"hello\".startsWith(\"\")` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "رشتهٔ خالی prefix هر رشته‌ای است و startsWith(\"\") همیشه true برمی‌گرداند.",
+      "concepts": [
+        "String",
+        "startsWith"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "خطای runtime",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g3-string-api-020",
+      "type": "multi",
+      "prompt": "کدام فراخوانی‌های `startsWith` مقدار true برمی‌گردانند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "\"file.txt\".startsWith(\"file\") درست است. startsWith(\"\") همیشه true است. startsWith(\".txt\") suffix است و startsWith(\"File\") به دلیل حساسیت به case غلط است.",
+      "concepts": [
+        "String",
+        "startsWith"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "`\"file.txt\".startsWith(\"file\")`",
+        "B": "`\"file.txt\".startsWith(\".txt\")`",
+        "C": "`\"file.txt\".startsWith(\"\")`",
+        "D": "`\"file.txt\".startsWith(\"File\")`"
+      }
+    },
+    {
+      "id": "g3-string-api-021",
+      "type": "mcq",
+      "prompt": "تفاوت اصلی بین `replace` و `replaceAll` در String چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "replace هر دو آرگومان را به‌صورت literal در نظر می‌گیرد. replaceAll آرگومان اول را به‌عنوان regex تفسیر می‌کند و متد دیگری به نام replace وجود دارد که char می‌پذیرد.",
+      "concepts": [
+        "String",
+        "replace",
+        "regex"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "هیچ تفاوتی ندارند",
+        "B": "replace literal می‌گیرد و replaceAll آرگومان اول را regex تفسیر می‌کند",
+        "C": "replace سریع‌تر ولی replaceAll کندتر است",
+        "D": "replace فقط برای char و replaceAll برای String است"
+      }
+    },
+    {
+      "id": "g3-string-api-022",
+      "type": "mcq",
+      "prompt": "خروجی `\"a.b.c\".replaceAll(\".\", \"-\")` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "در regex نقطه هر کاراکتری را نشان می‌دهد. هر چهار کاراکتر (a، .، b، .، c پنج کاراکتر) با '-' جایگزین می‌شود و نتیجه \"-----\" است.",
+      "concepts": [
+        "String",
+        "replaceAll",
+        "regex"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "String",
+        "regex"
+      ],
+      "options": {
+        "A": "\"a-b-c\"",
+        "B": "\"----\"",
+        "C": "\"-----\"",
+        "D": "\"a.b-c\""
+      }
+    },
+    {
+      "id": "g3-string-api-023",
+      "type": "mcq",
+      "prompt": "متد `replaceFirst` در String چه کار می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "replaceFirst اولین occurrence از regex را با replacement جایگزین می‌کند؛ بقیهٔ رشته دست‌نخورده باقی می‌ماند.",
+      "concepts": [
+        "String",
+        "replaceFirst",
+        "regex"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String",
+        "regex"
+      ],
+      "options": {
+        "A": "تمام occurrences را با هم عوض می‌کند",
+        "B": "اولین occurrence از regex را جایگزین می‌کند",
+        "C": "فقط اولین کاراکتر را عوض می‌کند",
+        "D": "معادل replace است"
+      }
+    },
+    {
+      "id": "g3-string-api-024",
+      "type": "tf",
+      "prompt": "در `replace(CharSequence, CharSequence)` آرگومان اول به‌عنوان literal در نظر گرفته می‌شود و نه به‌عنوان regex.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "replace آرگومان اول را regex تفسیر نمی‌کند و آن را به‌صورت literal جست‌وجو می‌کند. این تفاوت اصلی با replaceAll است.",
+      "concepts": [
+        "String",
+        "replace"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-025",
+      "type": "mcq",
+      "prompt": "خروجی `\"a,,b,\".split(\",\")` در Java چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "به‌طور پیش‌فرض split trailing empty strings را حذف می‌کند؛ آرایهٔ نتیجه [\"a\", \"\", \"b\"] می‌شود.",
+      "concepts": [
+        "String",
+        "split"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String",
+        "arrays"
+      ],
+      "options": {
+        "A": "[\"a\", \"b\"]",
+        "B": "[\"a\", \"\", \"b\"]",
+        "C": "[\"a\", \"\", \"b\", \"\"]",
+        "D": "[\"a\", \"b\", \"\"]"
+      }
+    },
+    {
+      "id": "g3-string-api-026",
+      "type": "mcq",
+      "prompt": "اگر `\"a,,b,\".split(\",\", -1)` فراخوانی شود، خروجی چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "limit برابر -1 باعث می‌شود trailing empty strings حفظ شوند. نتیجه [\"a\", \"\", \"b\", \"\"] می‌شود.",
+      "concepts": [
+        "String",
+        "split",
+        "limit"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "String",
+        "arrays"
+      ],
+      "options": {
+        "A": "[\"a\", \"b\"]",
+        "B": "[\"a\", \"\", \"b\"]",
+        "C": "[\"a\", \"\", \"b\", \"\"]",
+        "D": "[\"a\", \"\", \"\", \"b\", \"\"]"
+      }
+    },
+    {
+      "id": "g3-string-api-027",
+      "type": "multi",
+      "prompt": "کدام فراخوانی‌ها آرایه‌ای شامل empty string در انتها تولید می‌کنند؟",
+      "answers": [
+        "B",
+        "C"
+      ],
+      "explanation": "limit = -1 و limit > تعداد واقعی splitها هر دو trailing empty را نگه می‌دارند. limit = 0 نیز trailing empty را حذف می‌کند و split پیش‌فرض بدون آرگومان دوم نیز trailing empty را حذف می‌کند.",
+      "concepts": [
+        "String",
+        "split",
+        "limit"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "String",
+        "arrays"
+      ],
+      "options": {
+        "A": "`\"a,b,\".split(\",\")`",
+        "B": "`\"a,b,\".split(\",\", -1)`",
+        "C": "`\"a,b,\".split(\",\", 0)` followed by `Arrays.asList`",
+        "D": "`\"a,b,\".split(\",\", 5)`"
+      }
+    },
+    {
+      "id": "g3-string-api-028",
+      "type": "mcq",
+      "prompt": "تفاوت اصلی بین `trim` و `strip` در String چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "trim فقط whitespace ASCII با کد کوچک‌تر یا مساوی U+0020 را حذف می‌کند. strip کاراکترهای whitespace Unicode از جمله non-breaking space و ایرفویس‌های فارسی و عربی را نیز حذف می‌کند.",
+      "concepts": [
+        "String",
+        "trim",
+        "strip",
+        "whitespace"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "هیچ تفاوتی ندارند",
+        "B": "strip فقط از ابتدا و trim از هر دو طرف عمل می‌کند",
+        "C": "trim فقط ASCII و strip تمام whitespace Unicode را حذف می‌کند",
+        "D": "trim سریع‌تر ولی strip دقیق‌تر است در ASCII"
+      }
+    },
+    {
+      "id": "g3-string-api-029",
+      "type": "tf",
+      "prompt": "`\"  \\u00A0  \".trim()` تمام فاصله‌های خالی شامل non-breaking space را حذف می‌کند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "trim فقط کاراکترهای با کد کوچک‌تر یا مساوی U+0020 را حذف می‌کند. non-breaking space (U+00A0) بالاتر از این بازه است و trim آن را حذف نمی‌کند. برای این کار باید از strip استفاده کرد.",
+      "concepts": [
+        "String",
+        "trim",
+        "whitespace"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-030",
+      "type": "multi",
+      "prompt": "کدام گزینه‌ها دربارهٔ `isEmpty` و `isBlank` درست‌اند؟",
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "isEmpty فقط طول صفر را true می‌کند ولی \"   \" را false می‌داند. isBlank علاوه بر طول صفر، رشته‌هایی با کاراکترهای whitespace (از جمله Unicode) را نیز true می‌کند. هیچ‌یک null-safe نیستند.",
+      "concepts": [
+        "String",
+        "isEmpty",
+        "isBlank"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "isEmpty فقط برای رشتهٔ با طول صفر true است",
+        "B": "isBlank برای \"   \" مقدار true برمی‌گرداند",
+        "C": "isBlank null را هم true می‌کند",
+        "D": "isEmpty و isBlank از نظر نتیجه همیشه یکسان‌اند"
+      }
+    }
+  ]
+}

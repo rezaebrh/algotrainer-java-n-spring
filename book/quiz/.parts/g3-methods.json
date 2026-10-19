@@ -1,0 +1,540 @@
+{
+  "questions": [
+    {
+      "id": "g3-methods-001",
+      "type": "mcq",
+      "prompt": "کدام خط اعلام متد معتبر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "هر پارامتر باید نوع و نام مستقل داشته باشد و return type پیش از نام متد می‌آید.",
+      "concepts": [
+        "methods",
+        "declaration"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "`int compute(int a, b) { return a + b; }`",
+        "B": "`int compute(int a, int b) { return a + b; }`",
+        "C": "`compute(int a, int b) { return a + b; }`",
+        "D": "`int compute(int a; int b) { return a + b; }`"
+      }
+    },
+    {
+      "id": "g3-methods-002",
+      "type": "blank",
+      "prompt": "نام متد در Java با حرف، `$` یا ____ شروع می‌شود.",
+      "answers": [
+        "_",
+        "underscore"
+      ],
+      "explanation": "سه کاراکتر آغازین مجاز برای شناسه، حرف، _ و $ است.",
+      "concepts": [
+        "methods",
+        "identifiers"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g3-methods-003",
+      "type": "mcq",
+      "prompt": "اگر متدی همیشه عدد طبیعی برمی‌گرداند، کدام return type مناسب‌تر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "int هم شامل صفر و هم اعداد مثبت است و برای شمارش طبیعی به‌کار می‌رود.",
+      "concepts": [
+        "return-type",
+        "methods"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "int"
+      ],
+      "options": {
+        "A": "void",
+        "B": "int",
+        "C": "boolean",
+        "D": "String"
+      }
+    },
+    {
+      "id": "g3-methods-004",
+      "type": "tf",
+      "prompt": "early return در متد void مجاز نیست.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "early return در void فقط با `return;` بدون expression مجاز است.",
+      "concepts": [
+        "void",
+        "return"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "return"
+      ]
+    },
+    {
+      "id": "g3-methods-005",
+      "type": "mcq",
+      "prompt": "کدام الگو guard clause معتبر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "guard clause در ابتدا شرط نامعتبر را تشخیص می‌دهد و زودتر از متد خارج می‌شود تا بدنهٔ اصلی ورودی معتبر ببیند.",
+      "concepts": [
+        "guard-clause",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "if"
+      ],
+      "options": {
+        "A": "`if (input != null) { /* همهٔ منطق اصلی */ }`",
+        "B": "`if (input == null) return; /* ادامهٔ کار روی ورودی معتبر */`",
+        "C": "`if (input == null) { /* fallback */ } else { /* منطق اصلی */ }`",
+        "D": "`return; if (input == null) /* ادامه */`"
+      }
+    },
+    {
+      "id": "g3-methods-006",
+      "type": "mcq",
+      "prompt": "پارامتر `int n` در `void f(int n)` در کجا قابل دسترسی است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "scope پارامتر تنها بدنهٔ همان متد است و پس از خروج از متد از بین می‌رود.",
+      "concepts": [
+        "scope",
+        "parameters"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "در همهٔ متدهای کلاس",
+        "B": "فقط در بدنهٔ f",
+        "C": "در همهٔ نمونه‌های کلاس",
+        "D": "در سراسر بستهٔ نرم‌افزار"
+      }
+    },
+    {
+      "id": "g3-methods-007",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ `this` در متد instance درست‌اند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "this در context static وجود ندارد و نقش return یا return type را ندارد.",
+      "concepts": [
+        "this",
+        "instance-methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "this به نمونهٔ جاری اشاره می‌کند",
+        "B": "this در متد static هم قابل استفاده است",
+        "C": "this.field برای رفع ابهام از فیلد کاربرد دارد",
+        "D": "this می‌تواند جایگزین return شود"
+      }
+    },
+    {
+      "id": "g3-methods-008",
+      "type": "mcq",
+      "prompt": "کدام امضای متد varargs دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "نشانهٔ varargs سه نقطهٔ متوالی بلافاصله پس از type است.",
+      "concepts": [
+        "varargs",
+        "methods"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "`void log(String... messages)`",
+        "B": "`void log(String.. messages)`",
+        "C": "`void log(String. messages)`",
+        "D": "`void log(String messages...)`"
+      }
+    },
+    {
+      "id": "g3-methods-009",
+      "type": "tf",
+      "prompt": "متد varargs می‌تواند با صفر آرگومان فراخوانی شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "varargs می‌تواند با صفر آرگومان فراخوانی شود و در بدنه آرایهٔ خالی می‌گیرد.",
+      "concepts": [
+        "varargs"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "varargs"
+      ]
+    },
+    {
+      "id": "g3-methods-010",
+      "type": "mcq",
+      "prompt": "varargs در امضای متد باید در چه جایگاهی باشد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "varargs تنها آخرین پارامتر مجاز است و بیش از یک varargs در یک متد ممکن نیست.",
+      "concepts": [
+        "varargs",
+        "parameters"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "varargs"
+      ],
+      "options": {
+        "A": "می‌تواند نخستین پارامتر باشد",
+        "B": "فقط آخرین پارامتر",
+        "C": "می‌تواند در میان پارامترها باشد",
+        "D": "می‌تواند دو بار در امضا ظاهر شود"
+      }
+    },
+    {
+      "id": "g3-methods-011",
+      "type": "mcq",
+      "prompt": "چرا `Math.abs(-5)` بدون ساخت نمونه فراخوانی می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "abs متد static است و متعلق به کلاس Math است، نه به یک نمونهٔ خاص.",
+      "concepts": [
+        "static-methods",
+        "methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "abs متد instance است",
+        "B": "abs متد static است",
+        "C": "abs متد private است",
+        "D": "abs متد final است"
+      }
+    },
+    {
+      "id": "g3-methods-012",
+      "type": "mcq",
+      "prompt": "کدام فراخوانی، متد instance است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "size روی نمونهٔ list فراخوانی می‌شود و بقیه متدهای static هستند که با نام کلاس صدا زده می‌شوند.",
+      "concepts": [
+        "instance-methods",
+        "methods"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "`String.valueOf(42)`",
+        "B": "`Integer.parseInt(\"7\")`",
+        "C": "`list.size()`",
+        "D": "`Math.random()`"
+      }
+    },
+    {
+      "id": "g3-methods-013",
+      "type": "tf",
+      "prompt": "می‌توان متد static در زیرکلاس را با همان امضا دوباره تعریف کرد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "این کار method hiding نام دارد و برای متد static مجاز است؛ @Override فقط برای متد instance به‌کار می‌رود.",
+      "concepts": [
+        "method-hiding",
+        "static-methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "static-methods"
+      ]
+    },
+    {
+      "id": "g3-methods-014",
+      "type": "mcq",
+      "prompt": "کدام قطعه بدون خطای کامپایل است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "در قطعهٔ A هر دو شاخه مقدار int می‌دهند؛ در B برای x<=0 مقدار بازنمی‌گردد؛ در C return بدون مقدار در متد int مجاز نیست؛ در D char به int تبدیل نمی‌شود.",
+      "concepts": [
+        "definite-assignment",
+        "return"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "return"
+      ],
+      "options": {
+        "A": "`int f(int x) { if (x > 0) return x; else return -x; }`",
+        "B": "`int f(int x) { if (x > 0) return x; }`",
+        "C": "`int f(int x) { if (x > 0) return x; return; }`",
+        "D": "`int f(int x) { return 'a'; }`"
+      }
+    },
+    {
+      "id": "g3-methods-015",
+      "type": "mcq",
+      "prompt": "اگر متد `int f() { return 3.14; }` را کامپایل کنیم:",
+      "answers": [
+        "B"
+      ],
+      "explanation": "3.14 یک literal double است و narrowing از double به int در return مجاز نیست؛ باید cast صریح نوشت.",
+      "concepts": [
+        "return-type",
+        "narrowing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "int"
+      ],
+      "options": {
+        "A": "OK است و 3 برمی‌گرداند",
+        "B": "خطای کامپایل می‌دهد",
+        "C": "OK است و 3.14 برمی‌گرداند",
+        "D": "در زمان اجرا NumberFormatException می‌دهد"
+      }
+    },
+    {
+      "id": "g3-methods-016",
+      "type": "mcq",
+      "prompt": "کدام دربارهٔ متد static درست است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "متد static فقط به‌طور مستقیم به اعضای static دسترسی دارد و this در آن وجود ندارد.",
+      "concepts": [
+        "static-methods",
+        "this"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "static-methods"
+      ],
+      "options": {
+        "A": "می‌تواند this.field را مستقیم بخواند",
+        "B": "می‌تواند متد instance دیگری را مستقیم صدا بزند",
+        "C": "می‌تواند متد static دیگری را مستقیم صدا بزند",
+        "D": "نمی‌تواند پارامتر بگیرد"
+      }
+    },
+    {
+      "id": "g3-methods-017",
+      "type": "blank",
+      "prompt": "برای خروج زودهنگام از متد void از `____` استفاده می‌کنیم.",
+      "answers": [
+        "return"
+      ],
+      "explanation": "return تنها در متد void بدون expression مجاز است و کنترل را به فراخواننده بازمی‌گرداند.",
+      "concepts": [
+        "void",
+        "return"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "return"
+      ]
+    },
+    {
+      "id": "g3-methods-018",
+      "type": "mcq",
+      "prompt": "در `void f(int x) { this.x = x; }` نقش `this.x` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "this.x فیلد نمونه را از پارامتر x جدا می‌کند و مقدار پارامتر را به فیلد می‌نویسد.",
+      "concepts": [
+        "this",
+        "shadowing",
+        "fields"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "this"
+      ],
+      "options": {
+        "A": "پارامتر محلی",
+        "B": "فیلد نمونه",
+        "C": "متغیر static",
+        "D": "نام متد"
+      }
+    },
+    {
+      "id": "g3-methods-019",
+      "type": "tf",
+      "prompt": "متد می‌تواند در بدنهٔ خود، خودش را صدا بزند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "recursion مجاز است به‌شرط آنکه مسیر پایه‌ای برای توقف وجود داشته باشد.",
+      "concepts": [
+        "recursion",
+        "methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g3-methods-020",
+      "type": "mcq",
+      "prompt": "برای فراخوانی `log(\"a\", \"b\", \"c\")` وقتی log به‌صورت `void log(String... items)` تعریف شده:",
+      "answers": [
+        "B"
+      ],
+      "explanation": "varargs در فراخوانی، آرایه‌ای به اندازهٔ تعداد آرگومان‌ها می‌سازد و items به {\"a\",\"b\",\"c\"} اشاره می‌کند.",
+      "concepts": [
+        "varargs",
+        "method-call"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "varargs"
+      ],
+      "options": {
+        "A": "خطای کامپایل، چون سه آرگومان String است",
+        "B": "items به آرایهٔ {\"a\",\"b\",\"c\"} اشاره می‌کند",
+        "C": "فقط اولین آرگومان پذیرفته می‌شود",
+        "D": "آرگومان‌ها در items چاپ نمی‌شوند"
+      }
+    },
+    {
+      "id": "g3-methods-021",
+      "type": "multi",
+      "prompt": "کدام‌ها در تمایز دو overload موثرند؟",
+      "answers": [
+        "B",
+        "D"
+      ],
+      "explanation": "تعداد یا نوع پارامترها overload را متمایز می‌کند؛ return type به‌تنهایی کافی نیست.",
+      "concepts": [
+        "overloading",
+        "signature"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "نام متد",
+        "B": "تعداد پارامترها",
+        "C": "return type",
+        "D": "نوع پارامترها"
+      }
+    },
+    {
+      "id": "g3-methods-022",
+      "type": "mcq",
+      "prompt": "با `f(int a, int b)` و `f(int... vs)` کدام فراخوانی ابهام دارد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "f(1,2) هم با overload عادی و هم با varargs سازگار است و کامپایلر نمی‌تواند یکی را انتخاب کند.",
+      "concepts": [
+        "varargs",
+        "overloading"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "varargs"
+      ],
+      "options": {
+        "A": "`f(1)`",
+        "B": "`f(1, 2)`",
+        "C": "`f(1, 2, 3)`",
+        "D": "`f()`"
+      }
+    },
+    {
+      "id": "g3-methods-023",
+      "type": "tf",
+      "prompt": "در متد static استفاده از `this` مجاز نیست.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "this به نمونهٔ جاری اشاره دارد و در context static نمونه‌ای وجود ندارد.",
+      "concepts": [
+        "this",
+        "static-methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "static-methods"
+      ]
+    },
+    {
+      "id": "g3-methods-024",
+      "type": "mcq",
+      "prompt": "متد `int f() { return 'A'; }` در زمان کامپایل:",
+      "answers": [
+        "B"
+      ],
+      "explanation": "char به‌صورت widening primitive conversion به int تبدیل می‌شود و مقدار 65 برمی‌گردد.",
+      "concepts": [
+        "return-type",
+        "widening"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "char"
+      ],
+      "options": {
+        "A": "خطا می‌دهد چون char به int تبدیل نمی‌شود",
+        "B": "OK است و 65 برمی‌گرداند",
+        "C": "OK است و 'A' برمی‌گرداند",
+        "D": "در زمان اجرا خطا می‌دهد"
+      }
+    },
+    {
+      "id": "g3-methods-025",
+      "type": "mcq",
+      "prompt": "تفاوت اصلی method hiding و overriding چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "hiding برای متد static در زمان کامپایل بر اساس نوع مرجع رخ می‌دهد؛ overriding برای متد instance در زمان اجرا بر اساس نوع واقعی.",
+      "concepts": [
+        "method-hiding",
+        "overriding"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "static-methods"
+      ],
+      "options": {
+        "A": "هیچ تفاوتی ندارند",
+        "B": "hiding برای static و overriding برای instance",
+        "C": "overriding فقط در همان کلاس رخ می‌دهد",
+        "D": "hiding در زمان اجرا و overriding در زمان کامپایل"
+      }
+    }
+  ]
+}

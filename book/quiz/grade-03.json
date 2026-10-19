@@ -1,7 +1,3438 @@
 {
-  "title": "درجهٔ 3",
+  "title": "درجهٔ ۳ — Core API و متدها",
   "version": 2,
   "questions": [
+    {
+      "id": "g3-arrays-001",
+      "type": "mcq",
+      "prompt": "کدام شکل اعلام آرایهٔ int در Java ترجیح داده می‌شود؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "شکل `int[] a` استاندارد مدرن است و نوع آرایه به‌وضوح به متغیر چسبیده است؛ شکل `int a[]` صرفاً برای سازگاری با کدهای قدیمی C باقی مانده است.",
+      "concepts": [
+        "arrays",
+        "declaration"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`int[] a;`",
+        "B": "`int a[];`",
+        "C": "`int[ a ];`",
+        "D": "`array int a;`"
+      }
+    },
+    {
+      "id": "g3-arrays-002",
+      "type": "tf",
+      "prompt": "شکل `int a[]` در Java همان نوع آرایه را می‌سازد و تنها سبک نوشتار متفاوتی دارد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "هر دو شکل اعلام، متغیر a را از نوع `int[]` می‌سازند و از نظر نوع‌شناسی هیچ تفاوتی ندارند.",
+      "concepts": [
+        "arrays",
+        "declaration"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-arrays-003",
+      "type": "mcq",
+      "prompt": "پس از `int[] a = new int[5];` مقدار اولیهٔ `a[2]` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "آرایهٔ اولیهٔ int با صفر پر می‌شود؛ این مقدار پیش‌فرض برای همهٔ نوع‌های ابتدایی عددی در آرایه یکسان است.",
+      "concepts": [
+        "arrays",
+        "default-values"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "arrays",
+        "int"
+      ],
+      "options": {
+        "A": "خطای کامپایل",
+        "B": "0",
+        "C": "5",
+        "D": "null"
+      }
+    },
+    {
+      "id": "g3-arrays-004",
+      "type": "mcq",
+      "prompt": "پس از `String[] s = new String[3];` مقدار اولیهٔ `s[0]` چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "آرایهٔ نوع مرجع با null مقداردهی اولیه می‌شود تا نشان دهد هنوز شیئی به آن اندیس اشاره نمی‌کند.",
+      "concepts": [
+        "arrays",
+        "default-values",
+        "null"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays",
+        "String"
+      ],
+      "options": {
+        "A": "\"\"",
+        "B": "0",
+        "C": "undefined",
+        "D": "null"
+      }
+    },
+    {
+      "id": "g3-arrays-005",
+      "type": "mcq",
+      "prompt": "کدام قطعه، آرایه‌ای initializer‌دار می‌سازد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "Initializer literal با `{}` در همان اعلام، آرایه را با مقادیر داده‌شده پر می‌کند؛ new int[3] آرایهٔ خالی می‌سازد.",
+      "concepts": [
+        "arrays",
+        "initializer"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`int[] a = new int[3];`",
+        "B": "`int[] a = new int[]{ 0, 0, 0 };`",
+        "C": "`int[] a = { 1, 2, 3 };`",
+        "D": "`int a = { 1, 2, 3 };`"
+      }
+    },
+    {
+      "id": "g3-arrays-006",
+      "type": "tf",
+      "prompt": "Initializer کوتاه `{1, 2, 3}` فقط در همان خط اعلام متغیر مجاز است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "شکل کوتاه initializer تنها در اعلام متغیر مجاز است؛ برای تخصیص بعدی باید از `new int[]{...}` استفاده کرد.",
+      "concepts": [
+        "arrays",
+        "initializer"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-arrays-007",
+      "type": "mcq",
+      "prompt": "تفاوت `new int[]{1, 2, 3}` با `{1, 2, 3}` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "شکل `new int[]{...}` آرایهٔ بی‌نام می‌سازد و در هر جایی، از جمله آرگومان متد یا تخصیص بعدی، قابل استفاده است.",
+      "concepts": [
+        "arrays",
+        "anonymous-array"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`new int[]{...}` آرایهٔ بی‌نام می‌سازد و در فراخوانی متد هم مجاز است",
+        "B": "`{...}` آرایه‌ای با نوع متفاوت می‌سازد",
+        "C": "`new int[]{...}` فقط در حلقه مجاز است",
+        "D": "`{...}` نوع long می‌سازد"
+      }
+    },
+    {
+      "id": "g3-arrays-008",
+      "type": "mcq",
+      "prompt": "کدام دربارهٔ فیلد `length` آرایه درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "`length` فیلد final عمومی آرایه است و بدون پرانتز خوانده می‌شود؛ این با `String.length()` و `List.size()` متفاوت است.",
+      "concepts": [
+        "arrays",
+        "length"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`arr.length()` متد است",
+        "B": "`arr.length` فیلد است و بدون پرانتز به‌کار می‌رود",
+        "C": "`arr.length` متد instance است",
+        "D": "`arr.length` فقط در حلقه قابل دسترسی است"
+      }
+    },
+    {
+      "id": "g3-arrays-009",
+      "type": "mcq",
+      "prompt": "کدام دربارهٔ `arr.length`، `s.length()` و `list.size()` درست است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "آرایه فیلد دارد، String متد length() دارد و List متد size() دارد؛ این سه شکل یک کار را با سه دستور متفاوت انجام می‌دهند.",
+      "concepts": [
+        "arrays",
+        "String",
+        "List"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays",
+        "String"
+      ],
+      "options": {
+        "A": "هر سه فیلد هستند",
+        "B": "هر سه متد هستند",
+        "C": "فقط String فیلد دارد",
+        "D": "آرایه فیلد، String متد، List متد"
+      }
+    },
+    {
+      "id": "g3-arrays-010",
+      "type": "mcq",
+      "prompt": "کدام دسترسی به اندیس، `ArrayIndexOutOfBoundsException` می‌دهد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "اندیس منفی مجاز نیست و حتی قبل از مقایسه با length، استثنا پرتاب می‌شود.",
+      "concepts": [
+        "arrays",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`int[] a = new int[3]; a[-1];`",
+        "B": "`int[] a = new int[3]; a[0];`",
+        "C": "`int[] a = new int[3]; a[2];`",
+        "D": "`int[] a = new int[3]; a[0] = 1;`"
+      }
+    },
+    {
+      "id": "g3-arrays-011",
+      "type": "tf",
+      "prompt": "`arr[arr.length]` در زمان اجرا استثنا پرتاب می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "اندیس‌های مجاز 0 تا length-1 هستند و length خودش خارج از بازه است؛ خطای off-by-one رایج دانستن length به‌جای length-1 است.",
+      "concepts": [
+        "arrays",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-arrays-012",
+      "type": "mcq",
+      "prompt": "در حلقهٔ `for (int i = 0; i <= a.length; i++)` خطای رایج چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "شرط `<=` به جای `<` یک اندیس بیش از حد می‌دهد و در تکرار آخر `a[a.length]` خطای out of bounds می‌دهد.",
+      "concepts": [
+        "arrays",
+        "loops"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops",
+        "arrays"
+      ],
+      "options": {
+        "A": "حلقه بی‌نهایت می‌شود",
+        "B": "off-by-one و استثنا در تکرار آخر",
+        "C": "حلقه زودتر از زمان لازم پایان می‌یابد",
+        "D": "هیچ خطایی رخ نمی‌دهد"
+      }
+    },
+    {
+      "id": "g3-arrays-013",
+      "type": "mcq",
+      "prompt": "کدام قطعه `NullPointerException` می‌دهد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "دسترسی به اندیس روی مرجع null، بدون بررسی null بودن، NPE می‌دهد.",
+      "concepts": [
+        "arrays",
+        "null",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays",
+        "null"
+      ],
+      "options": {
+        "A": "`int[] a = new int[3]; a[0];`",
+        "B": "`int[] a = null; int n = a == null ? 0 : a.length;`",
+        "C": "`int[] a = null; int n = a.length;`",
+        "D": "`int[] a = {}; a.length;`"
+      }
+    },
+    {
+      "id": "g3-arrays-014",
+      "type": "tf",
+      "prompt": "دسترسی به اندیس آرایهٔ null در Java کامپایل می‌شود ولی در اجرا NPE می‌دهد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "کامپایلر نوع ایستا را بررسی می‌کند و null یک مقدار معتبر برای مرجع است؛ تشخیص null بودن در زمان اجرا رخ می‌دهد.",
+      "concepts": [
+        "arrays",
+        "null",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "null"
+      ]
+    },
+    {
+      "id": "g3-arrays-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ حلقهٔ enhanced-for روی آرایه درست‌اند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "متغیر حلقه فقط خواندنیِ مقدار است و برای تغییر خانه‌ها باید از حلقه با اندیس استفاده کرد؛ اندیس در enhanced-for در دسترس نیست.",
+      "concepts": [
+        "arrays",
+        "enhanced-for"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops",
+        "arrays"
+      ],
+      "options": {
+        "A": "نمی‌توان با آن مقدار خانه‌ای از آرایهٔ ابتدایی را عوض کرد",
+        "B": "می‌توان خانه‌های آرایه را با آن mutate کرد",
+        "C": "اندیس در enhanced-for در دسترس نیست",
+        "D": "اندیس در enhanced-for با i در دسترس است"
+      }
+    },
+    {
+      "id": "g3-arrays-016",
+      "type": "blank",
+      "prompt": "حلقهٔ پیمایش آرایه بدون اندیس در Java، ____-for نامیده می‌شود.",
+      "answers": [
+        "enhanced",
+        "for-each"
+      ],
+      "explanation": "نام رسمی Java، enhanced-for است ولی در میان برنامه‌نویسان به for-each هم شناخته می‌شود.",
+      "concepts": [
+        "loops",
+        "enhanced-for"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "loops"
+      ]
+    },
+    {
+      "id": "g3-arrays-017",
+      "type": "mcq",
+      "prompt": "در `for (int x : arr) { x = 0; }` آرایهٔ arr چه تغییری می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "x کپی مقدار هر خانه است و تخصیص به x فقط متغیر محلی را عوض می‌کند؛ برای صفر کردن خانه‌ها باید از حلقه با اندیس استفاده کرد.",
+      "concepts": [
+        "arrays",
+        "enhanced-for"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "loops",
+        "arrays"
+      ],
+      "options": {
+        "A": "هیچ، چون x فقط کپی مقدار است",
+        "B": "همهٔ خانه‌ها صفر می‌شوند",
+        "C": "فقط خانهٔ اول صفر می‌شود",
+        "D": "خطای کامپایل می‌دهد"
+      }
+    },
+    {
+      "id": "g3-arrays-018",
+      "type": "mcq",
+      "prompt": "آرایهٔ دو‌بعدی `int[][] m = new int[3][4];` در حافظه چگونه است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "آرایهٔ دو‌بعدی در Java آرایه‌ای از آرایه‌هاست؛ m سه مرجع به سه آرایهٔ چهارتایی نگه می‌دارد و امکان jagged بودن وجود دارد.",
+      "concepts": [
+        "arrays",
+        "2d-arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "یک بلوی پیوسته ۱۲ خانه‌ای است",
+        "B": "ماتریس مربعی است",
+        "C": "آرایه‌ای از آرایه‌هاست و می‌تواند jagged باشد",
+        "D": "همیشه دو ردیف دارد"
+      }
+    },
+    {
+      "id": "g3-arrays-019",
+      "type": "tf",
+      "prompt": "در Java می‌توان ردیف‌های آرایهٔ دو‌بعدی با طول‌های متفاوت ساخت.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "چون هر ردیف آرایه‌ای مستقل است، می‌توان برای هر ردیف طول متفاوتی ساخت؛ به این ساختار jagged array می‌گویند.",
+      "concepts": [
+        "arrays",
+        "jagged-arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-arrays-020",
+      "type": "mcq",
+      "prompt": "`Arrays.sort(int[] a)` برای آرایهٔ int از چه الگوریتمی استفاده می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "آرایهٔ ابتدایی با Dual-Pivot Quicksort مرتب می‌شود که در JDK 7 به بعد سریع‌تر از الگوریتم‌های تک‌محوری است.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "Merge Sort",
+        "B": "Dual-Pivot Quicksort",
+        "C": "Bubble Sort",
+        "D": "Linear Search"
+      }
+    },
+    {
+      "id": "g3-arrays-021",
+      "type": "mcq",
+      "prompt": "خروجی `Arrays.toString(new int[]{1, 2, 3})` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "toString آرایه‌های ابتدایی نمایش براکتی با مقادیر comma-separated می‌سازد؛ برای چاپ مفید ولی برای nested ناکافی است.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`[1, 2, 3]`",
+        "B": "`{1, 2, 3}`",
+        "C": "`(1, 2, 3)`",
+        "D": "`1 2 3`"
+      }
+    },
+    {
+      "id": "g3-arrays-022",
+      "type": "mcq",
+      "prompt": "برای چاپ آرایهٔ دو‌بعدی `int[][] m` به شکل ماتریسی، کدام مناسب است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "deepToString در آرایه‌های تو در تو بازگشتی عمل می‌کند و عناصر سطوح داخلی را هم به شکل مناسب چاپ می‌کند.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`Arrays.toString(m)`",
+        "B": "`m.toString()`",
+        "C": "`Arrays.deepToString(m)`",
+        "D": "`Arrays.hashCode(m)`"
+      }
+    },
+    {
+      "id": "g3-arrays-023",
+      "type": "mcq",
+      "prompt": "تفاوت `==` با `Arrays.equals(a, b)` برای آرایه چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "`==` هویت مرجع را مقایسه می‌کند و برای دو آرایهٔ محتوا یکسان پاسخ false می‌دهد؛ `Arrays.equals` محتوای متناظر را مقایسه می‌کند.",
+      "concepts": [
+        "arrays",
+        "equality"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "`==` محتوا را مقایسه می‌کند و Arrays.equals هویت",
+        "B": "`==` هویت مرجع را مقایسه می‌کند و Arrays.equals محتوا را",
+        "C": "`==` و Arrays.equals همواره نتیجهٔ یکسان می‌دهند",
+        "D": "`Arrays.equals` فقط برای آرایهٔ int است"
+      }
+    },
+    {
+      "id": "g3-arrays-024",
+      "type": "mcq",
+      "prompt": "نتیجهٔ `Arrays.copyOf(arr, 3)` وقتی arr پنج‌عضوی است چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "copyOf با length کمتر، آرایه را truncate می‌کند و آرایهٔ تازه‌ای با سه عنصر اول برمی‌گرداند.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "آرایهٔ سه‌عضوی با سه عنصر اول",
+        "B": "آرایهٔ پنج‌عضوی بدون تغییر",
+        "C": "آرایهٔ خالی",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g3-arrays-025",
+      "type": "mcq",
+      "prompt": "`Arrays.copyOfRange(arr, 1, 4)` کدام بازه را کپی می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "copyOfRange شروع را شامل و پایان را مستثنی می‌کند، درست مانند substring؛ پس اندیس‌های 1، 2 و 3 کپی می‌شوند.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "اندیس 1 تا 4 شامل هر دو",
+        "B": "فقط اندیس 1",
+        "C": "اندیس‌های 1، 2 و 3",
+        "D": "همهٔ آرایه"
+      }
+    },
+    {
+      "id": "g3-arrays-026",
+      "type": "mcq",
+      "prompt": "خروجی `Arrays.fill(a, 7)` وقتی a آرایه‌ای پنج‌عضوی int است چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "fill همهٔ خانه‌های آرایه را با مقدار داده‌شده بازنویسی می‌کند؛ این عمل inplace است و آرایهٔ تازه نمی‌سازد.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "آرایهٔ تازه‌ای پر از 7 برمی‌گرداند",
+        "B": "همهٔ خانه‌های a به 7 تغییر می‌کنند",
+        "C": "فقط اولین خانه 7 می‌شود",
+        "D": "خطای زمان اجرا"
+      }
+    },
+    {
+      "id": "g3-arrays-027",
+      "type": "mcq",
+      "prompt": "`Arrays.setAll(a, i -> i * i)` چه می‌کند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "setAll برای هر اندیس i مقدار را از IntFunction می‌گیرد و در خانه می‌نویسد؛ اینجا مربع اندیس در هر خانه قرار می‌گیرد.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "arrays",
+        "lambda"
+      ],
+      "options": {
+        "A": "همهٔ خانه‌ها را 0 می‌کند",
+        "B": "آرایه را با اعداد زوج پر می‌کند",
+        "C": "اندیس‌ها را در آرایه جست‌وجو می‌کند",
+        "D": "خانهٔ i را i*i می‌کند"
+      }
+    },
+    {
+      "id": "g3-arrays-028",
+      "type": "mcq",
+      "prompt": "کدام دربارهٔ `Arrays.parallelSort` درست است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "parallelSort در JDK 8 به بعد با Fork/Join چند هسته‌ای مرتب می‌کند و برای آرایه‌های بزرگ سریع‌تر است؛ برای آرایهٔ کوچک، سربار thread بالاست و sort معمولی بهتر است.",
+      "concepts": [
+        "arrays",
+        "Arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "مرتب‌سازی موازی برای آرایه‌های بزرگ فراهم می‌کند",
+        "B": "همیشه سریع‌تر از sort معمولی است",
+        "C": "فقط برای آرایهٔ String است",
+        "D": "آرایه را به ArrayList تبدیل می‌کند"
+      }
+    },
+    {
+      "id": "g3-deepening-001",
+      "type": "mcq",
+      "prompt": "کدام method overload در `f(2147483648)` انتخاب می‌شود وقتی `void f(int)` و `void f(long)` هر دو موجود باشند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "literal 2147483648 بزرگ‌تر از int.MAX_VALUE است، پس compile-time به long ارتقا می‌یابد و f(long) انتخاب می‌شود.",
+      "concepts": [
+        "overloading",
+        "numeric-promotion"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "methods",
+        "primitives"
+      ],
+      "options": {
+        "A": "f(int) — implicit cast",
+        "B": "f(long) — literal promotion",
+        "C": "compile error",
+        "D": "ambiguous"
+      }
+    },
+    {
+      "id": "g3-deepening-002",
+      "type": "tf",
+      "prompt": "`f(0)` و `f(0L)` و `f(0.0)` در overload set که هر سه نوع را دارد، به ترتیب به int، long، double می‌روند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "هر سه literal بدون ambiguity به exact match می‌روند.",
+      "concepts": [
+        "overloading",
+        "literals"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g3-deepening-003",
+      "type": "mcq",
+      "prompt": "وقتی `void f(Object o)` و `void f(String s)` هر دو موجود و `f(null)` فراخوانی شود، کدام انتخاب می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "null می‌تواند هر reference باشد؛ compiler most-specific را انتخاب می‌کند و String از Object specific‌تر است.",
+      "concepts": [
+        "overloading",
+        "null"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "f(Object)",
+        "B": "f(String) — more specific",
+        "C": "compile error",
+        "D": "f(String) اما runtime NPE"
+      }
+    },
+    {
+      "id": "g3-deepening-004",
+      "type": "mcq",
+      "prompt": "`f(null)` در overload set `void f(String s)` و `void f(Integer i)` چه رفتاری دارد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "null می‌تواند String یا Integer باشد؛ هیچ‌کدام specific‌تر نیست، پس ambiguous است.",
+      "concepts": [
+        "overloading",
+        "null",
+        "ambiguity"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "f(String)",
+        "B": "f(Integer)",
+        "C": "compile error — ambiguous",
+        "D": "runtime NullPointerException"
+      }
+    },
+    {
+      "id": "g3-deepening-005",
+      "type": "mcq",
+      "prompt": "وقتی overload `void f(int... vs)` و `f(int a, int b)` هر دو موجود و `f(1, 2)` فراخوانی شود، کدام برنده است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "method با دو پارامتر explicit قبل از varargs در نظر گرفته می‌شود.",
+      "concepts": [
+        "overloading",
+        "varargs"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "methods",
+        "varargs"
+      ],
+      "options": {
+        "A": "f(int, int)",
+        "B": "f(int...)",
+        "C": "ambiguous",
+        "D": "compile error"
+      }
+    },
+    {
+      "id": "g3-deepening-006",
+      "type": "mcq",
+      "prompt": "خروجی `String s = \"Hello\"; System.out.println(s.substring(1, 1));` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "substring با begin == end یک رشتهٔ خالی برمی‌گرداند.",
+      "concepts": [
+        "string-api",
+        "substring"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "strings"
+      ],
+      "options": {
+        "A": "H",
+        "B": "(empty string)",
+        "C": "exception",
+        "D": "e"
+      }
+    },
+    {
+      "id": "g3-deepening-007",
+      "type": "tf",
+      "prompt": "`\"  hello  \".strip()` فقط whitespace ابتدا و انتها را حذف می‌کند ولی whitespace داخلی را دست نمی‌زند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "strip فقط leading/trailing را حذف می‌کند؛ whitespace میانی (بین دو کلمه) دست‌نخورده می‌ماند.",
+      "concepts": [
+        "string-api",
+        "strip"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g3-deepening-008",
+      "type": "mcq",
+      "prompt": "خروجی `System.out.println(\"a\".repeat(0));` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "String.repeat(0) رشتهٔ خالی برمی‌گرداند نه exception.",
+      "concepts": [
+        "string-api",
+        "repeat"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "strings"
+      ],
+      "options": {
+        "A": "(empty string)",
+        "B": "a",
+        "C": "exception",
+        "D": "null"
+      }
+    },
+    {
+      "id": "g3-deepening-009",
+      "type": "mcq",
+      "prompt": "`String s = null; System.out.println(s.length());` چه می‌دهد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "null.length() NullPointerException می‌دهد.",
+      "concepts": [
+        "string-api",
+        "null"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "strings"
+      ],
+      "options": {
+        "A": "0",
+        "B": "null",
+        "C": "NullPointerException",
+        "D": "StringIndexOutOfBoundsException"
+      }
+    },
+    {
+      "id": "g3-deepening-010",
+      "type": "mcq",
+      "prompt": "`\"abc\".compareTo(\"abd\")` چه عددی برمی‌گرداند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "compareTo بر اساس lexicographic تفاوت کاراکتر است؛ c-d = -1.",
+      "concepts": [
+        "string-api",
+        "compareto"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "strings",
+        "comparator"
+      ],
+      "options": {
+        "A": "-1",
+        "B": "0",
+        "C": "1",
+        "D": "true"
+      }
+    },
+    {
+      "id": "g3-deepening-011",
+      "type": "mcq",
+      "prompt": "اگر یک thread مقدار String را در حلقه `s = s + x` بسازد و thread دیگر همان `s` را بخواند، چه thread-safety رفتاری دیده می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "reference s می‌تواند هر لحظه به String جدید اشاره کند؛ reader ممکن است reference منتسب‌نشده (old) یا reference منتسب‌شدهٔ فعلی را ببیند، ولی هر String immutable است.",
+      "concepts": [
+        "immutability",
+        "concurrency"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "strings",
+        "concurrency"
+      ],
+      "options": {
+        "A": "همیشه safe",
+        "B": "race در reference — ولی String object مشاهده‌شده immutable",
+        "C": "همیشه NPE",
+        "D": "همیشه safe بدون volatile"
+      }
+    },
+    {
+      "id": "g3-deepening-012",
+      "type": "tf",
+      "prompt": "`final String s = \"x\"; s = \"y\";` کامپایل می‌شود ولی runtime می‌تواند عوض شود.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "final local variable پس از مقداردهی اولیه قابل reassign نیست؛ کامپایل خطا می‌دهد.",
+      "concepts": [
+        "immutability",
+        "final"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g3-deepening-013",
+      "type": "mcq",
+      "prompt": "کدام انتخاب درست‌تر است برای کلید در HashMap وقتی کلید طبیعتاً String است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "String immutable است، hash ثابت می‌ماند، و contract HashMap برقرار می‌ماند.",
+      "concepts": [
+        "immutability",
+        "collections"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "strings",
+        "hashmap"
+      ],
+      "options": {
+        "A": "String — natural key",
+        "B": "StringBuilder — قابل mutate",
+        "C": "char[] — performance",
+        "D": "هر کلاس immutable"
+      }
+    },
+    {
+      "id": "g3-deepening-014",
+      "type": "multi",
+      "prompt": "کدام‌ها از String.valueOf همان نتیجهٔ `+ \"\"` را نمی‌دهند؟",
+      "answers": [
+        "B",
+        "C"
+      ],
+      "explanation": "valueOf(null) رشتهٔ \"null\" برمی‌گرداند (نه NPE)، و valueOf(primitive) صریح‌تر از + است.",
+      "concepts": [
+        "string-api",
+        "valueof"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "strings"
+      ],
+      "options": {
+        "A": "String.valueOf(\"x\")",
+        "B": "String.valueOf(null)",
+        "C": "String.valueOf(new Object())",
+        "D": "String.valueOf(42)"
+      }
+    },
+    {
+      "id": "g3-deepening-015",
+      "type": "tf",
+      "prompt": "`new String(\"hello\") == new String(\"hello\")` برابر true است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "هر new یک object متفاوت می‌سازد؛ == روی reference مقایسه می‌کند.",
+      "concepts": [
+        "string-pool",
+        "equals-identity"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g3-deepening-016",
+      "type": "mcq",
+      "prompt": "وقتی `void f(String first, String... rest)` و `void f(String... all)` هر دو موجود باشند و `f(\"a\")` فراخوانی شود، کدام برنده است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "exact-match قبل از varargs؛ f(String, String...) بدون rest برای یک آرگومان quasi-compatible‌تر است.",
+      "concepts": [
+        "overloading",
+        "varargs"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "methods",
+        "varargs"
+      ],
+      "options": {
+        "A": "f(String, String...)",
+        "B": "f(String...)",
+        "C": "ambiguous",
+        "D": "compile error"
+      }
+    },
+    {
+      "id": "g3-deepening-017",
+      "type": "mcq",
+      "prompt": "اگر method فقط `void f(int x)` باشد، فراخوانی `f(1, 2)` چه می‌دهد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "تعداد آرگومان با امضا نمی‌خواند؛ compile error.",
+      "concepts": [
+        "methods"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "f(1) فراخوانی می‌شود و 2 نادیده گرفته می‌شود",
+        "B": "compile error",
+        "C": "runtime automatic",
+        "D": "varargs پنهان"
+      }
+    },
+    {
+      "id": "g3-deepening-018",
+      "type": "tf",
+      "prompt": "`void f(int... vs)` و `void f(int[] arr)` می‌توانند در یک کلاس همزمان define شوند چون در JVM یکسان‌اند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "duplicate method declaration است؛ در سطح source این‌ها یکسان ولی compiler خطا می‌دهد.",
+      "concepts": [
+        "overloading",
+        "varargs"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods",
+        "varargs"
+      ]
+    },
+    {
+      "id": "g3-deepening-019",
+      "type": "blank",
+      "prompt": "برای صدا زدن متدی که `int... values` دارد با آرایهٔ موجود، از `f(____)` استفاده می‌کنیم.",
+      "answers": [
+        "['new int[]{}', 'new int[]{...}', 'new int[]{0}']"
+      ],
+      "explanation": "آرایهٔ anonymous به‌صراحت به‌عنوان آرگومان پاس داده می‌شود.",
+      "concepts": [
+        "varargs",
+        "syntax"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods",
+        "varargs"
+      ]
+    },
+    {
+      "id": "g3-deepening-020",
+      "type": "mcq",
+      "prompt": "متد `int f(int... vs) { return vs.length; }` وقتی `f(1, 2, 3, 4)` فراخوانی شود چه برمی‌گرداند؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "چهار آرگومان، length = 4.",
+      "concepts": [
+        "varargs"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods",
+        "varargs"
+      ],
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      }
+    },
+    {
+      "id": "g3-deepening-021",
+      "type": "mcq",
+      "prompt": "`int[] a = new int[3]; System.out.println(Arrays.toString(a));` چه چاپ می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "آرایهٔ int با default value 0 پر می‌شود.",
+      "concepts": [
+        "arrays",
+        "defaults"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "[null, null, null]",
+        "B": "[0, 0, 0]",
+        "C": "[]",
+        "D": "exception"
+      }
+    },
+    {
+      "id": "g3-deepening-022",
+      "type": "mcq",
+      "prompt": "خروجی `Arrays.equals(new int[]{1,2}, new long[]{1,2})` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "Arrays.equals نوع آرایه را چک می‌کند؛ int[] و long[] یکسان نیستند.",
+      "concepts": [
+        "arrays",
+        "equality"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "compile error — نوع‌ها ناسازگار",
+        "D": "runtime exception"
+      }
+    },
+    {
+      "id": "g3-deepening-023",
+      "type": "mcq",
+      "prompt": "`Arrays.binarySearch(arr, k)` روی آرایهٔ مرتب‌نشده چه تضمینی دارد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "binarySearch فرض می‌کند ascending است؛ در غیر این صورت index ممکن است درست نباشد ولی exception نمی‌دهد.",
+      "concepts": [
+        "arrays",
+        "binarysearch"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "همیشه درست",
+        "B": "exception",
+        "C": "ممکن است index غلط بدهد — پیش‌نیاز مرتب بودن",
+        "D": "auto-sort می‌کند"
+      }
+    },
+    {
+      "id": "g3-deepening-024",
+      "type": "tf",
+      "prompt": "`int[] a = {1}; int[] b = a.clone(); a[0] = 9;` پس از آن `b[0]` برابر 1 است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "clone آرایهٔ int یک کپی عمیق (deep) از element می‌سازد.",
+      "concepts": [
+        "arrays",
+        "clone"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-deepening-025",
+      "type": "mcq",
+      "prompt": "`Arrays.sort(intArr)` روی آرایهٔ نزولی مثل `{5,3,1,4}` چه رفتاری دارد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "sort صعودی مرتب می‌کند: {1,3,4,5}.",
+      "concepts": [
+        "arrays",
+        "sort"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "تغییری نمی‌کند چون sort صعودی نمی‌تواند",
+        "B": "{1,3,4,5}",
+        "C": "{5,4,3,1}",
+        "D": "exception"
+      }
+    },
+    {
+      "id": "g3-deepening-026",
+      "type": "multi",
+      "prompt": "کدام‌ها در enhanced-for روی آرایه صحیح هستند؟",
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "enhanced-for همواره کپی است؛ تغییر element نیاز به index-based for دارد.",
+      "concepts": [
+        "arrays",
+        "enhanced-for"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays",
+        "control-flow"
+      ],
+      "options": {
+        "A": "for (int x : a)",
+        "B": "for (int x : new int[]{1,2})",
+        "C": "for (int x : a) a[0] = 9;",
+        "D": "for (int& x : a)"
+      }
+    },
+    {
+      "id": "g3-deepening-027",
+      "type": "mcq",
+      "prompt": "خروجی `Math.round(-2.5)` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "round به nearest-long برمی‌گرداند با ties toward +infinity؛ -2.5 به -2 گرد می‌شود (نه -3).",
+      "concepts": [
+        "math",
+        "round"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "math"
+      ],
+      "options": {
+        "A": "-3",
+        "B": "-2",
+        "C": "-2.5",
+        "D": "0"
+      }
+    },
+    {
+      "id": "g3-deepening-028",
+      "type": "mcq",
+      "prompt": "`Math.sqrt(-1)` چه برمی‌گرداند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "double sqrt عدد منفی NaN می‌دهد بدون exception.",
+      "concepts": [
+        "math",
+        "nan"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "math",
+        "floating-point"
+      ],
+      "options": {
+        "A": "NaN",
+        "B": "-1.0",
+        "C": "Exception",
+        "D": "0.0"
+      }
+    },
+    {
+      "id": "g3-deepening-029",
+      "type": "mcq",
+      "prompt": "`Math.floorDiv(7, -2)` چه برمی‌گرداند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "floorDiv: floor(7/-2) = floor(-3.5) = -4.",
+      "concepts": [
+        "math",
+        "floor-div"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "math"
+      ],
+      "options": {
+        "A": "-4",
+        "B": "-3",
+        "C": "3",
+        "D": "7"
+      }
+    },
+    {
+      "id": "g3-deepening-030",
+      "type": "multi",
+      "prompt": "کدام‌ها NumberFormatException پرتاب نمی‌کنند؟",
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "Boolean.parseBoolean فقط 'true' (case-insensitive) قبول است؛ سایر رشته‌ها false می‌دهند.",
+      "concepts": [
+        "parsing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "parsing"
+      ],
+      "options": {
+        "A": "Boolean.parseBoolean(\"TRUE\")",
+        "B": "Boolean.parseBoolean(\"false\")",
+        "C": "Boolean.parseBoolean(\"yes\") → exception",
+        "D": "Integer.parseInt(\"\")"
+      }
+    },
+    {
+      "id": "g3-deepening-031",
+      "type": "tf",
+      "prompt": "`Integer.parseInt(\"+42\")` درست parse می‌شود و 42 برمی‌گرداند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "parseInt علامت + در ابتدا را می‌پذیرد.",
+      "concepts": [
+        "parsing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "parsing"
+      ]
+    },
+    {
+      "id": "g3-deepening-032",
+      "type": "mcq",
+      "prompt": "`Long.parseLong(\"2147483648\")` چه برمی‌گرداند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "این مقدار بزرگ‌تر از Integer.MAX_VALUE ولی در محدودهٔ long است؛ long آن را قبول می‌کند.",
+      "concepts": [
+        "parsing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "parsing"
+      ],
+      "options": {
+        "A": "2147483648L",
+        "B": "NumberFormatException",
+        "C": "-2147483648",
+        "D": "2147483647"
+      }
+    },
+    {
+      "id": "g3-deepening-033",
+      "type": "mcq",
+      "prompt": "در `String s = \"Hello\"; char c = s.charAt(10);` چه رخ می‌دهد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "charAt خارج از محدوده StringIndexOutOfBoundsException می‌دهد.",
+      "concepts": [
+        "string-api",
+        "oob"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "strings"
+      ],
+      "options": {
+        "A": "c = '\\0'",
+        "B": "StringIndexOutOfBoundsException",
+        "C": "c = ' '",
+        "D": "ArrayIndexOutOfBoundsException"
+      }
+    },
+    {
+      "id": "g3-deepening-034",
+      "type": "tf",
+      "prompt": "`\"abc\".replace(\"a\", \"\")` نتیجه `\"bc\"` می‌دهد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "replace(CharSequence, CharSequence) literal است و 'a' را با '' (تهی) جایگزین می‌کند.",
+      "concepts": [
+        "string-api",
+        "replace"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g3-deepening-035",
+      "type": "mcq",
+      "prompt": "`int[] a = new int[]{1,2,3}; int[] b = Arrays.copyOf(a, 10);` نتیجهٔ b چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "copyOf extend می‌کند با default value (0 برای int).",
+      "concepts": [
+        "arrays",
+        "copyof"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "[1,2,3]",
+        "B": "[1,2,3,null,null,null,null]",
+        "C": "[1,2,3,0,0,0,0,0,0,0]",
+        "D": "exception"
+      }
+    },
+    {
+      "id": "g3-deepening-036",
+      "type": "tf",
+      "prompt": "StringBuilder.append(null) عبارت \"null\" (چهار کاراکتر) اضافه می‌کند نه exception.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "StringBuilder.append تبدیل صریح به String می‌کند؛ null به \"null\" تبدیل می‌شود.",
+      "concepts": [
+        "stringbuilder",
+        "null"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "strings"
+      ]
+    },
+    {
+      "id": "g3-deepening-037",
+      "type": "mcq",
+      "prompt": "وقتی `f(int x)` و `f(Number n)` موجود است و `f(Integer.valueOf(5))` فراخوانی می‌شود، کدام؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "Integer widening به Number می‌رود ولی unboxing به int نیز ممکن است؛ exact match int وجود ندارد (Integer != int). Widening reference to Number wins.",
+      "concepts": [
+        "overloading",
+        "autoboxing",
+        "widening-reference"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "methods",
+        "wrappers"
+      ],
+      "options": {
+        "A": "f(Number n)",
+        "B": "f(int x)",
+        "C": "ambiguous",
+        "D": "compile error"
+      }
+    },
+    {
+      "id": "g3-deepening-038",
+      "type": "blank",
+      "prompt": "وقتی method شما `void f(int a, int b, int... rest)` دارد، فراخوانی `f(1, 2)` معادل است با `f(1, 2, ____)` به‌طور ضمنی.",
+      "answers": [
+        "['new int[0]', 'new int[]{}']"
+      ],
+      "explanation": "rest در این حالت آرایهٔ خالی است.",
+      "concepts": [
+        "varargs",
+        "syntax"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "methods",
+        "varargs"
+      ]
+    },
+    {
+      "id": "g3-deepening-039",
+      "type": "tf",
+      "prompt": "اگر متد شما `int f(int a, int b)` است، فراخوانی `f(1)` کامپایل نمی‌شود چون تعداد آرگومان کم است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "signature صریح دو int می‌خواهد؛ یک آرگومان نمی‌تواند implicit جایگزین شود.",
+      "concepts": [
+        "methods",
+        "signature"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g3-deepening-040",
+      "type": "mcq",
+      "prompt": "در عبارت `\"a\" + \"b\" + \"c\"`، compiler چند String موقت می‌سازد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "compile-time constant concatenation؛ یک String واحد در constant pool می‌سازد و هیچ runtime concat ندارد.",
+      "concepts": [
+        "string-api",
+        "compile-time"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "strings"
+      ],
+      "options": {
+        "A": "3",
+        "B": "1 — compile-time concat",
+        "C": "2 — یک StringBuilder",
+        "D": "0 — inline"
+      }
+    },
+    {
+      "id": "g3-deepening-041",
+      "type": "mcq",
+      "prompt": "`Arrays.stream(new int[]{1,2,3}).sum()` چه برمی‌گرداند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "sum 1+2+3 = 6 (int).",
+      "concepts": [
+        "arrays",
+        "stream"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "arrays"
+      ],
+      "options": {
+        "A": "6",
+        "B": "OptionalInt[6]",
+        "C": "long",
+        "D": "exception"
+      }
+    },
+    {
+      "id": "g3-deepening-042",
+      "type": "mcq",
+      "prompt": "`Math.nextUp(Double.MAX_VALUE)` چه برمی‌گرداند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "Double.MAX_VALUE نزدیک‌ترین مقدار مثبت به +infinity است؛ nextUp آن را به سمت infinity جلو می‌برد (ممکن است Infinity شود).",
+      "concepts": [
+        "math",
+        "floating-point"
+      ],
+      "difficulty": 5,
+      "prerequisites": [
+        "math"
+      ],
+      "options": {
+        "A": "Double.MAX_VALUE",
+        "B": "Infinity",
+        "C": "Double.MIN_VALUE",
+        "D": "Exception"
+      }
+    },
+    {
+      "id": "g3-deepening-043",
+      "type": "multi",
+      "prompt": "کدام‌ها متد static هستند (نمی‌توان از `this` استفاده کرد)؟",
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "main و یک متد بدون نمونه static است.",
+      "concepts": [
+        "static",
+        "methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods",
+        "static"
+      ],
+      "options": {
+        "A": "public static void main(String[])",
+        "B": "static int helper()",
+        "C": "void instance()",
+        "D": "public void finalMethod()"
+      }
+    },
+    {
+      "id": "g3-deepening-044",
+      "type": "tf",
+      "prompt": "اگر متد شما `void f(Integer x)` و `void f(int x)` هر دو موجود باشند، فراخوانی `f(5)` بدون ambiguity به f(int) می‌رود چون exact match قبل از autoboxing است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "exact match int بر unboxing به Integer ارجح است.",
+      "concepts": [
+        "overloading",
+        "autoboxing"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "methods",
+        "wrappers"
+      ]
+    },
+    {
+      "id": "g3-deepening-045",
+      "type": "mcq",
+      "prompt": "`Integer.parseInt(\"0xFF\")` چه می‌دهد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "parseInt بدون radix فقط decimal می‌فهمد؛ 'x' کاراکتر غیرعددی است پس NFE.",
+      "concepts": [
+        "parsing",
+        "radix"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "parsing"
+      ],
+      "options": {
+        "A": "255",
+        "B": "NumberFormatException",
+        "C": "0",
+        "D": "FF"
+      }
+    },
+    {
+      "id": "g3-deepening-046",
+      "type": "mcq",
+      "prompt": "کدام گزینه دربارهٔ String.compareToIgnoreCase درست است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "compareToIgnoreCase ابتدا lowercase می‌کند (با Locale-dependent)، سپس مقایسه می‌کند. برای locale-independent از equalsIgnoreCase یا explicit collation استفاده کنید.",
+      "concepts": [
+        "string-api",
+        "compareto"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "strings",
+        "locale"
+      ],
+      "options": {
+        "A": "case-sensitive lexicographic",
+        "B": "case-insensitive ولی locale-dependent",
+        "C": "همیشه UTF-16 unit compare",
+        "D": "codepoint-aware"
+      }
+    },
+    {
+      "id": "g3-math-001",
+      "type": "mcq",
+      "prompt": "خروجی `Math.max(-2, -7)` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "max بین دو مقدار، بزرگ‌تر را برمی‌گرداند و در مقایسهٔ اعداد منفی، -2 بزرگ‌تر از -7 است.",
+      "concepts": [
+        "Math",
+        "static-methods"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "-2",
+        "B": "-7",
+        "C": "0",
+        "D": "-9"
+      }
+    },
+    {
+      "id": "g3-math-002",
+      "type": "mcq",
+      "prompt": "خروجی `Math.abs(-3)` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "abs مقدار قدر مطلق را برمی‌گرداند؛ برای int آرگومان، خروجی int است و برای double، خروجی double است.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "-3",
+        "B": "3",
+        "C": "0",
+        "D": "خطا"
+      }
+    },
+    {
+      "id": "g3-math-003",
+      "type": "mcq",
+      "prompt": "`Math.round(3.6)` چه برمی‌گرداند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "round برای آرگومان double، مقدار long برمی‌گرداند و در اینجا 4 به‌صورت long برگشت داده می‌شود.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "3 به‌صورت int",
+        "B": "3.6 به‌صورت double",
+        "C": "4 به‌صورت long",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g3-math-004",
+      "type": "mcq",
+      "prompt": "خروجی `Math.floor(2.3)` چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "floor بزرگ‌ترین عدد صحیح کوچک‌تر یا مساوی را برمی‌گرداند و نوع بازگشتی همواره double است، حتی اگر آرگومان int باشد.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "2 به‌صورت int",
+        "B": "3 به‌صورت int",
+        "C": "2 به‌صورت float",
+        "D": "2.0 به‌صورت double"
+      }
+    },
+    {
+      "id": "g3-math-005",
+      "type": "mcq",
+      "prompt": "خروجی `Math.ceil(2.1)` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "ceil کوچک‌ترین عدد صحیح بزرگ‌تر یا مساوی را برمی‌گرداند و نوع بازگشتی آن نیز همواره double است.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "3.0 به‌صورت double",
+        "B": "2.0 به‌صورت double",
+        "C": "3 به‌صورت int",
+        "D": "2 به‌صورت int"
+      }
+    },
+    {
+      "id": "g3-math-006",
+      "type": "mcq",
+      "prompt": "خروجی `Math.pow(2, 10)` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "pow آرگومان دوم را به توان اول می‌رساند و نوع بازگشتی double است؛ برای توان‌های بزرگ، اعداد اعشاری بازمی‌گردد نه long.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "10 به‌صورت int",
+        "B": "1024.0 به‌صورت double",
+        "C": "512 به‌صورت int",
+        "D": "خطا"
+      }
+    },
+    {
+      "id": "g3-math-007",
+      "type": "mcq",
+      "prompt": "خروجی `Math.sqrt(81)` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "sqrt ریشهٔ دوم مثبت را برمی‌گرداند و نوع بازگشتی آن double است؛ برای نتیجهٔ صحیح بهتر است ریشهٔ مربع کامل را به int تبدیل کرد.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "9 به‌صورت int",
+        "B": "8 به‌صورت int",
+        "C": "9.0 به‌صورت double",
+        "D": "81.0 به‌صورت double"
+      }
+    },
+    {
+      "id": "g3-math-008",
+      "type": "tf",
+      "prompt": "`Math.cbrt(27)` برابر 3.0 است.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "cbrt ریشهٔ سوم حقیقی را برمی‌گرداند و برای ورودی منفی هم قابل استفاده است؛ خروجی همواره double است.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ]
+    },
+    {
+      "id": "g3-math-009",
+      "type": "mcq",
+      "prompt": "خروجی `Math.signum(-5.0)` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "signum برای عدد منفی 1.0-، برای صفر 0.0 و برای مثبت 1.0 برمی‌گرداند؛ نوع بازگشتی همواره double است.",
+      "concepts": [
+        "Math"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "1.0",
+        "B": "-1.0",
+        "C": "0.0",
+        "D": "-5.0"
+      }
+    },
+    {
+      "id": "g3-math-010",
+      "type": "mcq",
+      "prompt": "مقدار `Math.PI` تقریباً برابر است با:",
+      "answers": [
+        "A"
+      ],
+      "explanation": "Math.PI ثابت double برابر 3.14159... است که نسبت محیط به قطر دایره را نشان می‌دهد.",
+      "concepts": [
+        "Math",
+        "constants"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "3.14159...",
+        "B": "2.71828...",
+        "C": "1.41421...",
+        "D": "1.61803..."
+      }
+    },
+    {
+      "id": "g3-math-011",
+      "type": "mcq",
+      "prompt": "مقدار `Math.E` تقریباً برابر است با:",
+      "answers": [
+        "D"
+      ],
+      "explanation": "Math.E عدد اویلر است و پایهٔ لگاریتم طبیعی و تابع نمایی به‌کار می‌رود.",
+      "concepts": [
+        "Math",
+        "constants"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "3.14159...",
+        "B": "1.41421...",
+        "C": "1.61803...",
+        "D": "2.71828..."
+      }
+    },
+    {
+      "id": "g3-math-012",
+      "type": "tf",
+      "prompt": "`Math.random()` می‌تواند دقیقاً 1.0 برگرداند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "Math.random بازهٔ `[0.0, 1.0)` تولید می‌کند و عدد 1.0 در آن بازه نیست؛ تنها 0.0 ممکن است تولید شود.",
+      "concepts": [
+        "Math",
+        "random"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Math"
+      ]
+    },
+    {
+      "id": "g3-math-013",
+      "type": "mcq",
+      "prompt": "برای تولید int تصادفی در بازهٔ `[0, n)` بهترین انتخاب چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "ThreadLocalRandom.current().nextInt(n) برای برنامه‌های چندنخی سبک‌تر از Math.random است و آمادهٔ بازهٔ `[0, n)` برمی‌گرداند.",
+      "concepts": [
+        "Math",
+        "random",
+        "concurrency"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "concurrency"
+      ],
+      "options": {
+        "A": "`ThreadLocalRandom.current().nextInt(n)`",
+        "B": "`Math.random() * n`",
+        "C": "`new Random().nextInt() % n`",
+        "D": "`Math.round(Math.random() * n)`"
+      }
+    },
+    {
+      "id": "g3-math-014",
+      "type": "mcq",
+      "prompt": "`Math.addExact(Integer.MAX_VALUE, 1)` چه می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "addExact در سرریز، ArithmeticException پرتاب می‌کند تا از wrap-around ناخواسته جلوگیری شود؛ این رفتار امن‌تر از `+` معمولی است.",
+      "concepts": [
+        "Math",
+        "overflow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "مقدار منفی برمی‌گرداند",
+        "B": "Integer.MIN_VALUE برمی‌گرداند",
+        "C": "ArithmeticException پرتاب می‌کند",
+        "D": "0 برمی‌گرداند"
+      }
+    },
+    {
+      "id": "g3-math-015",
+      "type": "mcq",
+      "prompt": "برای تقسیم صحیح منفی‌آگاه در Java کدام مناسب‌تر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "floorDiv و floorMod تقسیم و باقیمانده را به‌گونه‌ای تعریف می‌کنند که همواره `a == (a / b) * b + (a % b)` برقرار باشد، حتی برای ورودی منفی.",
+      "concepts": [
+        "Math",
+        "integer-division"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "int"
+      ],
+      "options": {
+        "A": "`/` و `%`",
+        "B": "`Math.floorDiv` و `Math.floorMod`",
+        "C": "`Math.div` و `Math.mod`",
+        "D": "`Math.negate`"
+      }
+    },
+    {
+      "id": "g3-math-016",
+      "type": "mcq",
+      "prompt": "کدام دربارهٔ `Math.sin` درست است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "sin آرگومان را بر حسب رادیان می‌گیرد نه درجه؛ برای تبدیل درجه به رادیان باید در `Math.PI / 180` ضرب کرد.",
+      "concepts": [
+        "Math",
+        "trigonometry"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "sin آرگومان را بر حسب درجه می‌گیرد",
+        "B": "sin فقط برای اعداد صحیح تعریف شده است",
+        "C": "sin نوع بازگشتی int دارد",
+        "D": "sin آرگومان را بر حسب رادیان می‌گیرد و double برمی‌گرداند"
+      }
+    },
+    {
+      "id": "g3-math-017",
+      "type": "mcq",
+      "prompt": "`Math.atan2(y, x)` چه برمی‌گرداند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "atan2 زاویهٔ بردار (x, y) را نسبت به محور x مثبت بر حسب رادیان در بازهٔ `(-π, π]` برمی‌گرداند و برای تقسیم‌بندی چهارربع صفحه مناسب است.",
+      "concepts": [
+        "Math",
+        "trigonometry"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "زاویهٔ بردار (x, y) نسبت به محور x مثبت، بر حسب رادیان",
+        "B": "طول بردار (x, y)",
+        "C": "حاصل‌ضرب داخلی دو بردار",
+        "D": "توان دوم x به‌علاوهٔ y"
+      }
+    },
+    {
+      "id": "g3-math-018",
+      "type": "mcq",
+      "prompt": "چرا `Math.hypot(x, y)` بهتر از `Math.sqrt(x*x + y*y)` است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "hypot برای جلوگیری از سرریز و underflow در محاسبهٔ مجانبی پیاده‌سازی شده است و در ورودی‌های بسیار بزرگ یا بسیار کوچک نتیجهٔ دقیق‌تری می‌دهد.",
+      "concepts": [
+        "Math",
+        "numerical-stability"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "Math"
+      ],
+      "options": {
+        "A": "سریع‌تر است چون بدون ضرب است",
+        "B": "نوع int برمی‌گرداند",
+        "C": "در برابر سرریز و underflow میانی مقاوم‌تر است",
+        "D": "تنها برای x و y مثبت کار می‌کند"
+      }
+    },
+    {
+      "id": "g3-methods-001",
+      "type": "mcq",
+      "prompt": "کدام خط اعلام متد معتبر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "هر پارامتر باید نوع و نام مستقل داشته باشد و return type پیش از نام متد می‌آید.",
+      "concepts": [
+        "methods",
+        "declaration"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "`int compute(int a, b) { return a + b; }`",
+        "B": "`int compute(int a, int b) { return a + b; }`",
+        "C": "`compute(int a, int b) { return a + b; }`",
+        "D": "`int compute(int a; int b) { return a + b; }`"
+      }
+    },
+    {
+      "id": "g3-methods-002",
+      "type": "blank",
+      "prompt": "نام متد در Java با حرف، `$` یا ____ شروع می‌شود.",
+      "answers": [
+        "_",
+        "underscore"
+      ],
+      "explanation": "سه کاراکتر آغازین مجاز برای شناسه، حرف، _ و $ است.",
+      "concepts": [
+        "methods",
+        "identifiers"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g3-methods-003",
+      "type": "mcq",
+      "prompt": "اگر متدی همیشه عدد طبیعی برمی‌گرداند، کدام return type مناسب‌تر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "int هم شامل صفر و هم اعداد مثبت است و برای شمارش طبیعی به‌کار می‌رود.",
+      "concepts": [
+        "return-type",
+        "methods"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "int"
+      ],
+      "options": {
+        "A": "void",
+        "B": "int",
+        "C": "boolean",
+        "D": "String"
+      }
+    },
+    {
+      "id": "g3-methods-004",
+      "type": "tf",
+      "prompt": "early return در متد void مجاز نیست.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "early return در void فقط با `return;` بدون expression مجاز است.",
+      "concepts": [
+        "void",
+        "return"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "return"
+      ]
+    },
+    {
+      "id": "g3-methods-005",
+      "type": "mcq",
+      "prompt": "کدام الگو guard clause معتبر است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "guard clause در ابتدا شرط نامعتبر را تشخیص می‌دهد و زودتر از متد خارج می‌شود تا بدنهٔ اصلی ورودی معتبر ببیند.",
+      "concepts": [
+        "guard-clause",
+        "control-flow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "if"
+      ],
+      "options": {
+        "A": "`if (input != null) { /* همهٔ منطق اصلی */ }`",
+        "B": "`if (input == null) return; /* ادامهٔ کار روی ورودی معتبر */`",
+        "C": "`if (input == null) { /* fallback */ } else { /* منطق اصلی */ }`",
+        "D": "`return; if (input == null) /* ادامه */`"
+      }
+    },
+    {
+      "id": "g3-methods-006",
+      "type": "mcq",
+      "prompt": "پارامتر `int n` در `void f(int n)` در کجا قابل دسترسی است؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "scope پارامتر تنها بدنهٔ همان متد است و پس از خروج از متد از بین می‌رود.",
+      "concepts": [
+        "scope",
+        "parameters"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "در همهٔ متدهای کلاس",
+        "B": "فقط در بدنهٔ f",
+        "C": "در همهٔ نمونه‌های کلاس",
+        "D": "در سراسر بستهٔ نرم‌افزار"
+      }
+    },
+    {
+      "id": "g3-methods-007",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ `this` در متد instance درست‌اند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "this در context static وجود ندارد و نقش return یا return type را ندارد.",
+      "concepts": [
+        "this",
+        "instance-methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "this به نمونهٔ جاری اشاره می‌کند",
+        "B": "this در متد static هم قابل استفاده است",
+        "C": "this.field برای رفع ابهام از فیلد کاربرد دارد",
+        "D": "this می‌تواند جایگزین return شود"
+      }
+    },
+    {
+      "id": "g3-methods-008",
+      "type": "mcq",
+      "prompt": "کدام امضای متد varargs دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "نشانهٔ varargs سه نقطهٔ متوالی بلافاصله پس از type است.",
+      "concepts": [
+        "varargs",
+        "methods"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "`void log(String... messages)`",
+        "B": "`void log(String.. messages)`",
+        "C": "`void log(String. messages)`",
+        "D": "`void log(String messages...)`"
+      }
+    },
+    {
+      "id": "g3-methods-009",
+      "type": "tf",
+      "prompt": "متد varargs می‌تواند با صفر آرگومان فراخوانی شود.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "varargs می‌تواند با صفر آرگومان فراخوانی شود و در بدنه آرایهٔ خالی می‌گیرد.",
+      "concepts": [
+        "varargs"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "varargs"
+      ]
+    },
+    {
+      "id": "g3-methods-010",
+      "type": "mcq",
+      "prompt": "varargs در امضای متد باید در چه جایگاهی باشد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "varargs تنها آخرین پارامتر مجاز است و بیش از یک varargs در یک متد ممکن نیست.",
+      "concepts": [
+        "varargs",
+        "parameters"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "varargs"
+      ],
+      "options": {
+        "A": "می‌تواند نخستین پارامتر باشد",
+        "B": "فقط آخرین پارامتر",
+        "C": "می‌تواند در میان پارامترها باشد",
+        "D": "می‌تواند دو بار در امضا ظاهر شود"
+      }
+    },
+    {
+      "id": "g3-methods-011",
+      "type": "mcq",
+      "prompt": "چرا `Math.abs(-5)` بدون ساخت نمونه فراخوانی می‌شود؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "abs متد static است و متعلق به کلاس Math است، نه به یک نمونهٔ خاص.",
+      "concepts": [
+        "static-methods",
+        "methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "abs متد instance است",
+        "B": "abs متد static است",
+        "C": "abs متد private است",
+        "D": "abs متد final است"
+      }
+    },
+    {
+      "id": "g3-methods-012",
+      "type": "mcq",
+      "prompt": "کدام فراخوانی، متد instance است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "size روی نمونهٔ list فراخوانی می‌شود و بقیه متدهای static هستند که با نام کلاس صدا زده می‌شوند.",
+      "concepts": [
+        "instance-methods",
+        "methods"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "`String.valueOf(42)`",
+        "B": "`Integer.parseInt(\"7\")`",
+        "C": "`list.size()`",
+        "D": "`Math.random()`"
+      }
+    },
+    {
+      "id": "g3-methods-013",
+      "type": "tf",
+      "prompt": "می‌توان متد static در زیرکلاس را با همان امضا دوباره تعریف کرد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "این کار method hiding نام دارد و برای متد static مجاز است؛ @Override فقط برای متد instance به‌کار می‌رود.",
+      "concepts": [
+        "method-hiding",
+        "static-methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "static-methods"
+      ]
+    },
+    {
+      "id": "g3-methods-014",
+      "type": "mcq",
+      "prompt": "کدام قطعه بدون خطای کامپایل است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "در قطعهٔ A هر دو شاخه مقدار int می‌دهند؛ در B برای x<=0 مقدار بازنمی‌گردد؛ در C return بدون مقدار در متد int مجاز نیست؛ در D char به int تبدیل نمی‌شود.",
+      "concepts": [
+        "definite-assignment",
+        "return"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "return"
+      ],
+      "options": {
+        "A": "`int f(int x) { if (x > 0) return x; else return -x; }`",
+        "B": "`int f(int x) { if (x > 0) return x; }`",
+        "C": "`int f(int x) { if (x > 0) return x; return; }`",
+        "D": "`int f(int x) { return 'a'; }`"
+      }
+    },
+    {
+      "id": "g3-methods-015",
+      "type": "mcq",
+      "prompt": "اگر متد `int f() { return 3.14; }` را کامپایل کنیم:",
+      "answers": [
+        "B"
+      ],
+      "explanation": "3.14 یک literal double است و narrowing از double به int در return مجاز نیست؛ باید cast صریح نوشت.",
+      "concepts": [
+        "return-type",
+        "narrowing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "int"
+      ],
+      "options": {
+        "A": "OK است و 3 برمی‌گرداند",
+        "B": "خطای کامپایل می‌دهد",
+        "C": "OK است و 3.14 برمی‌گرداند",
+        "D": "در زمان اجرا NumberFormatException می‌دهد"
+      }
+    },
+    {
+      "id": "g3-methods-016",
+      "type": "mcq",
+      "prompt": "کدام دربارهٔ متد static درست است؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "متد static فقط به‌طور مستقیم به اعضای static دسترسی دارد و this در آن وجود ندارد.",
+      "concepts": [
+        "static-methods",
+        "this"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "static-methods"
+      ],
+      "options": {
+        "A": "می‌تواند this.field را مستقیم بخواند",
+        "B": "می‌تواند متد instance دیگری را مستقیم صدا بزند",
+        "C": "می‌تواند متد static دیگری را مستقیم صدا بزند",
+        "D": "نمی‌تواند پارامتر بگیرد"
+      }
+    },
+    {
+      "id": "g3-methods-017",
+      "type": "blank",
+      "prompt": "برای خروج زودهنگام از متد void از `____` استفاده می‌کنیم.",
+      "answers": [
+        "return"
+      ],
+      "explanation": "return تنها در متد void بدون expression مجاز است و کنترل را به فراخواننده بازمی‌گرداند.",
+      "concepts": [
+        "void",
+        "return"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "return"
+      ]
+    },
+    {
+      "id": "g3-methods-018",
+      "type": "mcq",
+      "prompt": "در `void f(int x) { this.x = x; }` نقش `this.x` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "this.x فیلد نمونه را از پارامتر x جدا می‌کند و مقدار پارامتر را به فیلد می‌نویسد.",
+      "concepts": [
+        "this",
+        "shadowing",
+        "fields"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "this"
+      ],
+      "options": {
+        "A": "پارامتر محلی",
+        "B": "فیلد نمونه",
+        "C": "متغیر static",
+        "D": "نام متد"
+      }
+    },
+    {
+      "id": "g3-methods-019",
+      "type": "tf",
+      "prompt": "متد می‌تواند در بدنهٔ خود، خودش را صدا بزند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "recursion مجاز است به‌شرط آنکه مسیر پایه‌ای برای توقف وجود داشته باشد.",
+      "concepts": [
+        "recursion",
+        "methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g3-methods-020",
+      "type": "mcq",
+      "prompt": "برای فراخوانی `log(\"a\", \"b\", \"c\")` وقتی log به‌صورت `void log(String... items)` تعریف شده:",
+      "answers": [
+        "B"
+      ],
+      "explanation": "varargs در فراخوانی، آرایه‌ای به اندازهٔ تعداد آرگومان‌ها می‌سازد و items به {\"a\",\"b\",\"c\"} اشاره می‌کند.",
+      "concepts": [
+        "varargs",
+        "method-call"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "varargs"
+      ],
+      "options": {
+        "A": "خطای کامپایل، چون سه آرگومان String است",
+        "B": "items به آرایهٔ {\"a\",\"b\",\"c\"} اشاره می‌کند",
+        "C": "فقط اولین آرگومان پذیرفته می‌شود",
+        "D": "آرگومان‌ها در items چاپ نمی‌شوند"
+      }
+    },
+    {
+      "id": "g3-methods-021",
+      "type": "multi",
+      "prompt": "کدام‌ها در تمایز دو overload موثرند؟",
+      "answers": [
+        "B",
+        "D"
+      ],
+      "explanation": "تعداد یا نوع پارامترها overload را متمایز می‌کند؛ return type به‌تنهایی کافی نیست.",
+      "concepts": [
+        "overloading",
+        "signature"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "نام متد",
+        "B": "تعداد پارامترها",
+        "C": "return type",
+        "D": "نوع پارامترها"
+      }
+    },
+    {
+      "id": "g3-methods-022",
+      "type": "mcq",
+      "prompt": "با `f(int a, int b)` و `f(int... vs)` کدام فراخوانی ابهام دارد؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "f(1,2) هم با overload عادی و هم با varargs سازگار است و کامپایلر نمی‌تواند یکی را انتخاب کند.",
+      "concepts": [
+        "varargs",
+        "overloading"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "varargs"
+      ],
+      "options": {
+        "A": "`f(1)`",
+        "B": "`f(1, 2)`",
+        "C": "`f(1, 2, 3)`",
+        "D": "`f()`"
+      }
+    },
+    {
+      "id": "g3-methods-023",
+      "type": "tf",
+      "prompt": "در متد static استفاده از `this` مجاز نیست.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "this به نمونهٔ جاری اشاره دارد و در context static نمونه‌ای وجود ندارد.",
+      "concepts": [
+        "this",
+        "static-methods"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "static-methods"
+      ]
+    },
+    {
+      "id": "g3-methods-024",
+      "type": "mcq",
+      "prompt": "متد `int f() { return 'A'; }` در زمان کامپایل:",
+      "answers": [
+        "B"
+      ],
+      "explanation": "char به‌صورت widening primitive conversion به int تبدیل می‌شود و مقدار 65 برمی‌گردد.",
+      "concepts": [
+        "return-type",
+        "widening"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "char"
+      ],
+      "options": {
+        "A": "خطا می‌دهد چون char به int تبدیل نمی‌شود",
+        "B": "OK است و 65 برمی‌گرداند",
+        "C": "OK است و 'A' برمی‌گرداند",
+        "D": "در زمان اجرا خطا می‌دهد"
+      }
+    },
+    {
+      "id": "g3-methods-025",
+      "type": "mcq",
+      "prompt": "تفاوت اصلی method hiding و overriding چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "hiding برای متد static در زمان کامپایل بر اساس نوع مرجع رخ می‌دهد؛ overriding برای متد instance در زمان اجرا بر اساس نوع واقعی.",
+      "concepts": [
+        "method-hiding",
+        "overriding"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "static-methods"
+      ],
+      "options": {
+        "A": "هیچ تفاوتی ندارند",
+        "B": "hiding برای static و overriding برای instance",
+        "C": "overriding فقط در همان کلاس رخ می‌دهد",
+        "D": "hiding در زمان اجرا و overriding در زمان کامپایل"
+      }
+    },
+    {
+      "id": "g3-overloading-001",
+      "type": "mcq",
+      "prompt": "چه چیزی دو متد هم‌نام را قطعاً به overload تبدیل می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "signature = نام + تعداد/نوع پارامترها. return type، نام پارامتر، access modifier و throws به‌تنهایی overload نمی‌سازند.",
+      "concepts": [
+        "overloading",
+        "signature"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "signature متفاوت",
+        "B": "return type متفاوت",
+        "C": "access modifier متفاوت",
+        "D": "نام پارامتر متفاوت"
+      }
+    },
+    {
+      "id": "g3-overloading-002",
+      "type": "tf",
+      "prompt": "اگر فقط return type دو متد هم‌نام متفاوت باشد، overload معتبر است.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "signature فقط نام و پارامترها را در نظر می‌گیرد؛ return type بخشی از signature نیست و کامپایلر duplicate declaration می‌دهد.",
+      "concepts": [
+        "overloading",
+        "signature",
+        "return-type"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "methods"
+      ]
+    },
+    {
+      "id": "g3-overloading-003",
+      "type": "mcq",
+      "prompt": "تغییر تنهای نام پارامتر، دو متد هم‌نام را overload می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "نام پارامتر بخشی از signature نیست و فقط برای خوانایی بدنه به‌کار می‌رود؛ signature یکسان یعنی duplicate declaration.",
+      "concepts": [
+        "overloading",
+        "signature",
+        "parameters"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "بله، overload معتبر است",
+        "B": "خیر، signature یکسان است",
+        "C": "فقط اگر تعداد پارامترها هم متفاوت باشد",
+        "D": "فقط اگر return type هم فرق کند"
+      }
+    },
+    {
+      "id": "g3-overloading-004",
+      "type": "mcq",
+      "prompt": "اگر فقط access modifier دو متد هم‌نام متفاوت باشد، چه رخ می‌دهد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "access modifier بخشی از signature نیست؛ تفاوت فقط در سطح دسترسی، duplicate declaration و خطای کامپایل می‌دهد.",
+      "concepts": [
+        "overloading",
+        "signature",
+        "access-modifiers"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "methods"
+      ],
+      "options": {
+        "A": "خطای کامپایل، overload معتبر نیست",
+        "B": "overload معتبر و بدون ابهام",
+        "C": "overload مجاز فقط در زمان اجرا",
+        "D": "تنها زمانی مجاز است که هر دو public باشند"
+      }
+    },
+    {
+      "id": "g3-overloading-005",
+      "type": "mcq",
+      "prompt": "با `f(int x)` و `f(Integer x)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "exact match به widening primitive و autoboxing مقدم است؛ f(int) برنده می‌شود و f(Integer) شانسی ندارد.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "autoboxing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading",
+        "Integer"
+      ],
+      "options": {
+        "A": "f(int x)",
+        "B": "f(Integer x)",
+        "C": "خطای ابهام",
+        "D": "انتخاب در زمان اجرا"
+      }
+    },
+    {
+      "id": "g3-overloading-006",
+      "type": "mcq",
+      "prompt": "با `f(long x)` و `f(Integer x)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "widening primitive (int به long) بر autoboxing (int به Integer) اولویت دارد؛ بنابراین f(long) برنده می‌شود.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "widening",
+        "autoboxing"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading",
+        "long"
+      ],
+      "options": {
+        "A": "f(long x)",
+        "B": "f(Integer x)",
+        "C": "خطای ابهام",
+        "D": "اولویت با f(Integer) است"
+      }
+    },
+    {
+      "id": "g3-overloading-007",
+      "type": "mcq",
+      "prompt": "با `f(int x)` و `f(int... xs)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "exact match بر varargs مقدم است؛ f(int) برنده می‌شود و varargs فقط وقتی به‌کار می‌افتد که exact match موجود نباشد.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "varargs"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading",
+        "varargs"
+      ],
+      "options": {
+        "A": "f(int x)",
+        "B": "f(int... xs)",
+        "C": "خطای ابهام",
+        "D": "انتخاب تصادفی"
+      }
+    },
+    {
+      "id": "g3-overloading-008",
+      "type": "multi",
+      "prompt": "به ترتیب، اولویت phaseهای overload resolution کدام‌اند؟",
+      "answers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "ترتیب phaseها: exact match > widening primitive > widening reference > autoboxing > varargs.",
+      "concepts": [
+        "overloading",
+        "overload-resolution"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "overloading"
+      ],
+      "options": {
+        "A": "exact match",
+        "B": "widening primitive",
+        "C": "autoboxing",
+        "D": "ترتیب ثابتی ندارد"
+      }
+    },
+    {
+      "id": "g3-overloading-009",
+      "type": "mcq",
+      "prompt": "با overloadهای `f(String s)` و `f(Integer n)`، فراخوانی `f(null)` چه می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "null به هر دو نوع مرجع سازگار است ولی هیچ‌کدام دقیق نیست؛ کامپایلر نمی‌تواند یکی را انتخاب کند و خطای ابهام می‌دهد.",
+      "concepts": [
+        "overloading",
+        "ambiguity",
+        "null"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading"
+      ],
+      "options": {
+        "A": "f(String s) فراخوانی می‌شود",
+        "B": "خطای ابهام کامپایل",
+        "C": "f(Integer n) فراخوانی می‌شود",
+        "D": "NullPointerException در زمان اجرا"
+      }
+    },
+    {
+      "id": "g3-overloading-010",
+      "type": "mcq",
+      "prompt": "با `f(Object o)` و `f(String s)`، فراخوانی `f(null)` کدام را انتخاب می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "هر دو سازگارند ولی String از Object خاص‌تر است؛ قانون most-specific f(String) را انتخاب می‌کند.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "null"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "overloading",
+        "inheritance"
+      ],
+      "options": {
+        "A": "f(Object o)",
+        "B": "f(String s)",
+        "C": "خطای ابهام",
+        "D": "ابتدا f(Object) و در fallback f(String)"
+      }
+    },
+    {
+      "id": "g3-overloading-011",
+      "type": "tf",
+      "prompt": "می‌توان در یک کلاس هم‌زمان `f(int... xs)` و `f(int[] xs)` تعریف کرد.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "varargs در signature به آرایهٔ همان نوع erase می‌شود؛ تعریف هم‌زمان duplicate declaration است و کامپایل نمی‌شود.",
+      "concepts": [
+        "overloading",
+        "varargs",
+        "arrays"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "varargs",
+        "arrays"
+      ]
+    },
+    {
+      "id": "g3-overloading-012",
+      "type": "mcq",
+      "prompt": "با `f(long x)` و `f(int... xs)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "widening primitive (int به long) بر varargs مقدم است؛ بنابراین f(long) برنده می‌شود و varargs تنها در نبود candidate دیگر به‌کار می‌رود.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "varargs",
+        "widening"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "overloading",
+        "varargs",
+        "long"
+      ],
+      "options": {
+        "A": "f(long x)",
+        "B": "f(int... xs)",
+        "C": "خطای ابهام",
+        "D": "ابتدا f(int...) سپس f(long)"
+      }
+    },
+    {
+      "id": "g3-overloading-013",
+      "type": "mcq",
+      "prompt": "اگر `f(int)` و `f(int...)` هر دو موجود باشند، فراخوانی `f(5, 6)` چه می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "f(5,6) با overload عادی سازگار نیست ولی با varargs هست؛ بنابراین f(int...) انتخاب می‌شود.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "varargs"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading",
+        "varargs"
+      ],
+      "options": {
+        "A": "خطای ابهام",
+        "B": "f(int...) فراخوانی می‌شود",
+        "C": "f(int) فراخوانی می‌شود",
+        "D": "خطای کامپایل، چون overload ابهام دارد"
+      }
+    },
+    {
+      "id": "g3-overloading-014",
+      "type": "mcq",
+      "prompt": "Overload resolution در چه زمانی از فراخوانی رخ می‌دهد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "overload resolution بر اساس نوع ایستای reference در زمان کامپایل انجام می‌شود؛ نوع واقعی شیء تنها در overriding دخیل است.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "compile-time"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "overloading"
+      ],
+      "options": {
+        "A": "زمان کامپایل بر اساس نوع ایستا",
+        "B": "زمان اجرا بر اساس نوع واقعی شیء",
+        "C": "زمان لینک پویا",
+        "D": "زمان بارگذاری کلاس"
+      }
+    },
+    {
+      "id": "g3-overloading-015",
+      "type": "tf",
+      "prompt": "overload resolution بر اساس نوع واقعی شیء در زمان اجرا تعیین می‌شود.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "overload selection در زمان کامپایل و بر اساس نوع ایستای reference است؛ رفتار زمان اجرا مربوط به overriding است.",
+      "concepts": [
+        "overloading",
+        "compile-time",
+        "overriding"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "overloading"
+      ]
+    },
+    {
+      "id": "g3-overloading-016",
+      "type": "mcq",
+      "prompt": "چرا `f(List<String> a)` و `f(List<Integer> b)` در Java به‌عنوان overload شناخته نمی‌شوند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "generics به erasure روی List خام می‌رسند؛ دو متد، signature یکسان روی List پیدا می‌کنند و duplicate declaration می‌شوند.",
+      "concepts": [
+        "overloading",
+        "generics",
+        "type-erasure"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "generics",
+        "collections"
+      ],
+      "options": {
+        "A": "چون نام کلاس یکی است",
+        "B": "چون type erasure هر دو را به List می‌رساند",
+        "C": "چون List نهایی است",
+        "D": "چون نمی‌توان generic overload کرد"
+      }
+    },
+    {
+      "id": "g3-overloading-017",
+      "type": "mcq",
+      "prompt": "برای literal `3.14f`، بین `f(float x)` و `f(double x)` کدام overload انتخاب می‌شود؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "3.14f دقیقاً float است و exact match بر widening primitive مقدم است؛ بنابراین f(float) برنده می‌شود.",
+      "concepts": [
+        "overloading",
+        "overload-resolution",
+        "floating-point"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "overloading",
+        "float"
+      ],
+      "options": {
+        "A": "f(float x)",
+        "B": "f(double x)",
+        "C": "خطای ابهام",
+        "D": "انتخاب در زمان اجرا"
+      }
+    },
+    {
+      "id": "g3-overloading-018",
+      "type": "mcq",
+      "prompt": "this(...) در سازنده چه نقشی در overload سازنده‌ها دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "this(...) فراخوانی سازندهٔ هم‌کلاس با signature سازگار است و بدون ساختن نمونهٔ جدید، زنجیرهٔ overload سازنده‌ها را شکل می‌دهد.",
+      "concepts": [
+        "overloading",
+        "constructors",
+        "this"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "constructors",
+        "overloading"
+      ],
+      "options": {
+        "A": "زنجیر کردن سازندهٔ هم‌کلاس با signature سازگار",
+        "B": "ساخت نمونهٔ جدید از کلاس دیگر",
+        "C": "جایگزینی برای return در سازنده",
+        "D": "تعریف overload جدید"
+      }
+    },
+    {
+      "id": "g3-overloading-019",
+      "type": "mcq",
+      "prompt": "this(...) در بدنهٔ سازنده باید در کدام جایگاه باشد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "this(...) باید نخستین statement سازنده باشد؛ در غیر این صورت کامپایلر خطا می‌دهد تا نمونه پیش از مقداردهی اولیه قابل استفاده نباشد.",
+      "concepts": [
+        "overloading",
+        "constructors",
+        "this"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "constructors"
+      ],
+      "options": {
+        "A": "نخستین statement سازنده",
+        "B": "می‌تواند در هر جای بدنه باشد",
+        "C": "پس از همهٔ فیلدها مقداردهی‌شده",
+        "D": "تنها در سازندهٔ پیش‌فرض"
+      }
+    },
+    {
+      "id": "g3-overloading-020",
+      "type": "blank",
+      "prompt": "برای زنجیر کردن overload سازنده‌ها در همان کلاس، در سازنده از `____(آرگومان‌ها)` استفاده می‌شود.",
+      "answers": [
+        "this",
+        "this("
+      ],
+      "explanation": "this(...) فراخوانی سازندهٔ هم‌کلاس است و overload سازنده‌ها را در یک زنجیرهٔ مقداردهی اولیه به هم وصل می‌کند.",
+      "concepts": [
+        "overloading",
+        "constructors",
+        "this"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "constructors"
+      ]
+    },
+    {
+      "id": "g3-parsing-001",
+      "type": "mcq",
+      "prompt": "خروجی `Integer.parseInt(\"  42 \")` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "parseInt فاصله‌های خالی ابتدا و انتهای رشته را نادیده می‌گیرد و مقدار 42 به‌صورت int برمی‌گرداند.",
+      "concepts": [
+        "Integer",
+        "parseInt",
+        "whitespace"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "NumberFormatException پرتاب می‌کند",
+        "B": "42 به‌صورت int",
+        "C": "\"  42 \" به‌صورت String",
+        "D": "0 به‌صورت int"
+      }
+    },
+    {
+      "id": "g3-parsing-002",
+      "type": "mcq",
+      "prompt": "کدام فراخوانی در زمان اجرا NumberFormatException پرتاب می‌کند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "وجود نقطهٔ اعشار در رشته باعث می‌شود parseInt قادر به تفسیر نباشد و NFE پرتاب شود؛ برای اعداد اعشاری باید از Double.parseDouble استفاده کرد.",
+      "concepts": [
+        "NumberFormatException",
+        "Integer",
+        "parseInt"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "`Integer.parseInt(\"42\")`",
+        "B": "`Integer.parseInt(\"  42 \")`",
+        "C": "`Integer.parseInt(\"3.14\")`",
+        "D": "`Integer.parseInt(\"+42\")`"
+      }
+    },
+    {
+      "id": "g3-parsing-003",
+      "type": "tf",
+      "prompt": "`Integer.parseInt(\"+42\")` بدون خطا عدد 42 برمی‌گرداند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "parseInt علامت مثبت پیشوندی را مجاز می‌داند و مقدار 42 تولید می‌کند؛ اما علامت منفی فقط به‌صورت `-` در ابتدا پذیرفته می‌شود.",
+      "concepts": [
+        "Integer",
+        "parseInt",
+        "sign"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Integer"
+      ]
+    },
+    {
+      "id": "g3-parsing-004",
+      "type": "mcq",
+      "prompt": "خروجی `Integer.valueOf(\"127\") == Integer.valueOf(\"127\")` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "هر دو مقدار در بازهٔ کش Integer (-128 تا 127) قرار می‌گیرند و همان نمونهٔ کش‌شده برگشت داده می‌شود؛ بنابراین == برابر true می‌شود.",
+      "concepts": [
+        "Integer",
+        "valueOf",
+        "autoboxing-cache"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "false",
+        "B": "true",
+        "C": "NumberFormatException",
+        "D": "وابسته به نسخهٔ JDK"
+      }
+    },
+    {
+      "id": "g3-parsing-005",
+      "type": "mcq",
+      "prompt": "چرا مقایسهٔ `==` روی دو شیٔ Integer بیرون از بازهٔ -128 تا 127 خطرناک است؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "مقادیر بیرون از کش، هر بار با new ساخته می‌شوند و == هویت شی را می‌سنجد نه مقدار را؛ برای مقایسهٔ محتوایی باید equals به‌کار رود.",
+      "concepts": [
+        "Integer",
+        "valueOf",
+        "autoboxing-cache"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "کامپایلر اجازه نمی‌دهد",
+        "B": "مقدار همیشه برابر است پس == همیشه true است",
+        "C": "Integer immutable نیست",
+        "D": "ممکن است دو شیٔ متفاوت با مقدار یکسان ساخته شوند و == آن‌ها را متمایز بگیرد"
+      }
+    },
+    {
+      "id": "g3-parsing-006",
+      "type": "mcq",
+      "prompt": "خروجی `Integer.parseInt(null)` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "پیش از هر پردازشی، فراخوانی متد روی null باعث NullPointerException می‌شود و parseInt فرصت پرتاب NFE را پیدا نمی‌کند.",
+      "concepts": [
+        "Integer",
+        "parseInt",
+        "NullPointerException"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "NullPointerException پرتاب می‌کند",
+        "B": "NumberFormatException پرتاب می‌کند",
+        "C": "0 برمی‌گرداند",
+        "D": "کامپایل نمی‌شود"
+      }
+    },
+    {
+      "id": "g3-parsing-007",
+      "type": "mcq",
+      "prompt": "کدام گزینه رشتهٔ `\"0x1F\"` را به مقدار 31 تبدیل می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "parseLong پیشوند `0x` را به‌عنوان قالب هگز نمی‌شناسد؛ باید پیشوند را حذف و مبنای 16 را به‌عنوان آرگومان دوم صریحاً اعلام کرد.",
+      "concepts": [
+        "Long",
+        "parseLong",
+        "radix"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Long"
+      ],
+      "options": {
+        "A": "`Long.parseLong(\"0x1F\")`",
+        "B": "`Long.parseLong(\"1F\", 16)`",
+        "C": "`Long.parseLong(\"0x1F\", 16)`",
+        "D": "`Long.valueOf(\"0x1F\").longValue()`"
+      }
+    },
+    {
+      "id": "g3-parsing-008",
+      "type": "mcq",
+      "prompt": "مقدار `Integer.parseUnsignedInt(\"-1\")` چه رفتاری دارد؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "parseUnsignedInt تنها مقادیر مثبت و بدون علامت را می‌پذیرد؛ ورودی منفی در بازهٔ unsigned جای نمی‌گیرد و NFE پرتاب می‌شود.",
+      "concepts": [
+        "Integer",
+        "parseUnsignedInt",
+        "NumberFormatException"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "NumberFormatException پرتاب می‌کند",
+        "B": "1- برمی‌گرداند",
+        "C": "4294967295 برمی‌گرداند",
+        "D": "Integer.MAX_VALUE برمی‌گرداند"
+      }
+    },
+    {
+      "id": "g3-parsing-009",
+      "type": "tf",
+      "prompt": "`Boolean.parseBoolean(\"TRUE\")` مقدار true برمی‌گرداند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "parseBoolean تنها رشتهٔ \"true\" را (به‌صورت case-insensitive) به‌عنوان true می‌شناسد و برای هر مقدار دیگری false برمی‌گرداند، بدون پرتاب استثنا.",
+      "concepts": [
+        "Boolean",
+        "parseBoolean"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Boolean"
+      ]
+    },
+    {
+      "id": "g3-parsing-010",
+      "type": "mcq",
+      "prompt": "خروجی `Boolean.parseBoolean(\"yes\")` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "parseBoolean فقط رشتهٔ \"true\" (با هر ترکیب بزرگی/کوچکی حروف) را به true تبدیل می‌کند؛ هر مقدار دیگر، حتی \"yes\"، false می‌شود و هیچ استثنایی پرتاب نمی‌گردد.",
+      "concepts": [
+        "Boolean",
+        "parseBoolean"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Boolean"
+      ],
+      "options": {
+        "A": "true",
+        "B": "NumberFormatException پرتاب می‌کند",
+        "C": "false",
+        "D": "IllegalArgumentException پرتاب می‌کند"
+      }
+    },
+    {
+      "id": "g3-parsing-011",
+      "type": "mcq",
+      "prompt": "خروجی `Double.parseDouble(\"NaN\")` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "متد parseDouble مقادیر ویژهٔ \"NaN\"، \"Infinity\" و \"-Infinity\" را بدون خطا می‌پذیرد و معادل double آن‌ها را برمی‌گرداند.",
+      "concepts": [
+        "Double",
+        "parseDouble",
+        "NaN"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Double"
+      ],
+      "options": {
+        "A": "0.0",
+        "B": "Double.NaN",
+        "C": "NumberFormatException پرتاب می‌کند",
+        "D": "1.0"
+      }
+    },
+    {
+      "id": "g3-parsing-012",
+      "type": "mcq",
+      "prompt": "کدام فراخوانی باعث NumberFormatException می‌شود؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "parseDouble برای رشتهٔ خالی نمی‌تواند عددی بسازد و NFE پرتاب می‌کند؛ مقادیر \"3.14\"، \"NaN\" و \"Infinity\" همگی معتبرند.",
+      "concepts": [
+        "Double",
+        "parseDouble",
+        "NumberFormatException"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Double"
+      ],
+      "options": {
+        "A": "`Double.parseDouble(\"3.14\")`",
+        "B": "`Double.parseDouble(\"NaN\")`",
+        "C": "`Double.parseDouble(\"Infinity\")`",
+        "D": "`Double.parseDouble(\"\")`"
+      }
+    },
+    {
+      "id": "g3-parsing-013",
+      "type": "mcq",
+      "prompt": "خروجی `Integer.toString(255, 16)` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "toString با مبنای 16 عدد 255 را در قالب هگزادسیمال به‌صورت \"ff\" چاپ می‌کند؛ این روش ساده‌ترین راه تولید نمایش هگز است.",
+      "concepts": [
+        "Integer",
+        "toString",
+        "radix"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "\"ff\"",
+        "B": "\"255\"",
+        "C": "\"0xff\"",
+        "D": "\"FF\""
+      }
+    },
+    {
+      "id": "g3-parsing-014",
+      "type": "mcq",
+      "prompt": "مقدار `Integer.sum(2_000_000_000, 2_000_000_000)` چه رفتاری دارد؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "sum تنها جمع سادهٔ int را انجام می‌دهد و در سرریز، wrap-around می‌کند؛ برخلاف addExact هیچ استثنایی پرتاب نمی‌شود و نتیجه منفی می‌گردد.",
+      "concepts": [
+        "Integer",
+        "sum",
+        "overflow"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "ArithmeticException پرتاب می‌کند",
+        "B": "4000000000 برمی‌گرداند",
+        "C": "به‌صورت wrap-around مقدار منفی برمی‌گرداند",
+        "D": "long برمی‌گرداند"
+      }
+    },
+    {
+      "id": "g3-parsing-015",
+      "type": "multi",
+      "prompt": "کدام‌ها دربارهٔ `Integer.parseInt` درست‌اند؟",
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "parseInt مقدار int primitive برمی‌گرداند (نه Integer) و فاصله‌های ابتدا و انتهای رشته را نادیده می‌گیرد؛ اما در سرریز، wrap نمی‌کند بلکه NFE پرتاب می‌کند.",
+      "concepts": [
+        "Integer",
+        "parseInt"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Integer"
+      ],
+      "options": {
+        "A": "نوع بازگشتی int primitive است",
+        "B": "فاصله‌های خالی ابتدا و انتهای رشته نادیده گرفته می‌شوند",
+        "C": "در سرریز، wrap-around می‌کند",
+        "D": "نوع بازگشتی Integer است"
+      }
+    },
+    {
+      "id": "g3-parsing-016",
+      "type": "blank",
+      "prompt": "متد `Byte.parseByte(\"127\")` عدد صحیح ____ بازمی‌گرداند.",
+      "answers": [
+        "127"
+      ],
+      "explanation": "Byte.parseByte همان قالب parseInt را روی بازهٔ -128 تا 127 اعمال می‌کند و در صورت خروج از بازه NFE پرتاب می‌شود.",
+      "concepts": [
+        "Byte",
+        "parseByte"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "Byte"
+      ]
+    },
+    {
+      "id": "g3-parsing-017",
+      "type": "mcq",
+      "prompt": "خروجی `Short.parseShort(\"40000\")` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "بازهٔ Short تنها تا 32767 می‌رسد و مقدار 40000 خارج از آن است؛ در نتیجه parseShort با NumberFormatException متوقف می‌شود.",
+      "concepts": [
+        "Short",
+        "parseShort",
+        "NumberFormatException"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Short"
+      ],
+      "options": {
+        "A": "40000 به‌صورت short",
+        "B": "NumberFormatException پرتاب می‌کند",
+        "C": "کامپایل نمی‌شود",
+        "D": "مقدار wrap-around می‌شود"
+      }
+    },
+    {
+      "id": "g3-parsing-018",
+      "type": "mcq",
+      "prompt": "برای تبدیل رشتهٔ `\"2.5e3\"` به عدد اعشاری کدام فراخوانی مناسب است؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "parseFloat همانند parseDouble از نماد علمی پشتیبانی می‌کند و مقدار 2500.0 برمی‌گرداند؛ parseInt در این مورد NFE پرتاب می‌کند.",
+      "concepts": [
+        "Float",
+        "parseFloat",
+        "scientific-notation"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "Float"
+      ],
+      "options": {
+        "A": "`Float.parseFloat(\"2.5e3\")`",
+        "B": "`Integer.parseInt(\"2.5e3\")`",
+        "C": "`Long.parseLong(\"2.5e3\")`",
+        "D": "`Boolean.parseBoolean(\"2.5e3\")`"
+      }
+    },
     {
       "id": "g3-seed-001",
       "type": "mcq",
@@ -313,6 +3744,675 @@
         "B": "`Integer.parseInt(\"12\")`",
         "C": "`Math.abs(-1)`",
         "D": "`Integer.parseInt(\"999999999999\")"
+      }
+    },
+    {
+      "id": "g3-string-api-001",
+      "type": "mcq",
+      "prompt": "نوع بازگشتی متد `length()` در کلاس String چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "`length()` متد نمونهٔ String است و یک int برمی‌گرداند.",
+      "concepts": [
+        "String",
+        "length"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "int",
+        "B": "long",
+        "C": "String",
+        "D": "char"
+      }
+    },
+    {
+      "id": "g3-string-api-002",
+      "type": "mcq",
+      "prompt": "تفاوت اصلی بین `arr.length` و `s.length()` در چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "`arr.length` فیلد آرایه است و بدون پرانتز نوشته می‌شود؛ `s.length()` متد نمونهٔ String است و با پرانتز فراخوانی می‌شود.",
+      "concepts": [
+        "String",
+        "arrays",
+        "length"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "arrays",
+        "String"
+      ],
+      "options": {
+        "A": "هیچ تفاوتی ندارند",
+        "B": "اولی فیلد آرایه و دومی متد String است",
+        "C": "اولی متد String و دومی فیلد آرایه است",
+        "D": "هر دو متد static هستند"
+      }
+    },
+    {
+      "id": "g3-string-api-003",
+      "type": "tf",
+      "prompt": "`\"\".length()` مقدار 0 برمی‌گرداند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "رشتهٔ خالی هیچ کاراکتری ندارد و طول آن صفر است.",
+      "concepts": [
+        "String",
+        "length"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-004",
+      "type": "mcq",
+      "prompt": "نوع بازگشتی `s.charAt(i)` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "charAt کاراکتر موجود در اندیس i را به‌صورت primitive char برمی‌گرداند.",
+      "concepts": [
+        "String",
+        "charAt"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "char",
+        "String"
+      ],
+      "options": {
+        "A": "int",
+        "B": "String",
+        "C": "char",
+        "D": "void"
+      }
+    },
+    {
+      "id": "g3-string-api-005",
+      "type": "mcq",
+      "prompt": "اگر `s = \"abc\"` باشد، خروجی `s.charAt(0)` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "اندیس 0 اولین کاراکتر یعنی 'a' است.",
+      "concepts": [
+        "String",
+        "charAt"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "'a'",
+        "B": "'b'",
+        "C": "'c'",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g3-string-api-006",
+      "type": "tf",
+      "prompt": "`\"abc\".charAt(3)` در زمان اجرا StringIndexOutOfBoundsException پرتاب می‌کند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "اندیس‌های مجاز 0 تا length-1 هستند. اندیس 3 برای رشتهٔ سه‌کاراکتری خارج از بازه است.",
+      "concepts": [
+        "String",
+        "charAt",
+        "exceptions"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-007",
+      "type": "mcq",
+      "prompt": "در فراخوانی `s.substring(begin, end)` کران end چگونه عمل می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "begin شامل و end غیرشامل است؛ زیررشته شامل کاراکترهای begin تا end-1 می‌شود.",
+      "concepts": [
+        "String",
+        "substring"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "end شامل است",
+        "B": "end غیرشامل است",
+        "C": "begin غیرشامل و end شامل است",
+        "D": "هر دو غیرشامل هستند"
+      }
+    },
+    {
+      "id": "g3-string-api-008",
+      "type": "mcq",
+      "prompt": "اگر `s = \"hello\"` باشد، خروجی `s.substring(1, 4)` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "begin=1 شامل، end=4 غیرشامل. کاراکترهای 1، 2 و 3 یعنی 'e'، 'l'، 'l' انتخاب می‌شوند.",
+      "concepts": [
+        "String",
+        "substring"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "\"hell\"",
+        "B": "\"ell\"",
+        "C": "\"ello\"",
+        "D": "خطای runtime"
+      }
+    },
+    {
+      "id": "g3-string-api-009",
+      "type": "tf",
+      "prompt": "`\"hello\".substring(5, 5)` یک رشتهٔ خالی برمی‌گرداند و خطا نمی‌دهد.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "زمانی که begin == end زیررشته تهی است؛ این حالت مجاز است و خطایی پرتاب نمی‌شود.",
+      "concepts": [
+        "String",
+        "substring"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-010",
+      "type": "mcq",
+      "prompt": "اگر زیررشته پیدا نشود، `indexOf` چه برمی‌گرداند؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "قرارداد indexOf بازگشت -1 در صورت نیافتن است؛ هیچ exception پرتاب نمی‌شود.",
+      "concepts": [
+        "String",
+        "indexOf"
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "0",
+        "B": "null",
+        "C": "-1",
+        "D": "exception پرتاب می‌کند"
+      }
+    },
+    {
+      "id": "g3-string-api-011",
+      "type": "mcq",
+      "prompt": "اگر `s = \"Java\"` باشد، خروجی `s.indexOf('a')` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "اولین occurrence کاراکتر 'a' در اندیس 1 قرار دارد (J=0، a=1، v=2، a=3).",
+      "concepts": [
+        "String",
+        "indexOf"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "3",
+        "D": "-1"
+      }
+    },
+    {
+      "id": "g3-string-api-012",
+      "type": "mcq",
+      "prompt": "اگر `s = \"ababab\"` باشد، خروجی `s.indexOf(\"a\", 3)` چیست؟",
+      "answers": [
+        "D"
+      ],
+      "explanation": "جست‌وجو از اندیس 3 شروع می‌شود. اندیس 4 اولین 'a' بعد از نقطهٔ شروع است.",
+      "concepts": [
+        "String",
+        "indexOf",
+        "fromIndex"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      }
+    },
+    {
+      "id": "g3-string-api-013",
+      "type": "tf",
+      "prompt": "`\"Java\".indexOf(\"JAVA\")` به دلیل حساسیت به بزرگی و کوچکی حروف مقدار -1 برمی‌گرداند.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "indexOf مقایسهٔ case-sensitive انجام می‌دهد و 'JAVA' با حروف بزرگ در 'Java' یافت نمی‌شود.",
+      "concepts": [
+        "String",
+        "indexOf"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-014",
+      "type": "multi",
+      "prompt": "کدام فراخوانی‌های `indexOf` مقدار -1 برمی‌گردانند؟",
+      "answers": [
+        "A",
+        "D"
+      ],
+      "explanation": "\"abc\".indexOf(\"z\") چون 'z' نیست -1 می‌دهد؛ \"abc\".indexOf('Z') به دلیل حساسیت به case -1 می‌دهد. \"abc\".indexOf(\"\") در اندیس 0 پیدا می‌شود و indexOf(\"b\") اندیس 1 برمی‌گرداند.",
+      "concepts": [
+        "String",
+        "indexOf"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "`\"abc\".indexOf(\"z\")`",
+        "B": "`\"abc\".indexOf(\"\")`",
+        "C": "`\"abc\".indexOf(\"b\")`",
+        "D": "`\"abc\".indexOf('Z')`"
+      }
+    },
+    {
+      "id": "g3-string-api-015",
+      "type": "mcq",
+      "prompt": "تفاوت اصلی بین `indexOf` و `lastIndexOf` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "indexOf اولین occurrence از ابتدا و lastIndexOf آخرین occurrence از انتها را می‌یابد. اگر بیش از یک occurrence وجود داشته باشد، نتایج متفاوت‌اند.",
+      "concepts": [
+        "String",
+        "indexOf",
+        "lastIndexOf"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "indexOf از ابتدا و lastIndexOf از انتها جست‌وجو می‌کند",
+        "B": "indexOf حساس به case و lastIndexOf غیرحساس است",
+        "C": "indexOf برای char و lastIndexOf برای String است",
+        "D": "هیچ تفاوتی ندارند"
+      }
+    },
+    {
+      "id": "g3-string-api-016",
+      "type": "blank",
+      "prompt": "متد `lastIndexOf` جست‌وجو را از ____ رشته آغاز می‌کند.",
+      "answers": [
+        "انتها",
+        "end",
+        "انتهای"
+      ],
+      "explanation": "lastIndexOf از انتهای رشته به سمت ابتدا حرکت می‌کند و آخرین occurrence را برمی‌گرداند.",
+      "concepts": [
+        "String",
+        "lastIndexOf"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-017",
+      "type": "mcq",
+      "prompt": "رابطهٔ `s.contains(t)` با `s.indexOf(t) >= 0` چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "contains تقریباً معادل indexOf(t) >= 0 است اما خواناتر است. contains آرگومان را به‌عنوان literal در نظر می‌گیرد نه regex.",
+      "concepts": [
+        "String",
+        "contains",
+        "indexOf"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "contains سریع‌تر است اما نتیجهٔ متفاوت می‌دهد",
+        "B": "contains معادل indexOf(t) >= 0 با خوانایی بهتر است",
+        "C": "contains regex می‌پذیرد ولی indexOf نه",
+        "D": "contains برای char و indexOf برای String است"
+      }
+    },
+    {
+      "id": "g3-string-api-018",
+      "type": "tf",
+      "prompt": "`\"abc\".contains(\"A\")` برابر true است چون contains به بزرگی و کوچکی حروف حساس نیست.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "contains دقیقاً مانند indexOf حساس به case است و آرگومان را به‌صورت literal مقایسه می‌کند.",
+      "concepts": [
+        "String",
+        "contains"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-019",
+      "type": "mcq",
+      "prompt": "خروجی `\"hello\".startsWith(\"\")` چیست؟",
+      "answers": [
+        "A"
+      ],
+      "explanation": "رشتهٔ خالی prefix هر رشته‌ای است و startsWith(\"\") همیشه true برمی‌گرداند.",
+      "concepts": [
+        "String",
+        "startsWith"
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "خطای runtime",
+        "D": "خطای کامپایل"
+      }
+    },
+    {
+      "id": "g3-string-api-020",
+      "type": "multi",
+      "prompt": "کدام فراخوانی‌های `startsWith` مقدار true برمی‌گردانند؟",
+      "answers": [
+        "A",
+        "C"
+      ],
+      "explanation": "\"file.txt\".startsWith(\"file\") درست است. startsWith(\"\") همیشه true است. startsWith(\".txt\") suffix است و startsWith(\"File\") به دلیل حساسیت به case غلط است.",
+      "concepts": [
+        "String",
+        "startsWith"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "`\"file.txt\".startsWith(\"file\")`",
+        "B": "`\"file.txt\".startsWith(\".txt\")`",
+        "C": "`\"file.txt\".startsWith(\"\")`",
+        "D": "`\"file.txt\".startsWith(\"File\")`"
+      }
+    },
+    {
+      "id": "g3-string-api-021",
+      "type": "mcq",
+      "prompt": "تفاوت اصلی بین `replace` و `replaceAll` در String چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "replace هر دو آرگومان را به‌صورت literal در نظر می‌گیرد. replaceAll آرگومان اول را به‌عنوان regex تفسیر می‌کند و متد دیگری به نام replace وجود دارد که char می‌پذیرد.",
+      "concepts": [
+        "String",
+        "replace",
+        "regex"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "هیچ تفاوتی ندارند",
+        "B": "replace literal می‌گیرد و replaceAll آرگومان اول را regex تفسیر می‌کند",
+        "C": "replace سریع‌تر ولی replaceAll کندتر است",
+        "D": "replace فقط برای char و replaceAll برای String است"
+      }
+    },
+    {
+      "id": "g3-string-api-022",
+      "type": "mcq",
+      "prompt": "خروجی `\"a.b.c\".replaceAll(\".\", \"-\")` چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "در regex نقطه هر کاراکتری را نشان می‌دهد. هر چهار کاراکتر (a، .، b، .، c پنج کاراکتر) با '-' جایگزین می‌شود و نتیجه \"-----\" است.",
+      "concepts": [
+        "String",
+        "replaceAll",
+        "regex"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "String",
+        "regex"
+      ],
+      "options": {
+        "A": "\"a-b-c\"",
+        "B": "\"----\"",
+        "C": "\"-----\"",
+        "D": "\"a.b-c\""
+      }
+    },
+    {
+      "id": "g3-string-api-023",
+      "type": "mcq",
+      "prompt": "متد `replaceFirst` در String چه کار می‌کند؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "replaceFirst اولین occurrence از regex را با replacement جایگزین می‌کند؛ بقیهٔ رشته دست‌نخورده باقی می‌ماند.",
+      "concepts": [
+        "String",
+        "replaceFirst",
+        "regex"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String",
+        "regex"
+      ],
+      "options": {
+        "A": "تمام occurrences را با هم عوض می‌کند",
+        "B": "اولین occurrence از regex را جایگزین می‌کند",
+        "C": "فقط اولین کاراکتر را عوض می‌کند",
+        "D": "معادل replace است"
+      }
+    },
+    {
+      "id": "g3-string-api-024",
+      "type": "tf",
+      "prompt": "در `replace(CharSequence, CharSequence)` آرگومان اول به‌عنوان literal در نظر گرفته می‌شود و نه به‌عنوان regex.",
+      "answers": [
+        "true"
+      ],
+      "explanation": "replace آرگومان اول را regex تفسیر نمی‌کند و آن را به‌صورت literal جست‌وجو می‌کند. این تفاوت اصلی با replaceAll است.",
+      "concepts": [
+        "String",
+        "replace"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-025",
+      "type": "mcq",
+      "prompt": "خروجی `\"a,,b,\".split(\",\")` در Java چیست؟",
+      "answers": [
+        "B"
+      ],
+      "explanation": "به‌طور پیش‌فرض split trailing empty strings را حذف می‌کند؛ آرایهٔ نتیجه [\"a\", \"\", \"b\"] می‌شود.",
+      "concepts": [
+        "String",
+        "split"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String",
+        "arrays"
+      ],
+      "options": {
+        "A": "[\"a\", \"b\"]",
+        "B": "[\"a\", \"\", \"b\"]",
+        "C": "[\"a\", \"\", \"b\", \"\"]",
+        "D": "[\"a\", \"b\", \"\"]"
+      }
+    },
+    {
+      "id": "g3-string-api-026",
+      "type": "mcq",
+      "prompt": "اگر `\"a,,b,\".split(\",\", -1)` فراخوانی شود، خروجی چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "limit برابر -1 باعث می‌شود trailing empty strings حفظ شوند. نتیجه [\"a\", \"\", \"b\", \"\"] می‌شود.",
+      "concepts": [
+        "String",
+        "split",
+        "limit"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "String",
+        "arrays"
+      ],
+      "options": {
+        "A": "[\"a\", \"b\"]",
+        "B": "[\"a\", \"\", \"b\"]",
+        "C": "[\"a\", \"\", \"b\", \"\"]",
+        "D": "[\"a\", \"\", \"\", \"b\", \"\"]"
+      }
+    },
+    {
+      "id": "g3-string-api-027",
+      "type": "multi",
+      "prompt": "کدام فراخوانی‌ها آرایه‌ای شامل empty string در انتها تولید می‌کنند؟",
+      "answers": [
+        "B",
+        "C"
+      ],
+      "explanation": "limit = -1 و limit > تعداد واقعی splitها هر دو trailing empty را نگه می‌دارند. limit = 0 نیز trailing empty را حذف می‌کند و split پیش‌فرض بدون آرگومان دوم نیز trailing empty را حذف می‌کند.",
+      "concepts": [
+        "String",
+        "split",
+        "limit"
+      ],
+      "difficulty": 4,
+      "prerequisites": [
+        "String",
+        "arrays"
+      ],
+      "options": {
+        "A": "`\"a,b,\".split(\",\")`",
+        "B": "`\"a,b,\".split(\",\", -1)`",
+        "C": "`\"a,b,\".split(\",\", 0)` followed by `Arrays.asList`",
+        "D": "`\"a,b,\".split(\",\", 5)`"
+      }
+    },
+    {
+      "id": "g3-string-api-028",
+      "type": "mcq",
+      "prompt": "تفاوت اصلی بین `trim` و `strip` در String چیست؟",
+      "answers": [
+        "C"
+      ],
+      "explanation": "trim فقط whitespace ASCII با کد کوچک‌تر یا مساوی U+0020 را حذف می‌کند. strip کاراکترهای whitespace Unicode از جمله non-breaking space و ایرفویس‌های فارسی و عربی را نیز حذف می‌کند.",
+      "concepts": [
+        "String",
+        "trim",
+        "strip",
+        "whitespace"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "هیچ تفاوتی ندارند",
+        "B": "strip فقط از ابتدا و trim از هر دو طرف عمل می‌کند",
+        "C": "trim فقط ASCII و strip تمام whitespace Unicode را حذف می‌کند",
+        "D": "trim سریع‌تر ولی strip دقیق‌تر است در ASCII"
+      }
+    },
+    {
+      "id": "g3-string-api-029",
+      "type": "tf",
+      "prompt": "`\"  \\u00A0  \".trim()` تمام فاصله‌های خالی شامل non-breaking space را حذف می‌کند.",
+      "answers": [
+        "false"
+      ],
+      "explanation": "trim فقط کاراکترهای با کد کوچک‌تر یا مساوی U+0020 را حذف می‌کند. non-breaking space (U+00A0) بالاتر از این بازه است و trim آن را حذف نمی‌کند. برای این کار باید از strip استفاده کرد.",
+      "concepts": [
+        "String",
+        "trim",
+        "whitespace"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ]
+    },
+    {
+      "id": "g3-string-api-030",
+      "type": "multi",
+      "prompt": "کدام گزینه‌ها دربارهٔ `isEmpty` و `isBlank` درست‌اند؟",
+      "answers": [
+        "A",
+        "B"
+      ],
+      "explanation": "isEmpty فقط طول صفر را true می‌کند ولی \"   \" را false می‌داند. isBlank علاوه بر طول صفر، رشته‌هایی با کاراکترهای whitespace (از جمله Unicode) را نیز true می‌کند. هیچ‌یک null-safe نیستند.",
+      "concepts": [
+        "String",
+        "isEmpty",
+        "isBlank"
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "String"
+      ],
+      "options": {
+        "A": "isEmpty فقط برای رشتهٔ با طول صفر true است",
+        "B": "isBlank برای \"   \" مقدار true برمی‌گرداند",
+        "C": "isBlank null را هم true می‌کند",
+        "D": "isEmpty و isBlank از نظر نتیجه همیشه یکسان‌اند"
       }
     }
   ]

@@ -131,6 +131,32 @@ def merge_grade_two() -> None:
     )
 
 
+def merge_grade_three() -> None:
+    """Append authored Grade 3 parts to the checked-in seed bank deterministically."""
+    target = QUIZ / "grade-03.json"
+    seeds = [
+        question for question in read_questions(target)
+        if question.get("id", "").startswith("g3-seed-")
+    ]
+    additions: list[dict[str, Any]] = []
+    for path in sorted(PARTS.glob("g3-*.json")):
+        additions.extend(read_questions(path))
+    questions = seeds + additions
+    questions.sort(key=lambda question: question["id"])
+    target.write_text(
+        json.dumps(
+            {
+                "title": "درجهٔ ۳ — Core API و متدها",
+                "version": 2,
+                "questions": questions,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ) + "\n",
+        encoding="utf-8",
+    )
+
+
 def merge_seed_banks() -> None:
     grouped: dict[int, list[dict[str, Any]]] = {grade: [] for grade in range(3, 13)}
     for path in sorted(PARTS.glob("grades-*-seeds.json")):
@@ -201,6 +227,7 @@ def main() -> int:
         merge_grade_one()
         merge_grade_two()
         merge_seed_banks()
+        merge_grade_three()
     return validate_all()
 
 

@@ -12,7 +12,7 @@ const STATE_KEY = 'javabook.progress.v2';
 const BANK = 'grade-01';
 const SESSION_SIZE = 3;
 
-const CHAPTERS = ['01-building-blocks.md', '02-operators-control-flow.md'];
+const CHAPTERS = ['01-building-blocks.md', '02-operators-control-flow.md', '03-core-api-methods.md'];
 
 const $ = (selector) => document.querySelector(selector);
 
