@@ -3,7 +3,7 @@
     {
       "id": "g2-comparison-001",
       "type": "mcq",
-      "prompt": "نوع نتیجهٔ `score >= 60` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nscore >= 60\n```\n\nنوع نتیجهٔ کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -25,7 +25,7 @@
     {
       "id": "g2-comparison-002",
       "type": "tf",
-      "prompt": "expression `18 < age < 65` برای int age در Java معتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n18 < age < 65\n```\n\nexpression کد بالا برای int age در Java معتبر است.",
       "answers": [
         "false"
       ],
@@ -65,7 +65,7 @@
     {
       "id": "g2-comparison-004",
       "type": "blank",
-      "prompt": "برای تشخیص NaN در double از `Double.____(value)` استفاده می‌شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nDouble.____(value)\n```\n\nبرای تشخیص NaN در double از کد بالا استفاده می‌شود.",
       "answers": [
         "isNaN"
       ],
@@ -81,7 +81,7 @@
     {
       "id": "g2-comparison-005",
       "type": "tf",
-      "prompt": "`Double.NaN == Double.NaN` true است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nDouble.NaN == Double.NaN\n```\n\nکد بالا true است.",
       "answers": [
         "false"
       ],
@@ -97,7 +97,7 @@
     {
       "id": "g2-comparison-006",
       "type": "mcq",
-      "prompt": "خروجی `(0.1 + 0.2) == 0.3` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n(0.1 + 0.2) == 0.3\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -189,7 +189,7 @@
     {
       "id": "g2-comparison-010",
       "type": "tf",
-      "prompt": "`==` برای primitive int identity object را می‌سنجد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n==\n```\n\nکد بالا برای primitive int identity object را می‌سنجد.",
       "answers": [
         "false"
       ],
@@ -205,7 +205,7 @@
     {
       "id": "g2-comparison-011",
       "type": "mcq",
-      "prompt": "در `if (count)` که count یک int است چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nif (count)\n```\n\nدر کد بالا که count یک int است چه رخ می‌دهد؟",
       "answers": [
         "C"
       ],
@@ -266,7 +266,7 @@
     {
       "id": "g2-comparison-014",
       "type": "tf",
-      "prompt": "`5 == 5L` false است، چون typeها متفاوت‌اند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n5 == 5L\n```\n\nکد بالا false است، چون typeها متفاوت‌اند.",
       "answers": [
         "false"
       ],
@@ -305,7 +305,7 @@
     {
       "id": "g2-comparison-016",
       "type": "multi",
-      "prompt": "کدام boundaryها شرط `score >= 60 && score < 90` را پاس می‌کنند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nscore >= 60 && score < 90\n```\n\nکدام boundaryها شرط کد بالا را پاس می‌کنند؟",
       "answers": [
         "A",
         "C"
@@ -350,7 +350,7 @@
     {
       "id": "g2-comparison-018",
       "type": "tf",
-      "prompt": "`-0.0 == 0.0` در comparison primitive double true است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n-0.0 == 0.0\n```\n\nکد بالا در comparison primitive double true است.",
       "answers": [
         "true"
       ],
@@ -366,7 +366,7 @@
     {
       "id": "g2-comparison-019",
       "type": "mcq",
-      "prompt": "کدام input شرط `x > 0 && x < 10` را false می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nx > 0 && x < 10\n```\n\nکدام input شرط کد بالا را false می‌کند؟",
       "answers": [
         "D"
       ],
@@ -388,7 +388,7 @@
     {
       "id": "g2-comparison-020",
       "type": "blank",
-      "prompt": "روی referenceها، `==` به‌طور پیش‌فرض ______ را می‌سنجد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n==\n```\n\nروی referenceها، کد بالا به‌طور پیش‌فرض ______ را می‌سنجد.",
       "answers": [
         "identity",
         "هویت"

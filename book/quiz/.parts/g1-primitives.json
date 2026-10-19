@@ -309,7 +309,7 @@
     {
       "id": "g1-primitives-016",
       "type": "tf",
-      "prompt": "عبارت `boolean ok = 1;` معتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nboolean ok = 1;\n```\n\nعبارت کد بالا معتبر است.",
       "answers": [
         "false"
       ],
@@ -379,7 +379,7 @@
     {
       "id": "g1-primitives-020",
       "type": "mcq",
-      "prompt": "دربارهٔ `char c = 65535;` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nchar c = 65535;\n```\n\nدربارهٔ کد بالا کدام درست است؟",
       "options": {
         "A": "کامپایل نمی‌شود",
         "B": "کامپایل می‌شود",
@@ -444,7 +444,7 @@
     {
       "id": "g1-primitives-023",
       "type": "mcq",
-      "prompt": "خروجی `new String(\"x\") == new String(\"x\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew String(\"x\") == new String(\"x\")\n```\n\nخروجی کد بالا چیست؟",
       "options": {
         "A": "true",
         "B": "false",
@@ -605,7 +605,7 @@
     {
       "id": "g1-primitives-030",
       "type": "mcq",
-      "prompt": "در `Integer boxed = 7;` چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger boxed = 7;\n```\n\nدر کد بالا چه رخ می‌دهد؟",
       "options": {
         "A": "خطای کامپایل",
         "B": "boxing خودکار",
@@ -629,7 +629,7 @@
     {
       "id": "g1-primitives-031",
       "type": "mcq",
-      "prompt": "در `int n = Integer.valueOf(7);` چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint n = Integer.valueOf(7);\n```\n\nدر کد بالا چه رخ می‌دهد؟",
       "options": {
         "A": "boxing",
         "B": "unboxing",
@@ -653,7 +653,7 @@
     {
       "id": "g1-primitives-032",
       "type": "mcq",
-      "prompt": "نتیجهٔ `Integer n = null; int x = n;` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger n = null; int x = n;\n```\n\nنتیجهٔ کد بالا چیست؟",
       "options": {
         "A": "x برابر ۰ می‌شود",
         "B": "خطای کامپایل",
@@ -696,7 +696,7 @@
     {
       "id": "g1-primitives-034",
       "type": "mcq",
-      "prompt": "چرا `Integer a=1000,b=1000; a==b` قابل اتکا نیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger a=1000,b=1000; a==b\n```\n\nچرا کد بالا قابل اتکا نیست؟",
       "options": {
         "A": "== همیشه مقدار را می‌سنجد",
         "B": "ممکن است دو شیء جدا باشند",
@@ -721,7 +721,7 @@
     {
       "id": "g1-primitives-035",
       "type": "tf",
-      "prompt": "true شدن `Integer.valueOf(100) == Integer.valueOf(100)` مجوز استفادهٔ عمومی از == برای Integer است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.valueOf(100) == Integer.valueOf(100)\n```\n\ntrue شدن کد بالا مجوز استفادهٔ عمومی از == برای Integer است.",
       "answers": [
         "false"
       ],
@@ -806,7 +806,7 @@
     {
       "id": "g1-primitives-039",
       "type": "mcq",
-      "prompt": "نوع `var name = \"بهار\";` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar name = \"بهار\";\n```\n\nنوع کد بالا چیست؟",
       "options": {
         "A": "char",
         "B": "String",
@@ -830,7 +830,7 @@
     {
       "id": "g1-primitives-040",
       "type": "mcq",
-      "prompt": "چرا `var item = null;` نامعتبر است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar item = null;\n```\n\nچرا کد بالا نامعتبر است؟",
       "options": {
         "A": "null فقط برای int است",
         "B": "نوعی برای استنباط ندارد",
@@ -854,7 +854,7 @@
     {
       "id": "g1-primitives-041",
       "type": "tf",
-      "prompt": "پس از `var count = 1;`، count می‌تواند یک String بگیرد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar count = 1;\n```\n\nپس از کد بالا، count می‌تواند یک String بگیرد.",
       "answers": [
         "false"
       ],
@@ -895,7 +895,7 @@
     {
       "id": "g1-primitives-043",
       "type": "mcq",
-      "prompt": "وضعیت `int n; System.out.println(n);` در متد چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint n; System.out.println(n);\n```\n\nوضعیت کد بالا در متد چیست؟",
       "options": {
         "A": "۰ چاپ می‌شود",
         "B": "null چاپ می‌شود",
@@ -963,7 +963,7 @@
     {
       "id": "g1-primitives-046",
       "type": "mcq",
-      "prompt": "وضعیت `boolean ready; if (ready) {}` در متد چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nboolean ready; if (ready) {}\n```\n\nوضعیت کد بالا در متد چیست؟",
       "options": {
         "A": "کامپایل و false",
         "B": "خطای کامپایل",
@@ -1010,7 +1010,7 @@
     {
       "id": "g1-primitives-048",
       "type": "tf",
-      "prompt": "پس از `final int n = 3;`، انتساب دوباره به n مجاز نیست.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int n = 3;\n```\n\nپس از کد بالا، انتساب دوباره به n مجاز نیست.",
       "answers": [
         "true"
       ],
@@ -1028,7 +1028,7 @@
     {
       "id": "g1-primitives-049",
       "type": "mcq",
-      "prompt": "در `final StringBuilder b = new StringBuilder(\"الف\"); b.append(\"ب\");` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal StringBuilder b = new StringBuilder(\"الف\"); b.append(\"ب\");\n```\n\nدر کد بالا کدام درست است؟",
       "options": {
         "A": "خطای کامپایل، چون شیء immutable است",
         "B": "کامپایل می‌شود و شیء تغییر می‌کند",
@@ -1053,7 +1053,7 @@
     {
       "id": "g1-primitives-050",
       "type": "tf",
-      "prompt": "`final String s = \"الف\"; s = \"ب\";` مجاز است چون String تغییرناپذیر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal String s = \"الف\"; s = \"ب\";\n```\n\nکد بالا مجاز است چون String تغییرناپذیر است.",
       "answers": [
         "false"
       ],
@@ -1072,7 +1072,7 @@
     {
       "id": "g1-primitives-051",
       "type": "mcq",
-      "prompt": "دربارهٔ `final Integer n = null;` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal Integer n = null;\n```\n\nدربارهٔ کد بالا کدام درست است؟",
       "options": {
         "A": "نامعتبر است چون final null نمی‌پذیرد",
         "B": "معتبر است اما n بعداً قابل تغییر نیست",
@@ -1097,7 +1097,7 @@
     {
       "id": "g1-primitives-052",
       "type": "mcq",
-      "prompt": "نوع `var x = 10L;` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar x = 10L;\n```\n\nنوع کد بالا چیست؟",
       "options": {
         "A": "byte",
         "B": "int",

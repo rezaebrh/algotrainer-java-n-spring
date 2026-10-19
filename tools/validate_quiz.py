@@ -96,7 +96,7 @@ def merge_grade_one() -> None:
     # Parts are disjoint by ID; deterministic sort makes diffs and sessions reproducible.
     all_questions.sort(key=lambda question: question["id"])
     output = {
-        "title": "درجهٔ ۱ — آجرهای سازندهٔ Java 21",
+        "title": "فصل ۱ — آجرهای سازندهٔ Java 21",
         "version": 2,
         "questions": all_questions,
     }
@@ -120,7 +120,7 @@ def merge_grade_two() -> None:
     target.write_text(
         json.dumps(
             {
-                "title": "درجهٔ ۲ — عملگرها و جریان کنترل",
+                "title": "فصل ۲ — عملگرها و جریان کنترل",
                 "version": 2,
                 "questions": questions,
             },
@@ -146,7 +146,7 @@ def merge_grade_three() -> None:
     target.write_text(
         json.dumps(
             {
-                "title": "درجهٔ ۳ — Core API و متدها",
+                "title": "فصل ۳ — Core API و متدها",
                 "version": 2,
                 "questions": questions,
             },
@@ -169,7 +169,7 @@ def merge_seed_banks() -> None:
             continue
         questions.sort(key=lambda question: question["id"])
         (QUIZ / f"grade-{grade:02d}.json").write_text(
-            json.dumps({"title": f"درجهٔ {grade}", "version": 2, "questions": questions}, ensure_ascii=False, indent=2) + "\n",
+            json.dumps({"title": f"فصل {grade}", "version": 2, "questions": questions}, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
 

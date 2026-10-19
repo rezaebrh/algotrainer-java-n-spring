@@ -1,5 +1,5 @@
 {
-  "title": "درجهٔ 6",
+  "title": "فصل 6",
   "version": 2,
   "questions": [
     {
@@ -109,7 +109,7 @@
     {
       "id": "g6-seed-006",
       "type": "mcq",
-      "prompt": "`List<? extends Number>` چه تضمینی می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nList<? extends Number>\n```\n\nکد بالا چه تضمینی می‌دهد؟",
       "answers": [
         "C"
       ],
@@ -166,7 +166,7 @@
     {
       "id": "g6-seed-009",
       "type": "mcq",
-      "prompt": "برای خواندن مقدار key از `Map<String,Integer> counts` چه می‌نویسیم؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMap<String,Integer> counts\n```\n\nبرای خواندن مقدار key از کد بالا چه می‌نویسیم؟",
       "answers": [
         "D"
       ],
@@ -213,7 +213,7 @@
     {
       "id": "g6-seed-011",
       "type": "mcq",
-      "prompt": "diamond operator در `new ArrayList<>()` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew ArrayList<>()\n```\n\ndiamond operator در کد بالا چه می‌کند؟",
       "answers": [
         "B"
       ],
@@ -293,7 +293,7 @@
     {
       "id": "g6-seed-015",
       "type": "multi",
-      "prompt": "روی `List<? super Integer>` کدام عملیات امن است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nList<? super Integer>\n```\n\nروی کد بالا کدام عملیات امن است؟",
       "answers": [
         "A",
         "C"

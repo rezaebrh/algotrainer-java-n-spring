@@ -273,7 +273,7 @@
     {
       "id": "g1-lifetime-015",
       "type": "mcq",
-      "prompt": "برای `final StringBuilder b = new StringBuilder();` کدام خط خطای کامپایل دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal StringBuilder b = new StringBuilder();\n```\n\nبرای کد بالا کدام خط خطای کامپایل دارد؟",
       "options": {
         "A": "b.append(\"x\");",
         "B": "System.out.println(b.length());",
@@ -355,7 +355,7 @@
     {
       "id": "g1-lifetime-019",
       "type": "blank",
-      "prompt": "نوع‌هایی مانند `int[]` و `StringBuilder` که variable آن‌ها به شیء اشاره می‌کند، ______ type هستند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[]\n```\n\nنوع‌هایی مانند کد بالا و `StringBuilder` که variable آن‌ها به شیء اشاره می‌کند، ______ type هستند.",
       "answers": [
         "reference",
         "reference type",
@@ -372,7 +372,7 @@
     {
       "id": "g1-lifetime-020",
       "type": "mcq",
-      "prompt": "پس از اجرای `int[] a = {1}; int[] b = a;` رابطهٔ a و b چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] a = {1}; int[] b = a;\n```\n\nپس از اجرای کد بالا رابطهٔ a و b چیست؟",
       "options": {
         "A": "دو آرایهٔ مستقل‌اند",
         "B": "هر دو به همان آرایه اشاره دارند",
@@ -568,7 +568,7 @@
     {
       "id": "g1-lifetime-030",
       "type": "mcq",
-      "prompt": "بعد از `int[] data = {4, 5}; data = null;` و بدون reference دیگر، آرایه چه وضعی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] data = {4, 5}; data = null;\n```\n\nبعد از کد بالا و بدون reference دیگر، آرایه چه وضعی دارد؟",
       "options": {
         "A": "واجد شرایط GC می‌شود",
         "B": "تا پایان JVM باقی می‌ماند",
@@ -721,7 +721,7 @@
     {
       "id": "g1-lifetime-038",
       "type": "mcq",
-      "prompt": "در `try (var r = new R()) { work(); }`، در حالت عادی close چه زمانی فراخوانی می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntry (var r = new R()) { work(); }\n```\n\nدر کد بالا، در حالت عادی close چه زمانی فراخوانی می‌شود؟",
       "options": {
         "A": "پیش از بدنهٔ try",
         "B": "پس از پایان بدنه و پیش از ادامهٔ برنامه",
@@ -764,7 +764,7 @@
     {
       "id": "g1-lifetime-040",
       "type": "mcq",
-      "prompt": "در `try (A a = ...; B b = ...) {}` ترتیب بسته‌شدن resourceها چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntry (A a = ...; B b = ...) {}\n```\n\nدر کد بالا ترتیب بسته‌شدن resourceها چیست؟",
       "options": {
         "A": "ابتدا a سپس b",
         "B": "ابتدا b سپس a",
@@ -889,7 +889,7 @@
     {
       "id": "g1-lifetime-047",
       "type": "mcq",
-      "prompt": "در کد `final StringBuilder a = new StringBuilder(\"x\"); StringBuilder b = a; b.append(\"y\");`، a چه چیزی را نشان می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal StringBuilder a = new StringBuilder(\"x\"); StringBuilder b = a; b.append(\"y\");\n```\n\nدر کد کد بالا، a چه چیزی را نشان می‌دهد؟",
       "options": {
         "A": "فقط x",
         "B": "خطای کامپایل در append",
@@ -948,7 +948,7 @@
     {
       "id": "g1-lifetime-050",
       "type": "multi",
-      "prompt": "دربارهٔ `final int[] numbers = {1, 2};` کدام موارد درست‌اند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int[] numbers = {1, 2};\n```\n\nدربارهٔ کد بالا کدام موارد درست‌اند؟",
       "options": {
         "A": "numbers = new int[]{3}; خطای کامپایل است.",
         "B": "numbers[0] = 9; مجاز است.",
@@ -1009,7 +1009,7 @@
     {
       "id": "g1-lifetime-053",
       "type": "mcq",
-      "prompt": "کدام عبارت دربارهٔ `try (BufferedReader r = ...)` درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntry (BufferedReader r = ...)\n```\n\nکدام عبارت دربارهٔ کد بالا درست است؟",
       "options": {
         "A": "r فقط با System.gc() بسته می‌شود.",
         "B": "r باید final صریح باشد.",
@@ -1029,7 +1029,7 @@
     {
       "id": "g1-lifetime-054",
       "type": "blank",
-      "prompt": "رابطی که متد `close()` را برای استفاده در try-with-resources فراهم می‌کند ______ است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nclose()\n```\n\nرابطی که متد کد بالا را برای استفاده در try-with-resources فراهم می‌کند ______ است.",
       "answers": [
         "AutoCloseable"
       ],
@@ -1043,7 +1043,7 @@
     {
       "id": "g1-lifetime-055",
       "type": "mcq",
-      "prompt": "اگر `close()` تنها resource یک try-with-resources exception پرتاب کند و بدنه exception نداشته باشد، چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nclose()\n```\n\nاگر کد بالا تنها resource یک try-with-resources exception پرتاب کند و بدنه exception نداشته باشد، چه رخ می‌دهد؟",
       "options": {
         "A": "exception close اصلی پرتاب می‌شود",
         "B": "exception نادیده گرفته می‌شود",
@@ -1180,7 +1180,7 @@
     {
       "id": "g1-lifetime-062",
       "type": "multi",
-      "prompt": "برای شیء `Node n = new Node();` کدام تغییرها ممکن است به واجد GC شدن شیء کمک کنند، مشروط به نبود reference زندهٔ دیگر؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nNode n = new Node();\n```\n\nبرای شیء کد بالا کدام تغییرها ممکن است به واجد GC شدن شیء کمک کنند، مشروط به نبود reference زندهٔ دیگر؟",
       "options": {
         "A": "n = null;",
         "B": "خروج متدی که n local آن بود",

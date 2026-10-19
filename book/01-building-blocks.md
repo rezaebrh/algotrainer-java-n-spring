@@ -1,4 +1,4 @@
-# درجهٔ ۱ — آجرهای سازندهٔ Java 21
+# فصل ۱ — آجرهای سازندهٔ Java 21
 
 > **مسیر:** Java 21 / OCP Building Blocks  
 > **مخاطب:** برنامه‌نویس C++ که می‌خواهد مدل ذهنی دقیق Java، JVM و مدیریت عمر داده/منبع را بسازد.
@@ -7,7 +7,7 @@
 
 ## نقشهٔ یادگیری و خروجی مورد انتظار
 
-پس از این درجه باید بتوانید:
+پس از این فصل باید بتوانید:
 
 1. مسیر `.java → .class → JVM` را از کامپایل native در C++ جدا کنید؛
 2. فرق `package`، `import`، classpath و JAR را با header، linker، DLL و ABI توضیح دهید؛
@@ -960,7 +960,7 @@ machine instructions برای CPU فعلی
 
 ---
 
-## درجهٔ ۱: داده‌ها، هویت و متن در Java 21
+## بخش ۲: داده‌ها، هویت و متن در Java 21
 
 این بخش برای برنامه‌نویسی باتجربهٔ C++ نوشته شده است. در C++ معمولاً میان value، pointer، reference، object lifetime و copy constructor مرزهای نحوی روشنی دارید. در Java نیز این مفاهیم مهم‌اند، اما مدل زبان متفاوت است: متغیرها یا **primitive value** نگه می‌دارند یا **reference value**؛ و assignment و ارسال آرگومان همیشه «by value» است.
 
@@ -1794,7 +1794,7 @@ if (retries > 0) {
 
 ---
 
-## درجهٔ ۱: چرخهٔ عمر شیء و مدیریت منابع در Java
+## بخش ۳: چرخهٔ عمر شیء و مدیریت منابع در Java
 
 این بخش برای برنامه‌نویسی نوشته شده است که در C++ با سازنده، RAII، عمرِ اشیای خودکار و اشاره‌گرها راحت است. شباهت واژگان گمراه‌کننده است: در Java «شیء» روی heap ساخته می‌شود، اما متغیرِ آن شیء معمولاً فقط یک **مقدار مرجع** است؛ و پایان scope به‌خودی‌خود پایان عمر شیء یا بستن منبع نیست.
 
@@ -2685,7 +2685,7 @@ static StringBuilder replaced(StringBuilder value) {
 
 ### پیش‌نگرِ inheritance و interface: قاعدهٔ ساختگی «nearest wins» نداریم
 
-این بخش برای جلوگیری از انتقال یک مدل غلط به درجه‌های بعدی است؛ جزئیات کامل آنجا می‌آید.
+این بخش برای جلوگیری از انتقال یک مدل غلط به فصل‌های بعدی است؛ جزئیات کامل آنجا می‌آید.
 
 1. فراخوانی یک method نمونهٔ overrideشدنی از constructor می‌تواند به override زیرکلاس dispatch شود، هنگامی که fieldهای زیرکلاس هنوز مقداردهی نشده‌اند. پس constructor نباید به behavior overrideشدنی تکیه کند.
 2. fieldها **پنهان** می‌شوند، نه اینکه مانند instance methodها polymorphic dispatch شوند:
@@ -2713,9 +2713,9 @@ static StringBuilder replaced(StringBuilder value) {
 | `==` را برای `String` برگزیدید | literal، `new String` و concatenation runtime را مقایسه کنید | identity و equality را جدا کنید |
 | `var` را dynamic دانستید | پس از `var count = 1` یک `String` assign کنید | خطای static type را پیش‌بینی کنید |
 
-## چک‌لیست پایان درجهٔ ۱
+## چک‌لیست پایان فصل ۱
 
-پیش از ورود به درجهٔ ۲، بدون اجرای برنامه باید بتوانید پاسخ دهید:
+پیش از ورود به فصل ۲، بدون اجرای برنامه باید بتوانید پاسخ دهید:
 
 - چرا `java -cp out pkg.Main` نام کلاس می‌خواهد، نه مسیر فایل؟
 - چرا `List<Integer>` مجاز اما `List<int>` نامجاز است؟
@@ -2724,6 +2724,6 @@ static StringBuilder replaced(StringBuilder value) {
 - چرا `try-with-resources` در return و exception هم `close()` را اجرا می‌کند؟
 - چرا warm-up/JIT یا escape analysis نباید خروجی برنامهٔ شما را تغییر دهند؟
 
-## تمرین پروژه‌ای پایان درجهٔ ۱
+## تمرین پروژه‌ای پایان فصل ۱
 
 یک `LibraryLauncher` در package `ir.learning.library` بسازید که یک `static final String` برای نام برنامه، یک class `Book` با constructor، دو reference alias به یک `Book`، و یک `try-with-resources` برای خواندن فایل داشته باشد. آن را با `javac -d out` بسازید و با نام کامل class اجرا کنید. سپس توضیح دهید کدام رفتارها «قاعدهٔ زبان» و کدام‌ها «جزئیات runtime» هستند.

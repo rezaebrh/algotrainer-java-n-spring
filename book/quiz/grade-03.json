@@ -1,5 +1,5 @@
 {
-  "title": "درجهٔ ۳ — Core API و متدها",
+  "title": "فصل ۳ — Core API و متدها",
   "version": 2,
   "questions": [
     {
@@ -28,7 +28,7 @@
     {
       "id": "g3-arrays-002",
       "type": "tf",
-      "prompt": "شکل `int a[]` در Java همان نوع آرایه را می‌سازد و تنها سبک نوشتار متفاوتی دارد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint a[]\n```\n\nشکل کد بالا در Java همان نوع آرایه را می‌سازد و تنها سبک نوشتار متفاوتی دارد.",
       "answers": [
         "true"
       ],
@@ -117,7 +117,7 @@
     {
       "id": "g3-arrays-006",
       "type": "tf",
-      "prompt": "Initializer کوتاه `{1, 2, 3}` فقط در همان خط اعلام متغیر مجاز است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n{1, 2, 3}\n```\n\nInitializer کوتاه کد بالا فقط در همان خط اعلام متغیر مجاز است.",
       "answers": [
         "true"
       ],
@@ -228,7 +228,7 @@
     {
       "id": "g3-arrays-011",
       "type": "tf",
-      "prompt": "`arr[arr.length]` در زمان اجرا استثنا پرتاب می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\narr[arr.length]\n```\n\nکد بالا در زمان اجرا استثنا پرتاب می‌کند.",
       "answers": [
         "true"
       ],
@@ -245,7 +245,7 @@
     {
       "id": "g3-arrays-012",
       "type": "mcq",
-      "prompt": "در حلقهٔ `for (int i = 0; i <= a.length; i++)` خطای رایج چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor (int i = 0; i <= a.length; i++)\n```\n\nدر حلقهٔ کد بالا خطای رایج چیست؟",
       "answers": [
         "B"
       ],
@@ -355,7 +355,7 @@
     {
       "id": "g3-arrays-017",
       "type": "mcq",
-      "prompt": "در `for (int x : arr) { x = 0; }` آرایهٔ arr چه تغییری می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor (int x : arr) { x = 0; }\n```\n\nدر کد بالا آرایهٔ arr چه تغییری می‌کند؟",
       "answers": [
         "A"
       ],
@@ -379,7 +379,7 @@
     {
       "id": "g3-arrays-018",
       "type": "mcq",
-      "prompt": "آرایهٔ دو‌بعدی `int[][] m = new int[3][4];` در حافظه چگونه است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[][] m = new int[3][4];\n```\n\nآرایهٔ دو‌بعدی کد بالا در حافظه چگونه است؟",
       "answers": [
         "C"
       ],
@@ -419,7 +419,7 @@
     {
       "id": "g3-arrays-020",
       "type": "mcq",
-      "prompt": "`Arrays.sort(int[] a)` برای آرایهٔ int از چه الگوریتمی استفاده می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.sort(int[] a)\n```\n\nکد بالا برای آرایهٔ int از چه الگوریتمی استفاده می‌کند؟",
       "answers": [
         "B"
       ],
@@ -442,7 +442,7 @@
     {
       "id": "g3-arrays-021",
       "type": "mcq",
-      "prompt": "خروجی `Arrays.toString(new int[]{1, 2, 3})` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.toString(new int[]{1, 2, 3})\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -465,7 +465,7 @@
     {
       "id": "g3-arrays-022",
       "type": "mcq",
-      "prompt": "برای چاپ آرایهٔ دو‌بعدی `int[][] m` به شکل ماتریسی، کدام مناسب است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[][] m\n```\n\nبرای چاپ آرایهٔ دو‌بعدی کد بالا به شکل ماتریسی، کدام مناسب است؟",
       "answers": [
         "C"
       ],
@@ -511,7 +511,7 @@
     {
       "id": "g3-arrays-024",
       "type": "mcq",
-      "prompt": "نتیجهٔ `Arrays.copyOf(arr, 3)` وقتی arr پنج‌عضوی است چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.copyOf(arr, 3)\n```\n\nنتیجهٔ کد بالا وقتی arr پنج‌عضوی است چیست؟",
       "answers": [
         "A"
       ],
@@ -534,7 +534,7 @@
     {
       "id": "g3-arrays-025",
       "type": "mcq",
-      "prompt": "`Arrays.copyOfRange(arr, 1, 4)` کدام بازه را کپی می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.copyOfRange(arr, 1, 4)\n```\n\nکد بالا کدام بازه را کپی می‌کند؟",
       "answers": [
         "C"
       ],
@@ -557,7 +557,7 @@
     {
       "id": "g3-arrays-026",
       "type": "mcq",
-      "prompt": "خروجی `Arrays.fill(a, 7)` وقتی a آرایه‌ای پنج‌عضوی int است چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.fill(a, 7)\n```\n\nخروجی کد بالا وقتی a آرایه‌ای پنج‌عضوی int است چیست؟",
       "answers": [
         "B"
       ],
@@ -580,7 +580,7 @@
     {
       "id": "g3-arrays-027",
       "type": "mcq",
-      "prompt": "`Arrays.setAll(a, i -> i * i)` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.setAll(a, i -> i * i)\n```\n\nکد بالا چه می‌کند؟",
       "answers": [
         "D"
       ],
@@ -739,7 +739,7 @@
     {
       "id": "g3-deepening-006",
       "type": "mcq",
-      "prompt": "خروجی `String s = \"Hello\"; System.out.println(s.substring(1, 1));` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString s = \"Hello\"; System.out.println(s.substring(1, 1));\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -762,7 +762,7 @@
     {
       "id": "g3-deepening-007",
       "type": "tf",
-      "prompt": "`\"  hello  \".strip()` فقط whitespace ابتدا و انتها را حذف می‌کند ولی whitespace داخلی را دست نمی‌زند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"  hello  \".strip()\n```\n\nکد بالا فقط whitespace ابتدا و انتها را حذف می‌کند ولی whitespace داخلی را دست نمی‌زند.",
       "answers": [
         "true"
       ],
@@ -779,7 +779,7 @@
     {
       "id": "g3-deepening-008",
       "type": "mcq",
-      "prompt": "خروجی `System.out.println(\"a\".repeat(0));` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nSystem.out.println(\"a\".repeat(0));\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -802,7 +802,7 @@
     {
       "id": "g3-deepening-009",
       "type": "mcq",
-      "prompt": "`String s = null; System.out.println(s.length());` چه می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString s = null; System.out.println(s.length());\n```\n\nکد بالا چه می‌دهد؟",
       "answers": [
         "C"
       ],
@@ -825,7 +825,7 @@
     {
       "id": "g3-deepening-010",
       "type": "mcq",
-      "prompt": "`\"abc\".compareTo(\"abd\")` چه عددی برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"abc\".compareTo(\"abd\")\n```\n\nکد بالا چه عددی برمی‌گرداند؟",
       "answers": [
         "A"
       ],
@@ -849,7 +849,7 @@
     {
       "id": "g3-deepening-011",
       "type": "mcq",
-      "prompt": "اگر یک thread مقدار String را در حلقه `s = s + x` بسازد و thread دیگر همان `s` را بخواند، چه thread-safety رفتاری دیده می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns = s + x\n```\n\nاگر یک thread مقدار String را در حلقه کد بالا بسازد و thread دیگر همان `s` را بخواند، چه thread-safety رفتاری دیده می‌شود؟",
       "answers": [
         "B"
       ],
@@ -873,7 +873,7 @@
     {
       "id": "g3-deepening-012",
       "type": "tf",
-      "prompt": "`final String s = \"x\"; s = \"y\";` کامپایل می‌شود ولی runtime می‌تواند عوض شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal String s = \"x\"; s = \"y\";\n```\n\nکد بالا کامپایل می‌شود ولی runtime می‌تواند عوض شود.",
       "answers": [
         "false"
       ],
@@ -914,7 +914,7 @@
     {
       "id": "g3-deepening-014",
       "type": "multi",
-      "prompt": "کدام‌ها از String.valueOf همان نتیجهٔ `+ \"\"` را نمی‌دهند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n+ \"\"\n```\n\nکدام‌ها از String.valueOf همان نتیجهٔ کد بالا را نمی‌دهند؟",
       "answers": [
         "B",
         "C"
@@ -938,7 +938,7 @@
     {
       "id": "g3-deepening-015",
       "type": "tf",
-      "prompt": "`new String(\"hello\") == new String(\"hello\")` برابر true است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew String(\"hello\") == new String(\"hello\")\n```\n\nکد بالا برابر true است.",
       "answers": [
         "false"
       ],
@@ -1060,7 +1060,7 @@
     {
       "id": "g3-deepening-021",
       "type": "mcq",
-      "prompt": "`int[] a = new int[3]; System.out.println(Arrays.toString(a));` چه چاپ می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] a = new int[3]; System.out.println(Arrays.toString(a));\n```\n\nکد بالا چه چاپ می‌کند؟",
       "answers": [
         "B"
       ],
@@ -1083,7 +1083,7 @@
     {
       "id": "g3-deepening-022",
       "type": "mcq",
-      "prompt": "خروجی `Arrays.equals(new int[]{1,2}, new long[]{1,2})` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.equals(new int[]{1,2}, new long[]{1,2})\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -1106,7 +1106,7 @@
     {
       "id": "g3-deepening-023",
       "type": "mcq",
-      "prompt": "`Arrays.binarySearch(arr, k)` روی آرایهٔ مرتب‌نشده چه تضمینی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.binarySearch(arr, k)\n```\n\nکد بالا روی آرایهٔ مرتب‌نشده چه تضمینی دارد؟",
       "answers": [
         "C"
       ],
@@ -1194,7 +1194,7 @@
     {
       "id": "g3-deepening-027",
       "type": "mcq",
-      "prompt": "خروجی `Math.round(-2.5)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.round(-2.5)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -1217,7 +1217,7 @@
     {
       "id": "g3-deepening-028",
       "type": "mcq",
-      "prompt": "`Math.sqrt(-1)` چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.sqrt(-1)\n```\n\nکد بالا چه برمی‌گرداند؟",
       "answers": [
         "A"
       ],
@@ -1241,7 +1241,7 @@
     {
       "id": "g3-deepening-029",
       "type": "mcq",
-      "prompt": "`Math.floorDiv(7, -2)` چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.floorDiv(7, -2)\n```\n\nکد بالا چه برمی‌گرداند؟",
       "answers": [
         "A"
       ],
@@ -1287,7 +1287,7 @@
     {
       "id": "g3-deepening-031",
       "type": "tf",
-      "prompt": "`Integer.parseInt(\"+42\")` درست parse می‌شود و 42 برمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.parseInt(\"+42\")\n```\n\nکد بالا درست parse می‌شود و 42 برمی‌گرداند.",
       "answers": [
         "true"
       ],
@@ -1303,7 +1303,7 @@
     {
       "id": "g3-deepening-032",
       "type": "mcq",
-      "prompt": "`Long.parseLong(\"2147483648\")` چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nLong.parseLong(\"2147483648\")\n```\n\nکد بالا چه برمی‌گرداند؟",
       "answers": [
         "A"
       ],
@@ -1325,7 +1325,7 @@
     {
       "id": "g3-deepening-033",
       "type": "mcq",
-      "prompt": "در `String s = \"Hello\"; char c = s.charAt(10);` چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString s = \"Hello\"; char c = s.charAt(10);\n```\n\nدر کد بالا چه رخ می‌دهد؟",
       "answers": [
         "B"
       ],
@@ -1348,7 +1348,7 @@
     {
       "id": "g3-deepening-034",
       "type": "tf",
-      "prompt": "`\"abc\".replace(\"a\", \"\")` نتیجه `\"bc\"` می‌دهد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"abc\".replace(\"a\", \"\")\n```\n\nکد بالا نتیجه `\"bc\"` می‌دهد.",
       "answers": [
         "true"
       ],
@@ -1365,7 +1365,7 @@
     {
       "id": "g3-deepening-035",
       "type": "mcq",
-      "prompt": "`int[] a = new int[]{1,2,3}; int[] b = Arrays.copyOf(a, 10);` نتیجهٔ b چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] a = new int[]{1,2,3}; int[] b = Arrays.copyOf(a, 10);\n```\n\nکد بالا نتیجهٔ b چیست؟",
       "answers": [
         "C"
       ],
@@ -1465,7 +1465,7 @@
     {
       "id": "g3-deepening-040",
       "type": "mcq",
-      "prompt": "در عبارت `\"a\" + \"b\" + \"c\"`، compiler چند String موقت می‌سازد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"a\" + \"b\" + \"c\"\n```\n\nدر عبارت کد بالا، compiler چند String موقت می‌سازد؟",
       "answers": [
         "B"
       ],
@@ -1488,7 +1488,7 @@
     {
       "id": "g3-deepening-041",
       "type": "mcq",
-      "prompt": "`Arrays.stream(new int[]{1,2,3}).sum()` چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.stream(new int[]{1,2,3}).sum()\n```\n\nکد بالا چه برمی‌گرداند؟",
       "answers": [
         "A"
       ],
@@ -1511,7 +1511,7 @@
     {
       "id": "g3-deepening-042",
       "type": "mcq",
-      "prompt": "`Math.nextUp(Double.MAX_VALUE)` چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.nextUp(Double.MAX_VALUE)\n```\n\nکد بالا چه برمی‌گرداند؟",
       "answers": [
         "B"
       ],
@@ -1577,7 +1577,7 @@
     {
       "id": "g3-deepening-045",
       "type": "mcq",
-      "prompt": "`Integer.parseInt(\"0xFF\")` چه می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.parseInt(\"0xFF\")\n```\n\nکد بالا چه می‌دهد؟",
       "answers": [
         "B"
       ],
@@ -1624,7 +1624,7 @@
     {
       "id": "g3-math-001",
       "type": "mcq",
-      "prompt": "خروجی `Math.max(-2, -7)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.max(-2, -7)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -1647,7 +1647,7 @@
     {
       "id": "g3-math-002",
       "type": "mcq",
-      "prompt": "خروجی `Math.abs(-3)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.abs(-3)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -1669,7 +1669,7 @@
     {
       "id": "g3-math-003",
       "type": "mcq",
-      "prompt": "`Math.round(3.6)` چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.round(3.6)\n```\n\nکد بالا چه برمی‌گرداند؟",
       "answers": [
         "C"
       ],
@@ -1691,7 +1691,7 @@
     {
       "id": "g3-math-004",
       "type": "mcq",
-      "prompt": "خروجی `Math.floor(2.3)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.floor(2.3)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "D"
       ],
@@ -1713,7 +1713,7 @@
     {
       "id": "g3-math-005",
       "type": "mcq",
-      "prompt": "خروجی `Math.ceil(2.1)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.ceil(2.1)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -1735,7 +1735,7 @@
     {
       "id": "g3-math-006",
       "type": "mcq",
-      "prompt": "خروجی `Math.pow(2, 10)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.pow(2, 10)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -1757,7 +1757,7 @@
     {
       "id": "g3-math-007",
       "type": "mcq",
-      "prompt": "خروجی `Math.sqrt(81)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.sqrt(81)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -1779,7 +1779,7 @@
     {
       "id": "g3-math-008",
       "type": "tf",
-      "prompt": "`Math.cbrt(27)` برابر 3.0 است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.cbrt(27)\n```\n\nکد بالا برابر 3.0 است.",
       "answers": [
         "true"
       ],
@@ -1795,7 +1795,7 @@
     {
       "id": "g3-math-009",
       "type": "mcq",
-      "prompt": "خروجی `Math.signum(-5.0)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.signum(-5.0)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -1863,7 +1863,7 @@
     {
       "id": "g3-math-012",
       "type": "tf",
-      "prompt": "`Math.random()` می‌تواند دقیقاً 1.0 برگرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.random()\n```\n\nکد بالا می‌تواند دقیقاً 1.0 برگرداند.",
       "answers": [
         "false"
       ],
@@ -1880,7 +1880,7 @@
     {
       "id": "g3-math-013",
       "type": "mcq",
-      "prompt": "برای تولید int تصادفی در بازهٔ `[0, n)` بهترین انتخاب چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n[0, n)\n```\n\nبرای تولید int تصادفی در بازهٔ کد بالا بهترین انتخاب چیست؟",
       "answers": [
         "A"
       ],
@@ -1904,7 +1904,7 @@
     {
       "id": "g3-math-014",
       "type": "mcq",
-      "prompt": "`Math.addExact(Integer.MAX_VALUE, 1)` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.addExact(Integer.MAX_VALUE, 1)\n```\n\nکد بالا چه می‌کند؟",
       "answers": [
         "C"
       ],
@@ -1973,7 +1973,7 @@
     {
       "id": "g3-math-017",
       "type": "mcq",
-      "prompt": "`Math.atan2(y, x)` چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.atan2(y, x)\n```\n\nکد بالا چه برمی‌گرداند؟",
       "answers": [
         "A"
       ],
@@ -2123,7 +2123,7 @@
     {
       "id": "g3-methods-006",
       "type": "mcq",
-      "prompt": "پارامتر `int n` در `void f(int n)` در کجا قابل دسترسی است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int n)\n```\n\nپارامتر `int n` در کد بالا در کجا قابل دسترسی است؟",
       "answers": [
         "B"
       ],
@@ -2232,7 +2232,7 @@
     {
       "id": "g3-methods-011",
       "type": "mcq",
-      "prompt": "چرا `Math.abs(-5)` بدون ساخت نمونه فراخوانی می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.abs(-5)\n```\n\nچرا کد بالا بدون ساخت نمونه فراخوانی می‌شود؟",
       "answers": [
         "B"
       ],
@@ -2318,7 +2318,7 @@
     {
       "id": "g3-methods-015",
       "type": "mcq",
-      "prompt": "اگر متد `int f() { return 3.14; }` را کامپایل کنیم:",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint f() { return 3.14; }\n```\n\nاگر متد کد بالا را کامپایل کنیم:",
       "answers": [
         "B"
       ],
@@ -2381,7 +2381,7 @@
     {
       "id": "g3-methods-018",
       "type": "mcq",
-      "prompt": "در `void f(int x) { this.x = x; }` نقش `this.x` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int x) { this.x = x; }\n```\n\nدر کد بالا نقش `this.x` چیست؟",
       "answers": [
         "B"
       ],
@@ -2509,7 +2509,7 @@
     {
       "id": "g3-methods-024",
       "type": "mcq",
-      "prompt": "متد `int f() { return 'A'; }` در زمان کامپایل:",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint f() { return 'A'; }\n```\n\nمتد کد بالا در زمان کامپایل:",
       "answers": [
         "B"
       ],
@@ -3006,7 +3006,7 @@
     {
       "id": "g3-overloading-020",
       "type": "blank",
-      "prompt": "برای زنجیر کردن overload سازنده‌ها در همان کلاس، در سازنده از `____(آرگومان‌ها)` استفاده می‌شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n____(آرگومان‌ها)\n```\n\nبرای زنجیر کردن overload سازنده‌ها در همان کلاس، در سازنده از کد بالا استفاده می‌شود.",
       "answers": [
         "this",
         "this("
@@ -3025,7 +3025,7 @@
     {
       "id": "g3-parsing-001",
       "type": "mcq",
-      "prompt": "خروجی `Integer.parseInt(\"  42 \")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.parseInt(\"  42 \")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -3073,7 +3073,7 @@
     {
       "id": "g3-parsing-003",
       "type": "tf",
-      "prompt": "`Integer.parseInt(\"+42\")` بدون خطا عدد 42 برمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.parseInt(\"+42\")\n```\n\nکد بالا بدون خطا عدد 42 برمی‌گرداند.",
       "answers": [
         "true"
       ],
@@ -3091,7 +3091,7 @@
     {
       "id": "g3-parsing-004",
       "type": "mcq",
-      "prompt": "خروجی `Integer.valueOf(\"127\") == Integer.valueOf(\"127\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.valueOf(\"127\") == Integer.valueOf(\"127\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -3115,7 +3115,7 @@
     {
       "id": "g3-parsing-005",
       "type": "mcq",
-      "prompt": "چرا مقایسهٔ `==` روی دو شیٔ Integer بیرون از بازهٔ -128 تا 127 خطرناک است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n==\n```\n\nچرا مقایسهٔ کد بالا روی دو شیٔ Integer بیرون از بازهٔ -128 تا 127 خطرناک است؟",
       "answers": [
         "D"
       ],
@@ -3139,7 +3139,7 @@
     {
       "id": "g3-parsing-006",
       "type": "mcq",
-      "prompt": "خروجی `Integer.parseInt(null)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.parseInt(null)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -3187,7 +3187,7 @@
     {
       "id": "g3-parsing-008",
       "type": "mcq",
-      "prompt": "مقدار `Integer.parseUnsignedInt(\"-1\")` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.parseUnsignedInt(\"-1\")\n```\n\nمقدار کد بالا چه رفتاری دارد؟",
       "answers": [
         "A"
       ],
@@ -3211,7 +3211,7 @@
     {
       "id": "g3-parsing-009",
       "type": "tf",
-      "prompt": "`Boolean.parseBoolean(\"TRUE\")` مقدار true برمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nBoolean.parseBoolean(\"TRUE\")\n```\n\nکد بالا مقدار true برمی‌گرداند.",
       "answers": [
         "true"
       ],
@@ -3228,7 +3228,7 @@
     {
       "id": "g3-parsing-010",
       "type": "mcq",
-      "prompt": "خروجی `Boolean.parseBoolean(\"yes\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nBoolean.parseBoolean(\"yes\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -3251,7 +3251,7 @@
     {
       "id": "g3-parsing-011",
       "type": "mcq",
-      "prompt": "خروجی `Double.parseDouble(\"NaN\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nDouble.parseDouble(\"NaN\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -3299,7 +3299,7 @@
     {
       "id": "g3-parsing-013",
       "type": "mcq",
-      "prompt": "خروجی `Integer.toString(255, 16)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.toString(255, 16)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -3323,7 +3323,7 @@
     {
       "id": "g3-parsing-014",
       "type": "mcq",
-      "prompt": "مقدار `Integer.sum(2_000_000_000, 2_000_000_000)` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.sum(2_000_000_000, 2_000_000_000)\n```\n\nمقدار کد بالا چه رفتاری دارد؟",
       "answers": [
         "C"
       ],
@@ -3371,7 +3371,7 @@
     {
       "id": "g3-parsing-016",
       "type": "blank",
-      "prompt": "متد `Byte.parseByte(\"127\")` عدد صحیح ____ بازمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nByte.parseByte(\"127\")\n```\n\nمتد کد بالا عدد صحیح ____ بازمی‌گرداند.",
       "answers": [
         "127"
       ],
@@ -3388,7 +3388,7 @@
     {
       "id": "g3-parsing-017",
       "type": "mcq",
-      "prompt": "خروجی `Short.parseShort(\"40000\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nShort.parseShort(\"40000\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -3476,7 +3476,7 @@
     {
       "id": "g3-seed-003",
       "type": "tf",
-      "prompt": "`\"Java\".toLowerCase()` رشتهٔ اصلی را تغییر می‌دهد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"Java\".toLowerCase()\n```\n\nکد بالا رشتهٔ اصلی را تغییر می‌دهد.",
       "answers": [
         "false"
       ],
@@ -3493,7 +3493,7 @@
     {
       "id": "g3-seed-004",
       "type": "mcq",
-      "prompt": "نتیجهٔ `Math.max(-2, 4)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.max(-2, 4)\n```\n\nنتیجهٔ کد بالا چیست؟",
       "answers": [
         "D"
       ],
@@ -3564,7 +3564,7 @@
     {
       "id": "g3-seed-007",
       "type": "blank",
-      "prompt": "برای ساخت آرایهٔ پنج‌تایی int می‌نویسیم `new int[____]`.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew int[____]\n```\n\nبرای ساخت آرایهٔ پنج‌تایی int می‌نویسیم کد بالا.",
       "answers": [
         "5"
       ],
@@ -3580,7 +3580,7 @@
     {
       "id": "g3-seed-008",
       "type": "tf",
-      "prompt": "دسترسی به `items[items.length]` معتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nitems[items.length]\n```\n\nدسترسی به کد بالا معتبر است.",
       "answers": [
         "false"
       ],
@@ -3597,7 +3597,7 @@
     {
       "id": "g3-seed-009",
       "type": "mcq",
-      "prompt": "خروجی `\"ab\".substring(1)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"ab\".substring(1)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -3644,7 +3644,7 @@
     {
       "id": "g3-seed-011",
       "type": "mcq",
-      "prompt": "`return;` بدون مقدار در کدام متد مجاز است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nreturn;\n```\n\nکد بالا بدون مقدار در کدام متد مجاز است؟",
       "answers": [
         "A"
       ],
@@ -3667,7 +3667,7 @@
     {
       "id": "g3-seed-012",
       "type": "blank",
-      "prompt": "برای تبدیل `\"42\"` به int از `Integer.____(\"42\")` استفاده می‌کنیم.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.____(\"42\")\n```\n\nبرای تبدیل `\"42\"` به int از کد بالا استفاده می‌کنیم.",
       "answers": [
         "parseInt"
       ],
@@ -3702,7 +3702,7 @@
     {
       "id": "g3-seed-014",
       "type": "mcq",
-      "prompt": "`Arrays.sort(values)` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.sort(values)\n```\n\nکد بالا چه می‌کند؟",
       "answers": [
         "B"
       ],
@@ -3749,7 +3749,7 @@
     {
       "id": "g3-string-api-001",
       "type": "mcq",
-      "prompt": "نوع بازگشتی متد `length()` در کلاس String چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nlength()\n```\n\nنوع بازگشتی متد کد بالا در کلاس String چیست؟",
       "answers": [
         "A"
       ],
@@ -3772,7 +3772,7 @@
     {
       "id": "g3-string-api-002",
       "type": "mcq",
-      "prompt": "تفاوت اصلی بین `arr.length` و `s.length()` در چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns.length()\n```\n\nتفاوت اصلی بین `arr.length` و کد بالا در چیست؟",
       "answers": [
         "B"
       ],
@@ -3797,7 +3797,7 @@
     {
       "id": "g3-string-api-003",
       "type": "tf",
-      "prompt": "`\"\".length()` مقدار 0 برمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"\".length()\n```\n\nکد بالا مقدار 0 برمی‌گرداند.",
       "answers": [
         "true"
       ],
@@ -3814,7 +3814,7 @@
     {
       "id": "g3-string-api-004",
       "type": "mcq",
-      "prompt": "نوع بازگشتی `s.charAt(i)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns.charAt(i)\n```\n\nنوع بازگشتی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -3861,7 +3861,7 @@
     {
       "id": "g3-string-api-006",
       "type": "tf",
-      "prompt": "`\"abc\".charAt(3)` در زمان اجرا StringIndexOutOfBoundsException پرتاب می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"abc\".charAt(3)\n```\n\nکد بالا در زمان اجرا StringIndexOutOfBoundsException پرتاب می‌کند.",
       "answers": [
         "true"
       ],
@@ -3879,7 +3879,7 @@
     {
       "id": "g3-string-api-007",
       "type": "mcq",
-      "prompt": "در فراخوانی `s.substring(begin, end)` کران end چگونه عمل می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns.substring(begin, end)\n```\n\nدر فراخوانی کد بالا کران end چگونه عمل می‌کند؟",
       "answers": [
         "B"
       ],
@@ -3925,7 +3925,7 @@
     {
       "id": "g3-string-api-009",
       "type": "tf",
-      "prompt": "`\"hello\".substring(5, 5)` یک رشتهٔ خالی برمی‌گرداند و خطا نمی‌دهد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"hello\".substring(5, 5)\n```\n\nکد بالا یک رشتهٔ خالی برمی‌گرداند و خطا نمی‌دهد.",
       "answers": [
         "true"
       ],
@@ -4012,7 +4012,7 @@
     {
       "id": "g3-string-api-013",
       "type": "tf",
-      "prompt": "`\"Java\".indexOf(\"JAVA\")` به دلیل حساسیت به بزرگی و کوچکی حروف مقدار -1 برمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"Java\".indexOf(\"JAVA\")\n```\n\nکد بالا به دلیل حساسیت به بزرگی و کوچکی حروف مقدار -1 برمی‌گرداند.",
       "answers": [
         "true"
       ],
@@ -4120,7 +4120,7 @@
     {
       "id": "g3-string-api-018",
       "type": "tf",
-      "prompt": "`\"abc\".contains(\"A\")` برابر true است چون contains به بزرگی و کوچکی حروف حساس نیست.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"abc\".contains(\"A\")\n```\n\nکد بالا برابر true است چون contains به بزرگی و کوچکی حروف حساس نیست.",
       "answers": [
         "false"
       ],
@@ -4137,7 +4137,7 @@
     {
       "id": "g3-string-api-019",
       "type": "mcq",
-      "prompt": "خروجی `\"hello\".startsWith(\"\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"hello\".startsWith(\"\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -4208,7 +4208,7 @@
     {
       "id": "g3-string-api-022",
       "type": "mcq",
-      "prompt": "خروجی `\"a.b.c\".replaceAll(\".\", \"-\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"a.b.c\".replaceAll(\".\", \"-\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -4258,7 +4258,7 @@
     {
       "id": "g3-string-api-024",
       "type": "tf",
-      "prompt": "در `replace(CharSequence, CharSequence)` آرگومان اول به‌عنوان literal در نظر گرفته می‌شود و نه به‌عنوان regex.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nreplace(CharSequence, CharSequence)\n```\n\nدر کد بالا آرگومان اول به‌عنوان literal در نظر گرفته می‌شود و نه به‌عنوان regex.",
       "answers": [
         "true"
       ],
@@ -4275,7 +4275,7 @@
     {
       "id": "g3-string-api-025",
       "type": "mcq",
-      "prompt": "خروجی `\"a,,b,\".split(\",\")` در Java چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"a,,b,\".split(\",\")\n```\n\nخروجی کد بالا در Java چیست؟",
       "answers": [
         "B"
       ],
@@ -4299,7 +4299,7 @@
     {
       "id": "g3-string-api-026",
       "type": "mcq",
-      "prompt": "اگر `\"a,,b,\".split(\",\", -1)` فراخوانی شود، خروجی چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"a,,b,\".split(\",\", -1)\n```\n\nاگر کد بالا فراخوانی شود، خروجی چیست؟",
       "answers": [
         "C"
       ],
@@ -4375,7 +4375,7 @@
     {
       "id": "g3-string-api-029",
       "type": "tf",
-      "prompt": "`\"  \\u00A0  \".trim()` تمام فاصله‌های خالی شامل non-breaking space را حذف می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"  \\u00A0  \".trim()\n```\n\nکد بالا تمام فاصله‌های خالی شامل non-breaking space را حذف می‌کند.",
       "answers": [
         "false"
       ],

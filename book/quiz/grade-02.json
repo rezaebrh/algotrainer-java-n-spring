@@ -1,11 +1,11 @@
 {
-  "title": "درجهٔ ۲ — عملگرها و جریان کنترل",
+  "title": "فصل ۲ — عملگرها و جریان کنترل",
   "version": 2,
   "questions": [
     {
       "id": "g2-comparison-001",
       "type": "mcq",
-      "prompt": "نوع نتیجهٔ `score >= 60` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nscore >= 60\n```\n\nنوع نتیجهٔ کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -27,7 +27,7 @@
     {
       "id": "g2-comparison-002",
       "type": "tf",
-      "prompt": "expression `18 < age < 65` برای int age در Java معتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n18 < age < 65\n```\n\nexpression کد بالا برای int age در Java معتبر است.",
       "answers": [
         "false"
       ],
@@ -67,7 +67,7 @@
     {
       "id": "g2-comparison-004",
       "type": "blank",
-      "prompt": "برای تشخیص NaN در double از `Double.____(value)` استفاده می‌شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nDouble.____(value)\n```\n\nبرای تشخیص NaN در double از کد بالا استفاده می‌شود.",
       "answers": [
         "isNaN"
       ],
@@ -83,7 +83,7 @@
     {
       "id": "g2-comparison-005",
       "type": "tf",
-      "prompt": "`Double.NaN == Double.NaN` true است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nDouble.NaN == Double.NaN\n```\n\nکد بالا true است.",
       "answers": [
         "false"
       ],
@@ -99,7 +99,7 @@
     {
       "id": "g2-comparison-006",
       "type": "mcq",
-      "prompt": "خروجی `(0.1 + 0.2) == 0.3` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n(0.1 + 0.2) == 0.3\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -191,7 +191,7 @@
     {
       "id": "g2-comparison-010",
       "type": "tf",
-      "prompt": "`==` برای primitive int identity object را می‌سنجد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n==\n```\n\nکد بالا برای primitive int identity object را می‌سنجد.",
       "answers": [
         "false"
       ],
@@ -207,7 +207,7 @@
     {
       "id": "g2-comparison-011",
       "type": "mcq",
-      "prompt": "در `if (count)` که count یک int است چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nif (count)\n```\n\nدر کد بالا که count یک int است چه رخ می‌دهد؟",
       "answers": [
         "C"
       ],
@@ -268,7 +268,7 @@
     {
       "id": "g2-comparison-014",
       "type": "tf",
-      "prompt": "`5 == 5L` false است، چون typeها متفاوت‌اند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n5 == 5L\n```\n\nکد بالا false است، چون typeها متفاوت‌اند.",
       "answers": [
         "false"
       ],
@@ -307,7 +307,7 @@
     {
       "id": "g2-comparison-016",
       "type": "multi",
-      "prompt": "کدام boundaryها شرط `score >= 60 && score < 90` را پاس می‌کنند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nscore >= 60 && score < 90\n```\n\nکدام boundaryها شرط کد بالا را پاس می‌کنند؟",
       "answers": [
         "A",
         "C"
@@ -352,7 +352,7 @@
     {
       "id": "g2-comparison-018",
       "type": "tf",
-      "prompt": "`-0.0 == 0.0` در comparison primitive double true است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n-0.0 == 0.0\n```\n\nکد بالا در comparison primitive double true است.",
       "answers": [
         "true"
       ],
@@ -368,7 +368,7 @@
     {
       "id": "g2-comparison-019",
       "type": "mcq",
-      "prompt": "کدام input شرط `x > 0 && x < 10` را false می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nx > 0 && x < 10\n```\n\nکدام input شرط کد بالا را false می‌کند؟",
       "answers": [
         "D"
       ],
@@ -390,7 +390,7 @@
     {
       "id": "g2-comparison-020",
       "type": "blank",
-      "prompt": "روی referenceها، `==` به‌طور پیش‌فرض ______ را می‌سنجد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n==\n```\n\nروی referenceها، کد بالا به‌طور پیش‌فرض ______ را می‌سنجد.",
       "answers": [
         "identity",
         "هویت"
@@ -430,7 +430,7 @@
     {
       "id": "g2-conditionals-002",
       "type": "tf",
-      "prompt": "در `if (score >= 60) ... else if (score >= 90) ...` branch دوم برای score 90 قابل رسیدن است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nif (score >= 60) ... else if (score >= 90) ...\n```\n\nدر کد بالا branch دوم برای score 90 قابل رسیدن است.",
       "answers": [
         "false"
       ],
@@ -650,7 +650,7 @@
     {
       "id": "g2-conditionals-013",
       "type": "mcq",
-      "prompt": "بازنویسی ساده‌تر `boolean ok = age >= 18 ? true : false;` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nboolean ok = age >= 18 ? true : false;\n```\n\nبازنویسی ساده‌تر کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -856,7 +856,7 @@
     {
       "id": "g2-deepening-001",
       "type": "mcq",
-      "prompt": "کدام گزینه دربارهٔ `byte b = 100; b += 200;` درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nbyte b = 100; b += 200;\n```\n\nکدام گزینه دربارهٔ کد بالا درست است؟",
       "options": {
         "A": "کامپایل نمی‌شود چون int به byte نمی‌تواند implicit narrow شود",
         "B": "کامپایل می‌شود و b برابر 44 می‌شود",
@@ -881,7 +881,7 @@
     {
       "id": "g2-deepening-002",
       "type": "tf",
-      "prompt": "`short s = 30000; s *= 2;` کامپایل می‌شود و مقدار s برابر -25536 می‌شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nshort s = 30000; s *= 2;\n```\n\nکد بالا کامپایل می‌شود و مقدار s برابر -25536 می‌شود.",
       "answers": [
         "true"
       ],
@@ -898,7 +898,7 @@
     {
       "id": "g2-deepening-003",
       "type": "mcq",
-      "prompt": "`byte b = 50; b = b + 50;` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nbyte b = 50; b = b + 50;\n```\n\nکد بالا چه رفتاری دارد؟",
       "options": {
         "A": "کامپایل می‌شود و b برابر 100 می‌شود",
         "B": "کامپایل می‌شود و b wrap می‌شود",
@@ -947,7 +947,7 @@
     {
       "id": "g2-deepening-005",
       "type": "blank",
-      "prompt": "expression `var x = (byte) 5 + 5;` نوع ____ دارد و مقدار آن ____ است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar x = (byte) 5 + 5;\n```\n\nexpression کد بالا نوع ____ دارد و مقدار آن ____ است.",
       "answers": [
         "int",
         "10"
@@ -967,7 +967,7 @@
     {
       "id": "g2-deepening-006",
       "type": "mcq",
-      "prompt": "مقدار `1 << 33` روی `int` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n1 << 33\n```\n\nمقدار کد بالا روی `int` چیست؟",
       "options": {
         "A": "0",
         "B": "1",
@@ -990,7 +990,7 @@
     {
       "id": "g2-deepening-007",
       "type": "mcq",
-      "prompt": "مقدار `1L << 65` روی `long` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n1L << 65\n```\n\nمقدار کد بالا روی `long` چیست؟",
       "options": {
         "A": "0",
         "B": "2",
@@ -1013,7 +1013,7 @@
     {
       "id": "g2-deepening-008",
       "type": "mcq",
-      "prompt": "مقدار `-8 >>> 29` روی `int` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n-8 >>> 29\n```\n\nمقدار کد بالا روی `int` چیست؟",
       "options": {
         "A": "-4",
         "B": "7",
@@ -1036,7 +1036,7 @@
     {
       "id": "g2-deepening-009",
       "type": "tf",
-      "prompt": "`>>>` روی int منفی، نتیجهٔ منفی تولید نمی‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n>>>\n```\n\nکد بالا روی int منفی، نتیجهٔ منفی تولید نمی‌کند.",
       "answers": [
         "true"
       ],
@@ -1053,7 +1053,7 @@
     {
       "id": "g2-deepening-010",
       "type": "mcq",
-      "prompt": "چرا shift count در `int x = 1 << n;` فقط پنج bit پایین دیده می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x = 1 << n;\n```\n\nچرا shift count در کد بالا فقط پنج bit پایین دیده می‌شود؟",
       "options": {
         "A": "برای جلوگیری از نتیجهٔ بزرگ‌تر از int",
         "B": "چون JLS صراحتاً mask 0x1F را اعمال می‌کند",
@@ -1076,7 +1076,7 @@
     {
       "id": "g2-deepening-011",
       "type": "blank",
-      "prompt": "مقدار `-2 >>> 30` روی `int` برابر ____ است (به‌صورت decimal).",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n-2 >>> 30\n```\n\nمقدار کد بالا روی `int` برابر ____ است (به‌صورت decimal).",
       "answers": [
         "3"
       ],
@@ -1093,7 +1093,7 @@
     {
       "id": "g2-deepening-012",
       "type": "mcq",
-      "prompt": "پس از اجرای `int x = 5; x = x++;` مقدار x چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x = 5; x = x++;\n```\n\nپس از اجرای کد بالا مقدار x چیست؟",
       "options": {
         "A": "5",
         "B": "6",
@@ -1116,7 +1116,7 @@
     {
       "id": "g2-deepening-013",
       "type": "mcq",
-      "prompt": "خروجی `int a=3, b=5; System.out.println(a++ + ++b);` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint a=3, b=5; System.out.println(a++ + ++b);\n```\n\nخروجی کد بالا چیست؟",
       "options": {
         "A": "8",
         "B": "9",
@@ -1164,7 +1164,7 @@
     {
       "id": "g2-deepening-015",
       "type": "mcq",
-      "prompt": "خروجی `int x=10; System.out.println(x++ + x++);` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x=10; System.out.println(x++ + x++);\n```\n\nخروجی کد بالا چیست؟",
       "options": {
         "A": "20",
         "B": "21",
@@ -1186,7 +1186,7 @@
     {
       "id": "g2-deepening-016",
       "type": "mcq",
-      "prompt": "خروجی `System.out.println(2 + 3 * 4);` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nSystem.out.println(2 + 3 * 4);\n```\n\nخروجی کد بالا چیست؟",
       "options": {
         "A": "20",
         "B": "14",
@@ -1209,7 +1209,7 @@
     {
       "id": "g2-deepening-017",
       "type": "mcq",
-      "prompt": "خروجی `System.out.println(true ? 1 : 2.0);` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nSystem.out.println(true ? 1 : 2.0);\n```\n\nخروجی کد بالا چیست؟",
       "options": {
         "A": "1",
         "B": "2.0",
@@ -1232,7 +1232,7 @@
     {
       "id": "g2-deepening-018",
       "type": "mcq",
-      "prompt": "خروجی `System.out.println(1 + 2 + \"3\");` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nSystem.out.println(1 + 2 + \"3\");\n```\n\nخروجی کد بالا چیست؟",
       "options": {
         "A": "6",
         "B": "33",
@@ -1255,7 +1255,7 @@
     {
       "id": "g2-deepening-019",
       "type": "mcq",
-      "prompt": "خروجی `System.out.println(\"1\" + 2 * 3);` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nSystem.out.println(\"1\" + 2 * 3);\n```\n\nخروجی کد بالا چیست؟",
       "options": {
         "A": "123",
         "B": "16",
@@ -1302,7 +1302,7 @@
     {
       "id": "g2-deepening-021",
       "type": "mcq",
-      "prompt": "مقدار `7 % -2` در Java چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n7 % -2\n```\n\nمقدار کد بالا در Java چیست؟",
       "options": {
         "A": "1",
         "B": "-1",
@@ -1324,7 +1324,7 @@
     {
       "id": "g2-deepening-022",
       "type": "mcq",
-      "prompt": "مقدار `Math.floorMod(7, -2)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.floorMod(7, -2)\n```\n\nمقدار کد بالا چیست؟",
       "options": {
         "A": "1",
         "B": "-1",
@@ -1370,7 +1370,7 @@
     {
       "id": "g2-deepening-024",
       "type": "mcq",
-      "prompt": "خروجی `System.out.println(-7 % 3);` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nSystem.out.println(-7 % 3);\n```\n\nخروجی کد بالا چیست؟",
       "options": {
         "A": "-1",
         "B": "1",
@@ -1415,7 +1415,7 @@
     {
       "id": "g2-deepening-026",
       "type": "tf",
-      "prompt": "`while (false) { System.out.println(\"x\"); }` هیچ خروجی تولید نمی‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nwhile (false) { System.out.println(\"x\"); }\n```\n\nکد بالا هیچ خروجی تولید نمی‌کند.",
       "answers": [
         "true"
       ],
@@ -1456,7 +1456,7 @@
     {
       "id": "g2-deepening-028",
       "type": "mcq",
-      "prompt": "invariant مناسب برای `for (int i=0; i<10; i++) sum += i;` کدام است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor (int i=0; i<10; i++) sum += i;\n```\n\ninvariant مناسب برای کد بالا کدام است؟",
       "options": {
         "A": "i در شروع هر iteration تعداد iterationهای سپری‌شده است",
         "B": "i در پایان هر iteration sum برابر i*(i+1)/2 منهای i است",
@@ -1480,7 +1480,7 @@
     {
       "id": "g2-deepening-029",
       "type": "mcq",
-      "prompt": "خروجی `int[] a = {1,2,3}; for (int x : a) x = 0; System.out.println(a[1]);` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] a = {1,2,3}; for (int x : a) x = 0; System.out.println(a[1]);\n```\n\nخروجی کد بالا چیست؟",
       "options": {
         "A": "0",
         "B": "2",
@@ -1590,7 +1590,7 @@
     {
       "id": "g2-deepening-034",
       "type": "mcq",
-      "prompt": "`int r = switch (n) { case 1 -> 10; case 2 -> 20; };` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint r = switch (n) { case 1 -> 10; case 2 -> 20; };\n```\n\nکد بالا چه رفتاری دارد؟",
       "options": {
         "A": "کامپایل: r نهایی نیست",
         "B": "خطای کامپایل چون exhaustive نیست",
@@ -1709,7 +1709,7 @@
     {
       "id": "g2-deepening-039",
       "type": "mcq",
-      "prompt": "`outer: for (int i=0; i<3; i++) inner: for (int j=0; j<3; j++) { continue outer; }` چند بار `inner` اجرا می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nouter: for (int i=0; i<3; i++) inner: for (int j=0; j<3; j++) { continue outer; }\n```\n\nکد بالا چند بار `inner` اجرا می‌شود؟",
       "options": {
         "A": "9",
         "B": "3",
@@ -1733,7 +1733,7 @@
     {
       "id": "g2-deepening-040",
       "type": "mcq",
-      "prompt": "`break label;` چه چیزی را تمام می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nbreak label;\n```\n\nکد بالا چه چیزی را تمام می‌کند؟",
       "options": {
         "A": "فقط loop داخلی",
         "B": "همهٔ loopها",
@@ -1828,7 +1828,7 @@
     {
       "id": "g2-deepening-044",
       "type": "mcq",
-      "prompt": "`true || sideEffect()` آیا sideEffect اجرا می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntrue || sideEffect()\n```\n\nکد بالا آیا sideEffect اجرا می‌شود؟",
       "options": {
         "A": "بله",
         "B": "خیر، short-circuit",
@@ -1851,7 +1851,7 @@
     {
       "id": "g2-deepening-045",
       "type": "mcq",
-      "prompt": "تفاوت `&` و `&&` روی boolean چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n&&\n```\n\nتفاوت `&` و کد بالا روی boolean چیست؟",
       "options": {
         "A": "هیچ",
         "B": "& eager، && short-circuit",
@@ -1900,7 +1900,7 @@
     {
       "id": "g2-deepening-047",
       "type": "mcq",
-      "prompt": "چرا `0.1 + 0.2 == 0.3` در Java برابر false است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n0.1 + 0.2 == 0.3\n```\n\nچرا کد بالا در Java برابر false است؟",
       "options": {
         "A": "خطای rounding",
         "B": "0.1 و 0.2 در binary دقیق نیستند",
@@ -1948,7 +1948,7 @@
     {
       "id": "g2-deepening-049",
       "type": "mcq",
-      "prompt": "`Double.compare(0.0, -0.0)` چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nDouble.compare(0.0, -0.0)\n```\n\nکد بالا چه برمی‌گرداند؟",
       "options": {
         "A": "0",
         "B": "1",
@@ -1972,7 +1972,7 @@
     {
       "id": "g2-deepening-050",
       "type": "mcq",
-      "prompt": "چرا `Double.NaN == Double.NaN` برابر false است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nDouble.NaN == Double.NaN\n```\n\nچرا کد بالا برابر false است؟",
       "options": {
         "A": "NaN عدد نیست",
         "B": "IEEE 754 تعریف می‌کند که هیچ NaN با NaN دیگر مساوی نیست",
@@ -1996,7 +1996,7 @@
     {
       "id": "g2-deepening-051",
       "type": "mcq",
-      "prompt": "`Integer a = 100; Integer b = 100; System.out.println(a == b);` چه چاپ می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger a = 100; Integer b = 100; System.out.println(a == b);\n```\n\nکد بالا چه چاپ می‌کند؟",
       "options": {
         "A": "true",
         "B": "false",
@@ -2021,7 +2021,7 @@
     {
       "id": "g2-deepening-052",
       "type": "mcq",
-      "prompt": "`Integer a = 200; Integer b = 200; System.out.println(a == b);` چه چاپ می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger a = 200; Integer b = 200; System.out.println(a == b);\n```\n\nکد بالا چه چاپ می‌کند؟",
       "options": {
         "A": "true",
         "B": "false",
@@ -2069,7 +2069,7 @@
     {
       "id": "g2-deepening-054",
       "type": "tf",
-      "prompt": "`new Integer(5) == new Integer(5)` همیشه false است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew Integer(5) == new Integer(5)\n```\n\nکد بالا همیشه false است.",
       "answers": [
         "true"
       ],
@@ -2087,7 +2087,7 @@
     {
       "id": "g2-deepening-055",
       "type": "mcq",
-      "prompt": "`int x; if (Math.random() > 0.5) x = 1; System.out.println(x);` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x; if (Math.random() > 0.5) x = 1; System.out.println(x);\n```\n\nکد بالا چه رفتاری دارد؟",
       "options": {
         "A": "کامپایل و چاپ",
         "B": "خطای کامپایل: x ممکن است مقداردهی نشده باشد",
@@ -2110,7 +2110,7 @@
     {
       "id": "g2-deepening-056",
       "type": "mcq",
-      "prompt": "`final int x; if (cond) x = 1; else x = 2;` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int x; if (cond) x = 1; else x = 2;\n```\n\nکد بالا چه رفتاری دارد؟",
       "options": {
         "A": "خطای کامپایل",
         "B": "کامپایل می‌شود",
@@ -2134,7 +2134,7 @@
     {
       "id": "g2-deepening-057",
       "type": "mcq",
-      "prompt": "کدام قطعه در مورد `int x;` در scope ولی بدون مقدار اولیه، کامپایل می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x;\n```\n\nکدام قطعه در مورد کد بالا در scope ولی بدون مقدار اولیه، کامپایل می‌شود؟",
       "options": {
         "A": "`if (true) x = 1; System.out.println(x);`",
         "B": "`x = 0; if (cond) x = 1; System.out.println(x);`",
@@ -2182,7 +2182,7 @@
     {
       "id": "g2-deepening-059",
       "type": "mcq",
-      "prompt": "`int x; try { x = 1; } finally { x = 2; } System.out.println(x);` چه می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x; try { x = 1; } finally { x = 2; } System.out.println(x);\n```\n\nکد بالا چه می‌شود؟",
       "options": {
         "A": "خطای کامپایل",
         "B": "کامپایل می‌شود و 2 چاپ می‌کند",
@@ -2206,7 +2206,7 @@
     {
       "id": "g2-deepening-060",
       "type": "mcq",
-      "prompt": "`int x; if (cond) x = 1; else if (cond2) x = 2; else x = 3; System.out.println(x);` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x; if (cond) x = 1; else if (cond2) x = 2; else x = 3; System.out.println(x);\n```\n\nکد بالا چه رفتاری دارد؟",
       "options": {
         "A": "خطای کامپایل",
         "B": "کامپایل می‌شود",
@@ -2229,7 +2229,7 @@
     {
       "id": "g2-labels-001",
       "type": "mcq",
-      "prompt": "`break outer;` چه چیزی را تمام می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nbreak outer;\n```\n\nکد بالا چه چیزی را تمام می‌کند؟",
       "answers": [
         "C"
       ],
@@ -2252,7 +2252,7 @@
     {
       "id": "g2-labels-002",
       "type": "mcq",
-      "prompt": "target `continue outer;` باید چه باشد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ncontinue outer;\n```\n\ntarget کد بالا باید چه باشد؟",
       "answers": [
         "B"
       ],
@@ -2291,7 +2291,7 @@
     {
       "id": "g2-labels-004",
       "type": "blank",
-      "prompt": "برای خروج از loop تو در تو به نام `search` از `break ____;` استفاده می‌کنیم.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nbreak ____;\n```\n\nبرای خروج از loop تو در تو به نام `search` از کد بالا استفاده می‌کنیم.",
       "answers": [
         "search"
       ],
@@ -2347,7 +2347,7 @@
     {
       "id": "g2-labels-007",
       "type": "mcq",
-      "prompt": "پس از `for (int i=0; i<1; i++) {}`، i چه وضعی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor (int i=0; i<1; i++) {}\n```\n\nپس از کد بالا، i چه وضعی دارد؟",
       "answers": [
         "B"
       ],
@@ -2491,7 +2491,7 @@
     {
       "id": "g2-labels-014",
       "type": "mcq",
-      "prompt": "در nested loop، `continue outer;` از کدام iteration آغاز می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ncontinue outer;\n```\n\nدر nested loop، کد بالا از کدام iteration آغاز می‌کند؟",
       "answers": [
         "A"
       ],
@@ -2600,7 +2600,7 @@
     {
       "id": "g2-labels-019",
       "type": "blank",
-      "prompt": "برای عبور از iteration فعلی loop بیرونی به نام rows می‌نویسیم `continue ____;`.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ncontinue ____;\n```\n\nبرای عبور از iteration فعلی loop بیرونی به نام rows می‌نویسیم کد بالا.",
       "answers": [
         "rows"
       ],
@@ -2703,7 +2703,7 @@
     {
       "id": "g2-labels-024",
       "type": "tf",
-      "prompt": "`break search;` تنها وقتی معتبر است که label search در enclosing statementها وجود داشته باشد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nbreak search;\n```\n\nکد بالا تنها وقتی معتبر است که label search در enclosing statementها وجود داشته باشد.",
       "answers": [
         "true"
       ],
@@ -2720,7 +2720,7 @@
     {
       "id": "g2-logic-001",
       "type": "mcq",
-      "prompt": "اگر left در `left && right` false باشد، right چه وضعی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nleft && right\n```\n\nاگر left در کد بالا false باشد، right چه وضعی دارد؟",
       "answers": [
         "B"
       ],
@@ -2743,7 +2743,7 @@
     {
       "id": "g2-logic-002",
       "type": "mcq",
-      "prompt": "اگر left در `left || right` true باشد، right چه وضعی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nleft || right\n```\n\nاگر left در کد بالا true باشد، right چه وضعی دارد؟",
       "answers": [
         "A"
       ],
@@ -2766,7 +2766,7 @@
     {
       "id": "g2-logic-003",
       "type": "tf",
-      "prompt": "`false & method()` می‌تواند method را اجرا کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfalse & method()\n```\n\nکد بالا می‌تواند method را اجرا کند.",
       "answers": [
         "true"
       ],
@@ -2822,7 +2822,7 @@
     {
       "id": "g2-logic-006",
       "type": "mcq",
-      "prompt": "کدام guard از `name.length()` وقتی name null است جلوگیری می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nname.length()\n```\n\nکدام guard از کد بالا وقتی name null است جلوگیری می‌کند؟",
       "answers": [
         "C"
       ],
@@ -2861,7 +2861,7 @@
     {
       "id": "g2-logic-008",
       "type": "mcq",
-      "prompt": "خروجی `true ? 1 : 1 / 0` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntrue ? 1 : 1 / 0\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "D"
       ],
@@ -2883,7 +2883,7 @@
     {
       "id": "g2-logic-009",
       "type": "mcq",
-      "prompt": "برای `boolean open=false;` خروجی `!open` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nboolean open=false;\n```\n\nبرای کد بالا خروجی `!open` چیست؟",
       "answers": [
         "A"
       ],
@@ -2928,7 +2928,7 @@
     {
       "id": "g2-logic-011",
       "type": "tf",
-      "prompt": "`a | b` وقتی a و b boolean هستند نامعتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\na | b\n```\n\nکد بالا وقتی a و b boolean هستند نامعتبر است.",
       "answers": [
         "false"
       ],
@@ -2945,7 +2945,7 @@
     {
       "id": "g2-logic-012",
       "type": "mcq",
-      "prompt": "در `checkA() && checkB()` اگر checkA false باشد، نتیجه چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ncheckA() && checkB()\n```\n\nدر کد بالا اگر checkA false باشد، نتیجه چیست؟",
       "answers": [
         "B"
       ],
@@ -3068,7 +3068,7 @@
     {
       "id": "g2-logic-018",
       "type": "mcq",
-      "prompt": "برای `hasToken && !expired` کدام حالت true است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nhasToken && !expired\n```\n\nبرای کد بالا کدام حالت true است؟",
       "answers": [
         "C"
       ],
@@ -3090,7 +3090,7 @@
     {
       "id": "g2-logic-019",
       "type": "tf",
-      "prompt": "`!` precedence بالاتری از `&&` دارد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n&&\n```\n\n`!` precedence بالاتری از کد بالا دارد.",
       "answers": [
         "true"
       ],
@@ -3130,7 +3130,7 @@
     {
       "id": "g2-logic-021",
       "type": "blank",
-      "prompt": "در `ready || fallback()`، fallback فقط وقتی اجرا می‌شود که ready ______ باشد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nready || fallback()\n```\n\nدر کد بالا، fallback فقط وقتی اجرا می‌شود که ready ______ باشد.",
       "answers": [
         "false"
       ],
@@ -3168,7 +3168,7 @@
     {
       "id": "g2-loops-001",
       "type": "mcq",
-      "prompt": "در `for(init; condition; update)`، پس از body عادی چه بخش اجرا می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor(init; condition; update)\n```\n\nدر کد بالا، پس از body عادی چه بخش اجرا می‌شود؟",
       "answers": [
         "C"
       ],
@@ -3213,7 +3213,7 @@
     {
       "id": "g2-loops-003",
       "type": "tf",
-      "prompt": "`for (;;)` در Java یک infinite loop قانونی است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor (;;)\n```\n\nکد بالا در Java یک infinite loop قانونی است.",
       "answers": [
         "true"
       ],
@@ -3268,7 +3268,7 @@
     {
       "id": "g2-loops-006",
       "type": "mcq",
-      "prompt": "یک for با `i=0; i<3; i++` کدام indexها را می‌بیند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ni=0; i<3; i++\n```\n\nیک for با کد بالا کدام indexها را می‌بیند؟",
       "answers": [
         "B"
       ],
@@ -3290,7 +3290,7 @@
     {
       "id": "g2-loops-007",
       "type": "mcq",
-      "prompt": "در enhanced-for روی `int[]`، متغیر element چه چیزی است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[]\n```\n\nدر enhanced-for روی کد بالا، متغیر element چه چیزی است؟",
       "answers": [
         "A"
       ],
@@ -3389,7 +3389,7 @@
     {
       "id": "g2-loops-012",
       "type": "mcq",
-      "prompt": "پس از `int i=0; do { i++; } while(i<1);` مقدار i چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint i=0; do { i++; } while(i<1);\n```\n\nپس از کد بالا مقدار i چیست؟",
       "answers": [
         "A"
       ],
@@ -3450,7 +3450,7 @@
     {
       "id": "g2-loops-015",
       "type": "multi",
-      "prompt": "کدام‌ها exit path طبیعی برای `for(;;)` هستند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor(;;)\n```\n\nکدام‌ها exit path طبیعی برای کد بالا هستند؟",
       "answers": [
         "A",
         "C",
@@ -3576,7 +3576,7 @@
     {
       "id": "g2-operators-001",
       "type": "mcq",
-      "prompt": "نوع expression `byte a=2, b=3; a+b` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nbyte a=2, b=3; a+b\n```\n\nنوع expression کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -3599,7 +3599,7 @@
     {
       "id": "g2-operators-002",
       "type": "tf",
-      "prompt": "`var total = (byte) 2 + (byte) 3;` متغیر total را byte می‌سازد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar total = (byte) 2 + (byte) 3;\n```\n\nکد بالا متغیر total را byte می‌سازد.",
       "answers": [
         "false"
       ],
@@ -3637,7 +3637,7 @@
     {
       "id": "g2-operators-004",
       "type": "mcq",
-      "prompt": "مقدار `(int) -3.8` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n(int) -3.8\n```\n\nمقدار کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -3659,7 +3659,7 @@
     {
       "id": "g2-operators-005",
       "type": "mcq",
-      "prompt": "پس از `byte b=127; b += 1;` مقدار b چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nbyte b=127; b += 1;\n```\n\nپس از کد بالا مقدار b چیست؟",
       "answers": [
         "D"
       ],
@@ -3682,7 +3682,7 @@
     {
       "id": "g2-operators-006",
       "type": "mcq",
-      "prompt": "کدام بازنویسی از نظر type به `b += 1` نزدیک‌تر است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nb += 1\n```\n\nکدام بازنویسی از نظر type به کد بالا نزدیک‌تر است؟",
       "answers": [
         "C"
       ],
@@ -3705,7 +3705,7 @@
     {
       "id": "g2-operators-007",
       "type": "blank",
-      "prompt": "نتیجهٔ تقسیم صحیح `17 / 5` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n17 / 5\n```\n\nنتیجهٔ تقسیم صحیح کد بالا چیست؟",
       "answers": [
         "3"
       ],
@@ -3721,7 +3721,7 @@
     {
       "id": "g2-operators-008",
       "type": "mcq",
-      "prompt": "خروجی `-17 / 5` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n-17 / 5\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -3743,7 +3743,7 @@
     {
       "id": "g2-operators-009",
       "type": "mcq",
-      "prompt": "خروجی `-17 % 5` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n-17 % 5\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -3825,7 +3825,7 @@
     {
       "id": "g2-operators-013",
       "type": "mcq",
-      "prompt": "مقدار `0b1100 & 0b1010` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n0b1100 & 0b1010\n```\n\nمقدار کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -3847,7 +3847,7 @@
     {
       "id": "g2-operators-014",
       "type": "mcq",
-      "prompt": "مقدار `0b1100 | 0b1010` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n0b1100 | 0b1010\n```\n\nمقدار کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -3869,7 +3869,7 @@
     {
       "id": "g2-operators-015",
       "type": "mcq",
-      "prompt": "مقدار `0b1100 ^ 0b1010` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n0b1100 ^ 0b1010\n```\n\nمقدار کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -3907,7 +3907,7 @@
     {
       "id": "g2-operators-017",
       "type": "mcq",
-      "prompt": "برای `int n=-8` کدام shift از چپ صفر وارد می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint n=-8\n```\n\nبرای کد بالا کدام shift از چپ صفر وارد می‌کند؟",
       "answers": [
         "D"
       ],
@@ -3929,7 +3929,7 @@
     {
       "id": "g2-operators-018",
       "type": "mcq",
-      "prompt": "خروجی `1 << 33` برای int چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n1 << 33\n```\n\nخروجی کد بالا برای int چیست؟",
       "answers": [
         "B"
       ],
@@ -3951,7 +3951,7 @@
     {
       "id": "g2-operators-019",
       "type": "tf",
-      "prompt": "`1L << 64` در Java برابر 1 است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n1L << 64\n```\n\nکد بالا در Java برابر 1 است.",
       "answers": [
         "true"
       ],
@@ -4005,7 +4005,7 @@
     {
       "id": "g2-operators-022",
       "type": "tf",
-      "prompt": "`x += y` در صورت method call در سمت چپ، آن سمت را فقط یک بار ارزیابی می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nx += y\n```\n\nکد بالا در صورت method call در سمت چپ، آن سمت را فقط یک بار ارزیابی می‌کند.",
       "answers": [
         "true"
       ],
@@ -4021,7 +4021,7 @@
     {
       "id": "g2-seed-001",
       "type": "mcq",
-      "prompt": "خروجی `8 / 2 + 1` برای int چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n8 / 2 + 1\n```\n\nخروجی کد بالا برای int چیست؟",
       "answers": [
         "C"
       ],
@@ -4061,7 +4061,7 @@
     {
       "id": "g2-seed-003",
       "type": "tf",
-      "prompt": "عبارت `5 > 3 && 2 == 2` برابر true است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n5 > 3 && 2 == 2\n```\n\nعبارت کد بالا برابر true است.",
       "answers": [
         "true"
       ],
@@ -4125,7 +4125,7 @@
     {
       "id": "g2-seed-006",
       "type": "mcq",
-      "prompt": "پس از `int x=3; x += 4;` مقدار x چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x=3; x += 4;\n```\n\nپس از کد بالا مقدار x چیست؟",
       "answers": [
         "A"
       ],
@@ -4181,7 +4181,7 @@
     {
       "id": "g2-seed-009",
       "type": "mcq",
-      "prompt": "خروجی `for(int i=0;i<3;i++) System.out.print(i);` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor(int i=0;i<3;i++) System.out.print(i);\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -4227,7 +4227,7 @@
     {
       "id": "g2-seed-011",
       "type": "mcq",
-      "prompt": "اگر ready false باشد، در `if (ready) send(); else wait();` چه اجرا می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nif (ready) send(); else wait();\n```\n\nاگر ready false باشد، در کد بالا چه اجرا می‌شود؟",
       "answers": [
         "D"
       ],
@@ -4249,7 +4249,7 @@
     {
       "id": "g2-seed-012",
       "type": "blank",
-      "prompt": "بخش شرط در `for(init; شرط; update)` باید به ____ ارزیابی شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor(init; شرط; update)\n```\n\nبخش شرط در کد بالا باید به ____ ارزیابی شود.",
       "answers": [
         "boolean"
       ],
@@ -4305,7 +4305,7 @@
     {
       "id": "g2-seed-015",
       "type": "multi",
-      "prompt": "کدام سن‌ها شرط `age >= 18 && age <= 65` را پاس می‌کنند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nage >= 18 && age <= 65\n```\n\nکدام سن‌ها شرط کد بالا را پاس می‌کنند؟",
       "answers": [
         "B",
         "C"

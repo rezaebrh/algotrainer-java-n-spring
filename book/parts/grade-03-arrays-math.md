@@ -1,4 +1,4 @@
-# درجهٔ ۳: آرایه، Math و parsing در Java 21
+# بخش ۳: آرایه، Math و parsing در Java 21
 
 > **مسیر:** Java 21 / OCP Core API  
 > **مخاطب:** برنامه‌نویس C++ که می‌خواهد آرایه‌های primitive/reference، محدودیت‌های length، و متدهای static کلاس‌های `java.lang.Math` و `java.util.Arrays` را به‌عنوان ابزار روزانه به‌کار بگیرد.
@@ -9,7 +9,7 @@
 
 ## نقشهٔ یادگیری و خروجی مورد انتظار
 
-پس از این درجه باید بتوانید:
+پس از این فصل باید بتوانید:
 
 1. آرایهٔ ۱بعدی و ۲بعدی بسازید و با initializer literal مقداردهی کنید؛
 2. `ArrayIndexOutOfBoundsException` و `NullPointerException` را از هم تشخیص دهید و دام‌های آن‌ها را بشناسید؛
@@ -35,7 +35,7 @@ int[] b = {1, 2, 3, 4, 5};          // initializer literal
 int[] c = new int[]{1, 2, 3};       // anonymous array — می‌توان به‌عنوان آرگومان فرستاد
 ```
 
-**طول ثابت است.** پس از `new int[5]`, نمی‌توانید طول را عوض کنید. اگر نیاز به resize دارید، از `Arrays.copyOf` استفاده کنید (یک آرایهٔ جدید می‌سازد). برای dynamic size، `ArrayList` (در درجهٔ ۶) مناسب‌تر است.
+**طول ثابت است.** پس از `new int[5]`, نمی‌توانید طول را عوض کنید. اگر نیاز به resize دارید، از `Arrays.copyOf` استفاده کنید (یک آرایهٔ جدید می‌سازد). برای dynamic size، `ArrayList` (در فصل ۶) مناسب‌تر است.
 
 ### دسترسی و bounds
 

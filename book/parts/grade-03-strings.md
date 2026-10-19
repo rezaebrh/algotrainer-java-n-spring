@@ -1,4 +1,4 @@
-# درجهٔ ۳: String، immutability و API آن در Java 21
+# بخش ۲: String، immutability و API آن در Java 21
 
 > **مسیر:** Java 21 / OCP Core API  
 > **مخاطب:** برنامه‌نویس C++ که می‌خواهد `String` و `StringBuilder` را به‌عنوان API روزمره (نه نوع ابتدایی) بفهمد و از دام‌های معروف آن (== ، interning، concat در loop) دوری کند.
@@ -9,7 +9,7 @@
 
 ## نقشهٔ یادگیری و خروجی مورد انتظار
 
-پس از این درجه باید بتوانید:
+پس از این فصل باید بتوانید:
 
 1. تشخیص دهید چه زمانی `==` روی String درست کار می‌کند و چه زمانی نباید به آن تکیه کنید؛
 2. از متدهای `length`، `charAt`، `substring`، `indexOf`، `contains`، `split`، `replace`، `trim`/`strip` به‌درستی استفاده کنید؛

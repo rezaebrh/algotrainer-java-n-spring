@@ -3,7 +3,7 @@
     {
       "id": "g2-seed-001",
       "type": "mcq",
-      "prompt": "خروجی `8 / 2 + 1` برای int چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n8 / 2 + 1\n```\n\nخروجی کد بالا برای int چیست؟",
       "answers": [
         "C"
       ],
@@ -43,7 +43,7 @@
     {
       "id": "g2-seed-003",
       "type": "tf",
-      "prompt": "عبارت `5 > 3 && 2 == 2` برابر true است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n5 > 3 && 2 == 2\n```\n\nعبارت کد بالا برابر true است.",
       "answers": [
         "true"
       ],
@@ -107,7 +107,7 @@
     {
       "id": "g2-seed-006",
       "type": "mcq",
-      "prompt": "پس از `int x=3; x += 4;` مقدار x چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x=3; x += 4;\n```\n\nپس از کد بالا مقدار x چیست؟",
       "answers": [
         "A"
       ],
@@ -163,7 +163,7 @@
     {
       "id": "g2-seed-009",
       "type": "mcq",
-      "prompt": "خروجی `for(int i=0;i<3;i++) System.out.print(i);` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor(int i=0;i<3;i++) System.out.print(i);\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -209,7 +209,7 @@
     {
       "id": "g2-seed-011",
       "type": "mcq",
-      "prompt": "اگر ready false باشد، در `if (ready) send(); else wait();` چه اجرا می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nif (ready) send(); else wait();\n```\n\nاگر ready false باشد، در کد بالا چه اجرا می‌شود؟",
       "answers": [
         "D"
       ],
@@ -231,7 +231,7 @@
     {
       "id": "g2-seed-012",
       "type": "blank",
-      "prompt": "بخش شرط در `for(init; شرط; update)` باید به ____ ارزیابی شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor(init; شرط; update)\n```\n\nبخش شرط در کد بالا باید به ____ ارزیابی شود.",
       "answers": [
         "boolean"
       ],
@@ -287,7 +287,7 @@
     {
       "id": "g2-seed-015",
       "type": "multi",
-      "prompt": "کدام سن‌ها شرط `age >= 18 && age <= 65` را پاس می‌کنند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nage >= 18 && age <= 65\n```\n\nکدام سن‌ها شرط کد بالا را پاس می‌کنند؟",
       "answers": [
         "B",
         "C"
@@ -351,7 +351,7 @@
     {
       "id": "g3-seed-003",
       "type": "tf",
-      "prompt": "`\"Java\".toLowerCase()` رشتهٔ اصلی را تغییر می‌دهد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"Java\".toLowerCase()\n```\n\nکد بالا رشتهٔ اصلی را تغییر می‌دهد.",
       "answers": [
         "false"
       ],
@@ -368,7 +368,7 @@
     {
       "id": "g3-seed-004",
       "type": "mcq",
-      "prompt": "نتیجهٔ `Math.max(-2, 4)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.max(-2, 4)\n```\n\nنتیجهٔ کد بالا چیست؟",
       "answers": [
         "D"
       ],
@@ -439,7 +439,7 @@
     {
       "id": "g3-seed-007",
       "type": "blank",
-      "prompt": "برای ساخت آرایهٔ پنج‌تایی int می‌نویسیم `new int[____]`.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew int[____]\n```\n\nبرای ساخت آرایهٔ پنج‌تایی int می‌نویسیم کد بالا.",
       "answers": [
         "5"
       ],
@@ -455,7 +455,7 @@
     {
       "id": "g3-seed-008",
       "type": "tf",
-      "prompt": "دسترسی به `items[items.length]` معتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nitems[items.length]\n```\n\nدسترسی به کد بالا معتبر است.",
       "answers": [
         "false"
       ],
@@ -472,7 +472,7 @@
     {
       "id": "g3-seed-009",
       "type": "mcq",
-      "prompt": "خروجی `\"ab\".substring(1)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"ab\".substring(1)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -519,7 +519,7 @@
     {
       "id": "g3-seed-011",
       "type": "mcq",
-      "prompt": "`return;` بدون مقدار در کدام متد مجاز است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nreturn;\n```\n\nکد بالا بدون مقدار در کدام متد مجاز است؟",
       "answers": [
         "A"
       ],
@@ -542,7 +542,7 @@
     {
       "id": "g3-seed-012",
       "type": "blank",
-      "prompt": "برای تبدیل `\"42\"` به int از `Integer.____(\"42\")` استفاده می‌کنیم.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.____(\"42\")\n```\n\nبرای تبدیل `\"42\"` به int از کد بالا استفاده می‌کنیم.",
       "answers": [
         "parseInt"
       ],
@@ -577,7 +577,7 @@
     {
       "id": "g3-seed-014",
       "type": "mcq",
-      "prompt": "`Arrays.sort(values)` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.sort(values)\n```\n\nکد بالا چه می‌کند؟",
       "answers": [
         "B"
       ],
@@ -726,7 +726,7 @@
     {
       "id": "g4-seed-006",
       "type": "mcq",
-      "prompt": "چرا فرزند `super(name)` را صدا می‌زند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nsuper(name)\n```\n\nچرا فرزند کد بالا را صدا می‌زند؟",
       "answers": [
         "B"
       ],
@@ -782,7 +782,7 @@
     {
       "id": "g4-seed-009",
       "type": "mcq",
-      "prompt": "در `Animal a = new Cat(); a.sound();` انتخاب پیاده‌سازی به چه بستگی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nAnimal a = new Cat(); a.sound();\n```\n\nدر کد بالا انتخاب پیاده‌سازی به چه بستگی دارد؟",
       "answers": [
         "D"
       ],
@@ -1342,7 +1342,7 @@
     {
       "id": "g6-seed-006",
       "type": "mcq",
-      "prompt": "`List<? extends Number>` چه تضمینی می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nList<? extends Number>\n```\n\nکد بالا چه تضمینی می‌دهد؟",
       "answers": [
         "C"
       ],
@@ -1399,7 +1399,7 @@
     {
       "id": "g6-seed-009",
       "type": "mcq",
-      "prompt": "برای خواندن مقدار key از `Map<String,Integer> counts` چه می‌نویسیم؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMap<String,Integer> counts\n```\n\nبرای خواندن مقدار key از کد بالا چه می‌نویسیم؟",
       "answers": [
         "D"
       ],
@@ -1446,7 +1446,7 @@
     {
       "id": "g6-seed-011",
       "type": "mcq",
-      "prompt": "diamond operator در `new ArrayList<>()` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew ArrayList<>()\n```\n\ndiamond operator در کد بالا چه می‌کند؟",
       "answers": [
         "B"
       ],
@@ -1526,7 +1526,7 @@
     {
       "id": "g6-seed-015",
       "type": "multi",
-      "prompt": "روی `List<? super Integer>` کدام عملیات امن است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nList<? super Integer>\n```\n\nروی کد بالا کدام عملیات امن است؟",
       "answers": [
         "A",
         "C"

@@ -1,4 +1,4 @@
-# درجهٔ ۳: متدها، ساخت و فراخوانی در Java 21
+# بخش ۱: متدها، ساخت و فراخوانی در Java 21
 
 > **مسیر:** Java 21 / OCP Core API  
 > **مخاطب:** برنامه‌نویس C++ که می‌خواهد قرارداد method declaration، overload و lifecycle یک method ساده Java را از توابع/متدهای C++ جدا کند.
@@ -9,7 +9,7 @@ method در Java واحد اصلی سازمان‌دهی رفتار است. هر
 
 ## نقشهٔ یادگیری و خروجی مورد انتظار
 
-پس از این درجه باید بتوانید:
+پس از این فصل باید بتوانید:
 
 1. یک method با return type دلخواه، چندین overload، و `void` بنویسید بدون اینکه compiler در مورد signature شکایت کند؛
 2. تشخیص دهید چه چیزی overload می‌شود و چه چیزی نمی‌شود (return type، parameter name، access modifier هیچ‌کدام overload نیستند)؛
@@ -59,7 +59,7 @@ public int parse(String s) {
 
 **overload**: چند method با **نام یکسان** ولی **signature متفاوت** (تعداد یا نوع پارامترها) در یک کلاس. در زمان فراخوانی، compiler بر اساس نوع آرگومان‌های ایستا (compile-time) یکی را انتخاب می‌کند. این تصمیم به نوع runtime object بستگی ندارد.
 
-**override**: method در subclass با **signature و return type یکسان** (یا covariant) دوباره تعریف می‌شود. در runtime، dispatch بر اساس نوع واقعی object است (virtual dispatch). در این فصل override کمتر مطرح است (subclass در درجهٔ ۴ می‌آید) ولی تشخیص تفاوت overload/override در تصمیم‌گیری روزانه ضروری است.
+**override**: method در subclass با **signature و return type یکسان** (یا covariant) دوباره تعریف می‌شود. در runtime، dispatch بر اساس نوع واقعی object است (virtual dispatch). در این فصل override کمتر مطرح است (subclass در فصل ۴ می‌آید) ولی تشخیص تفاوت overload/override در تصمیم‌گیری روزانه ضروری است.
 
 ```java
 void print(int x)         { /* ... */ }   // overload 1
@@ -179,7 +179,7 @@ class Counter {
 // زنجیره: c.increment().increment().increment();
 ```
 
-`this` در lambda expression به capture rule مربوط می‌شود (در درجهٔ ۶)، ولی در method معمولی ساده است: `this` همیشه به receiver فعلی اشاره دارد.
+`this` در lambda expression به capture rule مربوط می‌شود (در فصل ۶)، ولی در method معمولی ساده است: `this` همیشه به receiver فعلی اشاره دارد.
 
 ## ۶. varargs
 

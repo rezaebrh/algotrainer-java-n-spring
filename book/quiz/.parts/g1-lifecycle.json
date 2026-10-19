@@ -3,7 +3,7 @@
     {
       "id": "g1-lifecycle-001",
       "type": "mcq",
-      "prompt": "کدام متغیر فقط از محل اعلان تا پایان همان بلوک `{}` قابل استفاده است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n{}\n```\n\nکدام متغیر فقط از محل اعلان تا پایان همان بلوک کد بالا قابل استفاده است؟",
       "answers": [
         "A"
       ],
@@ -49,7 +49,7 @@
     {
       "id": "g1-lifecycle-003",
       "type": "tf",
-      "prompt": "در کد `if (true) { int n = 1; }` می‌توان بعد از آکولاد بسته از `n` استفاده کرد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nif (true) { int n = 1; }\n```\n\nدر کد کد بالا می‌توان بعد از آکولاد بسته از `n` استفاده کرد.",
       "answers": [
         "false"
       ],
@@ -210,7 +210,7 @@
     {
       "id": "g1-lifecycle-011",
       "type": "blank",
-      "prompt": "در `int a = 1; { int b = 2; }` نام متغیری که بعد از بلوک داخلی هنوز در دسترس است را بنویسید.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint a = 1; { int b = 2; }\n```\n\nدر کد بالا نام متغیری که بعد از بلوک داخلی هنوز در دسترس است را بنویسید.",
       "answers": [
         "a"
       ],
@@ -226,7 +226,7 @@
     {
       "id": "g1-lifecycle-012",
       "type": "mcq",
-      "prompt": "در `void greet(String name) { System.out.print(name); }`، `name` کجا در دسترس است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid greet(String name) { System.out.print(name); }\n```\n\nدر کد بالا، `name` کجا در دسترس است؟",
       "answers": [
         "B"
       ],
@@ -397,7 +397,7 @@
     {
       "id": "g1-lifecycle-020",
       "type": "tf",
-      "prompt": "فراخوانی `System.gc()` تضمین می‌کند که GC همان لحظه اجرا شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nSystem.gc()\n```\n\nفراخوانی کد بالا تضمین می‌کند که GC همان لحظه اجرا شود.",
       "answers": [
         "false"
       ],
@@ -411,7 +411,7 @@
     {
       "id": "g1-lifecycle-021",
       "type": "mcq",
-      "prompt": "پس از `Book b = new Book(); b = null;`، اگر مرجع دیگری نباشد، شیء چه وضعی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nBook b = new Book(); b = null;\n```\n\nپس از کد بالا، اگر مرجع دیگری نباشد، شیء چه وضعی دارد؟",
       "answers": [
         "C"
       ],
@@ -570,7 +570,7 @@
     {
       "id": "g1-lifecycle-029",
       "type": "mcq",
-      "prompt": "در کد `Object x=new Object(); Object y=x; x=null; y=null;` چرا شیء می‌تواند واجد شرایط GC شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nObject x=new Object(); Object y=x; x=null; y=null;\n```\n\nدر کد کد بالا چرا شیء می‌تواند واجد شرایط GC شود؟",
       "answers": [
         "B"
       ],
@@ -593,7 +593,7 @@
     {
       "id": "g1-lifecycle-030",
       "type": "mcq",
-      "prompt": "کدام نتیجه از `Object o=new Object(); o=null;` نادرست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nObject o=new Object(); o=null;\n```\n\nکدام نتیجه از کد بالا نادرست است؟",
       "answers": [
         "D"
       ],
@@ -669,7 +669,7 @@
     {
       "id": "g1-lifecycle-034",
       "type": "mcq",
-      "prompt": "در `try (DemoResource r = new DemoResource()) { System.out.print(\"کار\"); }`، close چه زمانی فراخوانی می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntry (DemoResource r = new DemoResource()) { System.out.print(\"کار\"); }\n```\n\nدر کد بالا، close چه زمانی فراخوانی می‌شود؟",
       "answers": [
         "C"
       ],
@@ -809,7 +809,7 @@
     {
       "id": "g1-lifecycle-041",
       "type": "mcq",
-      "prompt": "پس از `final int days = 7;` کدام کار مجاز نیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int days = 7;\n```\n\nپس از کد بالا کدام کار مجاز نیست؟",
       "answers": [
         "B"
       ],
@@ -888,7 +888,7 @@
     {
       "id": "g1-lifecycle-045",
       "type": "mcq",
-      "prompt": "در `final int count; count = 2;` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int count; count = 2;\n```\n\nدر کد بالا کدام درست است؟",
       "answers": [
         "C"
       ],
@@ -911,7 +911,7 @@
     {
       "id": "g1-lifecycle-046",
       "type": "mcq",
-      "prompt": "پس از `final StringBuilder text = new StringBuilder(\"الف\");` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal StringBuilder text = new StringBuilder(\"الف\");\n```\n\nپس از کد بالا کدام درست است؟",
       "answers": [
         "D"
       ],
@@ -997,7 +997,7 @@
     {
       "id": "g1-lifecycle-050",
       "type": "tf",
-      "prompt": "این کد معتبر است: `final int x=1; System.out.print(x+1);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int x=1; System.out.print(x+1);\n```\n\nاین کد معتبر است: کد بالا",
       "answers": [
         "true"
       ],
@@ -1284,7 +1284,7 @@
     {
       "id": "g1-lifecycle-064",
       "type": "blank",
-      "prompt": "در `void set(int value)` نام پارامتر را با حروف کوچک بنویسید.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid set(int value)\n```\n\nدر کد بالا نام پارامتر را با حروف کوچک بنویسید.",
       "answers": [
         "value"
       ],
@@ -1410,7 +1410,7 @@
     {
       "id": "g1-lifecycle-071",
       "type": "tf",
-      "prompt": "در `int number = 4;`، number نام متغیر و 4 مقدار آغازین آن است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint number = 4;\n```\n\nدر کد بالا، number نام متغیر و 4 مقدار آغازین آن است.",
       "answers": [
         "true"
       ],
@@ -1444,7 +1444,7 @@
     {
       "id": "g1-lifecycle-073",
       "type": "mcq",
-      "prompt": "در `String city = \"شیراز\";`، `city` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString city = \"شیراز\";\n```\n\nدر کد بالا، `city` چیست؟",
       "answers": [
         "B"
       ],
@@ -1537,7 +1537,7 @@
     {
       "id": "g1-lifecycle-078",
       "type": "mcq",
-      "prompt": "در `String name = null;` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString name = null;\n```\n\nدر کد بالا کدام درست است؟",
       "answers": [
         "C"
       ],
@@ -1557,7 +1557,7 @@
     {
       "id": "g1-lifecycle-079",
       "type": "tf",
-      "prompt": "انتساب `b = a` برای دو متغیر reference-type، الزاماً یک کپی مستقل از شیء می‌سازد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nb = a\n```\n\nانتساب کد بالا برای دو متغیر reference-type، الزاماً یک کپی مستقل از شیء می‌سازد.",
       "answers": [
         "false"
       ],

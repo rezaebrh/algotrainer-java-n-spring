@@ -13,10 +13,10 @@ java-spring-farsi-book/
 ├── tools/
 │   └── validate_quiz.py              # اعتبارسنجی بانک‌ها؛ --merge فقط با تصمیم آگاهانه
 └── book/
-    ├── 01-building-blocks.md         # فصل منتشرشدهٔ درجهٔ ۱: پایه‌های Java 21
-    ├── parts/                        # قطعه‌های منبع prose برای فصل درجهٔ ۱
+    ├── 01-building-blocks.md         # فصل منتشرشدهٔ ۱: پایه‌های Java 21
+    ├── parts/                        # قطعه‌های منبع prose برای فصل ۱
     └── quiz/
-        ├── grade-01.json             # بانک کاملِ درجهٔ ۱
+        ├── grade-01.json             # بانک کاملِ فصل ۱
         ├── grade-02.json … grade-12.json
         └── .parts/                   # قطعه‌های منبع JSON برای ساخت بانک‌ها
 ```
@@ -123,7 +123,7 @@ python3 -m http.server 8000
 JAVABOOK_BIDI=off python3 reader.py read 1
 ```
 
-`book/parts/*.md` قطعه‌های prose اولیهٔ فصل درجهٔ ۱ هستند و خواننده آن‌ها را نمی‌خواند؛ فصل منتشرشده از پیش در `book/01-building-blocks.md` گردآوری شده است. در مقابل، `book/quiz/.parts/*.json` ورودیِ `tools/validate_quiz.py --merge` است. گزینهٔ `--merge` بانک‌های نهایی را بازنویسی می‌کند؛ بنابراین فقط هنگام بازسازی آگاهانهٔ بانک‌ها از آن استفاده کنید.
+`book/parts/*.md` قطعه‌های prose اولیهٔ فصل ۱ هستند و خواننده آن‌ها را نمی‌خواند؛ فصل منتشرشده از پیش در `book/01-building-blocks.md` گردآوری شده است. در مقابل، `book/quiz/.parts/*.json` ورودیِ `tools/validate_quiz.py --merge` است. گزینهٔ `--merge` بانک‌های نهایی را بازنویسی می‌کند؛ بنابراین فقط هنگام بازسازی آگاهانهٔ بانک‌ها از آن استفاده کنید.
 
 `book/` یک فرمان CLI نیست؛ این دستور نامعتبر است:
 
@@ -137,9 +137,9 @@ JAVABOOK_BIDI=off python3 reader.py read 1
 python3 reader.py read 1
 ```
 
-## نقشهٔ ۱۲ درجه
+## نقشهٔ ۱۲ فصل
 
-| درجه | موضوع |
+| فصل | موضوع |
 |---|---|
 | ۱ | runtime و building blocks: JVM، نوع‌ها، reference، lifecycle و resourceها |
 | ۲ | operatorها و control flow |
@@ -154,4 +154,4 @@ python3 reader.py read 1
 | ۱۱ | backend: MVC/REST، data، transaction و security |
 | ۱۲ | production: Actuator، observability، deployment و integration |
 
-فصل‌های منتشرشدهٔ فعلی درجه‌های ۱، ۲ و ۳ هستند؛ درجهٔ ۱ محیط اجرا، source structure، `main`، package/import، object/reference، primitive/wrapper، `String`، variable/scope، constructor/initialization، pass-by-value، GC و try-with-resources را پوشش می‌دهد. بانک‌های درجه‌های ۴ تا ۱۲ پرسش‌های seed برای مسیر بعدی دارند.
+فصل‌های منتشرشدهٔ فعلی ۱، ۲ و ۳ هستند؛ فصل ۱ محیط اجرا، source structure، `main`، package/import، object/reference، primitive/wrapper، `String`، variable/scope، constructor/initialization، pass-by-value، GC و try-with-resources را پوشش می‌دهد. بانک‌های فصل‌های ۴ تا ۱۲ پرسش‌های seed برای مسیر بعدی دارند.

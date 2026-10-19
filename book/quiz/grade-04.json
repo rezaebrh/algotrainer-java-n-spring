@@ -1,5 +1,5 @@
 {
-  "title": "درجهٔ 4",
+  "title": "فصل 4",
   "version": 2,
   "questions": [
     {
@@ -107,7 +107,7 @@
     {
       "id": "g4-seed-006",
       "type": "mcq",
-      "prompt": "چرا فرزند `super(name)` را صدا می‌زند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nsuper(name)\n```\n\nچرا فرزند کد بالا را صدا می‌زند؟",
       "answers": [
         "B"
       ],
@@ -163,7 +163,7 @@
     {
       "id": "g4-seed-009",
       "type": "mcq",
-      "prompt": "در `Animal a = new Cat(); a.sound();` انتخاب پیاده‌سازی به چه بستگی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nAnimal a = new Cat(); a.sound();\n```\n\nدر کد بالا انتخاب پیاده‌سازی به چه بستگی دارد؟",
       "answers": [
         "D"
       ],

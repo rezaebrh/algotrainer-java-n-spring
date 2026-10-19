@@ -1,4 +1,4 @@
-# درجهٔ ۳ — Core API و متدها در Java 21
+# فصل ۳ — Core API و متدها در Java 21
 
 > **مسیر:** Java 21 / OCP Core API
 > **مخاطب:** برنامه‌نویس C++ که می‌خواهد method declaration، String API، آرایه، Math و parsing عددی را به‌عنوان ابزار روزانه به‌کار بگیرد.
@@ -7,7 +7,7 @@
 
 ## نقشهٔ یادگیری و خروجی مورد انتظار
 
-پس از این درجه باید بتوانید:
+پس از این فصل باید بتوانید:
 
 1. یک method با return type دلخواه، overload، و `void` بنویسید بدون اینکه compiler در مورد signature شکایت کند؛
 2. تشخیص دهید چه چیزی overload می‌شود و چه چیزی نمی‌شود (return type، parameter name، access modifier هیچ‌کدام overload نیستند)؛
@@ -24,7 +24,7 @@
 
 ---
 
-## درجهٔ ۳: متدها، ساخت و فراخوانی در Java 21
+## بخش ۱: متدها، ساخت و فراخوانی در Java 21
 
 > **مسیر:** Java 21 / OCP Core API  
 > **مخاطب:** برنامه‌نویس C++ که می‌خواهد قرارداد method declaration، overload و lifecycle یک method ساده Java را از توابع/متدهای C++ جدا کند.
@@ -35,7 +35,7 @@ method در Java واحد اصلی سازمان‌دهی رفتار است. هر
 
 ## نقشهٔ یادگیری و خروجی مورد انتظار
 
-پس از این درجه باید بتوانید:
+پس از این فصل باید بتوانید:
 
 1. یک method با return type دلخواه، چندین overload، و `void` بنویسید بدون اینکه compiler در مورد signature شکایت کند؛
 2. تشخیص دهید چه چیزی overload می‌شود و چه چیزی نمی‌شود (return type، parameter name، access modifier هیچ‌کدام overload نیستند)؛
@@ -85,7 +85,7 @@ public int parse(String s) {
 
 **overload**: چند method با **نام یکسان** ولی **signature متفاوت** (تعداد یا نوع پارامترها) در یک کلاس. در زمان فراخوانی، compiler بر اساس نوع آرگومان‌های ایستا (compile-time) یکی را انتخاب می‌کند. این تصمیم به نوع runtime object بستگی ندارد.
 
-**override**: method در subclass با **signature و return type یکسان** (یا covariant) دوباره تعریف می‌شود. در runtime، dispatch بر اساس نوع واقعی object است (virtual dispatch). در این فصل override کمتر مطرح است (subclass در درجهٔ ۴ می‌آید) ولی تشخیص تفاوت overload/override در تصمیم‌گیری روزانه ضروری است.
+**override**: method در subclass با **signature و return type یکسان** (یا covariant) دوباره تعریف می‌شود. در runtime، dispatch بر اساس نوع واقعی object است (virtual dispatch). در این فصل override کمتر مطرح است (subclass در فصل ۴ می‌آید) ولی تشخیص تفاوت overload/override در تصمیم‌گیری روزانه ضروری است.
 
 ```java
 void print(int x)         { /* ... */ }   // overload 1
@@ -205,7 +205,7 @@ class Counter {
 // زنجیره: c.increment().increment().increment();
 ```
 
-`this` در lambda expression به capture rule مربوط می‌شود (در درجهٔ ۶)، ولی در method معمولی ساده است: `this` همیشه به receiver فعلی اشاره دارد.
+`this` در lambda expression به capture rule مربوط می‌شود (در فصل ۶)، ولی در method معمولی ساده است: `this` همیشه به receiver فعلی اشاره دارد.
 
 ## ۶. varargs
 
@@ -479,7 +479,7 @@ class StackOverflow {
 
 ---
 
-## درجهٔ ۳: String، immutability و API آن در Java 21
+## بخش ۲: String، immutability و API آن در Java 21
 
 > **مسیر:** Java 21 / OCP Core API  
 > **مخاطب:** برنامه‌نویس C++ که می‌خواهد `String` و `StringBuilder` را به‌عنوان API روزمره (نه نوع ابتدایی) بفهمد و از دام‌های معروف آن (== ، interning، concat در loop) دوری کند.
@@ -490,7 +490,7 @@ class StackOverflow {
 
 ## نقشهٔ یادگیری و خروجی مورد انتظار
 
-پس از این درجه باید بتوانید:
+پس از این فصل باید بتوانید:
 
 1. تشخیص دهید چه زمانی `==` روی String درست کار می‌کند و چه زمانی نباید به آن تکیه کنید؛
 2. از متدهای `length`، `charAt`، `substring`، `indexOf`، `contains`، `split`، `replace`، `trim`/`strip` به‌درستی استفاده کنید؛
@@ -974,7 +974,7 @@ text block بدون escape کاراکتر newline.
 
 ---
 
-## درجهٔ ۳: آرایه، Math و parsing در Java 21
+## بخش ۳: آرایه، Math و parsing در Java 21
 
 > **مسیر:** Java 21 / OCP Core API  
 > **مخاطب:** برنامه‌نویس C++ که می‌خواهد آرایه‌های primitive/reference، محدودیت‌های length، و متدهای static کلاس‌های `java.lang.Math` و `java.util.Arrays` را به‌عنوان ابزار روزانه به‌کار بگیرد.
@@ -985,7 +985,7 @@ text block بدون escape کاراکتر newline.
 
 ## نقشهٔ یادگیری و خروجی مورد انتظار
 
-پس از این درجه باید بتوانید:
+پس از این فصل باید بتوانید:
 
 1. آرایهٔ ۱بعدی و ۲بعدی بسازید و با initializer literal مقداردهی کنید؛
 2. `ArrayIndexOutOfBoundsException` و `NullPointerException` را از هم تشخیص دهید و دام‌های آن‌ها را بشناسید؛
@@ -1011,7 +1011,7 @@ int[] b = {1, 2, 3, 4, 5};          // initializer literal
 int[] c = new int[]{1, 2, 3};       // anonymous array — می‌توان به‌عنوان آرگومان فرستاد
 ```
 
-**طول ثابت است.** پس از `new int[5]`, نمی‌توانید طول را عوض کنید. اگر نیاز به resize دارید، از `Arrays.copyOf` استفاده کنید (یک آرایهٔ جدید می‌سازد). برای dynamic size، `ArrayList` (در درجهٔ ۶) مناسب‌تر است.
+**طول ثابت است.** پس از `new int[5]`, نمی‌توانید طول را عوض کنید. اگر نیاز به resize دارید، از `Arrays.copyOf` استفاده کنید (یک آرایهٔ جدید می‌سازد). برای dynamic size، `ArrayList` (در فصل ۶) مناسب‌تر است.
 
 ### دسترسی و bounds
 
@@ -1592,7 +1592,7 @@ extend با default value (0 برای int).
 - **method:** واحد رفتار در کلاس، با signature، return type، و body.
 - **signature:** نام method به‌همراه تعداد و نوع پارامترها (return type و parameter name جزو signature نیست).
 - **overload:** چند method با نام یکسان ولی signature متفاوت در یک کلاس.
-- **override:** بازتعریف method در subclass با signature و return type یکسان (در درجهٔ ۴).
+- **override:** بازتعریف method در subclass با signature و return type یکسان (در فصل ۴).
 - **varargs:** پارامتری که تعداد متغیر آرگومان از یک نوع می‌پذیرد، در source `Type...`، در JVM آرایه.
 - **guard clause:** early return در ابتدای method برای رد کردن precondition نامعتبر.
 - **immutability:** ویژگی‌ای که object پس از ساخت تغییر نمی‌کند.
@@ -1698,7 +1698,7 @@ extend با default value (0 برای int).
 - `parseInt` و `valueOf` را با ۵ مقدار تست کنید (digit، space+number، hex، "3.14"، null).
 - توضیح دهید چرا regex `"-?\d+"` قبل از parse امن‌تر است.
 
-## چک‌لیست پایان درجهٔ ۳
+## چک‌لیست پایان فصل ۳
 
 - [ ] می‌توانم method با return type، overload، و `void` بنویسم و compiler را راضی کنم.
 - [ ] می‌دانم چه چیزی overload می‌شود (فقط signature) و چه نمی‌شود (return type، parameter name).
@@ -1714,7 +1714,7 @@ extend با default value (0 برای int).
 - [ ] می‌توانم متدهای `Math` (max/min/abs/round/floor/ceil/pow/random) را به‌کار ببرم.
 - [ ] می‌توانم `Integer.parseInt`/`valueOf` را با مدیریت `NumberFormatException` بنویسم.
 
-## تمرین پروژه‌ای پایان درجهٔ ۳
+## تمرین پروژه‌ای پایان فصل ۳
 
 یک برنامهٔ کنسولی بنویسید که:
 

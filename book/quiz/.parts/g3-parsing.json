@@ -3,7 +3,7 @@
     {
       "id": "g3-parsing-001",
       "type": "mcq",
-      "prompt": "خروجی `Integer.parseInt(\"  42 \")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.parseInt(\"  42 \")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -51,7 +51,7 @@
     {
       "id": "g3-parsing-003",
       "type": "tf",
-      "prompt": "`Integer.parseInt(\"+42\")` بدون خطا عدد 42 برمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.parseInt(\"+42\")\n```\n\nکد بالا بدون خطا عدد 42 برمی‌گرداند.",
       "answers": [
         "true"
       ],
@@ -69,7 +69,7 @@
     {
       "id": "g3-parsing-004",
       "type": "mcq",
-      "prompt": "خروجی `Integer.valueOf(\"127\") == Integer.valueOf(\"127\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.valueOf(\"127\") == Integer.valueOf(\"127\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -93,7 +93,7 @@
     {
       "id": "g3-parsing-005",
       "type": "mcq",
-      "prompt": "چرا مقایسهٔ `==` روی دو شیٔ Integer بیرون از بازهٔ -128 تا 127 خطرناک است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n==\n```\n\nچرا مقایسهٔ کد بالا روی دو شیٔ Integer بیرون از بازهٔ -128 تا 127 خطرناک است؟",
       "answers": [
         "D"
       ],
@@ -117,7 +117,7 @@
     {
       "id": "g3-parsing-006",
       "type": "mcq",
-      "prompt": "خروجی `Integer.parseInt(null)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.parseInt(null)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -165,7 +165,7 @@
     {
       "id": "g3-parsing-008",
       "type": "mcq",
-      "prompt": "مقدار `Integer.parseUnsignedInt(\"-1\")` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.parseUnsignedInt(\"-1\")\n```\n\nمقدار کد بالا چه رفتاری دارد؟",
       "answers": [
         "A"
       ],
@@ -189,7 +189,7 @@
     {
       "id": "g3-parsing-009",
       "type": "tf",
-      "prompt": "`Boolean.parseBoolean(\"TRUE\")` مقدار true برمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nBoolean.parseBoolean(\"TRUE\")\n```\n\nکد بالا مقدار true برمی‌گرداند.",
       "answers": [
         "true"
       ],
@@ -206,7 +206,7 @@
     {
       "id": "g3-parsing-010",
       "type": "mcq",
-      "prompt": "خروجی `Boolean.parseBoolean(\"yes\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nBoolean.parseBoolean(\"yes\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -229,7 +229,7 @@
     {
       "id": "g3-parsing-011",
       "type": "mcq",
-      "prompt": "خروجی `Double.parseDouble(\"NaN\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nDouble.parseDouble(\"NaN\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -277,7 +277,7 @@
     {
       "id": "g3-parsing-013",
       "type": "mcq",
-      "prompt": "خروجی `Integer.toString(255, 16)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.toString(255, 16)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -301,7 +301,7 @@
     {
       "id": "g3-parsing-014",
       "type": "mcq",
-      "prompt": "مقدار `Integer.sum(2_000_000_000, 2_000_000_000)` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.sum(2_000_000_000, 2_000_000_000)\n```\n\nمقدار کد بالا چه رفتاری دارد؟",
       "answers": [
         "C"
       ],
@@ -349,7 +349,7 @@
     {
       "id": "g3-parsing-016",
       "type": "blank",
-      "prompt": "متد `Byte.parseByte(\"127\")` عدد صحیح ____ بازمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nByte.parseByte(\"127\")\n```\n\nمتد کد بالا عدد صحیح ____ بازمی‌گرداند.",
       "answers": [
         "127"
       ],
@@ -366,7 +366,7 @@
     {
       "id": "g3-parsing-017",
       "type": "mcq",
-      "prompt": "خروجی `Short.parseShort(\"40000\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nShort.parseShort(\"40000\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],

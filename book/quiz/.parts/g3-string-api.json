@@ -3,7 +3,7 @@
     {
       "id": "g3-string-api-001",
       "type": "mcq",
-      "prompt": "نوع بازگشتی متد `length()` در کلاس String چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nlength()\n```\n\nنوع بازگشتی متد کد بالا در کلاس String چیست؟",
       "answers": [
         "A"
       ],
@@ -26,7 +26,7 @@
     {
       "id": "g3-string-api-002",
       "type": "mcq",
-      "prompt": "تفاوت اصلی بین `arr.length` و `s.length()` در چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns.length()\n```\n\nتفاوت اصلی بین `arr.length` و کد بالا در چیست؟",
       "answers": [
         "B"
       ],
@@ -51,7 +51,7 @@
     {
       "id": "g3-string-api-003",
       "type": "tf",
-      "prompt": "`\"\".length()` مقدار 0 برمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"\".length()\n```\n\nکد بالا مقدار 0 برمی‌گرداند.",
       "answers": [
         "true"
       ],
@@ -68,7 +68,7 @@
     {
       "id": "g3-string-api-004",
       "type": "mcq",
-      "prompt": "نوع بازگشتی `s.charAt(i)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns.charAt(i)\n```\n\nنوع بازگشتی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -115,7 +115,7 @@
     {
       "id": "g3-string-api-006",
       "type": "tf",
-      "prompt": "`\"abc\".charAt(3)` در زمان اجرا StringIndexOutOfBoundsException پرتاب می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"abc\".charAt(3)\n```\n\nکد بالا در زمان اجرا StringIndexOutOfBoundsException پرتاب می‌کند.",
       "answers": [
         "true"
       ],
@@ -133,7 +133,7 @@
     {
       "id": "g3-string-api-007",
       "type": "mcq",
-      "prompt": "در فراخوانی `s.substring(begin, end)` کران end چگونه عمل می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns.substring(begin, end)\n```\n\nدر فراخوانی کد بالا کران end چگونه عمل می‌کند؟",
       "answers": [
         "B"
       ],
@@ -179,7 +179,7 @@
     {
       "id": "g3-string-api-009",
       "type": "tf",
-      "prompt": "`\"hello\".substring(5, 5)` یک رشتهٔ خالی برمی‌گرداند و خطا نمی‌دهد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"hello\".substring(5, 5)\n```\n\nکد بالا یک رشتهٔ خالی برمی‌گرداند و خطا نمی‌دهد.",
       "answers": [
         "true"
       ],
@@ -266,7 +266,7 @@
     {
       "id": "g3-string-api-013",
       "type": "tf",
-      "prompt": "`\"Java\".indexOf(\"JAVA\")` به دلیل حساسیت به بزرگی و کوچکی حروف مقدار -1 برمی‌گرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"Java\".indexOf(\"JAVA\")\n```\n\nکد بالا به دلیل حساسیت به بزرگی و کوچکی حروف مقدار -1 برمی‌گرداند.",
       "answers": [
         "true"
       ],
@@ -374,7 +374,7 @@
     {
       "id": "g3-string-api-018",
       "type": "tf",
-      "prompt": "`\"abc\".contains(\"A\")` برابر true است چون contains به بزرگی و کوچکی حروف حساس نیست.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"abc\".contains(\"A\")\n```\n\nکد بالا برابر true است چون contains به بزرگی و کوچکی حروف حساس نیست.",
       "answers": [
         "false"
       ],
@@ -391,7 +391,7 @@
     {
       "id": "g3-string-api-019",
       "type": "mcq",
-      "prompt": "خروجی `\"hello\".startsWith(\"\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"hello\".startsWith(\"\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -462,7 +462,7 @@
     {
       "id": "g3-string-api-022",
       "type": "mcq",
-      "prompt": "خروجی `\"a.b.c\".replaceAll(\".\", \"-\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"a.b.c\".replaceAll(\".\", \"-\")\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -512,7 +512,7 @@
     {
       "id": "g3-string-api-024",
       "type": "tf",
-      "prompt": "در `replace(CharSequence, CharSequence)` آرگومان اول به‌عنوان literal در نظر گرفته می‌شود و نه به‌عنوان regex.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nreplace(CharSequence, CharSequence)\n```\n\nدر کد بالا آرگومان اول به‌عنوان literal در نظر گرفته می‌شود و نه به‌عنوان regex.",
       "answers": [
         "true"
       ],
@@ -529,7 +529,7 @@
     {
       "id": "g3-string-api-025",
       "type": "mcq",
-      "prompt": "خروجی `\"a,,b,\".split(\",\")` در Java چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"a,,b,\".split(\",\")\n```\n\nخروجی کد بالا در Java چیست؟",
       "answers": [
         "B"
       ],
@@ -553,7 +553,7 @@
     {
       "id": "g3-string-api-026",
       "type": "mcq",
-      "prompt": "اگر `\"a,,b,\".split(\",\", -1)` فراخوانی شود، خروجی چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"a,,b,\".split(\",\", -1)\n```\n\nاگر کد بالا فراخوانی شود، خروجی چیست؟",
       "answers": [
         "C"
       ],
@@ -629,7 +629,7 @@
     {
       "id": "g3-string-api-029",
       "type": "tf",
-      "prompt": "`\"  \\u00A0  \".trim()` تمام فاصله‌های خالی شامل non-breaking space را حذف می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n\"  \\u00A0  \".trim()\n```\n\nکد بالا تمام فاصله‌های خالی شامل non-breaking space را حذف می‌کند.",
       "answers": [
         "false"
       ],

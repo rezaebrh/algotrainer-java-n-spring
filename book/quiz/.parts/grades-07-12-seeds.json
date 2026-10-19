@@ -26,7 +26,7 @@
     {
       "id": "g7-seed-002",
       "type": "blank",
-      "prompt": "برای جمع‌کردن Stream در List با collector از `____()` استفاده می‌شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n____()\n```\n\nبرای جمع‌کردن Stream در List با collector از کد بالا استفاده می‌شود.",
       "answers": [
         "collect(Collectors.toList)"
       ],
@@ -144,7 +144,7 @@
     {
       "id": "g7-seed-008",
       "type": "tf",
-      "prompt": "`Files.readString(path)` ممکن است IOException پرتاب کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nFiles.readString(path)\n```\n\nکد بالا ممکن است IOException پرتاب کند.",
       "answers": [
         "true"
       ],
@@ -232,7 +232,7 @@
     {
       "id": "g7-seed-012",
       "type": "blank",
-      "prompt": "در `filter(n -> n ____ 2 == 0)` جای خالی چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfilter(n -> n ____ 2 == 0)\n```\n\nدر کد بالا جای خالی چیست؟",
       "answers": [
         "%"
       ],
@@ -289,7 +289,7 @@
     {
       "id": "g7-seed-015",
       "type": "multi",
-      "prompt": "کدام‌ها دربارهٔ `Files.lines(path)` درست‌اند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nFiles.lines(path)\n```\n\nکدام‌ها دربارهٔ کد بالا درست‌اند؟",
       "answers": [
         "A",
         "B"
@@ -459,7 +459,7 @@
     {
       "id": "g8-seed-008",
       "type": "tf",
-      "prompt": "`volatile` عملیات `count++` را اتمی می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ncount++\n```\n\n`volatile` عملیات کد بالا را اتمی می‌کند.",
       "answers": [
         "false"
       ],
@@ -476,7 +476,7 @@
     {
       "id": "g8-seed-009",
       "type": "mcq",
-      "prompt": "در `synchronized(lock) { ... }` چه چیزی mutual exclusion را فراهم می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nsynchronized(lock) { ... }\n```\n\nدر کد بالا چه چیزی mutual exclusion را فراهم می‌کند؟",
       "answers": [
         "A"
       ],
@@ -524,7 +524,7 @@
     {
       "id": "g8-seed-011",
       "type": "mcq",
-      "prompt": "`opens com.app.model to jackson;` چه کاربردی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nopens com.app.model to jackson;\n```\n\nکد بالا چه کاربردی دارد؟",
       "answers": [
         "C"
       ],
@@ -1073,7 +1073,7 @@
     {
       "id": "g10-seed-007",
       "type": "blank",
-      "prompt": "برای نگاشت GET روی مسیر `/products` از `@____(\"/products\")` استفاده می‌شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n@____(\"/products\")\n```\n\nبرای نگاشت GET روی مسیر `/products` از کد بالا استفاده می‌شود.",
       "answers": [
         "GetMapping"
       ],
@@ -1107,7 +1107,7 @@
     {
       "id": "g10-seed-009",
       "type": "mcq",
-      "prompt": "اگر property اجباری با `@Value(\"${api.url}\")` پیدا نشود، معمولاً چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n@Value(\"${api.url}\")\n```\n\nاگر property اجباری با کد بالا پیدا نشود، معمولاً چه رخ می‌دهد؟",
       "answers": [
         "D"
       ],
@@ -1178,7 +1178,7 @@
     {
       "id": "g10-seed-012",
       "type": "blank",
-      "prompt": "برای اجرای برنامه با profile `dev` در command line می‌توان `--spring.profiles.active=____` نوشت.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n--spring.profiles.active=____\n```\n\nبرای اجرای برنامه با profile `dev` در command line می‌توان کد بالا نوشت.",
       "answers": [
         "dev"
       ],

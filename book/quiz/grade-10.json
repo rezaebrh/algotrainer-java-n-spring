@@ -1,5 +1,5 @@
 {
-  "title": "درجهٔ 10",
+  "title": "فصل 10",
   "version": 2,
   "questions": [
     {
@@ -133,7 +133,7 @@
     {
       "id": "g10-seed-007",
       "type": "blank",
-      "prompt": "برای نگاشت GET روی مسیر `/products` از `@____(\"/products\")` استفاده می‌شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n@____(\"/products\")\n```\n\nبرای نگاشت GET روی مسیر `/products` از کد بالا استفاده می‌شود.",
       "answers": [
         "GetMapping"
       ],
@@ -167,7 +167,7 @@
     {
       "id": "g10-seed-009",
       "type": "mcq",
-      "prompt": "اگر property اجباری با `@Value(\"${api.url}\")` پیدا نشود، معمولاً چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n@Value(\"${api.url}\")\n```\n\nاگر property اجباری با کد بالا پیدا نشود، معمولاً چه رخ می‌دهد؟",
       "answers": [
         "D"
       ],
@@ -238,7 +238,7 @@
     {
       "id": "g10-seed-012",
       "type": "blank",
-      "prompt": "برای اجرای برنامه با profile `dev` در command line می‌توان `--spring.profiles.active=____` نوشت.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n--spring.profiles.active=____\n```\n\nبرای اجرای برنامه با profile `dev` در command line می‌توان کد بالا نوشت.",
       "answers": [
         "dev"
       ],

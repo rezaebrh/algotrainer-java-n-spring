@@ -1,5 +1,5 @@
 {
-  "title": "درجهٔ 8",
+  "title": "فصل 8",
   "version": 2,
   "questions": [
     {
@@ -149,7 +149,7 @@
     {
       "id": "g8-seed-008",
       "type": "tf",
-      "prompt": "`volatile` عملیات `count++` را اتمی می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ncount++\n```\n\n`volatile` عملیات کد بالا را اتمی می‌کند.",
       "answers": [
         "false"
       ],
@@ -166,7 +166,7 @@
     {
       "id": "g8-seed-009",
       "type": "mcq",
-      "prompt": "در `synchronized(lock) { ... }` چه چیزی mutual exclusion را فراهم می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nsynchronized(lock) { ... }\n```\n\nدر کد بالا چه چیزی mutual exclusion را فراهم می‌کند؟",
       "answers": [
         "A"
       ],
@@ -214,7 +214,7 @@
     {
       "id": "g8-seed-011",
       "type": "mcq",
-      "prompt": "`opens com.app.model to jackson;` چه کاربردی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nopens com.app.model to jackson;\n```\n\nکد بالا چه کاربردی دارد؟",
       "answers": [
         "C"
       ],

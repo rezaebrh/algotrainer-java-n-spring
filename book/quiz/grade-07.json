@@ -1,5 +1,5 @@
 {
-  "title": "درجهٔ 7",
+  "title": "فصل 7",
   "version": 2,
   "questions": [
     {
@@ -28,7 +28,7 @@
     {
       "id": "g7-seed-002",
       "type": "blank",
-      "prompt": "برای جمع‌کردن Stream در List با collector از `____()` استفاده می‌شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n____()\n```\n\nبرای جمع‌کردن Stream در List با collector از کد بالا استفاده می‌شود.",
       "answers": [
         "collect(Collectors.toList)"
       ],
@@ -146,7 +146,7 @@
     {
       "id": "g7-seed-008",
       "type": "tf",
-      "prompt": "`Files.readString(path)` ممکن است IOException پرتاب کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nFiles.readString(path)\n```\n\nکد بالا ممکن است IOException پرتاب کند.",
       "answers": [
         "true"
       ],
@@ -234,7 +234,7 @@
     {
       "id": "g7-seed-012",
       "type": "blank",
-      "prompt": "در `filter(n -> n ____ 2 == 0)` جای خالی چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfilter(n -> n ____ 2 == 0)\n```\n\nدر کد بالا جای خالی چیست؟",
       "answers": [
         "%"
       ],
@@ -291,7 +291,7 @@
     {
       "id": "g7-seed-015",
       "type": "multi",
-      "prompt": "کدام‌ها دربارهٔ `Files.lines(path)` درست‌اند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nFiles.lines(path)\n```\n\nکدام‌ها دربارهٔ کد بالا درست‌اند؟",
       "answers": [
         "A",
         "B"

@@ -1,5 +1,5 @@
 {
-  "title": "درجهٔ ۱ — آجرهای سازندهٔ Java 21",
+  "title": "فصل ۱ — آجرهای سازندهٔ Java 21",
   "version": 2,
   "questions": [
     {
@@ -948,7 +948,7 @@
     {
       "id": "g1-lifecycle-001",
       "type": "mcq",
-      "prompt": "کدام متغیر فقط از محل اعلان تا پایان همان بلوک `{}` قابل استفاده است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n{}\n```\n\nکدام متغیر فقط از محل اعلان تا پایان همان بلوک کد بالا قابل استفاده است؟",
       "answers": [
         "A"
       ],
@@ -994,7 +994,7 @@
     {
       "id": "g1-lifecycle-003",
       "type": "tf",
-      "prompt": "در کد `if (true) { int n = 1; }` می‌توان بعد از آکولاد بسته از `n` استفاده کرد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nif (true) { int n = 1; }\n```\n\nدر کد کد بالا می‌توان بعد از آکولاد بسته از `n` استفاده کرد.",
       "answers": [
         "false"
       ],
@@ -1155,7 +1155,7 @@
     {
       "id": "g1-lifecycle-011",
       "type": "blank",
-      "prompt": "در `int a = 1; { int b = 2; }` نام متغیری که بعد از بلوک داخلی هنوز در دسترس است را بنویسید.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint a = 1; { int b = 2; }\n```\n\nدر کد بالا نام متغیری که بعد از بلوک داخلی هنوز در دسترس است را بنویسید.",
       "answers": [
         "a"
       ],
@@ -1171,7 +1171,7 @@
     {
       "id": "g1-lifecycle-012",
       "type": "mcq",
-      "prompt": "در `void greet(String name) { System.out.print(name); }`، `name` کجا در دسترس است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid greet(String name) { System.out.print(name); }\n```\n\nدر کد بالا، `name` کجا در دسترس است؟",
       "answers": [
         "B"
       ],
@@ -1342,7 +1342,7 @@
     {
       "id": "g1-lifecycle-020",
       "type": "tf",
-      "prompt": "فراخوانی `System.gc()` تضمین می‌کند که GC همان لحظه اجرا شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nSystem.gc()\n```\n\nفراخوانی کد بالا تضمین می‌کند که GC همان لحظه اجرا شود.",
       "answers": [
         "false"
       ],
@@ -1356,7 +1356,7 @@
     {
       "id": "g1-lifecycle-021",
       "type": "mcq",
-      "prompt": "پس از `Book b = new Book(); b = null;`، اگر مرجع دیگری نباشد، شیء چه وضعی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nBook b = new Book(); b = null;\n```\n\nپس از کد بالا، اگر مرجع دیگری نباشد، شیء چه وضعی دارد؟",
       "answers": [
         "C"
       ],
@@ -1515,7 +1515,7 @@
     {
       "id": "g1-lifecycle-029",
       "type": "mcq",
-      "prompt": "در کد `Object x=new Object(); Object y=x; x=null; y=null;` چرا شیء می‌تواند واجد شرایط GC شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nObject x=new Object(); Object y=x; x=null; y=null;\n```\n\nدر کد کد بالا چرا شیء می‌تواند واجد شرایط GC شود؟",
       "answers": [
         "B"
       ],
@@ -1538,7 +1538,7 @@
     {
       "id": "g1-lifecycle-030",
       "type": "mcq",
-      "prompt": "کدام نتیجه از `Object o=new Object(); o=null;` نادرست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nObject o=new Object(); o=null;\n```\n\nکدام نتیجه از کد بالا نادرست است؟",
       "answers": [
         "D"
       ],
@@ -1614,7 +1614,7 @@
     {
       "id": "g1-lifecycle-034",
       "type": "mcq",
-      "prompt": "در `try (DemoResource r = new DemoResource()) { System.out.print(\"کار\"); }`، close چه زمانی فراخوانی می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntry (DemoResource r = new DemoResource()) { System.out.print(\"کار\"); }\n```\n\nدر کد بالا، close چه زمانی فراخوانی می‌شود؟",
       "answers": [
         "C"
       ],
@@ -1754,7 +1754,7 @@
     {
       "id": "g1-lifecycle-041",
       "type": "mcq",
-      "prompt": "پس از `final int days = 7;` کدام کار مجاز نیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int days = 7;\n```\n\nپس از کد بالا کدام کار مجاز نیست؟",
       "answers": [
         "B"
       ],
@@ -1833,7 +1833,7 @@
     {
       "id": "g1-lifecycle-045",
       "type": "mcq",
-      "prompt": "در `final int count; count = 2;` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int count; count = 2;\n```\n\nدر کد بالا کدام درست است؟",
       "answers": [
         "C"
       ],
@@ -1856,7 +1856,7 @@
     {
       "id": "g1-lifecycle-046",
       "type": "mcq",
-      "prompt": "پس از `final StringBuilder text = new StringBuilder(\"الف\");` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal StringBuilder text = new StringBuilder(\"الف\");\n```\n\nپس از کد بالا کدام درست است؟",
       "answers": [
         "D"
       ],
@@ -1942,7 +1942,7 @@
     {
       "id": "g1-lifecycle-050",
       "type": "tf",
-      "prompt": "این کد معتبر است: `final int x=1; System.out.print(x+1);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int x=1; System.out.print(x+1);\n```\n\nاین کد معتبر است: کد بالا",
       "answers": [
         "true"
       ],
@@ -2229,7 +2229,7 @@
     {
       "id": "g1-lifecycle-064",
       "type": "blank",
-      "prompt": "در `void set(int value)` نام پارامتر را با حروف کوچک بنویسید.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid set(int value)\n```\n\nدر کد بالا نام پارامتر را با حروف کوچک بنویسید.",
       "answers": [
         "value"
       ],
@@ -2355,7 +2355,7 @@
     {
       "id": "g1-lifecycle-071",
       "type": "tf",
-      "prompt": "در `int number = 4;`، number نام متغیر و 4 مقدار آغازین آن است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint number = 4;\n```\n\nدر کد بالا، number نام متغیر و 4 مقدار آغازین آن است.",
       "answers": [
         "true"
       ],
@@ -2389,7 +2389,7 @@
     {
       "id": "g1-lifecycle-073",
       "type": "mcq",
-      "prompt": "در `String city = \"شیراز\";`، `city` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString city = \"شیراز\";\n```\n\nدر کد بالا، `city` چیست؟",
       "answers": [
         "B"
       ],
@@ -2482,7 +2482,7 @@
     {
       "id": "g1-lifecycle-078",
       "type": "mcq",
-      "prompt": "در `String name = null;` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString name = null;\n```\n\nدر کد بالا کدام درست است؟",
       "answers": [
         "C"
       ],
@@ -2502,7 +2502,7 @@
     {
       "id": "g1-lifecycle-079",
       "type": "tf",
-      "prompt": "انتساب `b = a` برای دو متغیر reference-type، الزاماً یک کپی مستقل از شیء می‌سازد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nb = a\n```\n\nانتساب کد بالا برای دو متغیر reference-type، الزاماً یک کپی مستقل از شیء می‌سازد.",
       "answers": [
         "false"
       ],
@@ -2912,7 +2912,7 @@
     {
       "id": "g1-lifetime-015",
       "type": "mcq",
-      "prompt": "برای `final StringBuilder b = new StringBuilder();` کدام خط خطای کامپایل دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal StringBuilder b = new StringBuilder();\n```\n\nبرای کد بالا کدام خط خطای کامپایل دارد؟",
       "options": {
         "A": "b.append(\"x\");",
         "B": "System.out.println(b.length());",
@@ -2994,7 +2994,7 @@
     {
       "id": "g1-lifetime-019",
       "type": "blank",
-      "prompt": "نوع‌هایی مانند `int[]` و `StringBuilder` که variable آن‌ها به شیء اشاره می‌کند، ______ type هستند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[]\n```\n\nنوع‌هایی مانند کد بالا و `StringBuilder` که variable آن‌ها به شیء اشاره می‌کند، ______ type هستند.",
       "answers": [
         "reference",
         "reference type",
@@ -3011,7 +3011,7 @@
     {
       "id": "g1-lifetime-020",
       "type": "mcq",
-      "prompt": "پس از اجرای `int[] a = {1}; int[] b = a;` رابطهٔ a و b چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] a = {1}; int[] b = a;\n```\n\nپس از اجرای کد بالا رابطهٔ a و b چیست؟",
       "options": {
         "A": "دو آرایهٔ مستقل‌اند",
         "B": "هر دو به همان آرایه اشاره دارند",
@@ -3207,7 +3207,7 @@
     {
       "id": "g1-lifetime-030",
       "type": "mcq",
-      "prompt": "بعد از `int[] data = {4, 5}; data = null;` و بدون reference دیگر، آرایه چه وضعی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] data = {4, 5}; data = null;\n```\n\nبعد از کد بالا و بدون reference دیگر، آرایه چه وضعی دارد؟",
       "options": {
         "A": "واجد شرایط GC می‌شود",
         "B": "تا پایان JVM باقی می‌ماند",
@@ -3360,7 +3360,7 @@
     {
       "id": "g1-lifetime-038",
       "type": "mcq",
-      "prompt": "در `try (var r = new R()) { work(); }`، در حالت عادی close چه زمانی فراخوانی می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntry (var r = new R()) { work(); }\n```\n\nدر کد بالا، در حالت عادی close چه زمانی فراخوانی می‌شود؟",
       "options": {
         "A": "پیش از بدنهٔ try",
         "B": "پس از پایان بدنه و پیش از ادامهٔ برنامه",
@@ -3403,7 +3403,7 @@
     {
       "id": "g1-lifetime-040",
       "type": "mcq",
-      "prompt": "در `try (A a = ...; B b = ...) {}` ترتیب بسته‌شدن resourceها چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntry (A a = ...; B b = ...) {}\n```\n\nدر کد بالا ترتیب بسته‌شدن resourceها چیست؟",
       "options": {
         "A": "ابتدا a سپس b",
         "B": "ابتدا b سپس a",
@@ -3528,7 +3528,7 @@
     {
       "id": "g1-lifetime-047",
       "type": "mcq",
-      "prompt": "در کد `final StringBuilder a = new StringBuilder(\"x\"); StringBuilder b = a; b.append(\"y\");`، a چه چیزی را نشان می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal StringBuilder a = new StringBuilder(\"x\"); StringBuilder b = a; b.append(\"y\");\n```\n\nدر کد کد بالا، a چه چیزی را نشان می‌دهد؟",
       "options": {
         "A": "فقط x",
         "B": "خطای کامپایل در append",
@@ -3587,7 +3587,7 @@
     {
       "id": "g1-lifetime-050",
       "type": "multi",
-      "prompt": "دربارهٔ `final int[] numbers = {1, 2};` کدام موارد درست‌اند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int[] numbers = {1, 2};\n```\n\nدربارهٔ کد بالا کدام موارد درست‌اند؟",
       "options": {
         "A": "numbers = new int[]{3}; خطای کامپایل است.",
         "B": "numbers[0] = 9; مجاز است.",
@@ -3648,7 +3648,7 @@
     {
       "id": "g1-lifetime-053",
       "type": "mcq",
-      "prompt": "کدام عبارت دربارهٔ `try (BufferedReader r = ...)` درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntry (BufferedReader r = ...)\n```\n\nکدام عبارت دربارهٔ کد بالا درست است؟",
       "options": {
         "A": "r فقط با System.gc() بسته می‌شود.",
         "B": "r باید final صریح باشد.",
@@ -3668,7 +3668,7 @@
     {
       "id": "g1-lifetime-054",
       "type": "blank",
-      "prompt": "رابطی که متد `close()` را برای استفاده در try-with-resources فراهم می‌کند ______ است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nclose()\n```\n\nرابطی که متد کد بالا را برای استفاده در try-with-resources فراهم می‌کند ______ است.",
       "answers": [
         "AutoCloseable"
       ],
@@ -3682,7 +3682,7 @@
     {
       "id": "g1-lifetime-055",
       "type": "mcq",
-      "prompt": "اگر `close()` تنها resource یک try-with-resources exception پرتاب کند و بدنه exception نداشته باشد، چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nclose()\n```\n\nاگر کد بالا تنها resource یک try-with-resources exception پرتاب کند و بدنه exception نداشته باشد، چه رخ می‌دهد؟",
       "options": {
         "A": "exception close اصلی پرتاب می‌شود",
         "B": "exception نادیده گرفته می‌شود",
@@ -3819,7 +3819,7 @@
     {
       "id": "g1-lifetime-062",
       "type": "multi",
-      "prompt": "برای شیء `Node n = new Node();` کدام تغییرها ممکن است به واجد GC شدن شیء کمک کنند، مشروط به نبود reference زندهٔ دیگر؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nNode n = new Node();\n```\n\nبرای شیء کد بالا کدام تغییرها ممکن است به واجد GC شدن شیء کمک کنند، مشروط به نبود reference زندهٔ دیگر؟",
       "options": {
         "A": "n = null;",
         "B": "خروج متدی که n local آن بود",
@@ -4213,7 +4213,7 @@
     {
       "id": "g1-primitives-016",
       "type": "tf",
-      "prompt": "عبارت `boolean ok = 1;` معتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nboolean ok = 1;\n```\n\nعبارت کد بالا معتبر است.",
       "answers": [
         "false"
       ],
@@ -4283,7 +4283,7 @@
     {
       "id": "g1-primitives-020",
       "type": "mcq",
-      "prompt": "دربارهٔ `char c = 65535;` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nchar c = 65535;\n```\n\nدربارهٔ کد بالا کدام درست است؟",
       "options": {
         "A": "کامپایل نمی‌شود",
         "B": "کامپایل می‌شود",
@@ -4348,7 +4348,7 @@
     {
       "id": "g1-primitives-023",
       "type": "mcq",
-      "prompt": "خروجی `new String(\"x\") == new String(\"x\")` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew String(\"x\") == new String(\"x\")\n```\n\nخروجی کد بالا چیست؟",
       "options": {
         "A": "true",
         "B": "false",
@@ -4509,7 +4509,7 @@
     {
       "id": "g1-primitives-030",
       "type": "mcq",
-      "prompt": "در `Integer boxed = 7;` چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger boxed = 7;\n```\n\nدر کد بالا چه رخ می‌دهد؟",
       "options": {
         "A": "خطای کامپایل",
         "B": "boxing خودکار",
@@ -4533,7 +4533,7 @@
     {
       "id": "g1-primitives-031",
       "type": "mcq",
-      "prompt": "در `int n = Integer.valueOf(7);` چه رخ می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint n = Integer.valueOf(7);\n```\n\nدر کد بالا چه رخ می‌دهد؟",
       "options": {
         "A": "boxing",
         "B": "unboxing",
@@ -4557,7 +4557,7 @@
     {
       "id": "g1-primitives-032",
       "type": "mcq",
-      "prompt": "نتیجهٔ `Integer n = null; int x = n;` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger n = null; int x = n;\n```\n\nنتیجهٔ کد بالا چیست؟",
       "options": {
         "A": "x برابر ۰ می‌شود",
         "B": "خطای کامپایل",
@@ -4600,7 +4600,7 @@
     {
       "id": "g1-primitives-034",
       "type": "mcq",
-      "prompt": "چرا `Integer a=1000,b=1000; a==b` قابل اتکا نیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger a=1000,b=1000; a==b\n```\n\nچرا کد بالا قابل اتکا نیست؟",
       "options": {
         "A": "== همیشه مقدار را می‌سنجد",
         "B": "ممکن است دو شیء جدا باشند",
@@ -4625,7 +4625,7 @@
     {
       "id": "g1-primitives-035",
       "type": "tf",
-      "prompt": "true شدن `Integer.valueOf(100) == Integer.valueOf(100)` مجوز استفادهٔ عمومی از == برای Integer است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger.valueOf(100) == Integer.valueOf(100)\n```\n\ntrue شدن کد بالا مجوز استفادهٔ عمومی از == برای Integer است.",
       "answers": [
         "false"
       ],
@@ -4710,7 +4710,7 @@
     {
       "id": "g1-primitives-039",
       "type": "mcq",
-      "prompt": "نوع `var name = \"بهار\";` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar name = \"بهار\";\n```\n\nنوع کد بالا چیست؟",
       "options": {
         "A": "char",
         "B": "String",
@@ -4734,7 +4734,7 @@
     {
       "id": "g1-primitives-040",
       "type": "mcq",
-      "prompt": "چرا `var item = null;` نامعتبر است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar item = null;\n```\n\nچرا کد بالا نامعتبر است؟",
       "options": {
         "A": "null فقط برای int است",
         "B": "نوعی برای استنباط ندارد",
@@ -4758,7 +4758,7 @@
     {
       "id": "g1-primitives-041",
       "type": "tf",
-      "prompt": "پس از `var count = 1;`، count می‌تواند یک String بگیرد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar count = 1;\n```\n\nپس از کد بالا، count می‌تواند یک String بگیرد.",
       "answers": [
         "false"
       ],
@@ -4799,7 +4799,7 @@
     {
       "id": "g1-primitives-043",
       "type": "mcq",
-      "prompt": "وضعیت `int n; System.out.println(n);` در متد چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint n; System.out.println(n);\n```\n\nوضعیت کد بالا در متد چیست؟",
       "options": {
         "A": "۰ چاپ می‌شود",
         "B": "null چاپ می‌شود",
@@ -4867,7 +4867,7 @@
     {
       "id": "g1-primitives-046",
       "type": "mcq",
-      "prompt": "وضعیت `boolean ready; if (ready) {}` در متد چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nboolean ready; if (ready) {}\n```\n\nوضعیت کد بالا در متد چیست؟",
       "options": {
         "A": "کامپایل و false",
         "B": "خطای کامپایل",
@@ -4914,7 +4914,7 @@
     {
       "id": "g1-primitives-048",
       "type": "tf",
-      "prompt": "پس از `final int n = 3;`، انتساب دوباره به n مجاز نیست.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int n = 3;\n```\n\nپس از کد بالا، انتساب دوباره به n مجاز نیست.",
       "answers": [
         "true"
       ],
@@ -4932,7 +4932,7 @@
     {
       "id": "g1-primitives-049",
       "type": "mcq",
-      "prompt": "در `final StringBuilder b = new StringBuilder(\"الف\"); b.append(\"ب\");` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal StringBuilder b = new StringBuilder(\"الف\"); b.append(\"ب\");\n```\n\nدر کد بالا کدام درست است؟",
       "options": {
         "A": "خطای کامپایل، چون شیء immutable است",
         "B": "کامپایل می‌شود و شیء تغییر می‌کند",
@@ -4957,7 +4957,7 @@
     {
       "id": "g1-primitives-050",
       "type": "tf",
-      "prompt": "`final String s = \"الف\"; s = \"ب\";` مجاز است چون String تغییرناپذیر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal String s = \"الف\"; s = \"ب\";\n```\n\nکد بالا مجاز است چون String تغییرناپذیر است.",
       "answers": [
         "false"
       ],
@@ -4976,7 +4976,7 @@
     {
       "id": "g1-primitives-051",
       "type": "mcq",
-      "prompt": "دربارهٔ `final Integer n = null;` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal Integer n = null;\n```\n\nدربارهٔ کد بالا کدام درست است؟",
       "options": {
         "A": "نامعتبر است چون final null نمی‌پذیرد",
         "B": "معتبر است اما n بعداً قابل تغییر نیست",
@@ -5001,7 +5001,7 @@
     {
       "id": "g1-primitives-052",
       "type": "mcq",
-      "prompt": "نوع `var x = 10L;` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar x = 10L;\n```\n\nنوع کد بالا چیست؟",
       "options": {
         "A": "byte",
         "B": "int",
@@ -6608,7 +6608,7 @@
     {
       "id": "g1-types-008",
       "type": "mcq",
-      "prompt": "در `var x = 24;` نوع واقعی x چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar x = 24;\n```\n\nدر کد بالا نوع واقعی x چیست؟",
       "options": {
         "A": "int",
         "B": "Integer",
@@ -6757,7 +6757,7 @@
     {
       "id": "g1-types-015",
       "type": "mcq",
-      "prompt": "پس از `String a=\"ماه\"; String b=a;` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString a=\"ماه\"; String b=a;\n```\n\nپس از کد بالا کدام درست است؟",
       "options": {
         "A": "a و b به یک String اشاره می‌کنند",
         "B": "b حتماً null است",
@@ -6821,7 +6821,7 @@
     {
       "id": "g1-types-018",
       "type": "mcq",
-      "prompt": "در `var label = \"جاوا\";` نوع label چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar label = \"جاوا\";\n```\n\nدر کد بالا نوع label چیست؟",
       "options": {
         "A": "String",
         "B": "var",
@@ -7028,7 +7028,7 @@
     {
       "id": "g1-types-029",
       "type": "tf",
-      "prompt": "`var x = null;` معتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar x = null;\n```\n\nکد بالا معتبر است.",
       "answers": [
         "false"
       ],
@@ -7087,7 +7087,7 @@
     {
       "id": "g1-types-033",
       "type": "tf",
-      "prompt": "`a.equals(b)` محتوای دو String را مقایسه می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\na.equals(b)\n```\n\nکد بالا محتوای دو String را مقایسه می‌کند.",
       "answers": [
         "true"
       ],
@@ -7132,7 +7132,7 @@
     {
       "id": "g1-types-036",
       "type": "tf",
-      "prompt": "`final int n=3; n=4;` معتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int n=3; n=4;\n```\n\nکد بالا معتبر است.",
       "answers": [
         "false"
       ],
@@ -7718,7 +7718,7 @@
     {
       "id": "g1-types-070",
       "type": "blank",
-      "prompt": "در `var ready = true;` نوع ready چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar ready = true;\n```\n\nدر کد بالا نوع ready چیست؟",
       "answers": [
         "boolean"
       ],
@@ -7733,7 +7733,7 @@
     {
       "id": "g1-types-071",
       "type": "blank",
-      "prompt": "در `var count = 9L;` نوع count چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar count = 9L;\n```\n\nدر کد بالا نوع count چیست؟",
       "answers": [
         "long"
       ],
@@ -7748,7 +7748,7 @@
     {
       "id": "g1-types-072",
       "type": "blank",
-      "prompt": "در `var word = \"کتاب\";` نوع word چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar word = \"کتاب\";\n```\n\nدر کد بالا نوع word چیست؟",
       "answers": [
         "String"
       ],
@@ -7837,7 +7837,7 @@
     {
       "id": "g1-types-078",
       "type": "blank",
-      "prompt": "در `Integer n = 5;`، Integer چه نوعی است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger n = 5;\n```\n\nدر کد بالا، Integer چه نوعی است؟",
       "answers": [
         "reference",
         "مرجع"

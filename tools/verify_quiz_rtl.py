@@ -2,8 +2,11 @@
 """Verify the quiz CLI renders Persian prose with Unicode bidi isolates.
 
 Asserts that the format_rtl_block helper (used by reader.ask and reader.response_for)
-correctly wraps Persian prose with RLI/PDI and protects embedded English/code/number
-runs with LRI/PDI, while leaving the JAVABOOK_BIDI=off bypass honored.
+correctly handles the prompt shape introduced by tools/refactor_prompt_code.py:
+a Persian lead-in line, a fenced java code block, and a Persian question line.
+Persian lines must be right-aligned and wrapped in RLI/PDI with inline Latin
+runs isolated with LRI/PDI; fence lines and the code inside them must pass
+through verbatim (LTR, no controls). The JAVABOOK_BIDI=off bypass is honored.
 """
 from __future__ import annotations
 
@@ -26,45 +29,46 @@ TARGET_ID = "g2-comparison-001"
 
 
 def load_target_prompt() -> str:
-    """Load a known mixed-bidi question prompt from the merged grade-02 bank."""
+    """Load a question with the restructured prompt shape from the merged grade-02 bank."""
     bank = ROOT / "book" / "quiz" / "grade-02.json"
     data = json.loads(bank.read_text(encoding="utf-8"))
     for question in data["questions"]:
         if question["id"] != TARGET_ID:
             continue
         prompt = question["prompt"]
-        # Sanity: must contain Persian letters AND an inline backtick run.
+        # Sanity: must contain Persian letters AND a fenced code block.
         has_persian = any("؀" <= char <= "ۿ" for char in prompt)
-        has_backtick_run = "`" in prompt
-        if has_persian and has_backtick_run:
+        has_fence = "```java" in prompt
+        if has_persian and has_fence:
             return prompt
-    raise SystemExit(f"FAIL: {TARGET_ID} not found or did not have Persian + inline backtick content")
+    raise SystemExit(f"FAIL: {TARGET_ID} not found or did not have Persian + fenced code content")
 
 
 def assert_default_rtl(prompt: str) -> list[str]:
-    """Default mode: right-aligned + isolates wrap prose and protect inline runs."""
+    """Default mode: right-aligned prose lines with RLI/PDI; fence + code verbatim."""
     rendered = format_rtl_block(prompt, WIDTH)
     lines = rendered.splitlines()
     failures: list[str] = []
 
-    # 1) Inline backtick run `score >= 60` must be wrapped by LRI..PDI.
-    inline_run = "`score >= 60`"
-    if inline_run not in rendered:
-        failures.append(f"inline backtick run {inline_run!r} missing from rendered output")
+    # 1) The fenced code line must pass through verbatim: no isolates, no padding.
+    code_line = "score >= 60"
+    if code_line not in lines:
+        failures.append(f"fenced code line {code_line!r} not present verbatim in rendered output")
     else:
-        idx = rendered.find(inline_run)
-        # The character immediately before the backtick must be LRI; the char
-        # immediately after the closing backtick must be PDI.
-        if idx == 0 or rendered[idx - 1] != LRI:
-            failures.append(f"LRI missing directly before {inline_run!r}")
-        if rendered[idx + len(inline_run)] != PDI:
-            failures.append(f"PDI missing directly after {inline_run!r}")
+        idx = lines.index(code_line)
+        if LRI in code_line or PDI in code_line:
+            failures.append(f"fenced code line unexpectedly wrapped in isolates: {code_line!r}")
+        # The lines around the code must be the ``` fence markers.
+        if lines[idx - 1].strip() != "```java":
+            failures.append(f"opening fence missing before code: {lines[idx - 1]!r}")
+        if lines[idx + 1].strip() != "```":
+            failures.append(f"closing fence missing after code: {lines[idx + 1]!r}")
 
-    # 2) The Persian line must start with at least one leading space (right-aligned).
-    persian_line = next((line for line in lines if any("؀" <= ch <= "ۿ" for ch in line)), None)
-    if persian_line is None:
+    # 2) Persian lines must start with at least one leading space (right-aligned).
+    persian_lines = [line for line in lines if any("؀" <= ch <= "ۿ" for ch in line)]
+    if not persian_lines:
         failures.append("no Persian line found in rendered output")
-    else:
+    for persian_line in persian_lines:
         if not persian_line.startswith(" "):
             failures.append(f"Persian line not right-aligned: {persian_line!r}")
         # The visible portion (excluding controls) must equal exactly WIDTH chars.
@@ -72,9 +76,12 @@ def assert_default_rtl(prompt: str) -> list[str]:
         if len(visible) != WIDTH:
             failures.append(f"Persian line visible width {len(visible)} != {WIDTH}: {persian_line!r}")
 
-    # 3) The Persian line must contain an RLI..PDI pair wrapping the prose.
+    # 3) The Persian lines must be wrapped in an RLI..PDI pair; the question line
+    #    must reference the code block above it.
     if RLI not in rendered or PDI not in rendered:
         failures.append("RLI or PDI missing from default-mode rendering")
+    if not any("کد بالا" in line for line in persian_lines):
+        failures.append("question line does not reference the code block above it")
 
     return failures
 
@@ -121,7 +128,7 @@ def main() -> int:
 
     print()
     print("PASS")
-    print(f"  default mode: LRI/PDI wrap `{TARGET_ID}`'s `score >= 60`; Persian prose right-aligned; RLI present")
+    print(f"  default mode: Persian lead-in/question right-aligned with RLI/PDI; fenced code verbatim; `{TARGET_ID}` references the block")
     print("  compat mode (JAVABOOK_BIDI=off): no bidi controls emitted; Persian still right-aligned")
     return 0
 

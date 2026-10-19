@@ -1,4 +1,4 @@
-# درجهٔ ۱: داده‌ها، هویت و متن در Java 21
+# بخش ۲: داده‌ها، هویت و متن در Java 21
 
 این بخش برای برنامه‌نویسی باتجربهٔ C++ نوشته شده است. در C++ معمولاً میان value، pointer، reference، object lifetime و copy constructor مرزهای نحوی روشنی دارید. در Java نیز این مفاهیم مهم‌اند، اما مدل زبان متفاوت است: متغیرها یا **primitive value** نگه می‌دارند یا **reference value**؛ و assignment و ارسال آرگومان همیشه «by value» است.
 

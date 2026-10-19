@@ -3,7 +3,7 @@
     {
       "id": "g2-logic-001",
       "type": "mcq",
-      "prompt": "اگر left در `left && right` false باشد، right چه وضعی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nleft && right\n```\n\nاگر left در کد بالا false باشد، right چه وضعی دارد؟",
       "answers": [
         "B"
       ],
@@ -26,7 +26,7 @@
     {
       "id": "g2-logic-002",
       "type": "mcq",
-      "prompt": "اگر left در `left || right` true باشد، right چه وضعی دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nleft || right\n```\n\nاگر left در کد بالا true باشد، right چه وضعی دارد؟",
       "answers": [
         "A"
       ],
@@ -49,7 +49,7 @@
     {
       "id": "g2-logic-003",
       "type": "tf",
-      "prompt": "`false & method()` می‌تواند method را اجرا کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfalse & method()\n```\n\nکد بالا می‌تواند method را اجرا کند.",
       "answers": [
         "true"
       ],
@@ -105,7 +105,7 @@
     {
       "id": "g2-logic-006",
       "type": "mcq",
-      "prompt": "کدام guard از `name.length()` وقتی name null است جلوگیری می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nname.length()\n```\n\nکدام guard از کد بالا وقتی name null است جلوگیری می‌کند؟",
       "answers": [
         "C"
       ],
@@ -144,7 +144,7 @@
     {
       "id": "g2-logic-008",
       "type": "mcq",
-      "prompt": "خروجی `true ? 1 : 1 / 0` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntrue ? 1 : 1 / 0\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "D"
       ],
@@ -166,7 +166,7 @@
     {
       "id": "g2-logic-009",
       "type": "mcq",
-      "prompt": "برای `boolean open=false;` خروجی `!open` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nboolean open=false;\n```\n\nبرای کد بالا خروجی `!open` چیست؟",
       "answers": [
         "A"
       ],
@@ -211,7 +211,7 @@
     {
       "id": "g2-logic-011",
       "type": "tf",
-      "prompt": "`a | b` وقتی a و b boolean هستند نامعتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\na | b\n```\n\nکد بالا وقتی a و b boolean هستند نامعتبر است.",
       "answers": [
         "false"
       ],
@@ -228,7 +228,7 @@
     {
       "id": "g2-logic-012",
       "type": "mcq",
-      "prompt": "در `checkA() && checkB()` اگر checkA false باشد، نتیجه چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ncheckA() && checkB()\n```\n\nدر کد بالا اگر checkA false باشد، نتیجه چیست؟",
       "answers": [
         "B"
       ],
@@ -351,7 +351,7 @@
     {
       "id": "g2-logic-018",
       "type": "mcq",
-      "prompt": "برای `hasToken && !expired` کدام حالت true است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nhasToken && !expired\n```\n\nبرای کد بالا کدام حالت true است؟",
       "answers": [
         "C"
       ],
@@ -373,7 +373,7 @@
     {
       "id": "g2-logic-019",
       "type": "tf",
-      "prompt": "`!` precedence بالاتری از `&&` دارد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n&&\n```\n\n`!` precedence بالاتری از کد بالا دارد.",
       "answers": [
         "true"
       ],
@@ -413,7 +413,7 @@
     {
       "id": "g2-logic-021",
       "type": "blank",
-      "prompt": "در `ready || fallback()`، fallback فقط وقتی اجرا می‌شود که ready ______ باشد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nready || fallback()\n```\n\nدر کد بالا، fallback فقط وقتی اجرا می‌شود که ready ______ باشد.",
       "answers": [
         "false"
       ],

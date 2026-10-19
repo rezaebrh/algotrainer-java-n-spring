@@ -3,7 +3,7 @@
     {
       "id": "g3-math-001",
       "type": "mcq",
-      "prompt": "خروجی `Math.max(-2, -7)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.max(-2, -7)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -26,7 +26,7 @@
     {
       "id": "g3-math-002",
       "type": "mcq",
-      "prompt": "خروجی `Math.abs(-3)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.abs(-3)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -48,7 +48,7 @@
     {
       "id": "g3-math-003",
       "type": "mcq",
-      "prompt": "`Math.round(3.6)` چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.round(3.6)\n```\n\nکد بالا چه برمی‌گرداند؟",
       "answers": [
         "C"
       ],
@@ -70,7 +70,7 @@
     {
       "id": "g3-math-004",
       "type": "mcq",
-      "prompt": "خروجی `Math.floor(2.3)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.floor(2.3)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "D"
       ],
@@ -92,7 +92,7 @@
     {
       "id": "g3-math-005",
       "type": "mcq",
-      "prompt": "خروجی `Math.ceil(2.1)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.ceil(2.1)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -114,7 +114,7 @@
     {
       "id": "g3-math-006",
       "type": "mcq",
-      "prompt": "خروجی `Math.pow(2, 10)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.pow(2, 10)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -136,7 +136,7 @@
     {
       "id": "g3-math-007",
       "type": "mcq",
-      "prompt": "خروجی `Math.sqrt(81)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.sqrt(81)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -158,7 +158,7 @@
     {
       "id": "g3-math-008",
       "type": "tf",
-      "prompt": "`Math.cbrt(27)` برابر 3.0 است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.cbrt(27)\n```\n\nکد بالا برابر 3.0 است.",
       "answers": [
         "true"
       ],
@@ -174,7 +174,7 @@
     {
       "id": "g3-math-009",
       "type": "mcq",
-      "prompt": "خروجی `Math.signum(-5.0)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.signum(-5.0)\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -242,7 +242,7 @@
     {
       "id": "g3-math-012",
       "type": "tf",
-      "prompt": "`Math.random()` می‌تواند دقیقاً 1.0 برگرداند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.random()\n```\n\nکد بالا می‌تواند دقیقاً 1.0 برگرداند.",
       "answers": [
         "false"
       ],
@@ -259,7 +259,7 @@
     {
       "id": "g3-math-013",
       "type": "mcq",
-      "prompt": "برای تولید int تصادفی در بازهٔ `[0, n)` بهترین انتخاب چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n[0, n)\n```\n\nبرای تولید int تصادفی در بازهٔ کد بالا بهترین انتخاب چیست؟",
       "answers": [
         "A"
       ],
@@ -283,7 +283,7 @@
     {
       "id": "g3-math-014",
       "type": "mcq",
-      "prompt": "`Math.addExact(Integer.MAX_VALUE, 1)` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.addExact(Integer.MAX_VALUE, 1)\n```\n\nکد بالا چه می‌کند؟",
       "answers": [
         "C"
       ],
@@ -352,7 +352,7 @@
     {
       "id": "g3-math-017",
       "type": "mcq",
-      "prompt": "`Math.atan2(y, x)` چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.atan2(y, x)\n```\n\nکد بالا چه برمی‌گرداند؟",
       "answers": [
         "A"
       ],

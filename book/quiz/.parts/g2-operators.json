@@ -3,7 +3,7 @@
     {
       "id": "g2-operators-001",
       "type": "mcq",
-      "prompt": "نوع expression `byte a=2, b=3; a+b` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nbyte a=2, b=3; a+b\n```\n\nنوع expression کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -26,7 +26,7 @@
     {
       "id": "g2-operators-002",
       "type": "tf",
-      "prompt": "`var total = (byte) 2 + (byte) 3;` متغیر total را byte می‌سازد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar total = (byte) 2 + (byte) 3;\n```\n\nکد بالا متغیر total را byte می‌سازد.",
       "answers": [
         "false"
       ],
@@ -64,7 +64,7 @@
     {
       "id": "g2-operators-004",
       "type": "mcq",
-      "prompt": "مقدار `(int) -3.8` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n(int) -3.8\n```\n\nمقدار کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -86,7 +86,7 @@
     {
       "id": "g2-operators-005",
       "type": "mcq",
-      "prompt": "پس از `byte b=127; b += 1;` مقدار b چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nbyte b=127; b += 1;\n```\n\nپس از کد بالا مقدار b چیست؟",
       "answers": [
         "D"
       ],
@@ -109,7 +109,7 @@
     {
       "id": "g2-operators-006",
       "type": "mcq",
-      "prompt": "کدام بازنویسی از نظر type به `b += 1` نزدیک‌تر است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nb += 1\n```\n\nکدام بازنویسی از نظر type به کد بالا نزدیک‌تر است؟",
       "answers": [
         "C"
       ],
@@ -132,7 +132,7 @@
     {
       "id": "g2-operators-007",
       "type": "blank",
-      "prompt": "نتیجهٔ تقسیم صحیح `17 / 5` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n17 / 5\n```\n\nنتیجهٔ تقسیم صحیح کد بالا چیست؟",
       "answers": [
         "3"
       ],
@@ -148,7 +148,7 @@
     {
       "id": "g2-operators-008",
       "type": "mcq",
-      "prompt": "خروجی `-17 / 5` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n-17 / 5\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -170,7 +170,7 @@
     {
       "id": "g2-operators-009",
       "type": "mcq",
-      "prompt": "خروجی `-17 % 5` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n-17 % 5\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -252,7 +252,7 @@
     {
       "id": "g2-operators-013",
       "type": "mcq",
-      "prompt": "مقدار `0b1100 & 0b1010` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n0b1100 & 0b1010\n```\n\nمقدار کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -274,7 +274,7 @@
     {
       "id": "g2-operators-014",
       "type": "mcq",
-      "prompt": "مقدار `0b1100 | 0b1010` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n0b1100 | 0b1010\n```\n\nمقدار کد بالا چیست؟",
       "answers": [
         "C"
       ],
@@ -296,7 +296,7 @@
     {
       "id": "g2-operators-015",
       "type": "mcq",
-      "prompt": "مقدار `0b1100 ^ 0b1010` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n0b1100 ^ 0b1010\n```\n\nمقدار کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -334,7 +334,7 @@
     {
       "id": "g2-operators-017",
       "type": "mcq",
-      "prompt": "برای `int n=-8` کدام shift از چپ صفر وارد می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint n=-8\n```\n\nبرای کد بالا کدام shift از چپ صفر وارد می‌کند؟",
       "answers": [
         "D"
       ],
@@ -356,7 +356,7 @@
     {
       "id": "g2-operators-018",
       "type": "mcq",
-      "prompt": "خروجی `1 << 33` برای int چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n1 << 33\n```\n\nخروجی کد بالا برای int چیست؟",
       "answers": [
         "B"
       ],
@@ -378,7 +378,7 @@
     {
       "id": "g2-operators-019",
       "type": "tf",
-      "prompt": "`1L << 64` در Java برابر 1 است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n1L << 64\n```\n\nکد بالا در Java برابر 1 است.",
       "answers": [
         "true"
       ],
@@ -432,7 +432,7 @@
     {
       "id": "g2-operators-022",
       "type": "tf",
-      "prompt": "`x += y` در صورت method call در سمت چپ، آن سمت را فقط یک بار ارزیابی می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nx += y\n```\n\nکد بالا در صورت method call در سمت چپ، آن سمت را فقط یک بار ارزیابی می‌کند.",
       "answers": [
         "true"
       ],

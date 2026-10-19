@@ -136,7 +136,7 @@
     {
       "id": "g1-types-008",
       "type": "mcq",
-      "prompt": "در `var x = 24;` نوع واقعی x چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar x = 24;\n```\n\nدر کد بالا نوع واقعی x چیست؟",
       "options": {
         "A": "int",
         "B": "Integer",
@@ -271,7 +271,7 @@
     {
       "id": "g1-types-015",
       "type": "mcq",
-      "prompt": "پس از `String a=\"ماه\"; String b=a;` کدام درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString a=\"ماه\"; String b=a;\n```\n\nپس از کد بالا کدام درست است؟",
       "options": {
         "A": "a و b به یک String اشاره می‌کنند",
         "B": "b حتماً null است",
@@ -329,7 +329,7 @@
     {
       "id": "g1-types-018",
       "type": "mcq",
-      "prompt": "در `var label = \"جاوا\";` نوع label چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar label = \"جاوا\";\n```\n\nدر کد بالا نوع label چیست؟",
       "options": {
         "A": "String",
         "B": "var",
@@ -514,7 +514,7 @@
     {
       "id": "g1-types-029",
       "type": "tf",
-      "prompt": "`var x = null;` معتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar x = null;\n```\n\nکد بالا معتبر است.",
       "answers": "false",
       "explanation": "null به‌تنهایی نوع لازم برای var را مشخص نمی‌کند.",
       "concepts": [
@@ -565,7 +565,7 @@
     {
       "id": "g1-types-033",
       "type": "tf",
-      "prompt": "`a.equals(b)` محتوای دو String را مقایسه می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\na.equals(b)\n```\n\nکد بالا محتوای دو String را مقایسه می‌کند.",
       "answers": "true",
       "explanation": "equals برای برابری محتوای String است.",
       "concepts": [
@@ -604,7 +604,7 @@
     {
       "id": "g1-types-036",
       "type": "tf",
-      "prompt": "`final int n=3; n=4;` معتبر است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal int n=3; n=4;\n```\n\nکد بالا معتبر است.",
       "answers": "false",
       "explanation": "final فقط یک انتساب را اجازه می‌دهد.",
       "concepts": [
@@ -1180,7 +1180,7 @@
     {
       "id": "g1-types-070",
       "type": "blank",
-      "prompt": "در `var ready = true;` نوع ready چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar ready = true;\n```\n\nدر کد بالا نوع ready چیست؟",
       "answers": [
         "boolean"
       ],
@@ -1195,7 +1195,7 @@
     {
       "id": "g1-types-071",
       "type": "blank",
-      "prompt": "در `var count = 9L;` نوع count چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar count = 9L;\n```\n\nدر کد بالا نوع count چیست؟",
       "answers": [
         "long"
       ],
@@ -1210,7 +1210,7 @@
     {
       "id": "g1-types-072",
       "type": "blank",
-      "prompt": "در `var word = \"کتاب\";` نوع word چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvar word = \"کتاب\";\n```\n\nدر کد بالا نوع word چیست؟",
       "answers": [
         "String"
       ],
@@ -1299,7 +1299,7 @@
     {
       "id": "g1-types-078",
       "type": "blank",
-      "prompt": "در `Integer n = 5;`، Integer چه نوعی است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nInteger n = 5;\n```\n\nدر کد بالا، Integer چه نوعی است؟",
       "answers": [
         "reference",
         "مرجع"

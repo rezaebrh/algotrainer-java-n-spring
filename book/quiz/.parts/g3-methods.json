@@ -107,7 +107,7 @@
     {
       "id": "g3-methods-006",
       "type": "mcq",
-      "prompt": "پارامتر `int n` در `void f(int n)` در کجا قابل دسترسی است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int n)\n```\n\nپارامتر `int n` در کد بالا در کجا قابل دسترسی است؟",
       "answers": [
         "B"
       ],
@@ -216,7 +216,7 @@
     {
       "id": "g3-methods-011",
       "type": "mcq",
-      "prompt": "چرا `Math.abs(-5)` بدون ساخت نمونه فراخوانی می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.abs(-5)\n```\n\nچرا کد بالا بدون ساخت نمونه فراخوانی می‌شود؟",
       "answers": [
         "B"
       ],
@@ -302,7 +302,7 @@
     {
       "id": "g3-methods-015",
       "type": "mcq",
-      "prompt": "اگر متد `int f() { return 3.14; }` را کامپایل کنیم:",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint f() { return 3.14; }\n```\n\nاگر متد کد بالا را کامپایل کنیم:",
       "answers": [
         "B"
       ],
@@ -365,7 +365,7 @@
     {
       "id": "g3-methods-018",
       "type": "mcq",
-      "prompt": "در `void f(int x) { this.x = x; }` نقش `this.x` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int x) { this.x = x; }\n```\n\nدر کد بالا نقش `this.x` چیست؟",
       "answers": [
         "B"
       ],
@@ -493,7 +493,7 @@
     {
       "id": "g3-methods-024",
       "type": "mcq",
-      "prompt": "متد `int f() { return 'A'; }` در زمان کامپایل:",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint f() { return 'A'; }\n```\n\nمتد کد بالا در زمان کامپایل:",
       "answers": [
         "B"
       ],

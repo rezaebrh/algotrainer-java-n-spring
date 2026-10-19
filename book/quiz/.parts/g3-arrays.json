@@ -26,7 +26,7 @@
     {
       "id": "g3-arrays-002",
       "type": "tf",
-      "prompt": "شکل `int a[]` در Java همان نوع آرایه را می‌سازد و تنها سبک نوشتار متفاوتی دارد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint a[]\n```\n\nشکل کد بالا در Java همان نوع آرایه را می‌سازد و تنها سبک نوشتار متفاوتی دارد.",
       "answers": [
         "true"
       ],
@@ -115,7 +115,7 @@
     {
       "id": "g3-arrays-006",
       "type": "tf",
-      "prompt": "Initializer کوتاه `{1, 2, 3}` فقط در همان خط اعلام متغیر مجاز است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n{1, 2, 3}\n```\n\nInitializer کوتاه کد بالا فقط در همان خط اعلام متغیر مجاز است.",
       "answers": [
         "true"
       ],
@@ -226,7 +226,7 @@
     {
       "id": "g3-arrays-011",
       "type": "tf",
-      "prompt": "`arr[arr.length]` در زمان اجرا استثنا پرتاب می‌کند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\narr[arr.length]\n```\n\nکد بالا در زمان اجرا استثنا پرتاب می‌کند.",
       "answers": [
         "true"
       ],
@@ -243,7 +243,7 @@
     {
       "id": "g3-arrays-012",
       "type": "mcq",
-      "prompt": "در حلقهٔ `for (int i = 0; i <= a.length; i++)` خطای رایج چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor (int i = 0; i <= a.length; i++)\n```\n\nدر حلقهٔ کد بالا خطای رایج چیست؟",
       "answers": [
         "B"
       ],
@@ -353,7 +353,7 @@
     {
       "id": "g3-arrays-017",
       "type": "mcq",
-      "prompt": "در `for (int x : arr) { x = 0; }` آرایهٔ arr چه تغییری می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfor (int x : arr) { x = 0; }\n```\n\nدر کد بالا آرایهٔ arr چه تغییری می‌کند؟",
       "answers": [
         "A"
       ],
@@ -377,7 +377,7 @@
     {
       "id": "g3-arrays-018",
       "type": "mcq",
-      "prompt": "آرایهٔ دو‌بعدی `int[][] m = new int[3][4];` در حافظه چگونه است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[][] m = new int[3][4];\n```\n\nآرایهٔ دو‌بعدی کد بالا در حافظه چگونه است؟",
       "answers": [
         "C"
       ],
@@ -417,7 +417,7 @@
     {
       "id": "g3-arrays-020",
       "type": "mcq",
-      "prompt": "`Arrays.sort(int[] a)` برای آرایهٔ int از چه الگوریتمی استفاده می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.sort(int[] a)\n```\n\nکد بالا برای آرایهٔ int از چه الگوریتمی استفاده می‌کند؟",
       "answers": [
         "B"
       ],
@@ -440,7 +440,7 @@
     {
       "id": "g3-arrays-021",
       "type": "mcq",
-      "prompt": "خروجی `Arrays.toString(new int[]{1, 2, 3})` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.toString(new int[]{1, 2, 3})\n```\n\nخروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -463,7 +463,7 @@
     {
       "id": "g3-arrays-022",
       "type": "mcq",
-      "prompt": "برای چاپ آرایهٔ دو‌بعدی `int[][] m` به شکل ماتریسی، کدام مناسب است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[][] m\n```\n\nبرای چاپ آرایهٔ دو‌بعدی کد بالا به شکل ماتریسی، کدام مناسب است؟",
       "answers": [
         "C"
       ],
@@ -509,7 +509,7 @@
     {
       "id": "g3-arrays-024",
       "type": "mcq",
-      "prompt": "نتیجهٔ `Arrays.copyOf(arr, 3)` وقتی arr پنج‌عضوی است چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.copyOf(arr, 3)\n```\n\nنتیجهٔ کد بالا وقتی arr پنج‌عضوی است چیست؟",
       "answers": [
         "A"
       ],
@@ -532,7 +532,7 @@
     {
       "id": "g3-arrays-025",
       "type": "mcq",
-      "prompt": "`Arrays.copyOfRange(arr, 1, 4)` کدام بازه را کپی می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.copyOfRange(arr, 1, 4)\n```\n\nکد بالا کدام بازه را کپی می‌کند؟",
       "answers": [
         "C"
       ],
@@ -555,7 +555,7 @@
     {
       "id": "g3-arrays-026",
       "type": "mcq",
-      "prompt": "خروجی `Arrays.fill(a, 7)` وقتی a آرایه‌ای پنج‌عضوی int است چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.fill(a, 7)\n```\n\nخروجی کد بالا وقتی a آرایه‌ای پنج‌عضوی int است چیست؟",
       "answers": [
         "B"
       ],
@@ -578,7 +578,7 @@
     {
       "id": "g3-arrays-027",
       "type": "mcq",
-      "prompt": "`Arrays.setAll(a, i -> i * i)` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.setAll(a, i -> i * i)\n```\n\nکد بالا چه می‌کند؟",
       "answers": [
         "D"
       ],
