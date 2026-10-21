@@ -71,7 +71,7 @@
       "answers": [
         "false"
       ],
-      "explanation": "early return در void فقط با `return;` بدون expression مجاز است.",
+      "explanation": "early return در void فقط با کد زیر را در نظر بگیرید:\n\n```java\nreturn;\n```\n\nکد بالا بدون expression مجاز است.",
       "concepts": [
         "void",
         "return"
@@ -406,7 +406,7 @@
     {
       "id": "g3-methods-020",
       "type": "mcq",
-      "prompt": "برای فراخوانی `log(\"a\", \"b\", \"c\")` وقتی log به‌صورت `void log(String... items)` تعریف شده:",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nlog(\"a\", \"b\", \"c\")\nvoid log(String... items)\n```\n\nبرای فراخوانی کد بالا وقتی log به‌صورت کد بالا تعریف شده:",
       "answers": [
         "B"
       ],
@@ -453,7 +453,7 @@
     {
       "id": "g3-methods-022",
       "type": "mcq",
-      "prompt": "با `f(int a, int b)` و `f(int... vs)` کدام فراخوانی ابهام دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int a, int b)\nf(int... vs)\n```\n\nبا کدهای بالا کدام فراخوانی ابهام دارد؟",
       "answers": [
         "B"
       ],

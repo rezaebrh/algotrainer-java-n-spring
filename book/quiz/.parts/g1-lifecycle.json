@@ -26,7 +26,7 @@
     {
       "id": "g1-lifecycle-002",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`int x = 3; { int y = 4; System.out.print(x + y); }`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x = 3; { int y = 4; System.out.print(x + y); }\n```\n\nخروجی چیست؟",
       "answers": [
         "B"
       ],
@@ -67,7 +67,7 @@
     {
       "id": "g1-lifecycle-004",
       "type": "mcq",
-      "prompt": "کدام خط خطای کامپایل دارد؟\n`{ int score = 10; }\nSystem.out.println(score);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n{ int score = 10; }\nSystem.out.println(score);\n```\n\nکدام خط خطای کامپایل دارد؟",
       "answers": [
         "B"
       ],
@@ -165,7 +165,7 @@
     {
       "id": "g1-lifecycle-009",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`int level = 1; { int next = level + 1; System.out.print(next); }`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint level = 1; { int next = level + 1; System.out.print(next); }\n```\n\nخروجی چیست؟",
       "answers": [
         "A"
       ],
@@ -188,7 +188,7 @@
     {
       "id": "g1-lifecycle-010",
       "type": "mcq",
-      "prompt": "چرا این کد کامپایل نمی‌شود؟\n`{ int age = 7; } { int next = age + 1; }`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n{ int age = 7; } { int next = age + 1; }\n```\n\nچرا این کد کامپایل نمی‌شود؟",
       "answers": [
         "D"
       ],
@@ -266,7 +266,7 @@
     {
       "id": "g1-lifecycle-014",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`int p = 5; { p = 8; } System.out.print(p);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint p = 5; { p = 8; } System.out.print(p);\n```\n\nخروجی چیست؟",
       "answers": [
         "C"
       ],
@@ -312,7 +312,7 @@
     {
       "id": "g1-lifecycle-016",
       "type": "mcq",
-      "prompt": "پس از این کد کدام نام در دسترس است؟\n`int first=1; { int second=2; { int third=3; } }`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint first=1; { int second=2; { int third=3; } }\n```\n\nپس از این کد کدام نام در دسترس است؟",
       "answers": [
         "A"
       ],
@@ -352,7 +352,7 @@
     {
       "id": "g1-lifecycle-018",
       "type": "mcq",
-      "prompt": "کدام تغییر مشکل این کد را حل می‌کند؟\n`{ int temp=9; } System.out.print(temp);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n{ int temp=9; } System.out.print(temp);\n```\n\nکدام تغییر مشکل این کد را حل می‌کند؟",
       "answers": [
         "C"
       ],
@@ -448,7 +448,7 @@
     {
       "id": "g1-lifecycle-023",
       "type": "mcq",
-      "prompt": "در این کد آیا شیء `String` واجد شرایط GC است؟\n`String a = new String(\"x\"); String b = a; a = null;`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString a = new String(\"x\"); String b = a; a = null;\n```\n\nدر این کد آیا شیء `String` واجد شرایط GC است؟",
       "answers": [
         "D"
       ],
@@ -508,7 +508,7 @@
     {
       "id": "g1-lifecycle-026",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`Object item = new Object(); item = null; System.out.print(item);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nObject item = new Object(); item = null; System.out.print(item);\n```\n\nخروجی چیست؟",
       "answers": [
         "A"
       ],
@@ -720,7 +720,7 @@
     {
       "id": "g1-lifecycle-037",
       "type": "mcq",
-      "prompt": "در این کد `r` کجا قابل استفاده است؟\n`try (Reader r = open()) { use(r); }`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ntry (Reader r = open()) { use(r); }\n```\n\nدر این کد `r` کجا قابل استفاده است؟",
       "answers": [
         "B"
       ],
@@ -849,7 +849,7 @@
     {
       "id": "g1-lifecycle-043",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`final String title = \"جاوا\"; System.out.print(title);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal String title = \"جاوا\"; System.out.print(title);\n```\n\nخروجی چیست؟",
       "answers": [
         "A"
       ],
@@ -1014,7 +1014,7 @@
     {
       "id": "g1-lifecycle-051",
       "type": "mcq",
-      "prompt": "کدام خط علت خطا است؟\n`final String code=\"A\";\ncode=\"B\";`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal String code=\"A\";\ncode=\"B\";\n```\n\nکدام خط علت خطا است؟",
       "answers": [
         "B"
       ],
@@ -1075,7 +1075,7 @@
     {
       "id": "g1-lifecycle-054",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`static void change(int n){n=9;} int x=3; change(x); System.out.print(x);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nstatic void change(int n){n=9;} int x=3; change(x); System.out.print(x);\n```\n\nخروجی چیست؟",
       "answers": [
         "B"
       ],
@@ -1152,7 +1152,7 @@
     {
       "id": "g1-lifecycle-058",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`static void reset(String s){s=\"جدید\";} String text=\"قدیمی\"; reset(text); System.out.print(text);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nstatic void reset(String s){s=\"جدید\";} String text=\"قدیمی\"; reset(text); System.out.print(text);\n```\n\nخروجی چیست؟",
       "answers": [
         "A"
       ],
@@ -1198,7 +1198,7 @@
     {
       "id": "g1-lifecycle-060",
       "type": "mcq",
-      "prompt": "پس از `rename(box)` در کد زیر چه چیزی درست است؟\n`static void rename(Box b){b=new Box();} Box box=new Box();`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nrename(box)\nstatic void rename(Box b){b=new Box();} Box box=new Box();\n```\n\nپس از کد بالا در کد بالا چه چیزی درست است؟",
       "answers": [
         "B"
       ],
@@ -1238,7 +1238,7 @@
     {
       "id": "g1-lifecycle-062",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`static void addOne(int v){v=v+1;} int score=10; addOne(score); System.out.print(score);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nstatic void addOne(int v){v=v+1;} int score=10; addOne(score); System.out.print(score);\n```\n\nخروجی چیست؟",
       "answers": [
         "C"
       ],
@@ -1370,7 +1370,7 @@
     {
       "id": "g1-lifecycle-069",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`int apples=2; apples=apples+3; System.out.print(apples);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint apples=2; apples=apples+3; System.out.print(apples);\n```\n\nخروجی چیست؟",
       "answers": [
         "C"
       ],
@@ -1502,7 +1502,7 @@
     {
       "id": "g1-lifecycle-076",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`String a=\"سلام\"; String b=a; System.out.print(b);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString a=\"سلام\"; String b=a; System.out.print(b);\n```\n\nخروجی چیست؟",
       "answers": [
         "A"
       ],
@@ -1574,7 +1574,7 @@
     {
       "id": "g1-lifecycle-080",
       "type": "mcq",
-      "prompt": "در این کد، بعد از `a = null` چه چیزی درست است؟\n`String a=new String(\"x\"); String b=a; a=null;`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\na = null\nString a=new String(\"x\"); String b=a; a=null;\n```\n\nدر این کد، بعد از کد بالا چه چیزی درست است؟",
       "answers": [
         "D"
       ],
@@ -1618,7 +1618,7 @@
     {
       "id": "g1-lifecycle-082",
       "type": "mcq",
-      "prompt": "خروجی چیست؟\n`String word = \"کتاب\"; word = null; System.out.print(word);`",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString word = \"کتاب\"; word = null; System.out.print(word);\n```\n\nخروجی چیست؟",
       "answers": [
         "B"
       ],
@@ -1673,7 +1673,7 @@
     {
       "id": "g1-lifecycle-085",
       "type": "mcq",
-      "prompt": "چرا `final String label = \"A\";` با `final int count = 1;` از نظر final مشابه‌اند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nfinal String label = \"A\";\nfinal int count = 1;\n```\n\nچرا کدهای بالا از نظر final مشابه‌اند؟",
       "answers": [
         "B"
       ],

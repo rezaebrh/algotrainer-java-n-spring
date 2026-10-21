@@ -952,7 +952,7 @@
     {
       "id": "g2-deepening-043",
       "type": "mcq",
-      "prompt": "اگر متد `log(String s, boolean v)` فقط در صورت true شدن v چاپ کند، در `false && log(\"L\", true)` آیا log اجرا می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nlog(String s, boolean v)\nfalse && log(\"L\", true)\n```\n\nاگر متد کد بالا فقط در صورت true شدن v چاپ کند، در کد بالا آیا log اجرا می‌شود؟",
       "options": {
         "A": "بله چون هر دو operand باید evaluate شوند",
         "B": "خیر، short-circuit",

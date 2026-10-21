@@ -92,7 +92,7 @@
     {
       "id": "g3-overloading-005",
       "type": "mcq",
-      "prompt": "با `f(int x)` و `f(Integer x)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int x)\nf(Integer x)\n```\n\nبا کدهای بالا، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
       "answers": [
         "A"
       ],
@@ -117,7 +117,7 @@
     {
       "id": "g3-overloading-006",
       "type": "mcq",
-      "prompt": "با `f(long x)` و `f(Integer x)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(long x)\nf(Integer x)\n```\n\nبا کدهای بالا، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
       "answers": [
         "A"
       ],
@@ -143,7 +143,7 @@
     {
       "id": "g3-overloading-007",
       "type": "mcq",
-      "prompt": "با `f(int x)` و `f(int... xs)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int x)\nf(int... xs)\n```\n\nبا کدهای بالا، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
       "answers": [
         "A"
       ],
@@ -193,7 +193,7 @@
     {
       "id": "g3-overloading-009",
       "type": "mcq",
-      "prompt": "با overloadهای `f(String s)` و `f(Integer n)`، فراخوانی `f(null)` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(String s)\nf(Integer n)\nf(null)\n```\n\nبا overloadهای کدهای بالا، فراخوانی کد بالا چه می‌کند؟",
       "answers": [
         "B"
       ],
@@ -217,7 +217,7 @@
     {
       "id": "g3-overloading-010",
       "type": "mcq",
-      "prompt": "با `f(Object o)` و `f(String s)`، فراخوانی `f(null)` کدام را انتخاب می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(Object o)\nf(String s)\nf(null)\n```\n\nبا کدهای بالا، فراخوانی کد بالا کدام را انتخاب می‌کند؟",
       "answers": [
         "B"
       ],
@@ -242,7 +242,7 @@
     {
       "id": "g3-overloading-011",
       "type": "tf",
-      "prompt": "می‌توان در یک کلاس هم‌زمان `f(int... xs)` و `f(int[] xs)` تعریف کرد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int... xs)\nf(int[] xs)\n```\n\nمی‌توان در یک کلاس هم‌زمان کدهای بالا تعریف کرد.",
       "answers": [
         "false"
       ],
@@ -261,7 +261,7 @@
     {
       "id": "g3-overloading-012",
       "type": "mcq",
-      "prompt": "با `f(long x)` و `f(int... xs)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(long x)\nf(int... xs)\n```\n\nبا کدهای بالا، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
       "answers": [
         "A"
       ],
@@ -288,7 +288,7 @@
     {
       "id": "g3-overloading-013",
       "type": "mcq",
-      "prompt": "اگر `f(int)` و `f(int...)` هر دو موجود باشند، فراخوانی `f(5, 6)` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int)\nf(int...)\nf(5, 6)\n```\n\nاگر کدهای بالا هر دو موجود باشند، فراخوانی کد بالا چه می‌کند؟",
       "answers": [
         "B"
       ],
@@ -355,7 +355,7 @@
     {
       "id": "g3-overloading-016",
       "type": "mcq",
-      "prompt": "چرا `f(List<String> a)` و `f(List<Integer> b)` در Java به‌عنوان overload شناخته نمی‌شوند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(List<String> a)\nf(List<Integer> b)\n```\n\nچرا کدهای بالا در Java به‌عنوان overload شناخته نمی‌شوند؟",
       "answers": [
         "B"
       ],
@@ -380,7 +380,7 @@
     {
       "id": "g3-overloading-017",
       "type": "mcq",
-      "prompt": "برای literal `3.14f`، بین `f(float x)` و `f(double x)` کدام overload انتخاب می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(float x)\nf(double x)\n```\n\nبرای literal `3.14f`، بین کدهای بالا کدام overload انتخاب می‌شود؟",
       "answers": [
         "A"
       ],

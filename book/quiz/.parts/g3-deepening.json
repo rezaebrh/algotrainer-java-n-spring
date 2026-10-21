@@ -3,7 +3,7 @@
     {
       "id": "g3-deepening-001",
       "type": "mcq",
-      "prompt": "کدام method overload در `f(2147483648)` انتخاب می‌شود وقتی `void f(int)` و `void f(long)` هر دو موجود باشند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(2147483648)\nvoid f(int)\nvoid f(long)\n```\n\nکدام method overload در کد بالا انتخاب می‌شود وقتی کدهای بالا هر دو موجود باشند؟",
       "answers": [
         "B"
       ],
@@ -44,7 +44,7 @@
     {
       "id": "g3-deepening-003",
       "type": "mcq",
-      "prompt": "وقتی `void f(Object o)` و `void f(String s)` هر دو موجود و `f(null)` فراخوانی شود، کدام انتخاب می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(Object o)\nvoid f(String s)\nf(null)\n```\n\nوقتی کدهای بالا هر دو موجود و کد بالا فراخوانی شود، کدام انتخاب می‌شود؟",
       "answers": [
         "B"
       ],
@@ -67,7 +67,7 @@
     {
       "id": "g3-deepening-004",
       "type": "mcq",
-      "prompt": "`f(null)` در overload set `void f(String s)` و `void f(Integer i)` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(null)\nvoid f(String s)\nvoid f(Integer i)\n```\n\nکد بالا در overload set کدهای بالا چه رفتاری دارد؟",
       "answers": [
         "C"
       ],
@@ -91,7 +91,7 @@
     {
       "id": "g3-deepening-005",
       "type": "mcq",
-      "prompt": "وقتی overload `void f(int... vs)` و `f(int a, int b)` هر دو موجود و `f(1, 2)` فراخوانی شود، کدام برنده است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int... vs)\nf(int a, int b)\nf(1, 2)\n```\n\nوقتی overload کدهای بالا هر دو موجود و کد بالا فراخوانی شود، کدام برنده است؟",
       "answers": [
         "A"
       ],
@@ -331,7 +331,7 @@
     {
       "id": "g3-deepening-016",
       "type": "mcq",
-      "prompt": "وقتی `void f(String first, String... rest)` و `void f(String... all)` هر دو موجود باشند و `f(\"a\")` فراخوانی شود، کدام برنده است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(String first, String... rest)\nvoid f(String... all)\n```\n\nوقتی کدهای بالا هر دو موجود باشند و `f(\"a\")` فراخوانی شود، کدام برنده است؟",
       "answers": [
         "A"
       ],
@@ -355,7 +355,7 @@
     {
       "id": "g3-deepening-017",
       "type": "mcq",
-      "prompt": "اگر method فقط `void f(int x)` باشد، فراخوانی `f(1, 2)` چه می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int x)\nf(1, 2)\n```\n\nاگر method فقط کد بالا باشد، فراخوانی کد بالا چه می‌دهد؟",
       "answers": [
         "B"
       ],
@@ -377,7 +377,7 @@
     {
       "id": "g3-deepening-018",
       "type": "tf",
-      "prompt": "`void f(int... vs)` و `void f(int[] arr)` می‌توانند در یک کلاس همزمان define شوند چون در JVM یکسان‌اند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int... vs)\nvoid f(int[] arr)\n```\n\nکدهای بالا می‌توانند در یک کلاس همزمان define شوند چون در JVM یکسان‌اند.",
       "answers": [
         "false"
       ],
@@ -395,7 +395,7 @@
     {
       "id": "g3-deepening-019",
       "type": "blank",
-      "prompt": "برای صدا زدن متدی که `int... values` دارد با آرایهٔ موجود، از `f(____)` استفاده می‌کنیم.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint... values\nf(____)\n```\n\nبرای صدا زدن متدی که کد بالا دارد با آرایهٔ موجود، از کد بالا استفاده می‌کنیم.",
       "answers": [
         [
           "new int[]{}",
@@ -417,7 +417,7 @@
     {
       "id": "g3-deepening-020",
       "type": "mcq",
-      "prompt": "متد `int f(int... vs) { return vs.length; }` وقتی `f(1, 2, 3, 4)` فراخوانی شود چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint f(int... vs) { return vs.length; }\nf(1, 2, 3, 4)\n```\n\nمتد کد بالا وقتی کد بالا فراخوانی شود چه برمی‌گرداند؟",
       "answers": [
         "D"
       ],
@@ -509,7 +509,7 @@
     {
       "id": "g3-deepening-024",
       "type": "tf",
-      "prompt": "`int[] a = {1}; int[] b = a.clone(); a[0] = 9;` پس از آن `b[0]` برابر 1 است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] a = {1}; int[] b = a.clone(); a[0] = 9;\n```\n\nکد بالا پس از آن `b[0]` برابر 1 است.",
       "answers": [
         "true"
       ],
@@ -526,7 +526,7 @@
     {
       "id": "g3-deepening-025",
       "type": "mcq",
-      "prompt": "`Arrays.sort(intArr)` روی آرایهٔ نزولی مثل `{5,3,1,4}` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.sort(intArr)\n{5,3,1,4}\n```\n\nکد بالا روی آرایهٔ نزولی مثل کد بالا چه رفتاری دارد؟",
       "answers": [
         "B"
       ],
@@ -785,7 +785,7 @@
     {
       "id": "g3-deepening-037",
       "type": "mcq",
-      "prompt": "وقتی `f(int x)` و `f(Number n)` موجود است و `f(Integer.valueOf(5))` فراخوانی می‌شود، کدام؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int x)\nf(Number n)\nf(Integer.valueOf(5))\n```\n\nوقتی کدهای بالا موجود است و کد بالا فراخوانی می‌شود، کدام؟",
       "answers": [
         "A"
       ],
@@ -810,7 +810,7 @@
     {
       "id": "g3-deepening-038",
       "type": "blank",
-      "prompt": "وقتی method شما `void f(int a, int b, int... rest)` دارد، فراخوانی `f(1, 2)` معادل است با `f(1, 2, ____)` به‌طور ضمنی.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int a, int b, int... rest)\nf(1, 2)\nf(1, 2, ____)\n```\n\nوقتی method شما کد بالا دارد، فراخوانی کد بالا معادل است با کد بالا به‌طور ضمنی.",
       "answers": [
         [
           "new int[0]",
@@ -831,7 +831,7 @@
     {
       "id": "g3-deepening-039",
       "type": "tf",
-      "prompt": "اگر متد شما `int f(int a, int b)` است، فراخوانی `f(1)` کامپایل نمی‌شود چون تعداد آرگومان کم است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint f(int a, int b)\n```\n\nاگر متد شما کد بالا است، فراخوانی `f(1)` کامپایل نمی‌شود چون تعداد آرگومان کم است.",
       "answers": [
         "true"
       ],
@@ -942,7 +942,7 @@
     {
       "id": "g3-deepening-044",
       "type": "tf",
-      "prompt": "اگر متد شما `void f(Integer x)` و `void f(int x)` هر دو موجود باشند، فراخوانی `f(5)` بدون ambiguity به f(int) می‌رود چون exact match قبل از autoboxing است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(Integer x)\nvoid f(int x)\n```\n\nاگر متد شما کدهای بالا هر دو موجود باشند، فراخوانی `f(5)` بدون ambiguity به f(int) می‌رود چون exact match قبل از autoboxing است.",
       "answers": [
         "true"
       ],

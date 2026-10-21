@@ -416,7 +416,7 @@
     {
       "id": "g2-operators-021",
       "type": "blank",
-      "prompt": "در `int x=4;` value expression `x++` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x=4;\n```\n\nدر کد بالا value expression `x++` چیست؟",
       "answers": [
         "4"
       ],

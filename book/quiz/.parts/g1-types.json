@@ -369,7 +369,7 @@
     {
       "id": "g1-types-020",
       "type": "mcq",
-      "prompt": "در دو `new String(\"نو\")`، نتیجهٔ `a.equals(b)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew String(\"نو\")\na.equals(b)\n```\n\nدر دو کد بالا، نتیجهٔ کد بالا چیست؟",
       "options": {
         "A": "true",
         "B": "false",
@@ -388,7 +388,7 @@
     {
       "id": "g1-types-021",
       "type": "mcq",
-      "prompt": "در دو `new String(\"نو\")`، نتیجهٔ `a == b` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew String(\"نو\")\n```\n\nدر دو کد بالا، نتیجهٔ `a == b` چیست؟",
       "options": {
         "A": "false",
         "B": "true",

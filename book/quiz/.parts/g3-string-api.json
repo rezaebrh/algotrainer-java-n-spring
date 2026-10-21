@@ -7,7 +7,7 @@
       "answers": [
         "A"
       ],
-      "explanation": "`length()` متد نمونهٔ String است و یک int برمی‌گرداند.",
+      "explanation": "کد زیر را در نظر بگیرید:\n\n```java\nlength()\n```\n\nکد بالا متد نمونهٔ String است و یک int برمی‌گرداند.",
       "concepts": [
         "String",
         "length"
@@ -30,7 +30,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "`arr.length` فیلد آرایه است و بدون پرانتز نوشته می‌شود؛ `s.length()` متد نمونهٔ String است و با پرانتز فراخوانی می‌شود.",
+      "explanation": "`arr.length` فیلد آرایه است و بدون پرانتز نوشته می‌شود؛ کد زیر را در نظر بگیرید:\n\n```java\ns.length()\n```\n\nکد بالا متد نمونهٔ String است و با پرانتز فراخوانی می‌شود.",
       "concepts": [
         "String",
         "arrays",
@@ -92,7 +92,7 @@
     {
       "id": "g3-string-api-005",
       "type": "mcq",
-      "prompt": "اگر `s = \"abc\"` باشد، خروجی `s.charAt(0)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns = \"abc\"\ns.charAt(0)\n```\n\nاگر کد بالا باشد، خروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -156,7 +156,7 @@
     {
       "id": "g3-string-api-008",
       "type": "mcq",
-      "prompt": "اگر `s = \"hello\"` باشد، خروجی `s.substring(1, 4)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns = \"hello\"\ns.substring(1, 4)\n```\n\nاگر کد بالا باشد، خروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -219,7 +219,7 @@
     {
       "id": "g3-string-api-011",
       "type": "mcq",
-      "prompt": "اگر `s = \"Java\"` باشد، خروجی `s.indexOf('a')` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns = \"Java\"\ns.indexOf('a')\n```\n\nاگر کد بالا باشد، خروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -242,7 +242,7 @@
     {
       "id": "g3-string-api-012",
       "type": "mcq",
-      "prompt": "اگر `s = \"ababab\"` باشد، خروجی `s.indexOf(\"a\", 3)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns = \"ababab\"\ns.indexOf(\"a\", 3)\n```\n\nاگر کد بالا باشد، خروجی کد بالا چیست؟",
       "answers": [
         "D"
       ],
@@ -350,7 +350,7 @@
     {
       "id": "g3-string-api-017",
       "type": "mcq",
-      "prompt": "رابطهٔ `s.contains(t)` با `s.indexOf(t) >= 0` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns.contains(t)\ns.indexOf(t) >= 0\n```\n\nرابطهٔ کدهای بالا چیست؟",
       "answers": [
         "B"
       ],

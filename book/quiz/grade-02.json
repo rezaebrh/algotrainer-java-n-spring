@@ -168,7 +168,7 @@
     {
       "id": "g2-comparison-009",
       "type": "mcq",
-      "prompt": "اگر `int a=2; long b=2L;` باشد، `a == b` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint a=2; long b=2L;\n```\n\nاگر کد بالا باشد، `a == b` چیست؟",
       "answers": [
         "B"
       ],
@@ -1805,7 +1805,7 @@
     {
       "id": "g2-deepening-043",
       "type": "mcq",
-      "prompt": "اگر متد `log(String s, boolean v)` فقط در صورت true شدن v چاپ کند، در `false && log(\"L\", true)` آیا log اجرا می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nlog(String s, boolean v)\nfalse && log(\"L\", true)\n```\n\nاگر متد کد بالا فقط در صورت true شدن v چاپ کند، در کد بالا آیا log اجرا می‌شود؟",
       "options": {
         "A": "بله چون هر دو operand باید evaluate شوند",
         "B": "خیر، short-circuit",
@@ -2279,7 +2279,7 @@
       "answers": [
         "true"
       ],
-      "explanation": "syntax label برابر `name: statement` است.",
+      "explanation": "syntax label برابر کد زیر را در نظر بگیرید:\n\n```java\nname: statement\n```\n\nکد بالا است.",
       "concepts": [
         "labels"
       ],
@@ -3989,7 +3989,7 @@
     {
       "id": "g2-operators-021",
       "type": "blank",
-      "prompt": "در `int x=4;` value expression `x++` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint x=4;\n```\n\nدر کد بالا value expression `x++` چیست؟",
       "answers": [
         "4"
       ],

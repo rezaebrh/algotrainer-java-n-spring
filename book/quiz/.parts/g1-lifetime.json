@@ -473,7 +473,7 @@
     {
       "id": "g1-lifetime-025",
       "type": "multi",
-      "prompt": "برای `setNull(box)` در `static void setNull(Object p) { p = null; }` کدام موارد درست‌اند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nsetNull(box)\nstatic void setNull(Object p) { p = null; }\n```\n\nبرای کد بالا در کد بالا کدام موارد درست‌اند؟",
       "options": {
         "A": "p کپی مقدار reference box را می‌گیرد.",
         "B": "p = null باعث null شدن box می‌شود.",

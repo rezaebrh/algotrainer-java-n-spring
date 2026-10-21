@@ -7,7 +7,7 @@
       "answers": [
         "A"
       ],
-      "explanation": "شکل `int[] a` استاندارد مدرن است و نوع آرایه به‌وضوح به متغیر چسبیده است؛ شکل `int a[]` صرفاً برای سازگاری با کدهای قدیمی C باقی مانده است.",
+      "explanation": "شکل کد زیر را در نظر بگیرید:\n\n```java\nint[] a\n```\n\nکد بالا استاندارد مدرن است و نوع آرایه به‌وضوح به متغیر چسبیده است؛ شکل کد زیر را در نظر بگیرید:\n\n```java\nint a[]\n```\n\nکد بالا صرفاً برای سازگاری با کدهای قدیمی C باقی مانده است.",
       "concepts": [
         "arrays",
         "declaration"
@@ -43,7 +43,7 @@
     {
       "id": "g3-arrays-003",
       "type": "mcq",
-      "prompt": "پس از `int[] a = new int[5];` مقدار اولیهٔ `a[2]` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] a = new int[5];\n```\n\nپس از کد بالا مقدار اولیهٔ `a[2]` چیست؟",
       "answers": [
         "B"
       ],
@@ -67,7 +67,7 @@
     {
       "id": "g3-arrays-004",
       "type": "mcq",
-      "prompt": "پس از `String[] s = new String[3];` مقدار اولیهٔ `s[0]` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString[] s = new String[3];\n```\n\nپس از کد بالا مقدار اولیهٔ `s[0]` چیست؟",
       "answers": [
         "D"
       ],
@@ -119,7 +119,7 @@
       "answers": [
         "true"
       ],
-      "explanation": "شکل کوتاه initializer تنها در اعلام متغیر مجاز است؛ برای تخصیص بعدی باید از `new int[]{...}` استفاده کرد.",
+      "explanation": "شکل کوتاه initializer تنها در اعلام متغیر مجاز است؛ برای تخصیص بعدی باید از کد زیر را در نظر بگیرید:\n\n```java\nnew int[]{...}\n```\n\nکد بالا استفاده کرد.",
       "concepts": [
         "arrays",
         "initializer"
@@ -132,11 +132,11 @@
     {
       "id": "g3-arrays-007",
       "type": "mcq",
-      "prompt": "تفاوت `new int[]{1, 2, 3}` با `{1, 2, 3}` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew int[]{1, 2, 3}\n{1, 2, 3}\n```\n\nتفاوت کدهای بالا چیست؟",
       "answers": [
         "A"
       ],
-      "explanation": "شکل `new int[]{...}` آرایهٔ بی‌نام می‌سازد و در هر جایی، از جمله آرگومان متد یا تخصیص بعدی، قابل استفاده است.",
+      "explanation": "شکل کد زیر را در نظر بگیرید:\n\n```java\nnew int[]{...}\n```\n\nکد بالا آرایهٔ بی‌نام می‌سازد و در هر جایی، از جمله آرگومان متد یا تخصیص بعدی، قابل استفاده است.",
       "concepts": [
         "arrays",
         "anonymous-array"
@@ -159,7 +159,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "`length` فیلد final عمومی آرایه است و بدون پرانتز خوانده می‌شود؛ این با `String.length()` و `List.size()` متفاوت است.",
+      "explanation": "`length` فیلد final عمومی آرایه است و بدون پرانتز خوانده می‌شود؛ این با کد زیر را در نظر بگیرید:\n\n```java\nString.length()\nList.size()\n```\n\nکد بالا متفاوت است.",
       "concepts": [
         "arrays",
         "length"
@@ -178,7 +178,7 @@
     {
       "id": "g3-arrays-009",
       "type": "mcq",
-      "prompt": "کدام دربارهٔ `arr.length`، `s.length()` و `list.size()` درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns.length()\nlist.size()\n```\n\nکدام دربارهٔ `arr.length`، کدهای بالا درست است؟",
       "answers": [
         "D"
       ],
@@ -247,7 +247,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "شرط `<=` به جای `<` یک اندیس بیش از حد می‌دهد و در تکرار آخر `a[a.length]` خطای out of bounds می‌دهد.",
+      "explanation": "شرط `<=` به جای `<` یک اندیس بیش از حد می‌دهد و در تکرار آخر کد زیر را در نظر بگیرید:\n\n```java\na[a.length]\n```\n\nکد بالا خطای out of bounds می‌دهد.",
       "concepts": [
         "arrays",
         "loops"
@@ -486,7 +486,7 @@
     {
       "id": "g3-arrays-023",
       "type": "mcq",
-      "prompt": "تفاوت `==` با `Arrays.equals(a, b)` برای آرایه چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n==\nArrays.equals(a, b)\n```\n\nتفاوت کدهای بالا برای آرایه چیست؟",
       "answers": [
         "B"
       ],

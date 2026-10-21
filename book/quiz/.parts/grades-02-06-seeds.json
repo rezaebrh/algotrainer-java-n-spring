@@ -958,7 +958,7 @@
       "answers": [
         "name()"
       ],
-      "explanation": "برای `record User(String name)` accessor همان name() است.",
+      "explanation": "برای کد زیر را در نظر بگیرید:\n\n```java\nrecord User(String name)\n```\n\nکد بالا accessor همان name() است.",
       "concepts": [
         "records"
       ],

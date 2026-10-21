@@ -166,7 +166,7 @@
     {
       "id": "g2-comparison-009",
       "type": "mcq",
-      "prompt": "اگر `int a=2; long b=2L;` باشد، `a == b` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint a=2; long b=2L;\n```\n\nاگر کد بالا باشد، `a == b` چیست؟",
       "answers": [
         "B"
       ],

@@ -28,7 +28,7 @@
     {
       "id": "g11-seed-002",
       "type": "blank",
-      "prompt": "برای گرفتن بخش `{id}` از مسیر `/users/{id}` از annotation ____ استفاده می‌شود.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n/users/{id}\n```\n\nبرای گرفتن بخش `{id}` از مسیر کد بالا از annotation ____ استفاده می‌شود.",
       "answers": [
         "@PathVariable"
       ],

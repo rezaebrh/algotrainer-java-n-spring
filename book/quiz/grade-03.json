@@ -9,7 +9,7 @@
       "answers": [
         "A"
       ],
-      "explanation": "شکل `int[] a` استاندارد مدرن است و نوع آرایه به‌وضوح به متغیر چسبیده است؛ شکل `int a[]` صرفاً برای سازگاری با کدهای قدیمی C باقی مانده است.",
+      "explanation": "شکل کد زیر را در نظر بگیرید:\n\n```java\nint[] a\n```\n\nکد بالا استاندارد مدرن است و نوع آرایه به‌وضوح به متغیر چسبیده است؛ شکل کد زیر را در نظر بگیرید:\n\n```java\nint a[]\n```\n\nکد بالا صرفاً برای سازگاری با کدهای قدیمی C باقی مانده است.",
       "concepts": [
         "arrays",
         "declaration"
@@ -45,7 +45,7 @@
     {
       "id": "g3-arrays-003",
       "type": "mcq",
-      "prompt": "پس از `int[] a = new int[5];` مقدار اولیهٔ `a[2]` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] a = new int[5];\n```\n\nپس از کد بالا مقدار اولیهٔ `a[2]` چیست؟",
       "answers": [
         "B"
       ],
@@ -69,7 +69,7 @@
     {
       "id": "g3-arrays-004",
       "type": "mcq",
-      "prompt": "پس از `String[] s = new String[3];` مقدار اولیهٔ `s[0]` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nString[] s = new String[3];\n```\n\nپس از کد بالا مقدار اولیهٔ `s[0]` چیست؟",
       "answers": [
         "D"
       ],
@@ -121,7 +121,7 @@
       "answers": [
         "true"
       ],
-      "explanation": "شکل کوتاه initializer تنها در اعلام متغیر مجاز است؛ برای تخصیص بعدی باید از `new int[]{...}` استفاده کرد.",
+      "explanation": "شکل کوتاه initializer تنها در اعلام متغیر مجاز است؛ برای تخصیص بعدی باید از کد زیر را در نظر بگیرید:\n\n```java\nnew int[]{...}\n```\n\nکد بالا استفاده کرد.",
       "concepts": [
         "arrays",
         "initializer"
@@ -134,11 +134,11 @@
     {
       "id": "g3-arrays-007",
       "type": "mcq",
-      "prompt": "تفاوت `new int[]{1, 2, 3}` با `{1, 2, 3}` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nnew int[]{1, 2, 3}\n{1, 2, 3}\n```\n\nتفاوت کدهای بالا چیست؟",
       "answers": [
         "A"
       ],
-      "explanation": "شکل `new int[]{...}` آرایهٔ بی‌نام می‌سازد و در هر جایی، از جمله آرگومان متد یا تخصیص بعدی، قابل استفاده است.",
+      "explanation": "شکل کد زیر را در نظر بگیرید:\n\n```java\nnew int[]{...}\n```\n\nکد بالا آرایهٔ بی‌نام می‌سازد و در هر جایی، از جمله آرگومان متد یا تخصیص بعدی، قابل استفاده است.",
       "concepts": [
         "arrays",
         "anonymous-array"
@@ -161,7 +161,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "`length` فیلد final عمومی آرایه است و بدون پرانتز خوانده می‌شود؛ این با `String.length()` و `List.size()` متفاوت است.",
+      "explanation": "`length` فیلد final عمومی آرایه است و بدون پرانتز خوانده می‌شود؛ این با کد زیر را در نظر بگیرید:\n\n```java\nString.length()\nList.size()\n```\n\nکد بالا متفاوت است.",
       "concepts": [
         "arrays",
         "length"
@@ -180,7 +180,7 @@
     {
       "id": "g3-arrays-009",
       "type": "mcq",
-      "prompt": "کدام دربارهٔ `arr.length`، `s.length()` و `list.size()` درست است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns.length()\nlist.size()\n```\n\nکدام دربارهٔ `arr.length`، کدهای بالا درست است؟",
       "answers": [
         "D"
       ],
@@ -249,7 +249,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "شرط `<=` به جای `<` یک اندیس بیش از حد می‌دهد و در تکرار آخر `a[a.length]` خطای out of bounds می‌دهد.",
+      "explanation": "شرط `<=` به جای `<` یک اندیس بیش از حد می‌دهد و در تکرار آخر کد زیر را در نظر بگیرید:\n\n```java\na[a.length]\n```\n\nکد بالا خطای out of bounds می‌دهد.",
       "concepts": [
         "arrays",
         "loops"
@@ -488,7 +488,7 @@
     {
       "id": "g3-arrays-023",
       "type": "mcq",
-      "prompt": "تفاوت `==` با `Arrays.equals(a, b)` برای آرایه چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\n==\nArrays.equals(a, b)\n```\n\nتفاوت کدهای بالا برای آرایه چیست؟",
       "answers": [
         "B"
       ],
@@ -627,7 +627,7 @@
     {
       "id": "g3-deepening-001",
       "type": "mcq",
-      "prompt": "کدام method overload در `f(2147483648)` انتخاب می‌شود وقتی `void f(int)` و `void f(long)` هر دو موجود باشند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(2147483648)\nvoid f(int)\nvoid f(long)\n```\n\nکدام method overload در کد بالا انتخاب می‌شود وقتی کدهای بالا هر دو موجود باشند؟",
       "answers": [
         "B"
       ],
@@ -668,7 +668,7 @@
     {
       "id": "g3-deepening-003",
       "type": "mcq",
-      "prompt": "وقتی `void f(Object o)` و `void f(String s)` هر دو موجود و `f(null)` فراخوانی شود، کدام انتخاب می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(Object o)\nvoid f(String s)\nf(null)\n```\n\nوقتی کدهای بالا هر دو موجود و کد بالا فراخوانی شود، کدام انتخاب می‌شود؟",
       "answers": [
         "B"
       ],
@@ -691,7 +691,7 @@
     {
       "id": "g3-deepening-004",
       "type": "mcq",
-      "prompt": "`f(null)` در overload set `void f(String s)` و `void f(Integer i)` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(null)\nvoid f(String s)\nvoid f(Integer i)\n```\n\nکد بالا در overload set کدهای بالا چه رفتاری دارد؟",
       "answers": [
         "C"
       ],
@@ -715,7 +715,7 @@
     {
       "id": "g3-deepening-005",
       "type": "mcq",
-      "prompt": "وقتی overload `void f(int... vs)` و `f(int a, int b)` هر دو موجود و `f(1, 2)` فراخوانی شود، کدام برنده است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int... vs)\nf(int a, int b)\nf(1, 2)\n```\n\nوقتی overload کدهای بالا هر دو موجود و کد بالا فراخوانی شود، کدام برنده است؟",
       "answers": [
         "A"
       ],
@@ -955,7 +955,7 @@
     {
       "id": "g3-deepening-016",
       "type": "mcq",
-      "prompt": "وقتی `void f(String first, String... rest)` و `void f(String... all)` هر دو موجود باشند و `f(\"a\")` فراخوانی شود، کدام برنده است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(String first, String... rest)\nvoid f(String... all)\n```\n\nوقتی کدهای بالا هر دو موجود باشند و `f(\"a\")` فراخوانی شود، کدام برنده است؟",
       "answers": [
         "A"
       ],
@@ -979,7 +979,7 @@
     {
       "id": "g3-deepening-017",
       "type": "mcq",
-      "prompt": "اگر method فقط `void f(int x)` باشد، فراخوانی `f(1, 2)` چه می‌دهد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int x)\nf(1, 2)\n```\n\nاگر method فقط کد بالا باشد، فراخوانی کد بالا چه می‌دهد؟",
       "answers": [
         "B"
       ],
@@ -1001,7 +1001,7 @@
     {
       "id": "g3-deepening-018",
       "type": "tf",
-      "prompt": "`void f(int... vs)` و `void f(int[] arr)` می‌توانند در یک کلاس همزمان define شوند چون در JVM یکسان‌اند.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int... vs)\nvoid f(int[] arr)\n```\n\nکدهای بالا می‌توانند در یک کلاس همزمان define شوند چون در JVM یکسان‌اند.",
       "answers": [
         "false"
       ],
@@ -1019,7 +1019,7 @@
     {
       "id": "g3-deepening-019",
       "type": "blank",
-      "prompt": "برای صدا زدن متدی که `int... values` دارد با آرایهٔ موجود، از `f(____)` استفاده می‌کنیم.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint... values\nf(____)\n```\n\nبرای صدا زدن متدی که کد بالا دارد با آرایهٔ موجود، از کد بالا استفاده می‌کنیم.",
       "answers": [
         "['new int[]{}', 'new int[]{...}', 'new int[]{0}']"
       ],
@@ -1037,7 +1037,7 @@
     {
       "id": "g3-deepening-020",
       "type": "mcq",
-      "prompt": "متد `int f(int... vs) { return vs.length; }` وقتی `f(1, 2, 3, 4)` فراخوانی شود چه برمی‌گرداند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint f(int... vs) { return vs.length; }\nf(1, 2, 3, 4)\n```\n\nمتد کد بالا وقتی کد بالا فراخوانی شود چه برمی‌گرداند؟",
       "answers": [
         "D"
       ],
@@ -1129,7 +1129,7 @@
     {
       "id": "g3-deepening-024",
       "type": "tf",
-      "prompt": "`int[] a = {1}; int[] b = a.clone(); a[0] = 9;` پس از آن `b[0]` برابر 1 است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint[] a = {1}; int[] b = a.clone(); a[0] = 9;\n```\n\nکد بالا پس از آن `b[0]` برابر 1 است.",
       "answers": [
         "true"
       ],
@@ -1146,7 +1146,7 @@
     {
       "id": "g3-deepening-025",
       "type": "mcq",
-      "prompt": "`Arrays.sort(intArr)` روی آرایهٔ نزولی مثل `{5,3,1,4}` چه رفتاری دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nArrays.sort(intArr)\n{5,3,1,4}\n```\n\nکد بالا روی آرایهٔ نزولی مثل کد بالا چه رفتاری دارد؟",
       "answers": [
         "B"
       ],
@@ -1405,7 +1405,7 @@
     {
       "id": "g3-deepening-037",
       "type": "mcq",
-      "prompt": "وقتی `f(int x)` و `f(Number n)` موجود است و `f(Integer.valueOf(5))` فراخوانی می‌شود، کدام؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int x)\nf(Number n)\nf(Integer.valueOf(5))\n```\n\nوقتی کدهای بالا موجود است و کد بالا فراخوانی می‌شود، کدام؟",
       "answers": [
         "A"
       ],
@@ -1430,7 +1430,7 @@
     {
       "id": "g3-deepening-038",
       "type": "blank",
-      "prompt": "وقتی method شما `void f(int a, int b, int... rest)` دارد، فراخوانی `f(1, 2)` معادل است با `f(1, 2, ____)` به‌طور ضمنی.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(int a, int b, int... rest)\nf(1, 2)\nf(1, 2, ____)\n```\n\nوقتی method شما کد بالا دارد، فراخوانی کد بالا معادل است با کد بالا به‌طور ضمنی.",
       "answers": [
         "['new int[0]', 'new int[]{}']"
       ],
@@ -1448,7 +1448,7 @@
     {
       "id": "g3-deepening-039",
       "type": "tf",
-      "prompt": "اگر متد شما `int f(int a, int b)` است، فراخوانی `f(1)` کامپایل نمی‌شود چون تعداد آرگومان کم است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nint f(int a, int b)\n```\n\nاگر متد شما کد بالا است، فراخوانی `f(1)` کامپایل نمی‌شود چون تعداد آرگومان کم است.",
       "answers": [
         "true"
       ],
@@ -1559,7 +1559,7 @@
     {
       "id": "g3-deepening-044",
       "type": "tf",
-      "prompt": "اگر متد شما `void f(Integer x)` و `void f(int x)` هر دو موجود باشند، فراخوانی `f(5)` بدون ambiguity به f(int) می‌رود چون exact match قبل از autoboxing است.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nvoid f(Integer x)\nvoid f(int x)\n```\n\nاگر متد شما کدهای بالا هر دو موجود باشند، فراخوانی `f(5)` بدون ambiguity به f(int) می‌رود چون exact match قبل از autoboxing است.",
       "answers": [
         "true"
       ],
@@ -1867,7 +1867,7 @@
       "answers": [
         "false"
       ],
-      "explanation": "Math.random بازهٔ `[0.0, 1.0)` تولید می‌کند و عدد 1.0 در آن بازه نیست؛ تنها 0.0 ممکن است تولید شود.",
+      "explanation": "Math.random بازهٔ کد زیر را در نظر بگیرید:\n\n```java\n[0.0, 1.0)\n```\n\nکد بالا تولید می‌کند و عدد 1.0 در آن بازه نیست؛ تنها 0.0 ممکن است تولید شود.",
       "concepts": [
         "Math",
         "random"
@@ -1931,7 +1931,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "floorDiv و floorMod تقسیم و باقیمانده را به‌گونه‌ای تعریف می‌کنند که همواره `a == (a / b) * b + (a % b)` برقرار باشد، حتی برای ورودی منفی.",
+      "explanation": "floorDiv و floorMod تقسیم و باقیمانده را به‌گونه‌ای تعریف می‌کنند که همواره کد زیر را در نظر بگیرید:\n\n```java\na == (a / b) * b + (a % b)\n```\n\nکد بالا برقرار باشد، حتی برای ورودی منفی.",
       "concepts": [
         "Math",
         "integer-division"
@@ -1954,7 +1954,7 @@
       "answers": [
         "D"
       ],
-      "explanation": "sin آرگومان را بر حسب رادیان می‌گیرد نه درجه؛ برای تبدیل درجه به رادیان باید در `Math.PI / 180` ضرب کرد.",
+      "explanation": "sin آرگومان را بر حسب رادیان می‌گیرد نه درجه؛ برای تبدیل درجه به رادیان باید در کد زیر را در نظر بگیرید:\n\n```java\nMath.PI / 180\n```\n\nکد بالا ضرب کرد.",
       "concepts": [
         "Math",
         "trigonometry"
@@ -1977,7 +1977,7 @@
       "answers": [
         "A"
       ],
-      "explanation": "atan2 زاویهٔ بردار (x, y) را نسبت به محور x مثبت بر حسب رادیان در بازهٔ `(-π, π]` برمی‌گرداند و برای تقسیم‌بندی چهارربع صفحه مناسب است.",
+      "explanation": "atan2 زاویهٔ بردار (x, y) را نسبت به محور x مثبت بر حسب رادیان در بازهٔ کد زیر را در نظر بگیرید:\n\n```java\n(-π, π]\n```\n\nکد بالا برمی‌گرداند و برای تقسیم‌بندی چهارربع صفحه مناسب است.",
       "concepts": [
         "Math",
         "trigonometry"
@@ -1996,7 +1996,7 @@
     {
       "id": "g3-math-018",
       "type": "mcq",
-      "prompt": "چرا `Math.hypot(x, y)` بهتر از `Math.sqrt(x*x + y*y)` است؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nMath.hypot(x, y)\nMath.sqrt(x*x + y*y)\n```\n\nچرا کد بالا بهتر از کد بالا است؟",
       "answers": [
         "C"
       ],
@@ -2087,7 +2087,7 @@
       "answers": [
         "false"
       ],
-      "explanation": "early return در void فقط با `return;` بدون expression مجاز است.",
+      "explanation": "early return در void فقط با کد زیر را در نظر بگیرید:\n\n```java\nreturn;\n```\n\nکد بالا بدون expression مجاز است.",
       "concepts": [
         "void",
         "return"
@@ -2422,7 +2422,7 @@
     {
       "id": "g3-methods-020",
       "type": "mcq",
-      "prompt": "برای فراخوانی `log(\"a\", \"b\", \"c\")` وقتی log به‌صورت `void log(String... items)` تعریف شده:",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nlog(\"a\", \"b\", \"c\")\nvoid log(String... items)\n```\n\nبرای فراخوانی کد بالا وقتی log به‌صورت کد بالا تعریف شده:",
       "answers": [
         "B"
       ],
@@ -2469,7 +2469,7 @@
     {
       "id": "g3-methods-022",
       "type": "mcq",
-      "prompt": "با `f(int a, int b)` و `f(int... vs)` کدام فراخوانی ابهام دارد؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int a, int b)\nf(int... vs)\n```\n\nبا کدهای بالا کدام فراخوانی ابهام دارد؟",
       "answers": [
         "B"
       ],
@@ -2644,7 +2644,7 @@
     {
       "id": "g3-overloading-005",
       "type": "mcq",
-      "prompt": "با `f(int x)` و `f(Integer x)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int x)\nf(Integer x)\n```\n\nبا کدهای بالا، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
       "answers": [
         "A"
       ],
@@ -2669,7 +2669,7 @@
     {
       "id": "g3-overloading-006",
       "type": "mcq",
-      "prompt": "با `f(long x)` و `f(Integer x)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(long x)\nf(Integer x)\n```\n\nبا کدهای بالا، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
       "answers": [
         "A"
       ],
@@ -2695,7 +2695,7 @@
     {
       "id": "g3-overloading-007",
       "type": "mcq",
-      "prompt": "با `f(int x)` و `f(int... xs)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int x)\nf(int... xs)\n```\n\nبا کدهای بالا، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
       "answers": [
         "A"
       ],
@@ -2745,7 +2745,7 @@
     {
       "id": "g3-overloading-009",
       "type": "mcq",
-      "prompt": "با overloadهای `f(String s)` و `f(Integer n)`، فراخوانی `f(null)` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(String s)\nf(Integer n)\nf(null)\n```\n\nبا overloadهای کدهای بالا، فراخوانی کد بالا چه می‌کند؟",
       "answers": [
         "B"
       ],
@@ -2769,7 +2769,7 @@
     {
       "id": "g3-overloading-010",
       "type": "mcq",
-      "prompt": "با `f(Object o)` و `f(String s)`، فراخوانی `f(null)` کدام را انتخاب می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(Object o)\nf(String s)\nf(null)\n```\n\nبا کدهای بالا، فراخوانی کد بالا کدام را انتخاب می‌کند؟",
       "answers": [
         "B"
       ],
@@ -2794,7 +2794,7 @@
     {
       "id": "g3-overloading-011",
       "type": "tf",
-      "prompt": "می‌توان در یک کلاس هم‌زمان `f(int... xs)` و `f(int[] xs)` تعریف کرد.",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int... xs)\nf(int[] xs)\n```\n\nمی‌توان در یک کلاس هم‌زمان کدهای بالا تعریف کرد.",
       "answers": [
         "false"
       ],
@@ -2813,7 +2813,7 @@
     {
       "id": "g3-overloading-012",
       "type": "mcq",
-      "prompt": "با `f(long x)` و `f(int... xs)`، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(long x)\nf(int... xs)\n```\n\nبا کدهای بالا، فراخوانی `f(5)` کدام را انتخاب می‌کند؟",
       "answers": [
         "A"
       ],
@@ -2840,7 +2840,7 @@
     {
       "id": "g3-overloading-013",
       "type": "mcq",
-      "prompt": "اگر `f(int)` و `f(int...)` هر دو موجود باشند، فراخوانی `f(5, 6)` چه می‌کند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(int)\nf(int...)\nf(5, 6)\n```\n\nاگر کدهای بالا هر دو موجود باشند، فراخوانی کد بالا چه می‌کند؟",
       "answers": [
         "B"
       ],
@@ -2907,7 +2907,7 @@
     {
       "id": "g3-overloading-016",
       "type": "mcq",
-      "prompt": "چرا `f(List<String> a)` و `f(List<Integer> b)` در Java به‌عنوان overload شناخته نمی‌شوند؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(List<String> a)\nf(List<Integer> b)\n```\n\nچرا کدهای بالا در Java به‌عنوان overload شناخته نمی‌شوند؟",
       "answers": [
         "B"
       ],
@@ -2932,7 +2932,7 @@
     {
       "id": "g3-overloading-017",
       "type": "mcq",
-      "prompt": "برای literal `3.14f`، بین `f(float x)` و `f(double x)` کدام overload انتخاب می‌شود؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\nf(float x)\nf(double x)\n```\n\nبرای literal `3.14f`، بین کدهای بالا کدام overload انتخاب می‌شود؟",
       "answers": [
         "A"
       ],
@@ -3753,7 +3753,7 @@
       "answers": [
         "A"
       ],
-      "explanation": "`length()` متد نمونهٔ String است و یک int برمی‌گرداند.",
+      "explanation": "کد زیر را در نظر بگیرید:\n\n```java\nlength()\n```\n\nکد بالا متد نمونهٔ String است و یک int برمی‌گرداند.",
       "concepts": [
         "String",
         "length"
@@ -3776,7 +3776,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "`arr.length` فیلد آرایه است و بدون پرانتز نوشته می‌شود؛ `s.length()` متد نمونهٔ String است و با پرانتز فراخوانی می‌شود.",
+      "explanation": "`arr.length` فیلد آرایه است و بدون پرانتز نوشته می‌شود؛ کد زیر را در نظر بگیرید:\n\n```java\ns.length()\n```\n\nکد بالا متد نمونهٔ String است و با پرانتز فراخوانی می‌شود.",
       "concepts": [
         "String",
         "arrays",
@@ -3838,7 +3838,7 @@
     {
       "id": "g3-string-api-005",
       "type": "mcq",
-      "prompt": "اگر `s = \"abc\"` باشد، خروجی `s.charAt(0)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns = \"abc\"\ns.charAt(0)\n```\n\nاگر کد بالا باشد، خروجی کد بالا چیست؟",
       "answers": [
         "A"
       ],
@@ -3902,7 +3902,7 @@
     {
       "id": "g3-string-api-008",
       "type": "mcq",
-      "prompt": "اگر `s = \"hello\"` باشد، خروجی `s.substring(1, 4)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns = \"hello\"\ns.substring(1, 4)\n```\n\nاگر کد بالا باشد، خروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -3965,7 +3965,7 @@
     {
       "id": "g3-string-api-011",
       "type": "mcq",
-      "prompt": "اگر `s = \"Java\"` باشد، خروجی `s.indexOf('a')` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns = \"Java\"\ns.indexOf('a')\n```\n\nاگر کد بالا باشد، خروجی کد بالا چیست؟",
       "answers": [
         "B"
       ],
@@ -3988,7 +3988,7 @@
     {
       "id": "g3-string-api-012",
       "type": "mcq",
-      "prompt": "اگر `s = \"ababab\"` باشد، خروجی `s.indexOf(\"a\", 3)` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns = \"ababab\"\ns.indexOf(\"a\", 3)\n```\n\nاگر کد بالا باشد، خروجی کد بالا چیست؟",
       "answers": [
         "D"
       ],
@@ -4096,7 +4096,7 @@
     {
       "id": "g3-string-api-017",
       "type": "mcq",
-      "prompt": "رابطهٔ `s.contains(t)` با `s.indexOf(t) >= 0` چیست؟",
+      "prompt": "کد زیر را در نظر بگیرید:\n\n```java\ns.contains(t)\ns.indexOf(t) >= 0\n```\n\nرابطهٔ کدهای بالا چیست؟",
       "answers": [
         "B"
       ],
