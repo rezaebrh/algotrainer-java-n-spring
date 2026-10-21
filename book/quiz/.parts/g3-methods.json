@@ -71,7 +71,7 @@
       "answers": [
         "false"
       ],
-      "explanation": "early return در void فقط با کد زیر را در نظر بگیرید:\n\n```java\nreturn;\n```\n\nکد بالا بدون expression مجاز است.",
+      "explanation": "در متد void، خروج زودهنگام فقط با دستور زیر و بدون expression مجاز است:\n\n```java\nreturn;\n```",
       "concepts": [
         "void",
         "return"

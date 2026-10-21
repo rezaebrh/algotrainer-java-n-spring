@@ -121,7 +121,7 @@
       "answers": [
         "true"
       ],
-      "explanation": "شکل کوتاه initializer تنها در اعلام متغیر مجاز است؛ برای تخصیص بعدی باید از کد زیر را در نظر بگیرید:\n\n```java\nnew int[]{...}\n```\n\nکد بالا استفاده کرد.",
+      "explanation": "شکل کوتاه initializer تنها در اعلام متغیر مجاز است؛ برای تخصیص بعدی باید از کد زیر استفاده کرد:\n\n```java\nnew int[]{...}\n```",
       "concepts": [
         "arrays",
         "initializer"
@@ -161,7 +161,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "`length` فیلد final عمومی آرایه است و بدون پرانتز خوانده می‌شود؛ این با کد زیر را در نظر بگیرید:\n\n```java\nString.length()\nList.size()\n```\n\nکد بالا متفاوت است.",
+      "explanation": "`length` فیلد final عمومی آرایه است و بدون پرانتز خوانده می‌شود؛ در حالی که متدهای نمونهٔ String و List با پرانتز فراخوانی می‌شوند:\n\n```java\nString.length()\nList.size()\n```",
       "concepts": [
         "arrays",
         "length"
@@ -249,7 +249,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "شرط `<=` به جای `<` یک اندیس بیش از حد می‌دهد و در تکرار آخر کد زیر را در نظر بگیرید:\n\n```java\na[a.length]\n```\n\nکد بالا خطای out of bounds می‌دهد.",
+      "explanation": "شرط `<=` به جای `<` یک اندیس بیش از حد می‌دهد و در تکرار آخر:\n\n```java\na[a.length]\n```\n\nخطای out of bounds رخ می‌دهد.",
       "concepts": [
         "arrays",
         "loops"
@@ -1867,7 +1867,7 @@
       "answers": [
         "false"
       ],
-      "explanation": "Math.random بازهٔ کد زیر را در نظر بگیرید:\n\n```java\n[0.0, 1.0)\n```\n\nکد بالا تولید می‌کند و عدد 1.0 در آن بازه نیست؛ تنها 0.0 ممکن است تولید شود.",
+      "explanation": "Math.random مقداری در بازهٔ زیر تولید می‌کند:\n\n```java\n[0.0, 1.0)\n```\n\nعدد 1.0 در این بازه نیست؛ تنها 0.0 ممکن است تولید شود.",
       "concepts": [
         "Math",
         "random"
@@ -1931,7 +1931,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "floorDiv و floorMod تقسیم و باقیمانده را به‌گونه‌ای تعریف می‌کنند که همواره کد زیر را در نظر بگیرید:\n\n```java\na == (a / b) * b + (a % b)\n```\n\nکد بالا برقرار باشد، حتی برای ورودی منفی.",
+      "explanation": "floorDiv و floorMod تقسیم و باقیمانده را به‌گونه‌ای تعریف می‌کنند که همواره رابطهٔ زیر برقرار باشد، حتی برای ورودی منفی:\n\n```java\na == (a / b) * b + (a % b)\n```",
       "concepts": [
         "Math",
         "integer-division"
@@ -1954,7 +1954,7 @@
       "answers": [
         "D"
       ],
-      "explanation": "sin آرگومان را بر حسب رادیان می‌گیرد نه درجه؛ برای تبدیل درجه به رادیان باید در کد زیر را در نظر بگیرید:\n\n```java\nMath.PI / 180\n```\n\nکد بالا ضرب کرد.",
+      "explanation": "sin آرگومان را بر حسب رادیان می‌گیرد نه درجه؛ برای تبدیل درجه به رادیان باید در عدد زیر ضرب کرد:\n\n```java\nMath.PI / 180\n```",
       "concepts": [
         "Math",
         "trigonometry"
@@ -1977,7 +1977,7 @@
       "answers": [
         "A"
       ],
-      "explanation": "atan2 زاویهٔ بردار (x, y) را نسبت به محور x مثبت بر حسب رادیان در بازهٔ کد زیر را در نظر بگیرید:\n\n```java\n(-π, π]\n```\n\nکد بالا برمی‌گرداند و برای تقسیم‌بندی چهارربع صفحه مناسب است.",
+      "explanation": "atan2 زاویهٔ بردار (x, y) را نسبت به محور x مثبت بر حسب رادیان در بازهٔ زیر برمی‌گرداند و برای تقسیم‌بندی چهارربع صفحه مناسب است:\n\n```java\n(-π, π]\n```",
       "concepts": [
         "Math",
         "trigonometry"
@@ -2087,7 +2087,7 @@
       "answers": [
         "false"
       ],
-      "explanation": "early return در void فقط با کد زیر را در نظر بگیرید:\n\n```java\nreturn;\n```\n\nکد بالا بدون expression مجاز است.",
+      "explanation": "در متد void، خروج زودهنگام فقط با دستور زیر و بدون expression مجاز است:\n\n```java\nreturn;\n```",
       "concepts": [
         "void",
         "return"

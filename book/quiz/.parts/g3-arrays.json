@@ -119,7 +119,7 @@
       "answers": [
         "true"
       ],
-      "explanation": "شکل کوتاه initializer تنها در اعلام متغیر مجاز است؛ برای تخصیص بعدی باید از کد زیر را در نظر بگیرید:\n\n```java\nnew int[]{...}\n```\n\nکد بالا استفاده کرد.",
+      "explanation": "شکل کوتاه initializer تنها در اعلام متغیر مجاز است؛ برای تخصیص بعدی باید از کد زیر استفاده کرد:\n\n```java\nnew int[]{...}\n```",
       "concepts": [
         "arrays",
         "initializer"
@@ -159,7 +159,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "`length` فیلد final عمومی آرایه است و بدون پرانتز خوانده می‌شود؛ این با کد زیر را در نظر بگیرید:\n\n```java\nString.length()\nList.size()\n```\n\nکد بالا متفاوت است.",
+      "explanation": "`length` فیلد final عمومی آرایه است و بدون پرانتز خوانده می‌شود؛ در حالی که متدهای نمونهٔ String و List با پرانتز فراخوانی می‌شوند:\n\n```java\nString.length()\nList.size()\n```",
       "concepts": [
         "arrays",
         "length"
@@ -247,7 +247,7 @@
       "answers": [
         "B"
       ],
-      "explanation": "شرط `<=` به جای `<` یک اندیس بیش از حد می‌دهد و در تکرار آخر کد زیر را در نظر بگیرید:\n\n```java\na[a.length]\n```\n\nکد بالا خطای out of bounds می‌دهد.",
+      "explanation": "شرط `<=` به جای `<` یک اندیس بیش از حد می‌دهد و در تکرار آخر:\n\n```java\na[a.length]\n```\n\nخطای out of bounds رخ می‌دهد.",
       "concepts": [
         "arrays",
         "loops"

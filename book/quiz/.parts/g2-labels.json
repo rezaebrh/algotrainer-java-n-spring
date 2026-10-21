@@ -53,7 +53,7 @@
       "answers": [
         "true"
       ],
-      "explanation": "syntax label برابر کد زیر را در نظر بگیرید:\n\n```java\nname: statement\n```\n\nکد بالا است.",
+      "explanation": "syntax label برابر شکل زیر است:\n\n```java\nname: statement\n```",
       "concepts": [
         "labels"
       ],
